@@ -1,0 +1,44 @@
+﻿<!--Header-->
+    <table>
+        <tr>
+            <td> 
+                <span class="rpt-link" onclick="BackToMain();">Main</span> > 
+                {UserName}
+            </td>
+            <td>
+                <input type="button" onclick="ExportToExcel();" value="&nbsp;&nbsp;" name="btnExport" id="btnExport" class="btnExcel" title="Export to Excel">
+            </td>
+        </tr>
+    </table>
+<!--/Header-->
+<br />
+<table id="table" class="bg" cellspacing="1px" cellpadding="1px">
+	<thead>
+	<tr class="report-header" id="trHeader">
+			<th style="width:100px">Bettype</th>
+            <th style="width:100px">Winlost</th>
+            <th style="width:100px">Turnover</th>
+			<th style="width:100px">Margin</th>
+		</tr>		
+	</thead>
+	<tbody>
+	    <!--Content-->
+		<tr bgcolor="white" class="{class_Total}">	
+	        <td class="l">{Bettype}</td>
+            <td class="r">{WinlostIBC}</td>
+            <td class="r">{TurnOver}</td>
+	        <td class="r rspace">{Margin}</td>
+        </tr>        
+        <!--/Content-->
+	</tbody>
+	<tfoot>
+	    <!--Footer-->
+	    <tr bgcolor="white" class="{class_Total}" id="trFooter">	
+	        <td class="l">{Bettype}</td>
+            <td class="r">{WinlostIBC}</td>
+            <td class="r">{TurnOver}</td>
+	        <td class="r">{Margin}</td>
+        </tr>        
+        <!--/Footer-->
+	</tfoot>	
+</table>

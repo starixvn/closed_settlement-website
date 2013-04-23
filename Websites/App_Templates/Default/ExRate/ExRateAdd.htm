@@ -1,0 +1,68 @@
+﻿<span id="errMsg" class="error-message"></span>
+<div id="clear2"></div>
+<form id="fExRate">
+<table id="ex" class="tbllayout" cellspacing="1px" style="width:auto">
+    <tr class="title">
+        <td rowspan="2">Currency</td>
+        <td rowspan="2">Standard Currency</td>
+        <td rowspan="2">Description</td>
+        <td rowspan="2">Multiplied By</td>
+        <td rowspan="2">Base Rate</td>
+        <td rowspan="2">Min Bet</td>
+        <td rowspan="2">Min Bet Live</td>  
+        <td colspan="5"><b>Open Tote Rate</b></td>
+    </tr>
+    <tr class="title">      
+      <td>GBP</td>  
+      <td>AUD</td>  
+      <td>ZAR</td>  
+      <td>EURO</td>  
+      <td>US$</td>      
+    </tr>
+    <tr bgcolor='white'>
+      <td>
+        <input type="text" class="w70" {ReadOnly}  name="txtEx" id="txtCurrency" value="{Currency}"/>
+      </td>
+      <td id="tdStandardCurrency">
+      </td>
+      <td>
+        <input type="text" class="w120" id="tbxDescription" value="{Description}" />
+      </td>
+      <td>
+        <input type="text" class="w120" id="tbxMultipliedBy" value="{MultipliedBy}" />  
+      </td>
+      <td>
+        <input type="text" class="w70" name="txtEx"  id="txtBaseRate" value="{BaseRate}" onkeypress="return CheckDecNumber_ExRate(event);"/>
+      </td>
+      <td>
+	    <input type="text" class="w70" name="txtEx"  id="txtMinbet" value="{Minbet}" onkeypress="return CheckDecNumber_ExRate(event);"/>
+      </td>
+      <td>
+	    <input type="text" class="w70" name="txtEx"  id="txtMinbetLive" value="{MinbetLive}" onkeypress="return CheckDecNumber_ExRate(event);"/>
+      </td>
+      <td>
+	    <input type="text" class="w70" name="txtEx"  id="txtGBPRate" value="{GBPRate}" onkeypress="return CheckDecNumber_ExRate(event);"/>
+      </td>
+      <td>
+	    <input type="text" class="w70" name="txtEx"  id="txtAUDRate" value="{AUDRate}" onkeypress="return CheckDecNumber_ExRate(event);"/>
+      </td>
+      <td>
+	    <input type="text" class="w70" name="txtEx"  id="txtZARRate" value="{ZARRate}" onkeypress="return CheckDecNumber_ExRate(event);"/>
+      </td>    
+      <td>
+	    <input type="text" class="w70" name="txtEx"  id="txtEURORate" value="{EURORate}" onkeypress="return CheckDecNumber_ExRate(event);"/>
+      </td>    
+      <td>
+	    <input type="text" class="w70" name="txtEx"  id="txtUSDRate" value="{USDRate}" onkeypress="return CheckDecNumber_ExRate(event);"/>
+      </td>    
+    </tr>
+    <tr>
+        <td colspan="12" style="border-right:0px none; text-align:right">
+            <input class="btn" type="button" id="btnsubmit" onclick="{function}"  value="{submit}"/>
+            <input class="btn" type="button" value="{reset}" onclick="{Function_Reset}"/>
+        </td>
+    </tr>
+</table> 
+<input type="hidden" id="type" name="type" />
+<input type="hidden" id="exrateId" name="exrateId" value="{exrateId}" /> 
+</form>

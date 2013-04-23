@@ -1,0 +1,33 @@
+<table id="table" class="tbllayout" style="width:800px" cellspacing="1" >
+    <thead>
+    <tr id="trHeader" class="title">
+        <th style="width:30">#</th>
+        <th style="width:50" nowrap>Date</th>
+        <th style="width:50">UserName</th>
+        <th style="width:100">Action</th>
+        <th style="width:30" colspan="2">HT Score</th>
+        <th style="width:30" colspan="2">FT Score</th>
+        <th style="width:50">Goal Record</th>
+        <th style="width:70">Result String</th>
+        <th>Remark</th>
+        <th style="width:100">IP</th>
+    </tr>
+    </thead> 
+    <tbody>
+    <!--ContentDetail-->
+     <tr>
+        <td class="c">{No}</td>
+        <td class="c">{LogDate}</td>
+        <td class="c">{UserName}</td>
+        <td>{ActionName}</td>
+        <td class="c" colspan="2">{HTHomeScore} - {HTAwayScore}</td>        
+        <td class="c" colspan="2">{FTHomeScore} - {FTAwayScore}</td>        
+        <td class="c">{GoalRecord}</td>
+        <td class="c">{BetStatus}</td>
+        <td class="{class_ReMark}">{ReMark}</td>
+        <td class="rspace c">{IP}</td>
+     </tr>
+    <!--/ContentDetail-->
+    <tr id="trFooter" style="display:none"><td colspan="13"></td></tr>
+    </tbody>
+</table>

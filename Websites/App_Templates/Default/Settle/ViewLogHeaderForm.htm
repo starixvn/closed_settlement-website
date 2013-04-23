@@ -1,0 +1,37 @@
+﻿<div class="maincontent_box">
+    <div id="searchbox">
+        <table>
+            <tr id="trmsg">
+                <td colspan="7">
+                    <span id="spMsg"></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="pad73 b">
+                    Match Code:
+                </td>
+                <td>
+                    <input type="text" id="txtMatchCode" name="txtMatchCode" maxlength="40" size="16"
+                        value="{MatchCode}" />
+                </td>
+                <td class="pad73 b" id="tdFromDate">
+                    From:
+                </td>
+                <td>
+                    {fromdate}
+                </td>
+                <td class="pad73 b" id="tdToDate">
+                    To Date
+                </td>
+                <td>
+                    {todate}
+                </td>
+                <td class="pad73" colspan="2" align="right">
+                    <input type="button" id="btnSubmit" name="btnSubmit" value="Search" onclick="GetMatchSettleLog()"
+                        class="btn" />
+                </td>
+            </tr>
+            
+        </table>
+    </div>
+</div>

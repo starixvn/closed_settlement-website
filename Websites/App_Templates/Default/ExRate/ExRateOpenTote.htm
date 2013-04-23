@@ -1,0 +1,73 @@
+﻿{#template MAIN} {#include ExRate root= $T} {#/template MAIN} 
+{#template ExRate}
+<table class="tbllayout" style="width:510px;">
+    <thead>
+        <tr id="tr1" class="title" >
+            <th colspan="2" >
+            </th>   
+            <th colspan="5">
+                Open Tote
+            </th>
+            <th style="width: 60px"></th>
+        </tr>
+        <tr id="trHeader" class="title" >
+            <th >
+                Currency
+            </th>   
+            <th style="width: 60px">
+                Base Rate
+            </th>       
+            <th style="width: 60px">
+                GBP
+            </th>
+            <th style="width: 60px">
+                AUD
+            </th>
+            <th style="width: 60px">
+                ZAR
+            </th>
+            <th style="width: 60px">
+                EURO
+            </th>
+            <th style="width: 60px">
+                US$
+            </th>
+            <th style="width: 60px"></th>
+        </tr>
+    </thead>
+    <tbody>
+        {#foreach $T as r}
+            {#include ExRateRow root= $T.r}
+        {#/for}
+    </tbody>
+</table>
+{#/template ExRate}
+
+{#template ExRateRow}
+ <tr {#if $T.Result.ErrorCode!=0}style="color:red;"{#/if} class="{#cycle values=['','evenrow']}">
+   <td >
+        {$T.Currency}
+    </td>
+     <td>
+        {$T.ActualRate}
+    </td>
+    <td class="r {#cycle values=['','new-rate-evenrow']}">
+        {$T.GBPRate}
+    </td>
+    <td class="r {#cycle values=['','new-rate-evenrow']}">
+        {$T.AUDRate}
+    </td>
+    <td class="r {#cycle values=['','new-rate-evenrow']}">
+        {$T.ZARRate}
+    </td>
+    <td class="r {#cycle values=['','new-rate-evenrow']}">
+        {$T.EURORate}
+    </td>
+    <td class="r {#cycle values=['','new-rate-evenrow']}">
+        {$T.USDRate}
+    </td>
+     <td class="c {#cycle values=['','new-rate-evenrow']}">
+        {$T.Result.ErrorMessage}
+    </td>
+</tr>
+{#/template ExRateRow}

@@ -1,0 +1,378 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{27984FEE-40DC-40DC-B3B9-3A8776C5511D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sunplus.Accounting.DataAccess</RootNamespace>
+    <AssemblyName>Sunplus.Accounting.DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>%24/Rome/Settlement/Main/SettlementSite/Sunplus.Accounting.DataAccess</SccProjectName>
+    <SccLocalPath>.</SccLocalPath>
+    <SccAuxPath>http://10.18.200.210:8080</SccAuxPath>
+    <SccProvider>{4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}</SccProvider>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="AdoNet\BetListDAO.cs" />
+    <Compile Include="AdoNet\CreditTermDAO\CreditTermGroupDAO.cs" />
+    <Compile Include="AdoNet\ExchangeRateDAO.cs" />
+    <Compile Include="AdoNet\HelperDAO.cs" />
+    <Compile Include="AdoNet\LogDisplayDAO\LogDisplayDAO.cs" />
+    <Compile Include="AdoNet\PositionTaking\PokerDAO.cs" />
+    <Compile Include="AdoNet\PositionTaking\Racing\MeetingCommDAO.cs" />
+    <Compile Include="AdoNet\PositionTaking\Racing\RacingDAO.cs" />
+    <Compile Include="AdoNet\ReportDAO\ExternalReportDAO.cs" />
+    <Compile Include="AdoNet\ReportDAO\MonitorDAO.cs" />
+    <Compile Include="AdoNet\ReportDAO\PokerReportDAO.cs" />
+    <Compile Include="AdoNet\ReportDAO\ReportMainDAO.cs" />
+    <Compile Include="AdoNet\ReportDAO\OthersReportDAO.cs" />
+    <Compile Include="AdoNet\ReportDAO\NumberGameReportDAO.cs" />
+    <Compile Include="AdoNet\Admin\ExternalSiteDAO.cs" />
+    <Compile Include="AdoNet\BetAggregatorDAO\LicenseeConfigDAO.cs" />
+    <Compile Include="AdoNet\ReportDAO\ReportWinLossDAO.cs" />
+    <Compile Include="CustomerAdapter\ConsolidatedGroup\ConsolidatedGroupAdapter.cs" />
+    <Compile Include="IBetAggregatorDAO\ILicenseeConfigDAO.cs" />
+    <Compile Include="IAdmin\IExternalSiteDAO.cs" />
+    <Compile Include="AdoNet\ReportDAO\ReportRacingDAO.cs" />
+    <Compile Include="DataAccessReport.cs" />
+    <Compile Include="IBetListDAO.cs" />
+    <Compile Include="ICreditTermDAO\ICreditTermGroupDAO.cs" />
+    <Compile Include="IHelperDAO.cs" />
+    <Compile Include="AdoNet\SqlServer\BetList\BetlistProviderClient.cs" />
+    <Compile Include="AdoNet\SqlServer\Customer\CustomerClient.cs" />
+    <Compile Include="AdoNet\SqlServer\CustSetting\CustSettingProviderClient.cs" />
+    <Compile Include="AdoNet\SqlServer\ExchangeRate\ExChangeRateProviderClient.cs" />
+    <Compile Include="AdoNet\SqlServer\ExportStatement\ExportStatementProviderClient.cs" />
+    <Compile Include="AdoNet\SqlServer\Log\LogClient.cs" />
+    <Compile Include="AdoNet\SqlServer\Others\NewsProviderClient.cs" />
+    <Compile Include="AdoNet\SqlServer\Report\DirectBalanceProviderClient.cs" />
+    <Compile Include="AdoNet\SqlServer\Report\DownLineBalanceProviderClient.cs" />
+    <Compile Include="AdoNet\SqlServer\Report\FIWLProviderClient.cs" />
+    <Compile Include="AdoNet\SqlServer\Report\HRGroupDailyProviderClient.cs" />
+    <Compile Include="AdoNet\SqlServer\Report\LeagueWLProviderClient.cs" />
+    <Compile Include="AdoNet\SqlServer\Report\MatchWLProviderClient.cs" />
+    <Compile Include="AdoNet\SqlServer\Report\NonePTMemSummaryProviderClient.cs" />
+    <Compile Include="AdoNet\SqlServer\Report\NonePTProviderClient.cs" />
+    <Compile Include="AdoNet\SqlServer\Report\OpenToteSettlementProviderClient.cs" />
+    <Compile Include="AdoNet\SqlServer\Report\PunterAnalysisProviderClient.cs" />
+    <Compile Include="AdoNet\SqlServer\Report\ReportProviderClient.cs" />
+    <Compile Include="AdoNet\SqlServer\Report\WLProviderClient.cs" />
+    <Compile Include="AdoNet\SqlServer\Settle\SettleProviderClient.cs" />
+    <Compile Include="AdoNet\SqlServer\SpecialDelete\SpecialDeleteProviderClient.cs" />
+    <Compile Include="APIClient\APICasinoProvider.cs" />
+    <Compile Include="APIClient\IBCLibProvider.cs" />
+    <Compile Include="CasinoProvider.cs" />
+    <Compile Include="AdoNet\CustomerDAO.cs" />
+    <Compile Include="DataAccess.cs" />
+    <Compile Include="DBType.cs" />
+    <Compile Include="Entity\BusinessObject\DataMappingAttribute.cs" />
+    <Compile Include="Entity\BusinessObject\MappingInfoCache.cs" />
+    <Compile Include="Entity\BusinessObject\ObjectMapper.cs" />
+    <Compile Include="Entity\BusinessObject\PropertyMappingInfo.cs" />
+    <Compile Include="Entity\SqlDataContext.cs" />
+    <Compile Include="Entity\SqlServer\Report\LeagueSportWLDetails.cs" />
+    <Compile Include="Entity\SqlServer\Report\LeagueWLProviderClient.cs" />
+    <Compile Include="Entity\SqlServer\Report\MatchWLProviderClient.cs" />
+    <Compile Include="Entity\SqlServer\Report\MatchWLRow.cs" />
+    <Compile Include="Entity\SqlServer\Report\WLProviderClient.cs" />
+    <Compile Include="Entity\SqlServer\SpecialDelete\SpecialDeleteProviderClient.cs" />
+    <Compile Include="IBCClient\HRPositionTakingProviderClient.cs" />
+    <Compile Include="IBCClient\PositionTakingProviderClient.cs" />
+    <Compile Include="IBCClient\UtilsProviderClient.cs" />
+    <Compile Include="IBCCustomerProvider.cs" />
+    <Compile Include="IBCDLL\Accounting\AccException.cs" />
+    <Compile Include="IBCDLL\Accounting\AccountCredit.cs" />
+    <Compile Include="IBCDLL\Accounting\AccountReport.cs" />
+    <Compile Include="IBCDLL\Accounting\AccountStatement.cs" />
+    <Compile Include="IBCDLL\Accounting\AccountTransaction.cs" />
+    <Compile Include="IBCDLL\Accounting\AccPersonalInfo.cs" />
+    <Compile Include="IBCDLL\Accounting\AgentTurnOver.cs" />
+    <Compile Include="IBCDLL\Accounting\Balance.cs" />
+    <Compile Include="IBCDLL\Accounting\Betlist.cs" />
+    <Compile Include="IBCDLL\Accounting\CasinoSynchronise.cs" />
+    <Compile Include="IBCDLL\Accounting\CompanyReport.cs" />
+    <Compile Include="IBCDLL\Accounting\Credit.cs" />
+    <Compile Include="IBCDLL\Accounting\CustomerBalance.cs" />
+    <Compile Include="IBCDLL\Accounting\CustomerManager.cs" />
+    <Compile Include="IBCDLL\Accounting\CustomerTurnOver.cs" />
+    <Compile Include="IBCDLL\Accounting\CustomerUpdateStatus.cs" />
+    <Compile Include="IBCDLL\Accounting\LeagueWLReport.cs" />
+    <Compile Include="IBCDLL\Accounting\MatchWinLostReport.cs" />
+    <Compile Include="IBCDLL\Accounting\ReportHR.cs" />
+    <Compile Include="IBCDLL\Accounting\Settle.cs" />
+    <Compile Include="IBCDLL\Accounting\Transactions.cs" />
+    <Compile Include="IBCDLL\Accounting\Transfer.cs" />
+    <Compile Include="IBCDLL\Accounting\UserControl.cs" />
+    <Compile Include="IBCDLL\Accounting\UserCredit.cs" />
+    <Compile Include="IBCDLL\Accounting\VirtualRate.cs" />
+    <Compile Include="IBCDLL\AgentReport\WinLoss.cs" />
+    <Compile Include="IBCDLL\Customer\Select4Edit.cs" />
+    <Compile Include="IBCDLL\Customer\SelectCustomer.cs" />
+    <Compile Include="IBCDLL\Customer\UpdateCustomer.cs" />
+    <Compile Include="IBCDLL\LogDisplay.cs" />
+    <Compile Include="IBCDLL\Report\DailyCreatedCustomer.cs" />
+    <Compile Include="IBCDLL\Report\MatchWinLostByBetType.cs" />
+    <Compile Include="IBCDLL\Report\NumberGameWinLoss.cs" />
+    <Compile Include="IBCDLL\SystemInfo.cs" />
+    <Compile Include="IBCDLL\UserController.cs" />
+    <Compile Include="IBCProvider.cs" />
+    <Compile Include="ICustomerDAO.cs" />
+    <Compile Include="IExchangeRateDAO.cs" />
+    <Compile Include="IPokerReportDAO.cs" />
+    <Compile Include="ILogDisplay\ILogDisplayDAO.cs" />
+    <Compile Include="IReportDAO\IExternalReportDAO.cs" />
+    <Compile Include="IReportDAO\IMonitorDAO.cs" />
+    <Compile Include="IReportDAO\IReportMainDAO.cs" />
+    <Compile Include="IReportDAO\IOthersReportDAO.cs" />
+    <Compile Include="IReportDAO\INumberGameReportDAO.cs" />
+    <Compile Include="IReportDAO\IReportRacingDAO.cs" />
+    <Compile Include="IReportWinLossDAO.cs" />
+    <Compile Include="IUserDAO.cs" />
+    <Compile Include="Linq\SqlServer\Report\Acc_Rpt_DailyWLDirect_SporttypeResult.cs" />
+    <Compile Include="Linq\SqlServer\Report\Acc_Rpt_LeagueWL_DetailsResult.cs" />
+    <Compile Include="Linq\SqlServer\Report\Acc_Rpt_LeagueWL_SporttypeResult.cs" />
+    <Compile Include="Linq\SqlServer\Report\DailyWLSporttypeDataContext.cs" />
+    <Compile Include="Linq\SqlServer\Report\LeagueWLProviderClient.cs" />
+    <Compile Include="Linq\SqlServer\Report\LeagueWL_DetailsDataContext.cs" />
+    <Compile Include="Linq\SqlServer\Report\LeagueWL_SporttypeDataContext.cs" />
+    <Compile Include="Linq\SqlServer\Report\ReportActionDataContext.cs" />
+    <Compile Include="NoSql\BetListDAO.cs" />
+    <Compile Include="OtherProvider.cs" />
+    <Compile Include="PositionTakingProvider.cs" />
+    <Compile Include="PositionTaking\IPokerDAO.cs" />
+    <Compile Include="PositionTaking\Racing\IMeetingCommDAO.cs" />
+    <Compile Include="PositionTaking\Racing\IRacingDAO.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Provider\Betlist\BetlistProvider.cs" />
+    <Compile Include="Provider\Customer\CustomerProvider.cs" />
+    <Compile Include="Provider\CustSetting\CustSettingProvider.cs" />
+    <Compile Include="Provider\ExchangeRate\ExChangeRateProvider.cs" />
+    <Compile Include="Provider\ExportStatement\ExportStatementProvider.cs" />
+    <Compile Include="Provider\Log\LogProvider.cs" />
+    <Compile Include="Provider\Others\NewsProvider.cs" />
+    <Compile Include="Provider\Report\DailyWLProvider.cs" />
+    <Compile Include="Provider\Report\DirectBalanceProvider.cs" />
+    <Compile Include="Provider\Report\DownLineBalanceProvider.cs" />
+    <Compile Include="Provider\Report\FIWLProvider.cs" />
+    <Compile Include="Provider\Report\HRGroupDailyProvider.cs" />
+    <Compile Include="Provider\Report\LeagueWLProvider.cs" />
+    <Compile Include="Provider\Report\MatchWLProvider.cs" />
+    <Compile Include="Provider\Report\NonePTMemSummaryProvider.cs" />
+    <Compile Include="Provider\Report\NonePTProvider.cs" />
+    <Compile Include="Provider\Report\OpenToteSettlementProvider.cs" />
+    <Compile Include="Provider\Report\PunterAnalysisProvider.cs" />
+    <Compile Include="Provider\Report\ReportBean.cs" />
+    <Compile Include="Provider\Report\ReportProvider.cs" />
+    <Compile Include="Provider\Report\WLProvider.cs" />
+    <Compile Include="Provider\Settle\SettleProvider.cs" />
+    <Compile Include="Provider\SpecialDelete\SpecialDeleteProvider.cs" />
+    <Compile Include="IReportDAO\ILicenseDAO.cs" />
+    <Compile Include="AdoNet\ReportDAO\LicenseDAO.cs" />
+    <Compile Include="IReportDAO\IOthersDAO.cs" />
+    <Compile Include="Report\MatchAnalysis\IMatchAnalysisDAO.cs" />
+    <Compile Include="Report\MatchAnalysis\MatchAnalysisDAO.cs" />
+    <Compile Include="Report\MatchWL\IMatchWL2aDAO.cs" />
+    <Compile Include="Report\MatchWL\MatchWL2aDAO.cs" />
+    <Compile Include="Report\MemberStatistics\GamesActiveMembers.cs" />
+    <Compile Include="Report\MemberStatistics\IGamesActiveMembers.cs" />
+    <Compile Include="AdoNet\ReportDAO\OthersDAO.cs" />
+    <Compile Include="Report\ReportUtils.cs" />
+    <Compile Include="ResetWinning\IResetWinningDAO.cs" />
+    <Compile Include="ResetWinning\ResetWinningDAO.cs" />
+    <Compile Include="Report\WinLoss\IWinLossDataAccess.cs" />
+    <Compile Include="Report\WinLoss\WinLossDataAccess.cs" />
+    <Compile Include="SettingGroup.cs" />
+    <Compile Include="Settlement\ISettlementDAO.cs" />
+    <Compile Include="Settlement\SettlementDAO.cs" />
+    <Compile Include="SiteProvider.cs" />
+    <Compile Include="Report\DailyTurnover\IDailyTurnoverDAO.cs" />
+    <Compile Include="Report\DailyTurnover\DailyTurnoverDAO.cs" />
+    <Compile Include="SpecialDelete\ISpecialDeleteDAO.cs" />
+    <Compile Include="SpecialDelete\SpecialDeleteDAO.cs" />
+    <Compile Include="AdoNet\UserDAO.cs" />
+    <Compile Include="SpecialDelete\TicketsListing\ITicketsListingDAO.cs" />
+    <Compile Include="SpecialDelete\TicketsListing\TicketsListingDAO.cs" />
+    <Compile Include="UtilsProvider.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Linq\SqlServer\Report\DailyWLSporttype.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DailyWLSporttype1.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Linq\SqlServer\Report\LeagueWL_Details.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>LeagueWL_Details1.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Linq\SqlServer\Report\LeagueWL_Sporttype.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>LeagueWL_Sporttype1.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Linq\SqlServer\Report\ReportAction.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>ReportAction1.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Linq\SqlServer\Report\DailyWLSporttype.dbml.layout">
+      <DependentUpon>DailyWLSporttype.dbml</DependentUpon>
+    </None>
+    <None Include="Linq\SqlServer\Report\LeagueWL_Details.dbml.layout">
+      <DependentUpon>LeagueWL_Details.dbml</DependentUpon>
+    </None>
+    <None Include="Linq\SqlServer\Report\LeagueWL_Sporttype.dbml.layout">
+      <DependentUpon>LeagueWL_Sporttype.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="CasinoLibrary">
+      <HintPath>..\..\..\..\Dependency\CasinoLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="DNAide, Version=2.1.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Dependency\DNAide.dll</HintPath>
+    </Reference>
+    <Reference Include="Fanex.Data">
+      <HintPath>..\..\..\..\Dependency\Fanex\Fanex.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Fanex.Logging">
+      <HintPath>..\..\..\..\Dependency\Fanex\Fanex.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="IBCUtils">
+      <HintPath>..\..\..\..\Dependency\IBCUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching">
+      <HintPath>..\..\..\..\Dependency\Fanex\Microsoft.Practices.EnterpriseLibrary.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Dependency\Fanex\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Dependency\Fanex\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Dependency\Fanex\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="NetUtility">
+      <HintPath>..\..\..\..\Dependency\NetUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="Sunplus.Core.LoggingLib">
+      <HintPath>..\..\..\..\Dependency\Sunplus.Core.LoggingLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Sunplus.Libraries.AOP">
+      <HintPath>..\..\..\..\Dependency\Sunplus.Libraries.AOP.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sunplus.Data.DataAbstract\Sunplus.Data.DataAbstract.csproj">
+      <Project>{1B2228C6-443E-48FF-90EF-A122810D77E7}</Project>
+      <Name>Sunplus.Data.DataAbstract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sunplus.Accounting.Core\Sunplus.Accounting.Core.csproj">
+      <Project>{09B74F02-6C21-4C5E-A52C-B6D56595A262}</Project>
+      <Name>Sunplus.Accounting.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sunplus.Accounting.Entities\Sunplus.Accounting.Entities.csproj">
+      <Project>{C2043B3C-AF85-4334-8542-F9AC2B031D79}</Project>
+      <Name>Sunplus.Accounting.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sunplus.Data.DataAbstract\Sunplus.Data.DataAbstract.csproj">
+      <Project>{1B2228C6-443E-48FF-90EF-A122810D77E7}</Project>
+      <Name>Sunplus.Data.DataAbstract</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AdoNet\SqlServer\PositionTaking\" />
+    <Folder Include="Linq\SqlServer\Log\" />
+    <Folder Include="Provider\PositionTaking\" />
+    <Folder Include="Report\Poker\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties BuildVersion_ReplaceNonNumerics="False" BuildVersion_UseGlobalSettings="True" BuildVersion_BuildVersioningStyle="None.None.Increment.Increment" BuildVersion_AssemblyInfoFilename="Properties\AssemblyInfo.cs" BuildVersion_UpdateFileVersion="True" BuildVersion_UpdateAssemblyVersion="True" />
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

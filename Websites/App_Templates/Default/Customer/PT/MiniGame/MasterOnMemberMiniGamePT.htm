@@ -1,0 +1,46 @@
+﻿{#template MAIN}
+    {#include SuperOnMember root= $T}
+{#/template MAIN}
+ 
+{#template SuperOnMember}
+<table class="tblcollapse" style="width:600px; margin:6px 0px;" id="tblminigame">
+    <!--PT-->
+    <tr class="title">
+        <td colspan="2">
+            Position Taking
+        </td>
+    </tr>
+     <!--Master PT -->
+    <tr>
+        <td class="l w130">
+            Master Position Taking</td>
+        <td>
+            <select id="listMPT252" max="{roundNumber($T.maxmpt,2)}" min="{roundNumber($T.minmpt,2)}" name="listMPT252" class="select-pt" >
+                <option value="{roundNumber($T.mpt,2)}" selected="true">{roundNumber($T.mpt,2)}</option>
+            </select>
+            <input type="button" onclick="ReducePT('listMPT252',1)" class="btn-dec1" id="chkR1SAutoPre252">
+            <input type="button" onclick="IncreasePT('listMPT252',1)" class="btn-inc1" id="chkI1SAutoPre252">
+            <input type="button" onclick="ReducePT('listMPT252',10)" class="btn-dec10"  id="chkR10SAutoPre252">
+            <input type="button" onclick="IncreasePT('listMPT252',10)" class="btn-inc10" id="chkI10SAutoPre252">
+        </td>
+    </tr>
+    <!--/Master PT -->
+    <!--Agent PT -->
+    <tr>
+        <td class="l w130">
+            Agent Position Taking
+        </td>
+        <td>{roundNumber($T.apt,2)}</td>
+    </tr>
+    <!--/Agent PT -->
+</table>
+<table cellspacing="0" cellpadding="0" border="0">
+    <tr>
+        <td class="custBtn1">
+        </td>
+        <td onclick="updateMasterOnMember();" class="custBtn2 hand" id="Td1">
+            Submit
+        </td>
+    </tr>
+</table>
+{#/template SuperOnMember} 

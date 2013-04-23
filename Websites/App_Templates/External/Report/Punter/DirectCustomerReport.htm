@@ -1,0 +1,25 @@
+﻿<table id="table" class="tbllayout" cellspacing="1px" cellpadding="1px">
+	<thead>
+	<tr class="title" id="trHeader">
+	        <th class="title" style="width:30px">#</th>
+	        <th class="title" style="width:50px">Role</th>
+			<th class="title" style="width:70px">Customer</th>
+			<th class="title" style="width:30px">Chart</th>
+            <th class="title" style="width:100px">Currency</th>
+            <th class="title" style="width:100px">Values</th>
+            {HeaderColumn}            
+		</tr>		
+	</thead>
+	<tbody>
+	    <!--Content-->
+		<tr class="{class}">	
+		     <td class="c" rowspan="{rowspan}">{Order}</td>
+		     <td class="c" rowspan="{rowspan}">{Role}</td>
+             <td class="l" rowspan="{rowspan}">{UserName}</td>
+             <td class="c rpt-link" rowspan="{rowspan}" onclick="GenerateChartByCusId('{custid}', '{UserName}');" ><img title="View Chart" src="../../App_Themes/Report/Images/chart1.png" /></td>
+             <td class="l" rowspan="{rowspan}">{Currency}</td>                          
+             {ContentColumn}             
+        </tr>          
+        <!--/Content-->               
+	</tbody>		    
+</table>

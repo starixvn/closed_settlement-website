@@ -1,0 +1,121 @@
+<div id="disableControl" class="overlaywhite">
+	<img src="../../App_Themes/SteelBlue/Images/loader3.gif" style="margin-top: 250px;" />
+</div>
+<div style="width:80%;">
+	<span class="errMsg" id="err"></span>
+</div>
+<div style="height:2px;"></div>
+<table width="80%" class="tbllayout">
+	<!--none-Mult-->
+	<tr class="title"><td colspan="8">{title}</td></tr>
+	<tr>
+		<td width="16%" class="r">{uname-text}</td>
+		<td width="16%" class="c">{uname-val}</td>
+		<td width="16%" class="r">{fname-text}</td>
+		<td width="16%" class="c">{fname-val}</td>
+		<td width="16%" class="r">{lname-text}</td>
+		<td width="16%" class="c">{lname-val}</td>		
+	</tr>
+	<tr>		
+		<td class="r">{phone-text}</td>
+		<td class="c">{phone-val}</td>
+		<td class="r">{mobile-text}</td>
+		<td class="c">{mobile-val}</td>
+		<td class="r">{email-text}</td>
+		<td class="c">{email-val}</td>
+	</tr>
+	<!--none-edit-min-->
+	<tr>
+		<td class="r">{status-text}</td>
+		<td class="c">
+			{closed-text}<input type="checkbox" id="chkClosed" name="chkClosed" {check-val} />
+		</td>
+		<td class="r">{credit-text}</td>
+		<td class="c">{credit-val}</td>
+		<td class="r">{group-text}</td>
+		<td class="c">{group-val}</td>		
+	</tr>	
+</table>
+<div style="height:2px;"></div>
+<table width="80%" class="tbllayout">
+	<tr class="title">
+		<td colspan="4">{commission-text}
+		</td>
+	</tr>
+	<tr>
+		<td colspan="4" style="padding:0px;">
+			{NewCommission}
+		</td>	
+	</tr>
+</table>
+<div style="height:2px;"></div>
+<table width="80%" class="tbllayout">
+	<tr>
+		<td width="14%"></td>
+		<td width="12%" class="title">{minbet-text}</td>
+		<td width="12%" class="title">{maxbet-text}</td>
+		<td width="12%" class="title">{maxpermatch-text}</td>
+		<td width="14%"></td>
+		<td width="12%" class="title">{minbet-text}</td>
+		<td width="12%" class="title">{maxbet-text}</td>
+		<td width="12%" class="title">{maxpermatch-text}</td>
+	</tr>
+	<tr>
+		<td class="tblTitleRight">{soccer-text}</td>
+		<td class="c">{minbet-val}</td>
+		<td class="c">{maxbet-val}</td>
+		<td class="c">{maxpermatch-val}</td>
+		<td class="tblTitleRight">{baseball-text}</td>
+		<td class="c">{minbet8-val}</td>
+		<td class="c">{maxbet8-val}</td>
+		<td class="c">{maxpermatch8-val}</td>
+  </tr>
+  <tr>
+    <td class="tblTitleRight">{basket-text}</td>
+    <td class="c">{minbet2-val}</td>
+    <td class="c">{maxbet2-val}</td>
+    <td class="c">{maxpermatch2-val}</td>
+	  <td class="tblTitleRight">{golf-text}</td>
+	  <td class="c">{minbet10-val}</td>
+	  <td class="c">{maxbet10-val}</td>
+	  <td class="c">{maxpermatch10-val}</td>
+   
+		
+	</tr>
+	<tr>
+		<td class="tblTitleRight">{football-text}</td>
+		<td class="c">{minbet3-val}</td>
+		<td class="c">{maxbet3-val}</td>
+		<td class="c">{maxpermatch3-val}</td>
+		<td class="tblTitleRight">{moto-text}</td>
+		<td class="c">{minbet11-val}</td>
+		<td class="c">{maxbet11-val}</td>
+		<td class="c">{maxpermatch11-val}</td>
+		
+	</tr>
+	<tr>
+		<td class="tblTitleRight">{tennis-text}</td>
+		<td class="c">{minbet5-val}</td>
+		<td class="c">{maxbet5-val}</td>
+		<td class="c">{maxpermatch5-val}</td>
+		<!--none-Other-MinMaxBet-->
+		<td class="tblTitleRight">{othersports-text}</td>
+		<td class="c">{minbet99-val}</td>
+		<td class="c">{maxbet99-val}</td>
+		<td class="c">{maxpermatch99-val}</td>
+		<!--/none-Other-MinMaxBet-->
+	</tr>
+	<!--/none-Mult-->
+	<!--none-Single-->	
+	<tr>
+		<td colspan="2">
+			<span id="username"></span>
+		</td>
+	</tr>
+	<tr>
+		<td width="15%" class="r">{status-text}</td>
+		<td class="l">{closed-text}<input type="checkbox" id="chkClosed" name="chkClosed" {check-val} /></td>			
+	<!--/none-edit-min-->
+	</tr>
+	<!--/none-Single-->	
+</table>

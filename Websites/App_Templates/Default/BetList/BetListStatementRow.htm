@@ -1,0 +1,120 @@
+﻿<div style="width: 890px;" id="gbox_JQGrid1" class="ui-jqgrid ui-widget ui-widget-content">
+    <div style="width: 890px;" id="gview_JQGrid1" class="ui-jqgrid-view">
+        <div id="divtitle" class="ui-state-default ui-jqgrid-hdiv" style="width: 890px;">
+            <div class="ui-jqgrid-hbox">
+                <table id="htable" class="ui-jqgrid-htable" style="width: 872px;" border="0" cellpadding="0"
+                    cellspacing="0">
+                    <thead>
+                        <tr class="ui-jqgrid-labels">
+                          <th class="ui-state-default ui-th-column ui-th-ltr" style="width:40px">No</th>
+                          <th class="ui-state-default ui-th-column ui-th-ltr" style="width:120px">Trans.Time</th>
+                          <th class="ui-state-default ui-th-column ui-th-ltr" style="width:265px">Event</th>
+                          <th class="ui-state-default ui-th-column ui-th-ltr" style="width:55px">Odds</th>
+                          <th class="ui-state-default ui-th-column ui-th-ltr" style="width:55px">Stake</th>
+                          <th class="ui-state-default ui-th-column ui-th-ltr" style="width:90px">Win/Loss</th>
+                          <th class="ui-state-default ui-th-column ui-th-ltr" style="width:80px; height: 65px;">Status</th>
+                          <th class="ui-state-default ui-th-column ui-th-ltr" style="width:95px; height: 18px;">Operator</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+        
+        <div id="bdiv" style="width: 890px; max-height:470px;" class="ui-jqgrid-bdiv">
+            <div style="position: relative;">
+                <table id="btable" style="width: 872px;" class="ui-jqgrid-btable" border="0" cellpadding="0" cellspacing="0">
+                    <tbody>
+                        <tr class="ui-widget-content jqgrow ui-row-ltr" style="height:0px;" >
+                          <td style="width: 40px;height:0px;border-bottom:none 0px;"></td>
+                          <td style="width: 120px;height:0px;border-bottom:none 0px;"></td>
+                          <td style="width: 265px;height:0px;border-bottom:none 0px;"></td>
+                          <td style="width: 55px;height:0px;border-bottom:none 0px;"></td>
+                          <td style="width: 55px;height:0px;border-bottom:none 0px;"></td>
+                          <td style="width: 90px;height:0px;border-bottom:none 0px;"></td>
+                          <td style="width: 80px;height:0px;border-bottom:none 0px;"></td>
+                          <td style="width: 95px;height:0px;border-bottom:none 0px;"></td>
+                         </tr>
+                        {content}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div id="fdiv" class="ui-jqgrid ui-jqgrid-sdiv" style="width: 890px;">
+            <div class="ui-jqgrid-fbox">
+                <table id="tfoot" class="ui-jqgrid-ftable" style="width: 872px;" border="0" cellpadding="0"
+                    cellspacing="0">
+                    <tfoot>
+                        <tr class="ui-widget-content footrow footrow-ltr" style="height:0px;" >
+                          <td style="width: 40px;height:0px;border-bottom:none 0px;"></td>
+                          <td style="width: 120px;height:0px;border-bottom:none 0px;"></td>   
+                          <td style="width: 265px;height:0px;border-bottom:none 0px;"></td>
+                          <td style="width: 55px;height:0px;border-bottom:none 0px;"></td>
+                          <td style="width: 55px;height:0px;border-bottom:none 0px;"></td>
+                          <td style="width: 90px;height:0px;border-bottom:none 0px;"></td>
+                          <td style="width: 80px;height:0px;border-bottom:none 0px;"></td>
+                          <td style="width: 95px;height:0px;border-bottom:none 0px;"></td>
+                         </tr>
+
+                        <tr class="ui-widget-content footrow footrow-ltr">
+                            <td colspan="5" style="text-align:right;">
+                                <b>SubTotal({win}):</b>
+                            </td>
+                            <td class="r {colorwinlost}" style="text-align:right;">
+                                <b>{totalwinlost}</b>
+                            </td>
+                            <td colspan="2">&nbsp;
+                            </td>
+                        </tr>
+                        <tr class="ui-widget-content footrow footrow-ltr">
+                            <td colspan="5" style="text-align:right;">
+                                <b>SubTotal(com):</b>
+                            </td>
+                            <td style="text-align:right;">
+                                <b>{totalcom}</b>
+                            </td>
+                            <td colspan="2">&nbsp;
+                            </td>
+                        </tr>
+                        <tr class="ui-widget-content footrow footrow-ltr report-footer">
+                            <td colspan="5" style="text-align:right;">
+                                <b>Total:</b>
+                            </td>
+                            <td class="r {colortotal}" style="text-align:right;">
+                                <b>{total}</b>
+                            </td>
+                            <td colspan="2">&nbsp;
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--row-->
+<tr class="ui-widget-content jqgrow ui-row-ltr {bgcolor} r-{odd_even} {live}" >
+    <td style="text-align:center">{no}</td>
+    <td style="text-align:center">{TransTime}</td>
+    <td style="text-align:right">{Event}</td>
+    <td style="text-align:right">&nbsp;{Odds}</td>
+    <td style="text-align:right">&nbsp;{Stake}
+     <!--Exchangerate-->
+         <br />
+        <span class="r exrate2">{ExchangeRate}</span>
+        <br />
+        <span class="r exrate2">(Ex.Rate 2)</span>
+        <!--/Exchangerate-->
+    </td>
+    <td style="text-align:right">&nbsp;{WinLost}</td>
+    <td  style="text-align:center">
+        <div>{Status}</div>
+        {Result}
+    </td>
+    <td  style="text-align:center">
+    {Operator}<br/>
+    <a href="BetListByIp.aspx?bltype=3&fdate={fdate}&ip={ip}">{ip}</a>
+    </td>
+</tr>
+<!--/row-->

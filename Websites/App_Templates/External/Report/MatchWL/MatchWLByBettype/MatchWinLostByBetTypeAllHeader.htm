@@ -1,0 +1,28 @@
+<div class="main">
+    <div class="maincontent">
+         <table border="0" cellpadding="0px" cellspacing="0px" class="maincontent_header">
+                <tr>
+                    <td class="maincontent_headerL"></td>
+                    <td class="maincontent_headerC"> {Title}</td>
+                    <td class="maincontent_headerR"></td>
+                </tr>
+            </table>
+        <div class="maincontent_box">
+            <table>
+                <tr class='b'>
+                    <td>From: {fdate} <span class="pL10">To: </span>{tdate}
+                    </td>
+                    <td class="pL10">                    
+		                <input type="button" onclick="GetData()" value="REPORT" class="btn" id="btnSearch">
+                        <input type="button" title="Export to Excel" onclick="ExportToExcel();" value="   " name="btnExport" id="btnExport" class="btnExcel" style="">
+		            </td>
+                </tr>
+            </table>
+        </div>
+        <div class="bg_table">            
+            <div id="sData" style="width:500px">
+                {mainContent}
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+﻿<table class="tblcollapse" style="{tblWidth}" id="tbl99_9">
+    {ptheader}
+       
+    <!--Super-->
+    <tr>
+        <td class="l">{super-position}</td>
+        <td>
+            <select class="select-pt copyall" name="listSMixParlay" id="listSMixParlay" onchange="On_ChangeSuper(this);">{listSMixParlayValue}</select>
+            <input type="button" name="btnReduce1"  value=" "   class="btn-dec1"  onclick="ReducePT('listSMixParlay',1)"/>
+            <input type="button" name="btnIncrease1" value=" "   class="btn-inc1" onclick="IncreasePT('listSMixParlay',1)"/>
+            <input type="button" name="btnReduce10" value=" " class="btn-dec10" onclick="ReducePT('listSMixParlay',10)"/>
+            <input type="button" name="btnIncrease10" value=" " class="btn-inc10" onclick="IncreasePT('listSMixParlay',10)"/>
+        </td>
+    </tr>
+    <!--/Super-->
+    
+    <!--Master-->
+    <tr>
+        <td class="l">{master-position}</td>
+        <td>
+            <select class="select-pt copyall" name="listMMixParlay" id="listMMixParlay" onchange="On_ChangeMaster(this);">{listMMixParlayValue}</select>
+            <input type="button" name="btnReduce1"  value=" "   class="btn-dec1"  onclick="ReducePT('listMMixParlay',1)"/>
+            <input type="button" name="btnIncrease1" value=" "   class="btn-inc1" onclick="IncreasePT('listMMixParlay',1)"/>
+            <input type="button" name="btnReduce10" value=" " class="btn-dec10" onclick="ReducePT('listMMixParlay',10)"/>
+            <input type="button" name="btnIncrease10" value=" " class="btn-inc10" onclick="IncreasePT('listMMixParlay',10)"/>        
+        </td>
+    </tr>
+    <!--/Master-->
+    
+    <!--Agent-->    
+    <tr>
+        <td class="l">{agent-position}</td>
+        <td>
+            <select class="select-pt copyall" name="listAMixParlay" id="listAMixParlay">{listAMixParlayValue}</select>
+            <input type="button" name="btnReduce1"  value=" "   class="btn-dec1"  onclick="ReducePT('listAMixParlay',1)"/>
+            <input type="button" name="btnIncrease1" value=" "   class="btn-inc1" onclick="IncreasePT('listAMixParlay',1)"/>
+            <input type="button" name="btnReduce10" value=" " class="btn-dec10" onclick="ReducePT('listAMixParlay',10)"/>
+            <input type="button" name="btnIncrease10" value=" " class="btn-inc10" onclick="IncreasePT('listAMixParlay',10)"/>                
+        </td>
+    </tr>
+    <!--/Agent-->
+</table>

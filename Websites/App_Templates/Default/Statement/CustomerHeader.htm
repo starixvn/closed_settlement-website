@@ -1,0 +1,50 @@
+﻿<!--Link-->
+<div>
+    <!--StatementLink--><a id='lkStatement' href="javascript:ViewCustomerStatement(1)">Statement</a>
+    <!--/StatementLink--><!--Statement--><span id='titleStatement'><b>Statement</b></span>
+    <!--/Statement-->&nbsp;&nbsp;|&nbsp;&nbsp; <!--DetailLink--><a id='lkDetail' href="javascript:ViewCustomerStatement(3)">
+        Detail</a> <!--/DetailLink--><!--Detail--><span id='titleDetail'><b>Detail</b></span>
+    <!--/Detail--><!--IsAgent--><!--AuditLink-->&nbsp;&nbsp;|&nbsp;&nbsp;<a id='lkAudit'
+        href="javascript:ViewCustomerStatement(4)">Audit</a> <!--/AuditLink--><!--Audit-->
+    &nbsp;&nbsp;|&nbsp;&nbsp;<span id='titleAudit'><b>Audit</b></span> <!--/Audit-->
+    <!--/IsAgent-->
+</div>
+<!--/Link--><!--StatementHeader--><span>
+    <input type="hidden" id="repno" value="{reportNo}" />     
+    </span>
+<table cellpadding="2" cellspacing="2" border="0" >
+    <tr>
+        <td class="b">
+            Username:
+        </td>
+        <td>
+            <input type="text" id="txtCustName" value="{custname}" class="form_top autocomp" onkeypress="return KeyPress(event);" autocomplete="off" style="background-color:#fff"/>
+        </td>
+        <!--Calendar-->
+        <td class="b">
+            From:
+        </td>
+        
+        <td><div>
+            {FromDateCal}</div>
+        </td>
+        <td class="b">
+            To:
+        </td>
+        <td><div>
+            {ToDateCal}</div>
+        </td>
+        <!--/Calendar-->
+        <td>
+            <input id="btnSubmit" name="btnSubmit" type="button" value="Submit" class="btn" onclick="GetDataReport()"/>
+        </td>
+        <td>
+            <input id="btnReset" name="btnReset" type="button" value="Reset" class="btn" onclick="reset_date()"/>
+        </td>
+        <td>
+            <input id="btnExport" name="btnExport" title="Export to Excel" class='btnExcel' id='btnExport'
+                name='btnExport' value='   ' onclick='ExportToExcel();' type='button'/>
+        </td>
+    </tr>
+</table>
+<!--/StatementHeader-->

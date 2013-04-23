@@ -1,0 +1,86 @@
+<tr>
+  <td style="display:{none-tlposition}" class="right">{super-position}</td>
+  <td>
+    <select class="select-pt" name="listSOEB{sporttype}" id="listSOEB{sporttype}" onchange="On_ChangeSuper(this);">{listSOEBValue}</select>
+    <input type="button" name="btnReduce1"  value=" "   class="btn-dec1"  onclick="ReducePT('listSOEB{sporttype}',1)"/>
+    <input type="button" name="btnIncrease1" value=" "   class="btn-inc1" onclick="IncreasePT('listSOEB{sporttype}',1)"/>
+    <input type="button" name="btnReduce10" value=" " class="btn-dec10" onclick="ReducePT('listSOEB{sporttype}',10)"/>
+    <input type="button" name="btnIncrease10" value=" " class="btn-inc10" onclick="IncreasePT('listSOEB{sporttype}',10)"/>
+  </td>
+  <td>
+    <select class="select-pt" name="listSFxOB{sporttype}" id="listSFxOB{sporttype}" onchange="On_ChangeSuper(this);">{listSFxOBValue}</select>
+  </td>
+  <td>
+    <select class="select-pt" name="listSFtOB{sporttype}" id="listSFtOB{sporttype}" onchange="On_ChangeSuper(this);">{listSFtOBValue}</select>
+  </td>
+  <td rowspan="{rowspan}" class="left">
+    <input type="checkbox" onclick="CopyPositionTaking(this);" name="chkCopyOEB{sporttype}" id="chkCopyOEB{sporttype}"/>
+    Copy From Odd/Even
+  </td>
+</tr>
+<!--master-pt-->
+<tr style="display:{ptmaster-none}">
+  <td style="display:{none-tlposition}" class="right">{master-position}</td>
+  <td>
+    <select class="select-pt" onchange="On_ChangeMaster(this);" name="listMOEB{sporttype}" id="listMOEB{sporttype}">{listMOEBValue}</select>
+    <input type="button" id="btnR1HdpB" name="listMHdpB" value=" "   class="btn-dec1" onclick="ReducePT('listMOEB{sporttype}',1)"/>
+    <input type="button" id="btnI1HdpB" name="listMHdpB" value=" "   class="btn-inc1" onclick="IncreasePT('listMOEB{sporttype}',1)"/>
+    <input type="button" id="btnR10HdpB" name="listMHdpB" value=" " class="btn-dec10" onclick="ReducePT('listMOEB{sporttype}',10)"/>
+    <input type="button" id="btnI10HdpB" name="listMHdpB" value=" " class="btn-inc10" onclick="IncreasePT('listMOEB{sporttype}',10)"/>
+  </td>
+  <td>
+    <select class="select-pt" onchange="On_ChangeMaster(this);" name="listMFxOB{sporttype}" id="listMFxOB{sporttype}">{listMFxOBValue}</select>
+  </td>
+  <td>
+    <select class="select-pt" onchange="On_ChangeMaster(this);" name="listMFtOB{sporttype}" id="listMFtOB{sporttype}">{listMFtOBValue}</select>
+  </td>
+</tr>
+<!--/master-pt-->
+<!--agent-pt-->
+<tr style="display:{spt-none}">
+  <td style="display:{none-tlposition}" class="right">{agent-position}</td>
+  <td>
+    <select class="select-pt" name="listAOEB{sporttype}" id="listAOEB{sporttype}">{listAOEBValue}</select>
+    <input type="button" name="btnReduce1" value=" "   class="btn-dec1" onclick="ReducePT('listAOEB{sporttype}',1)"/>
+    <input type="button" name="btnIncrease1" value=" "   class="btn-inc1" onclick="IncreasePT('listAOEB{sporttype}',1)"/>
+    <input type="button" name="btnReduce10" value=" " class="btn-dec10" onclick="ReducePT('listAOEB{sporttype}',10)"/>
+    <input type="button" name="btnIncrease10" value=" " class="btn-inc10" onclick="IncreasePT('listAOEB{sporttype}',10)"/>
+  </td>
+  <td>
+    <select class="select-pt" name="listAFxOB{sporttype}" id="listAFxOB{sporttype}">{listAFxOBValue}</select>
+  </td>
+  <td>
+    <select class="select-pt" name="listAFtOB{sporttype}" id="listAFtOB{sporttype}">{listAFtOBValue}</select>
+  </td>
+</tr>
+<!--/agent-pt-->
+<!--preset-pt-->
+<tr class="{spt-preset-hidden}">
+  <td style="display:{none-tlposition}" class="c">
+    Auto Super Preset<br />Position
+  </td>
+  <td>
+    <div>
+      <input type="checkbox" value="yes" name="chkSPOEB" id="chkSPOEB"  onclick="autoPtSwitch(14);" />
+    </div>
+    <select class="select-pt" name="listSPOEB" id="listSPOEB">{listSPOEBValue}</select>
+    <input type="button" name="listSPHdpB" value=" "   class="btn-dec1" onclick="ReducePT('listSPOEB',1)"/>
+    <input type="button" name="listSPHdpB" value=" "   class="btn-inc1" onclick="IncreasePT('listSPOEB',1)"/>
+    <input type="button" name="listSPHdpB" value=" " class="btn-dec10" onclick="ReducePT('listSPOEB',10)"/>
+    <input type="button" name="listSPHdpB" value=" " class="btn-inc10" onclick="IncreasePT('listSPOEB',10)"/>
+  </td>
+  <td>
+    <div>
+      <input type="checkbox" value="yes" name="chkSPFxOB" id="chkSPFxOB"  onclick="autoPtSwitch(15);" />
+    </div>
+    <select class="select-pt" name="listSPFxOB{sporttype}" id="listSPFxOB{sporttype}">{listSPFxOBValue}</select>
+  </td>
+  <td>
+    <div>
+      <input type="checkbox" value="yes" name="chkSPFtOB" id="chkSPFtOB"  onclick="autoPtSwitch(16);" />
+    </div>
+    <select class="select-pt" name="listSPFtOB{sporttype}" id="listSPFtOB{sporttype}">{listSPFtOBValue}</select>
+  </td>
+</tr>
+<!--/preset-pt-->
+</table>

@@ -1,0 +1,42 @@
+﻿<table class="tbllayout" cellspacing="1" style="width:655px;" align="center">
+    <tr class="l bl-leaguename" style="background-color:#DFEAFF">
+        <th colspan="3" align="center">
+            <span class="bl_time"><span class="b bl_stype">{lblSportName} - </span>&nbsp;<span class="b">{leaguename}</span></span>
+        </th>
+    </tr>
+    <tr class="title">
+        <td width="14%">
+            {lblKickOffTime}
+        </td>
+        <td width="35%">
+            {lblIndex}
+        </td>
+        <td width="35%">
+            {lblBalNumber}
+        </td>
+    </tr>
+    
+   
+    <tr>
+        <td rowspan="{totalRowspan}" class="bl_time">
+            {date}
+        </td>
+        
+        <td class="b c">{firstIndex}</td>
+        <td class="b c">{firstBall}</td>
+    </tr>
+    
+    <tr>
+        <td class="b c">{nextIndex}</td>
+        <td class="b c">{nextBall}</td>
+    </tr>
+    {content}
+</table>
+
+
+<!--row-->        
+<tr>
+    <td class="b c">{nextIndex}</td>
+    <td class="b c">{nextBall}</td>
+</tr>
+<!--/row-->

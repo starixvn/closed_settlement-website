@@ -1,0 +1,132 @@
+﻿
+<div id="divAccPath" style="margin-left: 4px">
+</div>
+<div id="divViewAllAcc" class="hidden" style="margin-left: 2px;">
+    <table border="1" style="border-collapse:collapse" width="100%">
+        <thead>
+            <tr>
+                <td class="cellborder cellheader">
+                    <div id="divHeaderUserName" class="c sorter" title="Sort by User name" style="cursor: pointer" onclick="javascript:accManager.accounts.sortByUserName(event);">
+                        User Name
+                    </div>
+                </td>
+                <td class="cellborder cellheader">
+                    <div class="c">
+                        First Name
+                    </div>
+                </td>
+                <td class="cellborder cellheader">
+                    <div class="c">
+                        Last Name
+                    </div>
+                </td>
+                <td class="cellborder cellheader col80">
+                    <div class="c">
+                        Status
+                    </div>
+                </td>
+                <td class="cellborder cellheader">
+                    <div class="c">
+                        Creator
+                    </div>
+                </td>
+                <td class="cellborder cellheader">
+                    <div class="c">
+                        Create Date
+                    </div>
+                </td>
+                <td class="cellborder cellheader">
+                    <div class="c">
+                        Policy
+                    </div>
+                </td>
+                <td class="cellborder cellheader">
+                    <div class="c">
+                        Department
+                    </div>
+                </td>
+                <td class="cellborder cellheader">
+                    <div class="c">
+                        Reset
+                    </div>
+                </td>
+                <td class="cellborder cellheader col60">
+                    <div class="c">
+                        Edit
+                    </div>
+                </td>
+            </tr>
+        </thead>
+        <tbody id="tbodyViewAllAcc">
+        </tbody>
+        <script id="scriptTmpAcc" type="text/html">
+                    <tr><td class="cellborder">
+                        <div class="c" style="color: #0066CC; cursor: pointer" title="Click for edit" onclick="javascript:accManager.accounts.editClick(event, ${Id});">
+                            ${UserName}
+                        </div>
+                    </td><td class="cellborder">
+                        <div class="c" firstname="true">
+                            ${FirstName}
+                        </div>
+                    </td><td class="cellborder">
+                        <div class="c" lastname="true">
+                            ${LastName}
+                        </div>
+                    </td><td class="cellborder">
+                        <div class="c">
+                            ${Status}<input type="checkbox" onclick="javascript:accManager.accounts.changeStatus(${Id}, event);"
+                            {{if Status == "Active"}}
+                                checked="checked"
+                            {{/if}}
+                            />
+                        </div>
+                    </td><td class="cellborder">
+                        <div class="c">
+                            ${Creator}
+                        </div>
+                    </td><td class="cellborder">
+                        <div class="c">
+                            ${CreateDate}
+                        </div>
+                    </td><td class="cellborder">
+                        <div class="c" style="color: #0066CC; cursor:pointer" onclick="javascript:accManager.accounts.policy(${Id}, '${Department}', ${DeptId}, '${UserName}');">
+                            Policy
+                        </div>
+                    </td><td class="cellborder">
+                        <div class="c" style="color: #0066CC; cursor:pointer" dept="true" onclick="javascript:accManager.accounts.filterByDepartment(${DeptId});">
+                            ${Department}
+                        </div>
+                    </td><td class="cellborder">
+                        <div class="c" style="color: #0066CC; cursor:pointer" onclick="javascript:OpenChangePwd(${Id},'${UserName}');">
+                            Password
+                        </div>
+                    </td><td class="cellborder">
+                        <div class="c">
+                            <img alt="Edit" title="Edit" src="../App_Themes/Images/icn_edit.png" style="cursor: pointer" onclick="javascript:accManager.accounts.editClick(event, ${Id});" />
+                            <img alt="Save" title="Save" border="0" src="../App_Themes/Images/save1.jpg" style="cursor: pointer; display:none" onclick="javascript:accManager.accounts.saveClick(event, ${Id});"/>
+                            <img alt="Cancel" title="Cancel" border="0" src="../App_Themes/Images/undo.png" style="cursor: pointer; display:none" onclick="javascript:accManager.accounts.cancelClick(event);"/>
+                        </div>
+                    </td>
+                    </tr>
+        </script>
+        <script id="scriptTmpAcc_NoInfo" type="text/html">
+            <tr><td colspan="10" class="cellborder" align="center">
+                <span style="font-weight:bold">There is no information</span>
+            </td>
+            </tr>
+        </script>
+    </table>
+    <div paging="true" class="content-pagination bgtitle clearfix">
+        <div class="pagination-scroll">
+            <table cellspacing="0" cellpadding="1" width="100%">
+                <tr>
+                    <td>
+                        <div id="pagination">
+                            &nbsp;</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+@Html.Partial("~/Views/User/Policy/MemberPolicy.cshtml")

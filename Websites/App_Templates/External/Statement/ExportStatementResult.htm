@@ -1,0 +1,37 @@
+﻿<div class="bg_table">
+<table id="table" cellspacing="1px" cellpadding="0px" class="tbllayout">
+    <thead>
+        <tr id="trHeader" class="title">
+        <th class="title" style="!margin-top:-3px;!border-top:solid 1px ffabab;">Date</th>
+        <th class="title">Role</th>
+        <th class="title">Account</th>
+        <th class="title">Currency</th>
+        <th class="title">Remark</th>
+        <th class="title">Total</th>
+        <th class="title">Debit</th>
+        <th class="title">Credit</th>
+        <th class="title" style="width:80px">Balance</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!--Rows-->
+        <tr class="report-row-{oddeven}">
+        <td>{Date}</td>
+        <td>{Role}</td>
+        <td>{Account}</td>
+        <td>{Currency}</td>
+        <td class="l">{Remark}</td>
+        <td class="r">{Total}</td>
+        <td class="r">{Debit}</td>
+        <td class="r">{Credit}</td>
+        <td class="r rspace">{Balance}</td>
+        </tr>
+        <!--/Rows-->
+        
+    </tbody>
+    <tfoot>
+        <tr id="trFooter" style=""><td colspan="9"></td> </tr>
+    </tfoot>
+</table>
+<br />
+</div>

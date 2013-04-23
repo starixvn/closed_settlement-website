@@ -1,0 +1,16 @@
+﻿<table>
+    <tr>
+       
+        <td><input type="button" value="Add New" class="btn" onclick="AddNewExChangeRate();"></td>
+        <td>
+            <span class="h3" style="margin-top:5px">Choose an Excel file to import Open Tote Ex Rate: </span>
+            <input type="file" onchange="return IsValidFileExtension()" size="40" name="txtfile" id="txtfile"/>&nbsp; 
+            <input class="btn" style="width: 60px" id="btnUpload" type="submit" disabled="disabled" onclick="UploadFile()" value="Open File"/>                   
+        </td>
+         <td><span style="cursor:pointer;" id="spExport" title="Export to Excel" onclick="ExportToExcel();" ><img src="../App_Themes/Images/excel.gif" title="Export Open Tote Ex Rate to excel file" /></span></td>
+    </tr>
+    <tr>
+        <td colspan="3" class="l"><span style="color:Red; font-weight:bold" id="msgError"></span><span id="errMsg" class="error-message"></span>
+</td>
+    </tr>
+</table>

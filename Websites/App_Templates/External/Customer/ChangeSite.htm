@@ -1,0 +1,37 @@
+﻿<div class="maincontent">
+    <table border="0" cellpadding="0px" cellspacing="0px" class="maincontent_header">
+                <tr>
+                    <td class="maincontent_headerL">
+                    </td>
+                    <td class="maincontent_headerC fixfont">
+                    Move Site
+                    </td>
+                    <td class="maincontent_headerR">
+                    </td>
+                </tr>
+            </table>
+    <div class="maincontent_box">
+        <div id="trMsg" style="display:none;"><div id="dvMsg"></div></div>
+        <table class="tbllayout"  cellspacing="1" cellpadding="0" style="width:250px; line-height:18px ! important">
+            <tr>
+                <td class="l b">Move site for:</td>
+                <td class="l b"> {Level} {UserName}</td>
+            </tr>
+            <tr>
+                <td class="b l">Current site:</td>
+                <td class="l"><b><span id="spCurrSite">{CurrentSite}</b></span></td>
+            </tr>
+            <tr>
+                <td class="b l">Move to new site:</td>
+                <td class="l">{NewSite}</td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" onclick="UpdateMoveSite();" value="Move" name="Move" id="Move" class="btn" {disabled} />
+                    <input type="hidden" id="CustId" name="CustId" value="{CustId}" />
+                    <input type="hidden" id="IsSameLine" name="IsSameLine" value="{IsSameLine}" />
+                 </td>
+            </tr>
+        </table>
+     </div>
+</div>

@@ -1,0 +1,67 @@
+﻿<script>
+var accMenu = new Array();
+accMenu['item_1'] = new Array("&bull; Special Delete|SpecialDelete/Index.aspx",
+                                "&bull; Mix Parlay|SpecialDelete/MP.aspx",
+                                "&bull; Outright|SpecialDelete/Outright.aspx",
+                                "&bull; Update Batch Message|SpecialDelete/UploadBatchMsg.aspx");
+accMenu['item_2'] = new Array("&bull; Exchange Rate|ExRate/ExchangeRate.aspx",
+                                "&bull; Min Max Ex.Rate|ExRate/MinMaxExRate.aspx",
+                                "&bull; Invalid Ex.Rate|ExRate/InvalidExRate.aspx");
+accMenu['item_3'] = new Array("&bull; Bet List (IP)|BetList/BetListByIP.aspx?bltype=3&nodate=yes",
+                             "&bull; Meeting Commission List|Others/MeetingComm.aspx",
+                             "&bull; Casino Sync/Enable Check|Others/CSSyncList.aspx",
+                             "&bull; Upload Virtual Rate|Others/UploadVirtualRate.aspx",
+                             "&bull; Export Multi Statement|Others/ExportStatement.aspx");
+accMenu['item_4'] = new Array("&bull; Calculate|Settle/Index.aspx",
+                             "&bull; HT Over Only|Settle/Index.aspx?m=htoveronly",
+                             "&bull; Over Only|Settle/Index.aspx?m=overonly",
+                             "&bull; Result|Settle/Result.aspx",
+                             "&bull; Settlement Log|Settle/GetSettleLog.aspx"
+                             );
+accMenu['item_7'] = new Array("&bull; Company Balance|Report/CompBalance.aspx", "&bull; Reset Winning|Finance/ResetWinning.aspx");
+                            
+accMenu['item_8'] = new Array("&bull; Account Management|UserControl/Departments.aspx",
+                            "&bull; Add Operator|Customer/AddOperator.aspx",
+                            "&bull; Operator List|Customer/OperatorList.aspx",
+                            "&nbsp;&nbsp;|UserControl/Function.aspx");
+accMenu['item_9'] = new Array("&bull; New Customer|Customer/CustomerFrame.aspx",
+                            "&bull; Customer List|sMenu9_1",
+                            "&bull; Edit UserName|Customer/EditUserName.aspx",
+                            "&bull; Move Customer|sMenu9_2",
+                            "&bull; Move Site|Customer/ChangeSite.aspx",
+                            "&bull; User Group|Customer/ChangeUserGroup.aspx",
+                            "&bull; Clear Credit|Customer/ChangeUserGroup.aspx?clear=1",
+                            "&bull; Auto Suspend|Customer/SuspendCustList.aspx",
+                            "&bull; Transfer All|Customer/TransferAllMember.aspx",
+                            "&bull; View PT|Customer/ViewPT.aspx",
+                            "&bull; View Log|LogDisplay/LogLogin.aspx?tabid=CustomerSetting",
+                            "&nbsp;&nbsp;|LogDisplay/LogActionType.aspx");
+var subaccMenu = new Array();
+sMenu9_1 = new Array("&bull; Super List|Customer/SuperAgentList.aspx",
+                     "&bull; Master List|Customer/MasterAgentList.aspx?bycom=1",
+                     "&bull; Finance List|Customer/SuperFinanceList.aspx");
+subaccMenu['sMenu9_2'] = new Array("&bull; Move Agent|Customer/MoveCustomer.aspx?agent=1",
+                      "&bull; Move Master|Customer/MoveCustomer.aspx"
+                      );
+</script>
+<ul>
+    <li id="item_1" onclick="menuclick('item_1'); MainMenu_Click(this, 'SpecialDelete/Index.aspx')">
+        <a href="javascript:void(0)"><span>Special Delete</span></a></li>
+    <li id="item_2" onclick="menuclick('item_2');MainMenu_Click(this, 'ExRate/ExchangeRate.aspx')">
+        <a href="javascript:void(0)"><span>Ex. Rate</span></a></li>
+    <li id="item_3" onclick="menuclick('item_3');MainMenu_Click(this, 'BetList/BetListByIp.aspx?bltype=3&nodate=yes')">
+        <a href="javascript:void(0)"><span>Others</span></a></li>
+    <li id="item_4" onclick="menuclick('item_4');MainMenu_Click(this, 'Settle/Index.aspx')">
+        <a href="javascript:void(0)"><span>Settlement</span></a></li>
+    <li id="item_5"><a target="_blank" href="Report/Index.aspx" border="0"><span>Report</span></a></li>
+    <li id="item_6" onclick="menuclick('');MainMenu_Click(this, 'Statement/CompanyStatement.aspx?repno=5')">
+        <a href="javascript:void(0);"><span>Statement</span></a></li>
+    <li id="item_7" onclick="menuclick('item_7');MainMenu_Click(this, 'Report/CompBalance.aspx')">
+        <a href="javascript:void(0)"><span>Balance</span></a></li>
+    <li id="item_8" onclick="menuclick('item_8');MainMenu_Click(this, 'UserControl/Departments.aspx')">
+        <a href="javascript:void(0)"><span>User</span></a></li>
+    <li id="item_9" onclick="menuclick('item_9');MainMenu_Click(this, 'Customer/CustomerFrame.aspx')">
+        <a href="javascript:void(0)"><span>Customer</span></a></li>
+    <li id="item_10" onclick="menuclick('item_10');MainMenu_Click(this, 'Transactions/DailyTransaction.aspx')">
+        <a href="javascript:void(0)"><span>Transactions</span></a></li> 
+</ul>

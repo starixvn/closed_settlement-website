@@ -1,0 +1,23 @@
+<table>
+    <tr>
+        <td id="tdFromDate" class="b">
+            From:
+        </td>
+        <td style="width:110px">
+            {fromdate}
+        </td>
+        <td class="b">
+            Sports:
+        </td>
+        <td style="width: 120px;">
+            <select id="ddlSports" name="ddlSports" class="fullwidth" onchange="ChangeSport();">
+                {sportOptions}
+            </select>
+        </td>
+        <td>
+            <input type="button" id="btnSubmit" name="btnSubmit" value="Submit" onclick="GetSettleMatch();"
+                class="btn" />
+        </td>
+    </tr>
+</table>
+    

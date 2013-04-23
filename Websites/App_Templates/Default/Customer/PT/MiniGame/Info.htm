@@ -1,0 +1,67 @@
+﻿{#template MAIN}
+{#include Info root= $T}
+{#/template MAIN}
+
+{#template Info}
+<table class="tblcollapse" style="width: 600px;">
+    <tr class="title">
+        <td colspan="4">
+           {$P.Title}
+        </td>
+    </tr>
+    <tr>
+        <td class="l" width="100px">
+            First Name:
+        </td>
+        <td class="l" width="200px">
+            {toString($T.FirstName)}
+        </td>
+        <td class="l" width="100px">
+            Last Name:
+        </td>
+        <td class="l">
+           {toString($T.LastName)}
+        </td>
+    </tr>
+    <tr>
+        <td class="l">
+            Phone:
+        </td>
+        <td class="l">
+            {toString($T.Phone)}
+        </td>
+        <td class="l">
+            Mobile Phone:
+        </td>
+        <td class="l">
+            {toString($T.MobilePhone)}
+        </td>
+    </tr>
+    <tr>
+        <td class="l">
+            Fax:
+        </td>
+        <td class="l">
+             {toString($T.Fax)}
+        <td class="l">
+          
+        </td>
+        <td class="l">
+            </td>
+    </tr>
+    <tr class="title">
+        <td colspan="4">
+            Commission
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4" class="c">
+            <!--Commission-->
+            <select id="listGroupA" name="listGroupA" max="{roundNumber($T.maxcomm,4)}" min="0" class="commlist">
+                <option selected="true" value="{roundNumber($T.comm,4)}">{roundNumber($T.comm,4)}</option>
+            </select>
+            <!--Commission-->
+        </td>
+    </tr>
+</table>
+{#/template Info}

@@ -1,0 +1,88 @@
+<div style="width: 1008px;" id="gbox_JQGrid1" class="ui-jqgrid ui-widget ui-widget-content">
+    <div style="width: 1008px;" id="gview_JQGrid1" class="ui-jqgrid-view">
+        <div id="divtitle" class="ui-state-default ui-jqgrid-hdiv" style="width: 1008px;">
+            <div class="ui-jqgrid-hbox">
+                <table class="ui-jqgrid-htable" style="width: 990px;" border="0" cellpadding="0"
+                    cellspacing="0">
+                    <thead>
+                        <tr class="ui-jqgrid-labels">
+                          <th style="width:30px;height:0px" class="ui-state-default ui-th-column ui-th-ltr"></th>
+                          <th style="width:75px;height:0px;" class="ui-state-default ui-th-column ui-th-ltr"></th>
+                          <th style="width:70px;height:0px;" class="ui-state-default ui-th-column ui-th-ltr"></th>
+                          <th style="width:200px;height:0px;" class="ui-state-default ui-th-column ui-th-ltr"></th>
+                          <th style="width:40px;height:0px;" class="ui-state-default ui-th-column ui-th-ltr"></th>
+                          <th style="width:80px;height:0px;" class="ui-state-default ui-th-column ui-th-ltr"></th>
+                          <th style="width:100px;height:0px;" class="ui-state-default ui-th-column ui-th-ltr"></th>
+                          <!--noinfo-->
+                          <th style="width: 65px;height:0px;" class="ui-state-default ui-th-column ui-th-ltr"></th>
+                          <!--/noinfo-->
+                          <th style="width:100px;height:0px;" class="ui-state-default ui-th-column ui-th-ltr"></th>
+                          <th style="width:80px;height:0px;" class="ui-state-default ui-th-column ui-th-ltr"></th>
+                          <th style="width:60px;height:0px;" class="ui-state-default ui-th-column ui-th-ltr"></th>
+                        </tr>
+                        <!--noinfo-->
+                        <tr class="ui-jqgrid-labels">
+                            <th colspan="7" style="border-bottom:solid 1px #7C98A4;background-color:#B5C4D0;"  class="ui-state-default ui-th-column ui-th-ltr">&nbsp;
+                            </th>
+                            <th style="border-bottom:solid 1px #7C98A4;background-color:#B5C4D0;"  class="ui-state-default ui-th-column ui-th-ltr">
+                                <input onclick="VerifyTrans(this)" type="button" id="btnVerify" disabled="disabled"
+                                    class="verifiedDisabled" value="Verify" />
+                            </th>
+                            <th colspan="3" style="border-bottom:solid 1px #7C98A4;background-color:#B5C4D0; text-align:right"  class="ui-state-default ui-th-column ui-th-ltr">
+                                <div class="btngroup"><input type="button" onclick="ExportExcel();" value="  " name="btnExport"
+                                    id="btnExport" class="btnExcel" title="Export to Excel" /></div>
+                            </th>
+                        </tr>
+                        <!--/noinfo-->
+                        <tr class="ui-jqgrid-labels">
+                          <th style="width:30px;" class="ui-state-default ui-th-column ui-th-ltr">No</th>
+                          <th style="width:75px;" class="ui-state-default ui-th-column ui-th-ltr">Date</th>
+                          <th style="width:70px;" class="ui-state-default ui-th-column ui-th-ltr">User Name</th>
+                          <th style="width:200px;" class="ui-state-default ui-th-column ui-th-ltr">Description</th>
+                          <th style="width:40px;" class="ui-state-default ui-th-column ui-th-ltr">Type</th>
+                          <th style="width:80px;" class="ui-state-default ui-th-column ui-th-ltr">Amount</th>
+                          <th style="width:100px;" class="ui-state-default ui-th-column ui-th-ltr">Creator</th>
+                          <!--noinfo-->
+                          <th style="text-align:center;width: 65px;" class="ui-state-default ui-th-column ui-th-ltr">
+                            <input type="checkbox" id="chkAll" onclick="ItemAllClicked()" {disbaleAll}/></th>
+                          <!--/noinfo-->
+                          <th style="width:100px;" class="ui-state-default ui-th-column ui-th-ltr">Verified by</th>
+                          <th style="width:80px;" class="ui-state-default ui-th-column ui-th-ltr">Checked Time</th>
+                          <th style="width:60px;" class="ui-state-default ui-th-column ui-th-ltr">Action</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+        
+        <div id="bdiv" style="width: 1008px; max-height:560px" class="ui-jqgrid-bdiv">
+            <div style="position: relative;">
+                <table id="btable" style="width: 990px;" class="ui-jqgrid-btable" border="0" cellpadding="0" cellspacing="0">
+                    <tbody>
+                        <tr class="ui-widget-content jqgrow ui-row-ltr" style="height:0px;" >
+                          <td style="width: 30px;height:0px;border-bottom:none 0px;"></td>
+                          <td style="width: 75px;height:0px;border-bottom:none 0px;"></td>
+                          <td style="width: 70px;height:0px;border-bottom:none 0px;"></td>
+                          <td style="width: 200px;height:0px;border-bottom:none 0px;"></td>
+                          <td style="width: 40px;height:0px;border-bottom:none 0px;"></td>
+                          <td style="width: 80px;height:0px;border-bottom:none 0px;"></td>
+                          <td style="width: 100px;height:0px;border-bottom:none 0px;"></td>
+                          <!--noinfo-->
+                          <td style="width: 65px;height:0px;border-bottom:none 0px; "></td>
+                          <!--/noinfo-->
+                          <td style="width: 100px;height:0px;border-bottom:none 0px;"></td>
+                          <td style="width: 80px;height:0px;border-bottom:none 0px;"></td>
+                          <td style="width: 60px;height:0px;border-bottom:none 0px;vertical-align:middle;"></td>
+                         </tr>
+                        {content}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+<div id="fPaging" style="width: 1008px;">
+{footerpager}
+</div>

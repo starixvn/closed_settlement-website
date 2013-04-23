@@ -1,0 +1,25 @@
+﻿{#template MAIN} {#include NumberGameResult root= $T} {#/template MAIN} 
+{#template NumberGameResult}
+<table class="tbllayout" cellspacing="1px" style="width:auto;" >
+    <tr class="title">
+        <th style="width:80px" >Kick Off. Time</th>
+        <th style="width:100px">Match</th>
+        <th style="width:260px;">Result</th>
+        <th style="width:80px">Warrior</th>
+        <th style="width:50px">O/E FT</th>
+        <th style="width:50px">1st Ball</th>
+        <th style="width:50px">Last Ball</th>        
+        <th style="width:60px">Status</th>
+    </tr>
+   <tr>
+        <td style="width:80px">{$T.KickOffTime}</td>
+        <td style="width:100px">{$T.Match}</td>
+        <td style="word-wrap: break-word;width:260px;" class="l">{Encoder.htmlDecode($T.Result,true)}</td>
+        <td style="width:80px">{$T.Warrior}</td>
+        <td style="width:50px">{$T.OEFT}</td>
+        <td style="width:50px">{Encoder.htmlDecode($T.FirstBall, true)}</td>
+        <td style="width:50px">{Encoder.htmlDecode($T.LastBall, true)}</td>                
+        <td style="width:60px">{$T.Status}</td>
+    </tr>
+</table>
+{#/template NumberGameResult}

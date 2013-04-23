@@ -1,0 +1,36 @@
+<div id="navbar_addeacc_menu" class="acc_menucontent" style="display: inline; position: inherit">
+    <table class="tbllayout" cellpadding="2" cellspacing="1" border="0" style="width: 200px;">
+        <form name="fAddExistAcc" method="post" action="UpdateAccount.ashx?type=exist" target="frUpd">
+        <tr class="title">
+            <td colspan="2" class="thead">
+                Add Existed Account
+            </td>
+        </tr>
+        <tr class="vbmenu_option">
+            <td class="r">
+                User Name
+            </td>
+            <td>
+                <input type="text" name="txtEUName" id="txtEUName"></input>
+            </td>
+        </tr>
+        <tr class="vbmenu_option">
+            <td class="r">
+                Department
+            </td>
+            <td>
+                <select style="width: 98%" id="selEGroup" name="selEGroup">
+                </select>
+            </td>
+        </tr>
+        <tr class="vbmenu_option">
+            <td colspan="2" class="c">
+                <input type="button" style="width: 50px" onclick="OnUpdate('exist');" id="btnAddExist"
+                    name="btnAddExist" value="Add" class="btn"></input>
+                <input type="button" style="width: 50px" onclick="OnCancel('exist');" id="btnCancel"
+                    name="btnCancel" value="Cancel" class="btn"></input>
+            </td>
+        </tr>
+        </form>
+    </table>
+</div>

@@ -1,0 +1,33 @@
+﻿<div class="main">
+    <div class="maincontent">
+         <table border="0" cellpadding="0px" cellspacing="0px" class="maincontent_header">
+                <tr>
+                    <td class="maincontent_headerL"></td>
+                    <td class="maincontent_headerC">{DirectBalance}</td>
+                    <td class="maincontent_headerR"></td>
+                </tr>
+            </table>
+         <div class="maincontent_box" style="width:429px">
+            <table>
+                <tr>
+                    <td>
+                        <span id='titleDirectMaster' style="display:none"><b>{DirectMaster}</b></span><a id='lkDirectMaster' href='#' onclick='ViewBalance("master")'>{DirectMaster}</a> |
+                        <span id='titleDirectAgent' style="display:none"><b>{DirectAgent}</b></span><a id='lkDirectAgent' href="#" onclick='ViewBalance("agent")'>{DirectAgent}</a> |
+                        <span id='titleDirectMember' style="display:none"><b>{DirectMember}</b></span><a id='lkDirectMember' href="#" onclick='ViewBalance("member")'>{DirectMember}</a> 
+                        &nbsp;
+                        <input id="btnRefresh" style="display:none" class="btn" type="button" value="{Refresh}" onclick="Refresh()">
+                    </td>
+                    <td>
+                        <input style="display:none" class="btnExcel" type ="button" id ="btnExport" name="btnExport" value="   "  onclick="ExportToExcel();" title="Export to Excel" />
+                        <input type="hidden" id="directType" value="" />
+                    </td>
+                    <td><img id='inProgressBar' name='inProgressBar' width="16px" height="16px" style="display:none"  src="../App_Themes/Images/ajax-loader.gif" /></td>
+                </tr>
+            </table>
+        </div>
+        <div style="margin-top:2px">
+            <div id="sData"></div>
+        </div>
+    </div>
+</div>
+

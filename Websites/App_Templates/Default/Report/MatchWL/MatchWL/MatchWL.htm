@@ -1,0 +1,114 @@
+<div style="width: 1158px;" id="gbox_JQGrid1" class="ui-jqgrid ui-widget ui-widget-content">
+    <div style="width: 1158px;" id="gview_JQGrid1" class="ui-jqgrid-view">
+        <div id="divtitle" class="ui-state-default ui-jqgrid-hdiv" style="width: 1158px;">
+            <div class="ui-jqgrid-hbox">
+                <table class="ui-jqgrid-htable" style="width: 1140px;" border="0" cellpadding="0" cellspacing="0">
+                    <thead>
+                        <tr class="ui-jqgrid-labels" id="trHeader">
+                            <th style="background-color:#ffabab;" colspan ="{cols}" align="center"><b>Match Win Loss in {fdate}</b></th>
+                        </tr>
+                        <tr class="ui-jqgrid-labels">
+                            <th style="width: 120px;" class="ui-state-default ui-th-column ui-th-ltr">
+                               Bet Type
+                            </th>
+                            <th style="width: 70px;" class="ui-state-default ui-th-column ui-th-ltr">
+                                Date
+                            </th>
+                             <th colspan="3" class="ui-state-default ui-th-column ui-th-ltr">
+                                Match
+                            </th>
+                             <th style="width: 100px;" class="ui-state-default ui-th-column ui-th-ltr">
+                                Winloss
+                            </th>
+                            <th style="width: 100px;"  class="ui-state-default ui-th-column ui-th-ltr">
+                                Position
+                            </th>
+                             <!--Comm--><th style="width: 70px;"  class="ui-state-default ui-th-column ui-th-ltr">Comm</th><!--/Comm-->
+                             <!--Virtual-Comm--><th style="width: 70px;"  class="ui-state-default ui-th-column ui-th-ltr">Virtual <br/>Comm</th><!--/Virtual-Comm-->
+                             <!--LineTotal--><th style="width: 100px;"  class="ui-state-default ui-th-column ui-th-ltr">Line Total</th><!--/LineTotal-->
+                             <!--Virtual-LineTotal--><th style="width: 100px;"  class="ui-state-default ui-th-column ui-th-ltr">Virtual <br/> Line Total</th><!--/Virtual-LineTotal-->
+                             <!--Variance--><th style="width: 100px;"  class="ui-state-default ui-th-column ui-th-ltr">Variance</th><!--/Variance-->
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+        
+        <div id="bdiv" style="height: auto; width: 1158px;" class="ui-jqgrid-bdiv">
+            <div style="position: relative;">
+                <table id="btable" style="width: 1140px;" class="ui-jqgrid-btable" border="0" cellpadding="0" cellspacing="0">
+                    <tbody>
+                        <tr class="ui-widget-content jqgrow ui-row-ltr r" style="height:0px">
+                            <td style="width:120px"></td>
+                            <td style="width:70px"></td>
+                            <td style="width:140px"></td>
+                            <td style="width:10px"></td>
+                            <td style="width:140px"></td>
+                            <td style="width:140px"></td>
+                            <td style="width:100px"></td>
+                            <td style="width:100px"></td>
+                            <td style="width:70px"></td>
+                            <td style="width:70px"></td>
+                            <td style="width:100px"></td>
+                            <td style="width:100px"></td>
+                            <td style="width:100px"></td>
+                        </tr>
+                        <!--Rows-->
+                          <tr {style} class="ui-widget-content jqgrow ui-row-ltr r">
+                          <td align="center">{bettype}</td>
+                         <!--S12bet--><td align="center" style="width:70px">{date}</td>	
+                          <!--hr-->
+                            <td align="right" >{home}</td>
+                            <td align="center" >-vs-</td>
+                            <td align="left" >{away}</td>
+                          <!--/hr-->
+                          <td>{winlost}</td>
+                          <td>{position}</td>
+                          <!--Comm--><td >{com}</td><!--/Comm-->
+                          <!--Virtual-Comm--><td >{virtual-com}</td><!--/Virtual-Comm-->
+                          <!--/S12bet-->
+                          <!--LineTotal--><td >{linetotal}</td><!--/LineTotal-->
+                          <!--Virtual-LineTotal--><td >{virtual-linetotal}</td><!--/Virtual-LineTotal-->
+                          <!--Variance--><td class="rspace">{variance}</td><!--/Variance-->
+                           </tr>
+                        <!--/Rows--> 
+                         
+                        <!--Total1-->
+                        <tr class="ui-widget-content jqgrow ui-row-ltr r">
+                            <td colspan ="7" style="background-color:{color1};" align="right"><b>{grand} TOTAL:</b></td>
+                            <!--Comm--><td style="background-color:{color1};" align="right">{TotalCom}</td><!--/Comm-->
+                            <!--Virtual-Comm--><td align="right" style="background-color:{color1};">{Total-virtual-TotalCom}</td><!--/Virtual-Comm-->    
+                            <!--LineTotal--><td align="right" style="background-color:{color1};"><b>{TotalLine}</b></td><!--/LineTotal-->
+                            <!--Virtual-LineTotal--><td align="right" style="background-color:{color1};"><b>{Total-virtual-linetotal}</b></td><!--/Virtual-LineTotal-->
+                            <!--Variance--><td align="right" class="rspace" style="background-color:{color1};">{Total-variance}</td><!--/Variance-->
+                        </tr>
+                        <!--/Total1-->
+
+                        <!--Total2-->
+                        <tr class="ui-widget-content jqgrow ui-row-ltr r">
+                            <td colspan ="{cols}" align="right"><b>Total 8RM:</b></td>  
+                            <!--LineTotal--><td align="right"><b>{Total-LineTotal}</b></td><!--/LineTotal-->
+                            <!--Virtual-LineTotal--><td align="right"><b>{Total-Virtual-LineTotal}</b></td><!--/Virtual-LineTotal-->
+                            <!--Variance--><td align="right" class="rspace">{Total-Variance}</td><!--/Variance-->
+                        </tr>
+                        <!--/Total2-->
+
+                        <!--Total3-->
+                        <tr class="ui-widget-content jqgrow ui-row-ltr r">
+                            <td style="background-color:#88aaff;" class="r" colspan ="7"><b>GRAND TOTAL:</b></td>
+                            <!--Comm--><td style="background-color:#88aaff;" align="right">{TotalCom}</td><!--/Comm-->
+                            <!--Virtual-Comm--><td style="background-color:#88aaff;" align="right">{Total-Virtual-Comm}</td><!--/Virtual-Comm-->    
+                            <!--LineTotal--><td style="background-color:#88aaff;" align="right"><b>{total-linetotal}</b></td><!--/LineTotal-->
+                            <!--Virtual-LineTotal--><td style="background-color:#88aaff;" align="right">{total-virtual-linetotal}</td><!--/Virtual-LineTotal-->
+                            <!--Variance--><td style="background-color:#88aaff;" align="right" class="rspace">{total-variance}</td><!--/Variance-->
+                        </tr>
+                        <!--/Total3-->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+    
+ 
+

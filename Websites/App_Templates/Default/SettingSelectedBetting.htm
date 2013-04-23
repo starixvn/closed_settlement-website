@@ -1,0 +1,13 @@
+﻿<span class="{classname}" id="SelectedBetting" onclick="{onclick}" onmouseout="{onmouseout}" onmouseover="{onmouseover}"></span>
+
+<div class="overlay" id="divOverlay"></div>
+<div id="PopupSelectedBetting" class="PopupSelectedBetting">
+	<b>{lblSelectedBetting}</b><br/>
+	<input type="checkbox" name="chkSelectedBetting" {checked} disabled="disabled" />{lblSelectedBettingCurrent}
+	<!--SelectedBettingDL-->
+	{lblSelectedBettingDL}
+	<input type="checkbox" name="chkSelectedBettingDL" checked="checked" {disabledDL} />
+	<!--/SelectedBettingDL-->
+	<br/>
+	<input type="button" value="Update" onclick="{btonclick}" class="btn" /><input type="button" onclick="HideClosedPop('PopupSelectedBetting');" value="Cancel" class="btn" />
+</div>

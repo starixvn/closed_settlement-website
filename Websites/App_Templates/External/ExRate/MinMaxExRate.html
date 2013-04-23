@@ -1,0 +1,38 @@
+<table class="tbllayout" style="width:650px" cellspacing="1">
+    <tr class="title">
+        <td style="width:20px;">#</td>
+        <td>From Currency</td>
+        <td>To Currency</td>
+        <td style="width:60px;">Min(%)</td>
+        <td style="width:60px;">Max(%)</td>
+        <td style="width:125px;">Last Update</td>
+        <td style="width:60px;">Creator</td>
+        <td style="width:30px;">Edit</td>
+        <td style="width:60px;">History</td>        
+    </tr>
+    <!--limit-content-->
+    <tr class="{odd_even}" align="center">
+        <td>{No_Value}</td>
+        <td>{FromCurrency_Value}</td>
+        <td>{ToCurrency_Value}</td>
+        <td>{Min_Value}</td>
+        <td>{Max_Value}</td>
+        <td>{LastUpdate_Value}</td>
+        <td>{Creator_Value}</td>                
+        <td class="c">
+            <div onclick="DoCal('UpdateMinMaxExRate.aspx?status=Edit&frmid={frmid}&toid={toid}&min={Min_Value}&max={Max_Value}')" >
+                <img src="../App_Themes/Images/icn_edit.png" border="0px" title="Edit" />
+            </div>
+        </td>
+        <td>
+            <a href="MinMaxExRate.aspx?ishis=true&frmid={frmid}&toid={toid}">
+                <img alt="View" src="../App_Themes/Images/icn_view.png" border="0px"/>
+            </a>
+        </td>        
+    </tr>
+    <!--/limit-content-->
+</table>
+
+<div style="display: none; margin-top:80px; margin-left:20px;" id="divMinMaxExChange" class="divMatch43">
+    <iframe frameborder="0" src="" id="ifrMinMaxExChange" name="ifrMinMaxExChange" class="frMatch43" scrolling="no"></iframe>
+</div>

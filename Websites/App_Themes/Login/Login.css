@@ -1,0 +1,11 @@
+﻿.logincontent{color:#fff;font-size:11px; font-weight:bold}
+.login{margin:250px 0px 0px 250px;border:none 0px; }
+.login_l{ height:455px; width:184px}
+.login_c{ height:455px; width:362px; vertical-align: top;padding-top:90px;}
+.login_r{ height:455px; width:182px}
+.log_text01{background:url(../images/ico_login1.png) no-repeat left; padding-left:30px; line-height:30px; text-align:left; color:#fff;}
+.log_text02{background:url(../images/ico_login2.png) no-repeat left; padding-left:30px; line-height:30px; text-align:left; color:#fff;}
+.log_button{background:url(../images/btn_login.png) no-repeat; text-align:center; color:#fff; font-size:11px; font-weight:bold; height:21px; cursor:pointer; border:none; width:65px; height:21px; text-decoration:none; margin-right:6px;}
+.log_button:hover{background:url(../images/btn_login_over.png) no-repeat;}
+.text_copyright{color:#039; font-size:10px; padding-left:20px; font-weight:normal}
+.layout_table{border-collapse: collapse;border-spacing: 0}

@@ -1,0 +1,42 @@
+<table class="tbllayout"  cellpadding="2" cellspacing="1" border="0" style="width:350px;">
+    <form name="fAddAcc" method="post" action="UpdateAccount.ashx?type=add" target="frUpd">
+    <tr class="title" >
+      <td class="thead" colspan="4">Add New Account</td>      
+    </tr>
+      <tr class="vbmenu_option">
+        <td class="r" style="width:21%">User Name</td>
+        <td class="l" style="width:29%">
+          <input style="width:92%" type="text" id="txtUName" name="txtUName"></input>
+        </td>
+        <td class="r" style="width:21%">Password</td>
+        <td class="l" style="width:29%">
+          <input style="width:92%" type="password" id="txtPwd" name="txtPwd"></input>
+        </td>
+      </tr>
+      <tr class="vbmenu_option">
+        <td class="r">First Name</td>
+        <td class="l">
+          <input style="width:92%" type="text" id="txtFName" name="txtFName"></input>
+        </td>
+        <td class="r">Last Name</td>
+        <td class="l">
+          <input style="width:92%" type="text" id="txtLName" name="txtLName" ></input>
+        </td>
+      </tr>
+      <tr class="vbmenu_option">
+        <td class="r">Department</td>
+        <td class="l">
+          <!--<div id="divAddGroupList"></div>-->
+          <select style="width:98%" id="selGroup" name="selGroup">            
+          </select>
+        </td>
+        <td colspan="2"></td>
+      </tr>  
+    <tr class="vbmenu_option">
+      <td class="c" colspan="4">
+        <input type="button" style="width:50px"  onclick="OnUpdate('acc');" id="btnAddAcc" name="btnAddAcc" class="btn" value="Add"></input>
+        <input type="button" style="width:50px" onclick="OnCancel('acc');"  id="btnCancel" name="btnCancel" class="btn" value="Cancel"></input>
+      </td>     
+    </tr>
+    </form>
+</table>        

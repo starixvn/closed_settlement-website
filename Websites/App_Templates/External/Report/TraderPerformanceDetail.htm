@@ -1,0 +1,392 @@
+<!--Header--> 
+<div id="header_main" style="padding-bottom:10px;min-width:600px;width:700px">
+        <form method="post">
+          <input id="export"  type="submit" name="export" value="export"  style="display:none" />
+          <input id="sortCol" type="text" name="sortCol" value="{sortCol}" style="display:none" />
+          <input id="order" type="text" name="order" value="{order}" style="display:none" />
+          <input id="sort" type="submit" name="sort" value="sort" style="display:none" />
+          <input id="IsSoccer" type="hidden" name="IsSoccer" value="{IsSoccer}" style="display:none" />
+          <input id="fdate" type="text" name="fdate" value="{fdate}" style="display:none" />
+          <input id="tdate" type="text" name="tdate" value="{tdate}" style="display:none" />
+        </form>
+    <span style="text-transform:uppercase"><b>{SportType}: RISK CONTROLLER REPORT BY MATCH FROM {fdate} TO {tdate}</b></span>
+    <span style="padding-left:5px;vertical-align:middle;">
+            <input id="btnReport" name="btnReport" type="button" value="Refresh" class="btn" onclick="DoPostBack()" />
+        </span>
+    <span style='padding-left:10px'>
+        <input class='btnExcel' id='btnExport' name='btnExport' value='   ' onclick='ExportToExcel();' type='button' title='Export To Excel' />
+    </span>
+    
+    <span style="padding-left:5px;">
+        <img id='inProgressBar' name='inProgressBar' width="15px" height="15px" style="display:none"  src="../App_Themes/Images/ajax-loader.gif" />
+    </span>   
+</div> 
+<!--/Header-->
+<!--Content-->
+    <!--excel-border-fix-->  
+    <table class="tbllayout" cellspacing="1" id="tbl-rpt">
+    <!--/excel-border-fix-->
+        <!--ReportHeader-->
+        <thead>
+            <!--excel-background-fix-->  
+            <tr class="title">
+            <!--/excel-background-fix-->
+                <th colspan="5">&nbsp;<input type="hidden" id="RowCnt" value="{RowCnt_vl}" /></th>
+                <th colspan="2">Score</th>
+                <th colspan="{colspan_title}">Winloss</th>
+                <th colspan="{colspan_title}">Turnover</th>
+                <th colspan="{colspan_title}">Margin%</th>
+                <th colspan="{colspan_title}">Commission</th>
+                <th style="width:200px">&nbsp;</th>
+            </tr>
+            <!--excel-background-fix2-->  
+            <tr class="title" id="trHeader">
+            <!--/excel-background-fix2-->
+              <th>No</th>
+              <th>Trader</th>
+              <th>Date</th>
+              <th>League</th>
+              <th>Match</th>
+              <th>HT</th>
+              <th>FT</th>
+
+              <th id="winlost_1st1x2" style="cursor:pointer;" onclick="Sort(this)">1st 1x2</th>
+              <th id="winlost_1x2" style="cursor:pointer;" onclick="Sort(this)">1x2</th>
+              <!--OtherSportClear-->
+              <th id="winlost_ng" style="cursor:pointer;" onclick="Sort(this)" nowrap="">Next Goal</th>
+              <!--/OtherSportClear-->
+              <th id="winlost_1sthdp" style="cursor:pointer;" onclick="Sort(this)">1st HDP</th>
+              <th id="winlost_hdp" style="cursor:pointer;" onclick="Sort(this)">HDP</th>
+              <th id="winlost_1stou" style="cursor:pointer;" onclick="Sort(this)">1st O/U</th>
+              <th id="winlost_ou" style="cursor:pointer;" onclick="Sort(this)">O/U</th>
+              <!--OtherSportClear-->
+              <th id="winlost_1stnoofcorners" onclick="Sort(this)" style="cursor:pointer;" nowrap="">1st No. of Corner</th>
+              <th id="winlost_noofcorners" onclick="Sort(this)" style="cursor:pointer;" nowrap="">No. of Corner</th>
+              <th id="winlost_1stnoofyellowcard" onclick="Sort(this)" style="cursor:pointer;" nowrap="">1st No. of Yellow Card</th>
+              <th id="winlost_noofyellowcard" onclick="Sort(this)" style="cursor:pointer;" nowrap="">No. of Yellow Card</th>
+              <th id="winlost_15minou" onclick="Sort(this)" style="cursor:pointer;">15mins O/U</th>
+              <!--/OtherSportClear-->
+              <th id="overall_wl" style="cursor:pointer;" onclick="Sort(this)">Overall</th>
+
+              <th>1st 1x2</th>
+              <th>1x2</th>
+              <!--OtherSportClear-->
+              <th nowrap="">Next Goal</th>
+              <!--/OtherSportClear-->
+              <th>1st HDP</th>
+              <th>HDP</th>
+              <th>1st O/U</th>
+              <th>O/U</th>
+              <!--OtherSportClear-->
+              <th nowrap="">1st No. of Corner</th>
+              <th nowrap="">No. of Corner</th>
+              <th nowrap="">1st No. of Yellow Card</th>
+              <th nowrap="">No. of Yellow Card</th>
+              <th>15mins O/U</th>
+              <!--/OtherSportClear-->
+              <th>Overall</th>
+
+              
+
+              <th id="margin_1st1x2" style="cursor:pointer;" onclick="Sort(this)">1st 1x2</th>
+              <th id="margin_1x2" style="cursor:pointer;" onclick="Sort(this)">1x2</th>
+              <!--OtherSportClear-->
+              <th id="margin_ng" style="cursor:pointer;" onclick="Sort(this)" nowrap="">Next Goal</th>
+              <!--/OtherSportClear-->
+              <th id="margin_1sthdp" style="cursor:pointer;" onclick="Sort(this)">1st HDP</th>
+              <th id="margin_hdp" style="cursor:pointer;" onclick="Sort(this)">HDP</th>
+              <th id="margin_1stou" style="cursor:pointer;" onclick="Sort(this)">1st O/U</th>
+              <th id="margin_ou" style="cursor:pointer;" onclick="Sort(this)">O/U</th>
+              <!--OtherSportClear-->
+              <th id="margin_1stnoofcorners" onclick="Sort(this)" style="cursor:pointer;" nowrap="">1st No. of Corner</th>
+              <th id="margin_noofcorners" onclick="Sort(this)" style="cursor:pointer;" nowrap="">No. of Corner</th>
+              <th id="margin_1stnoofyellowcard" onclick="Sort(this)" style="cursor:pointer;" nowrap="">1st No. of Yellow Card</th>
+              <th id="margin_noofyellowcard" onclick="Sort(this)" style="cursor:pointer;" nowrap="">No. of Yellow Card</th>
+              <th id="margin_15minou" onclick="Sort(this)" style="cursor:pointer;">15mins O/U</th>
+              <!--/OtherSportClear-->
+              <th id="overall_margin" style="cursor:pointer;" onclick="Sort(this)">Overall</th>
+
+
+              <th>1st 1x2</th>
+              <th>1x2</th>
+              <!--OtherSportClear-->
+              <th nowrap="">Next Goal</th>
+              <!--/OtherSportClear-->
+              <th>1st HDP</th>
+              <th>HDP</th>
+              <th>1st O/U</th>
+              <th>O/U</th>
+              <!--OtherSportClear-->
+              <th nowrap="">1st No. of Corner</th>
+              <th nowrap="">No. of Corner</th>
+              <th nowrap="">1st No. of Yellow Card</th>
+              <th nowrap="">No. of Yellow Card</th>
+              <th>15mins O/U</th>
+              <!--/OtherSportClear-->
+              <th>Overall</th>
+              <th>Trader</th>
+            </tr>
+        </thead>
+        <!--/ReportHeader-->
+        <!--ReportContent-->
+        <tbody>
+            <!--trader-row-->
+            <tr align="right">
+              {no-cell}
+              {trader-cell1}
+              <td align="left" class="a5" nowrap="">{date}</td>
+              <td align="left" class="a5" nowrap="">{League}</td>
+              <td align="left" class="a5" nowrap="">{match}</td>
+              <td align="center" class="a5" nowrap="">{score-ht}</td>
+              <td align="center" class="a5" nowrap="">{score-ft}</td>
+
+              <td class="a2">{wl-ht1x2}</td>
+              <td class="a2">{wl-1x2}</td>
+              <!--OtherSportClear-->
+              <td class="a2">{wl-ng}</td>
+              <!--/OtherSportClear-->
+              <td class="a2">{wl-hthdp}</td>
+              <td class="a2">{wl-hdp}</td>
+              <td class="a2">{wl-htou}</td>
+              <td class="a2">{wl-ou}</td>
+              <!--OtherSportClear-->
+              <td class="a2">{wl-1stcorner}</td>
+              <td class="a2">{wl-corner}</td>
+              <td class="a2">{wl-1stYelloCard}</td>
+              <td class="a2">{wl-YelloCard}</td>
+              <td class="a2">{wl-15mou}</td>
+              <!--/OtherSportClear-->
+              <td class="a2">{wl-overall}</td>
+
+              <td class="a1">{to-ht1x2}</td>
+              <td class="a1">{to-1x2}</td>
+              <!--OtherSportClear-->
+              <td class="a1">{to-ng}</td>
+              <!--/OtherSportClear-->
+              <td class="a1">{to-hthdp}</td>
+              <td class="a1">{to-hdp}</td>
+              <td class="a1">{to-htou}</td>
+              <td class="a1">{to-ou}</td>
+              <!--OtherSportClear-->
+              <td class="a1">{to-1stcorner}</td>
+              <td class="a1">{to-corner}</td>
+              <td class="a1">{to-1stYelloCard}</td>
+              <td class="a1">{to-YelloCard}</td>
+              <td class="a1">{to-15mou}</td>
+              <!--/OtherSportClear-->
+              <td class="a1">{to-overall}</td>
+
+
+              <td class="a4">{m-ht1x2}</td>
+              <td class="a4">{m-1x2}</td>
+              <!--OtherSportClear-->
+              <td class="a4">{m-ng}</td>
+              <!--/OtherSportClear-->
+              <td class="a4">{m-hthdp}</td>
+              <td class="a4">{m-hdp}</td>
+              <td class="a4">{m-htou}</td>
+              <td class="a4">{m-ou}</td>
+              <!--OtherSportClear-->
+              <td class="a4">{m-1stcorner}</td>
+              <td class="a4">{m-corner}</td>
+              <td class="a4">{m-1stYelloCard}</td>
+              <td class="a4">{m-YelloCard}</td>
+              <td class="a4">{m-15mou}</td>
+              <!--/OtherSportClear-->
+              <td class="a4">{m-overall}</td>
+
+              <td class="a3">{comm-ht1x2}</td>
+              <td class="a3">{comm-1x2}</td>
+              <!--OtherSportClear-->
+              <td class="a3">{comm-ng}</td>
+              <!--/OtherSportClear-->
+              <td class="a3">{comm-hthdp}</td>
+              <td class="a3">{comm-hdp}</td>
+              <td class="a3">{comm-htou}</td>
+              <td class="a3">{comm-ou}</td>
+              <!--OtherSportClear-->
+              <td class="a3">{comm-1stcorner}</td>
+              <td class="a3">{comm-corner}</td>
+              <td class="a3">{comm-1stYelloCard}</td>
+              <td class="a3">{comm-YelloCard}</td>
+              <td class="a3">{comm-15mou}</td>
+              <!--/OtherSportClear-->
+              <td class="a3">{comm-overall}</td>
+
+              {trader-cell}
+            </tr>
+            <!--/trader-row-->
+            <!--trader-total-->
+            <tr align="right">
+              <td colspan="7" class="l" style="padding-left: 20px; background-color:#CCFFCC;">{trader} Total</td>
+
+              <td style="background-color:#CCFFCC;">{wl-ht1x2}</td>
+              <td style="background-color:#CCFFCC;">{wl-1x2}</td>
+              <!--OtherSportClear-->
+              <td style="background-color:#CCFFCC;">{wl-ng}</td>
+              <!--/OtherSportClear-->
+              <td style="background-color:#CCFFCC;">{wl-hthdp}</td>
+              <td style="background-color:#CCFFCC;">{wl-hdp}</td>
+              <td style="background-color:#CCFFCC;">{wl-htou}</td>
+              <td style="background-color:#CCFFCC;">{wl-ou}</td>
+              <!--OtherSportClear-->
+              <td style="background-color:#CCFFCC;">{wl-1stcorner}</td>
+              <td style="background-color:#CCFFCC;">{wl-corner}</td>
+              <td style="background-color:#CCFFCC;">{wl-1stYelloCard}</td>
+              <td style="background-color:#CCFFCC;">{wl-YelloCard}</td>
+              <td style="background-color:#CCFFCC;">{wl-15mou}</td>
+              <!--/OtherSportClear-->
+              <td style="background-color:#CCFFCC;">{wl-overall}</td>
+
+              <td style="background-color:#CCFFCC;">{to-ht1x2}</td>
+              <td style="background-color:#CCFFCC;">{to-1x2}</td>
+              <!--OtherSportClear-->
+              <td style="background-color:#CCFFCC;">{to-ng}</td>
+              <!--/OtherSportClear-->
+              <td style="background-color:#CCFFCC;">{to-hthdp}</td>
+              <td style="background-color:#CCFFCC;">{to-hdp}</td>
+              <td style="background-color:#CCFFCC;">{to-htou}</td>
+              <td style="background-color:#CCFFCC;">{to-ou}</td>
+              <!--OtherSportClear-->
+              <td style="background-color:#CCFFCC;">{to-1stcorner}</td>
+              <td style="background-color:#CCFFCC;">{to-corner}</td>
+              <td style="background-color:#CCFFCC;">{to-1stYelloCard}</td>
+              <td style="background-color:#CCFFCC;">{to-YelloCard}</td>
+              <td style="background-color:#CCFFCC;">{to-15mou}</td>
+              <!--/OtherSportClear-->
+              <td style="background-color:#CCFFCC;">{to-overall}</td>
+
+              
+
+              <td style="background-color:#CCFFCC;">{m-ht1x2}</td>
+              <td style="background-color:#CCFFCC;">{m-1x2}</td>
+              <!--OtherSportClear-->
+              <td style="background-color:#CCFFCC;">{m-ng}</td>
+              <!--/OtherSportClear-->
+              <td style="background-color:#CCFFCC;">{m-hthdp}</td>
+              <td style="background-color:#CCFFCC;">{m-hdp}</td>
+              <td style="background-color:#CCFFCC;">{m-htou}</td>
+              <td style="background-color:#CCFFCC;">{m-ou}</td>
+              <!--OtherSportClear-->
+              <td style="background-color:#CCFFCC;">{m-1stcorner}</td>
+              <td style="background-color:#CCFFCC;">{m-corner}</td>
+              <td style="background-color:#CCFFCC;">{m-1stYelloCard}</td>
+              <td style="background-color:#CCFFCC;">{m-YelloCard}</td>
+              <td style="background-color:#CCFFCC;">{m-15mou}</td>
+              <!--/OtherSportClear-->
+              <td style="background-color:#CCFFCC;">{m-overall}</td>
+
+              <td style="background-color:#CCFFCC;">{comm-ht1x2}</td>
+              <td style="background-color:#CCFFCC;">{comm-1x2}</td>
+              <!--OtherSportClear-->
+              <td style="background-color:#CCFFCC;">{comm-ng}</td>
+              <!--/OtherSportClear-->
+              <td style="background-color:#CCFFCC;">{comm-hthdp}</td>
+              <td style="background-color:#CCFFCC;">{comm-hdp}</td>
+              <td style="background-color:#CCFFCC;">{comm-htou}</td>
+              <td style="background-color:#CCFFCC;">{comm-ou}</td>
+              <!--OtherSportClear-->
+              <td style="background-color:#CCFFCC;">{comm-1stcorner}</td>
+              <td style="background-color:#CCFFCC;">{comm-corner}</td>
+              <td style="background-color:#CCFFCC;">{comm-1stYelloCard}</td>
+              <td style="background-color:#CCFFCC;">{comm-YelloCard}</td>
+              <td style="background-color:#CCFFCC;">{comm-15mou}</td>
+              <!--/OtherSportClear-->
+              <td style="background-color:#CCFFCC;">{comm-overall}</td>
+
+              <td style="background-color:#CCFFCC;"></td>
+            </tr>
+            <!--/trader-total-->
+            </tbody>
+            <!--trader-grand-total-->
+            <!--not-excel-export--><tfoot><!--/not-excel-export-->
+            <!--Excel-Total-Footer-->
+            <tr class="report-footer" id="trFooter">
+            <!--/Excel-Total-Footer-->
+              <td colspan="7" class="l" style="padding-left: 20px">GRAND Total</td>
+
+              <td align="right">{wl-ht1x2}</td>
+              <td align="right">{wl-1x2}</td>
+              <!--OtherSportClear-->
+              <td align="right">{wl-ng}</td>
+              <!--/OtherSportClear-->
+              <td align="right">{wl-hthdp}</td>
+              <td align="right">{wl-hdp}</td>
+              <td align="right">{wl-htou}</td>
+              <td align="right">{wl-ou}</td>
+              <!--OtherSportClear-->
+              <td align="right">{wl-1stcorner}</td>
+              <td align="right">{wl-corner}</td>
+              <td align="right">{wl-1stYelloCard}</td>
+              <td align="right">{wl-YelloCard}</td>
+              <td align="right">{wl-15mou}</td>
+              <!--/OtherSportClear-->
+              <td align="right">{wl-overall}</td>
+
+              <td align="right">{to-ht1x2}</td>
+              <td align="right">{to-1x2}</td>
+              <!--OtherSportClear-->
+              <td align="right">{to-ng}</td>
+              <!--/OtherSportClear-->
+              <td align="right">{to-hthdp}</td>
+              <td align="right">{to-hdp}</td>
+              <td align="right">{to-htou}</td>
+              <td align="right">{to-ou}</td>
+              <!--OtherSportClear-->
+              <td align="right">{to-1stcorner}</td>
+              <td align="right">{to-corner}</td>
+              <td align="right">{to-1stYelloCard}</td>
+              <td align="right">{to-YelloCard}</td>
+              <td align="right">{to-15mou}</td>
+              <!--/OtherSportClear-->
+              <td align="right">{to-overall}</td>
+
+              
+
+              <td align="right">{m-ht1x2}</td>
+              <td align="right">{m-1x2}</td>
+              <!--OtherSportClear-->
+              <td align="right">{m-ng}</td>
+              <!--/OtherSportClear-->
+              <td align="right">{m-hthdp}</td>
+              <td align="right">{m-hdp}</td>
+              <td align="right">{m-htou}</td>
+              <td align="right">{m-ou}</td>
+              <!--OtherSportClear-->
+              <td align="right">{m-1stcorner}</td>
+              <td align="right">{m-corner}</td>
+              <td align="right">{m-1stYelloCard}</td>
+              <td align="right">{m-YelloCard}</td>
+              <td align="right">{m-15mou}</td>
+              <!--/OtherSportClear-->
+              <td align="right">{m-overall}</td>
+
+              <td align="right">{comm-ht1x2}</td>
+              <td align="right">{comm-1x2}</td>
+              <!--OtherSportClear-->
+              <td align="right">{comm-ng}</td>
+              <!--/OtherSportClear-->
+              <td align="right">{comm-hthdp}</td>
+              <td align="right">{comm-hdp}</td>
+              <td align="right">{comm-htou}</td>
+              <td align="right">{comm-ou}</td>
+              <!--OtherSportClear-->
+              <td align="right">{comm-1stcorner}</td>
+              <td align="right">{comm-corner}</td>
+              <td align="right">{comm-1stYelloCard}</td>
+              <td align="right">{comm-YelloCard}</td>
+              <td align="right">{comm-15mou}</td>
+              <!--/OtherSportClear-->
+              <td align="right">{comm-overall}</td>
+
+              <td></td>
+            </tr>
+            <!--not-excel-export--></tfoot><!--/not-excel-export-->
+            <!--/trader-grand-total-->
+            
+            
+            <!--/ReportContent-->
+        
+    </table>
+
+<!--/Content-->

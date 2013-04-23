@@ -1,0 +1,41 @@
+<div>
+  <form id="frmBill">  
+  <table style="width:100%" class="tblcollapse">    
+    <tr class="title1 c">        
+        <td colspan="7">LEAGUE:&nbsp;{leaguename}</td>
+    </tr>
+    <tr class="title">
+      <td width="100" >CODE</td>
+      <td width="90" >KICK-OFF TIME</td>
+      <td >TEAM</td>     
+      <td width="80" >Final Score</td>
+    </tr>
+    <tr >
+      <td rowspan="2">{matchcode}</td>
+      <td rowspan="2">{date}</td>
+      <td class="b l ht">{hometeam}</td>      
+      <td><input type="text" id="homeF" name="homeF" size="9" class="c txth13 ftsc" onkeypress="return OnKP(event, this);" value="{homeFScore}"/></td>                
+    </tr> 
+    <tr >      
+      <td class="b l ht">{awayteam}</td>
+      <td><input type="text" id="awayF" name="awayF" size="9" class="c txth13 ftsc" onkeypress="return OnKP(event, this);" value="{awayFScore}"/></td>                
+    </tr>      
+  </table> 
+  <input type="hidden" id="sParams" name="sParams" value="{params}" />  
+  <input type="hidden" id="sAction" name="sAction" />
+  </form>
+  <br/>  
+  <!--CalcRead--><input type="button" class="btn" style="width: 100px;" id="btnSubmit" disabled="disabled" value="{btnSubmitValue}" /><!--/CalcRead--><!--CalcHost--><input type="button" class="btn" style="width: 100px;" id="btnSubmit" value="{btnSubmitValue}" onclick="DoCalculate('{type}');"/><!--/CalcHost-->
+  <!--Unsettle-->
+  <!--UnSeRead-->
+  <input type="button" class="btn" style="width: 100px;" id="btnSubmit_1"  value="Unsettle" disabled="disabled" /><!--/UnSeRead--><!--UnSeHost--><input type="button" class="btn" style="width: 100px;" id="btnSubmit_1" {disableUS} value="Unsettle" onclick="DoCalculate('unsettle');"/><!--/UnSeHost-->
+  <!--/Unsettle-->
+  <span style="padding-left: 30px; display:none;" id="errMsg" class="error-message">Please input valid score!</span>
+  <!--RefundBlock-->
+  <br />
+  <br />      
+  <input type="button" class="btn" style="width: 180px;" value="REFUND/CANCEL" onclick="DoCalculate('refund');"/>      
+  <br />
+  <input type="button" class="btn" style="width: 180px;" value="REFUND FULLTIME" onclick="DoCalculate('refundfulltime');"/>            
+  <!--/RefundBlock-->  
+</div>

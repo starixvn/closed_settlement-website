@@ -1,0 +1,231 @@
+<style type="text/css">
+  .report-title{
+  display:none;
+  }  
+</style>
+<center>
+<table width="940px"  border="0" cellSpacing="1" cellPadding="1" class="txtnormal">
+	<tr>
+		<td colspan="2">{accinfo}</td>
+	</tr>
+  <tr>	
+		<td colspan="2" class="left">
+			<input type='checkbox' id="chkCopyAll" onclick="CopyAllPT(this);" name="chkCopyAll"></input><b><span style="cursor:pointer;" onclick="obj('chkCopyAll').click();">{copy-all-text}</span></b>
+		</td>
+	</tr>
+  
+	<tr>
+    <td width="30%" id="linkSoccer" onclick="OpenPanelEdit('panelSoccer', 'soccerId');">
+      <table  cellSpacing="0" cellPadding="0">
+        <tr id="btntop"  style="cursor:pointer" class="pt-bgheader">
+          <td>
+            <div class="ic-soccer"></div>
+          </td>
+          <td class="pt-textbettype" align="left">{soccer-text}</td>
+          <td>
+            <div class="ic-pthide" id="soccerId"></div>
+          </td>
+        </tr>
+      </table>
+    </td>
+		<td width="70%" class="left">
+			<span class="errMsg" id="error1"></span>
+		</td>
+	</tr>  
+	<tr id="panelSoccer">
+		<td colspan="2" class="left">{soccerPT}</td>
+	</tr>
+	<tr>	
+		<td colspan="2" class="left"><br>
+			<input type='checkbox' id="chkCopyBasket" onclick="CopyBasketPT(this);" name="chkCopyBasket"></input><b><span style="cursor:pointer;" onclick="obj('chkCopyBasket').click();">{copy-basket-text}</span></b>
+		</td>
+	</tr>  
+	<tr>
+    <td id="linkBasket" onclick="OpenPanelEdit('panelBasket', 'basketId');">
+      <table  cellSpacing="0" cellPadding="0">
+        <tr id="btntop"  style="cursor:pointer" class="pt-bgheader">
+          <td>
+            <div class="ic-basket"></div>
+          </td>
+          <td class="pt-textbettype" align="left">{basket-text}</td>
+          <td>
+            <div class="ic-ptshow" id="basketId"></div>
+          </td>
+        </tr>
+      </table>
+    </td>
+    <td class="left">
+			<span class="errMsg" id="error2"></span>
+		</td>
+	</tr>
+	<tr style="display:none" id="panelBasket">
+		<td colspan="2" class="left">{basketPT}</td>
+	</tr>
+	<tr>
+    <td id="linkFootball" onclick="OpenPanelEdit('panelFootball', 'footbalId');">
+      <table  cellSpacing="0" cellPadding="0">
+        <tr id="btntop"  style="cursor:pointer" class="pt-bgheader">
+          <td>
+            <div class="ic-football"></div>
+          </td>
+          <td class="pt-textbettype" align="left">{football-text}</td>
+          <td>
+            <div class="ic-ptshow" id="footbalId"></div>
+          </td>
+        </tr>
+      </table>
+    </td>
+    <td class="left">
+			<span class="errMsg" id="error3"></span>
+		</td>
+	</tr>
+	<tr style="display:none" id="panelFootball">
+		<td colspan="2" class="left">{footballPT}</td>
+	</tr>
+	<tr>
+    <td id="linkTennis" onclick="OpenPanelEdit('panelTennis', 'tennisId');">
+      <table  cellSpacing="0" cellPadding="0">
+        <tr id="btntop"  style="cursor:pointer" class="pt-bgheader">
+          <td>
+            <div class="ic-tennis"></div>
+          </td>
+          <td class="pt-textbettype" align="left">{tennis-text}</td>
+          <td>
+            <div class="ic-ptshow" id="tennisId"></div>
+          </td>
+        </tr>
+      </table>
+    </td>
+    <td class="left">
+			<span class="errMsg" id="error5"></span>
+		</td>
+	</tr>
+	<tr style="display:none" id="panelTennis">
+		<td colspan="2" class="left">{tennisPT}</td>
+	</tr>
+	<tr>
+    <td id="linkBaseball" onclick="OpenPanelEdit('panelBaseball', 'baseballId');">
+      <table  cellSpacing="0" cellPadding="0">
+        <tr id="btntop"  style="cursor:pointer" class="pt-bgheader">
+          <td>
+            <div class="ic-baseball"></div>
+          </td>
+          <td class="pt-textbettype" align="left">{baseball-text}</td>
+          <td>
+            <div class="ic-ptshow" id="baseballId"></div>
+          </td>
+        </tr>
+      </table>
+    </td>
+    <td width="80%" class="left">
+      <span class="errMsg" id="error8"></span>
+    </td>
+	</tr>
+	<tr style="display:none" id="panelBaseball">
+		<td colspan="2" class="left">{baseballPT}</td>
+	</tr>
+	<tr>
+    <td id="linkGolf" onclick="OpenPanelEdit('panelGolf', 'golfId');">
+      <table  cellSpacing="0" cellPadding="0">
+        <tr id="btntop"  style="cursor:pointer" class="pt-bgheader">
+          <td>
+            <div class="ic-golf"></div>
+          </td>
+          <td class="pt-textbettype" align="left">{golf-text}</td>
+          <td>
+            <div class="ic-ptshow" id="golfId"></div>
+          </td>
+        </tr>
+      </table>
+    </td>
+    <td class="left">
+			<span class="errMsg" id="error10"></span>
+		</td>
+	</tr>
+	<tr style="display:none" id="panelGolf">
+		<td colspan="2" class="left">{golfPT}</td>
+	</tr>
+	<tr>
+    <td id="linkMoto" onclick="OpenPanelEdit('panelMoto', 'motoId');">
+      <table  cellSpacing="0" cellPadding="0">
+        <tr id="btntop"  style="cursor:pointer" class="pt-bgheader">
+          <td>
+            <div class="ic-moto"></div>
+          </td>
+          <td class="pt-textbettype" align="left">{moto-text}</td>
+          <td>
+            <div class="ic-ptshow" id="motoId"></div>
+          </td>
+        </tr>
+      </table>
+    </td>
+    <td class="left">
+			<span class="errMsg" id="error11"></span>
+		</td>
+	</tr>
+	<tr style="display:none" id="panelMoto">
+		<td colspan="2" class="left">{motoPT}</td>
+	</tr> 
+  <tr>
+    <td id="linkFinancial" onclick="OpenPanelEdit('panelFinancial', 'financialId');">
+      <table  cellSpacing="0" cellPadding="0">
+        <tr id="btntop"  style="cursor:pointer" class="pt-bgheader">
+          <td>
+            <div class="ic-financial"></div>
+          </td>
+          <td class="pt-textbettype" align="left">{Financial-text}</td>
+          <td>
+            <div class="ic-ptshow" id="financialId"></div>
+          </td>
+        </tr>
+      </table>
+    </td>
+    <td class="left">
+      <span class="errMsg" id="error12"></span>
+    </td>
+  </tr>
+  <tr style="display:none" id="panelFinancial">
+    <td colspan="2" class="left">{FinancialPT}</td>
+  </tr>  
+	<tr>
+    <td id="linkOther" onclick="OpenPanelEdit('panelOtherSports', 'othersportsId');">
+      <table  cellSpacing="0" cellPadding="0">
+        <tr id="btntop"  style="cursor:pointer" class="pt-bgheader">
+          <td>
+            <div class="ic-othersports"></div>
+          </td>
+          <td class="pt-textbettype" align="left">{othersports-text}</td>
+          <td>
+            <div class="ic-ptshow" id="othersportsId"></div>
+          </td>
+        </tr>
+      </table>
+    </td>
+    <td class="left">
+			<span class="errMsg" id="error99"></span>
+		</td>
+	</tr>
+	<tr style="display:none" id="panelOtherSports">
+		<td colspan="2" class="left">{otherPT}</td>
+	</tr>
+	<tr>
+    <td class="l">
+      <table>
+        <tr>
+          <td>            
+            <input style="width:120px;" type="button" name="btnUpdateMinMax" value="Update Min/Max Bet" id="btnUpdateMinMax" class="btn" onclick="UpdateMinMax();"/>
+            <input style="width:150px;" type="button" name="btnUpdatePostion" value="Update Position Taking" id="btnUpdatePostion" class="btn" onclick="UpdatePT();"/>
+            <input style="width:120px;" type="button" name="btnUpdateAll" value="Update All" id="btnUpdateAll" class="btn" onclick="UpdateAll();"/>
+          </td>
+          <td></td>
+        </tr>
+      </table>
+    </td>
+		<td style="text-align:left">
+			<div id="inProgressBar" style='display:none'>
+				Processing
+			</div>
+		</td>
+	</tr>
+</table>
+</center>

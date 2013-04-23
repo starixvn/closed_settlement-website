@@ -1,0 +1,155 @@
+<table width="94%" class="tblSporttypePT">	
+	<tr>
+		<td>
+			<div id="divUpdPT1" name="divUpdPT1">
+				<table class="tbllayout" width="100%">
+          <!--no-header-->
+          <tr class="title">
+            <td colspan="{col-title}">{pt-text}</td>
+          </tr>
+          <!--/no-header-->
+          {bettype-header}
+          <tr>
+						<td rowspan="{dead-row}">{deadball-text}</td>
+						<!--none-Multi-->						
+						<!--none-edit-min-->
+						<td class="r">{a-presetpt-text}</td>
+						<td>{a-hdp-val}</td>
+						<td>{a-ou-val}</td>
+						<td>{a-1sthdp-val}</td>
+						<td>{a-1stou-val}</td>
+						<td>{a-oe-val}</td>
+						<td>{a-1x2-val}</td>
+						<td>{a-cs-val}</td>
+						<td>{a-tg-val}</td>
+						<td>{a-mp-val}</td>
+						<td>{a-or-val}</td>
+					</tr>	
+					<!--none-Master-->				
+					<tr>			
+						<td class="r">{master-text}</td>
+						<td>{m-hdp-val}</td>
+						<td>{m-ou-val}</td>
+						<td>{m-1sthdp-val}</td>
+						<td>{m-1stou-val}</td>
+						<td>{m-oe-val}</td>
+						<td>{m-1x2-val}</td>
+						<td>{m-cs-val}</td>
+						<td>{m-tg-val}</td>
+						<td>{m-mp-val}</td>
+						<td>{m-or-val}</td>
+					</tr>	
+					<!--/none-Master-->									
+					<tr>					
+					<!--/none-Multi-->		
+						<td class="r">{p-presetpt-text}</td><!--/none-edit-min-->
+						<td>{p-hdp-val}{p-hdp-btn}</td>
+						<td>{p-ou-val}</td>
+						<td>{p-1sthdp-val}</td>
+						<td>{p-1stou-val}</td>
+						<td>{p-oe-val}</td>
+						<td>{p-1x2-val}{p-1x2-btn}</td>
+						<td>{p-cs-val}</td>
+						<td>{p-tg-val}</td>
+						<td>{p-mp-val}</td>
+						<td>{p-or-val}</td>
+					</tr>
+					<!--none-Master-->									
+					<tr>
+						<!--none-edit-min-->	
+						<td rowspan="2" class="r">{au-presetpt-text}</td>
+						<td><input type="checkbox" id="chkAuto1HdpD" name="chkAuto1HdpD" {checked-Hdp} onclick="CheckAutoPreset(this)"></input></td>
+						<td><input type="checkbox" id="chkAuto1OUD" name="chkAuto1OUD" {checked-OU} onclick="CheckAutoPreset(this,'chkCopy1HdpDeadball')"></input></td>
+						<td><input type="checkbox" id="chkAuto11stHdpD" name="chkAuto11stHdpD" {checked-1stHdp} onclick="CheckAutoPreset(this,'chkCopy1HdpDeadball')"></input></td>
+						<td><input type="checkbox" id="chkAuto11stOUD" name="chkAuto11stOUD" {checked-1stOU} onclick="CheckAutoPreset(this,'chkCopy1HdpDeadball')"></input></td>
+						<td><input type="checkbox" id="chkAuto1OE" name="chkAuto1OE" {checked-OE} onclick="CheckAutoPreset(this,'chkCopy1HdpDeadball')"></input></td>
+						<td><input type="checkbox" id="chkAuto11x2" name="chkAuto11x2" {checked-1x2} onclick="CheckAutoPreset(this)"></input></td>
+						<td><input type="checkbox" id="chkAuto1CS" name="chkAuto1CS" {checked-CS} onclick="CheckAutoPreset(this,'chkCopy11x2')"></input></td>
+						<td><input type="checkbox" id="chkAuto1TG" name="chkAuto1TG" {checked-TG} onclick="CheckAutoPreset(this,'chkCopy11x2')"></input></td>
+						<td><input type="checkbox" id="chkAuto1MP" name="chkAuto1MP" {checked-MP} onclick="CheckAutoPreset(this,'chkCopy11x2')"></input></td>
+						<td><input type="checkbox" id="chkAuto1OR" name="chkAuto1OR" {checked-OR} onclick="CheckAutoPreset(this,'chkCopy11x2')"></input></td>	
+					</tr>
+					<tr>
+						<td>{au-hdp-val}{au-hdp-btn}</td>
+						<td>{au-ou-val}</td>
+						<td>{au-1sthdp-val}</td>
+						<td>{au-1stou-val}</td>
+						<td>{au-oe-val}</td>
+						<td>{au-1x2-val}{au-1x2-btn}</td>
+						<td>{au-cs-val}</td>
+						<td>{au-tg-val}</td>
+						<td>{au-mp-val}</td>
+						<td>{au-or-val}</td>
+					</tr>
+					<!--/none-Master-->									
+					<tr>
+						<td></td><!--/none-edit-min-->	
+						<td colspan="5" class="l">
+							<!--limit-CopyHdp-->
+							<input type="checkbox" {chk-hdpd} id="chkCopy1HdpDeadball" name="chkCopy1HdpDeadball" onclick="CheckCopyPT(this,arr1Super1);"></input>
+							{copy-hdp-text}
+							<!--/limit-CopyHdp-->
+						</td>
+						<td colspan="5" class="l">
+							<!--limit-Copy1x2-->
+							<input type="checkbox" {chk-1x2} id="chkCopy11x2" name="chkCopy11x2" onclick="CheckCopyPT(this,arr2Super1);"></input>
+							{copy-1x2-text}
+							<!--/limit-Copy1x2-->
+						</td>
+					</tr>									
+					<tr>
+						<td rowspan="{live-row}">{live-text}</td>
+						<!--none-Multi-->	
+						<!--none-edit-min-->					
+						<td class="r">{a-preset-live}</td>
+						<td>{a-Lhdp-val}</td>
+						<td>{a-Lou-val}</td>
+						<td>{a-L1stHdp-val}</td>
+						<td>{a-L1stou-val}</td>		 
+						<td colspan="6" rowspan="{cols-live}"></td>				
+					</tr>
+					<!--none-Master-->					
+					<tr>											
+						<td class="r">{master-text}</td>
+						<td>{m-Lhdp-val}</td>
+						<td>{m-Lou-val}</td>
+						<td>{m-L1stHdp-val}</td>
+						<td>{m-L1stou-val}</td>								
+					</tr>
+					<!--/none-Master-->										
+					<tr>	
+					<!--/none-Multi-->							
+						<td class="r">{p-preset-live}</td><!--/none-edit-min-->			
+						<td>{p-Lhdp-val}{p-Lhdp-btn}</td>
+						<td>{p-Lou-val}</td>
+						<td>{p-L1stHdp-val}</td>
+						<td>{p-L1stou-val}</td>	
+						<td colspan="6" rowspan="{copy-live-col}" class="l">
+							<!--limit-CopyHdpL-->
+							<input type="checkbox" {chk-hdpl} id="chkCopy1HdpLive" name="chkCopy1HdpLive" onclick="CheckCopyPT(this,arr3Super1);"></input>
+							{copy-hdp-text}
+							<!--/limit-CopyHdpL-->
+						</td>				
+					</tr>		
+					<!--none-Master-->	
+					<!--none-edit-min-->		
+					<tr>		
+						<td rowspan="2" class="r">{au-preset-live}</td>
+						<td><input type="checkbox" onclick="CheckAutoPreset(this)" id="chkAuto1HdpL" name="chkAuto1HdpL" {checked-LHdp}></input></td>
+						<td><input type="checkbox" onclick="CheckAutoPreset(this,'chkCopy1HdpLive')" id="chkAuto1OUL" name="chkAuto1OUL" {checked-LOU}></input></td>
+						<td><input type="checkbox" onclick="CheckAutoPreset(this,'chkCopy1HdpLive')" id="chkAuto11stHdpL" name="chkAuto11stHdpL" {checked-L1stHdp}></input></td>
+						<td><input type="checkbox" onclick="CheckAutoPreset(this,'chkCopy1HdpLive')" id="chkAuto11stOUL" name="chkAuto11stOUL" {checked-L1stOU}></input></td>					
+					</tr>		
+					<tr>		
+						<td>{au-Lhdp-val}{au-Lhdp-btn}</td>
+						<td>{au-Lou-val}</td>
+						<td>{au-L1stHdp-val}</td>
+						<td>{au-L1stou-val}</td>		
+					</tr>
+					<!--/none-Master-->		
+					<!--/none-edit-min-->				
+				</table>
+			</div>
+		</td>
+	</tr>
+</table>

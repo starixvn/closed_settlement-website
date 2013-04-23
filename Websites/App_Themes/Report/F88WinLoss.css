@@ -1,0 +1,96 @@
+﻿body
+{
+	font-family:Tahoma,Verdana;
+	font-size: 8pt;
+}
+
+tr.r-o
+{
+	background:#F9F9F7;
+	line-height:18px;	
+}
+tr.r-e
+{
+	background:#DFEAFF;
+	line-height:18px;
+}
+
+.img-date-selector 
+{
+	border:0px;
+vertical-align:middle;
+cursor:pointer;
+}
+.txtdate-no-time {
+width:75px;
+vertical-align:middle;
+}
+select,input 
+{
+	font-family:Tahoma,Verdana;
+	font-size: 8pt;
+}
+tr.report-header
+{
+	BACKGROUND: url(../../App_Themes/SteelBlue/Images/report-header-bg.gif) repeat-x top left;
+	color:#fff;
+	font-weight:bold;
+	text-align:center;
+	line-height:18px;
+}
+
+
+.bgcolor-nodata
+{
+	background-color:#fff;
+	text-align:center;
+}
+a
+{
+	color:#0000ff;
+	text-decoration:none;
+}
+a:hover
+{
+	color:#c16605;
+	text-decoration:underline;
+	cursor:pointer;
+}
+table.fxheader  
+{
+	text-align: left;
+	font-size: 8pt;
+	font-family: Tahoma,Verdana;
+	border-right: 1px solid silver;
+}
+
+table.fxheader td {
+	border-left: 1px solid silver;
+	border-bottom: 1px solid silver;
+	white-space: nowrap;
+}
+table.fxheader th {
+	border-left: 1px solid silver;
+	border-bottom: 1px solid silver;
+}
+
+table.fxheader2  
+{
+	text-align: left;
+	font-size: 8pt;
+	font-family: Tahoma,Verdana;
+	background-color:silver;
+    border-collapse:separate;
+}
+.lnk
+{
+	 color:#0000ff;
+	 text-decoration:none;
+	 cursor:pointer; 	
+}
+.lnk:hover
+{
+	color:#c16605;
+	text-decoration:underline;
+	cursor:pointer;
+}

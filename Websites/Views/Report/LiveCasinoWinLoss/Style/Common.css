@@ -1,0 +1,88 @@
+﻿.upCondition {
+    background: url("../../../../App_Themes/images/up.gif") repeat-x scroll left center transparent;
+    width: 15px;
+    height: 15px;
+    float: right;
+    position: absolute;
+    z-index: 100;
+    cursor: pointer;
+}
+.downCondition {
+    background: url("../../../../App_Themes/images/down.gif") repeat-x scroll left center transparent;
+    width: 15px;
+    height: 15px;
+    float: right;
+    position: absolute;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.total td{background-color:#FFEEDD;}
+.negativeNumber {color: red}
+
+div.sorter
+{
+    background-image: url(../../../../App_Themes/images/sorting_bg.gif);
+    background-repeat: no-repeat !important;
+    background-position: center right !important;
+    cursor: pointer;
+}
+
+div.sorter.asc
+{
+    background-image: url(../../../../App_Themes/images/sorting_asc.gif) !important;
+}
+div.sorter.desc
+{
+    background-image: url(../../../../App_Themes/images/sorting_desc.gif) !important;
+}
+
+#tbreportheader td
+{
+    border-bottom: none 0px;
+}
+
+.height
+{
+    height: 18px;
+    overflow: hidden;
+}
+.w220 {
+    width: 220px;
+}
+.w110 {
+    width: 110px;
+}
+
+.w193{
+    width: 193px;
+}
+.text 
+{
+	color: Blue;
+	cursor: pointer;
+}
+
+.text:hover
+{
+	color:Red;
+	cursor: pointer;
+}
+
+.red
+{
+    color: Red;
+}
+
+.btnBack {
+    background: url("../Images/back.png") no-repeat scroll center center transparent;
+    border: 0 solid red;
+    cursor: pointer;
+    font-size: 11px;
+    height: 18px;
+    margin: 0 2px;
+    overflow: visible;
+    padding-left: 6px;
+    padding-right: 6px;
+    width: 18px;
+}

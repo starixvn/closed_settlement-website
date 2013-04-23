@@ -1,0 +1,43 @@
+<div style="width:860px">
+	<table class="tbllayout" cellspacing="1px" border="{border}">
+      <tr class="white">
+        <td style="font-weight:bold;" colspan="8"  class="c">
+          <span id="spBettype">{bettype}</span>
+          Winloss from: <span id="spWLDate">{fdate}</span> to {tdate}
+        </td>
+      </tr>
+      <tr class="title" style="height:20px;">
+        <th width="140">Index</th>
+        <th width="120">Bet Type</th>
+        <th width="100">Turnover</th>
+        <th width="100">WinLoss</th>
+        <th width="100">Commission</th>
+        <th width="100">Net Win/Loss</th>
+        <th width="100">Traders W/L</th>
+        <th width="100">IBC WinLoss</th>
+      </tr>
+      <!--content-->			
+			<tr class="{report-row}" style="text-align:right;">
+        {RowsSpanIndex}
+        <td>{BetType}</td>
+        <td>{Turnover}</td>
+        <td>{WinLoss}</td>
+        <td>{Commission}</td>
+        <td>{NetWinLoss}</td>
+        <td>{BetsForTradersWL}</td>
+        <td>{IBCWinLoss}</td>
+		</tr>
+	 <!--/content-->
+       
+      <!--total-->
+		<tr class="{bgcolor}" style="text-align:right;">
+        <td colspan="2">{TotalIndex}</td>
+        <td>{Turnover}</td>
+        <td>{WinLoss}</td>
+        <td>{Commission}</td>
+        <td>{NetWinLoss}</td>
+        <td>{BetsForTradersWL}</td>
+        <td>{IBCWinLoss}</td>
+			</tr>
+      <!--/total-->
+	</table></div>

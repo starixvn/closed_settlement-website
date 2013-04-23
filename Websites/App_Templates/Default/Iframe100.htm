@@ -1,0 +1,19 @@
+<script type="text/javascript">
+function resize_iframe()
+{
+	var height=window.innerWidth;//Firefox
+	if (document.body.clientHeight)
+	{
+		height=document.body.clientHeight;//IE
+	}
+	//resize the iframe according to the size of the
+	//window (all these should be on the same line)
+	document.getElementById("{FrameId}").style.height=parseInt(height-document.getElementById("{FrameId}").offsetTop+208)+"px";
+	alert(parseInt(height-document.getElementById("{FrameId}").offsetTop+208)+"px");
+}
+
+window.onresize=resize_iframe; 
+</script>
+
+<iframe id="{FrameId}" name="{FrameId}" height="100%" width="100%"  />
+

@@ -1,0 +1,177 @@
+<table class="tblcollapse" style="width:950px;">
+	<!--none-mult-->
+	<tr class="title">
+		<td colspan="4">{title}</td>
+	</tr>
+	<!--none-edit-->
+	<tr>
+		<td width='20%' class="r">{uname-text}</td>
+		<td width='35%' class="l">
+			<input type="text" id="txtUsername" name="txtUsername"/>
+		</td>
+		<td width='20%' class="r">{pwd-text}</td>
+		<TD width='25%' id="td_pass" class="l" nowrap="yes">
+			<input id="txtPwd" style="width:120px" type="password" name="txtPwd"  runat="server"/>
+		</TD>
+	</tr>
+	<!--/none-edit-->
+	<!--none-show-info-user-when-edit-mult-->
+	<tr>
+		<td width='20%' class="r">{fname-text}</td>
+		<td width='35%' class="l">
+			<input type="text" id="txtFName" name="txtFName" value="{fname-val}"/>
+		</td>
+		<td width='20%' class="r">{lname-text}</td>
+		<td width='25%' class="l">
+			<input type="text" id="txtLName" name="txtLName" value="{lname-val}"/>
+		</td>
+	</tr>
+	<tr>
+		<td class="r">{phone-text}</td>
+		<td class="l">
+			<input type="text" id="txtPhone" name="txtPhone" value="{phone-val}"/>
+		</td>
+		<td class="r">{mobile-text}</td>
+		<td class="l">
+			<input type="text" id="txtMobile" name="txtMobile" value="{mobile-val}"/>
+		</td>
+	</tr>
+	<tr>
+		<td class="r">{max-credit-text}</td>
+		<td class="l" nowrap="yes">
+			<input type="text" maxlength="14" style="{disable_color}" {diable_credit} {mouseover_credit} {mouseout_credit} id="txtCredit"  name="txtCredit" value="{credit-val}" onkeypress="return CheckDecNumber(event); " onblur="SetValueMemMaxCredit();"/>
+			<span class="{mpmMin}">
+				&gt;=<span id="txtCreditMin">{credit-min}</span>&nbsp;and
+			</span>
+			<span class="{mpmMax}">
+				&lt;=<span id="txtCreditMax">{credit-max}</span>
+			</span>
+		</td>
+		<td class="r">{fax-text}</td>
+		<td class="l">
+			<input type="text" id="txtFax" name="txtFax" value="{fax-val}"/>
+		</td>
+	</tr>
+	<!--/none-show-info-user-when-edit-mult-->						
+	<!--Member-Max-Credit-->
+	<tr>
+		<!--Member-Max-Credit2-->
+		<td class="r">{member-max-credit}</td>
+		<td class="l">
+			<input type="text" maxlength="14" style="{disable_color}" {diable_credit} {mouseover_credit} {mouseout_credit} id="txtMaxCredit" name="txtMaxCredit" value="{mem-max-credit-val}" onkeypress="return CheckDecNumber(event);" />
+			<!--member-credit-min-->
+			<span class="{mMinCredit}">
+				&gt;=<span id="lblMinCredit">{member-credit-min}</span>&nbsp;and
+			</span>
+			<!--/member-credit-min-->
+			<span class="{mMaxCredit}">
+				&lt;=<span id="lblMaxCredit">{member-credit-max}</span>
+			</span>
+
+			<script type="text/javascript">
+				function SetValueMemMaxCredit()
+				{
+				obj('lblMaxCredit').innerHTML = formatNumber2(ReplaceAll(obj('txtCredit').value, ',', ''));
+				}
+				window.onload = SetValueMemMaxCredit;
+			</script>
+		</td>
+		<!--/Member-Max-Credit2-->
+  <!--colspan-->
+  <td colspan="2"></td>
+  <!--/colspan-->
+	</tr>
+	<!--/Member-Max-Credit-->
+<!--none-add-->
+<tr>
+    <!--none-super-master-->
+    <td class="r">
+      <!--none-group-->{group-text}<!--/none-group-->
+    </td>
+    <td class="l">
+      <!--none-group-->{UGroup}<!--/none-group-->
+    </td>
+    <!--/none-super-master-->
+    <td class="r">
+      {closed-text}
+    </td>
+    <td class="l">
+     {chkClosed}
+      <!--{check-val}-->
+    </td>
+  <!--none-cell-member-->
+  <td class="r">Suspended</td>
+  <td class="l">
+    {chkSuspended}
+  </td>
+  <!--/none-cell-member-->
+
+</tr>
+<!--suspend-member-->
+<tr>
+  <td colspan="2"></td>
+  <td class="r">Suspended</td>
+  <td class="l">
+    <input type="checkbox" value="yes"  id="chkSuspended" name="chkSuspended" {suspend-check} />
+  </td>
+</tr>
+<!--/suspend-member-->
+<!--/none-add-->
+
+	<!--/none-mult-->
+	<!--none-single-->
+	<tr>
+		<td colspan="{cols-untext}">
+			<span id="username"></span>
+		</td>
+	</tr>
+	<!--/none-single-->
+
+	<tr class="title">
+		<!--none-single-->
+		<td width="10%">{status-text}</td>
+		<!--/none-single-->
+		<td colspan="4">
+			{commission-text}
+		</td>
+	</tr>
+	<!--none-super-->
+	<tr>
+		<!--none-single-->
+		<td>
+			<div id="divUpdStatus" name="divUpdStatus">
+				{closed-text}<input type="checkbox" id="chkClosed" {check-val} name="chkClosed"/>
+			</div>
+		</td>
+		<!--/none-single-->
+		<td colspan="4" nowrap class="c">
+			<div id="divUpdComm" name="divUpdComm">
+				<table style="width:100%;">
+					<tr>
+						<td class="c">{groupa-text}&nbsp;<select class="selectcomm" id="groupa" {sel-a} name="groupa">{groupa-val}</select></td>
+						<td class="c">{groupb-text}&nbsp;<select class="selectcomm" id="groupb" {sel-b} name="groupb">{groupb-val}</select></td>
+						<td class="c">{groupc-text}&nbsp;<select class="selectcomm" id="groupc" {sel-c} name="groupc">{groupc-val}</select></td>
+						<td class="c">{groupd-text}&nbsp;<select class="selectcomm" id="groupd" {sel-d} name="groupd">{groupd-val}</select></td>
+						<!--none-1x2-Comm-->
+						<td class="c">
+							{discountcs1x2-text}&nbsp;<select class="selectcomm" id="discountcs1x2" {sel-1x2} name="discountcs1x2">{discountcs1x2-val}</select>
+						</td>
+						<!--/none-1x2-Comm-->
+						<td class="c">{discountcs-text}&nbsp;<select class="selectcomm" id="discountcs" {sel-dis} name="discountcs">{discountcs-val}</select></td>
+						
+					</tr>
+				</table>		
+
+			</div>
+		</td>
+	</tr>
+	<!--/none-super-->
+	<!--none-edit-member-->
+	<tr>
+		<td colspan="4" style="padding:0px;">
+			{NewCommission}
+		</td>
+	</tr>
+	<!--/none-edit-member-->
+</table>
+{tranfer-time}

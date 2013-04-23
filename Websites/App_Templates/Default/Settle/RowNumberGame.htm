@@ -1,0 +1,13 @@
+<tr class="{bgClass}">
+  <td width="100px">{code}<br /><div onclick="ShowSettlementLog('{code}', '{fdate}', '{tdate}');" class="viewhis"></div></td>  
+  <td  width="115">{date}</td>
+  <td align="left"><b>{event}</b></td>
+  <td align="center">{result}</td>
+  <td>{eventstatus}</td>
+  <td {bgcolor_cell_eventstatus}>
+    {Calculation}
+  </td>
+  <td {classrefund} width="60" style="display:none">
+    <!--RefuRead-->Refund<!--/RefuRead--><!--RefuHost--><span {_onclickft}>Refund FT</span>&nbsp;|&nbsp;<span {_onclick}>Refund</span><!--/RefuHost-->
+  </td>
+</tr>

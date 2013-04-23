@@ -1,0 +1,28 @@
+﻿
+.filterSection
+{
+	background-color: #EDECEB;
+    border: 1px solid #DDDDDD;
+    padding: 6px;
+}
+.contentSection
+{
+	  padding: 6px 0;
+	}
+.pageTitle
+{
+	font-size: 16px;
+    font-weight: bold;
+    padding:6px;
+	}
+.pageSubTitle
+{
+	font-size: 14px;
+    font-weight: bold;
+    padding:2px;
+    padding-left:6px;
+}	
+label {
+    color: #666666;
+    font-weight: bold;
+}

@@ -1,0 +1,89 @@
+﻿<span id="errMsg" class="error-message"></span>
+<table id="table" class="tbllayout" cellspacing="1px">
+    <thead>
+        <tr class="title">
+            <th colspan="4">
+            </th>
+            <th colspan="5">
+                Open Tote Rate
+            </th>
+            <th style="width: 70px">
+             
+            </th>
+        </tr>
+        <tr id="trHeader" class="title">
+            <th style="width: 70px">
+                Currency
+            </th>
+            <th style="width: 80px;">
+                Base Rate
+            </th>
+            <th style="width: 80px">
+                Min Bet
+            </th>
+            <th style="width: 80px">
+                Min Bet Live
+            </th>
+            <th style="width: 70px">
+                GBP
+            </th>
+            <th style="width: 70px">
+                AUD
+            </th>
+            <th style="width: 70px">
+                ZAR
+            </th>
+            <th style="width: 70px">
+                EURO
+            </th>
+            <th style="width: 70px">
+                US$
+            </th>
+            <th style="width: 70px">
+                Edit
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <!--Content-->
+        <tr class="{odd_even}">
+            <td>
+                {currency}
+            </td>
+            <td class="r">
+                {BaseRate}
+            </td>
+            <td class="r">
+                {MinBet}
+            </td>
+            <td class="r">
+                {MinBetLive}
+            </td>
+            <td class="r new-rate-{odd_even}">
+                {GBPRate}
+            </td>
+            <td class="r new-rate-{odd_even}">
+                {AUDRate}
+            </td>
+            <td class="r new-rate-{odd_even}">
+                {ZARRate}
+            </td>
+            <td class="r new-rate-{odd_even}">
+                {EURORate}
+            </td>
+            <td class="r new-rate-{odd_even}">
+                {USDRate}
+            </td>
+            <td align="center">
+                <div onclick="return UpdateExChangeRate({exrateId})" title="Edit" class="divEdit"
+                    style="display: {edit-none}">
+                </div>
+            </td>
+        </tr>
+        <!--/Content-->
+        <tr id="trFooter" style="display: none">
+            <td colspan="8">
+            </td>
+        </tr>
+    </tbody>
+</table>

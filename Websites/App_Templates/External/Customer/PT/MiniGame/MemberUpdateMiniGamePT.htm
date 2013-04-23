@@ -1,0 +1,40 @@
+﻿{#template MAIN} {#include MemberPT root= $T} {#/template MAIN} {#template MemberPT}
+<table class="tblcollapse" style="width: 600px;margin:6px 0px;" id="tblminigame">
+    <!--PT-->
+    <tr class="title">
+        <td colspan="2">
+            Position Taking
+        </td>
+    </tr>
+    <!--Agent Preset PT -->
+    <tr>
+        <td class="l w130">
+            Agent Preset Position
+        </td>
+        <td>
+            <select id="listAPre252" max="{roundNumber($T.maxapt,2)}" min="{roundNumber($T.minapt,2)}" name="listAPre252"
+                class="select-pt">
+                <option value="{roundNumber($T.apt,2)}" selected="true">{roundNumber($T.apt,2)}</option>
+            </select>
+            <input type="button" onclick="ReducePT('listAPre252',1)" class="btn-dec1" value=" "
+                name="btnReduce1">
+            <input type="button" onclick="IncreasePT('listAPre252',1)" class="btn-inc1" value=" "
+                name="btnIncrease1">
+            <input type="button" onclick="ReducePT('listAPre252',10)" class="btn-dec10" value=" "
+                name="btnReduce10">
+            <input type="button" onclick="IncreasePT('listAPre252',10)" class="btn-inc10" value=" "
+                name="btnIncrease10">
+        </td>
+    </tr>
+    <!--/Agent Preset PT -->
+</table>
+<table cellspacing="0" cellpadding="0" border="0">
+    <tr>
+        <td class="custBtn1">
+        </td>
+        <td onclick="updateMember();" class="custBtn2 hand" id="Td1">
+            Submit
+        </td>
+    </tr>
+</table>
+{#/template MemberPT} 

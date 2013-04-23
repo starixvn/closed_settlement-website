@@ -1,0 +1,127 @@
+<div>
+<form id="frmBill">      
+      <table class="tblcollapse">    
+        <tr class="title1 c">         
+            <td colspan="15">LEAGUE:&nbsp;{leaguename}</td>
+        </tr>
+        <tr class="title">
+          <td width="80" >CODE</td>
+          <td width="85" >KICK-OFF TIME</td>
+          <td width="250">TEAM</td>
+          <td width="22" >1</td>
+          <td width="22" >2</td>
+          <td width="22" >3</td>
+          <td width="22" >4</td>
+          <td width="22" >5</td> 
+          <td width="22" >6</td>
+          <td width="22" >7</td>
+          <td width="22" >8</td>
+          <td width="22" >9</td>  
+          <td width="22" >E.I</td>   
+          <td width="36" >HT Score</td>
+          <th width="36" >Final Score</th>
+        </tr>
+        <tr >
+          <td rowspan="2">{matchcode}</td>
+          <td rowspan="2">{date}</td>
+          <td class="b l ht" nowrap>{hometeam}</td>
+          <td><input type="text" id="txt1Home" name="txt1Home" tabindex="1" size="1" class="c txth13" value="{value1Home}" onkeypress="return OnKP(event, this);" onkeyup="OnKUBaseBall();"/></td>
+          <td><input type="text" id="txt2Home" name="txt2Home" tabindex="3" size="1" class="c txth13" value="{value2Home}" onkeypress="return OnKP(event, this);" onkeyup="OnKUBaseBall();"/></td> 
+          <td><input type="text" id="txt3Home" name="txt3Home" tabindex="5" size="1" class="c txth13" value="{value3Home}" onkeypress="return OnKP(event, this);" onkeyup="OnKUBaseBall();"/></td>      
+          <td><input type="text" id="txt4Home" name="txt4Home" tabindex="7" size="1" class="c txth13" value="{value4Home}" onkeypress="return OnKP(event, this);" onkeyup="OnKUBaseBall();"/></td>      
+          <td><input type="text" id="txt5Home" name="txt5Home" tabindex="9" size="1" class="c txth13" value="{value5Home}" onkeypress="return OnKP(event, this);" onkeyup="OnKUBaseBall();"/></td>      
+          <td><input type="text" id="txt6Home" name="txt6Home" tabindex="11" size="1" class="c txth13" value="{value6Home}" onkeypress="return OnKP(event, this);" onkeyup="OnKUBaseBall();"/></td>      
+          <td><input type="text" id="txt7Home" name="txt7Home" tabindex="13" size="1" class="c txth13" value="{value7Home}" onkeypress="return OnKP(event, this);" onkeyup="OnKUBaseBall();"/></td>      
+          <td><input type="text" id="txt8Home" name="txt8Home" tabindex="15" size="1" class="c txth13" value="{value8Home}" onkeypress="return OnKP(event, this);" onkeyup="OnKUBaseBall();"/></td>      
+          <td><input type="text" id="txt9Home" name="txt9Home" tabindex="17" size="1" class="c txth13" value="{value9Home}" onkeypress="return OnKP(event, this);" onkeyup="OnKUBaseBall();"/></td>      
+          <td><input type="text" id="txtEIHome" name="txtEIHome" tabindex="19" size="1" class="c txth13" value="{valueEIHome}" onkeypress="return OnKP(event, this);" onkeyup="OnKUBaseBall();"/></td>      
+          <td><input type="text" id="homeH" name="homeH" size="3" class="c txth13 htsc" value="{homeHScore}" disabled="disabled" onkeypress="return OnKP(event, this);" /></td>                
+          <td><input type="text" id="homeF" name="homeF" size="3" class="c txth13 ftsc" value="{homeFScore}" disabled="disabled" onkeypress="return OnKP(event, this);" /></td>                
+        </tr> 
+        <tr >      
+          <td class="b l at" nowrap>{awayteam}</td>
+          <td><input type="text" id="txt1Away" name="txt1Away" tabindex="2" size="1" class="c txth13" value="{value1Away}" onkeypress="return OnKP(event, this);" onkeyup="OnKUBaseBall();"/></td>
+          <td><input type="text" id="txt2Away" name="txt2Away" tabindex="4" size="1" class="c txth13" value="{value2Away}" onkeypress="return OnKP(event, this);" onkeyup="OnKUBaseBall();"/></td> 
+          <td><input type="text" id="txt3Away" name="txt3Away" tabindex="6" size="1" class="c txth13" value="{value3Away}" onkeypress="return OnKP(event, this);" onkeyup="OnKUBaseBall();"/></td>
+          <td><input type="text" id="txt4Away" name="txt4Away" tabindex="8" size="1" class="c txth13" value="{value4Away}" onkeypress="return OnKP(event, this);" onkeyup="OnKUBaseBall();"/></td>      
+          <td><input type="text" id="txt5Away" name="txt5Away" tabindex="10" size="1" class="c txth13" value="{value5Away}" onkeypress="return OnKP(event, this);" onkeyup="OnKUBaseBall();"/></td>      
+          <td><input type="text" id="txt6Away" name="txt6Away" tabindex="12" size="1" class="c txth13" value="{value6Away}" onkeypress="return OnKP(event, this);" onkeyup="OnKUBaseBall();"/></td>      
+          <td><input type="text" id="txt7Away" name="txt7Away" tabindex="14" size="1" class="c txth13" value="{value7Away}" onkeypress="return OnKP(event, this);" onkeyup="OnKUBaseBall();"/></td>      
+          <td><input type="text" id="txt8Away" name="txt8Away" tabindex="16" size="1" class="c txth13" value="{value8Away}" onkeypress="return OnKP(event, this);" onkeyup="OnKUBaseBall();"/></td>      
+          <td><input type="text" id="txt9Away" name="txt9Away" tabindex="18" size="1" class="c txth13" value="{value9Away}" onkeypress="return OnKP(event, this);" onkeyup="OnKUBaseBall();"/></td>      
+          <td><input type="text" id="txtEIAway" name="txtEIAway" tabindex="20" size="1" class="c txth13" value="{valueEIAway}" onkeypress="return OnKP(event, this);" onkeyup="OnKUBaseBall();"/></td>      
+          <td><input type="text" id="awayH" name="awayH" size="3" class="c txth13 htsc" value="{awayHScore}" disabled="disabled" onkeypress="return OnKP(event, this);" /></td>                
+          <td><input type="text" id="awayF" name="awayF" size="3" class="c txth13 ftsc" value="{awayFScore}" disabled="disabled" onkeypress="return OnKP(event, this);" /></td>                
+        </tr>      
+        <tr>
+			  <td colspan="15" align="right">
+				  <span style="float:right;">
+					  <input type="checkbox" id="scoreDirect" name="scoreDirect" value="1"  onclick="ChangeInputWay(this);"></input> Input HT Score and Final Score directly&nbsp;&nbsp;
+				  </span>
+			  </td>  
+		  </tr>  
+      </table>
+       <!--RefundBlock-->
+      <table class="tbllayout c" style="margin-top: 5px;" cellspacing="1">
+          <tr>
+            <td width="82" class="l" style="color: #41586A; font-weight: bold;">First Half</td>
+            <td width="90" {HTbgcolor}>{HTStatus}</td>
+            <td width="207">
+              <!--CalcRead-->
+              <input type="button" class="btn" style="width:120px;" id="btnSubmit1" name="btnSubmit1" disabled="disabled" value="Calculate HT"/>
+              <!--/CalcRead-->
+              <!--CaclHost-->
+              <input type="button" class="btn" style="width:120px;" id="btnSubmit1" name="btnSubmit1" value="Calculate HT" onclick="DoCalculate('bill','HT');"/>
+              <!--/CaclHost-->
+            </td>
+            <td style="vertical-align:bottom;" rowspan="3">
+              <!--UnSeRead-->
+              <input type="button" style="width: 120px;" class="btn" id="btnSubmit_4" name="btnSubmit_4" disabled="disabled" value="Unsettle" />
+              <!--/UnSeRead-->
+              <!--UnSeHost-->
+              <input type="button" class="btn" style="width: 120px;" id="btnSubmit_4" name="btnSubmit_4" {disableUS} value="Unsettle" onclick="DoCalculate('unsettle');" />
+              <!--/UnSeHost-->
+            </td>
+          </tr> 
+          <tr>
+            <td class="l" style="color: #41586A; font-weight: bold;">Full Time</td>
+            <td width="90" {FTbgcolor} >{FTStatus}</td>
+            <td>
+              <!--CalcRead-->
+              <input type="button" class="btn" style="width:120px;" id="btnSubmit2" name="btnSubmit2" disabled="disabled"  value="Calculate FT" />
+              <!--/CalcRead-->
+              <!--CaclHost-->
+              <input type="button" class="btn" style="width:120px;" id="btnSubmit2" name="btnSubmit2" {disableFTCal} value="Calculate FT" onclick="DoCalculate('bill','FT');"/>
+              <!--/CaclHost-->
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2"  class="l" style="color: #41586A; font-weight: bold;">
+            </td>
+            <td class="b">          
+              <!--CalcAllRead-->
+              <input type="button" class="btn" style="width: 120px; font-weight: bold;" id="btnSubmit" name="btnSubmit" disabled="disabled" value="Calculate ALL" />
+              <!--/CalcAllRead-->
+              <!--CalcAllHost-->
+              <input type="button" class="btn" style="width: 120px; font-weight: bold;" id="btnSubmit" name="btnSubmit" {disableFT} value="Calculate ALL" onclick="DoCalculate('bill');"/>
+              <!--/CalcAllHost-->                
+            </td>
+          </tr>
+    </table>
+    <!--/RefundBlock-->  
+    <!--KeyScore-->
+    <!--CalcRead-->
+    <input type="button" class="btn" style="width: 100px;" id="btnReadKeyScore" name="btnReadKeyScore" value="KEY SCORE" disabled="disabled"/>
+    <!--/CalcRead-->
+    <!--CaclHost-->
+    <input type="button" class="btn" style="width: 100px;" id="btnKeyScore" name="btnKeyScore" value="KEY SCORE" onclick="DoCalculate('keyscore');"/>
+    <!--/CaclHost-->
+    <!--/KeyScore-->
+  
+    <br/>   
+    <span style="padding-left: 30px; display:none;" id="errMsg" class="error-message">Please input valid score!</span>  
+    <input type="hidden" id="sParams" name="sParams" value="{params}" />  
+    <input type="hidden" id="sAction" name="sAction" />
+    <input type="hidden" id="isSD" name="isSD" value="0" />
+  </form>
+</div>

@@ -1,0 +1,28 @@
+﻿<table class="noneborder" width="100%" cellpadding="0" cellspacing="0">   
+    <tr>
+      <td class="c">
+        Min Bet 
+        <input type="text" value="{minbetvalue}" name="txtMinbet201" id="txtMinbet201" onkeypress="return AllowNumber(event)" maxlength="14"/>
+        <span class="minmaxbet {hide1}">
+          >=<span id="txtMinbet_Min201">{minbet-min}</span>
+        </span>
+      </td>
+      <td class="c">
+        Max Bet 
+        <input type="text" value="{maxbetvalue}" name="txtMaxbet201" id="txtMaxbet201" onkeypress="return AllowNumber(event)" maxlength="14"/>
+        <span class="minmaxbet {hide2}">
+          <=<span id="txtMaxbet_Max201">{maxbet-max}</span>
+        </span>
+      </td>
+      <td class="c">
+        Max Per Match 
+        <input type="text" value="{maxpermatchvalue}" name="txtMaxPerMatch201" id="txtMaxPerMatch201" onkeypress="return AllowNumber(event)" maxlength="14"/>
+        <span class="minmaxbet hide">
+          >=<span id="txtMaxPerMatch_Min201">{maxpermatch-min}</span> and
+        </span>
+        <span class="minmaxbet {hide3}">
+          <=<span id="txtMaxPerMatch_Max201">{maxpermatch-max}</span>
+        </span>
+      </td>
+    </tr>
+ </table>

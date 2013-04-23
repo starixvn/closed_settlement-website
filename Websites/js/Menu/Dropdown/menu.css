@@ -1,0 +1,85 @@
+#sddm
+{	
+	margin: 0;
+	padding: 0;
+	z-index: 100;
+}
+
+#sddm li
+{	margin: 0;
+	padding: 0;
+	list-style: none;	
+}
+
+#sddm li a
+{		
+	display: block;
+	margin: 0 0 0 0;
+	width:56px;
+	background: #E2DEE2;
+	text-align: center;
+	text-decoration: none;
+}
+
+#sddm li a:hover
+{
+	color: #D66D35
+}
+
+#sddm div
+{	
+	font-weight: normal;	
+	position:absolute;
+	width:58px;
+	visibility: hidden;	
+	background: #BBC7CE none repeat scroll 0 50%;
+    border: solid 1px #7C98A4;
+    left:184px;
+    !left:186px;
+    margin-top:18px;
+    !margin-top:16px;
+}
+#sddm div a
+{	
+	color: #0066CC;
+	height:16px;
+	background: #eeecee;
+	position: relative;
+	display: block;
+	margin: 0;
+	padding: 1px 4px;
+	width: auto;
+	white-space: nowrap;
+	text-align: left;
+	text-decoration: none;
+	border: solid 1px #ffffff;
+}
+
+#sddm div a:hover
+{
+	background: #eeecee; 
+	cursor:pointer;
+}
+
+/*Start Drop Menu*/
+.DropMenu
+{
+	font-size:11px;
+	font-weight:bold;	
+	line-height:17px;
+	cursor:pointer
+}
+.DropMenu span{
+	font-size:11px;
+	/*background:url(../../../App_Themes/Images/L_banner/L_tab_left.png) no-repeat left top;*/
+	padding-left:3px;
+	text-decoration:none;
+	float:right;
+}
+.DropMenu span span{
+	color:#ffffff;
+	display:block;
+	/*background:url(../../../App_Themes/Images/L_banner/R_tab_left.png) no-repeat right top;*/
+	padding: 1px 8px 2px 6px;
+}
+/*end Drop Menu*/

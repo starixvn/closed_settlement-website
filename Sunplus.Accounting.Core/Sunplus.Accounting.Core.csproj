@@ -1,0 +1,364 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{09B74F02-6C21-4C5E-A52C-B6D56595A262}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sunplus.Accounting.Core</RootNamespace>
+    <AssemblyName>Sunplus.Accounting.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>%24/Rome/Settlement/Main/SettlementSite/Sunplus.Accounting.Core</SccProjectName>
+    <SccLocalPath>.</SccLocalPath>
+    <SccAuxPath>http://10.18.200.210:8080</SccAuxPath>
+    <SccProvider>{4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}</SccProvider>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Couchbase">
+      <HintPath>..\..\..\..\Dependency\Fanex\Couchbase.dll</HintPath>
+    </Reference>
+    <Reference Include="DNAide">
+      <HintPath>..\..\..\..\Dependency\DNAide.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelUtil">
+      <HintPath>..\..\..\..\Dependency\ExcelUtil.dll</HintPath>
+    </Reference>
+    <Reference Include="Fanex.Logging">
+      <HintPath>..\..\..\..\Dependency\Fanex\Fanex.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Fanex.MailDeliver.MailClient">
+      <HintPath>..\..\..\..\Dependency\Fanex\Fanex.MailDeliver.MailClient.dll</HintPath>
+    </Reference>
+    <Reference Include="IBCUtils">
+      <HintPath>..\..\..\..\Dependency\IBCUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="LoadBalancer">
+      <HintPath>..\..\..\..\Dependency\LoadBalancer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\Dependency\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\Dependency\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RemotingRef">
+      <HintPath>..\..\..\..\Dependency\RemotingRef.dll</HintPath>
+    </Reference>
+    <Reference Include="SharedCache.WinServiceCommon">
+      <HintPath>..\..\..\..\Dependency\SharedCache.WinServiceCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="Sunplus.Bingo.Core">
+      <HintPath>..\..\..\..\Dependency\Sunplus.Bingo.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Sunplus.Core.Common">
+      <HintPath>..\..\..\..\Dependency\Sunplus.Core.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Sunplus.Core.LoggingLib">
+      <HintPath>..\..\..\..\Dependency\Sunplus.Core.LoggingLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TplCore">
+      <HintPath>..\..\..\..\Dependency\TplCore.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cache\AppCache.cs" />
+    <Compile Include="Cache\CacheRef.cs" />
+    <Compile Include="Cache\Extension\Extension.cs" />
+    <Compile Include="Cache\ICacheFactory.cs" />
+    <Compile Include="Common\AccCommon.cs" />
+    <Compile Include="Common\AppSession.cs" />
+    <Compile Include="Common\Constants.cs" />
+    <Compile Include="Common\Enumerations.cs" />
+    <Compile Include="Common\Extensions.cs" />
+    <Compile Include="Common\Functions.cs" />
+    <Compile Include="Common\Globals.cs" />
+    <Compile Include="Common\UM.cs" />
+    <Compile Include="Configurations\BASection.cs" />
+    <Compile Include="Configurations\ConfigSection.cs" />
+    <Compile Include="Configurations\SportsSection.cs" />
+    <Compile Include="Configurations\RMSection.cs" />
+    <Compile Include="Configurations\LiveCasinoSection.cs" />
+    <Compile Include="Configurations\CustomerSection.cs" />
+    <Compile Include="Configurations\ExternalSection.cs" />
+    <Compile Include="Configurations\PokerSection.cs" />
+    <Compile Include="Configurations\NumberGameSection.cs" />
+    <Compile Include="Configurations\ReportSection.cs" />
+    <Compile Include="Configurations\HelperSection.cs" />
+    <Compile Include="Configurations\MonitorSection.cs" />
+    <Compile Include="Configurations\SpecialMatchAnalysisSection.cs" />
+    <Compile Include="Configurations\StoreProcedureGroup\Admin.cs" />
+    <Compile Include="Configurations\StoreProcedureGroup\Casino.cs" />
+    <Compile Include="Configurations\StoreProcedureGroup\BetAggregator.cs" />
+    <Compile Include="Configurations\StoreProcedureGroup\BetList.cs" />
+    <Compile Include="Configurations\StoreProcedureGroup\LogDisplay.cs" />
+    <Compile Include="Configurations\StoreProcedureGroup\P2P.cs" />
+    <Compile Include="Configurations\StoreProcedureGroup\Helper.cs" />
+    <Compile Include="Configurations\StoreProcedureGroup\SpecialDelete.cs" />
+    <Compile Include="Configurations\StoreProcedureGroup\Transaction.cs" />
+    <Compile Include="Configurations\StoreProcedureGroup\UserControl.cs" />
+    <Compile Include="Configurations\StoreProcedureGroup\ViewPt.cs" />
+    <Compile Include="Configurations\StoreProcedureGroup\SportbookPt.cs" />
+    <Compile Include="Configurations\StoreProcedureGroup\Settlement.cs" />
+    <Compile Include="Configurations\StoreProcedureGroup\Report.cs" />
+    <Compile Include="Configurations\StoreProcedureGroup\Racing.cs" />
+    <Compile Include="Configurations\StoreProcedureGroup\ExchangeRate.cs" />
+    <Compile Include="Configurations\StoreProcedureGroup\Customer.cs" />
+    <Compile Include="Configurations\StoreProcedureGroup\CreditTerm.cs" />
+    <Compile Include="Configurations\TransactionSection.cs" />
+    <Compile Include="Configurations\UserControlSection.cs" />
+    <Compile Include="Configurations\LogSection.cs" />
+    <Compile Include="Configurations\MailSection.cs" />
+    <Compile Include="Configurations\RacingSession.cs" />
+    <Compile Include="Configurations\SpecialDeleteSection.cs" />
+    <Compile Include="Configurations\StoreProceduresSection.cs" />
+    <Compile Include="Configurations\WebSettings.cs" />
+    <Compile Include="Constant\Error.cs" />
+    <Compile Include="Constant\Sport.cs" />
+    <Compile Include="Email\SendMailBugSystem.cs" />
+    <Compile Include="Extensions\CollectionExtension.cs" />
+    <Compile Include="Extensions\DateTimeExtension.cs" />
+    <Compile Include="Extensions\EnumerableExtension.cs" />
+    <Compile Include="Extensions\LogExtensions.cs" />
+    <Compile Include="Extensions\ResourceExtension.cs" />
+    <Compile Include="Extensions\SendMailExtension.cs" />
+    <Compile Include="Extensions\SessionExtension.cs" />
+    <Compile Include="Extensions\StringExtension.cs" />
+    <Compile Include="Helper\AlertMessage.cs" />
+    <Compile Include="Cache\Report.cs" />
+    <Compile Include="Helper\Check.cs" />
+    <Compile Include="Helper\DataUtils.cs" />
+    <Compile Include="Helper\ExcelAutomationUtils.cs" />
+    <Compile Include="Helper\ExcelGemboxUtils.cs" />
+    <Compile Include="Helper\IP\AccountingIP.cs" />
+    <Compile Include="Helper\IP\IpManager.cs" />
+    <Compile Include="Helper\JsonUtil.cs" />
+    <Compile Include="Helper\SendEmail3rdParty.cs" />
+    <Compile Include="Helper\StringUtils.cs" />
+    <Compile Include="Helper\Utils.cs" />
+    <Compile Include="Web\HtmlHelper.cs" />
+    <Compile Include="Web\PagerManager.cs" />
+    <Compile Include="Web\TplCore\App_Templates\Balance\BalanceForm.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\Balance\MasterBalanceForm.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\BetList\MixParlay.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\CreditTeam\CreditTeamAllHeader.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\CreditTeam\CreditTeamAllRow.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\CreditTeam\CreditTeamChildlRow.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\CreditTeam\CreditTeamInstallAmountAllHeader.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\CreditTeam\CreditTeamInstallAmountAllRow.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\CreditTeam\CreditTeamLink.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\CreditTeam\CreditTeamLinkSub.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\CreditTeam\CreditTermSelGroupHeadlineAllHeader.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\CreditTeam\CreditTermSelGroupHeadlineAllRow.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\CreditTeam\CreditTermViewForm.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\CreditTeam\Creditterm_Group_Feed_Form.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\CustomerBalance.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\CustomerBalanceRow.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\CustomerInfo\CustomerInfo.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\CustomerInfo\LoginDetail.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\Customer\ChangeSite.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\Customer\SuperAgentListHeader.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\Customer\SuperAgentListRow.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\Customer\SuperListHeader.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\Customer\SuperListRow.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\Customer\v2\AccInfo.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\DirectBalance\BalanceMovement.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\DirectBalance\DirectBalance_Downline.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\DirectBalance\Header.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\ExRate\ExRateAdd.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\ExRate\ExRateList.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\ExRate\SendEmail.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\MenuSub.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\NoInformation.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\Others\LastNews.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\Others\Menu.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\Others\News.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\Others\NewsDetail.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\Others\NewsEdit.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\Report\CommonFilter.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\Report\DailyCreatedCustomerHeader.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\Report\FromToDate.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\Report\MainReportList.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\Report\Punter\AgencyHeaderForm.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\Report\Punter\HeaderForm.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\Report\Punter\PeriodAnnual.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\Report\Punter\PeriodLongRange.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\Report\Punter\PeriodMonthly.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\Report\Punter\PunterHeaderForm.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\Report\Punter\SelTopPunterByCustID.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\Report\Punter\TopPunterSummaryContent.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\Report\TraderPerformance.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\Report\TraderPerformanceDetail.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\Settle\ViewLog.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\Settle\ViewLogHeaderForm.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\Settle\ViewLogMatchDetails.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\Settle\ViewLogMatchDetailsNoInfo.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\Settle\ViewLogMatchInfo.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\Settle\ViewLogMenu.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\SpecialDelete\DeleteBetReportMP.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\SpecialDelete\DeleteBetReportNullAllRow.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\SpecialDelete\DeleteBetReportSendMail.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\SpecialDelete\DeleteBetReportSendMailAllRow.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\SpecialDelete\DeleteBetReportSendMailAllRow_SpecialBet.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\SpecialDelete\DeleteBetReportSendMail_SpecialBet.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\SpecialDelete\DeleteForm.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\SpecialDelete\DeleteFormNew.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\SpecialDelete\DynamicBettype.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\SpecialDelete\FillteFormCS.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\SpecialDelete\FillterForm.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\SpecialDelete\FillterFormIndex.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\SpecialDelete\FillterFormMP.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\SpecialDelete\FillterFormOutright.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\SpecialDelete\FillterFormSepecial.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\SpecialDelete\MatchInfo.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\SpecialDelete\OutrightList.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\SpecialDelete\SpecialDeleteBets.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\SpecialDelete\TransHeader.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\SpecialDelete\TransHeader_SpecialBet.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\SpecialDelete\TransRow.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\SpecialDelete\TransRow_SpecialBet.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\Statement\DetailContent.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\UserControl\AccountListHeader.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\UserControl\AllAccountListRow.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\UserControl\EditAccount.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\UserControl\EditGroup.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\UserControl\Function.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\WinLost\AB88WinLossFilter.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\WinLost\AB88WinLossFooter.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\WinLost\AB88WinLossTotal.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\WinLost\CasinoWLDetail.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\WinLost\DailyWLDirectFooter.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\WinLost\DailyWLFooter.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\WinLost\DailyWL_Header.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\WinLost\DateTimeHeader.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\WinLost\DateTimeHeaderV2.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\WinLost\FIWLDetail.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\WinLost\FOddsHR12BETWLDetail.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\WinLost\FOddsHRAB88WLDetail.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\WinLost\FOddsHRMansionWLDetail.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\WinLost\FOddsHRWLDetail.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\WinLost\HedgeRecordHeaderTable.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\WinLost\LeagueWL\LeagueWL_Bettype_Header.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\WinLost\LeagueWL\LeagueWL_Details_Header.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\WinLost\M88WinLossFilter.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\WinLost\M88WinLossFooter.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\WinLost\M88WinLossTotal.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\WinLost\MatchWinLostByBetTypeAllHeader.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\WinLost\MatchWinLostSingleBetAllHeader.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\WinLost\Report2AMatchWL.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\WinLost\ReportHeaderV2.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\WinLost\TOddsHRWLDetail.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\WinLost\ToteHR12BETWLDetail.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\WinLost\ToteHRAB88WLDetail.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\WinLost\ToteHRMansionWLDetail.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\WinLost\ToteHRWLDetail.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\WinLost\WinLossFilter12BET.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\WinLost\WinLossFooter12BET.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\WinLost\WinLossTotal12BET.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\WinLost\WinLostSummaryColspan.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\WinLost\WinLostSummaryTotalRow.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\WinLost\WLSummaryHeader.htm.cs" />
+    <Compile Include="Web\TplCore\App_Templates\WinLost\WLSummaryTotalRow.htm.cs" />
+    <Compile Include="Web\WebUtils.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Web\Controls\Calendar.cs" />
+    <Compile Include="Web\Controls\HTMLControl.cs" />
+    <Compile Include="Web\Controls\Pager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sunplus.Data.DataAbstract\Sunplus.Data.DataAbstract.csproj">
+      <Project>{1B2228C6-443E-48FF-90EF-A122810D77E7}</Project>
+      <Name>Sunplus.Data.DataAbstract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sunplus.Accounting.Entities\Sunplus.Accounting.Entities.csproj">
+      <Project>{C2043B3C-AF85-4334-8542-F9AC2B031D79}</Project>
+      <Name>Sunplus.Accounting.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DomainObjects\" />
+    <Folder Include="Infrastructure\" />
+    <Folder Include="Security\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties BuildVersion_AssemblyInfoFilename="" BuildVersion_BuildVersioningStyle="None.None.Increment.Increment" BuildVersion_UpdateFileVersion="True" BuildVersion_UpdateAssemblyVersion="True" />
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

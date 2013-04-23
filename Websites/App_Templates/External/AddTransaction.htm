@@ -1,0 +1,37 @@
+<table class="tbllayout" style="width: 320px;" cellspacing="1">
+    <tr class="title">
+        <td colspan="2">
+            {addtxn}
+        </td>
+    </tr>
+    <tr>
+        <td class="l b">
+            {date}:
+        </td>
+        <td class="l">
+            {btnDate}
+        </td>
+    </tr>
+    <tr>
+        <td class="l b">
+            {amount}:
+        </td>
+        <td class="l">
+            <input class="txt" type="text" name="txtamount" value="0.00" id="txtamount" />
+        </td>
+    </tr>
+    <tr>
+        <td class="l b">
+            {desc}:
+        </td>
+        <td class="l">
+            <input class="txt" style="width: 200px;" type="text" name="txtDesc" id="txtDesc" />
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" class="c">
+            <input class="btn" type="submit" onclick="return ValueAddValid();" name="btnAdd"
+                id="btnAdd" value="{add}" />
+        </td>
+    </tr>
+</table>

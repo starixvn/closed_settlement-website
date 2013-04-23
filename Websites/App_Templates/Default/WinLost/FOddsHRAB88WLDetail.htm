@@ -1,0 +1,37 @@
+	<table id="table" cellspacing="1px" cellpadding="1px" class="c bg" width="900px" border="{border}">
+      <thead> 
+      <tr class="white">
+		    <th colspan="10"  class="calign fontbold" style="!margin-top:-3px;!border-top:solid 1px ffabab; ">
+                <span id="spBettype"> {bettype}</span>
+            </th>				
+	 </tr> 
+	  <tr class="c bg" id="trHeader">
+	    <th class="ag c" colspan="2" valign="center" >Meeting-Currency</th>
+	    <th class="ibc" align="center" valign="center"><b>Race</b></th>         
+        <th class="ag"><b>Win TO</b></th>
+        <th class="ag"><b>Place TO</b></th>
+        <th class="ag"><b>W/P TO</b></th>
+        <th class="ag"><b>Total TO</b></th>
+        <th class="ag"><b>Dividend<br> Won</b></th>
+        
+        <th class="ibc"><b>Comm <br/>Earned</b></th>
+        <th class="phu" style="width:100px"><b>Amount due to /<br>(from) IBC</b></th>     
+	  </tr>
+	  </thead>
+	<!--content-->
+      <tr>
+		<!--Blank--><td  rowspan="{rowspan}"  colspan="2" class="c fontbold white"> {Meeting_Currency} </td><!--/Blank-->
+		<td class="c {bgcolor}">{RaceName}</td>		
+		
+		<td class="r {bgcolor}">{MemWinTO}</td>
+		<td class="r {bgcolor}">{MemPlaceTO}</td>
+		<td class="r {bgcolor}">{MemWinPlaceTO}</td>
+        <td class="r {bgcolor} ">{MemTotalTO}</td>
+		<td class="r {bgcolor}">{MemDividendWon}</td>		
+		
+		<td class="r {bgcolor} {wrongsetting}">{AgMansionCommInc}</td>		
+		<td class="r {bgcolor} rspace rborder">{AmountDueIBC}</td>
+		
+	 </tr>
+	<!--/content-->			
+ </table>

@@ -1,0 +1,84 @@
+<table class="tblcollapse" style="width:700px">
+     <!--Deadball-->
+     {headerpregame}
+      <tr>
+        <td class="c" colspan="2">
+            Deadball
+        </td>
+        <td>
+            <select class="select-pt copyAll" name="listS1stOUD" id="listS1stOUD">
+                {listS1stOUDValue}
+            </select>
+            <input type="button" name="btnReduce1" value=" " class="btn-dec1" onclick="ReducePT('listS1stOUD',1)" />
+            <input type="button" name="btnIncrease1" value=" " class="btn-inc1" onclick="IncreasePT('listS1stOUD',1)" />
+            <input type="button" name="btnReduce10" value=" " class="btn-dec10" onclick="ReducePT('listS1stOUD',10)" />
+            <input type="button" name="btnIncrease10" value=" " class="btn-inc10" onclick="IncreasePT('listS1stOUD',10)" />
+        </td>
+        <td>
+            <select class="select-pt copyfromD" name="listS1stOED" id="listS1stOED">
+                {listS1stOEDValue}
+            </select>
+        </td>
+        <td>
+            <select class="select-pt copyfromD" name="listS1stWaFTD" id="listS1stWaFTD">
+                {listS1stWaFTDValue}
+            </select>
+        </td>
+        <td>
+            <select class="select-pt copyfromD" name="listS1stOEFTD" id="listS1stOEFTD">
+                {listS1stOEFTDValue}
+            </select>
+        </td>        
+       <td colspan="2">
+            <input class="copyAll" type="checkbox" onclick="NumberGameCopyPT('Deadball');"
+                name="chkCopy1stOUD" id="chkCopy1stOUD" />
+            Copy From 1st Last O/U
+       </td>
+    </tr>
+    <!--/Deadball-->
+    
+    <!--Live-->
+    {headerrunninggame}
+    <tr>
+        <td colspan="2" >
+            Live
+        </td>
+        <td>
+            <select class="select-pt copyAll" name="listSNBOUL" id="listSNBOUL">
+                {listSNBOULValue}
+            </select>
+            <input type="button" name="btnReduce1" value=" " class="btn-dec1" onclick="ReducePT('listSNBOUL',1)" />
+            <input type="button" name="btnIncrease1" value=" " class="btn-inc1" onclick="IncreasePT('listSNBOUL',1)" />
+            <input type="button" name="btnReduce10" value=" " class="btn-dec10" onclick="ReducePT('listSNBOUL',10)" />
+            <input type="button" name="btnIncrease10" value=" " class="btn-inc10" onclick="IncreasePT('listSNBOUL',10)" />
+        </td>
+        <td>
+            <select class="select-pt copyfromL" name="listSNBOEL" id="listSNBOEL">
+                {listSNBOELValue}
+            </select>
+        </td>
+        <td>
+            <select class="select-pt copyfromL" name="listSHLL" id="listSHLL">
+                {listSHLLValue}
+            </select>
+        </td>
+        <td>
+            <select class="select-pt copyfromL" name="listSNCL" id="listSNCL">
+                {listSNCLValue}
+            </select>
+        </td>
+        <!--NG-Key-->
+        <td>            
+            <select class="select-pt copyfromL" name="listSNGL" id="listSNGL">
+                {listSNGLValue}
+            </select>
+           
+        </td>
+         <!--/NG-Key-->
+        <td>
+              <input class="copyAll" type="checkbox" onclick="NumberGameCopyPT('Live');" name="chkCopyNBOUL" id="chkCopyNBOUL" />
+               Copy From Over/Under
+        </td>
+    </tr>
+    <!--/Live-->
+</table>

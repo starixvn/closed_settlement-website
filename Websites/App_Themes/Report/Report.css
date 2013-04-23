@@ -1,0 +1,278 @@
+﻿.ag { background:#b5c4d0;}  
+.ibc { background:#d0e8fb;} 
+.phu { background:#b5c4d0;}
+.race { background:#99ccff;}
+.bgodd{ background:#f7f0f7;}   
+.bgeven{ background:#ebf4fc;} 
+.ws{ color:Red;}
+.white{background:#ffffff;}
+.c { text-align:center;}
+.calign { text-align:center;}
+.l { text-align:left;}
+.r { text-align:right;}    
+.ralign { text-align:right;}        
+.error-message{ font-weight:bold; color:Red;}
+body 
+{
+    font-family: Tahoma;    
+    font-size:11px;
+}
+
+
+.bg{ background:#7C98A4;}
+.hand { cursor:pointer;}
+.rboder{ border-right: solid 1px #7C98A4;}
+.rborder{ !border-right: solid 1px #7C98A4;}
+.padright
+{
+	padding-right:3px;
+	text-align:right;
+}
+
+.report-header {
+	background:transparent url(../../App_Themes/SteelBlue/images/report-header-bg.gif) repeat-x scroll left top;
+	color:#FFFFFF;
+	font-weight:bold;
+	line-height:18px;
+	text-align:center;
+}
+#table tr
+{
+	height:20px;
+	}
+#table td
+{
+	padding-left:3px;
+	}
+.table {
+	border-collapse:collapse;
+	font-family:Tahoma,Verdana;
+	font-size:8pt;
+}
+
+.img-date-selector 
+{
+	border:0px;
+	cursor:pointer;
+}
+
+.txtdate-no-time {
+	vertical-align:top;
+	width:75px;
+}
+
+input {
+	font-family:Tahoma,Verdana;
+	font-size:8pt;
+}
+table.report
+{
+	border-collapse:collapse;
+	border-color:#cdcdcd;
+	border-style:solid;	
+}
+table.report td
+{
+	height: 18px;
+}
+tr.report-row-even td
+{
+	background:#DFEAFF;
+}
+tr.report-row-odd td
+{
+	background:#F9F9F7;
+}
+.report-footer td
+{
+	background:#C4D0D7;
+	color:#000;
+	text-align:right;
+}
+
+.bgTotal td
+{
+	background:#C4D0D7;
+	color:#000;
+	text-align:right;
+}
+
+a
+{
+	cursor:pointer;
+	color:#0000ff;
+	text-decoration:none;
+}
+a:hover
+{
+	color:#c16605;
+	text-decoration:underline;
+	cursor:pointer;
+}
+
+.total
+{
+    background:#C4D0D7;
+	color:#000;
+	font-weight:bold;
+	text-align:right;
+}
+
+.bl-choice
+{
+	font-family: Tahoma;
+	font-size: 14px;
+	color: #FF0000;
+	font-weight:bold;
+}
+.bl-bettype
+{
+	font-family: Tahoma;
+	font-size: 11px;
+	color: #003399;
+	font-weight: 600;
+	margin-top:5px;
+} 
+.bl-event
+{
+	font-size: 11px;
+	font-family: Tahoma;
+	color: #000000;
+	font-weight: 600;
+	font-weight:bold; 
+}   
+.bl-leaguename
+{
+	font-size: 11px; 
+	color: #666666;
+	font-family:Tahoma;
+}
+.style_12BB
+{
+	font-family: Tahoma;
+	font-size: 12px;
+	font-weight: 800;
+	color: #003399;
+}
+.bl-sporttype
+{
+	font-family: Tahoma;
+	font-size: 10px;
+	color: #0066CC;
+	font-weight:bold;	 
+	margin-top:5px;
+}
+
+.bl-total 
+{
+	/*background:#d6efba;*/
+	background:none repeat scroll 0 0 #d6efba !important;
+	padding-right:3px;
+}
+.bl-total th
+{
+	background:#d6efba !important;
+	padding-right:3px;
+}
+
+.header-HRBL th
+{
+	background:#fff;
+	font-weight:bold;
+	}
+
+.rptfont8
+{
+	 font-family:Tahoma, Verdana;
+	 font-size:8pt;	
+}
+
+.font-small
+{
+	font-size:11px;
+}
+
+.action
+{
+    cursor:pointer;    
+}
+
+.rpt-bold
+{
+	font-weight:bold;	
+}
+
+.rpt-sport
+{
+ background:#deffde;	
+}
+
+.rptH
+{
+ height:22px;	
+}
+
+.rpt-grandtotal
+{
+	background:#d6efba;
+	padding-right:3px;
+}
+
+.rpt-header
+{
+	background:#efefef;	
+}
+
+.rpt-red-color
+{
+	 color:Red !important;	
+}
+
+.rpt-blue-color
+{
+	 color:blue;	
+}
+
+.rpt-link
+{
+	 color:Blue;
+	 text-decoration:underline;
+	 cursor:pointer; 	
+}
+
+.b
+{
+    font-weight:bold;    
+}
+
+.rspace{ padding-right:20px;!padding-right:3px;}
+.negnum 
+{
+    color:Red;
+}
+
+.total1
+{
+   background-color: #ffeedd;
+}
+
+.total2 td
+{
+   background-color: #d3e1c8;
+}
+
+.total3 td
+{
+   background-color: #88AAFF;
+}
+
+.exrate2
+{
+    color: #0066CC;
+    font-size: 9px;
+}
+
+.bgcompare
+{
+     background-color:#ffd320; 
+}

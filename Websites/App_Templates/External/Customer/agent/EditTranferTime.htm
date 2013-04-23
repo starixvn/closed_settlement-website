@@ -1,0 +1,27 @@
+<table style="width:400px; margin:4px 0;" class="tblcollapse">
+	<tr class="title">
+		<td>{acc-balance-tranfer}</td>		
+	</tr>
+	<tr>
+		<td width="30%" class="l m"><input type="radio" style=" vertical-align:middle;" {daily-chk} onclick="selectTranferTime(this);" name="tranfer" id="rdDaily" value="daily"></input>{daily}</td>
+	</tr>
+	<tr>		
+		<td class="l m" id="alldays">
+			<input type="radio" name="tranfer" onclick="selectTranferTime(this);" {weekly-chk} id="rdWeekly" value="weekly"></input>{weekly} &nbsp;			
+			<input type="checkbox" name="chkMon" id="chkMon" {mon-chk} onclick="return ChooseDate();"></input>{mon}&nbsp;
+			<input type="checkbox" name="chkTue" id="chkTue" {tue-chk} onclick="return ChooseDate();"></input>{tue}&nbsp;
+			<input type="checkbox" name="chkWed" id="chkWed" {wed-chk} onclick="return ChooseDate();"></input>{wed}&nbsp;
+			<input type="checkbox" name="chkThurs" id="chkThurs" {thurs-chk} onclick="return ChooseDate();"></input>{thurs}&nbsp;
+			<input type="checkbox" name="chkFri" id="chkFri" {fri-chk} onclick="return ChooseDate();"></input>{fri}&nbsp;
+			<input type="checkbox" name="chkSat" id="chkSat" {sat-chk} onclick="return ChooseDate();"></input>{sat}&nbsp;
+			<input type="checkbox" name="chkSun" id="chkSun" {sun-chk} onclick="return ChooseDate();"></input>{sun}		
+		</td>
+	</tr>
+	<!--none-add-->	
+	<tr>
+		<td class="c">
+			<input type="submit" class="btn" name="btnSubmit" id="btnSubmit" value="{submit-text}"></input>
+		</td>		
+	</tr>
+	<!--/none-add-->	
+</table>

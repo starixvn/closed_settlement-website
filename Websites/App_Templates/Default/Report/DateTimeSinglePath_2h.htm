@@ -1,0 +1,51 @@
+﻿<script type="text/javascript">
+    function SetGetData(id) {
+        if (id == 'rdRep') {
+            $('#rdRep').attr('checked', true);
+            $('#rdMain').attr('checked', false);
+            $('#db').val('Rep');
+        }
+        else {
+            $('#rdRep').attr('checked', false);
+            $('#rdMain').attr('checked', true);
+            $('#db').val('Main');
+        }
+    }
+
+    function SetEvtGetdate() {
+        var MoveBetday = Date.parse($('#MoveBetday').val());
+        var SelectDay = Date.parse($('#fdate').val());
+        if (SelectDay <= MoveBetday) {
+            $('#trGetData').hide();
+        }
+        else {
+            $('#trGetData').show();
+        }
+    }
+</script>
+
+<table class="table">
+    <tr class="c b">
+        <td class="padright">{Text-value}:</td>
+        <td>{FromDateCal}</td>
+        
+        <td>&nbsp;</td>
+        <td><input id="btnReport" name="btnReport" type="button" value="REPORT" class="btn" onclick="ViewReport()" />
+            <span id="spMoreElement"></span>
+        </td>
+        <td><input id="btnExport" name="btnExport" type='button' onclick='ExportToExcel();' value='   ' name='btnExport' id='btnExport' class='btnExcel' title="Export to Excel" /></td>
+        <td width="25px">
+            <img id='inProgressBar' name='inProgressBar' style='display: none' src="../App_Themes/Images/ajax-loader.gif" />
+            <input type="hidden" id="db" name="db" value="{db}" />
+            <input type="hidden" id="MoveBetday" name="MoveBetday" value="{MoveBetsDay}" />
+        </td>
+    </tr>
+    <!--getdata-->
+    <!--/getdata-->
+    <!--path-->
+    <tr>
+        <td colspan="6">{path}</td>
+    </tr>
+    <!--/path-->
+</table>
+

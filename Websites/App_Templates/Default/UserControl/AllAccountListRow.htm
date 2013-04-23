@@ -1,0 +1,43 @@
+<tr id="r_{no}" {style}>
+    <td>
+        {no}
+    </td>
+    <td>
+        <span class="canchange" onclick="OpenEditAcc({custid},'{user}','{dept}');">{user}</span>
+    </td>
+    <td>
+        {fname}
+    </td>
+    <td>
+        {lname}
+    </td>
+    <td>
+        <table cellpadding="0" cellspacing="0" border="0" style="border:0px none" width="68">
+            <tr>
+                <td style="border:0px none">
+                    <div>{strstatus}</div>
+                </td>
+                <td style="border:0px none">
+                    <div>
+                        {status}
+                    </div>
+                </td>
+            </tr>
+        </table>    
+    </td>
+    <td>
+        {creator}
+    </td>
+    <td>
+        {createddate}
+    </td>  
+    <td>
+        <span class="canchange"  onclick="SelAccountPolicy({custid},'{dept}',{groupid},'{user}')">{policy}</span>
+    </td>
+    <td>
+        <span class="canchange"  onclick="SelAccount({groupid},'{dept}');">{dept}</span>
+    </td>
+    <td>
+        <span class="canchange"  onclick="OpenChangePwd({custid},'{user}')">{pass}</span>
+    </td>  
+</tr>

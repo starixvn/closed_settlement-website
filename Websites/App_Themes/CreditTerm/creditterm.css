@@ -1,0 +1,18 @@
+﻿.headline
+{
+	background:transparent url(../images/headlineH.gif) no-repeat scroll 0 0;
+	cursor:pointer;
+	height:14px;
+	width:16px;
+	}
+.noneheadline
+{
+	width:16px;
+	height:14px;
+	background:url(../images/headline.gif) no-repeat center center;
+	cursor:hand;
+	}
+.headlinetext
+{
+	color:#A25A10;
+	}

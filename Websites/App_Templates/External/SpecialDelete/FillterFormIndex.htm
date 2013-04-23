@@ -1,0 +1,94 @@
+<form id="frmSpecialDelete">
+    <table border="0px">
+    <!--confirm-->
+      <tr>
+        <td colspan="2" class="l">
+          <span style="color:#d84e1f;font-weight:bold;font-size:9pt">{confirm-msg}</span>          
+        </td>
+      </tr>
+      <!--/confirm-->
+      <tr>
+        <td colspan="2" class="l">          
+          <span id="ErrMsg" class="error-message"></span>
+        </td>
+      </tr>      
+		<tr>
+		    <td colspan="2">
+		        <table width="80%" border="0">
+		            <tr>
+		                <td class="b">Match ID:</td>
+		                <td align="left"><input type="text" size="12" maxlength="12" id="matchid" name="matchid" /></td>
+		                <td class="b">From Refno:</td>
+			            <td><input type="text" size="12" maxlength="12" id="frefno" name="frefno" /></td>
+			            <td class="b">To Refno:</td>
+			            <td><input type="text" size="12" maxlength="12" id="trefno" name="trefno" /></td>
+		            </tr>
+		        </table>
+		    </td>
+		</tr> 
+		<tr>
+            <td colspan="2"></td>
+        </tr>
+		<tr>
+			<td colspan="2">                
+			    {newbt}
+			</td>
+		</tr>    
+		<tr style="height:20px;" class="b">
+		    <td>Type:
+		    	<select id="ddlLiveIndicator" name="ddlLiveIndicator">
+			        <option selected="selected" value="All">All</option>
+			        <option value="0" >Dead Ball</option>
+				    <option value="1">Live Ball</option>										
+		        </select>
+		    </td>
+		    <td></td>
+		</tr>
+		<tr style="height:20px;">
+			<td colspan="2">
+				<b>Advanced mode:</b>
+			</td>
+		</tr>
+		
+		<tr style="height:20px;">
+			<td colspan="2">			    
+				 <table style="margin-left:20px;">
+				    <tr id="trHDP" style="height:20px;">
+				        <td>Type for Handicap, 1st Handicap, Over/Under, 1st Over/Under :</td>				        
+				        <td>
+				            <select id="ddlBetTeam1378" name="ddlBetTeam1378">                                
+                                <option value="All">All</option>                                
+					            <option value="h">Home/Over</option>
+					            <option value="a">Away/Under</option>
+				            </select>				
+				        </td>
+				        <td align="center" style="width:120px;">HDP:<input type="text" id="hdp" name="hdp" size="5" maxlength="5"></input></td>
+				    </tr>
+				    <tr id="tr1X2" style="height:20px;">
+				        <td>Type for FT.1X2, 1st 1X2 : </td>					        
+				        <td>
+				            <select id="ddlBetTeam515" name="ddlBetTeam515">
+                                <option value="All">All</option>                                
+					            <option value="1">1</option>
+					            <option value="X">X</option>
+					            <option value="2">2</option>
+				            </select>
+				        </td>		
+				        <td></td>	        
+				    </tr>
+				 </table>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" class="c">				                
+                <input type="hidden" id="bettype" name="bettype" />
+                <input type="hidden" id="bettypename" name="bettypename" />
+			</td>
+		</tr>
+	</table>
+</form>
+
+<input class="btn" type="submit" onclick="return on_submit();"  value="  Show  " />
+<img id='inProgressBar' name='inProgressBar'  style='display:none'   src ="../App_Themes/images/ajax-loader.gif" />
+<p><hr /></p>
+

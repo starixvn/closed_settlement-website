@@ -1,0 +1,29 @@
+<table class="tblcollapse">
+    <tr class="title1">
+        <td colspan="14" class="c">EVENT FROM {fdate} TO {tdate}</td>
+    </tr>
+    <tr class="title">
+        <td style="width:100px;">CODE</td>
+        <td width="115">KICK-OFF TIME</td>
+        <td >EVENT</td>        
+        <td width="36">HT<br />SCORE</td>
+        <td width="36">FINAL<br />SCORE</td>
+        <td width="55">EVENT<br />STATUS</td>        
+        <td width="85">CALCULATION</td>        
+        <td width="60" {displayMul}><!--MultRead-->MULTIPLE<!--/MultRead--><!--MultHost--><input class="btn" type="button" style="margin-right:0px;" onclick="DoCalMultiple();" value="Calc MP" title="Calculate MP"></input><br /><input type="checkbox" id="chk_all" onclick="checkMultipleAll();"  /><!--/MultHost--> </td>
+        <td width="60" {display-Refund}>REFUND</td>  
+        <!--betcount-->
+        <th width="40" >Bet<br />Count</th>      
+        <!--/betcount-->
+        <!--confirmpending-->
+        <td width="60">CONFIRM PENDING</td>
+        <!--/confirmpending-->
+        <!--confirmht-->
+        <td width="60">CONFIRM HT</td>
+        <!--/confirmht-->
+        <!--confirmft-->
+        <td width="60">CONFIRM FT</td>
+        <!--/confirmft-->
+    </tr>
+    {content}
+</table>

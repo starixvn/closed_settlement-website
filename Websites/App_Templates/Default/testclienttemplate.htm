@@ -1,0 +1,32 @@
+﻿*** main template *** (all part outside templates are invisible}
+{#template MAIN}
+ <div>
+  {#include table root=$T.Cars}
+ </div>
+{#/template MAIN}
+
+-----------------------------------------
+
+*** main table ***
+{#template table}
+ {$P.title}	
+ <table>
+  {#foreach $T as r}
+  {#include row root=$T.r}
+  {#/for}
+ </table>
+{#/template table}
+
+-----------------------------------------
+
+*** for each row ***
+{#template row}
+ <tr bgcolor="{#cycle values=['#AAAAEE','#CCCCFF']}">
+  {#if $T.ID%5==0}
+  <td colspan="2">{$T.ID} {$T.Name}</td>
+  {#else}
+  <td>{$T.ID}</td>
+  <td>{$T.Name}</td>
+  {#/if}
+ </tr>
+{#/template row}

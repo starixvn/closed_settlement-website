@@ -1,0 +1,15 @@
+﻿<div>
+    <span class="{classname}" style="font-weight:bold; border: solid 1px; padding:2px;" onclick="{jsonclick}">{currValue}</span>
+    <!--IsUpdateDL-->
+    <div id="popLimitPerIP">
+         <select onchange="ChangeLimitPerIP(this)" id="lstLimitPerIP" style="margin:0 6px 2px 0; " {disabledLimit}>
+            {LimitPerIPOption}
+         </select>
+         <span {ishideapplydownline}>
+         {lblUpdateDownline}<input type="checkbox" {disabledDL} id="chkIsUpdateDL" checked="true" style="vertical-align:bottom;" />
+         </span>
+         <br /><input type="button" value="Update" onclick="UpdateLimitPerIP()" class="btn" /><input type="button" onclick="showhideLimitPerIP()" value="Cancel" class="btn" /> 
+         
+    </div>
+    <!--/IsUpdateDL-->
+</div>

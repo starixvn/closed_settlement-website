@@ -1,0 +1,331 @@
+﻿<!--Header-->  
+<div class="main">
+        <div class="maincontent">
+             <table border="0" cellpadding="0px" cellspacing="0px" class="maincontent_header">
+                <tr>
+                    <td class="maincontent_headerL"></td>
+                    <td class="maincontent_headerC">Trader Performance</td>
+                    <td class="maincontent_headerR"></td>
+                </tr>
+            </table>
+            <div class="maincontent_box">
+                <div id="header_main" style="padding-bottom:10px">
+                    <div>
+                          <b>
+                            <span class='{clsSoccer_vl}' onclick='SwitchViewTrader(this);'  id='soccer'>SOCCER</span> | <span class='{clsOther_vl}' onclick='SwitchViewTrader(this);' id='other'>OTHER SPORT</span>   Risk Controller Report
+                          </b>
+                          | <span class='lnk' onclick="LoadTraderDetail()">DETAIL</span>
+                          <span style='padding-left:10px'>
+                            <input id="btnExportIcon" name="btnExport" title="Export to Excel" class='btnExcel' id='btnExport' name='btnExport' value='   ' onclick='ExportToExcel();' type='button' />
+                          </span>
+                          <input type='hidden' id='IsSoccer' name='IsSoccer' value='{IsSoccer_vl}' />
+                          <input id="export" type="submit" name="export" value="export" style="display:none" />
+                          <input id="sortCol" type="text" name="sortCol" value="{sortCol}" style="display:none" />
+                          <input id="order" type="text" name="order" value="{order}" style="display:none" />
+                          <input id="sort" type="submit" name="sort" value="sort" style="display:none" />
+                     </div>
+                     <div style="clear:both"></div>
+                     <div>
+                        <span class="padright b">From: </span>
+                        <span style="padding-left:5px;">
+                            {FromDateCal}
+                        </span>
+                        <span class="pL20 b">To:</span>
+                        <span style="padding-left:5px;">
+                            {ToDateCal}
+                        </span>
+                        &nbsp;
+                        <span style="padding-left:5px;vertical-align:middle;">
+                            <input id="btnReport" name="btnReport" type="button" value="REPORT" class="btn" onclick="DoPostBack()" />
+                        </span>
+                        <span style="padding-left:5px;vertical-align:middle;">
+                            <img id='inProgressBar' name='inProgressBar' width="16px" height="16px" style="display:none"  src="../App_Themes/Images/ajax-loader.gif" />
+                        </span>    
+                     </div>
+                  </div>  
+            </div>
+            <div class="bg_table">
+                <div id="sData"></div>
+            </div>
+        </div>
+    </div>     
+<!--/Header-->
+
+<!--Content-->
+      <!--excel-border-fix-->  
+      <table cellspacing="1" id="tbl-rpt" class="tbllayout">
+      <!--/excel-border-fix-->
+        <!--ReportHeader-->
+        <thead>
+          <tr class="title">
+            <th colspan="3">
+                &nbsp;
+              <input type="hidden" id="RowCnt" value="{RowCnt_vl}" />
+            </th>
+            <th colspan="{colspan_title}">Winlost</th>
+            <th colspan="{colspan_title}">Turnover</th>
+            <th colspan="{colspan_title}">Margin %</th>
+            <th colspan="{colspan_title}">Commission</th>
+            <th style="width:200px">&nbsp;</th>
+          </tr>
+          <tr class="title" id="trHeader">
+            <th>No</th>
+            <th>Trader</th>
+            <th>Match</th>
+
+            <th id="winlost_1st1x2" style="cursor:pointer;" onclick="Sort(this)" >1st&nbsp;1x2</th>
+            <th id="winlost_1x2" style="cursor:pointer;" onclick="Sort(this)" >1x2</th>
+            <!--OtherSportClear-->
+            <th id="winlost_ng" style="cursor:pointer;" onclick="Sort(this)" nowrap="">Next Goal</th>
+            <!--/OtherSportClear-->
+            <th id="winlost_1sthdp" style="cursor:pointer;" onclick="Sort(this)" >1st&nbsp;HDP</th>
+            <th id="winlost_hdp" style="cursor:pointer;" onclick="Sort(this)" >HDP</th>
+            <th id="winlost_1stou" style="cursor:pointer;" onclick="Sort(this)" >1st&nbsp;O/U</th>
+            <th id="winlost_ou" style="cursor:pointer;" onclick="Sort(this)" >O/U</th>
+            <!--OtherSportClear-->
+            <th id="winlost_1stnoofcorners" onclick="Sort(this)" style="cursor:pointer;" nowrap="">1st No. of Corner</th>
+            <th id="winlost_noofcorners" onclick="Sort(this)" style="cursor:pointer;" nowrap="">No. of Corner</th>
+            <th id="winlost_1stnoofyellowcard" onclick="Sort(this)" style="cursor:pointer;" nowrap="">1st No. of Yellow Card</th>
+            <th id="winlost_noofyellowcard" onclick="Sort(this)" style="cursor:pointer;" nowrap="">No. of Yellow Card</th>
+            <th id="winlost_15minou" nowrap="" onclick="Sort(this)" style="cursor:pointer;" >15mins O/U</th>
+            <!--/OtherSportClear-->
+            <th id="overall_wl" style="cursor:pointer;" onclick="Sort(this)" >Overall</th>
+
+
+
+            <th>1st 1x2</th>
+            <th>1x2</th>
+            <!--OtherSportClear-->
+            <th nowrap="">Next Goal</th>
+            <!--/OtherSportClear-->
+            <th>1st HDP</th>
+            <th>HDP</th>
+            <th>1st O/U</th>
+            <th>O/U</th>
+            <!--OtherSportClear-->
+            <th nowrap="">1st No. of Corner</th>
+            <th nowrap="">No. of Corner</th>
+            <th nowrap="">1st No. of Yellow Card</th>
+            <th nowrap="">No. of Yellow Card</th>
+            <th nowrap="">15mins O/U</th>
+            <!--/OtherSportClear-->
+            <th>Overall</th>
+
+            
+
+            <th id="margin_1st1x2" style="cursor:pointer;" onclick="Sort(this)" >1st&nbsp;1x2</th>
+            <th id="margin_1x2" style="cursor:pointer;" onclick="Sort(this)" >1x2</th>
+            <!--OtherSportClear-->
+            <th id="margin_ng" style="cursor:pointer;" onclick="Sort(this)" nowrap="" >Next Goal</th>
+            <!--/OtherSportClear-->
+            <th id="margin_1sthdp" style="cursor:pointer;" onclick="Sort(this)" >1st&nbsp;HDP</th>
+            <th id="margin_hdp" style="cursor:pointer;" onclick="Sort(this)" >HDP</th>
+            <th id="margin_1stou" style="cursor:pointer;" onclick="Sort(this)" >1st&nbsp;O/U</th>
+            <th id="margin_ou" style="cursor:pointer;" onclick="Sort(this)" >O/U</th>
+            <!--OtherSportClear-->
+            <th id="margin_1stnoofcorners" style="cursor:pointer;" onclick="Sort(this)" nowrap="">1st No. of Corner</th>
+            <th id="margin_noofcorners" style="cursor:pointer;" onclick="Sort(this)" nowrap="">No. of Corner</th>
+            <th id="margin_1stnoofyellowcard" onclick="Sort(this)" style="cursor:pointer;" nowrap="">1st No. of Yellow Card</th>
+            <th id="margin_noofyellowcard" onclick="Sort(this)" style="cursor:pointer;" nowrap="">No. of Yellow Card</th>
+            <th id="margin_15minou" style="cursor:pointer;" onclick="Sort(this)" nowrap="">15mins O/U</th>
+            <!--/OtherSportClear-->
+            <th id="overall_margin" style="cursor:pointer;" onclick="Sort(this)">Overall</th>
+
+            <th>1st&nbsp;1x2</th>
+            <th>1x2</th>
+            <!--OtherSportClear-->
+            <th nowrap="">Next Goal</th>
+            <!--/OtherSportClear-->
+            <th>1st&nbsp;HDP</th>
+            <th>HDP</th>
+            <th>1st&nbsp;O/U</th>
+            <th>O/U</th>
+            <!--OtherSportClear-->
+            <th nowrap="">1st No. of Corner</th>
+            <th nowrap="">No. of Corner</th>
+            <th nowrap="">1st No. of Yellow Card</th>
+            <th nowrap="">No. of Yellow Card</th>
+            <th nowrap="">15mins O/U</th>
+            <!--/OtherSportClear-->
+            <th>Overall</th>
+
+            <th>Trader </th>
+          </tr>
+        </thead>
+        <!--/ReportHeader-->
+        <!--ReportContent-->
+        <tbody>
+          <!--normal-row-->
+          <tr class="{odd_even}" style="text-align:right">
+            <td align="center"> {no_value} </td>
+            <td align="left"> {trader_value} </td>
+            <td align="center"> {noMatch_value} </td>
+
+            <td class="a3"> {winloss_HT1x2_value} </td>
+            <td class="a3"> {winloss_1x2_value} </td>
+            <!--OtherSportClear-->
+            <td class="a3"> {winloss_Next-Goal_value} </td>
+            <!--/OtherSportClear-->
+            <td class="a3"> {winloss_HTHDP_value} </td>
+            <td class="a3"> {winloss_HDP_value} </td>
+            <td class="a3"> {winloss_HTOver-Under_value} </td>
+            <td class="a3"> {winloss_Over-Under_value} </td>
+            <!--OtherSportClear-->
+            <td class="a3" > {winloss_1stCorner_value} </td>
+            <td class="a3" > {winloss_Corner_value} </td>
+            <td class="a3"> {winloss_1stYelloCard_value} </td>
+            <td class="a3"> {winloss_YelloCard_value} </td>
+            <td class="a3"> {winloss_15mOU_value} </td>
+            <!--/OtherSportClear-->
+            <td class="a3"> {winloss_overall_value} </td>
+
+            <td class="a2"> {turnover_HT1x2_value} </td>
+            <td class="a2"> {turnover_1x2_value} </td>
+            <!--OtherSportClear-->
+            <td class="a2"> {turnover_Next-Goal_value} </td>
+            <!--/OtherSportClear-->
+            <td class="a2"> {turnover_HTHDP_value} </td>
+            <td class="a2"> {turnover_HDP_value} </td>
+            <td class="a2"> {turnover_HTOver-Under_value} </td>
+            <td class="a2"> {turnover_Over-Under_value} </td>
+            <!--OtherSportClear-->
+            <td class="a2"> {turnover_1stCorner_value} </td>
+            <td class="a2"> {turnover_Corner_value} </td>
+            <td class="a2"> {turnover_1stYelloCard_value} </td>
+            <td class="a2"> {turnover_YelloCard_value} </td>
+            <td class="a2"> {turnover_15mOU_value} </td>
+            <!--/OtherSportClear-->
+            <td class="a2"> {turnover_overall_value} </td>
+
+            
+
+            <td class="a5"> {margin1_HT1x2_value} </td>
+            <td class="a5"> {margin1_1x2_value} </td>
+            <!--OtherSportClear-->
+            <td class="a5"> {margin1_Next-Goal_value} </td>
+            <!--/OtherSportClear-->
+            <td class="a5"> {margin1_HTHDP_value} </td>
+            <td class="a5"> {margin1_FTHDP_value} </td>
+            <td class="a5"> {margin1_HTOver-Under_value} </td>
+            <td class="a5"> {margin1_FTOver-Under_value} </td>
+            <!--OtherSportClear-->
+            <td class="a5"> {margin1_1stCorner_value} </td>
+            <td class="a5"> {margin1_Corner_value} </td>
+              <td class="a5"> {margin1_1stYelloCard_value} </td>
+            <td class="a5"> {margin1_YelloCard_value} </td>
+            <td class="a5"> {margin1_15mOU_value} </td>
+            <!--/OtherSportClear-->
+            <td class="a5"> {margin1_overall_value} </td>
+
+            <td class="a4"> {comm_HT1x2_value} </td>
+            <td class="a4"> {comm_1x2_value} </td>
+            <!--OtherSportClear-->
+            <td class="a4"> {comm_Next-Goal_value} </td>
+            <!--/OtherSportClear-->
+            <td class="a4"> {comm_HTHDP_value} </td>
+            <td class="a4"> {comm_HDP_value} </td>
+            <td class="a4"> {comm_HTOver-Under_value} </td>
+            <td class="a4"> {comm_Over-Under_value} </td>
+            <!--OtherSportClear-->
+            <td class="a4"> {comm_1stCorner_value} </td>
+            <td class="a4"> {comm_Corner_value} </td>
+            <td class="a4"> {comm_1stYelloCard_value} </td>
+            <td class="a4"> {comm_YelloCard_value} </td>
+            <td class="a4"> {comm_15mOU_value} </td>
+            <!--/OtherSportClear-->
+            <td class="a4"> {comm_overall_value} </td>
+
+            <td align="right" {padding-right}> {trader_value1} </td>
+          </tr>
+          <!--/normal-row-->
+        </tbody>
+        <!--total-row-->
+          <!--not-excel-export--><tfoot><!--/not-excel-export-->
+          <!--Excel-Total-Footer-->
+          <tr id="trFooter" class="report-footer">
+          <!--/Excel-Total-Footer-->
+            <td align="right"> {no_value} </td>
+            <td align="left"> {trader_value} </td>
+            <td align="center"> {noMatch_value} </td>
+
+            <td  align="right"> {winloss_HT1x2_value} </td>
+            <td  align="right"> {winloss_1x2_value} </td>
+            <!--OtherSportClear-->
+            <td  align="right"> {winloss_Next-Goal_value} </td>
+            <!--/OtherSportClear-->
+            <td  align="right"> {winloss_HTHDP_value} </td>
+            <td  align="right"> {winloss_HDP_value} </td>
+            <td  align="right"> {winloss_HTOver-Under_value} </td>
+            <td  align="right"> {winloss_Over-Under_value} </td>
+            <!--OtherSportClear-->
+            <td  align="right"> {winloss_1stCorner_value} </td>
+            <td  align="right"> {winloss_Corner_value} </td>
+            <td  align="right"> {winloss_1stYellowCard_value} </td>
+            <td  align="right"> {winloss_YellowCard_value} </td>
+            <td  align="right"> {winloss_15mOU_value} </td>
+            <!--/OtherSportClear-->
+            <td  align="right"> {winloss_overall_value} </td>
+
+            <td  align="right"> {turnover_HT1x2_value} </td>
+            <td  align="right"> {turnover_1x2_value} </td>
+            <!--OtherSportClear-->
+            <td  align="right"> {turnover_Next-Goal_value} </td>
+            <!--/OtherSportClear-->
+            <td  align="right"> {turnover_HTHDP_value} </td>
+            <td  align="right"> {turnover_HDP_value} </td>
+            <td  align="right"> {turnover_HTOver-Under_value} </td>
+            <td  align="right"> {turnover_Over-Under_value} </td>
+            <!--OtherSportClear-->
+            <td  align="right"> {turnover_1stCorner_value} </td>
+            <td  align="right"> {turnover_Corner_value} </td>
+            <td  align="right"> {turnover_1stYellowCard_value} </td>
+            <td  align="right"> {turnover_YellowCard_value} </td>
+            <td  align="right"> {turnover_15mOU_value} </td>
+            <!--/OtherSportClear-->
+            <td  align="right"> {turnover_overall_value} </td>
+
+            
+
+            <td  align="right"> {margin1_HT1x2_value} </td>
+            <td  align="right"> {margin1_1x2_value} </td>
+            <!--OtherSportClear-->
+            <td  align="right"> {margin1_Next-Goal_value} </td>
+            <!--/OtherSportClear-->
+            <td align="right"> {margin1_HTHDP_value} </td>
+            <td align="right"> {margin1_FTHDP_value} </td>
+            <td align="right"> {margin1_HTOver-Under_value} </td>
+            <td align="right"> {margin1_FTOver-Under_value} </td>
+            <!--OtherSportClear-->
+            <td align="right"> {margin1_1stCorner_value} </td>
+            <td align="right"> {margin1_Corner_value} </td>
+            <td align="right"> {margin1_1stYellowCard_value} </td>
+            <td align="right"> {margin1_YellowCard_value} </td>
+            <td align="right"> {margin1_15mOU_value} </td>
+            <!--/OtherSportClear-->
+            <td align="right"> {margin1_overall_value} </td>
+
+            <td align="right"> {comm_HT1x2_value} </td>
+            <td align="right"> {comm_1x2_value} </td>
+            <!--OtherSportClear-->
+            <td align="right"> {comm_Next-Goal_value} </td>
+            <!--/OtherSportClear-->
+            <td align="right"> {comm_HTHDP_value} </td>
+            <td align="right"> {comm_HDP_value} </td>
+            <td align="right"> {comm_HTOver-Under_value} </td>
+            <td align="right"> {comm_Over-Under_value} </td>
+            <!--OtherSportClear-->
+            <td align="right"> {comm_1stCorner_value} </td>
+            <td align="right"> {comm_Corner_value} </td>
+            <td align="right"> {comm_1stYellowCard_value} </td>
+            <td align="right"> {comm_YellowCard_value} </td>
+            <td align="right"> {comm_15mOU_value} </td>
+            <!--/OtherSportClear-->
+            <td align="right"> {comm_overall_value} </td>
+
+            <td align="right"> {trader_value1} </td>
+          </tr>
+          <!--not-excel-export--></tfoot><!--/not-excel-export-->
+          <!--/total-row-->
+        <!--/ReportContent-->
+      </table>
+  <!--/Content-->

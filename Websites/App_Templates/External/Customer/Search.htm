@@ -1,0 +1,53 @@
+<span id="errMsg" class="errMsg"></span>
+<table class="l">
+  <tr>
+    <td>
+      <font class="b">Keyword: </font>
+    </td>
+    <td>
+      <input type="text" class="txt" name="txtSearch" id="txtSearch" value="{search-Val}" onfocus="On_Focus();"  onblur="on_Blur();"  onkeypress="return On_KeyPress(event);"/>
+    </td>
+    <td >
+      <font class="b">First Letter: </font>
+    </td>
+    <td >
+      <select class="w60" name="listAlpha" id="listAlpha">
+        {listAlphaValue}
+      </select>
+    </td>
+    <!--tblFilter-->
+    <td>
+      <input type="hidden" name="bycom" id="bycom" value="{lfrom}"/>
+      <font class="b">Currency: </font>
+    </td>
+    <td>
+      <select class="w60" name="listCurrency" id="listCurrency">
+        {listCurrencyValue}
+      </select>
+    </td>
+  <!--status-->
+    <td>
+      <font class="b">Status: </font>
+    </td>
+    <td>
+      <select class="w60"  name="listType" id="listType">
+        {listStatus-Val}
+      </select>
+    </td>
+  <!--/status-->
+  <!--type-->
+    <td>
+      <font class="b">Type: </font>
+    </td>
+    <td>
+      <select class="w60"  name="userType" id="userType">
+        {listType-Val}
+      </select>
+    </td>
+  <!--/type-->
+  <!--/tblFilter-->
+   <td>
+      <input class="btn"  type="button" name="btnGo" id="btnGo" value="Search" onclick="{functionName}(this);"/>
+    </td>
+  </tr>
+</table>

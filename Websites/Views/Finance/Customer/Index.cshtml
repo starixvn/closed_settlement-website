@@ -1,0 +1,79 @@
+﻿<link href="~/App_Themes/Public/common.css" rel="stylesheet" type="text/css" />
+<link href="~/LiveCasino/Report/Style/Common.css" rel="stylesheet" type="text/css" />
+<link href="~/App_Themes/LeftPanel/left_panel.css" rel="stylesheet" type="text/css" />
+<link href="~/App_Themes/Report/reportgrid.css" rel="stylesheet" type="text/css" />
+<link href="~/js/jQuery/Pager/pagination.css" rel="stylesheet" type="text/css" />
+<link href="~/App_Themes/Ocean/StyleSheet.css" rel="stylesheet" type="text/css" />
+
+<link href="~/App_Themes/Customer/customerlist.css" rel="stylesheet" type="text/css" />
+<link href="~/App_Themes/jquery-ui.css" rel="stylesheet" type="text/css" />
+<link href="~/App_Themes/ui.jqgrid.css" rel="stylesheet" type="text/css" />
+<link href="~/App_Themes/Public/table.css" rel="stylesheet" type="text/css" />
+
+<script src="~/js/jQuery/jquery-latest.js" type="text/javascript"></script>
+<script src="~/js/jQuery/Template/jquery.tmpl.js" type="text/javascript"></script>
+<script src="~/js/jQuery/Pager/jpager.js" type="text/javascript"></script>
+<script src="~/js/jQuery/Jlinq/jlinq.js" type="text/javascript"></script>
+<script src="~/js/jQuery/jquery.json-1.3.js" type="text/javascript"></script>
+<script src="~/js/json2.js" type="text/javascript"></script>
+<script src="~/js/Customer.js" type="text/javascript"></script>
+<script src="~/js/common.js" type="text/javascript"></script>
+<script src="~/js/showhidepopup.js" type="text/javascript"></script>
+
+@{
+    var financeCustomerListService = new Fanex.Tarus.Finance.Business.Customer.FinanceCustomerListService();
+}
+
+<script type="text/javascript">
+    var customerList = [];
+    var currencyList = @Html.Raw(Json.Encode(financeCustomerListService.GetCurrencyList()));
+</script>
+
+<script src="~/Views/Finance/Customer/Js/Common.js?version=@Sunplus.Accounting.Core.Configurations.WebSettings.Version" type="text/javascript"></script>
+<script src="~/Views/Finance/Customer/Js/Utils.js?version=@Sunplus.Accounting.Core.Configurations.WebSettings.Version" type="text/javascript"></script>
+<script src="~/Views/Finance/Customer/Js/SuperList.js?version=@Sunplus.Accounting.Core.Configurations.WebSettings.Version" type="text/javascript"></script>
+
+<input id="hiddenUplineId" type="hidden" value="@ViewData["upline"]" />
+<input id="hiddenRoleId" type="hidden" value="@ViewData["roleid"]" />
+
+<div class="main">
+    <div class="maincontent" style="position:relative">
+        <div style="position:fixed; top:0px; left:1px; height:23px;background-color:#fff;z-index:10000; width:722px">
+            <table border="0" cellpadding="0px" cellspacing="0px" class="maincontent_header">
+                <tr>
+                    <td class="maincontent_headerL">
+                    </td>
+                    <td class="maincontent_headerC fixfont">
+                        <span id="title"></span>
+                    </td>
+                    <td class="maincontent_headerR">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        @if (ViewData["roleid"].ToString() == "4")
+        {
+            <div style="position:fixed; top:23px; left:1px; height:36px;background-color:#fff;z-index:10000; width:716px">
+                <div class="maincontent_box" style="width:100%">
+                    @Html.Partial("~/Views/Finance/Customer/Search.cshtml")
+                </div>
+            </div>
+        }
+        <div style="
+            @if (ViewData["roleid"].ToString() == "4")
+            {
+                @:margin-top:60px
+            }
+            else
+            {
+                @:margin-top:19px
+            }
+            ; margin-bottom:2px;">
+            <div id="divCustList">
+                @Html.Partial("~/Views/Finance/Customer/ListTemplate.cshtml")
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<br />

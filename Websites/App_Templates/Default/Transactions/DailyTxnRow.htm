@@ -1,0 +1,20 @@
+<tr {rowStyle}>
+<td style="text-align:center; width:30px;">{no}</td>
+<td style="text-align:center; width:75px;">{date}</td>
+<td style="text-align:center; width:70px;">{username}</td>
+<td style="text-align:center; width:200px;">{description}</td>
+<td style="text-align:center; width:40px;">{type}</td>
+<td style="text-align:right; width:80px;">{amount}</td>
+<!--UnVerifiedButtonBlock-->
+    <td rowspan="{rowspan}" style="text-align:center; width:100px;">{creator}</td>
+<!--/UnVerifiedButtonBlock-->
+<!--CheckBoxBlock-->
+<td style="text-align:center; width:65px;" rowspan="{rowspan}">
+    <input type="checkbox" {id} {checked} {disabled}  onclick="CheckSelectItem(this)"/>
+</td>   
+<!--/CheckBoxBlock-->
+<!--UnVerifiedButtonBlock-->
+<td rowspan="{rowspan}"style="text-align:center; width:100px;">{verifiedby}&nbsp;</td>
+<td rowspan="{rowspan}"style="text-align:center; width:80px;">{verifiedtime}&nbsp;</td>
+<td rowspan="{rowspan}" style="text-align:center; width:60px; vertical-align:middle;">{action}&nbsp;</td>
+<!--/UnVerifiedButtonBlock--></tr>  

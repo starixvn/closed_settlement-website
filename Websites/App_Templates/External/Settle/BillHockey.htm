@@ -1,0 +1,57 @@
+<div>  
+  <form id="frmBill">   
+  <table style="width:100%" class="tblcollapse">    
+    <tr class="title1 c">        
+        <td colspan="8">LEAGUE:&nbsp;{leaguename}</td>
+    </tr>
+    <tr class="title">
+      <td width="80">CODE</td>
+      <td width="90">KICK-OFF TIME</td>
+      <td width="250">TEAM</td>
+      <td width="22">1P</td>
+      <td width="22">2P</td>
+      <td width="22">3P</td>    
+      <td width="22">O.T</td>   
+      <td width="36">Final Score</td>
+    </tr>
+    <tr >
+      <td rowspan="2">{matchcode}</td>
+      <td rowspan="2">{date}</td>
+      <td class="b l ht">{hometeam}</td>
+      <td><input type="text" id="txt1pHome" name="txt1pHome" tabindex="1" size="1" class="c txth13" value="{value1pHome}" onkeypress="return OnKP(event, this);" onkeyup="OnKUHockey(event);"/></td>
+      <td><input type="text" id="txt2pHome" name="txt2pHome" tabindex="3" size="1" class="c txth13" value="{value2pHome}" onkeypress="return OnKP(event, this);" onkeyup="OnKUHockey(event);"/></td> 
+      <td><input type="text" id="txt3pHome" name="txt3pHome" tabindex="5" size="1" class="c txth13" value="{value3pHome}" onkeypress="return OnKP(event, this);" onkeyup="OnKUHockey(event);"/></td>      
+      <td><input type="text" id="txtOTHome" name="txtOTHome" tabindex="7" size="1" class="c txth13" value="{valueOTHome}" onkeypress="return OnKP(event, this);" onkeyup="OnKUHockey(event);"/></td>      
+      <td><input type="text" id="homeF" name="homeF" size="3" class="c txth13 ftsc" value="{homeFScore}" disabled="disabled"/></td>                
+    </tr> 
+    <tr >      
+      <td class="b l at">{awayteam}</td>
+      <td><input type="text" id="txt1pAway" name="txt1pAway" tabindex="2" size="1" class="c txth13" value="{value1pAway}" onkeypress="return OnKP(event, this);" onkeyup="OnKUHockey(event);"/></td>
+      <td><input type="text" id="txt2pAway" name="txt2pAway" tabindex="4" size="1" class="c txth13" value="{value2pAway}" onkeypress="return OnKP(event, this);" onkeyup="OnKUHockey(event);"/></td> 
+      <td><input type="text" id="txt3pAway" name="txt3pAway" tabindex="6" size="1" class="c txth13" value="{value3pAway}" onkeypress="return OnKP(event, this);" onkeyup="OnKUHockey(event);"/></td>
+      <td><input type="text" id="txtOTAway" name="txtOTAway" tabindex="8" size="1" class="c txth13" value="{valueOTAway}" onkeypress="return OnKP(event, this);" onkeyup="OnKUHockey(event);"/></td>      
+      <td><input type="text" id="awayF" name="awayF" size="3" class="c txth13 ftsc" value="{awayFScore}" disabled="disabled"/></td>                
+    </tr>      
+  </table>
+    <input type="hidden" id="sParams" name="sParams" value="{params}" />
+    <input type="hidden" id="sAction" name="sAction" />
+  <input type="hidden" id="isSD" name="isSD" value="0" />
+  </form>
+  <span style="float:right;">
+    <input type="checkbox" id="scoreDirect" name="scoreDirect" value="1"  onclick="ChangeInputWay(this);"></input> Input Final Score directly&nbsp;&nbsp;
+  </span>
+  <br/>  
+  <!--CalcRead--><input type="button" class="btn" style="width: 100px;" id="btnSubmit" disabled="disabled" value="{btnSubmitValue}" /><!--/CalcRead--><!--CalcHost--><input type="button" class="btn" style="width: 100px;" id="btnSubmit" value="{btnSubmitValue}" onclick="DoCalculate('{type}');"/><!--/CalcHost-->
+  <!--Unsettle-->
+  <!--UnSeRead-->
+  <input type="button" class="btn" style="width:100px;" id="btnSubmit_1" disabled="disabled" value="Unsettle" /><!--/UnSeRead--><!--UnSeHost--><input type="button" class="btn" style="width: 100px;" id="btnSubmit_1" {disableUS} value="Unsettle" onclick="DoCalculate('unsettle');"/><!--/UnSeHost-->
+  <!--/Unsettle-->
+  <span style="padding-left: 30px; display:none;" id="errMsg" class="error-message">Please input valid score!</span>
+  <!--RefundBlock-->
+  <br />
+  <br />      
+  <input type="button" class="btn" style="width:180px;" value="REFUND/CANCEL" onclick="DoCalculate('refund');"/>      
+  <br />
+  <input type="button" class="btn" style="width:180px;" value="REFUND FULLTIME" onclick="DoCalculate('refundfulltime');"/>            
+  <!--/RefundBlock-->  
+</div>

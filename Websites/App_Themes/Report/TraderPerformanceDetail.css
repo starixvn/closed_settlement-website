@@ -1,0 +1,134 @@
+﻿tr.bgborder td{   border-bottom-color:#B5C4D0}
+.red{   color:Red}
+.clearfix{   clear:both}
+.indent{   display:inline-block;     vertical-align:middle;     width:16px}
+.tree-expanded{     background:url("../images/expand.gif") no-repeat scroll 0px -12px transparent;  display:inline-block;  height:10px;  vertical-align:middle;  width:16px;  margin-bottom:2px;  cursor:pointer}
+.tree-expand{ background-position:0px -1px}
+.content-warper{   border:solid 1px #7C98A4;     line-height:18px}
+.content-body{   border-bottom:solid 1px #7C98A4}
+.content-toolbox{   border-bottom:solid 1px #7C98A4;     height:26px}
+.content-pagination{ border-top:solid 1px #7C98A4;     height:26px}
+.header-frozen, .header-scroll, .body-frozen, .footer-frozen, .footer-scroll{   float:left; overflow:hidden}
+.btngroup{    float:right; margin-top:4px;}
+.gridtitle{   margin-left:2px; margin-top:4px;     background:url(../images/report_check.png) no-repeat left center;  padding-left:18px;  float:left;  font-weight:bold}
+.bgtitle{background:url("../images/white-top-bottom.gif") repeat-x scroll 0 -1px  transparent;}
+.pagination-scroll{ margin-top:2px;}
+.tbl-header-frozen, .tbl-header-scroll, .tbl-body-frozen, .tbl-body-scroll, .tbl-footer-frozen, .tbl-footer-scroll{border-collapse:collapse}
+.tbl-header-frozen td, .tbl-header-scroll td, .tbl-body-frozen td, .tbl-body-scroll td, .tbl-footer-frozen td, .tbl-footer-scroll td{border:solid 1px #7C98A4;  border-left:none 0px;  border-top:none 0px}
+.tbl-header-frozen tr:last-child td, .tbl-header-scroll tr:last-child td{border-bottom:none 0px}
+.tbl-header-frozen td, .tbl-header-scroll td, .tbl-footer-frozen td, .tbl-footer-scroll td{background-color:#cddef3;  font-weight:bold}
+.tbl-header-frozen tr:last-child td, .tbl-header-scroll tr:last-child td{border-bottom:none 0px}
+.tbl-footer-frozen td, .tbl-footer-scroll td{border-bottom:none 0px}
+.tbl-header-scroll td, .tbl-body-scroll td, .tbl-footer-scroll td{padding:1px;}
+
+#traderPerformanceDetailSoccer{background-color:#cddef3;}
+#traderPerformanceDetailSoccer div.footer-scroll{ padding-right:1px;}
+#traderPerformanceDetailSoccer div.body-scroll{overflow:scroll;  border-top:solid 1px #7C98A4;  height:605px; background-color:#fff;}
+#traderPerformanceDetailSoccer div.body-frozen{border-top:solid 1px #7C98A4;  height:588px; background-color:#fff;  height:588px; }
+
+#traderPerformanceDetailNoSoccer{background-color:#cddef3;}
+#traderPerformanceDetailNoSoccer div.footer-scroll{ padding-right:1px;}
+#traderPerformanceDetailNoSoccer div.body-scroll{overflow:scroll;  border-top:solid 1px #7C98A4;  height:605px; background-color:#fff;}
+#traderPerformanceDetailNoSoccer div.body-frozen{border-top:solid 1px #7C98A4;  height:588px; background-color:#fff;  height:588px;  }
+
+.totalRow
+{
+    background-color:#CCFFCC;
+}
+.col30
+{
+    width:30px;
+    white-space:normal;
+} 
+.col40
+{
+    width:40px;
+    white-space:normal;
+}
+ .col60
+{
+    width:60px;
+    overflow:hidden;
+    white-space:normal;
+}          
+.col70
+{
+    width:70px;
+    white-space:normal;
+} 
+.col80
+{
+    width:80px;
+    white-space:normal;
+}   
+.col100
+{
+    width:100px;
+    white-space:normal;
+} 
+.colFrozenLeft
+{
+    width:161px;
+    white-space:normal;
+} 
+.col400
+{
+    width:400px;
+    white-space:normal;
+}  
+.col755
+{
+    width:755px;
+    white-space:normal;
+}
+.colSpanLeft
+{
+    width:655px;
+    white-space:normal;
+}
+.colSpanScore
+{
+    width:122px;
+    white-space:normal;
+}
+.colSpanValue
+{
+    width:1134px;
+    white-space:normal;
+}
+.colSpanValueNoSoccer
+{
+    width:729px;
+    white-space:normal;
+}
+.colSpanGrandTotalRight
+{
+    width:1030px;
+    white-space:normal;
+}
+
+.a1{background-color: #eeFFee !important;}
+.a2{background-color: #CCFFFF  !important;}
+.a3{background-color: #FFFF99 !important;}
+.a4{background-color: #ffffee !important;}
+.a5{background-color: #DFEAFF  !important;}
+.a6{background-color: #FFDDFF  !important;}
+.bg_tableTrader
+{		
+	margin-top:2px;
+	min-width:800px;
+}
+.maincontent_boxTrader
+{
+    background: url("../images/banner/bg_head_tb.jpg") repeat-x scroll left bottom #FFFFFF;
+    border: 1px solid #7C98A4;
+    display: table;
+    padding: 4px 2px;
+    text-align: left;
+    min-width:800px;
+}
+
+.blueText 
+{
+    color: Blue;
+}

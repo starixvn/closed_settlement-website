@@ -1,0 +1,33 @@
+  <table>
+    <tr>
+		<!--ReportType-->
+      <td>
+        <input type="radio" name="type" value="all" id="alltrans" {status-alltrans} onclick="isYesterday='0';">Total Balance</input> | 
+        <input type="radio" name="type" value="yes" id="yestrans" {status-yestrans} onclick="isYesterday='1';">Yesterday's Balance</input>
+        <!--BalanceDiff-->
+        <span style="padding-left:10px;text-transform:none;font-weight:normal">
+          The balance difference due to Ex.Rates updated for this week ({date}) is: <b>{diff} RM</b>
+          &nbsp; 
+          <a target="_blank" href="CompBalanceDiff.aspx">View Detail</a>
+        </span>
+        <!--/BalanceDiff-->
+      </td>
+		<!--/ReportType-->
+      <td>
+        <img id='inProgressBar' name='inProgressBar'  style='display:none'   src="../App_Themes/Images/ajax-loader.gif" />
+      </td>
+    </tr>
+    <!--db-->
+    <tr>
+      <td>
+        GET DATA FROM 
+        <input type="radio" id="dbMain" name="db" value="Main" {status-main} onlick="IsRep='0';"></input> MAIN
+        <input type="radio" id="dbRep" name="db"  value="Rep" {status-rep} onlick="IsRep='1';"></input> REPLICATION        
+      </td>
+     <!-- <td>        
+        <input type ="hidden" name ="custid" value ="{custid}"></input>
+        <input type="hidden" id="isYesterday" name="isYesterday" value="{isYesterday}" />
+      </td>-->
+    </tr>
+    <!--/db-->
+  </table>

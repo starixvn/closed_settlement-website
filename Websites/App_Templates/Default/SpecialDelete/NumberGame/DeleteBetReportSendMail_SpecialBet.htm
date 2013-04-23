@@ -1,0 +1,39 @@
+<table cellspacing="0" rules="all" bordercolor="DodgerBlue" border="1" id="display" style="border-color:DodgerBlue; border-style:Solid;border-collapse:collapse;font-size:8pt; font-family:Tahoma, Arial, Verdana, Sans-Serif;">
+  <tr align="Center" valign="Middle" style="background-color:#DEEDEF;height:25px;font-weight:bold; ">
+    <td width="50">Code</td>
+    <td nowrap>Event</td>
+    <td width="100">Event Date</td>
+  </tr>
+  <tr align="Center" valign="Middle" style="background-color:#FCFCFC;height:25px;">
+    <td>{Code}</td>
+    <td><b>Number Game No {Code}</b></td>
+    <td>{EventDate}</td>
+  </tr>
+</table>
+<br />
+<b>Deleted Bets</b>
+<table cellspacing="0" rules="all" bordercolor="DodgerBlue" border="1" id="display" style="border-color:DodgerBlue; border-style:Solid;border-collapse:collapse;font-size:8pt; font-family:Tahoma, Arial, Verdana, Sans-Serif;">
+  <tr align="Center" valign="Middle" style="background-color:#DEEDEF;height:25px;font-weight:bold; ">
+    <td width="100">Username</td>
+    <td width="100">Refno</td>
+    
+    <!--betype-choice-->
+    <td width="80">Bet Type</td>
+    <td width="30">Choice</td>
+    <!--/betype-choice-->
+    
+    <td width="50">Odds</td>
+    <td width="50">Amount</td>
+    <td width="50">Currency</td>
+
+    <td width="50">Bet From</td>
+    <td nowrap width="125">Trans.Time</td>
+        
+  </tr>
+  {Rows}
+</table>
+<br>
+  
+    <b>Deleted by:</b> {UserName} <br>
+      <b>Date:</b> {time} <br><br>
+<i>This is an auto-mail. Please do not reply.</i><br>

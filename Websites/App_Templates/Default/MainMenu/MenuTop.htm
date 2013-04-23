@@ -1,0 +1,28 @@
+﻿{#template MAIN}
+{#include mainmenu root= $T}
+{#/template MAIN}
+
+{#template mainmenu}
+<ul style="list-style-type:none;padding:0px; margin:0px;">
+    <li>
+        <div id="mainmenu">
+            <div style="clear:both;"></div>
+            <ul>
+                 {#foreach $T as r}
+                    {#include row root=$T.r}
+                 {#/for}
+            </ul>
+        </div>
+    </li>
+    <li>
+        <div class="subtopmenu" id="submenu"></div>
+    </li>
+</ul>
+
+
+{#/template mainmenu}
+
+{#template row}
+<li id="item_{$T.Id}" {#if $T.Target==""}onclick="menuclick('item_{$T.Id}',this, '{$T.Url}')"{#/if}>
+        <a {#if $T.Target==""}href="javascript:void(0)"{#else}href="{$T.Url}" target="{$T.Target}"{#/if}><span>{$T.Name}</span></a></li>
+{#/template row}

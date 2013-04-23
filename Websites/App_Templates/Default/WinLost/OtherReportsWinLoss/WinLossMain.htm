@@ -1,0 +1,79 @@
+﻿<div style="width: 1013px;" id="gbox_JQGrid1" class="ui-jqgrid ui-widget ui-widget-content">
+    <div style="width: 1013px;" id="gview_JQGrid1" class="ui-jqgrid-view">
+        <div id="divtitle" class="ui-state-default ui-jqgrid-hdiv" style="width: 1013px;">
+            <div class="ui-jqgrid-hbox">
+                <table id="htable" class="ui-jqgrid-htable" style="width: 995px;" border="0" cellpadding="0"
+                    cellspacing="0">
+                    <thead>
+                        <tr class="ui-jqgrid-labels title c">
+                          <th class="ui-state-default ui-th-column ui-th-ltr" style="width:90px; height:0px;"></th>
+                          <th class="ui-state-default ui-th-column ui-th-ltr" style="width:60px; height:0px;"></th>
+                          <th class="ui-state-default ui-th-column ui-th-ltr" style="width:100px; height:0px;"></th>
+                          <th class="ui-state-default ui-th-column ui-th-ltr" style="width:60px; height:0px;"></th>
+                          <th class="ui-state-default ui-th-column ui-th-ltr" style="width:100px; height:0px;"></th>
+                          <th class="ui-state-default ui-th-column ui-th-ltr" style="width:70px; height:0px;"></th>
+                          <th class="ui-state-default ui-th-column ui-th-ltr" style="width:100px; height:0px;"></th>
+                          <th class="ui-state-default ui-th-column ui-th-ltr" style="width:100px; height: 0px;"></th>
+                          <th class="ui-state-default ui-th-column ui-th-ltr" style="width:60px; height: 0px;"></th>
+                          <th class="ui-state-default ui-th-column ui-th-ltr" style="width:100px; height: 0px;"></th>
+                          <th class="ui-state-default ui-th-column ui-th-ltr" style="width:100px; height:0px;"></th>
+                        </tr>
+                        <tr class="ui-jqgrid-labels title c">
+                            <th colspan="4" align="center" style="border-bottom:solid 1px #7C98A4; border-right:solid 1px #7C98A4; background-color:#B5C4D0;" class="ui-state-default ui-th-column ui-th-ltr">&nbsp;</th>
+                            <th colspan="3" style="border-bottom:solid 1px #7C98A4; border-right:solid 1px #7C98A4; background-color:#B5C4D0;" class="ui-state-default ui-th-column ui-th-ltr">Member</th>
+                            <th colspan="3" style="border-bottom:solid 1px #7C98A4;background-color:#B5C4D0;border-right:solid 1px #7C98A4">Agent</th>
+                            <th style="background-color:#B5C4D0;" 
+                                class="ui-state-default ui-th-column ui-th-ltr" rowspan="2">Company</th>
+                        </tr>
+                        <tr class="ui-jqgrid-labels title c" style="background-color:#B5C4D0; border:1px solid #7C98A4;">
+                          <th class="ui-state-default ui-th-column ui-th-ltr" style="width:90px">{ReportByHead}</th>
+                          <th class="ui-state-default ui-th-column ui-th-ltr" style="width:60px">Currency</th>
+                          <th class="ui-state-default ui-th-column ui-th-ltr" style="width:100px">Turnover</th>
+                          <th class="ui-state-default ui-th-column ui-th-ltr" style="width:60px">Gross Comm</th>
+                          <th class="ui-state-default ui-th-column ui-th-ltr" style="width:100px">Winloss</th>
+                          <th class="ui-state-default ui-th-column ui-th-ltr" style="width:70px">Comm</th>
+                          <th class="ui-state-default ui-th-column ui-th-ltr" style="width:100px">Total</th>
+                          <th class="ui-state-default ui-th-column ui-th-ltr" style="width:100px;">Winloss</th>
+                          <th class="ui-state-default ui-th-column ui-th-ltr" style="width:60px;">Comm</th>
+                          <th class="ui-state-default ui-th-column ui-th-ltr" style="width:100px;">Total</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+        
+        <div id="bdiv" style="width: 1013px; max-height:560px" class="ui-jqgrid-bdiv">
+            <div style="position: relative;">
+                <table id="btable" style="width: 995px;" class="ui-jqgrid-btable" border="0" cellpadding="0" cellspacing="0">
+                    <tbody>
+                        <tr class="ui-widget-content jqgrow ui-row-ltr" style="height:0px;" >
+                          <td style="width: 90px;height:0px;border-bottom:none 0px;"></td>
+                          <td style="width: 60px;height:0px;border-bottom:none 0px;"></td>
+                          <td style="width: 100px;height:0px;border-bottom:none 0px;"></td>
+                          <td style="width: 60px;height:0px;border-bottom:none 0px;"></td>
+                          <td style="width: 100px;height:0px;border-bottom:none 0px;"></td>
+                          <td style="width: 70px;height:0px;border-bottom:none 0px;"></td>
+                          <td style="width: 100px;height:0px;border-bottom:none 0px;"></td>
+                          <td style="width: 100px;height:0px;border-bottom:none 0px;"></td>
+                          <td style="width: 60px;height:0px;border-bottom:none 0px;"></td>
+                          <td style="width: 100px;height:0px;border-bottom:none 0px;"></td>
+                          <td style="width: 100px;height:0px;border-bottom:none 0px;"></td>
+                         </tr>
+                        {content}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="fdiv" class="ui-jqgrid ui-jqgrid-sdiv" style="width: 1013px;">
+            <div class="ui-jqgrid-fbox">
+                <table id="tfoot" class="ui-jqgrid-ftable" style="width: 995px;" border="0" cellpadding="0"
+                    cellspacing="0">
+                    <tfoot>
+                        {footerValue}
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

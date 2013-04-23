@@ -1,0 +1,42 @@
+﻿ <!--agent-pt1-->
+    <tr>
+        <td colspan="2" >
+            Live
+        </td>
+        <td>
+            <select class="select-pt copyAll" name="listMNBOUL" id="listMNBOUL">
+                {listMNBOULValue}
+            </select>
+            <input type="button" name="btnReduce1" value=" " class="btn-dec1" onclick="ReducePT('listMNBOUL',1)" />
+            <input type="button" name="btnIncrease1" value=" " class="btn-inc1" onclick="IncreasePT('listMNBOUL',1)" />
+            <input type="button" name="btnReduce10" value=" " class="btn-dec10" onclick="ReducePT('listMNBOUL',10)" />
+            <input type="button" name="btnIncrease10" value=" " class="btn-inc10" onclick="IncreasePT('listMNBOUL',10)" />
+        </td>
+        <td>
+            <select class="select-pt copyfromL" name="listMNBOEL" id="listMNBOEL">
+                {listMNBOELValue}
+            </select>
+        </td>
+        <td>
+            <select class="select-pt copyfromL" name="listMHLL" id="listMHLL">
+                {listMHLLValue}
+            </select>
+        </td>
+        <td>
+            <select class="select-pt copyfromL" name="listMNCL" id="listMNCL">
+                {listMNCLValue}
+            </select>
+        </td>
+        <!--NG-Key-->
+          <td>
+            <select class="select-pt copyfromL" name="listMNGL" id="listMNGL">
+                {listMNGLValue}
+            </select>
+        </td>
+        <!--/NG-Key-->
+        <td>
+              <input class="copyAll" type="checkbox" onclick="NumberGameCopyPT('Live');" name="chkCopyNBOUL" id="chkCopyNBOUL" />
+               Copy From Over/Under
+        </td>
+    </tr>
+    <!--/agent-pt1-->

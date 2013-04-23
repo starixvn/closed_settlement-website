@@ -1,0 +1,105 @@
+<div>
+  <form id="frmBill">  
+  <table class="tblcollapse">    
+    <tr class="title1 c">        
+        <td colspan="7">LEAGUE:&nbsp;{leaguename}</td>
+    </tr>
+    <tr class="title">
+      <td width="100" >CODE</th>
+      <td width="90" >KICK-OFF TIME</th>
+      <td  >TEAM</th>     
+      <td width="80" >Final Score</th>
+    </tr>
+    <tr class="c">
+      <td rowspan="2">{matchcode}</td>
+      <td rowspan="2">{date}</td>
+      <td class="fontbold l hteam">{hometeam}</td>      
+      <td>{homeFScore}</td>                
+    </tr> 
+    <tr class="c">      
+      <td class="fontbold l ateam">{awayteam}</td>
+      <td>{awayFScore}</td>                
+    </tr>       
+  </table>
+
+    {ApplyHedging}
+    
+    {Refund}
+    <input type="hidden" id="sParams" name="sParams" value="{params}" />
+    <input type="hidden" id="sAction" name="sAction" />
+    <input id="hiddenScoreConfirm_homeFScore" name="hiddenScoreConfirm_homeFScore" type="hidden" />
+    <input id="hiddenScoreConfirm_awayFScore" name="hiddenScoreConfirm_awayFScore" type="hidden" />
+    <input id="hiddenScoreConfirm_Sport" name="hiddenScoreConfirm_Sport" type="hidden"
+        value="Billiard" />
+    </form>
+    <br />
+    <span style="padding-left: 30px;" id="infoMsg" class="info-message"></span><span 
+        style="padding-left: 30px; visibility: hidden;" id="errMsg" class="error-message">
+        Please input valid score!</span>
+    <div id="divScoreConfirm" style="display: none; margin-top: 4px">
+    <div style="text-align:center; margin-bottom:4px">
+    <span style="color:red; font-size:14px">You can only do this <span style="font-weight:bold; padding-left:4px; padding-right:4px">ONCE</span> so please <span style="font-weight:bold; padding-left:4px; padding-right:4px"> DOUBLE-CHECK </span> the scores !!!</span>
+    </div>
+        <table class="tblcollapse">
+            <tbody>
+                <tr class="title">
+                    <td>
+                        TEAM
+                    </td>
+                    <td width="80">
+                        Final Score
+                    </td>
+                </tr>
+                <tr class="c">
+                    <td class="fontbold l hteam">
+                        {hometeam}
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="tbxScoreConfirm_homeFScore"
+                            type="text" value="{homeFScore}" beginvalue="{homeFScore}" maxlength="9" size="4"
+                            style="text-align: center; color: Red" tabindex="1" />
+                    </td>
+                </tr>
+                <tr class="c">
+                    <td class="fontbold l ateam">
+                        {awayteam}
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="tbxScoreConfirm_awayFScore"
+                            type="text" value="{awayFScore}" beginvalue="{awayFScore}" maxlength="9" size="4"
+                            style="text-align: center; color: Red" tabindex="2" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div style="text-align: left; margin-top: 4px">
+            <span class="error-message" id="errMsg_ScoreConfirm" style="font-weight: bold; display: none">
+                Please input valid result!</span>
+        </div>
+        <div style="text-align: center; margin-top: 4px">
+            <input id="btnScoreConfirmProceed" type="button" class="btn" value="Proceed" />
+            <input id="btnScoreConfirmCancel" type="button" class="btn" value="Change" />
+        </div>
+        <div style="padding-left:4px; padding-top:8px; padding-bottom:8px; background-color:#F4F8BE; margin-top:4px; width:300px">
+            <table border="0">
+                <tbody>
+                   <tr>
+                        <td>
+                            <span>-&nbsp;<b>REFUND&nbsp;</b>normal tickets</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>-&nbsp;<b>SETTLE determined&nbsp;</b>Over/Under tickets of BETDAQ</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>- Mark remaining tickets of BETDAQ as "Running"</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

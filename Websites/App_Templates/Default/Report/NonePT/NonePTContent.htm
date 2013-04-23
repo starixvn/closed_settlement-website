@@ -1,0 +1,46 @@
+﻿<table id="table" class="tbllayout" cellspacing="1px" cellpadding="1px">
+    <thead>
+        <tr class="title" id="trHeader">
+            <th style="width:100px">#</th>
+            <th style="width:100px">Currency</th>
+            <th style="width:100px">Super</th>
+            <th style="width:100px">Master</th>
+            <th style="width:100px">Agent</th>
+            <th style="width:100px">Member</th>
+            <th style="width:100px">Bet Count</th>
+            <th style="width:100px">Running TO Total</th>
+            <th style="width:100px">TO Total</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <!--content-->
+            <tr class="l">
+                <td>{Order}</td>
+                <td>{Currency}</td>
+                <td>{SuperName}</td>
+                <td>{MasterName}</td>
+                <td>{AgentName}</td>
+                <td>{MemberName}</td>
+                <td class="r">{BetCount}</td>
+                <td class="r">{RunningTOTotal}</td>
+                <td class="r">{TOTotal}</td>
+            </tr>
+        <!--/content-->
+    </tbody>
+    
+    <!--footer-->
+    <tfoot>
+        <tr id="trFooter" class="title">	
+            <td class="report-footer" colspan="6"><b>Total</b></td>
+            <td class="report-footer" class="r">{BetCount}</td>
+            <td class="report-footer" colspan="2"></td>
+        </tr>        
+    </tfoot>
+    <!--/footer-->
+</table>
+<!--paging-->
+    <table style="width:700px" >
+        <td class="c">{paging}</td>
+    </table>
+<!--/paging-->

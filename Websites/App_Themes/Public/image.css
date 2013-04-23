@@ -1,0 +1,24 @@
+.divAdd {
+background:transparent url(../Images/icn_add.png) no-repeat scroll 0 0;
+cursor:pointer;
+height:17px;
+width:17px;
+}
+.divEdit {
+background:transparent url(../Images/icn_edit.png) no-repeat scroll 0 0;
+cursor:pointer;
+height:17px;
+width:17px;
+}
+.divDel {
+background:transparent url(../Images/ico2.png) no-repeat scroll 0 0;
+cursor:pointer;
+height:17px;
+width:12px;
+}
+.divView {
+background:transparent url(../Images/icn_view.png) no-repeat scroll 0 0;
+cursor:pointer;
+height:17px;
+width:17px;
+}

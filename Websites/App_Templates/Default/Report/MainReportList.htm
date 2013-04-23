@@ -1,0 +1,96 @@
+<div id="content">
+    <div id="left">
+        <div class="leftpane b">
+            <table>            
+                <tr>
+                  <td>From Date:</td>
+                  <td>{FromDateCal}</td>
+                </tr>
+                <tr>
+                  <td>To Date:</td>
+                  <td>{ToDateCal}</td>
+                </tr>
+          </table>
+        </div>
+        <div class="leftpane">
+            <span class="Bleft_ParentAc" onclick="menu_toggle('divMenu0')" id="divMenu0M">IBC REPORTS</span>
+            <div class="left_submenu" id="divMenu0">
+                <!--R001--><a id="R001" class="Bleft_Sub" IsActive="1" href="javascript:void(0);" funcname="OtherReports" onclick="openRpt('../Report/DirectBalance/DirectBalance.aspx',this)">Direct Balance</a><!--/R001-->
+                <!--R002--><a id="R002" class="Bleft_Sub" IsActive="1" href="javascript:void(0);" funcname="OtherReports" onclick="openRpt('../Report/DownLineBalance/MasterBalance.aspx',this)">Master Balance</a><!--/R002-->
+                <!--R003--><a id="R003" class="Bleft_Sub" IsActive="1" href="javascript:void(0);" funcname="OtherReports" onclick="openRpt('../Report/DownLineBalance/SuperBalance.aspx',this)">Super Balance</a><!--/R003-->
+                <!--A003--><a id="A003" class="Bleft_Sub" IsActive="0" href="javascript:void(0);" funcname="OtherReports" onclick="openRpt('../Report/SuperMovement.aspx',this)">Super Balance Movement</a><!--/A003-->
+                <!--R004--><a id="R004" class="Bleft_Sub" IsActive="1" href="javascript:void(0);" funcname="OtherReports" onclick="openRpt('../Report/MatchWL/MatchWinLossSingle.aspx',this)">Match Win Lost Single Bet</a><!--/R004-->
+                <!--R005--><a id="R005" class="Bleft_Sub" IsActive="1" href="javascript:void(0);" funcname="OtherReports" onclick="openRpt('../Report/MatchWL/MatchWinLostByBetType.aspx',this)">Match Win Lost By Bet Type</a><!--/R005-->
+                <!--R006--><a id="R006" class="Bleft_Sub" IsActive="1" href="javascript:void(0);" funcname="Report2a" onclick="openRptNew('../Report/MatchWL/MatchWL.aspx',this)">Match Winlost (2a)</a><!--/R006-->
+                <!--R008--><a id="R008" class="Bleft_Sub" IsActive="1" href="javascript:void(0);" funcname="Report2d" onclick="openRptNew('../Report/WinLostSummary.aspx',this)">WinLost Summary</a><!--/R008-->
+                <!--R011--><a id="R011" class="Bleft_Sub" IsActive="1" href="javascript:void(0);" funcname="Report2h" onclick="openRpt('../Report/DailyWL_Sporttype.aspx',this)">Daily Winlost (2h)</a><!--/R011-->
+                <!--R012--><a id="R012" class="Bleft_Sub" IsActive="1" href="javascript:void(0);" funcname="OtherReports" onclick="openRpt('../Report/DailyCreatedCustomers/DailyCreatedCustomers.aspx',this)">Daily Created Customers</a><!--/R012-->
+                <!--R026--><a id="R026" class="Bleft_Sub" IsActive="0" href="javascript:void(0);" funcname="NonePTMemSummary" onclick="openRpt('../Report/NonePT/NonePTMemSummary.aspx',this)">NonePT Members Summary</a><!--/R026-->
+                <!--R027--><a id="R027" class="Bleft_Sub" IsActive="0" href="javascript:void(0);" onclick="openRpt('../Report/NonePT/NonePTLastestBet.aspx',this)">NonePT Lastest Bet</a><!--/R027-->
+                <!--R013--><a id="R013" class="Bleft_Sub" IsActive="1" href="javascript:void(0);" funcname="OtherReports" onclick="openRpt('../Report/LeagueWL/LeagueWL_Sporttype.aspx',this)">League Win Lost</a><!--/R013-->
+                <!--R024--><a id="R024" class="Bleft_Sub" IsActive="1" href="javascript:void(0);" funcname="PunterAnalysis" onclick="openRpt('../Report/Punter/PunterAnalysis.aspx',this)">Punter Analysis</a><!--/R024-->
+                <!--R025--><a id="R025" class="Bleft_Sub" IsActive="1" href="javascript:void(0);" funcname="PunterAnalysis" onclick="openRpt('../Report/Punter/AgencyAnalysis.aspx',this)">Agency Analysis</a><!--/R025-->
+                <!--R014--><a id="R014" class="Bleft_Sub" IsActive="1" href="javascript:void(0);" funcname="OtherReports" onclick="openRpt('../Report/AllCustomerTurnOverBySite.aspx',this)">All Customer Turnover (by Site)</a><!--/R014-->
+                <!--R015--><a id="R015" class="Bleft_Sub" IsActive="1" href="javascript:void(0);" funcname="OtherReports" onclick="openRpt('../Report/AllCustomerWinlossTree.aspx',this)">Tree Win/Lost</a><!--/R015-->
+                <!--R016--><a id="R016" class="Bleft_Sub" IsActive="1" href="javascript:void(0);" funcname="OtherReports" onclick="openRpt('../Report/MarginReport.aspx',this)">Margin Report</a><!--/R016-->
+                <!--R017--><a id="R017" class="Bleft_Sub" IsActive="1" href="javascript:void(0);" funcname="OtherReports" onclick="openRpt('../Report/MarginReport_14.aspx',this)">Margin Report History</a><!--/R017-->
+                <!--R018--><a id="R018" class="Bleft_Sub" IsActive="0" href="javascript:void(0);" funcname="OtherReports" onclick="openRpt('../Report/DeleteBetReport.aspx',this)">Delete Bet</a><!--/R018-->
+                <!--R019--><a id="R019" class="Bleft_Sub" IsActive="1" href="javascript:void(0);" funcname="OtherReports" onclick="openRpt('../Report/HedgeRecord.aspx',this)">Betting Graph</a><!--/R019-->
+                <!--R020--><a id="R020" class="Bleft_Sub" IsActive="1" href="javascript:void(0);" funcname="OtherReports" onclick="openRpt('../Report/rptCheckBet.aspx',this)">Check Bet</a><!--/R020-->
+                <!--R021--><a id="R021" class="Bleft_Sub" IsActive="1" href="javascript:void(0);" funcname="OtherReports" onclick="openRpt('../Report/CreditTerm.aspx',this)">Credit Term</a><!--/R021-->
+                <!--R022--><a id="R022" class="Bleft_Sub" IsActive="1" href="javascript:void(0);" funcname="ReportTrader" onclick="openRpt('../Report/TraderPerformance/TraderPerformance.aspx',this)">Trader Performance</a><!--/R022-->
+                <!--R023--><a id="R023" class="Bleft_Sub" IsActive="1" href="javascript:void(0);" funcname="ReportingServices" onclick="openRpt('../Report/ReportingServices/ReportingServices.aspx',this)">Reporting Services</a><!--/R023-->
+                <!--R036--><a id="R036" class="Bleft_Sub" IsActive="1" href="javascript:void(0);" funcname="OtherReports" onclick="openRpt('../Report/Mixparlay/MixparlayWon.aspx',this)">Mix Parlay Won</a><!--/R036-->                
+                <!--R505--><a id="R505" class="Bleft_Sub" IsActive="1" href="javascript:void(0);" funcname="OtherReports" onclick="openRpt('../Report/MemberStatistics/GamesActiveMembers.aspx',this)">Games Active Members</a><!--/R505-->                
+            </div>
+        </div>
+        <div class="leftpane">
+            <span class="Bleft_ParentAc" onclick="menu_toggle('divMenu1')" id="divMenu1M">OTHER REPORTS</span>
+            <div class="left_submenu" id="divMenu1">
+                <!--R207--><a id="R207" class="Bleft_Sub" IsActive="1" href="javascript:void(0);" funcname="DepositReport" onclick="openRpt('../Report/Deposit/Deposit.aspx',this)">Deposit Reports</a><!--/R207-->
+                <!--R050--><a id="R050" class="Bleft_Sub" IsActive="1" href="javascript:void(0);" funcname="ReportFun88Winloss" onclick="openRpt('../Report/ReportWinlossFun88.aspx',this)">Fun88 Win Lost</a><!--/R050-->
+                <!--R051--><a id="R051" class="Bleft_Sub" IsActive="1" href="javascript:void(0);" funcname="Report12BETWinloss"  onclick="openRpt('../Report/ReportWinloss12Bet.aspx',this)">12Bet Win Lost</a><!--/R051-->
+                <!--R052--><a id="R052" class="Bleft_Sub" IsActive="1" href="javascript:void(0);" funcname="ReportM88Winloss" onclick="openRpt('../Report/M88ReportWinloss.aspx',this)">Mansion88 Win Lost</a><!--/R052-->
+                <!--R053--><a id="R053" class="Bleft_Sub" IsActive="1" href="javascript:void(0);" funcname="ReportALogWinloss" onclick="openRpt('../Report/ALogReportWinloss.aspx',this)">ALog Win Lost</a><!--/R053-->                
+                <!--R204--><a id="R204" class="Bleft_Sub" IsActive="1" href="javascript:void(0);" funcname="ReportSpondemoWinloss" onclick="openRpt('../Report/OtherWinLostReports/WinLostReportMain.aspx?site=spondemo',this)">Spondemo Win Lost</a><!--/R204-->
+                <!--R205--><a id="R205" class="Bleft_Sub" IsActive="1" href="javascript:void(0);" funcname="ReportDelaWinloss" onclick="openRpt('../Report/OtherWinLostReports/WinLostReportMain.aspx?site=dela',this)">Dela Win Lost</a><!--/R205-->
+                <!--R206--><a id="R206" class="Bleft_Sub" IsActive="1" href="javascript:void(0);" funcname="ReportTLCWinloss" onclick="openRpt('../Report/ReportWinlossTLC.aspx',this)">TLC Win Lost</a><!--/R206-->
+                
+                <span class="Bleft_Sub0" onclick="menu_toggleSub('SubChildHR')">Racing</span>
+                <div id="SubChildHR" style="padding-left:15px;" >
+                    <!--R101--><a id="R101" class="Bleft_Sub" IsActive="1" href="javascript:void(0);" funcname="Racing" onclick="openRpt('../Report/ToteHRWLDetails.aspx?type=Direct',this)">Racing (for Tote)</a><!--/R101-->
+                    <!--R102--><a id="R102" class="Bleft_Sub" IsActive="0" href="javascript:void(0);" funcname="Racing" onclick="openRpt('../Report/FOddsHRWLDetails.aspx?type=Direct',this)">Racing (for FOdds)</a><!--/R102-->
+                    <!--R111--><a id="R111" class="Bleft_Sub" IsActive="1" href="javascript:void(0);" funcname="Racing" onclick="openRpt('../Report/OpenTote/ReportForSettlement.aspx',this)">Racing (for OpenTote)</a><!--/R111-->                    
+                    <!--R103--><a id="R103" class="Bleft_Sub" IsActive="1" href="javascript:void(0);" funcname="Racing" onclick="openRpt('../Report/ToteHR12BETWLDetails.aspx?type=old',this)">Racing (12BET)</a><!--/R103-->
+                    <!--R112--><a id="R112" class="Bleft_Sub" IsActive="1" href="javascript:void(0);" funcname="Racing" onclick="openRpt('../Report/ToteHR12BETWLDetails_Old.aspx',this)">Racing (12BET) Old </a><!--/R112-->
+                    <!--R104--><a id="R104" class="Bleft_Sub" IsActive="0" href="javascript:void(0);" funcname="Racing" onclick="openRpt('../Report/FOddsHR12BETWLDetails.aspx',this)">Racing (12BET - for FOdds)</a><!--/R104-->                    
+                    <!--R105--><a id="R105" class="Bleft_Sub" IsActive="1" href="javascript:void(0);" funcname="Racing" onclick="openRpt('../Report/ToteHRMansionWLDetails.aspx',this)">Racing (M88)</a><!--/R105-->
+                    <!--R106--><a id="R106" class="Bleft_Sub" IsActive="0" href="javascript:void(0);" funcname="Racing" onclick="openRpt('../Report/FOddsHRMansionWLDetails.aspx',this)">Racing (M88 - for FOdds)</a><!--/R106-->
+                    <!--R107--><a id="R107" class="Bleft_Sub" IsActive="1" href="javascript:void(0);" funcname="Racing" onclick="openRpt('../Report/ToteHRAB88WLDetails.aspx',this)">Racing (Fun88)</a><!--/R107-->
+                    <!--R108--><a id="R108" class="Bleft_Sub" IsActive="0" href="javascript:void(0);" funcname="Racing" onclick="openRpt('../Report/FOddsHRAB88WLDetails.aspx',this)">Racing (Fun88 - for FOdds)</a><!--/R108-->
+                    <!--R113--><a id="R113" class="Bleft_Sub" IsActive="1" href="javascript:void(0);" funcname="Racing" onclick="openRpt('../Report/ToteHRALogWLDetails.aspx',this)">Racing (ALog)</a><!--/R113-->
+                    <!--R109--><a id="R109" class="Bleft_Sub" IsActive="1" href="javascript:void(0);" funcname="Racing" onclick="openRpt('../Report/HRGroupDaily/HRGroupDaily.aspx',this)">Racing Group Daily</a><!--/R109-->
+                    <!--R110--><a id="R110" class="Bleft_Sub" IsActive="1" href="javascript:void(0);" funcname="Horse Racing" onclick="openRpt('../Report/HRGroupDaily/HRGroupDaily.aspx?type=tote',this)">Racing Group Daily (for Tote)</a><!--/R110-->
+
+                    <!--R114--><a id="R114" class="Bleft_Sub" IsActive="1" href="javascript:void(0);" funcname="Horse Racing" onclick="openRpt('../Report/Racing/HorseRacingDailyReportforUK.aspx',this)">Horse Racing Daily Report for UK</a><!--/R114-->
+                    <!--R115--><a id="R115" class="Bleft_Sub" IsActive="1" href="javascript:void(0);" funcname="Horse Racing" onclick="openRpt('../Report/Racing/HorseRacingDailyReportforAU.aspx',this)">Horse Racing Daily Report for AU</a><!--/R115-->
+                    <!--R116--><a id="R116" class="Bleft_Sub" IsActive="1" href="javascript:void(0);" funcname="Horse Racing" onclick="openRpt('../Report/Racing/GreyhoundDailyReportforUK.aspx',this)">Greyhound Daily Report for UK</a><!--/R116-->
+                    <!--R117--><a id="R117" class="Bleft_Sub" IsActive="1" href="javascript:void(0);" funcname="Horse Racing" onclick="openRpt('../Report/Racing/GreyhoundDailyReportforAU.aspx',this)">Greyhound Daily Report for AU</a><!--/R117-->
+                    <!--R118--><a id="R118" class="Bleft_Sub" IsActive="1" href="javascript:void(0);" funcname="Horse Racing" onclick="openRpt('../Report/Racing/HarnessDailyReportforAU.aspx',this)">Harness Daily Report for AU</a><!--/R117-->
+                </div>
+                <!--R200--><a id="R200" class="Bleft_Sub" IsActive="1" href="javascript:void(0);" funcname="OtherReports" onclick="openRpt('../Report/FIWLDetails.aspx?type=Direct',this)">Finance Win Lost</a><!--/R200-->
+                <!--R201--><a id="R201" class="Bleft_Sub" IsActive="1" href="javascript:void(0);" funcname="ReportCasino" onclick="openRpt('../Report/CasinoDetail.aspx?type=Direct',this)">Casino Win Lost</a><!--/R201-->
+                <!--R202--><a id="R202" class="Bleft_Sub" IsActive="1" href="javascript:void(0);" funcname="ReportCasino" onclick="openRpt('../Report/MiniGamesDetail.aspx?type=Direct',this)">Casino Mini Game Win Lost</a><!--/R202-->
+                
+                <span class="Bleft_Sub0" onclick="menu_toggleSub('SubChildNG')">Number Game</span>
+                <div id="SubChildNG" style="padding-left:15px;" >
+                    <!--R333--><a id="R333" class="Bleft_Sub" IsActive="1" href="javascript:void(0);" funcname="ReportBingo" onclick="openRptNew('../Report/BettypeWL/NumberGame/NumberGameWL.aspx',this)">Win Lost by Bettype</a><!--/R333--> 
+                    <!--R334--><a id="R334" class="Bleft_Sub" IsActive="1" href="javascript:void(0);" funcname="NumberGameReport" onclick="openRpt('../Report/NumberGame/MatchWinloss.aspx',this)">Win lost by Match</a><!--/R334-->
+                    <!--R335--><a id="R335" class="Bleft_Sub" IsActive="1" href="javascript:void(0);" funcname="NumberGameReport" onclick="openRpt('../Report/NumberGame/DateWinloss.aspx',this)">Win lost by Date</a><!--/R335-->
+                    
+                </div>               
+                <!--R203--><a id="R203" class="Bleft_Sub" IsActive="1" href="javascript:void(0);" funcname="ReportBingo" onclick="openRpt('../Report/Bingo/BingoDetail.aspx?type=Direct',this)">Bingo Win Lost</a><!--/R203-->                
+            </div>
+        </div>
+    </div>
+</div>

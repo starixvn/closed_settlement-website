@@ -1,0 +1,24 @@
+﻿<div id="divcontainer" class="bg_table">
+<table height="20" cellspacing="0" cellpadding="0" border="0" class="menu_box" style="margin-bottom:3px;">
+	
+    <tr style="cursor: pointer;" id="btntop" onclick="DisplayMatchInfoSettleLog('{matchid}');">
+		<td class="btnleft"></td>					
+		<td style="width:auto" align="left" class="btnmiddle "><span class="mp">{LeagueName}</span></td>
+		<td width="15px" class="md2 right"></td>
+		<td class="btnright"></td>
+	</tr>        
+</table>
+<div id="{matchid}" class="{matchinfoclass}">
+    <table class="tbllayout" style="width:800px" cellspacing="1" >
+        <tr>
+            <td class="l b"><span class="ht">{Home}</span> -vs- <span class="at">{Away}</span>
+                <span style="padding-left:30px"> Event date: {EventDate}</span>
+             </td>
+        </tr>
+    </table>
+
+    {MatchInfoDetails}
+    <br />
+</div>
+</div>
+

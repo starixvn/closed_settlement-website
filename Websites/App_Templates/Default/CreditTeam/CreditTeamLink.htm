@@ -1,0 +1,40 @@
+<a href="CreditTerm.aspx?display=pre"><b>PRE AGREE REPORT</b></a> |
+<a href="CreditTerm.aspx?display=install">INSTALL AMOUNT REPORT</a> <br/>
+<table width="100%">
+  <tr>
+    <td>
+      <!--search-->
+      <table>
+        <tr>
+          <td>Search by Checker</td>
+          <td>
+            <input type ="text" id="txtCheckname" name="txtCheckname" size="17" ></input>
+          </td>
+          <td rowspan="2">
+            <input class="btn" id="btnSubmit"  name="btnSubmit" type="button" value ="Submit" onclick="LoadCreditTerm();"></input>
+            <span style="display: none;" id="inProgressBar">
+              <img src="../App_Themes/Images/ajax-loader.gif" alt=""/>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>or Pre-Agreed Amount from</td>
+          <td>
+            <input type ="text" id="txtPre1" name="txtPre1" size="5"  ></input>
+            to <input type ="text" id="txtPre2" name="txtPre2" size="5" onkeypress="On_LoadCreditTerm(event);" ></input>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <span id="err" style="color:red"></span>
+          </td>
+        </tr>
+      </table>
+      <!--/search-->
+    </td>
+    <td valign="bottom" style="text-align:right">
+      <input class="btnExcel" id ="btnExport" name="btnExport" type="button" onclick="ExportToExcel();" noFocus="true" title="Export To Excel"  style="width:20px;height:20px;" />      
+    </td>
+  </tr>
+</table>
+  

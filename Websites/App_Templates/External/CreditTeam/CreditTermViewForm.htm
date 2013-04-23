@@ -1,0 +1,68 @@
+<form action="CreditTermView.aspx" method ="post" name="form1">
+    <table  class="tbllayout" style="width:500px;" cellspacing="1">
+      <tr class="title">
+        <td  colspan ="2">Update Credit Term</td>      
+        </tr>
+        <tr>
+            <td class="l b">Customer:</td>
+            <td class="l">
+              <input class="txt type="text" name="txtcustomer" value="{customer}"  disabled="true"></input>
+            </td>
+        </tr>
+          <tr>
+            <td class="l b">Group headline:</td>
+            <td class="l">
+              <div style="width:16px;"><input type="checkbox" value="1" {checked} name="groupheadline" id="groupheadline" onclick="SetChecker(this,'1');" class="styled"></input></div>
+            </td>
+        </tr>
+        <tr>
+            <td class="l b">Group :</td>
+            <td class="l">
+              <select name="cbogroup" onchange="reSelectGroupId('0');" id="cbogroup">{listgroup}</select>              
+            </td>
+        </tr>
+        <tr>
+            <td class="l b">Credit Grade:</td>
+            <td class="l">
+              <select name="cbograde" id="cbograde">{listgrade}</select>              
+            </td>
+        </tr>
+        <tr>
+            <td class="l b">Pre Agreed Amount:</td>
+            <td class="l">
+              <input type="text" name="txtPreAmt" id="txtPreAmt"  maxlength="15"  value="{PreAmt}"></input>
+              <span id="s_currency" class="b"> {curr}</span>
+            </td>
+        </tr>
+        <tr>
+            <td class="l b">Installment Amount:</td>
+            <td class="l">
+              <input class="txt type="text" name="txtInsAmt" id="txtInsAmt"  maxlength="15"  value="{InsAmt}"></input>
+              <span id="s_currency" class="b"> {curr}</span>
+            </td>
+        </tr>
+        <tr>
+            <td class="l b">Installment Day :</td>
+            <td class="l">
+              <select name ="day" id="day" id="day">{listday}</select>
+            </td>
+        </tr>
+      <tr>
+        <td class="l b">
+          Checker:
+        </td>
+        <td class="l">{ddlCheckerList}</td>
+      </tr>
+        <tr>
+            <td class="l b" valign ="top">Remark :</td>
+            <td class="l">
+              <textarea style="width:320px;" class="txt" rows="10" cols="50" name="remark" id="remark">{remark}</textarea>
+            </td>
+        </tr>
+        <tr>
+            <td class="c" colspan="2">
+              <input class="btn" type="submit" name="btnsubmit" value="Submit"></input>
+            </td>
+        </tr>
+    </table>
+</form>

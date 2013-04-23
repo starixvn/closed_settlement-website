@@ -1,0 +1,43 @@
+﻿.blue
+{
+    color: Blue;
+    cursor: pointer;
+}
+.blue:hover
+{
+    color: #C16605;
+    text-decoration: underline;
+}
+
+.emtyBottomBorder
+{
+    border-bottom: none 0px;
+}
+
+.whiteBackground
+{
+    background-color: #FFFFFF;
+}
+
+.ui-datepicker-week-end
+{
+    color: #FF0000 !important;
+}
+
+
+.longtext-wrapper
+{
+    word-wrap: break-word;
+}
+
+.col90
+{
+    width: 90px;
+    word-wrap: break-word;
+}
+
+.col50
+{
+    width: 50px;
+    word-wrap: break-word;
+}

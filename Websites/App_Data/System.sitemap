@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="" title="Functions"  description="">
+    <!--Customer-->
+    <siteMapNode url="" title="Dangerous"  description="" roles="accounting, EXTERNAL" />
+    <siteMapNode url="" title="Special"  description="" roles="accounting" />
+    <siteMapNode url="" title="SelectedBetting"  description="" roles="accounting" />
+    <siteMapNode url="" title="MaxExposure"  description="" roles="accounting" />
+    <siteMapNode url="" title="VirtualRate"  description="" roles="accounting" />
+    <siteMapNode url="" title="Internal"  description="" roles="accounting" />
+    <siteMapNode url="" title="AutoSuspend"  description="" roles="accounting" />
+    <siteMapNode url="" title="IsApplyCssBalanceInfo"  description="BalanceInfo" roles="accounting" />
+    <siteMapNode url="" title="ViewPT"  description="ViewPT" roles="accounting" />
+    <siteMapNode url="" title="ViewLog"  description="ViewLog" roles="accounting" />
+    <siteMapNode url="" title="EditUserName"  description="EditUserName" roles="accounting" />
+    <siteMapNode url="" title="MoveCustomer"  description="MoveCustomer" roles="accounting" />
+    <siteMapNode url="" title="ChangeUserGroup"  description="ChangeUserGroup" roles="accounting" />
+    <siteMapNode url="" title="SuspendCustList"  description="SuspendCustList" roles="accounting" />
+    <siteMapNode url="" title="ClearCredit"  description="ClearCredit" roles="accounting" />
+    <siteMapNode url="" title="ResetMaxTransfer"  description="ResetMaxTransfer" roles="accounting" />    
+    <!--End Customer-->
+    <!--Transfer-->
+    <siteMapNode url="" title="Transfer"  description="Transfer" roles="accounting" />
+    <siteMapNode url="" title="AddTransaction"  description="AddTransaction" roles="accounting" />
+    <!--End Transfer-->
+    
+    <!--ExRate-->
+    <siteMapNode url="" title="ExchangeRate"  description="ExchangeRate" roles="accounting" />
+    <!--END-->
+    
+    <!--Report-->
+    <siteMapNode url="" title="ReportList"  description="" roles="accounting" />
+    <siteMapNode url="" title="Report2a"  description="Report2a" roles="accounting" />
+    
+    <!--END-->
+    
+    <!--System Definition-->
+    <siteMapNode url="" title="System"  description="Report2a" roles="ACCOUNTING, EXTERNAL, CRM, ACC-REPORT, BA, ABS, BeArt, Settlement" />
+    <!--END-->
+  </siteMapNode>
+</siteMap>

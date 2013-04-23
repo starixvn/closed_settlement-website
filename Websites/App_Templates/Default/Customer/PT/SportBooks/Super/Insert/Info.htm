@@ -1,0 +1,148 @@
+﻿{#template MAIN}
+{#include Info root= $T}
+{#/template MAIN}
+
+{#template Info}
+<table class="tblcollapse" style="width: 950px;">
+    <tr class="title">
+        <td colspan="4">
+            Add New Super 
+        </td>
+    </tr>
+    <tr>
+        <td width="15%" class="l">
+            User Name
+        </td>
+        <td width="35%" class="l">
+            <input type="text" id="txtUsername" name="txtUsername" class="w130">
+        </td>
+        <td width="15%" class="l">
+            Password
+        </td>
+        <td width="35%" class="l">
+            <input type="password" id="txtPwd" name="txtPwd" class="w130">
+        </td>
+    </tr>
+    <tr>
+        <td class="l">
+            First Name
+        </td>
+        <td class="l">
+            <input value="" id="txtFirstname" name="txtFirstname" class="w130">
+        </td>
+        <td class="l">
+            Last Name
+        </td>
+        <td class="l">
+            <input value="" id="txtLastname" name="txtLastname" class="w130">
+        </td>
+    </tr>
+    <tr>
+        <td class="l">
+            Phone
+        </td>
+        <td class="l">
+            <input value="" id="txtPhone" name="txtPhone" class="w130">
+        </td>
+        <td class="l">
+            Mobile Phone
+        </td>
+        <td class="l">
+            <input value="" id="txtMobile" name="txtMobile" class="w130">
+        </td>
+    </tr>
+    <tr>
+        <td class="l">
+            Site
+        </td>
+        <td class="l">
+            <select id="listSite" name="listSite" class="w80">
+                <option value="">Select</option>
+            </select>
+        </td>
+        <td class="l">
+            Fax
+        </td>
+        <td class="l">
+            <input value="" id="txtFax" name="txtFax" class="w130">
+        </td>
+    </tr>
+    <tr>
+        <td class="l">
+            Max Credit
+        </td>
+        <td class="l">
+            <input value="0" id="txtCredit" name="txtCredit" style="" maxlength="14" class="w130">
+        </td>
+        <td class="l">
+            Currency
+        </td>
+        <td class="l">
+            <select id="listCurrency" name="listCurrency" class="w80">
+                <option value="0">Select</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td class="l">
+            Internal User
+        </td>
+        <td class="l">
+            <input type="checkbox" name="chkInternal" id="chkInternal">
+        </td>
+        <td colspan="4" class="r">
+        </td>
+    </tr>
+    <tr class="title">
+        <td colspan="4">
+            Commission
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <!--Commission-->
+            <table cellspacing="0" cellpadding="0" width="100%" class="noneborder">
+                <tr>
+                    <td class="c">
+                        Group A
+                        <select id="listGroupA" name="listGroupA" max="0.0025" class="commlist">
+                            <option selected="true">0.0025</option>
+                        </select>
+                    </td>
+                    <td class="c">
+                        Group B
+                        <select id="listGroupB" name="listGroupB" max="0.005" class="commlist">
+                            <option selected="true">0.005</option>
+                        </select>
+                    </td>
+                    <td class="c">
+                        Group C
+                        <select id="listGroupC" name="listGroupC" max="0.0075" class="commlist">
+                            <option selected="true">0.0075</option>
+                        </select>
+                    </td>
+                    <td class="c">
+                        Group D
+                        <select id="listGroupD" name="listGroupD" max="0.01" class="commlist">
+                            <option selected="true">0.01</option>
+                        </select>
+                    </td>
+                    <td class="c">
+                        1x2 Comm
+                        <select id="listGroup1x2" name="listGroup1x2" max="0.0025" class="commlist">
+                            <option selected="true">0.0025</option>
+                        </select>
+                    </td>
+                    <td class="c">
+                        Other Comm
+                        <select id="listOther" name="listOther" max="0.01" class="commlist">
+                            <option selected="true">0.01</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <!--Commission-->
+        </td>
+    </tr>
+</table>
+{#/template Info}

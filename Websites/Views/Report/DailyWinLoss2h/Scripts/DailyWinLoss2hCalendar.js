@@ -1,0 +1,4 @@
+﻿
+
+var DailyWinLoss2hCalendar = {
+}

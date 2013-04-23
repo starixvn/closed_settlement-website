@@ -1,0 +1,71 @@
+﻿
+
+<div id="divViewAllDept" class="hidden" style="margin-left: 2px;">
+    <table border="1" style="border-collapse:collapse;">
+        <thead>
+            <tr>
+                <td class="cellborder cellheader col120">
+                    <div id="divHeaderDeptName" class="c sorter" style="cursor: pointer" title="Sort by deparment name" onclick="javascript:accManager.dept.sortByName(event);">
+                        Department
+                    </div>
+                </td>
+                <td class="cellborder cellheader col80">
+                    <div id="divHeaderNoOfUser" class="c sorter" style="cursor: pointer" title="Sort by no of user" onclick="javascript:accManager.dept.sortByNumberOfUsers(event);">
+                        No of User
+                    </div>
+                </td>
+                <td class="cellborder cellheader col300">
+                    <div class="c">
+                        Description
+                    </div>
+                </td>
+                <td class="cellborder cellheader col80">
+                    <div class="c">
+                        Role Policy
+                    </div>
+                </td>
+                <td class="cellborder cellheader col80">
+                    <div class="c">
+                        Edit
+                    </div>
+                </td>
+                <td class="cellborder cellheader col40">
+                    <div class="c">
+                        Delete
+                    </div>
+                </td>
+            </tr>
+        </thead>
+        <tbody id="tbodyViewAllDept">
+        </tbody>
+        <script id="scriptTmpDepts" type="text/html">
+            <tr><td class="cellborder">
+                <div class="c" deptname="true">${Name}</div>
+            </td><td class="cellborder">
+                <div class="c" style="color: #0066CC; cursor:pointer" onclick="javascript:accManager.accounts.filterByDepartment(${Id});">${NoOfUser}</div>
+            </td><td class="cellborder">
+                <div class="c" deptdesc="true">${Description}</div>
+            </td><td class="cellborder">
+                <div class="c" style="color: #0066CC; cursor:pointer" onclick="javascript:accManager.dept.policy(${Id}, '${Name}');">Role Policy</div>
+            </td><td class="cellborder">
+                <div class="c">
+                    <img alt="Edit" title="Edit" src="../App_Themes/Images/icn_edit.png" style="cursor: pointer" onclick="javascript:accManager.dept.editClick(event);"/>
+                    <img alt="Save" title="Save" border="0" src="../App_Themes/Images/save1.jpg" style="cursor: pointer; display:none" onclick="javascript:accManager.dept.saveClick(event, ${Id});"/>
+                    <img alt="Cancel" title="Cancel" border="0" src="../App_Themes/Images/undo.png" style="cursor: pointer; display:none" onclick="javascript:accManager.dept.cancelClick(event);"/>
+                </div>
+            </td><td class="cellborder">
+                <div class="col40 c">
+                    <img border="0" src="../App_Themes/Images/icon_del.gif" alt="Delete" style="cursor: pointer" onclick="javascript:accManager.dept.deleteClick(${Id}, '${Name}');">
+                </div>
+            </td>
+            </tr>
+        </script>
+        <script id="scriptTmpDepts_NoInfo" type="text/html">
+            <tr><td class="cellborder" style="width:715px" align="center" colspan="6">
+                <span style="font-weight:bold">There is no information</span>
+            </td>
+            </tr>
+        </script>
+    </table>
+</div>
+@Html.Partial("~/Views/User/Policy/GroupPolicy.cshtml")

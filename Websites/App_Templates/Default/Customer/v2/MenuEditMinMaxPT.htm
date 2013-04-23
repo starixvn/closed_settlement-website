@@ -1,0 +1,212 @@
+<table width="100%"  border="0" cellpadding="0" cellspacing="0" >      
+	<tr>	
+		<td colspan="2" class="l">
+			<input type='checkbox' id="chkCopyAll" onclick="CopyAllPT(this);" name="chkCopyAll"></input><b><span style="cursor:pointer;" onclick="obj('chkCopyAll').click();">{copy-all-text}</span></b>
+		</td>
+	</tr>
+	<tr>		
+		<td class="l" width="20%" id="linkSoccer" onclick="OpenPanelEdit('panelSoccer');">
+			<table class="tblPTheader" cellSpacing="0" cellPadding="0" border="0">
+				<tr id="btntop"  style="cursor:pointer">
+					<td class="btnleft"></td>					
+					<td class="btnmiddle " width="80px" align="left" ><span class="mp">{soccer-text}</span></td>
+					<td class="md2 right" width="15px"></td>
+					<td class="btnright"></td>
+				</tr>
+			</table>
+		</td>
+		<td width="80%" class="l">
+			<span class="errMsg" id="error1"></span>
+		</td>
+	</tr>  
+	<tr id="panelSoccer">
+		<td colspan="2">{soccerPT}</td>
+	</tr>
+	<tr>	
+		<td colspan="2" class="l">
+			<input type='checkbox' id="chkCopyBasket" onclick="CopyBasketPT(this);" name="chkCopyBasket"></input><b><span style="cursor:pointer;" onclick="obj('chkCopyBasket').click();">{copy-basket-text}</span></b>
+		</td>
+	</tr>  
+	<tr>		
+		<td class="l" id="linkBasket" onclick="OpenPanelEdit('panelBasket');">
+			<table class="tblPTheader" cellSpacing="0" cellPadding="0" border="0">
+				<tr id="btntop" style="cursor:pointer">
+					<td class="btnleft"></td>
+					<td class="btnmiddle" width="80px" align="left" ><span class="mp">{basket-text}</span></td>
+					<td class="md2 right" width="15px"></td>
+					<td class="btnright"></td>
+				</tr>
+			</table>
+		</td>
+		<td width="80%" class="l">
+			<span class="errMsg" id="error2"></span>
+		</td>
+	</tr>
+	<tr class="hidden" id="panelBasket">
+		<td colspan="2">{basketPT}</td>
+	</tr>
+	<tr>
+		<td class="l" id="linkFootball" onclick="OpenPanelEdit('panelFootball');">
+			<table class="tblPTheader" cellSpacing="0" cellPadding="0" border="0">
+				<tr id="btntop" style="cursor:pointer">
+					<td class="btnleft"></td>
+					<td class="btnmiddle" width="80px" align="left" ><span class="mp">{football-text}</span></td>
+					<td class="md2 right" width="15px"></td>
+					<td class="btnright"></td>
+				</tr>
+			</table>
+		</td>
+		<td width="80%" class="l">
+			<span class="errMsg" id="error3"></span>
+		</td>
+	</tr>
+	<tr class="hidden" id="panelFootball">
+		<td colspan="2">{footballPT}</td>
+	</tr>
+	<tr>
+		<td class="l" id="linkTennis" onclick="OpenPanelEdit('panelTennis');">
+			<table class="tblPTheader" cellSpacing="0" cellPadding="0" border="0">
+				<tr id="btntop" style="cursor:pointer">
+					<td class="btnleft"></td>
+					<td class="btnmiddle" width="80px" align="left" ><span class="mp">{tennis-text}</span></td>
+					<td class="md2 right" width="15px"></td>
+					<td class="btnright"></td>
+				</tr>
+			</table>
+		</td>
+		<td width="80%" class="l">
+			<span class="errMsg" id="error5"></span>
+		</td>
+	</tr>
+	<tr class="hidden" id="panelTennis">
+		<td colspan="2" >{tennisPT}</td>
+	</tr>
+	<tr>
+		<td class="l" id="linkBaseball" onclick="OpenPanelEdit('panelBaseball');">
+      <table class="tblPTheader"  cellSpacing="0" cellPadding="0" border="0">
+        <tr id="btntop" style="cursor:pointer">
+          <td class="btnleft"></td>
+          <td class="btnmiddle" width="80px" align="left" >
+            <span class="mp">{baseball-text}</span>
+          </td>
+          <td class="md2 right" width="15px"></td>
+          <td class="btnright"></td>
+        </tr>
+      </table>    
+		</td>
+		<td width="80%" class="l">
+			<span class="errMsg" id="error8"></span>
+		</td>
+	</tr>
+	<tr class="hidden" id="panelBaseball">
+		<td colspan="2" >{baseballPT}</td>
+	</tr>
+	<tr>
+		<td class="l" id="linkGolf" onclick="OpenPanelEdit('panelGolf');">
+			<table class="tblPTheader"  cellSpacing="0" cellPadding="0" border="0">
+				<tr id="btntop" style="cursor:pointer">
+					<td class="btnleft"></td>
+					<td class="btnmiddle" width="80px" align="left" ><span class="mp">{golf-text}</span></td>
+					<td class="md2 right" width="15px"></td>
+					<td class="btnright"></td>
+				</tr>
+			</table>
+		</td>
+		<td width="80%" class="l">
+			<span class="errMsg" id="error10"></span>
+		</td>
+	</tr>
+	<tr class="hidden" id="panelGolf">
+		<td colspan="2">{golfPT}</td>
+	</tr>
+	<tr>
+		<td class="l" id="linkMoto" onclick="OpenPanelEdit('panelMoto');">
+			<table class="tblPTheader"  cellSpacing="0" cellPadding="0" border="0">
+				<tr id="btntop" style="cursor:pointer">
+					<td class="btnleft"></td>
+					<td class="btnmiddle" width="80px" align="left" ><span class="mp">{moto-text}</span></td>
+					<td class="md2 right" width="15px"></td>
+					<td class="btnright"></td>
+				</tr>
+			</table>
+		</td>
+		<td width="80%" class="l">
+			<span class="errMsg" id="error11"></span>
+		</td>
+	</tr>
+	<tr class="hidden" id="panelMoto">
+		<td colspan="2">{motoPT}</td>
+	</tr>
+	<tr>
+		<td class="l" id="linkOther" onclick="OpenPanelEdit('panelOtherSports');" width="30%">
+			<table class="tblPTheader" cellSpacing="0" cellPadding="0" border="0">
+				<tr id="btntop" style="cursor:pointer">
+					<td class="btnleft"></td>
+					<td class="btnmiddle" width="80px" align="left" ><span class="mp">{othersports-text}</span></td>
+					<td class="md2 right" width="15px"></td>
+					<td class="btnright"></td>
+				</tr>
+			</table>
+		</td>
+		<td width="70%" class="l">
+			<span class="errMsg" id="error99"></span>
+		</td>
+	</tr>
+	<tr class="hidden" id="panelOtherSports">
+		<td colspan="2">{otherPT}</td>
+	</tr>
+		<!--mixedsports-->
+		<tr>
+		<td class="l" id="linkMixedSports" onclick="OpenPanelEdit('panelMixedSports');">
+			<table class="tblPTheader" cellSpacing="0" cellPadding="0" border="0">
+				<tr id="Tr1" style="cursor:pointer">
+					<td class="btnleft"></td>
+					<td class="btnmiddle" width="120px" align="left" style="padding-right:2px"><span class="mp">{mixedsport-text}</span></td>
+					<td class="md2 right" width="15px"></td>
+					<td class="btnright"></td>
+				</tr>
+			</table>
+		</td>
+		<td width="80%" class="l">
+			<span class="errMsg" id="s"></span>
+		</td>
+	</tr>
+	<tr class="hidden" id="panelMixedSports">
+		<td colspan="2">{mixedsportPT}</td>
+	</tr>
+	<!--mixedsports-->
+
+    <!--NumberGame-->
+	<tr>
+		<td class="l" id="linkNumberGame" onclick="OpenPanelEdit('panelNumberGame');">
+			<table class="tblPTheader"  cellSpacing="0" cellPadding="0" border="0">
+				<tr id="Tr2" style="cursor:pointer">
+					<td class="btnleft"></td>
+					<td class="btnmiddle" width="80px" align="left" ><span class="mp">{NumberGame-text}</span></td>
+					<td class="md2 right" width="15px"></td>
+					<td class="btnright"></td>
+				</tr>
+			</table>
+		</td>
+		<td width="80%" class="l">
+			<span class="errMsg" id="Span1"></span>
+		</td>
+	</tr>
+	<tr id="panelNumberGame">
+		<td colspan="2">{NumberGamePT}</td>
+	</tr>
+	<!--/NumberGame-->
+
+	<tr>		
+		<td class="l">
+			<table  cellpadding="0" border="0" cellspacing="0">				
+				<tr>
+				<td class="custBtn1"></td>
+				<td class="custBtn2 hand" id="{add-id}" onclick="return BtnOnClick();">{add-text}</td>
+				</tr>
+			</table>
+		</td>
+		<td style="text-align:left">
+		</td>
+	</tr>
+</table>

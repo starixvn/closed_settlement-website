@@ -1,0 +1,23 @@
+<table>
+    <tr>
+        <td id="tdFromDate" class="b">From:</td>
+        <td>{fromdate}</td>
+        <!--calc-->
+        <td  id="td_hidden1" class="b">To:</td>
+        <td id="td_hidden2">{todate}</td>
+        <td  id="td_hidden3"><input type="checkbox" id="chkUnCal" name="chkUnCal" />Un-Calculate Game Only</td>
+        <td id="td_hidden4"><input type="checkbox" id="chkUnCalMultiple" name="chkUnCalMultiple" />UnCal-Multiple Only</td>
+        <!--/calc-->
+    </tr>
+</table>
+<table>
+    <tr>
+        <td class="b">Sports:</td>
+        <td style="width: 150px;" ><select id="ddlSports" name="ddlSports" onchange="ChangeSport();" class="fullwidth">{sportOptions}</select></td>
+        <!--calc-->
+        <td id="td_hidden5" class="b">Leagues:</td>
+        <td id="selLeague" class="width-350"><select id="ddlLeagues" name="ddlLeagues" class="fullwidth">{leagueOptions}</select></td>                   
+        <!--/calc-->
+        <td><input type="button" id="btnSubmit" name="btnSubmit" value="Submit" onclick="GetSettleMatch();" class="btn" /></td>  
+  </tr>
+</table>

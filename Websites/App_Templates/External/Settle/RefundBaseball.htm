@@ -1,0 +1,68 @@
+<div>
+<form id="frmBill">       
+      <table class="tblcollapse">    
+        <tr class="title1 c">        
+            <td colspan="15">LEAGUE:&nbsp;{leaguename}</td>
+        </tr>
+        <tr class="title">
+          <td width="80" >CODE</td>
+          <td width="85" >KICK-OFF TIME</td>
+          <td width="250" >TEAM</td>
+          <td width="22" >1</td>
+          <td width="22" >2</td>
+          <td width="22" >3</td>
+          <td width="22" >4</td>
+          <td width="22" >5</td> 
+          <td width="22" >6</td>
+          <td width="22" >7</td>
+          <td width="22" >8</td>
+          <td width="22" >9</td>  
+          <td width="22" >E.I</td>   
+          <td width="36" >HT Score</td>
+          <td width="36" >Final Score</td>
+        </tr>
+        <tr class="c">
+          <td rowspan="2">{matchcode}</td>
+          <td rowspan="2">{date}</td>
+          <td class="b l ht">{hometeam}</td>
+          <td>{value1Home}</td>
+          <td>{value2Home}</td> 
+          <td>{value3Home}</td>      
+          <td>{value4Home}</td>      
+          <td>{value5Home}</td>      
+          <td>{value6Home}</td>      
+          <td>{value7Home}</td>      
+          <td>{value8Home}</td>      
+          <td>{value9Home}</td>      
+          <td>{valueEIHome}</td>      
+          <td>{homeHScore}</td>
+          <td>{homeFScore}</td>                
+        </tr> 
+        <tr class="c">      
+          <td class="b l at">{awayteam}</td>
+          <td>{value1Away}</td>
+          <td>{value2Away}</td> 
+          <td>{value3Away}</td>
+          <td>{value4Away}</td>      
+          <td>{value5Away}</td>      
+          <td>{value6Away}</td>      
+          <td>{value7Away}</td>      
+          <td>{value8Away}</td>      
+          <td>{value9Away}</td>      
+          <td>{valueEIAway}</td>      
+          <td>{awayHScore}</td> 
+          <td>{awayFScore}</td>                
+        </tr>      
+      </table>
+
+  {Refund}
+  
+  <input type="hidden" id="sParams" name="sParams" value="{params}" />  
+      <input type="hidden" id="sAction" name="sAction" />
+      <input type="hidden" id="isSD" name="isSD" value="0" />
+</form>
+
+  <span style="padding-left: 30px;" id="infoMsg" class="info-message"></span>
+  <span style="padding-left: 30px; visibility: hidden;" id="errMsg" class="error-message">Please input valid score!</span>
+  
+</div>

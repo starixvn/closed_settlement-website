@@ -1,0 +1,38 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+
+namespace Sunplus.Accounting.Entities.Report.DailyWL
+{
+    [Serializable]
+    [DataContract]
+    public class DailyWLRowBO
+    {
+        [DataMember]
+        public string Name { get; set; }
+
+        [DataMember]
+        public string Id { get; set; }
+
+        [DataMember]
+        public string WinLoss { get; set; }
+
+        [DataMember]
+        public string Position { get; set; }
+
+        [DataMember]
+        public string Comm { get; set; }
+
+        [DataMember]
+        public string LineTotal { get; set; }
+
+        [DataMember]
+        public string Turnover { get; set; }
+
+        [DataMember]
+        public string Margin { get; set; }
+
+    }
+}

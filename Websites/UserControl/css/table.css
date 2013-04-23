@@ -1,0 +1,38 @@
+.tbllayout2
+{
+	border-collapse:collapse;
+	border-spacing: 1px;
+}
+.tbllayout2 .canchange {
+    color: #0066CC;
+    cursor: pointer;
+}
+.tbllayout2 tr
+{
+	line-height:18px;
+}
+.tbllayout2 td
+{
+	border: 1px solid #7C98A4;
+}
+
+.tbllayout2 .title 
+{
+    background-color: #B5C4D0 !important;
+    color: #000000;
+    font-weight: bold;
+    text-align:center;
+}
+
+.tbllayout2 .title td
+{
+	border-top: 1px solid #7C98A4;
+	border-left: 1px solid #7C98A4;
+	border-right: 1px solid #7C98A4;
+	border-bottom:0 none;
+}
+
+.tbllayout2 tbody td
+{
+	text-align:center;
+}

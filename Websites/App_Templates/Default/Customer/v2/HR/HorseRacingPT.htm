@@ -1,0 +1,63 @@
+﻿<div>
+    <table class="tblPTheader" cellspacing="0" cellpadding="0" border="0">
+        <tr style="cursor: pointer;" id="btntop">
+            <td class="btnleft" onclick="MenuItemClick('div{type}');" />
+            <td align="left" width="80" id="menutote" onclick="MenuItemClick('div{type}');" class="btnmiddle">
+                <span class="mp">{lblType}</span>
+            </td>
+            <td width="20" id="td{type}" class="md3 r" onclick="MenuItemClick('div{type}');" class="r" />
+            <td class="btnright" />
+        </tr>
+    </table>
+</div>
+<div style="height:2px;"></div>
+<div id="div{type}">
+    <div style="width:800px;text-align:left;">
+        <span class="errMsg" id="errMsg151{type}"></span>
+    </div>
+    <!--status-->
+    <table>
+            
+        <tr>
+            <td>
+                Enable
+            </td>
+            <td>
+               <input type="checkbox"  id="chkDisabled{HRType}" onclick="changeDisable{HRType}(this);" {disabledChangeHR} value="yes" name="chkDisabled{HRType}" {status} />{lbltype}
+                <span style="{visibleInsert}"><input type="checkbox"  id="chkDisabled{HRType}DL" disabled="disabled" value="yes" name="chkDisabled{HRType}DL" {statusDL}  />{lbltypeDL}</span>
+                <input type="hidden" id="isDisabled{HRType}" name="isDisabled{HRType}" value="{isDisabledHR}" />
+                <input type="hidden" id="isDisabled{HRType}DL" name="isDisabled{HRType}DL" value="{isDisabledHRDL}" />
+            </td>
+        </tr>
+            
+    </table>
+    <!--/status-->
+    <!--betsetting-->
+    <table class="tblcollapse" style="width:800px;">
+    <tr class="title">
+        <td >
+             {lblBetSetting}
+        </td>
+    </tr>
+        <tr>
+            <td >
+                {BetSetting}
+            </td>
+        </tr>
+    </table>
+    <!--/betsetting-->
+    <table class="tblcollapse" style="width:800px;" >
+            <!--pt-->
+            <tr class="title">
+                <td colspan="3">
+                    {lblPositionTaking}
+                </td>
+            </tr>
+            {pt_data}
+            <!--/pt-->
+    </table>
+    <!--copy_preset-->
+     {chkCopyPreset} &nbsp;<span style="font-weight:bold; color:#0000ff">{lblCopyPreset}</span>
+    <!--/copy_preset-->
+</div>
+{jsdata}

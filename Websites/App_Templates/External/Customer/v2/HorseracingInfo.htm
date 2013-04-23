@@ -1,0 +1,158 @@
+<center>  
+  <input type="hidden"  id="{parentId}" name="{parentId}"  value="{valueParentId}"/>
+  <input type="hidden" id="custId" name="custId" value="{cust-id}" />
+  <input type="hidden" id="isUpdateMember" name="isUpdateMember" value="0" />
+  <input type="hidden" id="memberPT" name="memberPT" value="0" />
+  <input type="hidden" id="maxMemberPT" name="maxMemberPT" value="0" />
+  <input type="hidden" id="roleId" name="roleId" value="{role-id}" />
+  <input type="hidden" id="newHRStatus" name="newHRStatus" value="{oldHRStatus}"/>
+  <input type="hidden" id="newHRStatusDL" name="newHRStatusDL" value="{oldHRStatusDL}"/>
+  <input type="hidden" id="oldHRStatus" value="{oldHRStatus}"/>
+  <input type="hidden" id="oldHRStatusDL" value="{oldHRStatusDL}"/>
+  {VariableScript}
+  <table border="1" width="800px" class="tblcollapse">    
+    <tbody>
+		<tr class="title">
+      <td colspan="4">
+      {add-edit-agent}
+      </td>
+        </tr>
+
+		<tr>
+			<td width="20%" class="l">{lblFirstname}</td>
+			<td width="35%" class="l">
+				<input type="text" readonly="True" disabled="disabled" value="{firstname}" name="txtFName" id="txtFName"/>
+			</td>
+			<td width="20%" class="l">{lblLastname}</td>
+			<td width="25%" class="l">
+				<input type="text" readonly="True" disabled="disabled" value="{lastname}" name="txtLName" id="txtLName"/>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="l">{lblPhone}</td>
+			<td class="l">
+				<input type="text" readonly="True" disabled="disabled" value="{phone}" name="txtPhone" id="txtPhone"/>
+			</td>
+			<td class="l">{lblMobilePhone}</td>
+			<td class="l">
+				<input type="text" readonly="True" disabled="disabled" value="{mobile}" name="txtMobile" id="txtMobile"/>
+			</td>
+		</tr>
+		<tr>
+
+			<td width="20%" class="l">{lblFax}</td>
+			<td nowrap="yes" width="25%" class="l" id="td_pass">
+				<input type="text" readonly="True" disabled="disabled" value="{fax}" name="txtFax" id="txtFax"/>
+			</td>
+			<td class="l">
+				{lblDisabledHR}
+			</td>
+			<td align="left">
+				<input type="checkbox"  id="chkEnabledHR" onclick="changeDisableHR(this);" {disabledChangeHR} value="yes" name="chkEnabledHR" {status} />{lblagenttype}
+        <!--chkdownline--><input type="checkbox" onclick="changeDisableHRDL(this);"  id="chkEnabledHRDL" disabled="disabled" value="yes" name="chkEnabledHRDL" {statusDL} />{lblagenttypeDL}<!--/chkdownline-->
+      </td>
+		</tr>		
+        
+        <tr class="title">
+            <td colspan="4">{lblCommHR}</td>
+        </tr>	
+		<!--comm-member-->
+		<tr>
+			<td colspan="4">
+				<table border="0" width="100%">
+					<tbody>
+						<tr>
+							<td nowrap="" width="33%" class="r">
+								{lblHRCommParent}&nbsp;<u>{lblUKMeeting}</u>&nbsp;
+							</td>
+							<td width="20%" class="l">
+								<input type="text" style="width:56px" disabled="disabled" readonly="True" value="{UKCommParent}" id="txtDiscount"/>
+							</td>
+							<td nowrap="" width="30%" class="r">
+								{lblHRCommParent}&nbsp;<u>{lblOthersMeeting}</u>&nbsp;
+							</td>
+							<td width="20%" class="l">
+								<input type="text" style="width:56px" readonly="True" disabled="disabled" value="{OthersCommParent}" id="txtDiscountcs"/>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4">
+				<table border="0" width="100%">
+					<tbody>
+						<tr>
+							<td nowrap="" width="33%" class="r">
+								{lblHRComm}&nbsp;<u>{lblUKMeeting}</u>&nbsp;
+							</td>
+							<td width="20%" class="l">
+								<select class="select-group" name="listUKMeeting" id="listUKMeeting">{listUKMeetingValue}</select>
+							</td>
+							<td nowrap="" width="30%" class="r">
+								{lblHRComm}&nbsp;<u>{lblOthersMeeting}</u>&nbsp;
+							</td>
+							<td width="20%" class="l">
+								<select class="select-group" name="listOthersMeeting" id="listOthersMeeting">{listOthersMeetingValue}</select>
+								<span id="spddrCommissionCS_TG" class="normal"/>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</td>
+		</tr>
+		<!--/comm-member-->
+		
+		<!--comm-not-member-->
+		<tr class="{group-com-hidden}">
+			<td colspan="4" class="c">
+				
+				{lblHRComm}&nbsp;<u>{lblUKMeeting}</u>&nbsp;
+				<select class="select-group" name="listUKMeeting" id="listUKMeeting">{listUKMeetingValue}</select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				{lblHRComm}&nbsp;<u>{lblOthersMeeting}</u>&nbsp;
+				<select class="select-group" name="listOthersMeeting" id="listOthersMeeting">{listOthersMeetingValue}</select>&nbsp;&nbsp;&nbsp;
+
+			</td>
+		</tr>
+		<!--/comm-not-member-->
+		<tr>
+			<td class="title" colspan="4">
+				{lblBetSetting}
+			</td>
+		</tr>
+
+	</tbody>
+  </table>
+  <table class="tblcollapse" width="800px">
+	<tr>
+		<td>
+			{BetSetting}
+		</td>
+	</tr>
+	
+
+</table>
+	<table width="800px" cellspacing="0" cellpadding="0" border="0">
+		<tr>
+			<td style="height:15px">
+
+			</td>
+		</tr>
+		<tr>
+			<td class="custBtn1"/>
+			<td onclick="return BtnOnClick();" id="btnAdd" class="custBtn2 hand" >{lblUpdate}</td>
+			<td style="text-align: left;">
+				<div style="" id="inProgressBar">
+					{lblProcessing}
+				</div>
+			</td>
+			<td class="l">
+				<span class="errMsg" id="error151"></span>
+			</td>
+		</tr>
+
+	</table>
+	{ScriptMsg}
+</center>

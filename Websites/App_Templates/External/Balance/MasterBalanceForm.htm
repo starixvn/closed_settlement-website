@@ -1,0 +1,23 @@
+<form action ="{action}" method ="post">
+  <table>
+    <tr>
+      <td>
+        <b>GET DATA FROM</b>
+        <input type ="hidden" name ="custid" value ="{custid}"></input>
+        <input type ="hidden" name ="fdate" value ="{fdate}"></input>
+        <input type ="hidden" name ="tdate" value ="{tdate}"></input>
+        <input type="hidden" id="isYesterday" name="isYesterday" value="{isYesterday}" />
+      </td>
+      <td></td>
+    </tr>
+    <tr height="27px;">
+      <td>
+        <input class="input-button  button"  type ="submit" value ="MAIN" name ="btnmain" id ="btnmain" onclick="showProgressBar(true);"></input>
+        <input class="input-button  button"  type ="submit" value ="REP" name ="btnrep" id ="btnrep" onclick="showProgressBar(true);"></input>
+      </td>
+      <td>
+        <img id='inProgressBar' name='inProgressBar'  style='display:none'   src="../App_Themes/Images/ajax-loader.gif" />
+      </td>
+    </tr>
+  </table>
+</form>

@@ -1,0 +1,31 @@
+<table class="tbllayout" cellspacing="1px">
+	<tr class="title">
+	<td colspan="5"></td>
+	<td align="center">
+		<input class="btn" type="submit" id="submitQuery2" name="submitQuery2" {disablebtn} value="Submit" onclick="return updateCheckList('{formname}');" />
+	</td>
+	<td colspan="3"></td>
+</tr>
+<tr class="title c">
+	<th width="30">No.</th>
+	<th width="110">Credit</th>
+	<th width="110">Balance</th>
+	<th width="110">Yesterday Balance</th>
+	<th width="110">Outstanding</th>
+	<th width="60">
+		<input type="checkbox" {chkAllDisable} id="_checkAll" name="_checkAll" onclick="Bala_CheckAll('{formname}','_checkAll');"/>
+	</th>
+	<th width="90">User Name</th>
+	<th width="120">First Name</th>
+	<th >Last Name</th>
+</tr>
+{content}
+<tr class="title">
+	<td colspan="5"></td>
+	<td align="center">
+		<input class="btn" type="submit" id="submitQuery" name="submitQuery" {disablebtn} value="Submit" onclick="return updateCheckList('{formname}');" />
+		<input type="hidden" id="memberIdList" name="memberIdList" value="" />
+	</td>
+	<td colspan="3"></td>  
+</tr>
+</table>  

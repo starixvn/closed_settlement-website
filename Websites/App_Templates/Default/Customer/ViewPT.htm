@@ -1,0 +1,25 @@
+<div>
+    <table cellpadding="2" >        
+        <tr>
+            <td class="l b">PT: </td><td class="l"><input type="radio" class="styled" id="rdoPT" name="chkType" value="PT" checked="checked" onclick="ChangeType(this);"/></td>
+            <td class="l b">Comm: </td><td class="l"><input type="radio" class="styled" id="rdoComm" name="chkType" value="COMM" onclick="ChangeType(this);"/></td>
+            <td width="20">&nbsp;</td>
+            <td>
+                <table id="tblPT" cellpadding="0px" cellspacing="0px" border="0px">
+                    <tr>
+                        <td class="b">Sport Type:&nbsp;</td>
+                        <td ><select id="ddlSporttype" onchange="ChangeSport();">{ListSport}<option value="0">..:: ALL ::..</option></select></td>  
+                        <td width="10">&nbsp;</td>            
+                        <td class="b">Bet Type:&nbsp;</td>
+                        <td  id="tdBettype"><select id="ddlBettype">{ListBet}<option value="0">..:: ALL ::..</option></select></td>  
+                        <td width="10">&nbsp;</td>                      
+                        <td class="b">Is Live:&nbsp;</td><td id="showChkLive" ><input type="checkbox" id="chkLive" value="1" class="styled" /></td>
+                    </tr>
+                </table>
+            </td>                               
+            <td class="b">Username: </td>       
+            <td><input type="text" id="txtUsername" onkeypress="return KP(event);" class="txt" /></td>
+            <td ><input type="button" id="btnSubmit" value="Submit" onclick="DoSubmit();" class="btn" /></td>
+        </tr>
+    </table>
+</div>

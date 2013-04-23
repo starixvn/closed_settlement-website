@@ -1,0 +1,60 @@
+
+	<table id="table" cellspacing="1px" cellpadding="1px" class="c bg" width="1200px" border="{border}">
+      <thead>  
+      <tr style="background-color:#ffabab;">
+		    <th colspan="10"  class="c" style="!margin-top:-3px;!border-top:solid 1px ffabab; ">
+                <span id="spBettype"><b> {bettype}</b></span> 
+            </th>				
+	 </tr> 
+	  <!--<tr class="c">	
+	    <th class="ag" colspan="2" align="center" valign="center">&nbsp;</th>
+        <th class="ibc" align="center" valign="center">&nbsp;</th>         
+        
+        <th class="ag" colspan="5"><b>Member (Overall)</b></th>
+        <th class="ibc" colspan="6"><b>Agency (12BET)</b></th>
+        <th class="phu">&nbsp;</th>     
+        
+      </tr>-->
+	  <tr class="c" id="trHeader">	
+	    <th class="ag" colspan="2" align="center" valign="center">Meeting-Currency</th>
+	    <th class="ibc" align="center" valign="center"><b>Race</b></th>         
+	  
+        <th class="ag"><b>Win TO</b></th>
+        <th class="ag" ><b>Place TO</b></th>
+        <th class="ag" ><b>W/P TO</b></th>
+        <th class="ag" ><b>Total TO</b></th>
+        <th class="ag" ><b>Dividend<br> Won</b></th>
+        
+        <!--<th class="ibc" ><b>Win TO</b></th>
+        <th class="ibc" ><b>Place TO</b></th>
+        <th class="ibc" ><b>W/P TO</b></th>
+        <th class="ibc" ><b>Total TO</b></th>
+        <th class="ibc" ><b>PT <br/>Win/Loss</b></th>-->
+        <th class="ibc" ><b>Comm <br/>Income</b></th>
+        
+        <th class="phu"><b>Amount <br>due to IBC</b></th>     
+	  </tr>
+	  </thead>
+	<!--content-->
+      <tr class="{bgcolor}">
+		<!--Blank--><td  rowspan="{rowspan}"  colspan="2" class="c"><b>{Meeting_Currency}</b></td><!--/Blank-->
+		<td class="c">{RaceName}</td>		
+		
+		<td class="r">{MemWinTO}</td>
+		<td class="r">{MemPlaceTO}</td>
+		<td class="r">{MemWinPlaceTO}</td>
+        <td class="{wrongsetting}" style="text-align:right;">{MemTotalTO}</td>
+		<td class="r">{MemDividendWon}</td>		
+		
+		<!--<td class="r">{Ag12BETWinTO}</td>
+		<td class="r">{Ag12BETPlaceTO}</td>
+		<td class="r">{Ag12BETWinPlaceTO}</td>
+        <td class="{wrongsetting}" style="text-align:right;">{Ag12BETTotalTO}</td>
+        <td class="r">{Ag12BETPTWL}</td>-->
+		<td class="r">{Ag12BETCommInc}</td>
+		
+		<td class="rspace rborder" style="text-align:right;">{AmountDueIBC}</td>
+		
+	 </tr>
+	<!--/content-->			
+ </table>

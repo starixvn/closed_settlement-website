@@ -1,0 +1,30 @@
+
+	<span id="errMsg"></span>
+  <div id="divEdit"><table class="tbllayout" style="width:250px;" cellspacing="1">
+		<tr class="title">
+			<td colspan="2">{title-user}</td>
+		</tr>
+    <tr>
+      <td class="r" style="width:50%" nowrap="true">Actual Exchange Rate</td>
+      <td class="b" nowrap="true">
+        {actual-rate-val}
+      </td>
+    </tr>
+    <tr>
+      <td class="r" nowrap="true">Virtual Exchange Rate</td>
+			<td class="l" nowrap="true">
+        <select id="ddlVirtualRate" name="ddlVirtualRate" onChange="OnSelectExRate(this);">{virtual-rate-val}</select>	%
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" class="c">
+				<input class="btn"  type="button" onclick="return SubmitForm();"  name="btnSubmit" id="btnSubmit"  value="Update"/>
+			</td>
+		</tr>
+	</table>
+  </div>  
+  <div id="divClose" style="display:none">
+    <br></br>
+    <input class="btn" type="button" name="btnClose" onclick="OnClose();"  id="btnClose"  value="Close"/>
+   
+  </div>

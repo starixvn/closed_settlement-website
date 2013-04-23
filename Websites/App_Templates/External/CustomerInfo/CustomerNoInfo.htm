@@ -1,0 +1,82 @@
+﻿<div id="left_pane">
+    <div class="box_line">
+    </div>
+    <div class="box_content">
+        <div class="spacing">
+        </div>
+        <!--customer detail-->
+        <div class="box_header">
+            <div id="box_02_headertext">
+                <span style="{enabledbg}" onmouseover="{enabledtooltipover}" onmouseout="{enabledtooltipout}">
+                    {UserName}</span>
+            </div>
+        </div>
+        <div class="box_content1">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td width="25%" class="dot_left">
+                        Name:
+                    </td>
+                    <td class="dot_left">
+                        <span id="vCustName" class="text_org">{CustomerName}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="dot_left">
+                        Fax:
+                    </td>
+                    <td class="dot_left">
+                        <span id="vCustFax" class="text_org">{CustomerFax}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="dot_left">
+                        Phone:
+                    </td>
+                    <td class="dot_left">
+                        <span id="vCustPhone" class="text_org">{CustomerPhone}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="dot_left">
+                        Mobile:
+                    </td>
+                    <td class="dot_left">
+                        <span id="vCustMobile" class="text_org">&nbsp;{CustomerMobile}</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!--end customer detail-->
+        <!--box setting detail login onlinelist-->
+        <div class="box_header">
+            <div id="left_tab2" class="left_tab">
+                <ul>
+                    <li id="left_tab2_4" class="current"><a href="#"><span>Current Online List</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="box_05_contents" id="box_05_contents">
+            <div class="tab_left_content" id="box_05_content_4">
+                <div class="holder osX">
+                    <div id="onlinepanel" class="tab_left_content" style="height: 190px;">
+                        {OnlineList}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end box setting detail login onlinelist-->
+        <div class="spacing">
+        </div>
+    </div>
+    <div class="box_bottom">
+    </div>
+</div>
+{jsparams}
+<form name="AgLoginForm" id="AgLoginForm" method="get" action="InternalView.aspx"
+target="_blank">
+<input type="hidden" id="chalengeStr" name="chalengeStr" value="{RndStr}" />
+<input type="hidden" id="accKey" name="accKey" value="{AccKey}" />
+<input type="hidden" id="custName" name="custName" value="" />
+<input type="hidden" id="accId" name="accId" value="{AccId}" />
+</form>

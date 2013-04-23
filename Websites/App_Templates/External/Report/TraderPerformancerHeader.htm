@@ -1,0 +1,163 @@
+<!--not-excel-export-->
+<script type="text/javascript">
+  var dx = window.attachEvent?125:142;
+  var dy = 23;
+  var dd = 120;
+</script>
+
+<script type="text/javascript" src="../js/TraderReport.js"></script>
+
+<style type="text/css">
+  .a1{background-color: #eeFFee;}
+  .a2{background-color: #CCFFFF;}
+  .a3{background-color: #FFFF99;}
+  .a4{background-color: #ffffee;}
+  .a5{background-color: #FFDDFF;}
+  .pt{cursor:pointer}
+</style>
+
+<!--QuiNV: For fix header, do not remove it-->
+<br />
+<div id="wrapper1" style="overflow:hidden;border-left: solid 1px #eeeeee; margin-left: -1px; padding-top: 1px; border-right: solid 1px #eeeeee;">
+
+  <table id="header" class="tbllayout" cellspacing="1" style="visibility:hidden">
+    <tr class="title">
+      <td colspan="3" align="center">
+        <input id="export" type="submit" name="export" value="export" style="display:none" />
+        <input id="sortCol" type="text" name="sortCol" value="{sortCol}" style="display:none" />
+        <input id="order" type="text" name="order" value="{order}" style="display:none" />
+        <input id="scrollLeft" type="text" name="scrollLeft" value="{scrollLeft}" style="display:none" />
+        <input id="sort" type="submit" name="sort" value="sort" style="display:none" />
+      </td>
+
+      <td colspan="{colspan_title}" class="a2">Turnover</td>
+      <td colspan="{colspan_title}" class="a3">Winlost</td>
+      <td colspan="{colspan_title}" class="a5">Margin %</td>
+      <td colspan="{colspan_title}" class="a4">Commission</td>
+
+      <td>&nbsp;</td>
+    </tr>
+
+    <tr class="title">
+      <td> No </td>
+      <td> Trader </td>
+      <td>&nbsp;Match&nbsp;</td>
+
+      <td>1st&nbsp;1x2</td>
+      <td>1x2</td>
+      <td nowrap="" class="{classNG}">Next Goal</td>
+      <td>1st&nbsp;HDP</td>
+      <td>HDP</td>
+      <td>1st&nbsp;O/U</td>
+      <td>O/U</td>
+      <td nowrap="" class="{classNG}">No. of Corner</td>
+      <td nowrap="" class="{classNG}">15mins O/U</td>
+      <td>Overall</td>
+
+      <td id="winlost_1st1x2" class="pt" onclick="Sort(this)">1st&nbsp;1x2</td>
+      <td id="winlost_1x2" class="pt" onclick="Sort(this)">1x2</td>
+      <td nowrap="" id="winlost_ng" class="pt {classNG}" onclick="Sort(this)">Next Goal</td>
+      <td id="winlost_1sthdp" class="pt" onclick="Sort(this)">1st&nbsp;HDP</td>
+      <td id="winlost_hdp" class="pt" onclick="Sort(this)">HDP</td>
+      <td id="winlost_1stou" class="pt" onclick="Sort(this)">1st&nbsp;O/U</td>
+      <td id="winlost_ou" class="pt" onclick="Sort(this)">O/U</td>
+      <td id="winlost_noofcorners" onclick="Sort(this)" class="pt {classNG}" nowrap="">No. of Corner</td>
+      <td nowrap="" id="winlost_15minou" onclick="Sort(this)" class="pt {classNG}">15mins O/U</td>
+      <td id="overall_wl" class="pt" onclick="Sort(this)">Overall</td>
+
+      <td id="margin_1st1x2" class="pt" onclick="Sort(this)">1st&nbsp;1x2</td>
+      <td id="margin_1x2" class="pt" onclick="Sort(this)">1x2</td>
+      <td nowrap="" id="margin_ng" class="pt {classNG}" onclick="Sort(this)">Next Goal</td>
+      <td id="margin_1sthdp" class="pt" onclick="Sort(this)">1st&nbsp;HDP</td>
+      <td id="margin_hdp" class="pt" onclick="Sort(this)">HDP</td>
+      <td id="margin_1stou" class="pt" onclick="Sort(this)">1st&nbsp;O/U</td>
+      <td id="margin_ou" class="pt" onclick="Sort(this)">O/U</td>
+      <td id="margin_noofcorners" class="pt {classNG}" onclick="Sort(this)" nowrap="">No. of Corner</td>
+      <td nowrap="" id="margin_15minou" class="pt {classNG}" onclick="Sort(this)">15mins O/U</td>
+      <td id="overall_margin" class="pt" onclick="Sort(this)">Overall</td>
+
+      <td>1st&nbsp;1x2</td>
+      <td>1x2</td>
+      <td nowrap="" class="{classNG}">Next Goal</td>
+      <td>1st&nbsp;HDP</td>
+      <td>HDP</td>
+      <td>1st&nbsp;O/U</td>
+      <td>O/U</td>
+      <td nowrap="" class="{classNG}">No. of Corner</td>
+      <td nowrap="" class="{classNG}">15mins O/U</td>
+      <td>Overall</td>
+
+      <td> Trader </td>
+    </tr>
+  </table>
+
+</div>
+
+<div id="wrapper" style="overflow:hidden;border-left: solid 1px #eeeeee; margin-left: -1px">
+
+  <!--/not-excel-export-->
+
+  <table id="content" class="tbllayout" cellspacing="1" style="visibility:hidden">
+    <tr class="c">
+      <td colspan="3" align="center">
+        &nbsp;
+      </td>
+
+      <td colspan="{colspan_title}" class="a2">Turnover</td>
+      <td colspan="{colspan_title}" class="a3">Winlost</td>
+      <td colspan="{colspan_title}" class="a5">Margin %</td>
+      <td colspan="{colspan_title}" class="a4">Commission</td>
+      <td>&nbsp;</td>
+    </tr>
+
+    <tr class="title">
+      <td> No </td>
+      <td> Trader </td>
+      <td>&nbsp;Match&nbsp;</td>
+
+      <td>1st&nbsp;1x2</td>
+      <td>1x2</td>
+      <td nowrap="" class="{classNG}">Next Goal</td>
+      <td>1st&nbsp;HDP</td>
+      <td>HDP</td>
+      <td>1st&nbsp;O/U</td>
+      <td>O/U</td>
+      <td nowrap="" class="{classNG}">No. of Corner</td>
+      <td nowrap="" class="{classNG}">15mins O/U</td>
+      <td>Overall</td>
+
+      <td>1st&nbsp;1x2&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td>1x2&nbsp;&nbsp;&nbsp;</td>
+      <td nowrap="" class="{classNG}">Next Goal&nbsp;&nbsp;&nbsp;</td>
+      <td>1st&nbsp;HDP&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td>HDP&nbsp;&nbsp;&nbsp;</td>
+      <td>1st&nbsp;O/U&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td>O/U&nbsp;&nbsp;&nbsp;</td>
+      <td nowrap="" class="{classNG}">No. of Corner</td>
+      <td nowrap="" class="{classNG}">15mins O/U</td>
+      <td>Overall&nbsp;&nbsp;&nbsp;&nbsp;</td>
+
+      <td>1st&nbsp;1x2&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td>1x2&nbsp;&nbsp;&nbsp;</td>
+      <td nowrap="" class="{classNG}">Next Goal&nbsp;&nbsp;&nbsp;</td>
+      <td>1st&nbsp;HDP&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td>HDP&nbsp;&nbsp;&nbsp;</td>
+      <td>1st&nbsp;O/U&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td>O/U&nbsp;&nbsp;&nbsp;</td>
+      <td nowrap="" class="{classNG}">No. of Corner</td>
+      <td nowrap="" class="{classNG}">15mins O/U</td>
+      <td>Overall&nbsp;&nbsp;&nbsp;&nbsp;</td>
+
+      <td>1st&nbsp;1x2</td>
+      <td>1x2</td>
+      <td nowrap="" class="{classNG}">Next Goal</td>
+      <td>1st&nbsp;HDP</td>
+      <td>HDP</td>
+      <td>1st&nbsp;O/U</td>
+      <td>O/U</td>
+      <td nowrap="" class="{classNG}">No. of Corner</td>
+      <td nowrap="" class="{classNG}">15mins O/U</td>
+      <td>Overall</td>
+
+      <td> Trader </td>
+    </tr>

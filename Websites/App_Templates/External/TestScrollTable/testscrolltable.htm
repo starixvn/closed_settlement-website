@@ -1,0 +1,95 @@
+﻿{#template MAIN}
+{#include table root= $T}
+{#/template MAIN}
+
+{#template table}
+<div style="width: {$P.divwidth}px;" id="gbox_JQGrid1" class="ui-jqgrid ui-widget ui-widget-content">
+    <div style="width: {$P.divwidth}px;" id="gview_JQGrid1" class="ui-jqgrid-view">
+        <div class="ui-state-default ui-jqgrid-hdiv" style="width: {$P.divwidth}px;">
+            <div class="ui-jqgrid-hbox">
+                <table class="ui-jqgrid-htable" style="width: {$P.tablewidth}px;" border="0" cellpadding="0"
+                    cellspacing="0">
+                    <thead>
+                        <tr class="ui-jqgrid-labels">
+                            <th style="width: {$P.col1}px;" class="ui-state-default ui-th-column ui-th-ltr">
+                               Col 1
+                            </th>
+                            <th style="width: {$P.col2}px;" colspan="3" class="ui-state-default ui-th-column ui-th-ltr">
+                                Col 2
+                            </th>
+                             <th style="width: {$P.col3}px;" colspan="3" class="ui-state-default ui-th-column ui-th-ltr">
+                                Col 3
+                            </th>
+                             <th style="width: {$P.col4}px;" colspan="3" class="ui-state-default ui-th-column ui-th-ltr">
+                                Col 4
+                            </th>
+                            <th style="width: {$P.col5}px;"  class="ui-state-default ui-th-column ui-th-ltr">
+                                Col 5
+                            </th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+        <div style="height: {$P.height}px; width: {$P.divwidth}px;" class="ui-jqgrid-bdiv">
+            <div style="position: relative;">
+                <table style="width: {$P.tablewidth}px;" class="ui-jqgrid-btable" border="0" cellpadding="0"
+                    cellspacing="0">
+                    <tbody>
+                         {#foreach $T.Data as r}
+                            {#include row root=$T.r}
+                         {#/for}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="ui-jqgrid-sdiv">
+            <div class="ui-jqgrid-hbox">
+                <table style="width: {$P.tablewidth}px;" class="ui-jqgrid-ftable" border="0" cellpadding="0" cellspacing="0">
+                    <tbody>
+                        <tr class="ui-widget-content footrow footrow-ltr">
+                            <td title="&amp;#160;" style="width: {$P.col1}px;">
+                                &nbsp;
+                            </td>
+                            <td title="&amp;#160;" style="width: {$P.col2}px;">
+                                &nbsp;
+                            </td>
+                            <td title="&amp;#160;" style="width: {$P.col3}px;">
+                                &nbsp;
+                            </td>
+                            <td title="Max:" style="width: {$P.col4}px;">
+                                Max:
+                            </td>
+                            <td title="1007.6400" style="width: {$P.col5}px;">
+                                1007.6400
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{#/template table}
+
+{#template row}
+ <tr class="ui-widget-content jqgrow ui-row-ltr">
+    <td style="width: {$P.col1}px;" >
+        {$T.col1}
+    </td>
+    <td style="width: {$P.col2}px;">
+        {$T.col2}
+    </td>
+    <td style="width: {$P.col3}px;" >
+        {$T.col3}
+    </td>
+    <td style="width: {$P.col4}px;" >
+        {$T.col4}
+    </td>
+    <td style="width: {$P.col5}px;">
+        {$T.col5}
+    </td>
+</tr>
+{#/template row}
+
+

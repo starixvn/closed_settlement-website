@@ -1,0 +1,51 @@
+﻿<div class="bg_table">
+<div style="float:left;">
+    <table id="table" cellspacing="1px" cellpadding="0px" class="tbllayout" style="width:250px" border="0">
+                <thead>
+                    <tr class="tbllayout">
+                        <th colspan="2" bgcolor="white">
+                            List of accounts can be exported (<span style="color:Red; font-weight:bold;">{TotalValidUsers}</span>) :
+                        </th>
+                    </tr>
+                    <tr id="trHeader" class="title">
+                        <th class="title">#</th>
+                        <th class="title">UserName</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--ValidUsers-->
+                    <tr bgcolor='white'>
+                    <td>{Order}</td>
+                    <td class="l">{UserName}</td>
+                    </tr>
+                    <!--/ValidUsers-->
+                    <tr id="trFooter" style="display:none;"><td colspan="2"></td> </tr>
+                </tbody>
+            </table>
+</div>
+<div style="float:left; margin-left:20px;">    
+            <table id="table1" cellspacing="1px" cellpadding="1px" class="tbllayout" style="width:250px" border="0">
+                <thead>
+                    <tr bgcolor="white">
+                        <th colspan="2">
+                            List of accounts can't be exported (<span style="color:Red; font-weight:bold;">{TotalInValidUsers}</span>) :
+                        </th>
+                    </tr>
+                    <tr id="tr1" class="title">
+                    <th class="title">#</th>
+                    <th class="title">UserName</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--InValidUsers-->
+                    <tr bgcolor='white'>
+                    <td>{Order1}</td>
+                    <td class="l">{UserName1}</td>
+                    </tr>
+                    <!--/InValidUsers-->
+                </tbody>
+            </table> 
+</div>    
+     
+</div>
+

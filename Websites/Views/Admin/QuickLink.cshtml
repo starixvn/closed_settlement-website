@@ -1,0 +1,76 @@
+﻿@{
+    Page.Title = "Title goes here";
+    //Layout = "Your Layout Page goes here";
+}
+@*css*@
+<link href="~/App_Themes/Public/Common.css" rel="stylesheet" type="text/css" />
+<link href="~/App_Themes/Public/input.css" rel="stylesheet" type="text/css" />
+<link rel="Stylesheet" href="~/js/jQuery/Pager/paginate.css" />
+<link rel="Stylesheet" href="~/Views/Admin/Style/QuickLink.css" />
+@*Js*@
+<script src="~/js/jQuery/jquery-jtemplates.js" type="text/javascript"></script>
+<script src="~/js/jQuery/Template/jquery.tmpl.js" type="text/javascript"></script>
+<script type="text/javascript" src="~/js/common.js"></script>
+<script src="~/js/showhidepopup.js" type="text/javascript"></script>
+<script src="~/js/jQuery/Jlinq/jlinq.jquery.js" type="text/javascript"></script>
+<script src="~/js/jQuery/Pager/jquery.paginate.js" type="text/javascript"></script>
+<script src="~/js/json2.js" type="text/javascript"></script>
+<script src="~/js/jQuery/jquery.blockUI.1.33.js" type="text/javascript"></script>
+<script src="~/js/jQuery/highlight/jquery.highlight-3.js" type="text/javascript"></script>
+@*main js*@
+<script src="~/Views/Admin/Js/QuickLink.js?version=@Sunplus.Accounting.Core.Configurations.WebSettings.Version" type="text/javascript"></script>
+
+
+<div class="main">
+    <div class="maincontent">
+        <input id="tbxKeyWord" type="text" style="width: 300px; display: none;" />
+        <div>
+            <div id="dvContent" style="width: 25%; float: left;">
+                <div id="msg">
+                </div>
+                <div id="numberOfResult" class="filterSection" style="margin-top: 10px; font-size: medium;">
+                </div>
+                <div id="contentResult">
+                    <div id="resultView" style="margin-top: 10px;">
+                    </div>
+                    <script id="resultTemplate" type="text/html">
+                         <div class="divitemsuggesstion">
+                            <table>
+                               <tr>
+                                   <td style="width:95%;" class="firsttd">
+                                         <a class="linkDirectToPage" href="${Url}" style="font-size:16px;" isReportMenu="${IsReportMenu}" linkTarget="${Target}"> ${Name} </a>
+                                         <input type="hidden" value="${AncestorId}" />
+                                         <br/>Path: 
+                                         <span style="color: #009933;"> ${ServerPath} </span>
+                                         {{if NumOfAppear > 0}} 
+                                         <br/>Number of word match: 
+                                         <b>${NumOfAppear}</b>
+                                          {{if NumOfAppear > 1}} 
+                                                words
+                                                 {{else NumOfAppear==1}}
+                                                 word
+                                            {{/if}}
+                                          {{/if}} 
+                                    </td>
+                                      <td style="width:5%; display:none;" class="tdimagesearch">
+                                        <span class="spanimagesearch">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                      </td>
+                              </tr>
+                              </table> 
+                         </div>
+                    </script>
+                    <div id="resultPagination" style="margin-top: 10px;">
+                    </div>
+                </div>
+            </div>
+            <div id="divshow" style="float: right; width: 75%; height: 100%">
+                <div class="modalOverlay" id="overlayDiv" style="display: none;">
+                </div>
+                <iframe id="previewpage" name="previewpage" src="" marginwidth="0" scrolling="auto"
+                    marginheight="0" frameborder="0" vspace="0" hspace="0" width="100%" height="800"
+                    onload='if (previewpage.location.href != "about:blank") testframe_loaded()'>
+                </iframe>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,70 @@
+<table>
+    <tr>
+        <td id="tdFromDate" class="b">
+            From:
+        </td>
+        <td>
+            {fromdate}
+        </td>
+        <!--calc-->
+        <td id="td_hidden1" class="b" style="padding-left:18px;">
+            To:
+        </td>
+        <td id="td_hidden2" style="padding-left:6px;">
+            {todate}
+        </td>
+        <td id="td_hidden3"  style="padding-left:18px;">
+            <table border="0px" cellpadding="0px" cellspacing="0px">
+                <tr>
+                    <td>
+                        <input type="checkbox" id="chkUnCal" name="chkUnCal" class="styled" />
+                    </td>
+                    <td class="l">
+                        Un-Calculate Game Only
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <td id="td_hidden4"  style="padding-left:18px;">
+            <table border="0px" cellpadding="0px" cellspacing="0px">
+                <tr>
+                    <td>
+                        <input type="checkbox" id="chkUnCalMultiple" name="chkUnCalMultiple" class="styled" />
+                    </td>
+                    <td class="l">
+                        UnCal-Multiple Only
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <!--/calc-->
+    </tr>
+    </table>
+    <table>
+    <tr>
+        <td class="b">
+            Sports:
+        </td>
+        <td style="width: 120px;">
+            <select id="ddlSports" name="ddlSports" class="fullwidth" onchange="ChangeSport();">
+                {sportOptions}
+            </select>
+        </td>
+        <!--calc-->
+        <td id="td_hidden5" class="b">
+            Leagues:
+        </td>
+        <td class="width-300" id="selLeague">
+            <select id="ddlLeagues" name="ddlLeagues" class="fullwidth">
+                {leagueOptions}
+            </select>
+        </td>
+        <!--/calc-->
+        <td>
+            <input type="button" id="btnSubmit" name="btnSubmit" value="Submit" onclick="GetSettleMatch();"
+                class="btn" />
+        </td>
+        <td>
+        </td>
+    </tr>
+</table>

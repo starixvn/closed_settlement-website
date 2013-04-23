@@ -1,0 +1,36 @@
+<table cellspacing="0" rules="all" bordercolor="DodgerBlue" border="1" id="display" style="border-color:DodgerBlue; border-style:Solid;border-collapse:collapse;font-size:8pt; font-family:Tahoma, Arial, Verdana, Sans-Serif;">
+  <tr align="Center" valign="Middle" style="background-color:#DEEDEF;height:25px;font-weight:bold; ">
+    <td width="50">Code</td>
+    <td nowrap>Event</td>
+    <td width="100">Event Date</td>
+  </tr>
+  <tr align="Center" valign="Middle" style="background-color:#FCFCFC;height:25px;">
+    <td>{Code}</td>
+    <td>{Home}<!--vs-->-vs-<!--/vs-->{Away}</td>
+    <td>{EventDate}</td>
+  </tr>
+</table>
+<!--single-bet-->
+<br />
+<b>{ActionType} Bets</b>
+<table cellspacing="0" rules="all" bordercolor="DodgerBlue" border="1" id="display" style="border-color:DodgerBlue; border-style:Solid;border-collapse:collapse;font-size:8pt; font-family:Tahoma, Arial, Verdana, Sans-Serif;">
+  <tr align="Center" valign="Middle" style="background-color:#DEEDEF;height:25px;font-weight:bold; ">
+    <td width="100">User</td>
+    <td width="250">Trans.Time</td>
+    <td width="100">BetID</td>
+    <td width="100">BetType</td>
+    <td width="80">Stake</td>
+    <td width="100">Status</td>
+    <td width="100">Super PT</td>
+    <td width="100">Master PT</td>
+    <td width="100">Agent PT</td>
+    <td nowrap width="250">Choice</td>
+  </tr>
+  {Rows}
+</table>
+<!--/single-bet-->
+
+<br>
+    <b>{ActionType} by:</b> {UserName} <br>
+      <b>Date:</b> {time} <br><br>
+<i>This is an auto-mail. Please do not reply.</i><br>

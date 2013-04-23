@@ -1,0 +1,66 @@
+<table width="60%" class="tblSporttypePT">		
+	<tr>
+		<td>
+			<div id="divUpdPT11" name="divUpdPT11">
+				<table border="1" width="100%" class="tbllayout">
+          <!--no-header-->
+					<tr class="title">
+						<td colspan="{title-col}">{pt-text}</td>
+					</tr>
+          <!--/no-header-->
+					<tr>
+						<!--none-edit-min--><td></td><!--/none-edit-min-->
+						<td>{hdp-text}</td>								
+						<td>{ml-text}</td>
+						<!--limit-CopyHdp-->
+						<td></td>
+						<!--/limit-CopyHdp-->
+					</tr>
+					<!--none-Multi-->						
+					<tr>
+						<!--none-edit-min-->	
+						<td class="r">{a-presetpt-text}</td>
+						<td>{a-hdp-val}</td>										
+						<td>{a-ml-val}</td>
+						<!--limit-CopyHdp-->
+						<td rowspan="{cols-a}"></td>
+						<!--/limit-CopyHdp-->
+					</tr>	
+					<!--none-Master-->
+					<tr>
+						<td class="r">{master-text}</td>
+						<td>{m-hdp-val}</td>							
+						<td>{m-ml-val}</td>
+					</tr>
+					<!--/none-Master-->
+					<!--/none-Multi-->											
+					<tr>
+						<td class="r">{p-presetpt-text}</td><!--/none-edit-min-->	
+						<td>{p-hdp-val}{p-hdp-btn}</td>							
+						<td>{p-ml-val}</td>
+						<!--limit-CopyHdp-->
+						<td rowspan="{copy-hdp-col}" class="l">
+							<input type="checkbox" {chk-hdp=""} id="chkCopy11Hdp" name="chkCopy11Hdp" onclick="CheckCopyPT(this,arrSuper11);"></input>
+							{copy-hdp-text}
+						</td>
+						<!--/limit-CopyHdp-->
+					</tr>	
+					<!--none-Master-->	
+					<!--none-edit-min-->					
+					<tr>
+						<td rowspan="2" class="r">{au-presetpt-text}</td>
+						<td><input type="checkbox" onclick="CheckAutoPreset(this)" id="chkAuto11Hdp" name="chkAuto11Hdp" {checked-Hdp}></input></td>										
+						<td><input type="checkbox" onclick="CheckAutoPreset(this,'chkCopy11Hdp')" id="chkAuto11ML" name="chkAuto11ML" {checked-ML}></input></td>
+					</tr>
+					<tr>
+						<td>{au-hdp-val}{au-hdp-btn}</td>					
+						<td>{au-ml-val}</td>
+					</tr>	
+					<!--/none-Master-->
+					<!--/none-edit-min-->						
+				</table>
+			</div>
+		</td>
+	</tr>
+</table>
+

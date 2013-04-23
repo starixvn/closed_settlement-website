@@ -1,0 +1,45 @@
+﻿<tr class="{live} r-{odd_even}">
+	<td>{no}</td>
+	<td>{TransTime}</td>
+	<td class="r">{Event}</td>
+	<td class="r" {OddsWidth}>{Odds}</td>
+	<td class="r">{Stake}
+     <!--Exchangerate-->
+     <br />
+    <span class="r exrate2">{ExchangeRate}</span>
+    <br />
+    <span class="r exrate2">(Ex.Rate 2)</span>
+    <!--/Exchangerate-->
+    </td>
+    <td class="r">{WinLost}</td>
+    <td>
+        <div>{Status}</div>
+        {Result}
+        <div class="bl_time" style="padding-top:10px">
+            <!--DisplayIP-->
+            <a href="BetListByIp.aspx?bltype=3&fdate={fdate}&ip={ip}">{ip}</a>
+            <!--/DisplayIP-->
+        </div>
+    </td>
+ <td class="r">
+     <!--SuperPT--><span class="bl-sporttype">{SuperPT}</span><br/><!--/SuperPT-->
+     <!--swinlost--><span class="bl-sporttype">{swinlost}</span><br/><!--/swinlost-->
+     <!--SuperCommRate--><span class="r">{SuperCommRate}%</span><br/><!--/SuperCommRate-->
+     <!--SuperComm--><span class="r">{SuperComm}</span><!--/SuperComm-->
+  </td>
+  <td class="r"">
+    <!--MasterPT--><span class="bl-sporttype">{MasterPT}</span><br/><!--/MasterPT-->
+    <!--mwinlost--><span class="bl-sporttype">{mwinlost}</span><br/><!--/mwinlost-->
+    <!--MasterCommRate--><span class="r">{MasterCommRate}%</span><br/><!--/MasterCommRate-->
+    <!--MasterComm--><span class="r">{MasterComm}</span><!--/MasterComm-->
+  </td>
+  <td class="r"">
+    <!--AgentPT--><span class="bl-sporttype">{AgentPT}</span><br/><!--/AgentPT-->
+    <!--awinlost--><span class="bl-sporttype">{awinlost}</span><br/><!--/awinlost-->
+    <!--AgentCommRate--><span class="r">{AgentCommRate}%</span><br/><!--/AgentCommRate-->
+    <!--AgentComm--><span class="r">{AgentComm}</span><!--/AgentComm-->
+  </td>
+
+ 
+  
+</tr>

@@ -1,0 +1,18 @@
+﻿<!--havingitem-->
+<ul id="sddm">
+    <li><a href="#" onmouseover="mopen('{submenuid}')" onmouseout="mclosetime()" style="width:{menuwidth}px;">{name}</a>
+        <div id="{submenuid}" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+          <!--itemsubmenu-->
+        <a href="{submenuurl}" target="{itemtarget}">{submenuname}</a>
+          <!--/itemsubmenu-->
+         </div> 
+    </li>
+</ul>
+<!--/havingitem-->
+<!--noitem-->
+<div style="float:{floatstyle}; width:{menuwidth}px;" >
+    <span class="{classname}" onclick="{jsfunc}">{name}</span>
+</div>
+<!--/noitem-->
+ 
+		           

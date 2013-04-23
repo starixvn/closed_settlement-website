@@ -1,0 +1,65 @@
+<div> 
+  <form id="frmBill" onkeypress="FormKP(event);">   
+      <table border="0">
+        <tr>
+            <td>
+                <div id="tabs">
+                    <ul>
+                        <li>
+                          <!--Calculation.aspx?type=b&p={matchID}|{sportID}&calType=main-->
+                          <a title="Main" href="javascript:void(0);" onclick="DoCalSoccer('{matchID}','{sportID}');">
+                            <span>Main</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="selected" title="First goal Last goal" href="javascript:void(0);">
+                                <span class="selected">FGLG</span>
+                            </a>
+                        </li>
+                    </ul>        
+                </div>       
+            </td> 
+            <td></td>
+        </tr>
+      </table>                      
+      <table class="tblcollapse">    
+        <tr class="title1 c">        
+            <td colspan="6">LEAGUE:&nbsp;{leaguename}</td>
+        </tr>
+        <tr class="title">
+          <td width="90" >CODE</td>
+          <td width="90" >KICK-OFF TIME</td>
+          <td width="300" >TEAM</td>          
+          <td width="36" >First Goal</td>
+          <td width="36" >Last Goal</td>   
+          <td width="36" >No Goal</td>             
+        </tr>
+        <tr>
+          <td rowspan="2">{matchcode}</td>
+          <td rowspan="2">{date}</td>
+          <td class="l b ht">{hometeam}</td>                            
+          <td><input type="radio" id="chkFgHome" name="chkFg" tabindex="5" value="1" runat="server" {fgHomeChecked}/></td>
+          <td><input type="radio" id="chkLgHome" name="chkLg" tabindex="6" value="1" {lgHomeChecked}/></td>
+          <td rowspan="2"><input type="checkbox" id="chkNoGoal" name="chkNoGoal" {_NoGoalChecked_} tabindex="7" onclick="CheckNoGoal();" /></td>
+        </tr>
+        <tr>      
+          <td class="l b at">{awayteam}</td>                    
+          <td><input type="radio" id="chkFgAway" name="chkFg" tabindex="5" value="2" {fgAwayChecked}/></td>
+          <td><input type="radio" id="chkLgAway" name="chkLg" tabindex="6" value="2" runat="server" {lgAwayChecked}/></td>                        
+        </tr>      
+      </table>      
+      <br/>  
+      <!--CalcRead-->
+
+     {ApplyHedging}
+
+    <input type="button" class="btn" style="width: 100px;" id="btnSubmit" name="btnSubmit" tabindex="7" value="CALCULATE" disabled="disabled" /><!--/CalcRead--><!--CalcHost--><input type="button" class="btn" style="width: 100px;" id="btnSubmit" name="btnSubmit" tabindex="7" value="CALCULATE" onclick="DoCalculate('{type}');"/><!--/CalcHost-->
+      <span style="padding-left: 30px; display:none;" id="errMsg" class="error-message">Please input valid result!</span>      
+      <br /><span class="pad73"><input type="radio" id="chkBillAll" name="chkFGLG" value="1" checked="checked" onfocus="FocusFGAndNoGoal(this);" />BILL ALL</span>
+      <span class="pad73"><input type="radio" id="chkBillFGNG" name="chkFGLG" value="2" onfocus="FocusFGAndNoGoal(this);" />BILL First Goal and No Goal only</span>
+      <span class="pad73"><input type="radio" id="chkRefundAll" name="chkFGLG" value="3" />Refund ALL</span>
+      <input type="hidden" id="sParams" name="sParams" value="{params}" />
+      <input type="hidden" id="sAction" name="sAction" />
+      <input type="hidden" id="sHasFGLG" name="sHasFGLG" />
+    </form>    
+</div>

@@ -1,0 +1,36 @@
+﻿<table class="tbllayout" style="width:900px" cellspacing="1">
+<!--ReportHeader-->
+<tr class="title">
+    <td class="c">Date</td> 
+    <td class="c">Ref.no</td>
+    <td class="c">Remark</td>
+    <td class="c">Debit</td>
+    <td class="c">Credit</td>
+    <td class="c">Total</td>
+    <td class="c">Creator</td>    
+</tr>
+<!--/ReportHeader-->
+<!--ReportContent-->
+<tr class="{odd_even}" class="r">
+    <td class="c">{Date}</td>
+    <td class="l">&nbsp;{Refno}</td>
+    <td class="l"><b>{Remark}</b></td>
+    <td class="r">{Debit}</td>
+    <td class="r">{Credit}</td>
+    <td class="r">{Total}</td>
+    <td align="center">{Creator}</td>
+    
+   
+</tr>
+<!--/ReportContent-->
+
+<!--ReportFooter-->
+<tr class="title">
+  <!--Excel-Footer-->  
+  <td colspan="7" align="center">
+  <!--/Excel-Footer-->
+    Total: &nbsp;&nbsp;  {total}
+  </td>
+</tr>
+<!--/ReportFooter-->
+</table>

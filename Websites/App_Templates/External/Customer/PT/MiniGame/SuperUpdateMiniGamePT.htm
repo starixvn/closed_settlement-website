@@ -1,0 +1,60 @@
+﻿{#template MAIN} {#include SuperPT root= $T} {#/template MAIN} {#template SuperPT}
+<table class="tblcollapse" style="width: 600px;margin:6px 0px;" id="tblminigame">
+    <!--PT-->
+    <tr class="title">
+        <td colspan="2">
+            Position Taking
+        </td>
+    </tr>
+    <!--Super PT -->
+    <tr>
+        <td class="l w130">
+            Super Max Position
+        </td>
+        <td>
+            <select onchange="On_ChangeSuper(this);" id="listSMax252" max="0.9" min="0" name="listSMax252"
+                class="select-pt">
+                <option value="{roundNumber($T.spt,2)}" selected="true">{roundNumber($T.spt,2)}</option>
+            </select>
+            <input type="button" onclick="ReducePT('listSMax252',1)" class="btn-dec1" value=" "
+                name="btnReduce1">
+            <input type="button" onclick="IncreasePT('listSMax252',1)" class="btn-inc1" value=" "
+                name="btnIncrease1">
+            <input type="button" onclick="ReducePT('listSMax252',10)" class="btn-dec10" value=" "
+                name="btnReduce10">
+            <input type="button" onclick="IncreasePT('listSMax252',10)" class="btn-inc10" value=" "
+                name="btnIncrease10">
+        </td>
+    </tr>
+    <!--/Super PT -->
+    <!--Master PT -->
+    <tr>
+        <td class="l" style="">
+            Super Min Position
+        </td>
+        <td>
+            <select id="listSMin252" max="{roundNumber($T.spt,2)}" min="0" name="listSMin252" class="select-pt">
+                <option value="{roundNumber($T.minpt,2)}" selected="true">{roundNumber($T.minpt,2)}</option>
+            </select>
+            <input type="button" onclick="ReducePT('listSMin252',1)" class="btn-dec1" value=" "
+                name="listMHdpD" id="btnR1Hdp">
+            <input type="button" onclick="IncreasePT('listSMin252',1)" class="btn-inc1" value=" "
+                name="listMHdpD" id="btnI1Hdp">
+            <input type="button" onclick="ReducePT('listSMin252',10)" class="btn-dec10" value=" "
+                name="listMHdpD" id="btnR10Hdp">
+            <input type="button" onclick="IncreasePT('listSMin252',10)" class="btn-inc10" value=" "
+                name="listMHdpD" id="btnI10Hdp">
+        </td>
+    </tr>
+    <!--/Master PT -->
+</table>
+<table cellspacing="0" cellpadding="0" border="0">
+    <tr>
+        <td class="custBtn1">
+        </td>
+        <td onclick="updateSuper();" class="custBtn2 hand" id="Td1">
+            Submit
+        </td>
+    </tr>
+</table>
+{#/template SuperPT} 

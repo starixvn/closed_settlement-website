@@ -1,0 +1,35 @@
+<div id="navbar_add_menu" class="acc_menucontent" style="display:inline; position:relative">
+    <form name="fAddDept" method="post" action="UpdateDept.ashx?type=add" target="frUpd">
+    <table class="tbllayout" cellpadding="2" cellspacing="1" border="0" style="width: 200px;">
+        <tr class="title">
+            <td class="thead" colspan="2">
+                Add Department
+            </td>
+        </tr>
+        <tr class="vbmenu_option">
+            <td class="r" style="width: 40%">
+                Department
+            </td>
+            <td class="l">
+                <input type="text" onkeypress="return OnEnter(event);" id="txtDept" name="txtDept"></input>
+            </td>
+        </tr>
+        <tr class="vbmenu_option">
+            <td class="r" style="width: 40%">
+                Description
+            </td>
+            <td class="l">
+                <input type="text" onkeypress="return OnEnter(event);" id="txtDesc" name="txtDesc"></input>
+            </td>
+        </tr>
+        <tr class="vbmenu_option">
+            <td colspan="2" class="c">
+                <input type="button" style="width: 50px" onclick="OnUpdate('add');" id="btnAddDept"
+                    name="btnAddDept" value="Add" class="btn"></input>
+                <input type="button" style="width: 50px" onclick="OnCancel('add');" id="Button1"
+                    name="btnCancel" value="Cancel" class="btn"></input>
+            </td>
+        </tr>
+    </table>
+    </form>
+</div>

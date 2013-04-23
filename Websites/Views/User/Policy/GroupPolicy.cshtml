@@ -1,0 +1,70 @@
+﻿<div id="deptPolicyGrid" class="content-warper hidden" style="margin-top: 4px">
+    <div class="content-header clearfix">
+        <div class="header-scroll">
+            <table class="tbl-header-scroll">
+                <tr>
+                    <td rowspan="2" style="border-bottom: none 0px;">
+                        <div class="col360 c">
+                            Function</div>
+                    </td>
+                    <td colspan="2">
+                        <div class="c">
+                            Group Permission</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border-bottom: none 0px;">
+                        <div class="col100 c">
+                            Read</div>
+                    </td>
+                    <td style="border-bottom: none 0px;">
+                        <div class="col100 c">
+                            Host</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="content-body clearfix">
+        <div class="body-scroll">
+            <table class="tbl-body-scroll">
+                <tbody id="tbodyDeptPolicy">
+                </tbody>
+            </table>
+            <script id="scriptTemplateDeptPolicy" type="text/html">
+                <tr level="${level}" _id="${ID}" parentID="${ParentId}" TotalSub="${TotalSub}"><td>
+                        <div class="col360 l">
+                            <span icon="true" 
+                            {{if TotalSub != 0}}
+                                class="tree-expanded">
+                            {{else}}
+                                style="background:url('../App_Themes/Images/TreeViewImg.GIF') no-repeat scroll 0 0 transparent">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            {{/if}}
+                            </span>
+                            <span funcname="true">${FuncDesc}</span>
+                            <input type="hidden" value="${level}" level="true" />
+                            <input type="hidden" value="${ID}" funcid="true" />
+                            <input type="hidden" value="${TotalSub}" TotalSub="true" />
+                        </div>
+                    </td><td>
+                        <div class="col100 c">
+                            <input type="checkbox" cbxRead="true"
+                            {{if IsGroupRead}} 
+                                checked="checked"
+                            {{/if}}
+                                />
+                        </div>
+                    </td><td>
+                        <div class="col100 c">
+                            <input type="checkbox" cbxHost="true"
+                            {{if IsGroupHost}} 
+                                checked="checked"
+                            {{/if}}
+                            />
+                        </div>
+                    </td>
+                </tr>
+            </script>
+        </div>
+    </div>
+</div>

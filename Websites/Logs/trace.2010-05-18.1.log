@@ -1,0 +1,97 @@
+5/7/2010 2:41:12 AM -- File does not exist.
+ SOURCE: System.Web
+ FORM: 
+ QUERYSTRING: 
+ TARGETSITE: System.IO.FileInfo GetFileInfo(System.String, System.String, System.Web.HttpResponse)
+ STACKTRACE:    at System.Web.StaticFileHandler.GetFileInfo(String virtualPathWithPathInfo, String physicalPath, HttpResponse response)
+   at System.Web.StaticFileHandler.ProcessRequestInternal(HttpContext context)
+   at System.Web.DefaultHttpHandler.BeginProcessRequest(HttpContext context, AsyncCallback callback, Object state)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) -- General
+----------------------------------------
+5/7/2010 2:41:12 AM -- File does not exist.
+ SOURCE: System.Web
+ FORM: 
+ QUERYSTRING: 
+ TARGETSITE: System.IO.FileInfo GetFileInfo(System.String, System.String, System.Web.HttpResponse)
+ STACKTRACE:    at System.Web.StaticFileHandler.GetFileInfo(String virtualPathWithPathInfo, String physicalPath, HttpResponse response)
+   at System.Web.StaticFileHandler.ProcessRequestInternal(HttpContext context)
+   at System.Web.DefaultHttpHandler.BeginProcessRequest(HttpContext context, AsyncCallback callback, Object state)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) -- General
+----------------------------------------
+5/7/2010 2:41:12 AM -- File does not exist.
+ SOURCE: System.Web
+ FORM: 
+ QUERYSTRING: 
+ TARGETSITE: System.IO.FileInfo GetFileInfo(System.String, System.String, System.Web.HttpResponse)
+ STACKTRACE:    at System.Web.StaticFileHandler.GetFileInfo(String virtualPathWithPathInfo, String physicalPath, HttpResponse response)
+   at System.Web.StaticFileHandler.ProcessRequestInternal(HttpContext context)
+   at System.Web.DefaultHttpHandler.BeginProcessRequest(HttpContext context, AsyncCallback callback, Object state)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) -- General
+----------------------------------------
+5/7/2010 2:41:19 AM -- File does not exist.
+ SOURCE: System.Web
+ FORM: 
+ QUERYSTRING: 
+ TARGETSITE: System.IO.FileInfo GetFileInfo(System.String, System.String, System.Web.HttpResponse)
+ STACKTRACE:    at System.Web.StaticFileHandler.GetFileInfo(String virtualPathWithPathInfo, String physicalPath, HttpResponse response)
+   at System.Web.StaticFileHandler.ProcessRequestInternal(HttpContext context)
+   at System.Web.DefaultHttpHandler.BeginProcessRequest(HttpContext context, AsyncCallback callback, Object state)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) -- General
+----------------------------------------
+5/7/2010 2:41:19 AM -- File does not exist.
+ SOURCE: System.Web
+ FORM: 
+ QUERYSTRING: 
+ TARGETSITE: System.IO.FileInfo GetFileInfo(System.String, System.String, System.Web.HttpResponse)
+ STACKTRACE:    at System.Web.StaticFileHandler.GetFileInfo(String virtualPathWithPathInfo, String physicalPath, HttpResponse response)
+   at System.Web.StaticFileHandler.ProcessRequestInternal(HttpContext context)
+   at System.Web.DefaultHttpHandler.BeginProcessRequest(HttpContext context, AsyncCallback callback, Object state)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) -- General
+----------------------------------------
+5/7/2010 2:41:19 AM -- File does not exist.
+ SOURCE: System.Web
+ FORM: 
+ QUERYSTRING: 
+ TARGETSITE: System.IO.FileInfo GetFileInfo(System.String, System.String, System.Web.HttpResponse)
+ STACKTRACE:    at System.Web.StaticFileHandler.GetFileInfo(String virtualPathWithPathInfo, String physicalPath, HttpResponse response)
+   at System.Web.StaticFileHandler.ProcessRequestInternal(HttpContext context)
+   at System.Web.DefaultHttpHandler.BeginProcessRequest(HttpContext context, AsyncCallback callback, Object state)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) -- General
+----------------------------------------
+5/7/2010 2:41:19 AM -- File does not exist.
+ SOURCE: System.Web
+ FORM: 
+ QUERYSTRING: 
+ TARGETSITE: System.IO.FileInfo GetFileInfo(System.String, System.String, System.Web.HttpResponse)
+ STACKTRACE:    at System.Web.StaticFileHandler.GetFileInfo(String virtualPathWithPathInfo, String physicalPath, HttpResponse response)
+   at System.Web.StaticFileHandler.ProcessRequestInternal(HttpContext context)
+   at System.Web.DefaultHttpHandler.BeginProcessRequest(HttpContext context, AsyncCallback callback, Object state)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) -- General
+----------------------------------------
+5/7/2010 9:55:53 AM -- [~/Handlers/ExportStatement.ashx] -- [Void Write(System.String)] -- Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index -- General
+----------------------------------------
+5/7/2010 10:37:49 AM -- [~/Handlers/ExportStatement.ashx] -- [Void Write(System.String)] -- Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index -- General
+----------------------------------------
+5/7/2010 10:44:59 AM -- [~/Handlers/ExportStatement.ashx] -- [Void Write(System.String)] -- Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index -- General
+----------------------------------------
+5/7/2010 4:02:34 AM -- File does not exist.
+ SOURCE: System.Web
+ FORM: 
+ QUERYSTRING: 
+ TARGETSITE: System.IO.FileInfo GetFileInfo(System.String, System.String, System.Web.HttpResponse)
+ STACKTRACE:    at System.Web.StaticFileHandler.GetFileInfo(String virtualPathWithPathInfo, String physicalPath, HttpResponse response)
+   at System.Web.StaticFileHandler.ProcessRequestInternal(HttpContext context)
+   at System.Web.DefaultHttpHandler.BeginProcessRequest(HttpContext context, AsyncCallback callback, Object state)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) -- General
+----------------------------------------

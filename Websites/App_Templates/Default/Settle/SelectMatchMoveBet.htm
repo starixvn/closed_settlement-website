@@ -1,0 +1,19 @@
+﻿{#template MAIN}
+{#include matches root= $T}
+{#/template MAIN}
+
+{#template matches}
+
+<span style="color:#ff0000">Found available matches:</span> <br />
+{#foreach $T as r}
+   {#include match root=$T.r}
+{#/for}
+
+<br />
+<input id="btnMove" class="btn" type="button" value="Move" onclick="MoveBet()" />
+{#/template matches}
+
+{#template match}
+<input name="rdMatch" type="radio" value="{$T.matchid}" matchcode="{$T.matchcode}" /> {$T.matchcode} ({$T.eventdate}) <br />
+{#/template match}
+

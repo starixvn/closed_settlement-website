@@ -1,0 +1,21 @@
+﻿.red{   color:Red}
+.clearfix{   clear:both}
+.col300{   width:300px;     white-space:normal}
+.col160{   width:160px;     white-space:normal}
+.col80{   width:80px;     white-space:normal}
+.col100{   width:100px;     white-space:normal}
+.col40{   width:40px;     white-space:normal}
+.col240{   width:240px;     white-space:normal}
+/*Global Style for Grid */
+
+
+
+
+#mixparlaywon div.body-scroll{overflow:scroll; overflow-x:hidden;  border-top:solid 1px #7C98A4;  height:500px; background-color:#fff;}
+#tblmixparlay .bgbase{background-color:#CCFFCC;}
+
+#tblmixparlay td.bgeven{background-color:#fff3c8;}
+#tblmixparlay td.total{background-color:#FFEEDD;}
+#tblmixparlay td.grandtotal{background-color:#D3E1C8;}
+
+.link {color:Blue; cursor:pointer;}

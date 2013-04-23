@@ -1,0 +1,47 @@
+<form name="fAdminList">   
+  <table class="tbllayout" style="width:100%" cellspacing="1" id="tblallaccountlist">    
+  <tr>
+        <td colspan="{colspan}" class="c">
+          <b>Department:</b>
+          <font color="#6678e0">
+            <b>{deptname}</b>
+          </font>          
+        </td>
+        <!--noupdate-->
+        <td class="c" style="width:50px;display:none;">          
+          <a class="btn" href="#"  onclick="OpenUpdateMult('{dept}');">
+            <span>Update</span>
+          </a>
+        </td>
+        <td style="width:100px"></td>
+        <!--/noupdate-->
+      </tr>  
+  <tr class="title">
+    <td>No</td>
+    <td>User Name</td>
+    <td>First Name</td>
+    <td>Last Name</td>
+    <td>Status</td>
+    <td>Creator</td>
+    <td>Created Date</td>    
+    <td>Policy</td>
+    <td style="display:none">
+      <input onclick="CheckAll(this);" name="chkAll" id="chkAll" type="checkbox" class="styled"  />
+    </td>    
+    <td style="width:100px">Reset</td>
+  </tr>
+  {content} 
+   <tr>
+   <!--noupdate-->  
+        <td colspan="{colspan}" class="c">
+        </td>      
+        <td class="c" style="width:50px;display:none;">          
+          <a class="btn" href="#"  onclick="OpenUpdateMult('{dept}');">
+            <span>Update</span>
+          </a>
+        </td>
+        <td style="width:100px"></td>
+      </tr>  
+      <!--/noupdate-->
+</table>
+</form>

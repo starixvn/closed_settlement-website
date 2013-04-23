@@ -1,0 +1,44 @@
+﻿{#template MAIN}
+{#include mainmenu root= $T}
+{#/template MAIN}
+
+{#template mainmenu}
+<table id="table" class="tbllayout" cellspacing="1px" cellpadding="1px">
+    <thead>
+        <tr class="title" id="trHeader">
+            <th>Menu</th>
+            <th>Function Name</th>
+            <th>Url</th>
+            <th>Target</th>
+            <th>IsHide</th>            
+            <th>Order</th>      
+            <th>Edit</th>      
+            <th>Delete</th>      
+        </tr>
+    </thead>
+    <tbody>
+       
+        {#foreach $T as r}
+            {#include row root=$T.r}
+        {#/for}        
+    </tbody>
+</table>    
+{#/template mainmenu}
+
+
+
+{#template row}
+<tr class="l {#if $T.ParentId == 0} b {#/if}">
+    <td>{#if $T.ParentId > 0} <div class="indent">&nbsp;&nbsp;</div> {#/if} {$T.Name}</td>
+    <td>{#if $T.ParentId > 0} <div class="indent">&nbsp;&nbsp;</div> {#/if} {$T.FunctionName}</td>
+    <td>{$T.Url}</td>    
+    <td class="c">{$T.Target}</td>
+    <td class="c">
+        {#if $T.ParentId > 0} <div class="indent">&nbsp;&nbsp;</div> {#/if} 
+        <input type="checkbox" disabled="disabled" {#if $T.IsHide ==1} checked="checked" {#/if}  />
+    </td>
+    <td class="c">{$T.Order} / {$T.Level}</td>
+    <td class="c"><img class="hand" src="../App_Themes/Images/icn_edit.png" /></td>
+    <td class="c"><img class="hand" src="../App_Themes/Images/icn_del.png" /></td>
+</tr>
+{#/template row}

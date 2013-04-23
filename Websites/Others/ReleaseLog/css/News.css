@@ -1,0 +1,197 @@
+﻿*{font-family:tahoma;}
+body,td,th 
+{
+	font-family: arial;
+	font-size: 12px;
+}
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+img {background: transparent;-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF)";}
+p, pre {margin: 8px;}
+input.clone{display:none;}
+.maincontent_news 
+{
+	background: url("../.../../App_Themes/Images/banner/bg_head_tb.jpg") repeat-x scroll left bottom #FFFFFF;
+	border: 1px solid #7C98A4;
+	display: table;
+	padding: 4px 5px;
+	text-align: left;
+	width: 960px;
+}
+#news{
+	float:left;
+	width:960px;
+	padding:5px 0 0 0px;	
+}
+#news div.bottom_border, #news table.bottom_border td{
+	margin:0;
+	border-bottom:1px dotted #000;
+	padding: 5px 0 10px 0;	
+}
+#news div.r-item {
+	float:left; width: 100%; border-bottom: 1px solid #BBCCED;padding: 7px 0px;
+}
+#news div.r-item.end {
+	border-bottom: 0px solid #BBCCED;
+}
+#news div.r-item.active {
+	background-color: #E5ECF9;cursor:pointer;color: #036;
+}
+#news div.r-item.active img {
+	-ms-filter: "";
+}
+#news div.r-item .icogo {
+	float:left;width:21px;height: 18px;
+}
+#news div.r-item .date {
+	float:left;width:100px;font-style:italic;text-align: center;
+}
+#news div.r-item .title {
+	float:left; width:800px;
+}
+#news div.r-item .icoview {
+	float:right; width:20px;text-align:right
+}
+
+#news label{
+	display:block;
+	float:right;
+}
+.cap{
+	font-size:14px;
+	color:#20425d;
+	font-weight:bold;
+	margin:0;	
+	padding-bottom: 5px;
+}
+#btn{
+	float:right;
+	margin-top:5px;
+}
+.dbtn{
+	float:right;
+	margin-top:5px;
+}
+div.role, a.role
+{
+	display: none;
+}
+a.role {margin-left: 5px;}
+div.role img, a.role img {
+	border: 0;
+	margin-right: 5px;
+	height: 16px;
+	width: 16px;
+	vertical-align: top;
+}
+img.iconews 
+{
+	border: 0;
+	margin-right: 5px;
+	height: 16px;
+	width: 16px;
+	vertical-align: top;
+}
+
+#news table tr td.buttonbar{padding:10px;}		
+#news .inputfile{float:left;width:250px;}
+#news .uploadbuttonbar{float:left;padding-top:3px;}
+
+
+#barCaption
+{
+	background: url("../images/pointer-row.jpg") repeat-x scroll left bottom transparent;
+	padding:10px 0 3px 0;
+	float: left;
+	width: 935px;
+	margin-bottom: 10px;
+}
+
+#coledit{
+	float:left;
+}
+
+div.alertboxerr div{padding:0 4px 2px 21px}
+div.date_input_container{float:left; }
+div.calendar_container{float:left;padding:1px 2px;}
+
+.newscont {float: left; width: 950px; padding-bottom: 10px;padding-top: 7px; line-height: 17px; overflow:hidden;}
+.newscont .imagethumb {	float: left; margin-right: 5px; margin-bottom: 5px; width: 300px; }
+.featurecont {float:left; margin-bottom: 15px; width: 950px; padding-left: 5px;}
+.whatnews_header {float:left;  width:955px; padding-left: 5px;font-size:11px;}
+.whatnews_content {float:left; width:955px;margin-bottom: 10px; overflow: hidden;}
+.news_direction {float: left; width: 230px; display: none;}
+.news_addbtn {float: right; width: 150px; text-align: right;}
+
+/** upload box **/
+.uploadbox {float: left; width: 350px; position: absolute; border: 2px solid #B5C4D0; left: 200px; top: 200px; z-index: 1000; display:none; background-color: #FFF;}
+.uploadbox-header {width: 350px; height: 20px; background-color: #1F415A; margin-top: -10px; cursor:move;}
+.uploadbox-header .boxh2 {width:340px; font-size: 12px; color: #FFF; padding: 2px 5px}
+.uploadbox-header .boxclose {display:inline;float:right;margin:-3px}
+.uploadbox .chooseimg {float: left; width: 330px; padding: 0 0 0 5px; height: 50px;}
+.uploadbox .imgsetting {float: left; width: 335px; padding: 0 0 0 5px; margin: 10px 0 5px 0; border-bottom: 1px solid #cee1ee;} 
+.uploadbox .imgsetting .setcont {float: left; width: 320px; padding:5px 0 0 10px; display:none; border-top: 1px solid #cee1ee;}
+.uploadbox .uploadbuttonbar {float: left; width: 340px; margin: 10px 0px; padding: 0px 5px}
+
+#uploadbox-tab {padding: 2px 0 2px 10px; margin-left: 0; border-bottom: 1px solid #cee1ee; font-size:96%; font-family: tahoma, Arial, Helvetica, sans-serif}
+#uploadbox-tab li {list-style: none; margin: 0; display: inline;}
+#uploadbox-tab li a {padding: 6px 0.7em; border: 1px solid #e3eef8;	border-bottom: none; background: #e3eef8; color:#3361a2; text-decoration: none; line-height:20px;font-size: 98%;}
+#uploadbox-tab li a:hover {color: #000; background: #fff;	border: 1px solid #cee1ee; border-bottom: 1px solid white;}
+#uploadbox-tab li a.current {background: white; border: 1px solid #cee1ee; border-bottom: 1px solid white; color:#333; font-weight:bold}
+
+/** whatnews direction **/
+.nolink {color: #000!important; cursor: default; opacity: 0.5; display: none;}
+
+/** whatnews docking **/
+div.docking 
+{
+	position: fixed; float: left; width: 247px; height: 12px; bottom: 0px; left: 0; top: auto;
+	padding: 0px 0px; z-index: 10000;
+	background-color: #1F415A;
+	border: 1px solid #B5C4D0;
+	overflow:hidden;
+}
+div.dockcont 
+{
+	float:left;
+	width: 230px;
+	background: none repeat scroll 0 0 transparent;
+	overflow:hidden;
+}
+div.dockcont .newsgo 
+{
+	float: left;
+	background: url(../images/news-go-12.png) no-repeat scroll left -1px transparent;
+	height: 12px;
+	width: 15px;
+}
+div.dockcont .newstitle 
+{
+	float: left;
+	font-size: 10px;
+	width: 210px;
+	margin-top: -1px;
+	font-style:italic;
+	color: #eacd07;
+}
+div.dockclose
+{
+	cursor: pointer;
+	width: 10px;
+	float: right;
+	text-align: right;
+	height: 12px
+}
+div.dockclose.hide 
+{
+	background: url(../images/menu-icons.gif) no-repeat scroll left 1px transparent;
+}
+div.dockclose.show
+{
+	background: url(../images/menu-icons.gif) no-repeat scroll left -14px transparent;
+}
+div#news-item.active * {color: #FFF;}

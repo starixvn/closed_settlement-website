@@ -1,0 +1,109 @@
+﻿<table border="0px" class="table">
+    <tbody>
+        <tr>
+            <td class="b">
+                Leagues:
+            </td>
+            <td>
+                <select name="ddlLeague" id="ddlLeague" onchange="ChangeLeague(this);">
+                    <option value="5395">Boxing - London Olympics 2012 - Boxing Men Welter (69kg) (Gold
+                        Medal Winner)</option>
+                    <option value="5498">Tennis - ATP - Davis Cup (Winner)</option>
+                    <option value="9107">Golf - European Tour - The Open Championship (Winner)</option>
+                    <option value="9108">Golf - European Tour - The Open Championship Top 10 Finish (Including
+                        ties)</option>
+                    <option value="11383">TESTING (Betting Prohibited Area!) - Squash</option>
+                    <option value="16944">TESTING (Betting Prohibited Area!) - Motorsports (Points Finish)</option>
+                    <option value="17367">TESTING (Betting Prohibited Area!!) - Netball</option>
+                    <option value="22143">TESTING (Betting Prohibited Area!!) - 2012 Olympic SOCCER</option>
+                    <option value="22171">London Olympics 2012 - Most Gold Medals</option>
+                    <option value="22858">Motor Sport - F1 - World Drivers Championship 2012 (Winner)</option>
+                    <option value="22860">Motor Sport - F1 - Constructors Championship 2012 (Winner)</option>
+                    <option value="23101">2012 NORWAY TIPPELIGAEN - WINNER</option>
+                    <option value="23102">2012 IRELAND PREMIER LEAGUE - WINNER</option>
+                    <option value="23103">2012 JAPAN J-LEAGUE DIVISION 1 - WINNER</option>
+                    <option value="23271">2012 OLYMPIC LONDON - MEN SOCCER WINNER</option>
+                    <option value="23272">2012 OLYMPIC LONDON - WOMEN SOCCER WINNER</option>
+                    <option value="23430">Field Hockey - London Olympics 2012 - Field Hockey Women (Gold
+                        Medal Winner)</option>
+                    <option value="23431">Field Hockey - London Olympics 2012 - Field Hockey Men (Gold Medal
+                        Winner)</option>
+                    <option value="23443">2012 SWEDEN ALLSVENSKAN - WINNER</option>
+                    <option value="23451">Water Polo - London Olympics 2012 - Water Polo Men (Gold Medal
+                        Winner)</option>
+                    <option value="23452">Water Polo - London Olympics 2012 - Water Polo Women (Gold Medal
+                        Winner)</option>
+                    <option value="23673">Cricket - ICC World Twenty20 2012 (Winner)</option>
+                    <option value="23682">Handball - London Olympics 2012 - Handball Men (Gold Medal Winner)</option>
+                    <option value="23684">Handball - London Olympics 2012 - Handball Women (Gold Medal Winner)</option>
+                    <option value="24185">Volleyball - London Olympics 2012 - Volleyball Men (Gold Medal
+                        Winner)</option>
+                    <option value="24187">Volleyball - London Olympics 2012 - Volleyball Women (Gold Medal
+                        Winner)</option>
+                    <option value="24264">2012 OLYMPIC LONDON - MEN SOCCER - GROUP A WINNER</option>
+                    <option value="24265">2012 OLYMPIC LONDON - MEN SOCCER - GROUP B WINNER</option>
+                    <option value="24266">2012 OLYMPIC LONDON - MEN SOCCER - GROUP C WINNER</option>
+                    <option value="24285">Gymnastics - London Olympics 2012 - Gymnastics Artistic Team Women
+                        ( Gold Medal Winner )</option>
+                    <option value="24295">Athletics - London Olympics 2012 - Athletics Men 100m (Gold Medal
+                        Winner)</option>
+                    <option value="24342">Badminton - London Olympics 2012 - Badminton Men Singles (Gold
+                        Medal Winner)</option>
+                    <option value="24347">Badminton - London Olympics 2012 - Badminton Women Singles (Gold
+                        Medal Winner)</option>
+                    <option value="24350">Badminton - London Olympics 2012 - Badminton Mens Doubles (Gold
+                        Medal Winner)</option>
+                    <option value="24353">Badminton - London Olympics 2012 - Badminton Mixed Doubles (Gold
+                        Medal Winner)</option>
+                    <option value="24365">Boxing - London Olympics 2012 - Boxing Men Light Fly (49kg) (Gold
+                        Medal Winner)</option>
+                    <option value="24368">Boxing - London Olympics 2012 - Boxing Men Fly (52kg) (Gold Medal
+                        Winner)</option>
+                    <option value="24375">Boxing - London Olympics 2012 - Boxing Men Light (60kg) (Gold
+                        Medal Winner)</option>
+                    <option value="24391">Beach Volleyball - London Olympics 2012 - Beach Volleyball Women
+                        (Gold Medal Winner)</option>
+                    <option value="24400">2012/2013 UEFA CHAMPIONS LEAGUE - WINNER</option>
+                    <option value="24405">2012/2013 FRANCE LIGUE 1 - WINNER</option>
+                    <option value="24429">2012/2013 ENGLAND FA CUP - WINNER</option>
+                    <option value="24602">ENGLISH FA COMMUNITY SHIELD WINNING MARGIN (90mins) - Manchester
+                        City-vs-Chelsea</option>
+                </select>
+            </td>
+
+            <td class="b">
+                Team:
+            </td>
+            <td>
+                <div id="sOutright">
+                    <select name="ddlOutright" id="ddlOutright">
+                        <option value="940377">Australia</option>
+                        <option value="940379">Spain</option>
+                    </select></div>
+            </td>
+
+
+            <td class="b">
+                From RefNo:
+            </td>
+            <td>
+                <input type="text" maxlength="12" size="12" name="frefno" id="frefno">
+            </td>
+
+            <td class="b">
+                To RefNo:
+            </td>
+            <td>
+                <input type="text" maxlength="12" size="12" name="trefno" id="trefno">
+            </td>
+
+             <td style="height: 40px;" class="l">
+                <input type="button" value="  Show  " onclick="GetData_OR();" class="btn" name="btnSubmit"
+                    id="btnSubmit"><img src="../App_Themes/Images/ajax-loader.gif" style="display: none"
+                        name="inProgressBar" id="inProgressBar">
+            </td>
+        </tr>
+       
+      
+    </tbody>
+</table>

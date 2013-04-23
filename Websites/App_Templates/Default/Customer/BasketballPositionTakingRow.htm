@@ -1,0 +1,85 @@
+  <tr>
+    <td style="display:{none-tlposition}" class="c">{super-position}</td>
+    <td>
+      <select class="select-pt" name="listSHdpB" id="listSHdpB" onchange="On_ChangeSuper(this);">{listSHdpBValue}</select>
+      <input type="button" name="btnReduce1"  value=" "   class="btn-dec1"  onclick="ReducePT('listSHdpB',1)"/>
+      <input type="button" name="btnIncrease1" value=" "   class="btn-inc1" onclick="IncreasePT('listSHdpB',1)"/>
+      <input type="button" name="btnReduce10" value=" " class="btn-dec10" onclick="ReducePT('listSHdpB',10)"/>
+      <input type="button" name="btnIncrease10" value=" " class="btn-inc10" onclick="IncreasePT('listSHdpB',10)"/>
+    </td>
+    <td>
+      <select class="select-pt" name="listSOUB" id="listSOUB" onchange="On_ChangeSuper(this);">{listSOUBValue}</select>
+    </td>
+    <td>
+      <select class="select-pt" name="listSOEB" id="listSOEB" onchange="On_ChangeSuper(this);">{listSOEBValue}</select>
+    </td>
+    <td class="l">
+      <input type="checkbox" onclick="CopyPositionTaking(this,arrHdpBasketballId,'arrHdpBasketballId_sapt');" name="chkCopyHdpB" id="chkCopyHdpB"/>
+      Copy From Handicap
+    </td>
+  </tr>
+<!--master-pt-->
+  <tr style="display:{ptmaster-none}">
+    <td style="display:{none-tlposition}" class="c">{master-position}</td>
+    <td>
+      <select class="select-pt" onchange="On_ChangeMaster(this);" name="listMHdpB" id="listMHdpB">{listMHdpBValue}</select>
+      <input type="button" id="btnR1HdpB" name="listMHdpB" value=" "   class="btn-dec1" onclick="ReducePT('listMHdpB',1)"/>
+      <input type="button" id="btnI1HdpB" name="listMHdpB" value=" "   class="btn-inc1" onclick="IncreasePT('listMHdpB',1)"/>
+      <input type="button" id="btnR10HdpB" name="listMHdpB" value=" " class="btn-dec10" onclick="ReducePT('listMHdpB',10)"/>
+      <input type="button" id="btnI10HdpB" name="listMHdpB" value=" " class="btn-inc10" onclick="IncreasePT('listMHdpB',10)"/>
+    </td>
+    <td>
+      <select class="select-pt" onchange="On_ChangeMaster(this);" name="listMOUB" id="listMOUB">{listMOUBValue}</select>
+    </td>
+    <td>
+      <select class="select-pt" onchange="On_ChangeMaster(this);" name="listMOEB" id="listMOEB">{listMOEBValue}</select>
+    </td>
+  </tr>
+<!--/master-pt-->
+<!--agent-pt-->
+  <tr style="display:{spt-none}">
+    <td style="display:{none-tlposition}" class="c">{agent-position}</td>
+    <td>
+      <select class="select-pt" name="listAHdpB" id="listAHdpB">{listAHdpBValue}</select>
+      <input type="button" name="btnReduce1" value=" "   class="btn-dec1" onclick="ReducePT('listAHdpB',1)"/>
+      <input type="button" name="btnIncrease1" value=" "   class="btn-inc1" onclick="IncreasePT('listAHdpB',1)"/>
+      <input type="button" name="btnReduce10" value=" " class="btn-dec10" onclick="ReducePT('listAHdpB',10)"/>
+      <input type="button" name="btnIncrease10" value=" " class="btn-inc10" onclick="IncreasePT('listAHdpB',10)"/>
+    </td>
+    <td>
+      <select class="select-pt" name="listAOUB" id="listAOUB">{listAOUBValue}</select>
+    </td>   
+    <td>
+      <select class="select-pt" name="listAOEB" id="listAOEB">{listAOEBValue}</select>
+    </td>   
+  </tr>
+<!--/agent-pt-->
+<!--preset-pt-->
+<tr class="{spt-preset-hidden}">
+  <td style="display:{none-tlposition}" class="c">Auto Super Preset<br />Position
+</td>
+  <td>
+    <div>
+      <input type="checkbox" value="yes" name="chkSPHdpB" id="chkSPHdpB"  onclick="autoPtSwitch(14);" />
+    </div>
+    <select class="select-pt" name="listSPHdpB" id="listSPHdpB">{listSPHdpBValue}</select>
+    <input type="button" name="listSPHdpB" value=" "   class="btn-dec1" onclick="ReducePT('listSPHdpB',1)"/>
+    <input type="button" name="listSPHdpB" value=" "   class="btn-inc1" onclick="IncreasePT('listSPHdpB',1)"/>
+    <input type="button" name="listSPHdpB" value=" " class="btn-dec10" onclick="ReducePT('listSPHdpB',10)"/>
+    <input type="button" name="listSPHdpB" value=" " class="btn-inc10" onclick="IncreasePT('listSPHdpB',10)"/>
+  </td>
+  <td>
+    <div>
+      <input type="checkbox" value="yes" name="chkSPOUB" id="chkSPOUB"  onclick="autoPtSwitch(15);" />
+    </div>
+    <select class="select-pt" name="listSPOUB" id="listSPOUB">{listSPOUBValue}</select>
+  </td>
+  <td>
+    <div>
+      <input type="checkbox" value="yes" name="chkSPOEB" id="chkSPOEB"  onclick="autoPtSwitch(16);" />
+    </div>
+    <select class="select-pt" name="listSPOEB" id="listSPOEB">{listSPOEBValue}</select>
+  </td>
+</tr>
+<!--/preset-pt-->
+</table>

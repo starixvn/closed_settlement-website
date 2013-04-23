@@ -1,0 +1,68 @@
+<table class="tblcollapse" style="width:800px">
+     <!--Deadball-->
+     {headerpregame}
+      <tr>
+        <td class="l" rowspan="2" >
+            Deadball
+        </td>
+        <td class="l">
+            Max Position
+        </td>
+        {dead-S-pt}    
+       <td rowspan="2" colspan="2">
+            <input class="copyAll" type="checkbox" onclick="NumberGameCopyPT('Deadball');" name="chkCopy1stOUD" id="chkCopy1stOUD" />
+            Copy From 1st Last O/U
+       </td>
+    </tr>
+    <tr>
+        <td class="l">
+            Min Position
+        </td>
+        {dead-M-pt}
+    </tr>
+    <!--/Deadball-->
+    
+    <!--Live-->
+    {headerrunninggame}
+    <tr>
+        <td rowspan="2" >
+            Live
+        </td>
+        <td>Max Position</td>
+        {live-S-pt}
+        <td rowspan="2">
+              <input class="copyAll" type="checkbox" onclick="NumberGameCopyPT('Live');" name="chkCopyNBOUL" id="chkCopyNBOUL" />
+               Copy From Over/Under
+        </td>
+    </tr>
+    <tr>
+        <td>Min Position</td>
+        {live-M-pt}
+    </tr>
+    <!--/Live-->
+</table>
+
+
+<!--bettype-block-->
+{block-name}
+<td>
+    <select class="select-pt copyfrom{ball}" name="{sel-id}" id="{sel-id}">
+        {{listValue}}
+    </select>
+</td>
+{end-block-name}
+<!--/bettype-block-->
+
+<!--main-bettype-block-->
+{block-name}
+<td>
+    <select class="select-pt copyAll" name="{sel-id}" id="{sel-id}">
+        {{listValue}}
+    </select>
+    <input type="button" name="btnReduce1" value=" " class="btn-dec1" onclick="ReducePT('{sel-id}',1)" />
+    <input type="button" name="btnIncrease1" value=" " class="btn-inc1" onclick="IncreasePT('{sel-id}',1)" />
+    <input type="button" name="btnReduce10" value=" " class="btn-dec10" onclick="ReducePT('{sel-id}',10)" />
+    <input type="button" name="btnIncrease10" value=" " class="btn-inc10" onclick="IncreasePT('{sel-id}',10)" />
+</td>
+{end-block-name}
+<!--/main-bettype-block-->

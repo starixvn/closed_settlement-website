@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FA489626-9250-447A-B555-E621B43D3AFF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Fanex.Tarus.User</RootNamespace>
+    <AssemblyName>Fanex.Tarus.User</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DNAide">
+      <HintPath>..\..\..\..\Dependency\DNAide.dll</HintPath>
+    </Reference>
+    <Reference Include="Fanex.Common">
+      <HintPath>..\..\..\..\Dependency\Fanex\Fanex.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Fanex.Data">
+      <HintPath>..\..\..\..\Dependency\Fanex\Fanex.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="IBCUtils, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Dependency\IBCUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Business\Interface\IFunctionService.cs" />
+    <Compile Include="Business\Interface\IUserInfoService.cs" />
+    <Compile Include="Business\Interface\IUserLogService.cs" />
+    <Compile Include="Business\Services\FunctionService.cs" />
+    <Compile Include="Business\Services\UserInfoService.cs" />
+    <Compile Include="Business\Services\UserLogService.cs" />
+    <Compile Include="Controller\FunctionController.cs" />
+    <Compile Include="Controller\UserInfoController.cs" />
+    <Compile Include="DataAccess\IUserLogAccess.cs" />
+    <Compile Include="DataAccess\Sql\UserLogAccess.cs" />
+    <Compile Include="DataAccess\IFunctionAccess.cs" />
+    <Compile Include="DataAccess\IUserInfoAccess.cs" />
+    <Compile Include="DataAccess\Sql\FunctionAccess.cs" />
+    <Compile Include="DataAccess\Sql\UserInfoAccess.cs" />
+    <Compile Include="Entities\Account.cs" />
+    <Compile Include="Entities\Department.cs" />
+    <Compile Include="Entities\AccManagementViewData.cs" />
+    <Compile Include="Entities\FuncManagementViewData.cs" />
+    <Compile Include="Entities\FunctionBO.cs" />
+    <Compile Include="Entities\LogAccountInfo.cs" />
+    <Compile Include="Entities\LogAdminPolicy.cs" />
+    <Compile Include="Entities\LogGroupInfo.cs" />
+    <Compile Include="Entities\LogGroupPolicy.cs" />
+    <Compile Include="Entities\UserControlBO.cs" />
+    <Compile Include="Entities\UserLog.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataAccess\NoSql\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Fanex.Tarus.Entities\Fanex.Tarus.Entities.csproj">
+      <Project>{0D0F3C0D-F85C-4B0D-B033-16424E1AE5E0}</Project>
+      <Name>Fanex.Tarus.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fanex.Tarus.Web.Controller\Fanex.Tarus.Web.Controllers.csproj">
+      <Project>{F3FE623F-A32F-4DB4-8306-64C166FC4488}</Project>
+      <Name>Fanex.Tarus.Web.Controllers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sunplus.Accounting.Core\Sunplus.Accounting.Core.csproj">
+      <Project>{09B74F02-6C21-4C5E-A52C-B6D56595A262}</Project>
+      <Name>Sunplus.Accounting.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sunplus.Accounting.Entities\Sunplus.Accounting.Entities.csproj">
+      <Project>{C2043B3C-AF85-4334-8542-F9AC2B031D79}</Project>
+      <Name>Sunplus.Accounting.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

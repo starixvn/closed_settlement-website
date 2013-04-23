@@ -1,0 +1,187 @@
+﻿@model Fanex.Tarus.User.Entities.FuncManagementViewData
+<link href="~/App_Themes/Report/reportgrid.css" rel="stylesheet" type="text/css" />
+<link href="~/App_Themes/Public/table.css" rel="stylesheet" type="text/css" />
+<link href="~/App_Themes/Report/reportgrid.css" rel="stylesheet" type="text/css" />
+<script src="~/js/jQuery/jquery-latest.js" type="text/javascript"></script>
+<script src="~/js/jQuery/gridscroller.js" type="text/javascript"></script>
+<script src="~/js/jQuery/Template/jquery.tmpl.js" type="text/javascript"></script>
+<script src="~/js/jQuery/Jlinq/jlinq.js" type="text/javascript"></script>
+<script src="~/js/common.js" type="text/javascript"></script>
+<script src="~/js/jQuery/jquery.json-1.3.js" type="text/javascript"></script>
+<script src="~/js/json2.js" type="text/javascript"></script>
+<script src="~/js/Popup/centreIt-1.1.5.js" type="text/javascript"></script>
+<script src="~/js/Popup/jquery.popup.js" type="text/javascript"></script>
+<script src="~/Views/User/FunctionManagement/js/FuncManagement.js?version=@Sunplus.Accounting.Core.Configurations.WebSettings.Version" type="text/javascript"></script>
+<script type="text/javascript">
+var viewModel = @Html.Raw(Json.Encode(Model));
+</script>
+<div class="main">
+    <div class="maincontent">
+        <table border="0" cellpadding="0px" cellspacing="0px" class="maincontent_header">
+            <tr>
+                <td class="maincontent_headerL">
+                </td>
+                <td class="maincontent_headerC">
+                    Function Management
+                </td>
+                <td class="maincontent_headerR">
+                </td>
+            </tr>
+        </table>
+        <div id="err">
+        </div>
+        <div class="maincontent_box" style="width: 1154px">
+            <div style="padding: 2px;">
+                <input id="btnAddFunction" type="button" class="btn" value="Add Function" />
+            </div>
+        </div>
+        <div id="divAddFunction" style="display: none; margin-top: 4px">
+            <table cellspacing="1" style="width: 550px;" class="tbllayout">
+                <tbody>
+                    <tr>
+                        <td style="width: 100px;" class="r">
+                            Name
+                        </td>
+                        <td class="l">
+                            <input type="text" style="width: 150px;" value="" id="txtName">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="r">
+                            Description
+                        </td>
+                        <td class="l">
+                            <input type="text" style="width: 434px;" value="" id="txtDesc">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="r">
+                            File Names
+                        </td>
+                        <td class="l">
+                            <textarea id="txtFileNames" style="width: 430px; resize:none" rows="5"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="r">
+                            System
+                        </td>
+                        <td class="l">
+                            <select style="width: 150px;" name="slsystem" id="slsystem">
+                                <option selected="selected" value="ACCOUNTING">ACCOUNTING</option>
+                                <option value="AFFILIATE">AFFILIATE</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="r">
+                            Parent Function
+                        </td>
+                        <td class="l" id="parent">
+                            <select style="width: 150px;" id="slParent">
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="divFuncGrid" class="content-warper" style="margin-top: 4px; display: none">
+            <div class="content-header clearfix">
+                <div class="header-scroll">
+                    <table class="tbl-header-scroll">
+                        <tbody>
+                            <tr>
+                                <td style="border-bottom: none 0px;" class="title2">
+                                    <div class="col240 c">
+                                        Function Name
+                                    </div>
+                                </td>
+                                <td style="border-bottom: none 0px;" class="title2">
+                                    <div class="col200 c">
+                                        Function Description
+                                    </div>
+                                </td>
+                                <td style="border-bottom: none 0px;" class="title2">
+                                    <div class="col360 c">
+                                        File Names
+                                    </div>
+                                </td>
+                                <td style="border-bottom: none 0px;" class="title2">
+                                    <div class="col100 c">
+                                        Sub-Functions
+                                    </div>
+                                </td>
+                                <td style="border-bottom: none 0px;" class="title2">
+                                    <div class="col100 c">
+                                        System
+                                    </div>
+                                </td>
+                                <td style="border-bottom: none 0px;" class="title2">
+                                    <div class="col60 c">
+                                        Edit
+                                    </div>
+                                </td>
+                                <td style="border-bottom: none 0px;" class="title2">
+                                    <div class="col60 c">
+                                        Delete
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="content-body clearfix">
+                <div class="body-scroll">
+                    <table class="tbl-body-scroll">
+                        <tbody id="tbodyGridFunction"></tbody>
+                        <script id="scriptTemplateGridFunction" type="text/html">
+                            <tr><td>
+                                <div class="col240 l 
+                                {{if (ParentId == 0)}}
+                                    b
+                                {{/if}}
+                                "><span order="${Order}" 
+                                {{if (level == 0)}}
+                                    style="margin-left:0px"
+                                {{else}}
+                                    {{if (level == 1)}}
+                                        style="margin-left:10px"
+                                    {{else}}
+                                        {{if (level == 2)}}
+                                            style="margin-left:30px"
+                                        {{else}}
+                                            {{if (level == 3)}}
+                                                style="margin-left:40px"
+                                            {{else}}
+                                                style="margin-left:0px"
+                                            {{/if}}
+                                        {{/if}}
+                                    {{/if}}
+                                {{/if}}
+                                >${Name}</span></div>
+                            </td><td>
+                                <div class="col200 l">${Desc}</div>
+                            </td><td>
+                                <div class="col360 l">${Files}</div>
+                            </td><td>
+                                <div class="col100 c">${TotalSub}</div>
+                            </td><td>
+                                <div class="col100 c">${System}</div>
+                            </td><td>
+                                <div class="col60 c">
+                                    <img alt="Edit" title="Edit" src="../App_Themes/Images/icn_edit.png" style="cursor: pointer" onclick="javascript: funcManager.grid.editFunc(${ID}, '${Name}');" />
+                                </div>
+                            </td><td>
+                                <div class="col60 c">
+                                    <img alt="Edit" title="Edit" src="../App_Themes/Images/icon_del.gif" style="cursor: pointer" onclick="javascript: funcManager.grid.deleteFunc(${ID});" />
+                                </div>
+                            </td>
+                            </tr>
+                        </script>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

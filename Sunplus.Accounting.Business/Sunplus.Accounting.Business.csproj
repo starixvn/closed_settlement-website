@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C7EB1617-765A-44E2-9267-96865EB5C096}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sunplus.Accounting.Business</RootNamespace>
+    <AssemblyName>Sunplus.Accounting.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>%24/Rome/Settlement/Main/SettlementSite/Sunplus.Accounting.Business</SccProjectName>
+    <SccLocalPath>.</SccLocalPath>
+    <SccAuxPath>http://10.18.200.210:8080</SccAuxPath>
+    <SccProvider>{4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}</SccProvider>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AntiXSSLibrary">
+      <HintPath>..\..\..\..\Dependency\AntiXSSLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="CasinoLibrary">
+      <HintPath>..\..\..\..\Dependency\CasinoLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Couchbase, Version=1.0.0.0, Culture=neutral, PublicKeyToken=81137140da4e57ef, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Dependency\Fanex\Couchbase.dll</HintPath>
+    </Reference>
+    <Reference Include="DNAide">
+      <HintPath>..\..\..\..\Dependency\DNAide.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelUtil">
+      <HintPath>..\..\..\..\Dependency\ExcelUtil.dll</HintPath>
+    </Reference>
+    <Reference Include="Fanex.Caching, Version=1.0.4440.21003, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Dependency\Fanex\Fanex.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="IBCCrypt, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Dependency\IBCCrypt.dll</HintPath>
+    </Reference>
+    <Reference Include="IBCUtils">
+      <HintPath>..\..\..\..\Dependency\IBCUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCasinoLibrary, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Dependency\LiveCasinoLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\Dependency\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Dependency\Fanex\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Dependency\Fanex\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Dependency\Fanex\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Bson">
+      <HintPath>..\..\..\..\Dependency\NoSql\MongoDB\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver">
+      <HintPath>..\..\..\..\Dependency\NoSql\MongoDB\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\Dependency\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RemotingRef">
+      <HintPath>..\..\..\..\Dependency\RemotingRef.dll</HintPath>
+    </Reference>
+    <Reference Include="SharedCache.WinServiceCommon">
+      <HintPath>..\..\..\..\Dependency\SharedCache.WinServiceCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="Sunplus.Bingo.Core">
+      <HintPath>..\..\..\..\Dependency\Sunplus.Bingo.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Sunplus.Bingo.Data, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Dependency\Sunplus.Bingo.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Sunplus.Bingo.Entities">
+      <HintPath>..\..\..\..\Dependency\Sunplus.Bingo.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Sunplus.Bingo.Services">
+      <HintPath>..\..\..\..\Dependency\Sunplus.Bingo.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="Sunplus.Core.CachingLib">
+      <HintPath>..\..\..\..\Dependency\Sunplus.Core.CachingLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Sunplus.Core.Common">
+      <HintPath>..\..\..\..\Dependency\Sunplus.Core.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Sunplus.Core.LoggingLib">
+      <HintPath>..\..\..\..\Dependency\Sunplus.Core.LoggingLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Sunplus.Libraries.AOP, Version=1.0.3891.29745, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Dependency\Sunplus.Libraries.AOP.dll</HintPath>
+    </Reference>
+    <Reference Include="Sunplus.Libraries.APILogger">
+      <HintPath>..\..\..\..\Dependency\Sunplus.Libraries.APILogger.dll</HintPath>
+    </Reference>
+    <Reference Include="Sunplus.Shared.ViewLogLib">
+      <HintPath>..\..\..\..\Dependency\Sunplus.Shared.ViewLogLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TplCore">
+      <HintPath>..\..\..\..\Dependency\TplCore.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\ExternalSite.cs" />
+    <Compile Include="Admin\IExternalSite.cs" />
+    <Compile Include="BootStrappers\BootStrapperManager.cs" />
+    <Compile Include="BootStrappers\CommonBootStrapper.cs" />
+    <Compile Include="BootStrappers\UnityBootStrapper.cs" />
+    <Compile Include="CacheManager\CacheUtils.cs" />
+    <Compile Include="Helper.cs" />
+    <Compile Include="IHelper.cs" />
+    <Compile Include="Logs.cs" />
+    <Compile Include="LogDisplay\ISettingManager.cs" />
+    <Compile Include="LogDisplay\LogFormater.cs" />
+    <Compile Include="LogDisplay\SettingManager.cs" />
+    <Compile Include="Security\LoginFailedHandler.cs" />
+    <Compile Include="Security\Permissions.cs" />
+    <Compile Include="Settle\ISettlement.cs" />
+    <Compile Include="Settle\IViewLogManager.cs" />
+    <Compile Include="Settle\Settlement.cs" />
+    <Compile Include="Settle\ViewLogManager.cs" />
+    <Compile Include="Transaction\DailyTransManager.cs" />
+    <Compile Include="IServiceCustomerInfo.cs" />
+    <Compile Include="IServiceSuspend.cs" />
+    <Compile Include="Security\AuthManager.cs" />
+    <Compile Include="BaseManager.cs" />
+    <Compile Include="CacheManager\Report.cs" />
+    <Compile Include="CasinoAPILogger.cs" />
+    <Compile Include="CasinoManager.cs" />
+    <Compile Include="CustSetting\CustSettingMoveSite.cs" />
+    <Compile Include="IMenuManager.cs" />
+    <Compile Include="IpManagement.cs" />
+    <Compile Include="IUserService.cs" />
+    <Compile Include="LogDisplay\LogAction.cs" />
+    <Compile Include="MenuManager.cs" />
+    <Compile Include="LogDisplay\Others\MeetingComm.cs" />
+    <Compile Include="LogDisplay\Others\News.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceSuspend.cs" />
+    <Compile Include="Settlement\Calculate.cs" />
+    <Compile Include="Settlement\DoSettle.cs" />
+    <Compile Include="Settlement\GenerateResultHTML.cs" />
+    <Compile Include="Settlement\NumberGame.cs" />
+    <Compile Include="Settlement\OverOnly.cs" />
+    <Compile Include="Settlement\SettleBgColor.cs" />
+    <Compile Include="Settlement\SettlementBase.cs" />
+    <Compile Include="Settlement\SettlementNumberGame.cs" />
+    <Compile Include="Settle\GenerateMenu.cs" />
+    <Compile Include="Settle\Log\MatchSettleLog.cs" />
+    <Compile Include="Statement\Statement.cs" />
+    <Compile Include="SystemInfo.cs" />
+    <Compile Include="Transaction\IServiceDailyTran.cs" />
+    <Compile Include="UI\GenerateHtml.cs" />
+    <Compile Include="UserControl\UserControlManager.cs" />
+    <Compile Include="UserService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Fanex.Tarus.Settlement\Fanex.Tarus.Settlement.csproj">
+      <Project>{ED61A61E-4805-405A-8A5F-44E933DE874A}</Project>
+      <Name>Fanex.Tarus.Settlement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sunplus.Data.DataAbstract\Sunplus.Data.DataAbstract.csproj">
+      <Project>{1B2228C6-443E-48FF-90EF-A122810D77E7}</Project>
+      <Name>Sunplus.Data.DataAbstract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sunplus.Accounting.Core\Sunplus.Accounting.Core.csproj">
+      <Project>{09B74F02-6C21-4C5E-A52C-B6D56595A262}</Project>
+      <Name>Sunplus.Accounting.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sunplus.Accounting.DataAccess\Sunplus.Accounting.DataAccess.csproj">
+      <Project>{27984FEE-40DC-40DC-B3B9-3A8776C5511D}</Project>
+      <Name>Sunplus.Accounting.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sunplus.Accounting.Entities\Sunplus.Accounting.Entities.csproj">
+      <Project>{C2043B3C-AF85-4334-8542-F9AC2B031D79}</Project>
+      <Name>Sunplus.Accounting.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sunplus.Data.DataAbstract\Sunplus.Data.DataAbstract.csproj">
+      <Project>{1B2228C6-443E-48FF-90EF-A122810D77E7}</Project>
+      <Name>Sunplus.Data.DataAbstract</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CreditTerm\" />
+    <Folder Include="PositionTaking\SportBook\" />
+    <Folder Include="ResetWinning\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties BuildVersion_AssemblyInfoFilename="" BuildVersion_BuildVersioningStyle="None.None.Increment.Increment" BuildVersion_UpdateFileVersion="True" BuildVersion_UpdateAssemblyVersion="True" />
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,146 @@
+﻿@model IList<Fanex.Tarus.Admin.Entities.FollowedCustomer>
+<link rel="stylesheet" type="text/css" href="~/App_Themes/Public/common.css" />
+<link rel="stylesheet" type="text/css" href="~/App_Themes/Public/table.css" />
+<link rel="stylesheet" type="text/css" href="~/App_Themes/Public/input.css" />
+<link href="~/App_Themes/Public/Message.css" rel="stylesheet" type="text/css" />
+<link href="~/App_Themes/Report/reportgrid.css" rel="stylesheet" type="text/css" />
+<script src="~/js/jQuery/Template/jquery.tmpl.js" type="text/javascript"></script>
+ <link href="~/js/jQuery/UI/css/custom-theme/jquery-ui-1.8.10.custom.css" rel="stylesheet" type="text/css" />
+ <link href="~/Views/Admin/Style/AutoFollowBet.css" rel="stylesheet" type="text/css" />
+
+<script src="~/js/jQuery/json2.js" type="text/javascript"></script>
+<script src="~/js/common.js" type="text/javascript"></script>
+<script src="~/js/BlockUI.js?ver=@Sunplus.Accounting.Core.Configurations.WebSettings.Version" type="text/javascript"></script> 
+<script src="~/js/Datetime.js" type="text/javascript"></script>
+<script src="~/js/jQuery/UI/jquery-ui-1.8.10.custom.min.js" type="text/javascript"></script>
+<script src="~/js/jQuery/gridscroller.js?ver=@Sunplus.Accounting.Core.Configurations.WebSettings.Version" type="text/javascript"></script>
+ <script src="~/js/showhidepopup.js" type="text/javascript"></script>
+<script src="~/Views/Admin/Js/AutoFollowBet.js?ver=@Sunplus.Accounting.Core.Configurations.WebSettings.Version" type="text/javascript"></script>
+<script type="text/javascript">
+ window.rootUrl = '@Url.Content("~")';
+
+</script>
+<div class="main">
+    <div class="maincontent">
+        <table border="0" cellpadding="0px" cellspacing="0px" class="maincontent_header">
+            <tr>
+                <td class="maincontent_headerL">
+                </td>
+                <td class="maincontent_headerC">
+                    Auto Follow Bet Management
+                </td>
+                <td class="maincontent_headerR">
+                </td>
+            </tr>
+        </table>
+        <div class="errMsg" id="msgError" style="display:none; margin-left:0px; padding-left:0px"></div>
+        <div id="divContainer" style="margin-top: 4px">
+            <div class="maincontent_box" style="width: 448px;">
+                <table>
+                    <tr>
+                         <td><b>Status</b></td>
+                        <td style="width: 120px">
+                            <select id="dlStatus" style="vertical-align:middle;width:150px" >
+                                <option value="0">All</option>
+                                <option value="1">BA Enabled</option>
+                                <option value="2">BA Disabled</option>
+                            </select>         
+                        </td>
+                        <td align="left">
+                            <input type="button" class="btn" onclick="autoFollowBet.GetAutoFollowedBet();" value="Submit"
+                                name="btnShow" id="btnShow" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="divMainGrid" class="content-warper hidden">
+                 <div class="content-toolbox bgtitle">
+                        <div id="gridTitle" class="gridtitle">
+                        </div>
+                        <div class="btngroup">
+                            <input type="button" onclick="showPopup()" value="  " name="btnAdd"
+                                id="AddCustomer" class="btnAdd" title="Add Exist Customer" />
+                        </div>
+                    </div>
+                <div class="content-header clearfix">
+                    <div class="header-scroll">
+                        <table class="tbl-header-scroll">
+                            <tr>
+                                <td style="border-bottom: none 0px;" class="title2">
+                                    <div class="col120 c">
+                                        Username
+                                    </div>
+                                </td>
+                                <td style="border-bottom: none 0px;" class="title2">
+                                    <div class="col120 c" >
+                                        Rate
+                                    </div>
+                                </td>
+                                 <td style="border-bottom: none 0px;" class="title2">
+                                    <div class="col60 c" >
+                                        BA Enabled
+                                    </div>
+                                </td>
+                                <td style="border-bottom: none 0px;" class="title2">
+                                    <div class="col60 c">
+                                        Edit
+                                    </div>
+                                </td>
+                                <td style="border-bottom: none 0px;" class="title2">
+                                    <div class="col60 c">
+                                        Delete
+                                    </div>
+                                </td>
+                            </tr>  
+                        </table>
+                    </div>
+                </div>
+                <div class="content-body clearfix">
+                    <div class="body-scroll">
+                        <table class="tbl-body-scroll">
+                            <tbody id="tobdyMainGrid">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+ <div id="addNewFollowCustomer" class="hidden">
+        <span id="errMsgDig"></span>
+        <table style="padding-left:60px">
+        <tr>
+            <td>
+                <div class="w60 l">Username
+                </div>
+            </td>
+            <td>
+                <div class="w150">
+                    <input type="text" id="txtUserName" onkeyup="autoFollowBet.onKeyEnterAdd(event)" style="width:145px" /> 
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="w60 l">Rate
+                </div>
+            </td>
+            <td>
+                <div class="w150">
+                    <input type="text" id="txtRate" onkeyup="autoFollowBet.onKeyEnterAdd(event)" style="width:145px" /> 
+                </div>
+            </td>
+        </tr>
+        <tr>
+             <td colspan="2" style="padding-top:5px; padding-left:50px">
+               <div class="c">
+                    <input type="button" id="btnAddNew" value="Add New" class="btn" onclick="autoFollowBet.addNewFollewCustomer()" /> 
+               </div>
+            </td>
+        </tr>
+        </table>
+    </div> 
+   

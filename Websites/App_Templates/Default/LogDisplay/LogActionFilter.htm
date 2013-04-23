@@ -1,0 +1,51 @@
+﻿<div class="main">
+    <div class="maincontent">
+            <div class="maincontent_box">
+                <div class="box_header">
+                    <div class="left_tab">
+                    <ul>
+                            <li class="current"><a href="javascript:MenuGoTo('Action')"><span>
+                                Log Action
+                            </span></a></li>
+                            <li><a href="javascript:MenuGoTo('ActionType')"><span>
+                                Action Type
+                            </span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="box_header" style="border-top: 0px; padding: 7px 7px 7px 7px;">
+                <span>
+                    <select id="dlLanguage" onchange="GetLogActionContent();">
+                        <option value="E" "selected">English</option>
+                        <option value="CT">Chinese Traditional</option>
+                        <option value="CS">Chinese Simplified</option>
+                        <option value="J">Japanese</option>
+                        <option value="TH">Thai</option>
+                        <option value="KO">Korean</option>
+                        <option value="IT">Italian</option>
+                    </select>
+                </span>
+                <span style="padding-left:5px"><input type="text" id="txtFilter" name="txtFilter" maxlength="100" style="width:250px" value="SpName or Action name" onblur="Blur(this);" onfocus="Focus(this)" onkeypress="return PreSubmit(event);" /></span>
+                <span style="padding-left:5px">View By:</span>
+                <span style="padding-left:3px">
+                    <select id="ddlActionType" >
+                        <option value="-1">All</option>
+                        {ActionTypeOptions}
+                    </select>
+                </span>
+                
+                <span style="padding-left:3px"><input class="btn" id="btnSubmit"  type="button" value="Search" style="margin-left:2px;width:50px" onclick="GetLogActionContent()" /></span>
+                
+                
+                
+                <img id="displayBox" src="../App_Themes/images/waiting7.gif" alt="" style="display: none;" />
+            </div>
+            </div>
+            
+                
+                <div id="sContent" class="bg_table"></div>
+                
+                </div>           
+    </div>
+     
+</div>

@@ -1,0 +1,104 @@
+﻿body {
+}
+
+
+.w120{width:120px;}
+.w180{width:180px;}
+.w55{width:55px;}
+.w50{width:50px;}
+/*Racing winloss style*/
+.blue{color:Blue; cursor: pointer;}
+.blue:hover{ color: #C16605;text-decoration: underline;}
+.red{color:red;}
+
+
+#gridExAccControl {margin-top:5px;
+}
+
+.gridtitleAdd
+{
+    float: left;
+    font-weight: bold;
+    margin-left: 2px;
+    padding-left: 5px;
+    width:427px;
+}
+.imageAdd
+{
+     float: left;
+    margin-left: 2px;
+    padding-left: 10px;
+    width:16px;
+}
+.gridtitleRefresh
+{
+   float:left;
+   padding-right:5px;
+   font-weight:bold;
+   
+}
+.imageRefresh
+{
+    float:left;
+   font-weight:bold;
+   padding-left:10px;
+   width:300px ;
+}
+.b
+{
+    font-weight:bold;
+}
+.div_search
+{
+    width: 500px;
+    background:url("../images/white-top-bottom.gif") repeat-x scroll 0 -3px transparent;
+    margin-bottom: 2px;
+    text-align:left!important;
+    padding: 0px 0px;
+    float:left;
+    
+}
+
+span#search input.btn_search
+{
+    background-image: url(../../../App_Themes/images/view_ico.gif);
+    background-repeat: no-repeat !important;
+    background-position: left center !important;
+    background-color: #FFF;
+    /*border: 0 none!important;*/
+    width: 20px !important;
+    height: 20px;
+    cursor: pointer;
+    border:1px solid black;
+    border-left:none;
+    
+  
+}
+span#search input.btn_clear
+{
+    background-image: url(../../../App_Themes/images/reset.png);
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    border: 0 none!important;
+    width: 24px!important;
+    height: 20px!important;
+    cursor: pointer;
+   
+}
+
+span#search input.text
+{
+    /*border: 0 none!important;*/
+    height: 14px;
+    padding: 2px 2px;
+    width: 118px;
+    border:1px solid black;
+    border-right:none;
+   
+    
+}
+
+.content-toolbox
+{
+    height:21px;
+}

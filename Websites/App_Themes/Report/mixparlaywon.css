@@ -1,0 +1,20 @@
+﻿.red{   color:Red}
+
+#tblmixparlay .bgbase{background-color:#CCFFCC;}
+#tblmixparlay td.bgeven{background-color:#fff3c8;}
+div.sorter
+{
+    background-image: url(../images/sorting_bg.gif);
+    background-repeat: no-repeat !important;
+    background-position: center right !important;
+    cursor: pointer;
+}
+
+div.sorter.asc
+{
+    background-image: url(../images/sorting_asc.gif) !important;
+}
+div.sorter.desc
+{
+    background-image: url(../images/sorting_desc.gif) !important;
+}

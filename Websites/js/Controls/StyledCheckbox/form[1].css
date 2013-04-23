@@ -1,0 +1,14 @@
+.checkboxstyled, .radiostyled {
+	width: 17px;
+	height: 21px;
+	padding: 0px;
+	background: url(checkbox.png) no-repeat;
+	margin-left: auto;
+	margin-right: auto;
+	display:block;
+	/*clear: left;
+	float: left;*/
+}
+.radiostyled {
+	background: url(radio.gif) no-repeat;
+}

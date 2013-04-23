@@ -1,0 +1,77 @@
+﻿#acc_menu{
+	font-size:11px;
+	font-weight:bold;
+	float:left;
+	line-height:22px;
+}
+#acc_menu ul{
+	list-style-type: none;
+	margin:0;
+	padding:0;
+}
+#acc_menu li
+{
+	position:relative;
+	font-size:11px;
+	display:inline;
+	padding:0 4px;
+}
+.acc_menucontent
+{
+	position:absolute;
+	display:none;
+	}
+.vbmenu_option td
+{
+	background-color:#EEECEE;
+	}
+	
+.indent
+{
+	background:transparent url(Images/TreeViewImg.GIF) no-repeat scroll 0 0;
+	display:inline;
+	height:13px;
+	padding:0 6px;
+	width:23px;
+}
+	
+.indent0 
+{
+	padding-left:0px !important;
+	font-weight:bold;
+}	
+.indent1 
+{
+	padding-left:2px !important;
+}
+.indent2 
+{
+	padding-left:12px !important;
+}
+.indent3
+{
+	padding-left:22px !important;
+}
+.indent4
+{
+	padding-left:32px !important;
+}
+.indent5
+{
+	padding-left:42px !important;
+}
+.indent1 span, .indent2 span, .indent3 span, .indent4 span, .indent5 span
+{
+	background:transparent url(Images/TreeViewImg.GIF) no-repeat scroll 0 0;
+	padding-left:20px !important;
+}
+
+
+.closedacc td
+{
+	background-color:#D8D6D5;
+	}
+.subfunction td
+{
+	background-color: #f0f1ec
+	}	

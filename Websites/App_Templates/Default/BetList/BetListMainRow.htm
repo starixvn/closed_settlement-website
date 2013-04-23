@@ -1,0 +1,107 @@
+﻿<div style="width: 990px;" id="gbox_JQGrid1" class="ui-jqgrid ui-widget ui-widget-content">
+    <div style="width: 990px;" id="gview_JQGrid1" class="ui-jqgrid-view">
+        <div id="divtitle" class="ui-state-default ui-jqgrid-hdiv" style="width: 990px;">
+            <div class="ui-jqgrid-hbox">
+                <table id="htable" class="ui-jqgrid-htable" style="width: 972px;" border="0" cellpadding="0"
+                    cellspacing="0">
+                    <thead>
+                        <tr class="ui-jqgrid-labels title c">
+                          <th class="ui-state-default ui-th-column ui-th-ltr" style="width:40px">No</th>
+                          <th class="ui-state-default ui-th-column ui-th-ltr" style="width:130px">Date</th>
+                          <th class="ui-state-default ui-th-column ui-th-ltr" style="width:265px">Choice</th>
+                          <th class="ui-state-default ui-th-column ui-th-ltr" style="width:50px">Odds</th>
+                          <th class="ui-state-default ui-th-column ui-th-ltr" style="width:60px">Stake</th>
+                          <th class="ui-state-default ui-th-column ui-th-ltr" style="width:70px">Win/Loss</th>
+                          <th class="ui-state-default ui-th-column ui-th-ltr" style="width:90px">Status</th>
+                          <th class="ui-state-default ui-th-column ui-th-ltr" style="width:64px; height: 18px;">Super PT/Comm</th>
+                          <th class="ui-state-default ui-th-column ui-th-ltr" style="width:64px; height: 18px;">Master PT/Comm</th>
+                          <th class="ui-state-default ui-th-column ui-th-ltr" style="width:64px; height: 18px;">Agent PT/Comm</th>
+                          <th class="ui-state-default ui-th-column ui-th-ltr" style="width:20px">Del</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div> 
+        </div>
+        
+        <div id="bdiv" style="width: 990px; max-height:560px" class="ui-jqgrid-bdiv">
+            <div style="position: relative;">
+                <table id="btable" style="width: 972px;" class="ui-jqgrid-btable" border="0" cellpadding="0" cellspacing="0">
+                    <tbody>
+                        <tr class="ui-widget-content jqgrow ui-row-ltr" style="height:0px;" >
+                          <td style="width: 40px;height:0px;border-bottom:none 0px;"></td>
+                          <td style="width: 130px;height:0px;border-bottom:none 0px;"></td>
+                          <td style="width: 265px;height:0px;border-bottom:none 0px;"></td>
+                          <td style="width: 50px;height:0px;border-bottom:none 0px;"></td>
+                          <td style="width: 60px;height:0px;border-bottom:none 0px;"></td>
+                          <td style="width: 70px;height:0px;border-bottom:none 0px;"></td>
+                          <td style="width: 90px;height:0px;border-bottom:none 0px;"></td>
+                          <td style="width: 64px;height:0px;border-bottom:none 0px;"></td>
+                          <td style="width: 64px;height:0px;border-bottom:none 0px;"></td>
+                          <td style="width: 64px;height:0px;border-bottom:none 0px;"></td>
+                          <td style="width: 20px;height:0px;border-bottom:none 0px;"></td>
+                         </tr>
+                        {content}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--row-->
+<tr class="ui-widget-content jqgrow ui-row-ltr {bgcolor} r-{odd_even} {live}" >
+  <td style="text-align:center;">{no}</td>
+  <td style="text-align:center;word-wrap: break-word;" >&nbsp;{TransTime}</td>
+  <td style="word-wrap: break-word; text-align:right;">&nbsp;{Event}</td>
+  <td style="text-align:right">&nbsp;{Odds}</td>
+  <td style="text-align:right">&nbsp;{Stake}
+     <!--Exchangerate-->
+     <br />
+    <span class="r exrate2">{ExchangeRate}</span>
+    <br />
+    <span class="r exrate2">(Ex.Rate 2)</span>
+    <!--/Exchangerate-->
+  </td>
+  <td style="text-align:right;">&nbsp;{WinLost}</td>
+  <td style="text-align:center"><div>&nbsp;{Status}</div>
+        {Result}
+        <div class="bl_time" style="padding-top:10px">
+            <!--DisplayIP-->
+            <a href="BetListByIP.aspx?bltype=3&fdate={fdate}&ip={ip}">{ip}</a>
+            <!--/DisplayIP-->
+        </div>
+  </td>
+  <td style="text-align:right">&nbsp;
+     <!--SuperPT--><span class="bl-sporttype">{SuperPT}</span><!--/SuperPT-->
+     <!--swinlost--><br/><span class="bl-sporttype">{swinlost}</span><!--/swinlost-->
+     <!--SuperCommRate--><br/><span class="r">{SuperCommRate}%</span><!--/SuperCommRate-->
+     <!--SuperComm--><br/><span class="r">{SuperComm}</span><!--/SuperComm-->
+  </td>
+  <td style="text-align:right">&nbsp;
+    <!--MasterPT--><span class="bl-sporttype">{MasterPT}</span><!--/MasterPT-->
+    <!--mwinlost--><br/><span class="bl-sporttype">{mwinlost}</span><!--/mwinlost-->
+    <!--MasterCommRate--><br/><span class="r">{MasterCommRate}%</span><!--/MasterCommRate-->
+    <!--MasterComm--><br/><span class="r">{MasterComm}</span><!--/MasterComm-->
+  </td>
+  <td style="text-align:right">&nbsp;
+    <!--AgentPT--><span class="bl-sporttype">{AgentPT}</span><!--/AgentPT-->
+    <!--awinlost--><br/><span class="bl-sporttype">{awinlost}</span><!--/awinlost-->
+    <!--AgentCommRate--><br/><span class="r">{AgentCommRate}%</span><!--/AgentCommRate-->
+    <!--AgentComm--><br/><span class="r">{AgentComm}</span><!--/AgentComm-->
+  </td>
+  <td style="text-align:center;word-wrap: break-word;">&nbsp;
+      <!--delete-->
+	  <img src="../App_Themes/Images/icon_del.gif" width="14px" height="14px" border="0" onmouseover="this.style.cursor='pointer';"  onclick="confirm_delete({BetId}, '{betfrom}', '{matchid}', {bettype})" />
+	  <!--/delete-->
+  </td>
+</tr>
+<!--/row-->
+
+
+
+
+
+
+
+

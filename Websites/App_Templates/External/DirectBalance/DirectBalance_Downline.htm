@@ -1,0 +1,48 @@
+﻿<!--headerLink-->
+<div id="divHeader">
+    <span style="text-transform:uppercase;font-weight:bold">{headerContent}</span>
+    <span>
+        <img id='inProgressBar' name='inProgressBar' width="16px" height="16px" style="display:none"  src="../App_Themes/Images/ajax-loader.gif" />
+    </span>
+</div>
+<div style="clear:both"></div>
+<!--/headerLink-->
+
+<!--Content-->
+<table id="table" cellspacing="1px" cellpadding="1px" class="tbllayout bg" width="500px" border="0">
+<thead>
+<tr id="trHeader" class="title">
+    <td align="center" colspan="5"><b>{BalanceHeader}</b></td>
+</tr>
+<tr class="title">
+  <td style="width:40px"><b>{No}</b></td>
+  <td ><b>{Username}</b></td>
+  <td style="width:60px"><b>{Curr}</b></td>
+  <td><b>{Balance}</b></td>
+  <td><b>{Base}</b></td>
+</tr>
+</thead>
+
+<tbody>
+<!--Rows-->
+<tr class="{odd_even}">
+  <td class="c">{No_vl}</td>
+  <td class="l">{Username_vl}</td>
+  <td class="c">{Curr_vl}</td>
+  <td class="r">{Balance_vl}</td>
+  <td class="r">{Base_vl}</td>
+</tr>
+<!--/Rows-->
+</tbody>
+
+<tfoot>
+<!--Total-->
+<tr id="trFooter" class="report-footer">
+  <td align="center" colspan="4"><b>TOTAL</b></td>
+  <td class="r"><b>{total}</b></td>
+</tr>
+<!--/Total-->
+</tfoot>
+
+</table>
+<!--/Content-->

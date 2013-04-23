@@ -1,0 +1,144 @@
+﻿.bl-choice {
+color:#FF0000;
+font-family:Tahoma;
+font-size:13px;
+font-weight:bold;
+}
+.bl-bettype {
+color:#003399;
+font-family:Tahoma;
+font-size:11px;
+font-weight:600;
+}
+.bl-sporttype {
+color:#0066CC;
+font-family:Tahoma;
+font-size:10px;
+font-weight:bold;
+}
+.bl-leaguename {
+color:#666666;
+font-family:Tahoma;
+font-size:11px;
+font-weight:bold;
+}
+.bl-event {
+color:#000000;
+font-family:Tahoma;
+font-size:11px;
+font-weight:bold;
+}
+.event-live{
+background:#ffffcc;
+}
+.s-datavalue
+{
+	font-size: 11px;
+	font-family: Tahoma;
+	color: #000000;
+	font-weight: 600;
+}
+.s-datavalue-minus
+{
+	font-size: 11px;
+	font-family: Tahoma;
+	color: #FF0000;
+	font-weight: 600;
+}
+.s-total-minus
+{
+	font-family: Tahoma;
+	font-size: 12px;
+	color: #FF0000;
+	font-weight: bold;
+}
+
+.s-total
+{
+	font-family: Tahoma;
+	font-size: 12px;
+	color: #003399;
+	font-weight: bold;
+}
+span.link {
+color:#16178D;
+cursor:pointer;
+text-decoration:none;
+}
+span.link:hover {
+color:#FF0000;
+cursor:pointer;
+text-decoration:none;
+}
+.hand
+{
+	cursor:pointer;	
+}
+.event-live td{background:#ffc !important;}	
+.subTotal td{background:#fff !important;}	
+.bl_stype
+{
+	color: #0066CC;
+}
+.bl_lname
+{
+	color: #666666;
+	line-height:15px;
+	margin-top:1px;
+}
+.b_mix
+{
+	font-weight: bold;
+	width: auto;
+	line-height: 16px;
+	float: left;
+	height: 20px;
+}
+.bl_time
+{
+	color: #434343;
+	font-size: 11px !important;
+	font-weight:normal;
+	text-align:center;
+	font-family:Tahoma;
+}
+.FirstGoal {
+background:transparent url(../Images/firstGoal.gif) no-repeat scroll center center;
+display:inline;
+height:10px;
+padding:0 4px;
+width:14px;
+}
+.LastGoal {
+background:transparent url(../Images/lastGoal.gif) no-repeat scroll center center;
+display:inline;
+height:10px;
+padding:0 4px;
+width:14px;
+}
+
+.exrate2
+{
+    color: #0066CC;
+    font-size: 9px;
+}
+
+.bgpending{
+background-color: Yellow !important;
+}
+
+.bl-sporttypeLC {
+color:#8C373C;
+font-family:Tahoma;
+font-size:11px;
+font-weight:bold;
+}
+
+
+
+.bl-odds {
+color:#B5D0E5;
+font-family:Tahoma;
+font-size:10px;
+
+}

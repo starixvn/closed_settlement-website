@@ -1,0 +1,190 @@
+﻿{#template MAIN} {#include MasterPT root= $T} {#/template MAIN} 
+{#template MasterPT}
+    <table class="tblcollapse" style="width: 100%;">
+    <tr class="title">
+        <td colspan="4">
+          Customer Information
+        </td>
+    </tr>
+    <tr>
+        <td class="l" width="20%">
+            Username:
+        </td>
+        <td class="l" width="30%">
+            {toString($T.UserName)}
+        </td>
+        <td class="l" width="20%">
+            Nick Name:
+        </td>
+        <td class="l" width="30%">
+           {toString($T.NickName)}
+        </td>
+    </tr>
+    <tr>
+        <td class="l" >
+            First Name:
+        </td>
+        <td class="l">
+            {toString($T.FirstName)}
+        </td>
+        <td class="l">
+            Last Name:
+        </td>
+        <td class="l">
+           {toString($T.LastName)}
+        </td>
+    </tr>
+    <tr>
+        <td class="l">
+            Mobile Phone:
+        </td>
+        <td class="l">
+            {toString($T.MobilePhone)}
+        </td>
+         <td class="l">
+            Fax:
+        </td>
+        <td class="l">
+             {toString($T.Fax)}
+        </td>
+    </tr>
+     <tr>
+        <td class="l">
+            Phone:
+        </td>
+        <td class="l">
+            {toString($T.Phone)}
+        </td>
+         <td class="l">
+          
+        </td>
+        <td class="l">
+            
+        </td>
+    </tr>
+   
+    <!--Bet Setting-->
+    <tr class="title"  {#if $T.ShowBetSetting==false}style="display:none;"{#else}{#/if}>
+        <td colspan="4">
+          Bet Setting
+        </td>
+    </tr>
+    <tr  {#if $T.ShowBetSetting==false}style="display:none;"{#else}{#/if}>
+        <td colspan="4" class="c">
+            <table cellpadding="4" cellspacing="0" border="0" width="100%" class="noneborder">
+                <tr >
+                    <td class="r" style="width:300px">
+                        <b>Accumulated transferable amount</b> 
+                    </td>
+                    <td class="l" style="width:100px">
+                       {$T.ActualMaxTransfer}
+                    </td>
+                    <td class="l" colspan="2">
+                         <span onclick="ResetMaxTransfer('{$T.ID}')" class="canchange">Reset</span>
+                    </td>
+                </tr>
+                 <tr>
+                    <td class="r" style="width:300px">
+                        <b>Member Max Transfer Credit</b>
+                    </td>
+                     <td class="l" style="width:100px">
+                        {$T.MaxTransferCredit}
+                    </td>
+                    <td class="l" colspan="2">
+                         <input type="checkbox" {#if $T.IsAutoReset==true} checked {#else}{#/if} disabled id="cbxAutoReset"> <label for="cbxAutoReset">Daily auto reset limit (at 12 noon GMT+8)</label>
+                    </td>
+                </tr>
+                 <tr>
+                    <td class="r" style="width:300px">
+                    </td>
+                     <td class="l" style="width:100px">
+                        ({$T.MinLimit} - {#if $T.MaxLimit==0}No limited{#else}{$T.MaxLimit}{#/if})
+                    </td>
+                    <td class="l" colspan="2">
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <!--/Bet Setting-->
+    
+    </table>
+    <table class="tblcollapse" style="width: 100%; margin:6px 0px;" id="tblbingo">
+    <tr class="title">
+        <td colspan="4">
+            Position Taking
+        </td>
+    </tr>
+    <!--PT-->
+     {#foreach $T.GameKindList as r}
+         {#include GameKindBO root= $T.r}
+    {#/for}
+    <!--/PT -->
+
+</table>
+    <table cellspacing="0" cellpadding="0" border="0">
+    <tr>
+        <td class="custBtn1">
+        </td>
+        <td onclick="updatePT();" class="custBtn2 hand">
+            Submit
+        </td>
+    </tr>
+</table>
+{#/template MasterPT} 
+   
+{#template GameKindBO}
+    <tr>
+        <td colspan="2" class="c"></td>
+        <td class="c"><b>Master PT</b></td>
+        <td class="c"><b>Agent PT</b></td>
+</tr>
+    <tr>
+        <td  rowspan="{2*$T.GameTypeList.length+1}"><b>{$T.Name}</b></td>
+        <td class="l">
+            <b>Group Setting</b>
+        </td>
+        <td>
+            <select id="listMasterPT_{$T.ID}" onchange="on_ChangeMasterPT(this);" max="{roundNumber($T.PositionTakingMax,2)}" min="{roundNumber($T.MinPositionTaking,2)}" class="select-pt">
+                <option value="{roundNumber($T.PositionTaking,2)}" selected="true">{roundNumber($T.PositionTaking,2)}</option>
+            </select>
+            <input type="button" onclick="ReducePT('listMasterPT_{$T.ID}',1)" class="btn-dec1" value=" " {#if $T.IsAutoPositionTaking==true} Disabled {#else}{#/if}>
+            <input type="button" onclick="IncreasePT('listMasterPT_{$T.ID}',1)" class="btn-inc1" value=" " {#if $T.IsAutoPositionTaking==true} Disabled {#else}{#/if}>
+            <input type="button" onclick="ReducePT('listMasterPT_{$T.ID}',10)" class="btn-dec10" value=" " {#if $T.IsAutoPositionTaking==true} Disabled {#else}{#/if}>
+            <input type="button" onclick="IncreasePT('listMasterPT_{$T.ID}',10)" class="btn-inc10" value=" " {#if $T.IsAutoPositionTaking==true} Disabled {#else}{#/if}>
+        </td>     
+        <td>
+            {roundNumber($T.PositionTakingAgent,2)}
+        </td>
+    </tr>
+    {#param name=ID value=$T.ID} 
+    {#foreach $T.GameTypeList as r}
+         {#include GameTypeBO root= $T.r}
+    {#/for}
+{#/template GameKindBO} 
+
+{#template GameTypeBO}
+    <tr>
+        <td class="l" rowspan="2">{$T.Name}</td>
+        <td class="gametypePT c" style="{#if $P.IsGroupSetting==true}display:none{#else}{#/if}" >
+             <select id="listMasterPT_{$P.ID}_{$T.ID}" max="{roundNumber($T.PositionTakingMax,2)}" min="{roundNumber($T.MinPositionTaking,2)}" class="select-pt MasterPT_{$P.ID}">
+                     <option value="{roundNumber($T.PositionTaking,2)}" selected="true">{roundNumber($T.PositionTaking,2)}</option>
+            </select>
+        </td>
+        <td class="gametypePT c" style="{#if $P.IsGroupSetting==true}display:none{#else}{#/if}">
+           {roundNumber($T.PositionTakingAgent,2)}
+        </td>
+    </tr>
+    <tr>
+        <td class="l" colspan="2">
+             Betting Limit:
+             {#param name=ID value=$P.ID + "_" + $T.ID}
+             {#foreach $T.BettingRangeList as r}
+                 {#include BettingRange root= $T.r}
+             {#/for}
+        </td>
+    </tr>
+{#/template GameTypeBO}
+{#template BettingRange}
+     <span style="margin-right:6px;"><input type="checkbox" {#if $T.IsChecked==true} checked {#else}{#/if} id="chkStake_{$P.ID}_{$T.ID}"> {$T.Name}</span>
+{#/template BettingRange}

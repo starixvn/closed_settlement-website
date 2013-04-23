@@ -1,0 +1,151 @@
+﻿<div id="horseRacingReport" class="hidden" style="">
+    <table id="horseRacingReportTable">
+        <tr>
+            <td style="padding-right: 1px; vertical-align: top;">
+                <div id="leftPane">
+                    <table class="tblcollapse" id="dailyWLRacing" style="">
+                        <tr class="header bgtitle" style="border-bottom: 1px;">
+                            <td colspan="7">
+                                <span class="gridtitle" id="dailyWLRacingTitle">Daily WinLoss Racing</span> <span
+                                    class="btngroup">
+                                    <input type="button" onclick="HorseRacingReportManager.backToMain();" value="  "
+                                        name="btnBack" id="btnBackToMain" class="btnBack" title="Back To Main" />
+                                    <input type="button" onclick="HorseRacingReportManager.exportToExcel('2')" value="  "
+                                        name="btnExport" id="Button3" class="btnExcel" title="Export to Excel" />
+                                </span>
+                            </td>
+                        </tr>
+                        <tr class="header title" style="border-top: 1px;">
+                            <td>
+                                <span class="">
+                                    Bettype</span>
+                            </td>
+                            <td>
+                                <span class="">
+                                    Winloss</span>
+                            </td>
+                            <td>
+                                <span class="">
+                                    Position</span>
+                            </td>
+                            <td>
+                                <span class="">
+                                    Comm</span>
+                            </td>
+                            <td>
+                                <span class="">
+                                    Line Total</span>
+                            </td>
+                            <td>
+                                <span class="">
+                                    Turnover</span>
+                            </td>
+                            <td>
+                                <span class="">
+                                    Margin</span>
+                            </td>
+                        </tr>
+                    </table>
+                    <table class="tblcollapse hidden" id="dailyWLBySport" style="">
+                        <tr class="header bgtitle" style="border-bottom: solid 1px;">
+                            <td colspan="7">
+                                <span class="gridtitle" id="dailyWLBySportTitle"></span><span class="btngroup">
+                                    <input type="button" onclick="HorseRacingReportManager.showMainReport(true);" value="  "
+                                        name="btnBack" id="btnBack" class="btnBack" title="Back To Main" />
+                                    <input type="button" onclick="HorseRacingReportManager.exportToExcel('3')" value="  "
+                                        name="btnExport" id="btnExport" class="btnExcel" title="Export to Excel" />
+                                </span>
+                            </td>
+                        </tr>
+                        <tr class="header title">
+                            <td>
+                                <span class="">
+                                    Bettype</span>
+                            </td>
+                            <td>
+                                <span class="">
+                                    Winloss</span>
+                            </td>
+                            <td>
+                                <span class="">
+                                    Position</span>
+                            </td>
+                            <td>
+                                <span class="">
+                                    Comm</span>
+                            </td>
+                            <td>
+                                <span class="">
+                                    Line Total</span>
+                            </td>
+                            <td>
+                                <span class="">
+                                    Turnover</span>
+                            </td>
+                            <td>
+                                <span class="">
+                                    Margin</span>
+                            </td>
+                        </tr>
+                    </table>
+                    <div style="padding-top: 5px;">
+                        <a id="backToMainMenu_HRR" style="text-decoration: underline;"></a>
+                    </div>
+                </div>
+            </td>
+            <td style="width: 2px; background-color: #B5C4D0; border: 1px solid #7C98A4; vertical-align: top;"
+                id="gridSplitter_HRR" class="hidden">
+            </td>
+            <td style="padding-left: 1px; vertical-align: top;">
+                <div id="rightPane">
+                    <div id="gridbettype" class="hidden">
+                        <table class="tblcollapse" id="tblbodyscrollbettype">
+                            <tr class="header bgtitle" style="border-bottom: 1px;">
+                                <td colspan="7">
+                                    <div class="bgtitle">
+                                        <div id="gridtitlebettype" class="gridtitle">
+                                        </div>
+                                        <div class="btngroup">
+                                            <input type="button" onclick="HorseRacingReportManager.exportToExcel('4')" value="  "
+                                                name="btnExport" id="Button1" class="btnExcel" title="Export to Excel" />
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="header title">
+                                <td style="">
+                                    <span class="c">
+                                        Bettype</span>
+                                </td>
+                                <td style="">
+                                    <span class="c">
+                                        Winloss</span>
+                                </td>
+                                <td style="">
+                                    <span class="c">
+                                        Position</span>
+                                </td>
+                                <td style="">
+                                    <span class="c">
+                                        Comm</span>
+                                </td>
+                                <td style="">
+                                    <span class="c">
+                                        Line Total</span>
+                                </td>
+                                <td style="">
+                                    <span class="c">
+                                        Turnover</span>
+                                </td>
+                                <td style="">
+                                    <span class="c">
+                                        Margin</span>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>

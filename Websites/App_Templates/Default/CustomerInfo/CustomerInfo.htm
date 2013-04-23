@@ -1,0 +1,292 @@
+﻿<div id="left_pane">
+    <div class="box_line">
+    </div>
+    <div class="box_content">
+        <div class="spacing">
+        </div>
+        <!--upline box-->
+        <div class="box_content1">
+            {UplineBox}
+        </div>
+        <!--end upline box-->
+        <div class="spacing">
+        </div>
+        <!--customer detail-->
+        <div class="box_header">
+            <div style="padding-top:2px">
+                   <div style="float: left; line-height:22px;" class="{statusClass}">
+                    <span id="box_02_headertext" style="{enabledbg}" onmouseover="{enabledtooltipover}"
+                        onmouseout="{enabledtooltipout}" {onclickUName} title="{FullUserName}" class="{memberClass}">{UserName}</span>&nbsp;<span id="btnupdownCustInfo" name="btnupdownCustInfo" onclick="collapseInfo();" title="Show Detail" ><img src="App_Themes/Images/icon_down.gif" class="imgDownUp" /></span></div>
+                <div style="float: right;">
+                    [<span class="canchange" onmouseover="mopen('LogID')" onmouseout="mclosetime()">Log</span> | <span class="canchange" onclick="OpenViewPT('{FullUserName}')">PT</span>]
+                    <div onmouseout="mclosetime()" onmouseover="mcancelclosetime()" id="LogID">
+                        <a onclick="ViewLogs('Setting','{FullUserName}')">• Setting</a><br />
+                        <a onclick="ViewLogs('Status','{FullUserName}')">• Status</a><br />
+                        <a onclick="ViewLogs('Credit','{FullUserName}')">• Credit</a><br />
+                        <a onclick="ViewLogs('Login','{FullUserName}')">• Login</a>
+                        <input id="TabLogs" type="hidden" value="" />
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <div id="custInfoDetal" class="box_content1">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td width="25%" class="dot_left">
+                        Name:
+                    </td>
+                    <td class="dot_left">
+                        <span id="vCustName" class="text_red" title="{FullCustomerName}" style="line-height:14px;">{FullCustomerName}&nbsp;</span>
+                    </td>
+                </tr>
+                 <tr>
+                    <td width="25%" class="dot_left">
+                        Nick Name:
+                    </td>
+                    <td class="dot_left">
+                        <span id="Span1" class="text_red" title="{NickName}">{NickName}&nbsp;</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="dot_left">
+                        Fax:
+                    </td>
+                    <td class="dot_left">
+                        <span id="vCustFax" class="text_red">{CustomerFax}&nbsp;</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="dot_left">
+                        Phone:
+                    </td>
+                    <td class="dot_left">
+                        <span id="vCustPhone" class="text_red">{CustomerPhone}&nbsp;</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="dot_left">
+                        Mobile:
+                    </td>
+                    <td class="dot_left">
+                        <span id="vCustMobile" class="text_red">{CustomerMobile}&nbsp;</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!--end customer detail-->
+        <div class="spacing">
+        </div>
+        <!--start button-->
+        <div class="button_Lpane">
+            {TransLinksBox}
+        </div>
+        <!--end button-->
+        <div class="spacing">
+        </div>
+        <!--box balnace - downline list-->
+        <div class="box_header">
+            <div id="left_tab1" class="left_tab">
+                <ul>
+                    <li id="left_tab1_1" onclick="left_Tab1_Click(this)" class="current"><a href="javascript:;"><span>
+                        Balance Info</span></a></li>
+                    <!--hideonmember-->
+                    <li id="left_tab1_2" onclick="left_Tab1_Click(this)"><a href="javascript:;"><span>Downline List</span></a></li><!--/hideonmember-->
+                </ul>
+            </div>
+        </div>
+        <div id="box_04_contents">
+            <div id="box_04_content_1">
+                <div class="holder osX">
+                    <div id="pane2" style="height: 265px; width: 248px;">
+                        {BalanceInfo}
+                    </div>
+                </div>
+            </div>
+            <div id="box_04_content_2">
+                <div class="holder osX">
+                    <div id="ctrDownlines" style="height: 265px; width: 248px; text-align: center;">
+                        <div id="downlinecontent">
+                            {DownlineList}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pagerbox">
+            <div id="dllpager">
+                Pager:</div>
+        </div>
+        <!--box balnace - downline list-->
+        <!--box setting detail login onlinelist-->
+        <div class="box_header">
+            <div id="left_tab2" class="left_tab">
+                <ul>
+                    <li id="left_tab2_1" onclick="left_Tab2_Click(this)" class="current"><a href="javascript:;"><span>
+                        Setting</span></a></li>
+                    <li id="left_tab2_2" onclick="left_Tab2_Click(this)"><a href="javascript:;"><span>Detail</span></a></li>
+                    <li id="left_tab2_3" onclick="left_Tab2_Click(this)"><a href="javascript:;"><span>Login</span></a></li>
+                    <li id="left_tab2_4" onclick="left_Tab2_Click(this)"><a href="javascript:;"><span>Online List</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="box_05_contents" id="box_05_contents">
+            <table class="tab_left_content" id="box_05_content_1" border="0" cellpadding="0"
+                cellspacing="0">
+                <tr>
+                    <!--dangerous-->
+                    <td class="l bot " style="width: 100px;">
+                        Dangerous
+                    </td>
+                    <td width="24px" class="r bot b">
+                    </td>
+                    <!--/dangerous-->
+                    <!--edited-dangerous-->
+                    <td class="l bot" style="width: 124px;" colspan="2">
+                        <span class="canchange" style="font-weight: bold;" onclick="OpenCloseMenuDangerous1();">
+                            Dangerous
+                            <img title="Detail" border="0" src="App_themes/Images/menu_open.gif" /></span>
+                        <br />
+                        <div id="dangerousbox" style="position: absolute; display: none; background-color: #BBC7CE;
+                            color: #4D4E4E;">
+                            {dangerousCustomer}
+                        </div>
+                    </td>
+                    <!--/edited-dangerous-->
+                    <td style="width: 100px;" class="l">
+                         Limit Per IP
+                    </td>
+                    <td width="24px" class="l">
+                        {LimitPerIP}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="l" colspan="2" ><span class="canchange" onclick="showhideRacebooksStatus({CustId},{RoleId})">Enable Racing</span></td>
+                    <td class="l" colspan="2"><!--p2pstatus--><span class="canchange" onclick="showhideP2PStatus({CustId},{RoleId})">Enable P2P</span><!--/p2pstatus--></td>
+                </tr>
+                <tr>
+                    <td style="width: 100px;" class="l">
+                        Special
+                    </td>
+                    <td width="24px" class="c">
+                        {specialCustomer}
+                    </td>
+                    <td style="width: 100px;" class="l">
+                       Closed
+                    </td>
+                    <td width="24px" class="l">
+                         {closedCustomer}   
+                    </td>
+                </tr>
+                {settingcontrol}
+            </table>
+            <div class="tab_left_content hidden" id="box_05_content_2">
+                <div id="box_detail">
+                    <div id="de_left">
+                        <ul>
+                            <!--detail_edit_menu-->
+                            <li id="detail_tab_3" class="current" onclick="detail_tabnew_Click(this)"><a href="javascript:void(0);">
+                                <span>Edit</span></a></li>
+                            <!--/detail_edit_menu-->
+                                {lblMinMax}
+                            <li id="detail_tab_2" onclick="detail_tabnew_Click(this)" style="display: {isHiddenMember};">
+                                {lblMinMax1}
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="detail_tab_contents" style="height: 240px;">
+                        <div id="detail_tab_content_1" class="l detail_tab_content hidden">
+                            {contentminmax}</div>
+                        <div id="detail_tab_content_2" class="l detail_tab_content hidden">
+                            {contentminmax1}</div>
+                        <div id="detail_tab_content_3" class="l detail_tab_content ">
+                            <!-- Detail menu -->
+                            <a href="" onclick="openInfoPanel('{linkSettingInfo}');return false;" class="button_left02">
+                                Info</a><br />
+                            <span class="{IsShow1}"><a class="button_left02" href="javascript:;" onclick="parent.gotoURL('centerFr','{linkSettingDetail}');">
+                                Edit Position Taking</a><br />
+                            </span><span class="{IsHidden1}"><a class="button_left02" href="javascript:;" onclick="parent.gotoURL('centerFr','{linkSettingDetail}');">
+                                Edit Position Taking</a><br />
+                            </span><span class="{IsHidden1}"><a class="button_left02" href="javascript:;" onclick="parent.gotoURL('centerFr','{linkAddnewDownline}');">
+                                Add New</a><br />
+                            </span>
+                            <!--editTransferTime-->
+                            <span class="{IsHidden1}"><a class="button_left02" href="javascript:;" onclick="parent.gotoURL('centerFr','Customer/v2/EditTransferTime.aspx?set=1&custid={CustId}&rid={RoleId}');">
+                                Edit Transfer Condition</a><br />
+                            </span>
+                            <!--/editTransferTime-->
+                            <!--maxexposure-->
+                            <span class="{IsHidden1}"><a class="button_left02" href="javascript:;" onclick="parent.gotoURL('centerFr','Customer/EditMaxExposure.aspx?set=1&custId={CustId}&uname={FullUserName}&type={type}');">
+                                Max Exposure (%)</a><br />
+                            </span>
+                            <!--/maxexposure-->
+                            <!--Horseracing update link-->
+                            <!--horseracing-editlink-->
+                            <span class="{IsShow1}"><a class="button_left02" href="javascript:;" onclick="parent.gotoURL('centerFr','Customer/PT/Racing/{RacingUpdateURL}.aspx?custId={CustId}');">
+                                Edit Racing</a><br />
+                            </span><span class="{IsHidden1}"><a class="button_left02" href="javascript:;" onclick="parent.gotoURL('centerFr','Customer/PT/Racing/{RacingUpdateURL}.aspx?custId={CustId}');">
+                                Edit Racing</a><br />
+                            </span>
+                            <!--/horseracing-editlink-->
+                            <!--edit-casino-->
+                            <span class="{IsShow1}"><a class="button_left02" href="javascript:;" onclick="parent.gotoURL('centerFr','Customer/PositionTakingCS.aspx?custId={CustId}');">
+                                Edit Casino</a><br />
+                            </span><span class="{IsHidden1}"><a class="button_left02" href="javascript:;" onclick="parent.gotoURL('centerFr','Customer/PositionTakingCS.aspx?custId={CustId}');">
+                                Edit Casino</a><br />
+                            </span>
+                            <!--/edit-casino-->
+                            <!--edit-finance-->
+                            <a class="button_left02" href="javascript:;" onclick="parent.gotoURL('centerFr','Customer/v2/UpdateFinancePT.aspx?custId={CustId}&roleid={RoleId}&uplineid={ParentId}');">
+                                Edit Finance</a><br />
+                            <!--/edit-finance-->
+                            <!--edit-bingo-->
+                            <a class="button_left02" href="javascript:;" onclick="parent.gotoURL('centerFr','{bingoLinkSetting}');">
+                                Edit Bingo</a><br />
+                            <!--/edit-bingo-->
+                            <!--edit-p2p-->
+                            <a class="button_left02" href="javascript:;" onclick="parent.gotoURL('centerFr','{pokerLinkSetting}');">
+                                Edit P2P</a><br />
+                            <!--/edit-p2p-->      
+                            <!--edit-LiveCasino-->
+                            <a class="button_left02" href="javascript:;" onclick="parent.gotoURL('centerFr','{livecasinoLinkSetting}');">
+                                Edit Live Casino</a>
+                            <!--/edit-LiveCasino-->      
+                            <!-- Detail menu -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab_left_content hidden" id="box_05_content_3">
+                {logindetail}
+            </div>
+            <div class="tab_left_content hidden" id="box_05_content_4">
+                <div>
+                    <div id="onlinepanel" class="tab_left_content" style="height: 190px;">
+                        Loading...
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end box setting detail login onlinelist-->
+        <div class="spacing">
+        </div>
+    </div>
+    <div class="box_bottom">
+    </div>
+</div>
+{jsparams}
+<input type="hidden" id="custid" value="{CustId}" />
+<form name="AgLoginForm" id="AgLoginForm" method="get" action="InternalView.aspx"
+target="_blank">
+<input type="hidden" id="chalengeStr" name="chalengeStr" value="{RndStr}" />
+<input type="hidden" id="accKey" name="accKey" value="{AccKey}" />
+<input type="hidden" id="custName" name="custName" value="" />
+<input type="hidden" id="accId" name="accId" value="{AccId}" />
+<!--checkbox-oldvalue-->
+<input type="hidden" id="chkOldValueSATote" name="chkOldValueSATote" value="{chkSATote}" />
+<input type="hidden" id="chkOldValueUKTote" name="chkOldValueUKTote" value="{chkUKTote}" />
+<input type="hidden" id="chkOldValueFinance" name="chkOldValueFinance" value="{chkFinance}" />
+<input type="hidden" id="chkOldValueCasino" name="chkOldValueCasino" value="{chkCasino}" />
+<input type="hidden" id="chkOldValueBingo" name="chkOldValueBingo" value="{chkBingo}"/>
+<input type="hidden" id="chkOldValueNumberGame" name="chkOldValueNumberGame" value="{chkNumberGame}" />
+<input type="hidden" id="chkOldValueLiveCasino" name="chkOldValueLiveCasino" value="{chkLiveCasino}"/>
+<!--/checkbox-oldvalue-->
+</form>

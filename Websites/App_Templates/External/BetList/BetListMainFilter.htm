@@ -1,0 +1,30 @@
+﻿<div style="padding-bottom:2px">
+    <span style="font-weight:bold"><input type="radio" name="rdType" value="1" id="rdTransID" onclick="BL_ChangeOption()" />By Ref No:</span>
+    <span style="padding-left:41px;"><input type="text" id="txtTransID" name="txtTransID" style="width:80px" maxlength="13" onkeypress="return PreSubmit(event)" disabled="disabled" /></span>
+</div>
+<div>
+    <span style="font-weight:bold"><input type="radio" name="rdType" value="2" id="rdBetType" checked="checked" onclick="BL_ChangeOption()" />Advance: </span>
+    
+    <span style="padding-left:5px" class="b">From:</span>
+    <span style="padding-left:5px" id='spanFromDate'>{FromDateCal}</span>
+    <span style="padding-left:20px" class="b">To:</span>
+    <span style="padding-left:5px" id='spanToDate'>{ToDateCal}</span>
+    <span id="bettypeArea" {btDisplay}>
+        <span style="padding-left:20px">Bettype:</span>
+        <span style="padding-left:5px" id="spanBettype" style="padding-bottom:3px">
+            <select id="dlBettype" >
+                <option value="0">All</option>
+                {BettypeOptions}
+          </select>
+        </span>
+    </span>
+</div>
+<div style="padding-top:5px;padding-bottom:3px">
+    <span><input class="btn" id="btnSubmit"  type="button" value="Submit" style="margin-left:2px;" onclick="ViewMainReport()" /></span>
+    <span><input class="btn" id="btnReset" type="button" value="Reset" style="margin-left:2px;" onclick="DoReset()" /></span>
+     <span style="padding-left:10px">
+        <img id='inProgressBar' name='inProgressBar' width="16px" height="16px" style="display:none"  src ="App_Themes/SteelBlue/Images/ajax-loader.gif" />
+    </span>
+    
+</div>
+

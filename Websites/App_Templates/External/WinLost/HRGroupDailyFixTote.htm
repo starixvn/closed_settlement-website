@@ -1,0 +1,89 @@
+<table id="table" cellspacing="1px" cellpadding="1px" class="c" style="background-color:#999999; {styletable}" {border}>
+	<thead>
+    <tr align="center" height="22">
+        <th colspan="13" style=" background-color:#ffabab;"><span id="Span1"><b>Racing Group Daily</b></span></th>
+    </tr>
+    <tr align="center" style="font-weight:bold" height="22" style="background-color:#999999">	
+        <th bgcolor="#d8dde2" style="width:80px;">Date</th>
+        <th bgcolor="#d8dde2" style="width:80px;">{typename}</th>
+        <th bgcolor="#d0e8fb" colspan="4">Turnover (RM)</th>
+        <th bgcolor="#d8dde2" colspan="3">IBC (RM)</th>
+        <th bgcolor="#d0e8fb" colspan="3">12BET (RM)</th>
+        <th bgcolor="#d8dde2" width="80px" nowrap>Group Total<br> Income</th>
+     </tr>	
+     <tr style="font-weight:bold" align="center" height="22" id="trHeader" style="background-color:#999999">
+        <th bgcolor="#d8dde2" style="width:80px;"></th>
+        <th bgcolor="#d8dde2" style="width:80px;"></th>
+        <th bgcolor="#d0e8fb" style="width:80px;">Agency</th>
+        <th bgcolor="#d0e8fb" style="width:80px;">IBC</th>
+        <th bgcolor="#d0e8fb" style="width:80px;">{parnter}</th>
+        <th bgcolor="#d0e8fb" style="width:80px;">Total TO</hd>
+        
+        <th bgcolor="#d8dde2" style="width:80px;">PT</th>
+        <th bgcolor="#d8dde2" style="width:80px;">Net Comm</th>
+        <th bgcolor="#d8dde2" style="width:80px;">Total Income</th>
+        
+        <th bgcolor="#d0e8fb" style="width:80px;">PT</th>
+        <th bgcolor="#d0e8fb" style="width:80px;">Comm</th>
+        <th bgcolor="#d0e8fb" style="width:80px;">Total Income</th>
+        <th bgcolor="#d8dde2" width="80px" nowrap></th>
+     </tr> 
+     </thead>   
+	
+	
+	<!--content-->
+	
+    <tr align="right" {style} height="21" >
+        <!--date--><td align="center" rowspan="{rowspan}">{Date}</td><!--/date-->
+        <td align="center">{Bettype}</td>
+        
+        <td nowrap>{TO_Agent}</td>
+        <td nowrap>{TO_IBC}</td>
+        <td nowrap>{TO_Phu}</td>
+        <td nowrap>{TO_Total}</td>
+        
+        <td nowrap>{IBC_PT}</td>
+        <td nowrap>{IBC_NetComm}</td>
+        <td nowrap>{IBC_Total}</td>        
+        
+        <td nowrap>{12BET_PT}</td>
+        <td nowrap>{12BET_Comm}</td>
+        <td nowrap>{12BET_Total}</td>        
+        
+        <td nowrap class="rspace">{GroupTotal}</td>
+    </tr>
+	<!--/content-->
+	
+	
+	<tfoot>
+	<!--Total-->	
+	<tr align="right" style="background-color:#999999"   height="21" id="{id}">
+        <td {style} align="center" {col}>{TotalName}</td>
+        
+        <td {style} nowrap>{TO_Agent}</td>
+        <td {style} nowrap>{TO_IBC}</td>
+        <td {style} nowrap>{TO_Phu}</td>
+        <td {style} nowrap>{TO_Total}</td>
+        
+        <td {style} nowrap>{IBC_PT}</td>
+        <td {style} nowrap>{IBC_NetComm}</td>
+        <td {style} nowrap>{IBC_Total}</td>        
+        
+        <td {style} nowrap>{12BET_PT}</td>
+        <td {style} nowrap>{12BET_Comm}</td>
+        <td {style} nowrap>{12BET_Total}</td>        
+        
+        <td {style} nowrap class="rspace">{GroupTotal}</td>
+    </tr>    
+	<!--/Total-->
+	</tfoot>
+	
+</table>
+
+<!--footer-send-email-->
+<br><br>
+<b>Sent by:</b> {username} <br>
+<b>Date:</b> {datetime} <br/><br/>
+
+<i>This is an auto-mail. Please do not reply.</i>
+<!--/footer-send-email-->

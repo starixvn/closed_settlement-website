@@ -1,0 +1,94 @@
+5/18/2010 6:43:17 AM -- File does not exist.
+ SOURCE: System.Web
+ FORM: 
+ QUERYSTRING: 
+ TARGETSITE: System.IO.FileInfo GetFileInfo(System.String, System.String, System.Web.HttpResponse)
+ STACKTRACE:    at System.Web.StaticFileHandler.GetFileInfo(String virtualPathWithPathInfo, String physicalPath, HttpResponse response)
+   at System.Web.StaticFileHandler.ProcessRequestInternal(HttpContext context)
+   at System.Web.DefaultHttpHandler.BeginProcessRequest(HttpContext context, AsyncCallback callback, Object state)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) -- General
+----------------------------------------
+5/18/2010 6:43:51 AM -- File does not exist.
+ SOURCE: System.Web
+ FORM: 
+ QUERYSTRING: 
+ TARGETSITE: System.IO.FileInfo GetFileInfo(System.String, System.String, System.Web.HttpResponse)
+ STACKTRACE:    at System.Web.StaticFileHandler.GetFileInfo(String virtualPathWithPathInfo, String physicalPath, HttpResponse response)
+   at System.Web.StaticFileHandler.ProcessRequestInternal(HttpContext context)
+   at System.Web.DefaultHttpHandler.BeginProcessRequest(HttpContext context, AsyncCallback callback, Object state)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) -- General
+----------------------------------------
+5/19/2010 6:35:48 AM -- Workbook must contain at least one worksheet. Use ExcelFile.Worksheets.Add() method to create a new worksheet.
+ SOURCE: ExcelUtil
+ FORM: 
+ QUERYSTRING: username=GK33&pageindex=
+ TARGETSITE: Int32 GetActiveWorksheetIndex()
+ STACKTRACE:    at ExcelUtil.Spreadsheet.ExcelWorksheetCollection.GetActiveWorksheetIndex()
+   at ExcelUtil.Spreadsheet.XLSFileWriter.WriteGlobalRecords(AbsXLSRecords records, ArrayList worksheetRecords, ArrayList worksheetNames)
+   at ExcelUtil.Spreadsheet.XLSFileWriter.WriteRecords()
+   at ExcelUtil.Spreadsheet.XLSFileWriter.GetRecords()
+   at ExcelUtil.Spreadsheet.ExcelFile.SaveXlsInternal(Stream stream, XLSFileWriter xlsWriter, String fileName)
+   at ExcelUtil.Spreadsheet.ExcelFile.SaveXls(Stream stream)
+   at Report_ExportExcelFile.Page_Load(Object sender, EventArgs e) in d:\Works\VS2008-Srv213\MAIN\AccV2\Report\ExportExcelFile.aspx.cs:line 50
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint) -- General
+----------------------------------------
+5/19/2010 6:36:52 AM -- Workbook must contain at least one worksheet. Use ExcelFile.Worksheets.Add() method to create a new worksheet.
+ SOURCE: ExcelUtil
+ FORM: 
+ QUERYSTRING: username=GK33&pageindex=
+ TARGETSITE: Int32 GetActiveWorksheetIndex()
+ STACKTRACE:    at ExcelUtil.Spreadsheet.ExcelWorksheetCollection.GetActiveWorksheetIndex()
+   at ExcelUtil.Spreadsheet.XLSFileWriter.WriteGlobalRecords(AbsXLSRecords records, ArrayList worksheetRecords, ArrayList worksheetNames)
+   at ExcelUtil.Spreadsheet.XLSFileWriter.WriteRecords()
+   at ExcelUtil.Spreadsheet.XLSFileWriter.GetRecords()
+   at ExcelUtil.Spreadsheet.ExcelFile.SaveXlsInternal(Stream stream, XLSFileWriter xlsWriter, String fileName)
+   at ExcelUtil.Spreadsheet.ExcelFile.SaveXls(Stream stream)
+   at Report_ExportExcelFile.Page_Load(Object sender, EventArgs e) in d:\Works\VS2008-Srv213\MAIN\AccV2\Report\ExportExcelFile.aspx.cs:line 50
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint) -- General
+----------------------------------------
+5/19/2010 6:37:54 AM -- Workbook must contain at least one worksheet. Use ExcelFile.Worksheets.Add() method to create a new worksheet.
+ SOURCE: ExcelUtil
+ FORM: 
+ QUERYSTRING: username=GK33&pageindex=
+ TARGETSITE: Int32 GetActiveWorksheetIndex()
+ STACKTRACE:    at ExcelUtil.Spreadsheet.ExcelWorksheetCollection.GetActiveWorksheetIndex()
+   at ExcelUtil.Spreadsheet.XLSFileWriter.WriteGlobalRecords(AbsXLSRecords records, ArrayList worksheetRecords, ArrayList worksheetNames)
+   at ExcelUtil.Spreadsheet.XLSFileWriter.WriteRecords()
+   at ExcelUtil.Spreadsheet.XLSFileWriter.GetRecords()
+   at ExcelUtil.Spreadsheet.ExcelFile.SaveXlsInternal(Stream stream, XLSFileWriter xlsWriter, String fileName)
+   at ExcelUtil.Spreadsheet.ExcelFile.SaveXls(Stream stream)
+   at Report_ExportExcelFile.Page_Load(Object sender, EventArgs e) in d:\Works\VS2008-Srv213\MAIN\AccV2\Report\ExportExcelFile.aspx.cs:line 50
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint) -- General
+----------------------------------------
+5/19/2010 6:39:59 AM -- Workbook must contain at least one worksheet. Use ExcelFile.Worksheets.Add() method to create a new worksheet.
+ SOURCE: ExcelUtil
+ FORM: 
+ QUERYSTRING: username=GK33&pageindex=
+ TARGETSITE: Int32 GetActiveWorksheetIndex()
+ STACKTRACE:    at ExcelUtil.Spreadsheet.ExcelWorksheetCollection.GetActiveWorksheetIndex()
+   at ExcelUtil.Spreadsheet.XLSFileWriter.WriteGlobalRecords(AbsXLSRecords records, ArrayList worksheetRecords, ArrayList worksheetNames)
+   at ExcelUtil.Spreadsheet.XLSFileWriter.WriteRecords()
+   at ExcelUtil.Spreadsheet.XLSFileWriter.GetRecords()
+   at ExcelUtil.Spreadsheet.ExcelFile.SaveXlsInternal(Stream stream, XLSFileWriter xlsWriter, String fileName)
+   at ExcelUtil.Spreadsheet.ExcelFile.SaveXls(Stream stream)
+   at Report_ExportExcelFile.Page_Load(Object sender, EventArgs e) in d:\Works\VS2008-Srv213\MAIN\AccV2\Report\ExportExcelFile.aspx.cs:line 50
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint) -- General
+----------------------------------------

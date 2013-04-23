@@ -1,0 +1,92 @@
+﻿@model Fanex.Tarus.Entities.Report.LiveCasinoWinLoss
+@using DNAide.Core;
+@if (IsPost)
+{
+    if (Model.CountItems == -1)
+    {
+    <div style="width: 781px;" class="alertboxerr">
+        <div class="w130">
+            The Operation has timed out due to intensive processes. Please, reselect filter
+            options appropriatedly to avoid the time-out situation.
+        </div>
+    </div>
+    }
+    else if (Model.CountItems == 0)
+    {
+    <div style="width: 781px;" class="alertboxerr">
+        <div class="w130">
+            There is no data.</div>
+    </div>
+    }
+    else
+    {
+    <div id="gridLiveCasino" class="content-warper" style="margin-top: 6px;">
+        <div class="content-toolbox bgtitle">
+            <div id="gridTitleLivecasino" class="gridtitle">
+            </div>
+            <div class="btngroup">
+                @if (ViewBag.ReportBy == 5 && Model.RoleID != 4 && Model.RoleID > 0)
+                {
+                     if (ViewBag.isAgency == "1")
+                     { 
+                <input id="btnBack" class="btnBack" type="button" title="Go Back" value=" " 
+                  onclick="LiveCasinoWinLoss.getReportData(false,1,1);"/>
+                     }
+                    }
+                          
+                        <input type="button" value="  " id="btnExport" class="btnExcel" title="Export to Excel"
+                            onclick="LiveCasinoWinLoss.exportExcel(true);" />
+            </div>
+        </div>
+
+        @*Render Content*@
+        @if (ViewBag.ReportBy == 5)
+        {
+            if (Model.RoleID == 4)
+            {
+                @Html.Partial("~/Views/Report/LiveCasinoWinLoss/_AgencySuper.cshtml", Model)
+            }
+            else if (Model.RoleID == 3)
+            {
+                @Html.Partial("~/Views/Report/LiveCasinoWinLoss/_AgencyMaster.cshtml", Model)
+            }
+            else if (Model.RoleID == 2)
+            {
+                @Html.Partial("~/Views/Report/LiveCasinoWinLoss/_AgencyAgent.cshtml", Model)
+            }
+            else
+            {
+                @Html.Partial("~/Views/Report/LiveCasinoWinLoss/_GeneralReport.cshtml", Model)
+            }
+
+        }
+        else if (ViewBag.ReportBy == 2)
+        {
+             @Html.Partial("~/Views/Report/LiveCasinoWinLoss/_UsernameReport.cshtml", Model)
+        }
+        else
+        {
+             @Html.Partial("~/Views/Report/LiveCasinoWinLoss/_GeneralReport.cshtml", Model)
+          
+        }
+
+        <div class="content-pagination bgtitle clearfix">
+            <div class="pagination-scroll">
+                <table style="width: 100%" cellspacing="0" cellpadding="1">
+                    <tr>
+                        <td>
+                            <div id="pagination">
+                                &nbsp;</div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    }
+}
+<script language="javascript" type="text/javascript">
+    var _TotalItems = '@Model.CountItems';
+    var _RoleId = '@Model.RoleID';
+    var _Username = '@ViewBag.Username';
+</script>

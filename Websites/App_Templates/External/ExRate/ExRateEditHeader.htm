@@ -1,0 +1,21 @@
+<form name="fEdit" method="post" action="../Handlers/UpdateExRate.ashx?type=edit&exrateId={exid}" target="frameUpdate">
+  <div id="divEdit" style="margin-left:12px;">
+    <table class="tbllayout"  style="width:400px" cellspacing="1">
+      <tr class="title">
+        <td class="c">{currency}</td>
+        <td class="c">{rate}</td>
+        <td class="c">{minbet}</td>
+        <td></td>
+      </tr>
+      <!--row-->
+      &nbsp;
+      <!--/row-->
+    </table>
+  </div>
+  <div id="divClose" style="display:none; text-align:center; width:400px">
+    <span id="errMsg" class="error-message"></span>
+    <div id="clear2"></div>
+    <br />
+    <input class="btn"  type="button" name="btnClose" onclick="OnClose();"  id="btnClose"  value="Close"/>
+  </div>
+</form>

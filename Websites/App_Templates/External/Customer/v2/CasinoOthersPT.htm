@@ -1,0 +1,52 @@
+﻿<!--header-->
+<tr class="b"><td colspan="8" /></tr>
+<!--/header-->
+<!--group_setting-->
+<tr>
+    <td id="td_{gamekindid}" class="b" rowspan="{row-span-gamekind}">{gamekind}</td>
+    <td class="l w130 b" style="width: 15%">{chkGroupSetting}&nbsp;{lblGroupSetting}</td>
+    <!--preset_pt-->
+    <td>{group_preset_pt}&nbsp;{group_preset_pt_btn}</td>
+    <!--/preset_pt-->
+    <!--auto_pt-->
+    <td>{chkGroupAuto}</td>
+    <td>{group_auto_pt}&nbsp;{group_auto_pt_btn}</td>
+    <!--/auto_pt-->
+    <!--max_pt-->
+    <td>{group_max_pt}&nbsp;{group_max_pt_btn}</td>
+    <!--/max_pt-->
+    <!--min_pt-->
+    <td>{group_min_pt}&nbsp;{group_min_pt_btn}</td>
+    <!--/min_pt-->
+    <!--comm-->
+    <td>{group_comm_pt}&nbsp;{group_comm_pt_btn}</td>
+    <!--/comm-->
+</tr>
+<!--/group_setting-->
+<!--private_setting-->
+<tr id="tr_{gametypeid}" style="display:{display_tr_gametype}">
+    <td class="l w130" rowspan="2" style="width: 15%">{gametype}</td>
+    <!--preset_pt-->
+    <td>{preset_pt}&nbsp;{preset_pt_error}</td>
+    <!--/preset_pt-->
+    <!--auto_pt-->
+    <td>{chkAuto}</td>
+    <td>{auto_pt}&nbsp;{auto_pt_error}</td>
+    <!--/auto_pt-->
+    <!--max_pt-->
+    <td>{max_pt}&nbsp;{max_pt_error}</td>
+    <!--/max_pt-->
+    <!--min_pt-->
+    <td>{min_pt}&nbsp;{min_pt_error}</td>
+    <!--/min_pt-->
+    <!--comm-->
+    <td>{comm_pt}&nbsp;{comm_pt_error}</td>
+    <!--/comm-->
+</tr>
+<!--betting_limit-->
+<tr>
+    <td id="td_{gametypeid}"  style="display:{display_td_gametype};" class="l w130">{gametype}</td>
+    <td class="l" colspan="{col-span-bl}" style="height: 18px">{lblBettingLimit}:&nbsp;{betlimit}</td>
+</tr>
+<!--/betting_limit-->
+<!--/private_setting-->

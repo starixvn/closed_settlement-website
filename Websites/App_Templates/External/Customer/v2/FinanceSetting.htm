@@ -1,0 +1,56 @@
+﻿{lblErrMsg}
+<table class="tblcollapse" style="width:700px;" >
+    <!--min-max-pt-->
+        <tr class="title">
+            <td colspan="5">
+                {lblCustInfo}
+            </td>
+        </tr>
+       {custinfo}
+        <tr  class="title">
+            <td colspan="5">
+                {lblCommission}
+            </td>
+        </tr>
+        {commission}
+        <!--bet_setting-->
+        <tr class="title">
+            <td colspan="5" >
+                {lblBetSetting}
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5">
+                {BetSetting}
+            </td>
+        </tr>
+        <!--/bet_setting-->
+</table>
+<div style="height: 6px;">
+</div>
+<table class="tblcollapse" style="width:700px">
+    <!--pt-->
+    <tr class="title">
+        <td  colspan="3">
+            {lblPositionTaking}
+        </td>
+    </tr>
+   {pt_data}
+    <!--/pt-->
+</table>
+{jsdata}
+<table border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td style="height: 6px" colspan="3">
+        </td>
+    </tr>
+    <tr>
+        <td class="custBtn1" />
+        <td id="Td1" class="custBtn2 hand" onclick="{FuncOnClick}">
+            Submit
+        </td>
+        <td>
+            <span id="errMsg201" class="error-message"></span>
+        </td>
+    </tr>
+</table>

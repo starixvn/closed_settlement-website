@@ -1,0 +1,61 @@
+﻿.box_header{
+	margin-left:2px;
+	height:26px;
+	background:url(../Images/L_banner/box_02header.jpg) repeat-x top left;
+}
+
+.left_tab{
+	font-size:11px;
+	font-weight:bold;
+	float:left;
+	width:520px;
+	line-height:17px;
+	margin: 5px 0px 0px 5px;
+}
+.left_tab ul{
+	font-size:11px;
+	list-style-type: none;
+	margin:0 auto;
+	margin-top:1px;
+	padding:0px;
+}
+.left_tab li{
+	font-size:11px;
+	display:inline;
+}
+.left_tab a{
+	font-size:11px;
+	float:left;
+	background:url(../Images/L_banner/L_tab_left.png) no-repeat left top;
+	margin-right:3px;
+	padding-left:3px;
+	text-decoration:none;
+}
+.left_tab a span{
+	font-size:11px;
+	font-weight:bold;
+	color:#ffffff;
+	float:left;
+	display:block;
+	background:url(../Images/L_banner/R_tab_left.png) no-repeat right top;
+	padding: 1px 8px 2px 6px;
+}
+.left_tab a span {
+	float:none;
+}
+.left_tab a:hover span {
+	color:#d66d35;
+}
+.left_tab .current a{
+	background-position:0 -21px !important;
+}
+.left_tab .current a span{
+	background-position:100% -21px !important;
+	color:#2678c5;
+}
+.left_tab a:hover{
+	background-position:0% -42px;
+}
+.left_tab a:hover span{
+	background-position:100% -42px;
+}

@@ -1,0 +1,44 @@
+<span style="display: block; width: 410px;">
+  <b>{dept}:</b>      
+    <span class="canchange"  style="font-weight:bold;cursor:pointer" onclick="SelAccount({groupid},'{deptname}');">{deptname}</span>
+  <!--nonegpolicy-->
+    >>
+    <b>{acc}:</b>
+    <font color="#6678e0">{user}</font>
+    <!--/nonegpolicy-->
+</span>
+<!--<span id="errfunc" class="errMsg"></span>-->
+<form name="fUpdatePolicy" method="post" action="UpdatePolicy.ashx" target="frUpd">
+	<input type="hidden" name="arrFuncId" id="arrFuncId" value="{funcid}"/>
+	<input type="hidden" name="groupId" id="groupId" value="{groupid}"/>
+	<input type="hidden" name="custId" id="custId" value="{custid}"/>	
+	<input type="hidden" name="user" id="user" value="{arruser}"/>
+  <input type="hidden" name="dept" id="dept" value="{deptname}"/>
+  <br/>
+<table class="tbllayout" style="width:500px" cellspacing="1" id="tblallaccountlist">
+<tr class="title">
+	<td rowspan="2">Function</td>
+  <!--individual-->
+  <td colspan="2">Individual Permission</td>
+  <!--/individual-->
+  <td colspan="2">Group Permission</td>
+</tr>
+<tr class="title">
+  <td>Read</td>
+  <td>Host</td>
+  <!--individual-->
+  <td>Read</td>
+  <td>Host</td>
+  <!--/individual-->
+</tr>
+{content}
+<!--no-update-->
+<tr >
+	<td colspan="5" class="c">
+		<input type="button" onclick="GetCheck();" name="btnUpdate" id="btnUpdate" value="Update" class="btn" />
+        <input type="button" onclick="CancelUpd();" name="btnCancel" id="btnCancel" value="Cancel" class="btn" />
+	</td>
+</tr>
+<!--/no-update-->
+</table>
+</form>

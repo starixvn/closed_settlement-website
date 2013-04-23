@@ -1,0 +1,50 @@
+﻿<!--Content-->
+<div id="divDirectBalanceTemplate">
+    <div>
+        <table class="theader" border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+            <thead>
+                <tr>
+                    <th colspan="6" align="center" style="border:1px solid #7C98A4"><b>{DirectBalanceHeader}</b></th>
+                </tr>
+                <tr>
+                  <th style="width:40px;"><b>{No}</b></th>
+                  <th id="_th2" style="width:120px;"><b>{Username}</b></th>
+                  <th style="width:60px;"><b>{Curr}</b></th>
+                  <th style="width:120px;"><b>{Balance}</b></th>
+                  <th style="width:120px;"><b>{Base}</b></th>
+                  <th id="thHeaderScrollBar">&nbsp;</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <div style="overflow-y:auto; overflow-x:hidden; max-height:600px; height:auto; border-right:1px solid #7C98A4">
+        <table class="tcontent" id="table2" cellspacing="0" cellpadding="0" border="0" style="border-collapse:collapse;">
+            <tbody>
+                <!--Rows-->
+                <tr class="{odd_even}">
+                  <td class="c"><div style="width:40px">{No_vl}</div></td>
+                  <td class="l"><div style="width:120px;"><span style="margin-left:2px">{Username_vl}</span></div></td>
+                  <td align="center"><div style="width:60px">{Curr_vl}</div></td>
+                  <td class="r"><div style="width:120px"><span style="margin-right:2px">{Balance_vl}</span></div></td>
+                  <td class="r"><div style="width:120px"><span style="margin-right:2px">{Base_vl}</span></div></td>
+                  <td><div divBodyScrollBar="true"></div></td>
+                </tr>
+                <!--/Rows-->
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <table class="tfooter" id="table" cellspacing="0" cellpadding="0" border="0" style="border-collapse:collapse;">
+            <tfoot>
+                <!--Total-->
+                <tr class="report-footer">
+                  <td id="tdFooterWidth" style="width:245px" align="center" colspan="4"><b>TOTAL</b></td>
+                  <td class="r"><b>{total}</b></td>
+                  <td id="tdFooterScrollbar">&nbsp;</td>
+                </tr>
+                <!--/Total-->
+            </tfoot>
+        </table>
+    </div>
+</div>
+<!--/Content-->

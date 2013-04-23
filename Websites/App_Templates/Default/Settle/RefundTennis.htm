@@ -1,0 +1,254 @@
+<div>
+    <form id="frmBill">
+    <table class="tblcollapse">
+        <tr class="title1 c">
+            <td colspan="10">
+                LEAGUE:&nbsp;{leaguename}
+            </td>
+        </tr>
+        <tr class="title">
+            <td width="80">
+                CODE
+            </td>
+            <td width="85">
+                KICK-OFF TIME
+            </td>
+            <td width="280">
+                TEAM
+            </td>
+            <td width="22">
+                1 Set
+            </td>
+            <td width="22">
+                2 Set
+            </td>
+            <td width="22">
+                3 Set
+            </td>
+            <td width="22">
+                4 Set
+            </td>
+            <td width="22">
+                5 Set
+            </td>
+            <td width="36">
+                Total Games
+            </td>
+            <td width="36">
+                Total Set
+            </td>
+        </tr>
+        <tr class="c">
+            <td rowspan="2">
+                {matchcode}
+            </td>
+            <td rowspan="2">
+                {date}
+            </td>
+            <td class="fontbold l hteam">
+                {hometeam}
+            </td>
+            <td>
+                {value1sHome}
+            </td>
+            <td>
+                {value2sHome}
+            </td>
+            <td>
+                {value3sHome}
+            </td>
+            <td>
+                {value4sHome}
+            </td>
+            <td>
+                {value5sHome}
+            </td>
+            <td>
+                {valueTGHome}
+            </td>
+            <td>
+                {valueFSHome}
+            </td>
+        </tr>
+        <tr class="c">
+            <td class="fontbold l ateam">
+                {awayteam}
+            </td>
+            <td>
+                {value1sAway}
+            </td>
+            <td>
+                {value2sAway}
+            </td>
+            <td>
+                {value3sAway}
+            </td>
+            <td>
+                {value4sAway}
+            </td>
+            <td>
+                {value5sAway}
+            </td>
+            <td>
+                {valueTGAway}
+            </td>
+            <td>
+                {valueFSAway}
+            </td>
+        </tr>
+    </table>
+    {ApplyHedging}
+    {Refund}
+    <input type="hidden" id="sParams" name="sParams" value="{params}" />
+    <input type="hidden" id="sAction" name="sAction" />
+    <input type="hidden" id="isSD" name="isSD" value="0" />
+  
+   <input id="hiddenScoreConfirm_homeFScore" name="hiddenScoreConfirm_homeFScore" type="hidden" />
+    <input id="hiddenScoreConfirm_awayFScore" name="hiddenScoreConfirm_awayFScore" type="hidden" />
+
+    <input id="hiddenScoreConfirm_Sport" name="hiddenScoreConfirm_Sport" type="hidden"
+        value="Tennis" />
+    <input type="hidden" id="hiddenBetStatus_ConfirmScore" name="hiddenBetStatus_ConfirmScore" />
+  </form>
+  
+  <span style="padding-left: 30px;" id="infoMsg" class="info-message"></span>  
+  <span style="padding-left: 30px; visibility: hidden;" id="errMsg" class="error-message">Please input valid score!</span>
+  <div id="divScoreConfirm" style="display: none; margin-top: 4px">
+    <div style="text-align:center; margin-bottom:4px">
+    <span style="color:red; font-size:14px">You can only do this <span style="font-weight:bold; padding-left:4px; padding-right:4px">ONCE</span> so please <span style="font-weight:bold; padding-left:4px; padding-right:4px"> DOUBLE-CHECK </span> the scores !!!</span>
+    </div>
+        <table class="tblcollapse">
+            <tbody>
+                <tr class="title">
+                    <td width="280">
+                        TEAM
+                    </td>
+                    <td width="22">
+                        1 Set
+                    </td>
+                    <td width="22">
+                        2 Set
+                    </td>
+                    <td width="22">
+                        3 Set
+                    </td>
+                    <td width="22">
+                        4 Set
+                    </td>
+                    <td width="22">
+                        5 Set
+                    </td>
+                    <td width="36">
+                        Total Games
+                    </td>
+                    <td width="36">
+                        Total Set
+                    </td>
+                </tr>
+                <tr class="c">
+                    <td class="fontbold l hteam">
+                        {hometeam}
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="value1qHome" type="text" value="{value1sHome}" beginvalue="{value1sHome}"
+                            maxlength="9" size="1" style="text-align: center;" tabindex="1" />
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="value2qHome" type="text" value="{value2sHome}" beginvalue="{value2sHome}"
+                            maxlength="9" size="1" style="text-align: center;" tabindex="3" />
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="value3qHome" type="text" value="{value3sHome}" beginvalue="{value3sHome}"
+                            maxlength="9" size="1" style="text-align: center;" tabindex="5" />
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="value4qHome" type="text" value="{value4sHome}" beginvalue="{value4sHome}"
+                            maxlength="9" size="1" style="text-align: center;" tabindex="7" />
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="value5qHome" type="text" value="{value5sHome}" beginvalue="{value5sHome}"
+                            maxlength="9" size="1" style="text-align: center;" tabindex="9" />
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="valueFSHome"
+                            type="text" value="{valueTGHome}" beginvalue="{valueTGHome}" maxlength="9" size="4"
+                            style="text-align: center; color: Red" tabindex="11" />
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="tbxScoreConfirm_homeFScore"
+                            type="text" value="{valueFSHome}" beginvalue="{valueFSHome}" maxlength="9" size="4"
+                            style="text-align: center; color: Red" tabindex="13" />
+                    </td>
+                </tr>
+                <tr class="c">
+                    <td class="fontbold l ateam">
+                        {awayteam}
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="value1qAway" type="text" value="{value1sAway}" beginvalue="{value1sAway}"
+                            maxlength="9" size="1" style="text-align: center;" tabindex="2" />
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="value2qAway" type="text" value="{value2sAway}" beginvalue="{value2sAway}"
+                            maxlength="9" size="1" style="text-align: center;" tabindex="4" />
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="value3qAway" type="text" value="{value3sAway}" beginvalue="{value3sAway}"
+                            maxlength="9" size="1" style="text-align: center;" tabindex="6" />
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="value4qAway" type="text" value="{value4sAway}" beginvalue="{value4sAway}"
+                            maxlength="9" size="1" style="text-align: center;" tabindex="8" />
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="value5qAway" type="text" value="{value5sAway}" beginvalue="{value5sAway}"
+                            maxlength="9" size="1" style="text-align: center;" tabindex="10" />
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="valueFSAway"
+                            type="text" value="{valueTGAway}" beginvalue="{valueTGAway}" maxlength="9" size="4"
+                            style="text-align: center; color: Red" tabindex="12" />
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="tbxScoreConfirm_awayFScore"
+                            type="text" value="{valueFSAway}" beginvalue="{valueFSAway}" maxlength="9" size="4"
+                            style="text-align: center; color: Red" tabindex="14" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div style="text-align:right">
+            <input id="cbxInputDirectly" onchange="javascript:Tennis_InputDirectly_Event(event);" type="checkbox">Input Total Set directly</span>
+        </div>
+        <div style="text-align: left; margin-top: 4px">
+            <span class="error-message" id="errMsg_ScoreConfirm" style="font-weight: bold; display: none">
+                Please input valid result!</span>
+        </div>
+        <div style="text-align: center; margin-top: 4px">
+            <input id="btnScoreConfirmProceed" type="button" class="btn" value="Proceed" />
+            <input id="btnScoreConfirmCancel" type="button" class="btn" value="Change" />
+        </div>
+        <div style="padding-left:4px; padding-top:8px; padding-bottom:8px; background-color:#F4F8BE; margin-top:4px; width:300px">
+            <table border="0">
+                <tbody>
+                    <tr>
+                        <td>
+                            <span>-&nbsp;<b>REFUND&nbsp;</b>normal tickets</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>-&nbsp;<b>SETTLE determined&nbsp;</b>Over/Under tickets of BETDAQ</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>- Mark remaining tickets of BETDAQ as "Running"</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+  
+</div>

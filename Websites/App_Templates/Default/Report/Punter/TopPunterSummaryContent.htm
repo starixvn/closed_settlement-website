@@ -1,0 +1,36 @@
+﻿<table id="table" class="tbllayout" cellspacing="1px" cellpadding="1px">
+	<thead>
+	<tr class="title" id="trHeader">
+			<th style="width:100px">Username</th>
+            <th style="width:100px">Winlost</th>
+            <th style="width:100px">Turnover</th>
+			<th style="width:100px">Margin</th>
+            <th style="width:100px">IP</th>
+            <th style="width:100px">BetCount</th>
+		</tr>		
+	</thead>
+	<tbody>
+	    <!--Content-->
+		<tr bgcolor="white" class="{class_Total}">	
+	        <td class="l rpt-link" onclick="SelTopPunterByCustID('{CustId}', '{UserName}', '{OrderBy}', '{OrderType}', '{LeagueId}');">{UserName}</td>
+            <td class="r">{WinlostIBC}</td>
+            <td class="r">{TurnOver}</td>
+	        <td class="r">{Margin}</td>
+            <td class="c rpt-link" onclick="SelIPByCustomer('{CustId}', '{UserName}', '{fromdate}', '{todate}', '{LeagueId}');">view by ip</td>
+	        <td class="r rspace rpt-link" onclick="SelBetCountByCustomer('{CustId}', '{UserName}', '{fromdate}', '{todate}', '{LeagueId}');">{BetCount}</td>	
+        </tr>        
+        <!--/Content-->               
+	</tbody>		
+    <tfoot>
+        <!--Footer-->
+        <tr class="report-footer" id="trFooter">	
+	        <td style="text-align:left" class="total1">Total</td>
+            <td class="r total1">{WinlostIBC}</td>
+            <td class="r total1">{TurnOver}</td>
+	        <td class="r total1">{Margin}</td>
+            <td class="r total1"></td>
+	        <td class="r rspace total1">{BetCount}</td>	
+        </tr>        
+        <!--/Footer-->
+    </tfoot>        
+</table>

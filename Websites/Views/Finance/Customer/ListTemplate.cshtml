@@ -1,0 +1,91 @@
+﻿<table border="1" style="border-collapse: collapse">
+    <thead>
+        <tr>
+            <td class="cellborder cellheader col40">
+                <div class="c b">
+                    No
+                </div>
+            </td>
+            <td class="cellborder cellheader col60">
+                <div class="c b">
+                    Status
+                </div>
+            </td>
+            <td class="cellborder cellheader col140">
+                <div class="c b">
+                    User Name
+                </div>
+            </td>
+            <td class="cellborder cellheader col140">
+                <div class="c b">
+                    Nick Name
+                </div>
+            </td>
+            <td class="cellborder cellheader col140">
+                <div class="c b">
+                    First Name
+                </div>
+            </td>
+            <td class="cellborder cellheader col140">
+                <div class="c b">
+                    Last Name
+                </div>
+            </td>
+            @if (ViewData["roleid"].ToString() != "1")
+            {
+                <td class="cellborder cellheader col40">
+                    <div class="c b">
+                        View
+                    </div>
+                </td>
+            }
+        </tr>
+    </thead>
+    <tbody id="tbodyCustList">
+    </tbody>
+    <script id="scriptTmpl" type="text/html">
+        <tr><td class="cellborder">
+                <div class="c">${Order}</div>
+            </td><td class="cellborder">
+                <div class="c">${Status}</div>
+            </td><td align="center" class="cellborder" style="position:relative">
+                <span menuedit="true" menuid="#div_${Id}" 
+                    onclick="superList.openEditCustInfo('${Id}','${Type}');"
+                class="canchange">${UserName}</span>
+                @Html.Partial("~/Views/Finance/Customer/MenuEdit.cshtml")
+            </td><td class="cellborder">
+                <div class="c">${UserName2}</div>
+            </td><td class="cellborder">
+                <div class="c">${FirstName}</div>
+            </td><td class="cellborder">
+                <div class="c">${LastName}</div>
+            </td>{{if RoleId != 1}}<td align="center" class="cellborder">
+                <a class="c canchange" href="Index?upline=${Id}&roleid=${RoleId}">View</a>
+            </td>{{/if}}
+        </tr>
+    </script>
+    <script id="scriptTmpl_NoInfo" type="text/html">
+            <tr><td class="cellborder" align="center" colspan="7">
+                <span style="font-weight:bold">There is no information</span>
+            </td>
+            </tr>
+    </script>
+    <tfoot id="footer">
+        <tr>
+            <td colspan="7" class="cellborder">
+                <div paging="true" class="content-pagination bgtitle clearfix">
+                    <div class="pagination-scroll">
+                        <table cellspacing="0" cellpadding="1" width="100%">
+                            <tr>
+                                <td>
+                                    <div id="pagination">
+                                        &nbsp;</div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </tfoot>
+</table>

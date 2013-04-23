@@ -1,0 +1,77 @@
+<tr>
+  <td style="display:{none-tlposition} ; width:25%;" class="l">{super-position}</td>
+	<td class="c">
+		<select class="select-pt" name="listSOUB{sporttype}" id="listSOUB{sporttype}" onchange="On_ChangeSuper(this);">{listSOUBValue}</select>
+		<input type="button" name="btnReduce1"  value=" "   class="btn-dec1"  onclick="ReducePT('listSOUB{sporttype}',1)"/>
+		<input type="button" name="btnIncrease1" value=" "   class="btn-inc1" onclick="IncreasePT('listSOUB{sporttype}',1)"/>
+		<input type="button" name="btnReduce10" value=" " class="btn-dec10" onclick="ReducePT('listSOUB{sporttype}',10)"/>
+		<input type="button" name="btnIncrease10" value=" " class="btn-inc10" onclick="IncreasePT('listSOUB{sporttype}',10)"/>
+  </td>
+	<td class="c">
+		<select class="select-pt" name="listSOEB{sporttype}" id="listSOEB{sporttype}" onchange="On_ChangeSuper(this);">{listSOEBValue}</select>
+	</td>
+	<td rowspan="{copy-ou-rowspan}" class="l">
+		<input type="checkbox" onclick="CopyPositionTaking(this);"  name="chkCopyOU201" id="chkCopyOU201"/>&nbsp;{lblCopyFromOU}
+	</td>
+</tr>
+<!--master-pt-->
+<tr style="display:{ptmaster-none}">
+  <td style="display:{none-tlposition}" class="l">{master-position}</td>
+	<td class="c">
+		<select class="select-pt" onchange="On_ChangeMaster(this);" name="listMOUB{sporttype}" id="listMOUB{sporttype}">{listMOUBValue}</select>
+		<input type="button" id="btnR1HdpB" name="listMHdpB" value=" "   class="btn-dec1" onclick="ReducePT('listMOUB{sporttype}',1)"/>
+		<input type="button" id="btnI1HdpB" name="listMHdpB" value=" "   class="btn-inc1" onclick="IncreasePT('listMOUB{sporttype}',1)"/>
+		<input type="button" id="btnR10HdpB" name="listMHdpB" value=" " class="btn-dec10" onclick="ReducePT('listMOUB{sporttype}',10)"/>
+		<input type="button" id="btnI10HdpB" name="listMHdpB" value=" " class="btn-inc10" onclick="IncreasePT('listMOUB{sporttype}',10)"/>
+	</td>
+	<td class="c">
+		<select class="select-pt" onchange="On_ChangeMaster(this);" name="listMOEB{sporttype}" id="listMOEB{sporttype}">{listMOEBValue}</select>
+	</td>
+</tr>
+<!--/master-pt-->
+<!--agent-pt-->
+<tr style="display:{spt-none}">
+	<td style="display:{none-tlposition}" class="l">{agent-position}</td>
+	<td class="c">
+		<select class="select-pt" name="listAOUB{sporttype}" id="listAOUB{sporttype}">{listAOUBValue}</select>
+
+		<input type="button" name="btnReduce1" value=" "   class="btn-dec1" onclick="ReducePT('listAOUB{sporttype}',1)"/>
+		<input type="button" name="btnIncrease1" value=" "   class="btn-inc1" onclick="IncreasePT('listAOUB{sporttype}',1)"/>
+		<input type="button" name="btnReduce10" value=" " class="btn-dec10" onclick="ReducePT('listAOUB{sporttype}',10)"/>
+		<input type="button" name="btnIncrease10" value=" " class="btn-inc10" onclick="IncreasePT('listAOUB{sporttype}',10)"/>
+  </td>
+	<td class="c">
+		<select class="select-pt" name="listAOEB{sporttype}" id="listAOEB{sporttype}">{listAOEBValue}</select>
+	</td>
+</tr>
+<!--/agent-pt-->
+<!--preset-pt-->
+<tr class="{spt-preset-hidden}">
+  <td style="display:{none-tlposition}" class="c">
+    Auto Super Preset<br />Position
+  </td>
+	<td class="l">
+    <div>
+      <input type="checkbox" value="yes" name="chkSPOEB" id="chkSPOEB"  onclick="autoPtSwitch(14);" />
+    </div>
+    <select class="select-pt" name="listSPOEB" id="listSPOEB">{listSPOEBValue}</select>
+    <input type="button" name="listSPHdpB" value=" "   class="btn-dec1" onclick="ReducePT('listSPOEB',1)"/>
+    <input type="button" name="listSPHdpB" value=" "   class="btn-inc1" onclick="IncreasePT('listSPOEB',1)"/>
+    <input type="button" name="listSPHdpB" value=" " class="btn-dec10" onclick="ReducePT('listSPOEB',10)"/>
+    <input type="button" name="listSPHdpB" value=" " class="btn-inc10" onclick="IncreasePT('listSPOEB',10)"/>
+  </td>
+	<td class="l">
+    <div>
+      <input type="checkbox" value="yes" name="chkSPFxOB" id="chkSPFxOB"  onclick="autoPtSwitch(15);" />
+    </div>
+    <select class="select-pt" name="listSPFxOB{sporttype}" id="listSPFxOB{sporttype}">{listSPFxOBValue}</select>
+  </td>
+	<td class="l">
+    <div>
+      <input type="checkbox" value="yes" name="chkSPFtOB" id="chkSPFtOB"  onclick="autoPtSwitch(16);" />
+    </div>
+    <select class="select-pt" name="listSPFtOB{sporttype}" id="listSPFtOB{sporttype}">{listSPFtOBValue}</select>
+  </td>
+</tr>
+<!--/preset-pt-->
+</table>

@@ -1,0 +1,17 @@
+<tr>
+  <td class="c">{no}</td>
+  <td class="r"><b>{credit}</b></td>
+  <td class="r" style="color: {balanceColor};"><b>{balance}</b></td>
+  <td class="r" style="color: {YesterdaybalanceColor};"><b>{yesterdaybalance}</b></td>
+  <td class="r"><b>{outstanding}</b></td>
+  <td class="c">
+    <input type="checkbox" id="{id}" name="{id}" value="{yesterdaybalance_value}" {chkdisable} onclick="_CheckItem('{formname}','{id}');" />
+  </td>
+  <td class="c">
+    <a href="CustInfo.aspx?username={username}" target="leftPanel">
+      {username}
+    </a>
+  </td>
+  <td class="c">{firstname}</td>
+  <td class="c">{lastname}</td>
+</tr>

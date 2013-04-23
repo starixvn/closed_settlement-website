@@ -1,0 +1,56 @@
+	<table align="center" id="data"  border="1" cellpadding="0" cellspacing="0" class="settlement dataTable"  style="width:1200px;">
+      <thead> 
+      <tr >
+		    <td colspan="15"  class="c fontbold" style=" background-color:#ffabab;">
+                <span id="spBettype"> {bettype}</span> Daily Report: <span id="spWLDate">{wldate}</span>                          
+            </td>				
+	 </tr> 
+	  <tr align="center">	
+	    <th class="ag" rowspan="2" colspan="2" align="center" valign="center">Meeting-Currency</th>
+        <th class="ibc" rowspan="2" align="center" valign="center"><b>Race</b></th>         
+        
+        <th class="ag" colspan="5"><b>Member(Overall)</b></th>
+        <th class="ibc" colspan="6"><b>Agency(12BET)</b></th>
+        <th class="phu" rowspan="2"><b>Amount <br>due to IBC</b></th>     
+        
+      </tr>
+	  <tr align="center">
+        <th class="ag"><b>Win TO</b></th>
+        <th class="ag" ><b>Place TO</b></th>
+        <th class="ag" ><b>W/P TO</b></th>
+        <th class="ag" ><b>Total TO</b></th>
+        <th class="ag" ><b>Dividend<br> Won</b></th>
+        
+        <th class="ibc" ><b>Win TO</b></th>
+        <th class="ibc" ><b>Place TO</b></th>
+        <th class="ibc" ><b>W/P TO</b></th>
+        <th class="ibc" ><b>Total TO</b></th>
+        <th class="ibc" ><b>PT <br/>Win/Loss</b></th>
+        <th class="ibc" ><b>Comm <br/>Income</b></th>
+	  </tr>
+	  </thead>
+	  <tbody>
+	<!--content-->
+      <tr class="{bgcolor}">
+		<!--Blank--><td  rowspan="{rowspan}"  colspan="2" class="c fontbold"> {Meeting_Currency} </td><!--/Blank-->
+		<td class="c">{RaceName}</td>		
+		
+		<td class="r">{MemWinTO}</td>
+		<td class="r">{MemPlaceTO}</td>
+		<td class="r">{MemWinPlaceTO}</td>
+        <td class="r {wrongsetting}">{MemTotalTO}</td>
+		<td class="r">{MemDividendWon}</td>		
+		
+		<td class="r">{Ag12BETWinTO}</td>
+		<td class="r">{Ag12BETPlaceTO}</td>
+		<td class="r">{Ag12BETWinPlaceTO}</td>
+        <td class="r {wrongsetting}">{Ag12BETTotalTO}</td>
+        <td class="r">{Ag12BETPTWL}</td>
+		<td class="r">{Ag12BETCommInc}</td>
+		
+		<td class="r">{AmountDueIBC}</td>
+		
+	 </tr>
+	<!--/content-->			
+	</tbody>
+ </table>

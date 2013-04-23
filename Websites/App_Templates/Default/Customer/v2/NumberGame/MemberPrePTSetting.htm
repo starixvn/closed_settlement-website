@@ -1,0 +1,38 @@
+﻿ <!--agent-pt1-->
+    <tr>
+        <td class="c" colspan="2">
+            Deadball
+        </td>
+        <td>
+            <select class="select-pt copyAll" name="listM1stOUD" id="listM1stOUD">
+                {listM1stOUDValue}
+            </select>
+            <input type="button" name="btnReduce1" value=" " class="btn-dec1" onclick="ReducePT('listM1stOUD',1)" />
+            <input type="button" name="btnIncrease1" value=" " class="btn-inc1" onclick="IncreasePT('listM1stOUD',1)" />
+            <input type="button" name="btnReduce10" value=" " class="btn-dec10" onclick="ReducePT('listM1stOUD',10)" />
+            <input type="button" name="btnIncrease10" value=" " class="btn-inc10" onclick="IncreasePT('listM1stOUD',10)" />
+        </td>
+        <td>
+            <select class="select-pt copyfromD" name="listM1stOED" id="listM1stOED">
+                {listM1stOEDValue}
+            </select>
+        </td>
+        <td>
+            <select class="select-pt copyfromD" name="listM1stWaFTD" id="listM1stWaFTD">
+                {listM1stWaFTDValue}
+            </select>
+        </td>
+        <td>
+            <select class="select-pt copyfromD" name="listM1stOEFTD" id="listM1stOEFTD">
+                {listM1stOEFTDValue}
+            </select>
+        </td>
+       <td colspan="2">
+            <input class="copyAll" type="checkbox" onclick="NumberGameCopyPT('Deadball');"
+                name="chkCopy1stOUD" id="chkCopy1stOUD" />
+            Copy From 1st Last O/U
+       </td>
+    </tr>
+<!--/agent-pt1-->
+    
+   

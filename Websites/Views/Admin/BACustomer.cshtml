@@ -1,0 +1,141 @@
+﻿
+ <link href="~/App_Themes/Public/Message.css" rel="stylesheet" type="text/css" />
+ <link href="~/js/jQuery/Pager/pagination.css" rel="stylesheet" type="text/css" />
+ <link href="~/App_Themes/Report/reportgrid.css" rel="stylesheet" type="text/css" />
+ <script src="~/js/jQuery/Template/jquery.tmpl.js" type="text/javascript"></script>
+ <link href="~/js/jQuery/UI/css/custom-theme/jquery-ui-1.8.10.custom.css" rel="stylesheet" type="text/css" />
+
+<script src="~/js/jQuery/json2.js" type="text/javascript"></script>
+<script src="~/js/common.js" type="text/javascript"></script>
+<script src="~/js/BlockUI.js?ver=@Sunplus.Accounting.Core.Configurations.WebSettings.Version" type="text/javascript"></script> 
+<script src="~/js/Datetime.js" type="text/javascript"></script>
+ <script src="~/js/showhidepopup.js" type="text/javascript"></script>
+ <script src="~/js/jQuery/jquery-ui-1.8.20.custom.min.js" type="text/javascript"></script>
+<script src="~/js/jQuery/gridscroller.js?ver=@Sunplus.Accounting.Core.Configurations.WebSettings.Version" type="text/javascript"></script>
+<script src="~/js/jQuery/Pager/jpager.js?ver=@Sunplus.Accounting.Core.Configurations.WebSettings.Version" type="text/javascript"></script>
+<script src="~/Views/Admin/Js/BACustomer.js?ver=@Sunplus.Accounting.Core.Configurations.WebSettings.Version" type="text/javascript"></script>
+<script type="text/javascript">
+    BACustomer.model =  @Html.Raw(Json.Encode(Model));
+</script>
+<div class="main">
+        <div class="maincontent">
+            <table border="0" cellpadding="0px" cellspacing="0px" class="maincontent_header">
+                <tr>
+                    <td class="maincontent_headerL">
+                    </td>
+                    <td class="maincontent_headerC">
+                        BA Customer
+                    </td>
+                    <td class="maincontent_headerR">
+                    </td>
+                </tr>
+            </table>
+            <div class="maincontent_box" style="width: 542px;">
+                <table>
+                    <tr>
+                        <td>
+                            <b>Licensee</b>
+                        </td>
+                        <td style="width: 80px">
+                            <select id="dlLicensee" style="vertical-align:middle;width:80px" >
+                                <option value="0">All</option>
+                            </select>         
+                        </td>
+                       <td style="padding-left: 15px">
+                            <b>Username</b>
+                        </td>
+                        <td >
+                           <input type="text" id="txtusername" style="width: 100px" />       
+                        </td>
+                         <td style="padding-left: 15px"><b>Status</b></td>
+                        <td style="width: 100px">
+                            <select id="dlStatus" onchange="" style="vertical-align:middle;width:100px" >
+                                <option value="0">All</option>
+                                <option value="1">Is Followed</option>
+                                <option value="2">Is Not Followed</option>
+                            </select>         
+                        </td>
+                        <td align="left">
+                            <input type="button" class="btn" onclick="BACustomer.getBACustomerList(0)" value="Submit"
+                                name="btnShow" id="btnShow" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="mainreport" style="padding-top: 2px">
+                <div id="BACustomer" class="content-warper hidden">
+                    <div class="content-toolbox bgtitle">
+                        <div id="gridTitle" class="gridtitle">
+                        </div>
+                        <div>
+                            <input type="button" class="btn" onclick="showPopup()" value="Followed Bet"
+                                name="btnShow" id="btnFollowedBet" disabled="disabled" />
+                        </div> 
+                    </div>
+                    <div class="content-header clearfix">
+                        <div class="header-scroll">
+                            <table class="tbl-header-scroll" id="tblcontent">
+                                <tr>
+                                    <td style="border-bottom: none 0px;">
+                                        <div class="col200 c"> Username
+                                        </div>
+                                    </td>
+                                    <td style="border-bottom: none 0px;">
+                                        <div class="col160 c">
+                                             <input type="checkbox" id="cbxIsFol" onclick="changeStatusCbx()" /><b>Is Followed</b>
+                                        </div>
+                                    </td>
+                                    <td style="border-bottom: none 0px;">
+                                        <div class="col160 c">
+                                            Licensee</div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="content-body clearfix">
+                        <div class="body-scroll">
+                            <table id="tblBACustomer" class="tbl-body-scroll">
+                            </table>
+                        </div>
+                    </div>
+                    <div class="content-pagination bgtitle clearfix">
+                    <div class="pagination-scroll">
+                        <table style="width: 100%" cellspacing="0" cellpadding="1">
+                            <tr>
+                                <td>
+                                    <div id="pagination">
+                                        &nbsp;</div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="addMultiBACustomers" class="hidden">
+        <span id="errMsgDig"></span>
+        <table style="padding-left:60px">
+        <tr>
+            <td>
+                <div class="w60 l">Rate
+                </div>
+            </td>
+            <td>
+                <div class="w150">
+                    <input type="text" id="txtRate" onkeyup="" style="width:145px" /> 
+                </div>
+            </td>
+        </tr>
+        <tr>
+             <td colspan="2" style="padding-top:5px; padding-left:50px">
+               <div class="c">
+                    <input type="button" id="btnAddNew" value="Add" class="btn" onclick="BACustomer.addMultiBACustomers()" /> 
+               </div>
+            </td>
+        </tr>
+        </table>
+    </div> 

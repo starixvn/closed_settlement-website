@@ -1,0 +1,91 @@
+	<table id="table" cellspacing="1px" cellpadding="1px" class="c bg" width="2300px" border="{border}">
+      <thead> 
+      <tr class="white">  
+		    <th colspan="27"  class="fontbold" style="!margin-top:-3px;!border-top:solid 1px ffabab; text-align:left">
+		        <span style="margin-left:10px;>
+                    <span id="spBettype"> {bettype}</span> 
+                    <!--export-->        
+                    <input type="button" class="btnExcel" id="btnExport" name="btnExport" value="   " onclick="ExportToExcel();"/>
+                    <!--/export-->        
+                </span> 
+            </th>				 
+	 </tr>
+	  <tr class="c bg">	 
+	    <th colspan="2" class="ag" align="center" valign="center">&nbsp;</th>
+        <th class="ibc" width="60" align="center" valign="center">&nbsp;</th>
+        
+        <th class="ag" colspan="6"><b>Agency</b></th>
+        <th class="ibc" colspan="8"><b>IBC</b></th>
+        <th class="phu" colspan="7"><b>Betting World</b></th>       
+        
+        <th class="ibc" width="60" align="center" valign="center">&nbsp;</th>
+        <th class="ag" colspan="2" align="center" valign="center">&nbsp;</th>
+        
+      </tr>
+	  <tr class="c bg" id="trHeader">	    
+	    <th colspan="2" class="ag" align="center" valign="center">Meeting-Currency</th>
+	    <th class="ibc" width="80" align="center" valign="center"><b>Race</b></th>
+	  
+        <th class="ag" ><b>Win TO</b></th>
+        <th class="ag" ><b>Place TO</b></th>
+        <th class="ag" ><b>W/P TO</b></th>
+        <th class="ag" ><b>Total TO</b></th>
+        <th class="ag" ><b>Comm <br/>Income</b></th>
+        <th class="ag" ><b>PT <br/>Win/Loss</b></th>
+        
+        <th class="ibc" ><b>Win TO</b></th>
+        <th class="ibc" ><b>Place TO</b></th>
+        <th class="ibc" ><b>W/P TO</b></th>
+        <th class="ibc" ><b>Total TO</b></th>
+        <th class="ibc" ><b>Comm <br/>Income</b></th>
+        <th class="ibc" ><b>Comm <br/>Expense</b></th>        
+        <th class="ibc" ><b>PT <br/>Win/Loss</b></th>
+        <th class="ibc" ><b>Net <br/>Income</b></th>
+        
+        <th class="phu" ><b>Win TO</b></th>
+        <th class="phu" ><b>Place TO</b></th>
+        <th class="phu" ><b>W/P TO</b></th>
+        <th class="phu" ><b>Total TO</b></th>
+        <th class="phu" ><b>Dividend <br/>Won</b></th>
+        <th class="phu" ><b>Comm <br/>Expense</b></th>        
+        <th class="phu" ><b>Amount <br/>Due</b></th>
+        
+        <th class="ibc" width="80" align="center" valign="center"><b>Race</b></th>
+        <th class="ag" colspan="2" align="center" valign="center">Meeting-Currency</th>
+	  </tr>
+	  </thead>
+	<!--content-->
+      <tr class="{bgcolor}">
+		<!--Blank--><td  rowspan="{rowspan}" colspan="2"  class="c fontbold">{Meeting_Currency}</td><!--/Blank-->
+		<td class="c" nowrap>{RaceName}</td>
+		
+		<td class="r">{AgWinTO}</td>
+		<td class="r">{AgPlaceTO}</td>  
+		<td class="r">{AgWinPlaceTO}</td>
+        <td class="r">{AgTotalTO}</td>
+		<td class="r">{AgCommInc}</td>
+		<td class="r">{AgWL}</td>
+		
+		<td class="r">{IBCWinTO}</td>
+		<td class="r">{IBCPlaceTO}</td>
+		<td class="r">{IBCWinPlaceTO}</td>
+        <td class="r">{IBCTotalTO}</td>
+		<td class="r">{IBCCommInc}</td>
+		<td class="r">{IBCCommExp}</td>
+		<td class="r">{IBCPTWL}</td>
+		<td class="r">{IBCNetInc}</td>
+		
+		<td class="r">{BWWinTO}</td>
+		<td class="r">{BWPlaceTO}</td>
+		<td class="r">{BWWinPlaceTO}</td>
+        <td class="r">{BWTotalTO}</td>
+        <td class="r">{BWDividendWon}</td>
+        <td class="r">{BWCommExp}</td>
+		<td class="r">{BWAmountDue}</td>
+		
+		<td class="c" nowrap>{RaceName}</td>
+		<!--Blank2--><td  rowspan="{rowspan}" colspan="2"  class="c fontbold rborder">{Meeting_Currency}</td><!--/Blank2-->
+		
+	 </tr>
+	<!--/content-->		
+ </table>

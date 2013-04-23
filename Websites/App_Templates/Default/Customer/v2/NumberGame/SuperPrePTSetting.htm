@@ -1,0 +1,105 @@
+﻿ <!--super-pt1-->
+    <tr>
+        <td rowspan="3" class="c">
+            Deadball
+        </td>
+        <td class="l">
+            {super-position}
+        </td>
+        <td>
+            <select class="select-pt copyAll" name="listS1stOUD" id="listS1stOUD" onchange="On_ChangeSuper(this);">
+                {listS1stOUDValue}
+            </select>
+            <input type="button" name="btnReduce1" value=" " class="btn-dec1" onclick="ReducePT('listS1stOUD',1)" />
+            <input type="button" name="btnIncrease1" value=" " class="btn-inc1" onclick="IncreasePT('listS1stOUD',1)" />
+            <input type="button" name="btnReduce10" value=" " class="btn-dec10" onclick="ReducePT('listS1stOUD',10)" />
+            <input type="button" name="btnIncrease10" value=" " class="btn-inc10" onclick="IncreasePT('listS1stOUD',10)" />
+        </td>
+        <td>
+            <select class="select-pt copyfromD" name="listS1stOED" id="listS1stOED" onchange="On_ChangeSuper(this);">
+                {listS1stOEDValue}
+            </select>
+        </td>
+        <td>
+            <select class="select-pt copyfromD" name="listS1stWarriorD" id="listS1stWarriorD" onchange="On_ChangeSuper(this);">
+                {listS1stWarriorDValue}
+            </select>
+        </td>
+        <td>
+            <select class="select-pt copyfromD" name="listS1stOEFTD" id="listS1stOEFTD" onchange="On_ChangeSuper(this);">
+                {listS1stOEFTDValue}
+            </select>
+        </td>
+       <td rowspan="3" colspan="2">
+            <input class="copyAll" type="checkbox" onclick="NumberGameCopyPT('Deadball');"
+                name="chkCopy1stOUD" id="chkCopy1stOUD" />
+            Copy From 1st Last O/U
+       </td>  
+    </tr>
+    <!--/super-pt1-->
+    
+    <!--master-pt1-->
+    <tr>
+        <td class="l">
+            {master-position}
+        </td>
+        <td>
+            <select class="select-pt copyAll" name="listM1stOUD" id="listM1stOUD" onchange="On_ChangeMaster(this);">
+                {listM1stOUDValue}
+            </select>
+            <input type="button" name="btnReduce1" value=" " class="btn-dec1" onclick="ReducePT('listM1stOUD',1)" />
+            <input type="button" name="btnIncrease1" value=" " class="btn-inc1" onclick="IncreasePT('listM1stOUD',1)" />
+            <input type="button" name="btnReduce10" value=" " class="btn-dec10" onclick="ReducePT('listM1stOUD',10)" />
+            <input type="button" name="btnIncrease10" value=" " class="btn-inc10" onclick="IncreasePT('listM1stOUD',10)" />
+        </td>
+        <td>
+            <select class="select-pt copyfromD" name="listM1stOED" id="listM1stOED" onchange="On_ChangeMaster(this);">
+                {listM1stOEDValue}
+            </select>
+        </td>
+        <td>
+            <select class="select-pt copyfromD" name="listM1stWarriorD" id="listM1stWarriorD" onchange="On_ChangeMaster(this);">
+                {listM1stWarriorDValue}
+            </select>
+        </td>
+        <td>
+            <select class="select-pt copyfromD" name="listM1stOEFTD" id="listM1stOEFTD" onchange="On_ChangeMaster(this);">
+                {listM1stOEFTDValue}
+            </select>
+        </td>
+    
+    </tr>
+    <!--/master-pt1-->
+    
+    <!--agent-pt1-->
+    <tr>
+        <td class="l">
+            {agent-position}
+        </td>
+        <td>
+            <select class="select-pt copyAll" name="listA1stOUD" id="listA1stOUD">
+                {listA1stOUDValue}
+            </select>
+            <input type="button" name="btnReduce1" value=" " class="btn-dec1" onclick="ReducePT('listA1stOUD',1)" />
+            <input type="button" name="btnIncrease1" value=" " class="btn-inc1" onclick="IncreasePT('listA1stOUD',1)" />
+            <input type="button" name="btnReduce10" value=" " class="btn-dec10" onclick="ReducePT('listA1stOUD',10)" />
+            <input type="button" name="btnIncrease10" value=" " class="btn-inc10" onclick="IncreasePT('listA1stOUD',10)" />
+        </td>
+        <td>
+            <select class="select-pt copyfromD" name="listA1stOED" id="listA1stOED">
+                {listA1stOEDValue}
+            </select>
+        </td>
+       <td>
+            <select class="select-pt copyfromD" name="listA1stWarriorD" id="listA1stWarriorD">
+                {listA1stWarriorDValue}
+            </select>
+        </td>
+        <td>
+            <select class="select-pt copyfromD" name="listA1stOEFTD" id="listA1stOEFTD">
+                {listA1stOEFTDValue}
+            </select>
+        </td>
+     
+    </tr>
+    <!--/agent-pt1-->

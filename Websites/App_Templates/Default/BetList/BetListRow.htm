@@ -1,0 +1,73 @@
+<tr class="c {live} {odd_even}">
+	<td>{no}</td>
+  <!--uname-->
+  <td>{uname}</td>
+  <!--/uname-->
+	<td class="time">{TransTime}</td>
+	<td class="event {align}" colspan="{EventColspan}">{Event}<span class="f3red">{BetType}</span></td>
+	<td class="h4light-{color} {ShowChoice}">{Choice}</td>
+	<td class="{ShowHdp}">{Hdp_Score}</td>
+	<!--otherbet-->
+	<td class="r odds width-80">{Odds}</td>
+	<!--/otherbet-->
+	<!--winplacebet-->
+	<td style="width:95px">
+	    <table width="100%" class="r">
+            <!--winOdds43-->    
+            <tr><td class="b">{lblWinOdds}:</td><td>{winOdds}</td></tr>
+            <!--/winOdds43-->
+            <tr><td class="b">{lblWinOddsSet}:</td><td>{winOddsSet}</td></tr>
+            <!--PlaceOdds43-->
+            <tr><td class="b">{lblPlaceOdds}:</td><td>{placeOdds}</td></tr>
+            <!--/PlaceOdds43-->
+            <tr><td class="b">{lblPlaceOddsSet}:</td><td>{placeOddsSet}</td></tr>        
+      </table>
+    </td>
+	<!--/winplacebet-->
+	<td class="r stake">{Stake}</td>
+  <!--CreatorIP-->
+  <td class="r">{WinLost}</td>
+  <!--/CreatorIP-->
+  <!--otherbet-->
+  <td>{Status} <br />
+	  <a class="canchange" style="color:#16178D" onclick="hrRaceResultWd=dhtmlwindow.open('ajaxbox', 'ajax', '{raceresultpage}', '{wdtitle}', 'width={wdwidth}px,height={wdheight}px,left={wdleft}px,top={wdtop}px,resize=0,scrolling=1'); return false">{lblResult}</a>
+  </td>
+  <!--/otherbet-->
+  <!--winplacebet-->
+  <td class="r">
+    <table align="center">
+        <tr>
+            <td class="l b">{lblWin}</td><td class="l b">:</td><td class="r">{winStatus}</td>
+        </tr>
+        <tr>
+            <td class="l b">{lblPlace}</td><td class="l b">:</td><td class="r">{placeStatus}</td>
+        </tr>
+		<!--hrraceresult-->
+		<tr>
+			<td class="c" colspan="3">
+				<a class="canchange" style="color:#16178D" onclick="hrRaceResultWd=dhtmlwindow.open('ajaxbox', 'ajax', '{raceresultpage}', '{wdtitle}', 'width={wdwidth}px,height={wdheight}px,left={wdleft}px,top={wdtop}px,resize=0,scrolling=1'); return false">{lblResult}</a>
+			</td>
+		</tr>
+		<!--/hrraceresult-->
+    </table>
+  </td> 
+	<!--/winplacebet-->
+  <td class="{ByUser} r">{SuperPT}<br /><span class="bl-sporttype">{SuperComm}</span></td>
+  <td class="{ByUser} r">{MasterPT}<br /><span class="bl-sporttype">{MasterComm}</span></td>
+  <td class="{ByUser} r">{AgentPT}<br /><span class="bl-sporttype">{AgentComm}</span></td>
+  <td class="{ByUser}">{FinalScore}</td>
+  <td class="{ByUser}"><a href="BetList.aspx?bltype=3&fdate={fdate}&ip={ip}">{ip}</a></td>
+  <td class="{ByUser}">
+	  <!--delete-->
+	  <img src="{ThemePath}/Images/icon_del.gif" width="11px" border="0" onmouseover="this.style.cursor='pointer';"  onclick="confirm_delete({BetId}, '{betfrom}', '{matchid}')" />
+	  <!--/delete-->
+  </td>
+  <!--CreatorIP-->
+  <td>{Operator}<br/>
+      <!--BetListByIP-->{ip}<!--/BetListByIP-->
+      <!--BetListNoByIP-->
+      <a href="BetList.aspx?bltype=3&fdate={fdate}&ip={ip}">{ip}</a>
+      <!--/BetListNoByIP-->
+  </td>  
+  <!--/CreatorIP-->
+</tr>

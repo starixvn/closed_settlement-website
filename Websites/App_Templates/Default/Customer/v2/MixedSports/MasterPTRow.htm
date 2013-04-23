@@ -1,0 +1,61 @@
+﻿<table class="tblcollapse" style="{tblWidth}"  id="tbl99_9">
+    {ptheader}
+    
+    <!--master-preset-->
+    <tr>
+        <td class="l">
+            {master-position}
+        </td>
+        <td>
+            <select class="select-pt copyall" name="listMMixParlay" id="listMMixParlay">
+                {listMMixParlayValue}
+            </select>
+            <input type="button" name="btnReduce1" value=" " class="btn-dec1" onclick="ReducePT('listMMixParlay',1)" />
+            <input type="button" name="btnIncrease1" value=" " class="btn-inc1" onclick="IncreasePT('listMMixParlay',1)" />
+            <input type="button" name="btnReduce10" value=" " class="btn-dec10" onclick="ReducePT('listMMixParlay',10)" />
+            <input type="button" name="btnIncrease10" value=" " class="btn-inc10" onclick="IncreasePT('listMMixParlay',10)" />
+        </td>        
+    </tr>
+    <!--/master-preset-->
+    
+    <!--super-preset-->
+    <tr>
+        <td class="l">
+            {super-position}
+        </td>
+        <td>
+            <select {statuslstSMixParlay}  class="select-pt copyall" name="listSMixParlay" id="listSMixParlay" onchange="SelectOnChange('listSMixParlay');">
+                {listSMixParlayValue}
+            </select>
+            <input type="button" name="btnReduce1" value=" " class="btn-dec1" onclick="ReducePT('listSMixParlay',1)" />
+            <input type="button" name="btnIncrease1" value=" " class="btn-inc1" onclick="IncreasePT('listSMixParlay',1)" />
+            <input type="button" name="btnReduce10" value=" " class="btn-dec10" onclick="ReducePT('listSMixParlay',10)" />
+            <input type="button" name="btnIncrease10" value=" " class="btn-inc10" onclick="IncreasePT('listSMixParlay',10)" />
+        </td>
+            
+    </tr>
+    <!--/super-preset-->
+    
+    
+    <!--auto-super-preset-->
+    <tr>
+        <td class="l" rowspan="2">
+            {auto-super-position}
+        </td>
+        <td><input {statuschkSAutoMixParlay} class="copyall" type="checkbox" id="chkMixParlay" name="chkMixParlay" onclick="CheckAutoPT(this, 'listSMixParlay', 'autoSMixParlay');" /></td>
+    </tr>
+    <tr>
+        
+        <td>
+            <select {statuslstSAutoMixParlay} class="select-pt copyall" name="autoSMixParlay" id="autoSMixParlay">
+                {listSAutoMixParlayValue}
+            </select>
+            <input type="button" name="btnReduce1" value=" " class="btn-dec1" onclick="ReducePT('autoSMixParlay',1)" />
+            <input type="button" name="btnIncrease1" value=" " class="btn-inc1" onclick="IncreasePT('autoSMixParlay',1)" />
+            <input type="button" name="btnReduce10" value=" " class="btn-dec10" onclick="ReducePT('autoSMixParlay',10)" />
+            <input type="button" name="btnIncrease10" value=" " class="btn-inc10" onclick="IncreasePT('autoSMixParlay',10)" />
+        </td>
+        
+    </tr>
+    <!--/auto-super-preset-->
+</table>

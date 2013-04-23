@@ -1,0 +1,25 @@
+<table class="tbllayout" style="width:320px;" cellspacing="1">
+	<tr>
+		<td class="l b" style="width:50%;">Agent User Name:</td>
+		<td class="l">
+			<input type="text" class="txt" name="txtUname" id="txtUname" onkeypress='return KeyPress(event);' onkeyup='OnOffButton();'/>
+		</td>
+	</tr>
+  <tr>
+    <td class="l b" style="width:50%;">Transfer All Members:</td>
+    <td class="l">
+      <div style="width:25px;"><input type="radio"  checked="checked" name="chkTransferAll" value="members" class="styled" /></div>
+    </td>
+  </tr>
+  <tr>
+    <td class="l b" style="width:50%;">Transfer All  Downlines:</td>
+    <td class="l">
+      <div style="width:25px;"><input type="radio" name="chkTransferAll" value="downlines" class="styled"/></div>
+    </td>
+  </tr>
+  <tr>
+		<td colspan="2" class="c">		    
+		    <input class="btn" type="button" onclick="CheckInputValue();" name="btnSubmit" id="btnSubmit" value="Submit" disabled="disabled"  />			    
+		</td>
+	</tr>
+</table>

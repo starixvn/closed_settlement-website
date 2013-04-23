@@ -1,0 +1,72 @@
+﻿.PTSportLabel, .BettingLimit
+{
+    background-color: #B5C4D0 !important;
+    border-top: 0px solid #7C98A4;
+    border-left: 1px solid #7C98A4;
+    color: #000000;
+}
+.PTSport
+{
+    background-color: #B5C4D0;
+    border-bottom: 1px solid #7C98A4;
+    border-right: 1px solid #7C98A4;
+    border-top: 1px solid #7C98A4;
+}
+.BettingLimit, .BettingLimit4
+{
+    border-bottom: 1px solid #7C98A4;
+    border-right: 1px solid #7C98A4;
+}
+.GroupSetLabel, .BettingLimitHeaderCopied, .BettingLimitHeaderTop5, .BettingLimitHeaderTop9, .BettingLimitHeaderTop
+{
+    border-top: 1px solid #7C98A4;
+    border-left: 1px solid #7C98A4;
+    background-color: #B5C4D0;
+}
+.PTSportCopied, .PTSportCopiedActive, .PTSportEdit, .PTSportCopiedInactive, .PTSportEditCopied
+{
+    background-color: #B5C4D0 !important;
+}
+.GroupLabel, .GroupLabel2, .BetTypeHeader2, .BetTypeSelect, .BetTypeHeader, .BetTypeHeaderActive, .BettingLimitHeader, .BettingLimitHeader2, .BettingLimitItem, .BettingLimitHeaderCopiedActive, .BettingLimitHeaderTop4, .BettingLimitItem4, .BettingLimitItem5, .BettingLimit4, .BettingLimitHeader2, .BettingLimitItem9
+{
+    border-top: 1px solid #7C98A4;
+    border-left: 1px solid #7C98A4;
+}
+.BettingLimitItem2
+{
+    border-top: 1px solid #7C98A4;
+}
+.PTGrid
+{
+    min-width: 700px;
+}
+.settingdiv
+{
+    width: 100%;
+    font-weight: bold;
+    text-align: center;
+    color: Black;
+    border: 1px solid #7C98A4;
+    margin-top: 10px;
+    margin-bottom: 1px;
+    background-color: #B5C4D0 !important;
+}
+.BetTypeHeader, .BetTypeHeader2, .BetTypeHeaderActive
+{
+    font-weight: bold;
+}
+.BettingLimitHeader, .BettingLimitHeader2, .BettingLimitHeaderCopied, .BettingLimitHeaderCopiedActive
+{
+    padding: 1px 0px 2px;
+}
+.PTSportLabel2
+{
+    border-top: 0px solid #7C98A4;
+    border-left: 1px solid #7C98A4;
+    color: #000000;
+}
+.BettingLimitItem92
+{
+    border-top: 1px solid #7C98A4;
+    border-left: 1px solid #ECF3F7;
+}

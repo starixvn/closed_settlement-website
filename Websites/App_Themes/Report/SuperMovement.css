@@ -1,0 +1,77 @@
+﻿body 
+{
+	margin:5px;
+	font-family: Tahoma,Arial, Helvetica, sans-serif;
+	font-size:11px;
+}
+
+.l
+{
+	text-align:left;
+}
+.c
+{
+	text-align:center;
+	line-height:18px;
+}
+.r
+{
+	text-align:right;
+}
+
+
+
+td.report-title-middle
+{
+    text-align:left;
+}
+
+
+/*REPORT ROW*/
+tr.bg-even
+{
+	background:#DFEAFF;
+	line-height:20px;
+}
+tr.bg-odd
+{
+	background:#F9F9F7;
+	line-height:20px;
+}
+tr.bg-total
+{
+	background:#357EC7;
+	color:#fff;
+	font-weight:bold;
+	text-align:center;
+	line-height:20px;
+}
+.cl1{background-color: #FFDDFF;}
+.cl2{background-color: #ffffee;}
+.cl3{background-color: #dfeaff;}
+
+/*REPORT FOOTER*/
+.btnExcel
+{
+	font-size:11px;
+	height:20px;
+	border:1px solid #ccc7ba;
+	margin:0;
+	padding-left:3px;
+	padding-right:3px;
+	overflow:visible;
+	background:url(../SteelBlue/images/excel.gif) repeat-x;
+	cursor:pointer;
+}
+.btn
+{
+	font-size:11px;
+	height:20px;
+	border:1px solid #ccc7ba;
+	margin:0;
+	padding-left:3px;
+	padding-right:3px;
+	overflow:visible;
+	background:url(../SteelBlue/images/button_orange.jpg) repeat-x;
+	cursor:pointer;
+}

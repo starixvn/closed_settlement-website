@@ -1,0 +1,39 @@
+﻿ <!--setting-->
+  <tr>
+      <td  width="100px" class="l" style="padding-left: 2px;">
+          <span>{lblL}</span>
+      </td>
+      <td width="22px" class="c">
+          <span id="{lblidL}" class="{classnameL}" onmouseover="{jsonmouseoverL}" onmouseout="{jsonmouseoutL}"
+              onclick="{jsonclickL}" name="{lblidL}">{L}</span>
+      </td>
+      <td width="100px" class="l" style="padding-left: 2px;">
+          <span>{lblR}</span>
+      </td>
+      <td width="22px" class="l">
+	<!--removeable--><span id="{lblidR}" class="{classnameR}" onmouseover="{jsonmouseoverR}" onmouseout="{jsonmouseoutR}" onclick="{jsonclickR}" name={lblidR}>{R}</span><!--/removeable-->
+	</td>
+  </tr>
+ <!--/setting-->
+ <!--popup-->
+  <input type="hidden" id="{lblidL}chkhdf" value="{oldvalueL}"/>
+  <input type="hidden" id="{lblidL}chkhdfDL" value="{oldvalueDLL}"/>
+  <input type="hidden" id="{lblidR}chkhdf" value="{oldvalueR}"/>
+  <input type="hidden" id="{lblidR}chkhdfDL" value="{oldvalueDLR}"/>
+  <div  id="{lblidL}overlay" class="overlay" >
+  </div>
+   <div class="Popupsetting" id="{lblidL}Pop">
+		<b>{lblPopUpTitleL}</b><br />
+		<input type="checkbox"  id="{lblidL}chk" onclick="changeDisable(this,'{typeL}');" value="yes" name="chkDisabledHRL" {statusL} />&nbsp;{lblagenttypeL}
+        <!--chkdownlineL--><span id="{lblidL}boxDL" style="display:inline;font-weight:normal;"><input type="checkbox"  {statusDLL}  id="{lblidL}chkDL" disabled="disabled" value="yes" name="{lblidL}chkDL"  />{lblagenttypeDLL}<!--/chkdownlineL--></span><br />
+        <input type="button" onclick="UpdateSettingStatus('{lblidL}chk','{lblidL}chkDL','{lblidL}');" value="Update" class="btn" />&nbsp;<input type="button" value="Cancel" onclick="ClosePopup('{lblidL}Pop');" class="btn" />
+  </div>
+  <div  id="{lblidR}overlay" class="overlay" >
+  </div>
+  <div class="Popupsetting" id="{lblidR}Pop">
+		<b>{lblPopUpTitleR}</b><br />
+		<input type="checkbox"  id="{lblidR}chk" onclick="changeDisable(this,'{typeR}');" value="yes" name="chkDisabledHRR" {statusR} />&nbsp;{lblagenttypeR}
+        <!--chkdownlineR--><span id="{lblidR}boxDL" style="display:inline;font-weight:normal;"><input type="checkbox"  id="{lblidR}chkDL" disabled="disabled" value="yes" name="{lblidR}chkDL" {statusDLR} />{lblagenttypeDLR}<!--/chkdownlineR--></span><br />
+        <input type="button" value="Update" onclick="UpdateSettingStatus('{lblidR}chk','{lblidR}chkDL','{lblidR}');" class="btn" />&nbsp;<input type="button" value="Cancel" onclick="ClosePopup('{lblidR}Pop');" class="btn" />
+  </div>
+  <!--/popup-->

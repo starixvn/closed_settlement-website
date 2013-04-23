@@ -1,0 +1,27 @@
+﻿<table class="tblcollapse" style="width:180px" id="tbl99_9">
+    {ptheader}
+    <!--MaxPT-->
+    <tr>
+        <!--super-min--><td class="l">{super-position}</td><!--/super-min-->
+        <td>
+            <select class="select-pt copyall" name="listSMixParlay" id="listSMixParlay" onchange="On_ChangeSuper(this);">{listSMixParlayValue}</select>
+            <input type="button" name="btnReduce1"  value=" "   class="btn-dec1"  onclick="ReducePT('listSMixParlay',1)"/>
+            <input type="button" name="btnIncrease1" value=" "   class="btn-inc1" onclick="IncreasePT('listSMixParlay',1)"/>
+            <input type="button" name="btnReduce10" value=" " class="btn-dec10" onclick="ReducePT('listSMixParlay',10)"/>
+            <input type="button" name="btnIncrease10" value=" " class="btn-inc10" onclick="IncreasePT('listSMixParlay',10)"/>
+        </td>
+    </tr>
+    <!--/MaxPT-->
+    <!--MinPT-->
+    <tr>
+        <td class="l">{master-position}</td>
+        <td>
+            <select class="select-pt copyall" onchange="On_ChangeMaster(this);" name="listMMixParlay" id="listMMixParlay">{listMMixParlayValue}</select>
+            <input type="button" id="Button1" name="btnReduce1" value=" "   class="btn-dec1" onclick="ReducePT('listMMixParlay',1)"/>
+            <input type="button" id="Button2" name="btnIncrease1" value=" "   class="btn-inc1" onclick="IncreasePT('listMMixParlay',1)"/>
+            <input type="button" id="Button3" name="btnReduce10" value=" " class="btn-dec10" onclick="ReducePT('listMMixParlay',10)"/>
+            <input type="button" id="Button4" name="btnIncrease10" value=" " class="btn-inc10" onclick="IncreasePT('listMMixParlay',10)"/>
+        </td>
+    </tr>
+    <!--/MinPT-->
+</table>

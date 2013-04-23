@@ -1,0 +1,31 @@
+<!--header-->
+<script src="{RootPath}js/Calendar2/js/jscal2.js"></script>
+<script src="{RootPath}js/Calendar2/js/lang/en.js"></script>
+<link rel="stylesheet" type="text/css" href="{RootPath}js/Calendar2/css/jscal2.css" />
+<link rel="stylesheet" type="text/css" href="{RootPath}js/Calendar2/css/border-radius.css" />
+<link rel="stylesheet" type="text/css" href="{RootPath}js/Calendar2/css/{calendarTheme}/{calendarTheme}.css" />
+<!--/header-->
+<input id="{txtDate}" class="txt" value="{currentDate}" type="text" size="13" readonly
+    name="{txtDate}" style="width: 80px;" />
+<input onclick="return false;" alt="" id="{btnCal}" title="Date selector" class="img-date-selector"
+    height="17" src="{RootPath}App_Themes/Images/calendar.gif" width="18" type="image" />
+<script> 
+
+ {calobj}  Calendar.setup({
+         animation: false,
+         showTime :{showTime},
+         bottomBar:{showToday},
+         trigger: "{btnCal}",
+         inputField: "{txtDate}",
+         dateFormat: "%m/%d/%Y",
+         {minDate}
+         {maxDate}
+         selection     : [{SelectedDate}],
+         onSelect: function() {
+            {eventOnSelect}
+            this.hide();
+            }
+     });
+     
+</script>
+

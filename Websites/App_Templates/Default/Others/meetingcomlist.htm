@@ -1,0 +1,42 @@
+﻿{#template MAIN}
+{#include table root= $T}
+{#/template MAIN}
+
+{#template table}
+<div class="GridContent">
+    <div class="divGridScroll">
+        <table cellpadding="1" cellspacing="1" width="365">
+            <thead>
+                <tr class="ui-widget-header">
+                   <th colspan="4">Partner - {$P.PartnerType}</th>
+                </tr>
+                <tr class="ui-widget-header">
+                    <th style="width:40px">#</th>
+                    <th style="width:160px">Meeting</th>
+                    <th style="width:80px">ProgramID</th>
+                    <th style="width:80px">Pool Currency</th>
+                </tr>
+            </thead>
+	        <tbody>
+		        {#foreach $T.MeetingData as r}
+                    {#include row root=$T.r}
+                {#/for}
+	        </tbody>
+        </table>
+    </div>
+</div> 
+{#/template table}
+
+
+{#template row}
+<tr {#cycle values=['','class="evenrow"']}>
+	{#if $T.Num!=0}
+	<td >{$T.Num}</td>
+	<td >{$T.Meeting}</td>
+    <td style="width:80px">{$T.ProgramID}</td>
+    <td style="width:80px">{$T.PoolCurrency}</td>
+	{#else}
+	<td colspan="4" class="c">{$T.Meeting}</td>
+	{#/if}
+</tr>
+{#/template row}

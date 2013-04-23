@@ -1,0 +1,311 @@
+﻿@model Fanex.Tarus.Entities.Report.LiveCasinoWinLoss
+
+ @functions{
+            public string css(string input)
+            {
+                string minus = "-";
+                if (input.Contains(minus)) return "red";
+                return "";
+            }
+        }
+
+<div class="content-header clearfix">
+    <div class="header-frozen">
+        <table class="tbl-header-frozen">
+            <tr>
+                <td rowspan="2">
+                    <div id="divReportType" class="c sorter w130 height"  onclick="LiveCasinoWinLoss.params.Sort.IsDate = false; LiveCasinoWinLoss.sorting(this, 'ReportType')">
+                        Username
+                    </div>
+                </td>
+                <td rowspan="2">
+                    <div id="divCurrency" class="c w60">
+                        Currency</div>
+                </td>
+                <td rowspan="2">
+                    <div id="divRollingTO" class="c sorter w110 " onclick="LiveCasinoWinLoss.sorting(this, 'RollingTO')">
+                        Total 
+                        <br />
+                        bets</div>
+                </td>
+                <td rowspan="2">
+                    <div id="divCompanyTO" class="c w100">
+                        Company
+                        <br />
+                        T/O</div>
+                </td>
+                <td rowspan="2">
+                    <div id="divGrossComm" class="c w80">
+                        Gross
+                        <br />
+                        comm.</div>
+                </td>
+                <td rowspan="2">
+                    <div id="divBets" class="c w70">
+                        #Bets</div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="header-scroll">
+        <table class="tbl-header-scroll" id="tbreportheader">
+            <tr>
+                <td colspan="3" style="border-bottom: 1px solid #7C98A4;">
+                    <div id="divAgent" class="c w280">
+                        Agent</div>
+                </td>
+                <td colspan="3" style="border-bottom: 1px solid #7C98A4;">
+                    <div id="divMaster" class="c w280">
+                        Master</div>
+                </td>
+                <td colspan="3" style="border-bottom: 1px solid #7C98A4;">
+                    <div id="divSuper" class="c w280">
+                        Super</div>
+                </td>
+                <td rowspan="2">
+                    <div id="divCompany" class="c sorter w100" onclick="LiveCasinoWinLoss.sorting(this, 'Company')">
+                        Company &nbsp;</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="divAgentWinLoss" class="c w100">
+                        Win/Loss</div>
+                </td>
+                <td>
+                    <div id="divAgentCom" class="c w80">
+                        Comm.</div>
+                </td>
+                <td>
+                    <div id="divAgentTol" class="c sorter w100" onclick="LiveCasinoWinLoss.sorting(this, 'AgentToltal')">
+                        Total</div>
+                </td>
+                <td>
+                    <div id="divMasterWinLoss" class="c w100">
+                        Win/Loss</div>
+                </td>
+                <td>
+                    <div id="divMasterCom" class="c w80">
+                        Comm.</div>
+                </td>
+                <td>
+                    <div id="divMasterTol" class="c sorter w100" onclick="LiveCasinoWinLoss.sorting(this, 'MasterTotal')">
+                        Total</div>
+                </td>
+                <td>
+                    <div id="divSuperWinLoss" class="c w100">
+                        Win/Loss</div>
+                </td>
+                <td>
+                    <div id="divSuperCom" class="c w80">
+                        Comm.</div>
+                </td>
+                <td>
+                    <div id="divSuperTol" class="c w100 sorter" onclick="LiveCasinoWinLoss.sorting(this, 'SuperTotal')">
+                        Total</div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="content-body clearfix">
+    <div class="body-frozen">
+        <table id="tblLicenseeFrozen" class="tbl-body-frozen">
+            @foreach (var reportBy in Model.TotalItemByReportType)
+            {
+                foreach (var groupChild in reportBy.Items)
+                {
+                <tr>
+                    @if (groupChild == reportBy.Items.First())
+                    {
+                        <td rowspan ="@reportBy.Items.Count">
+                            <div class="w130 text c height">
+                                 <a id="@groupChild.ReportType" href='javascript:;' onclick="LiveCasinoWinLoss.specialReport=0;LiveCasinoWinLoss.getReportData(false,1,0,'@groupChild.ReportType');LiveCasinoWinLoss.setDefaultFilter();">@groupChild.ReportType</a>
+                            </div>
+                        </td>
+                    }
+                    <td>
+                        <div class="c w60 height">@groupChild.CurrencyName</div>
+                    </td>
+                    <td>
+                        <div class="r w110 height">@groupChild.RollingTO</div>
+                    </td>
+                    <td>
+                        <div class="r w100 height">@groupChild.CompanyTO</div>
+                    </td>
+                    <td>
+                        <div class="r w80 height">@groupChild.GrossComm</div>
+                    </td>
+                    <td>
+                        <div class="r w70 height">@groupChild.TotalBets</div>
+                    </td>
+                </tr>
+                }
+            }
+        </table>
+    </div>
+    <div class="body-scroll">
+        <table id="tblBodyLiveCasino" class="tbl-body-scroll">
+            @foreach (var reportBy in Model.TotalItemByReportType)
+            {
+                foreach (var groupChild in reportBy.Items)
+                {
+                <tr>
+                    <td>
+                        <div class="r w100 height">@groupChild.AgentWinLoss</div>
+                    </td>
+                    <td>
+                        <div class="r w80 height">@groupChild.AgentComm</div>
+                    </td>
+                    <td>
+                        <div class="r w100 height">@groupChild.AgentToltal</div>
+                    </td>
+                    <td>
+                        <div class="r w100 height">@groupChild.MasterWinLoss</div>
+                    </td>
+                    <td>
+                        <div class="r w80 height">@groupChild.MasterComm</div>
+                    </td>
+                    <td>
+                        <div class="r w100 height">@groupChild.MasterTotal</div>
+                    </td>
+                    <td>
+                        <div class="r w100 height">@groupChild.SuperWinLoss</div>
+                    </td>
+                    <td>
+                        <div class="r w80 height">@groupChild.SuperComm</div>
+                    </td>
+                    <td>
+                        <div class="r w100 height">@groupChild.SuperTotal</div>
+                    </td>
+                    <td>
+                        <div class="r w100 height @css(groupChild.Company)">@groupChild.Company</div>
+                    </td>
+                </tr>
+                }
+            }
+        </table>
+    </div>
+</div>
+<div class="content-footer">
+    <div class="footer-frozen">
+        <table id="tblLicenseefooterfrozen" class="tbl-footer-frozen">
+            @foreach (var totalCurrency in Model.TotalCurrency)
+            {
+                <tr class="total">
+                    <td>
+                        <div class="w193 c height">
+                          Total  @totalCurrency.CurrencyName</div>
+                    </td>
+                    <td>
+                        <div class="r w110 height">@totalCurrency.RollingTO</div>
+                    </td>
+                    <td>
+                        <div class="r w100 height">@totalCurrency.CompanyTO</div>
+                    </td>
+                    <td>
+                        <div class="r w80 height">@totalCurrency.GrossComm</div>
+                    </td>
+                    <td>
+                        <div class="r w70 height">@totalCurrency.TotalBets</div>
+                    </td>
+                </tr>
+            }
+            @foreach (var grandTotalCurrency in Model.GrandTotalCurrency)
+            {
+                <tr>
+                    <td>
+                        <div class="w193 c height">
+                            Grand Total @grandTotalCurrency.CurrencyName</div>
+                    </td>
+                    <td>
+                        <div class="r w110 height">@grandTotalCurrency.RollingTO</div>
+                    </td>
+                    <td>
+                        <div class="r w100 height">@grandTotalCurrency.CompanyTO</div>
+                    </td>
+                    <td>
+                        <div class="r w80 height">@grandTotalCurrency.GrossComm</div>
+                    </td>
+                    <td>
+                        <div class="r w70 height">@grandTotalCurrency.TotalBets</div>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+    <div id="footerLiveCasino" class="footer-scroll">
+        <table class="tbl-footer-scroll" id="tblFooterLiveCasino">
+            @foreach (var totalCurrency in Model.TotalCurrency)
+            {
+                <tr class="total">
+                    <td>
+                        <div class="r w100"> @totalCurrency.AgentWinLoss</div>
+                    </td>
+                    <td>
+                        <div class="r w80 height">@totalCurrency.AgentComm</div>
+                    </td>
+                    <td>
+                        <div class="r w100  height">@totalCurrency.AgentToltal</div>
+                    </td>
+                    <td>
+                        <div class="r w100 height">@totalCurrency.MasterWinLoss</div>
+                    </td>
+                    <td>
+                        <div class="r w80 height">@totalCurrency.MasterComm</div>
+                    </td>
+                    <td>
+                        <div class="r w100 height">@totalCurrency.MasterTotal</div>
+                    </td>
+                    <td>
+                        <div class="r w100 height">@totalCurrency.SuperWinLoss</div>
+                    </td>
+                    <td>
+                        <div class="r w80 height">@totalCurrency.SuperComm</div>
+                    </td>
+                    <td>
+                        <div class="r w100 height">@totalCurrency.SuperTotal</div>
+                    </td>
+                    <td>
+                        <div class="r w100 height @css(totalCurrency.Company)">@totalCurrency.Company</div>
+                    </td>
+                </tr>
+            }
+            @foreach (var grandTotalCurrency in Model.GrandTotalCurrency)
+            {
+                <tr>
+                    <td>
+                        <div class="r w100 height">@grandTotalCurrency.AgentWinLoss</div>
+                    </td>
+                    <td>
+                        <div class="r w80 height">@grandTotalCurrency.AgentComm</div>
+                    </td>
+                    <td>
+                        <div class="r w100 height">@grandTotalCurrency.AgentToltal</div>
+                    </td>
+                    <td>
+                        <div class="r w100 height">@grandTotalCurrency.MasterWinLoss</div>
+                    </td>
+                    <td>
+                        <div class="r w80 height">@grandTotalCurrency.MasterComm</div>
+                    </td>
+                    <td>
+                        <div class="r w100 height">@grandTotalCurrency.MasterTotal</div>
+                    </td>
+                    <td>
+                        <div class="r w100 height">@grandTotalCurrency.SuperWinLoss</div>
+                    </td>
+                    <td>
+                        <div class="r w80 height">@grandTotalCurrency.SuperComm</div>
+                    </td>
+                    <td>
+                        <div class="r w100 height">@grandTotalCurrency.SuperTotal</div>
+                    </td>
+                    <td>
+                        <div class="r w100 height @css(grandTotalCurrency.Company)">@grandTotalCurrency.Company</div>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

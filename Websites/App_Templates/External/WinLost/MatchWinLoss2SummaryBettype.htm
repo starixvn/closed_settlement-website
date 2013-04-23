@@ -1,0 +1,49 @@
+  <table border="1px" cellspacing="0" cellpadding="0" bordercolor="#ababab">
+  <tr class="title">
+    <td></td>
+    <td colspan="3">
+      Live
+    </td>
+    <td colspan="3">
+      None-Live
+    </td>
+    <td style="width: 5px"></td>
+    <td colspan="2">
+      Line Total
+    </td>
+    <td></td>
+  </tr>
+  <tr class="title">
+    <td style="width:140px;">Bettype</td>
+    <td style="width:70px;">Admin1</td>
+    <td style="width:70px; ">Admin2</td>
+    <td style="width:70px; ">Total</td>
+    <td style="width:70px; ">Admin1</td>
+    <td style="width:70px; ">Admin2</td>
+    <td style="width:70px; ">Total</td>
+    <td id="tdSBlank"></td>    
+    <td id="tdSReal"  style="width:100px; ">Real</td>
+    <td id="tdSVirtual"  style="width:100px; ">Virtual</td>
+    <td id="tdSVariance"  style="width:100px; ">Variance</td>
+  </tr>
+  <!--content-->
+  <tr align="right" {style}>
+    <td align="center"  style="width:140px; ">{Bettype}</td>
+    <td>{Live_Admin1}</td>
+    <td>{Live_Admin2}</td>
+    <td>{Live_Total}</td>
+    <td>{NoneLive_Admin1}</td>
+    <td>{NoneLive_Admin2}</td>
+    <td>{NoneLive_Total}</td>
+    {rowspan}
+    <td>{Real}</td>
+    <td>{Virtual}</td>
+    <td>{Variance}</td>
+  </tr>
+  <!--/content-->
+  <!--nodata-->
+  <tr align="center">
+    <td colspan="11">{nodata}</td>
+  </tr>
+  <!--/nodata-->
+</table>

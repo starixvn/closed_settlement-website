@@ -1,0 +1,175 @@
+﻿
+@model Fanex.Tarus.Web.ViewModel.Report.Models.LiveCasinoWinLossViewModel
+
+<link href="@Url.Content("~/js/jQuery/UI/css/custom-theme/jquery-ui-1.8.10.custom.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/App_Themes/Public/table.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/js/jQuery/autocomplete/styles.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/App_Themes/Report/reportgrid.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/js/jQuery/Pager/pagination.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/Views/Report/LiveCasinoWinLoss/Style/Common.css?ver=1")" rel="stylesheet" type="text/css" />
+
+<table border="0" cellpadding="0px" cellspacing="0px" class="maincontent_header">
+    <tr>
+        <td class="maincontent_headerL">
+        </td>
+        <td class="maincontent_headerC" style="width:180px">
+            Live Casino Agency Win Loss &nbsp; <span id="spConditionIcon" class="upCondition" onclick="LiveCasinoWinLoss.showhideSearchCondition(this);">
+                &nbsp;</span>
+        </td>
+        <td class="maincontent_headerR">
+        </td>
+    </tr>
+</table>
+<div class="maincontent_box" style="width: 778px;">
+    <table>
+        <tr>
+            <td>
+                <span><b>Search by:</b></span>
+            </td>
+            <td style="width: 103px;">
+                Time period
+            </td>
+            <td style="width: 130px;">
+                @Html.DropDownList("TimePeriods", ViewBag.TimePeriods as SelectList, new { id = "TimePeriodID" })
+            </td>
+            <td style="width: 100px;">
+                From date
+            </td>
+            <td style="width: 120px;">
+                <input id="txtfromdate" class="txtdate" readonly="readonly" />
+            </td>
+            <td style="width: 70px;">
+                To date
+            </td>
+            <td style="width: 120px;">
+                <input id="txttodate" class="txtdate" readonly="readonly" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span><b>User search:</b></span>
+            </td>
+            <td>
+                Username
+            </td>
+            <td>
+               <input type="text" id="txtUsername" onblur="gameStatisticsHelper.on_Blur()" onfocus="gameStatisticsHelper.on_Focus()" style="width: 118px;" onkeypress="return KeyPress(event);" value="All"  autocomplete="false"/>
+            </td>
+            <td colspan="4">
+                <input type="checkbox" id="chkExcludeTestAcc" checked="checked" />Exclude test accounts
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span><b>Game search:</b></span>
+            </td>
+            <td>
+                Company
+            </td>
+            
+            <td style="width: 120px;">@Html.DropDownList("CompanyID", new SelectList(Model.GameSearchViewModel.Company.ToArray(), "Id", "Name", -1))
+            </td>
+            <td>
+                Game type
+            </td>
+            <td style="width: 103px;">
+                @Html.DropDownList("GameTypeID", new SelectList(Model.GameSearchViewModel.GameType.ToArray(), "Id", "Name", 0))
+            </td>
+            <td>
+                Game table
+            </td>
+            <td style="width: 103px;">
+                <div id="GameTable">@Html.Partial("~/Views/Report/LiveCasinoWinLoss/_GameTableDropdowlist.cshtml", Model.GameSearchViewModel.GameTable)</div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td>
+                Currency
+            </td>
+            <td style="width: 103px;">
+                @Html.DropDownList("CurrencyID", new SelectList(Model.GameSearchViewModel.Currency.ToArray(), "Id", "Name", -1))
+            </td>
+            <td>
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span><b>Report by:</b></span>
+            </td>
+            <td id="tdReportFilter" colspan="6">
+                <input id="rdo0" type="radio" checked="checked" value="0" name="reportby"/>
+                Daily&nbsp;
+                <input id="rdo1" type="radio" value="1" name="reportby"/>
+                Monthly&nbsp;
+                <input id="rdo2" type="radio" value="2" name="reportby"/>
+                Username&nbsp;
+                <input id="rdo3" type="radio"  value="3" name="reportby"/>
+                Game type&nbsp;
+                <input id="rdo4" type="radio" value="4" name="reportby"/>
+                Game table&nbsp;
+                <input id="rdo5" type="radio"  value="5" name="reportby"/>
+                Agency&nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td colspan="6" style="text-align: center">
+                <input class="btn" type="button" id="btnReport" value="REPORT" onclick="LiveCasinoWinLoss.specialReport=0;LiveCasinoWinLoss.getReportData(false,0,0);LiveCasinoWinLoss.setDefaultFilter();" />
+                <input class="btn" type="button" id="btnToday" value="" onclick="LiveCasinoWinLoss.getReportDataSpecialDate(1);LiveCasinoWinLoss.setDefaultFilter();" />
+                <input class="btn" type="button" id="btnYesterday" value="" onclick="LiveCasinoWinLoss.getReportDataSpecialDate(2);LiveCasinoWinLoss.setDefaultFilter();" />
+                <input type="button" value="  " id="btnExportNew" class="btnExcel" title="Export to Excel"
+                    onclick="LiveCasinoWinLoss.specialReport=0;LiveCasinoWinLoss.exportExcel(false);" />
+            </td>
+        </tr>
+    </table>
+    
+</div>
+
+<div id="Report">
+     @Html.Partial("~/Views/Report/LiveCasinoWinLoss/_GetReport.cshtml", Model.LiveCasinoWinLoss)
+</div>
+@{
+    if (Request["IsExport"] != null && DNAide.Core.CastAide.AsBoolean(Request["IsExport"]))
+    {
+        var pRequest = new Fanex.Tarus.Entities.Report.LiveCasinoWinLossParams()
+        {
+
+            ExcludeTest = DNAide.Core.CastAide.AsBoolean(Request["isExcludeTest"]),
+            FromDate = Request["fdate"],
+            ToDate = Request["tdate"],
+            GameTable = DNAide.Core.CastAide.AsInt32(Request["gTable"]),
+            GameType = DNAide.Core.CastAide.AsInt32(Request["gType"]),
+            ReportBy = DNAide.Core.CastAide.AsInt32(Request["reporttype"]),
+            SiteID = DNAide.Core.CastAide.AsInt32(Request["site"]),
+            UserName = Request["username"],
+            Currency = DNAide.Core.CastAide.AsInt32(Request["currency"]),
+            FromCache = DNAide.Core.CastAide.AsBoolean(Request["fromcache"])
+        };
+        Fanex.Tarus.Business.Interface.Report.ILiveCasinoWinLossService exportData = new Fanex.Tarus.Business.Implement.Report.LiveCasinoWinLossService();
+        exportData.ExportLiveCasinoAgencyWinLossReport(pRequest);
+    }
+}
+<iframe id="frm" width="0" height="0" frameborder="0" style="display: none"></iframe>
+
+<script language="javascript" type="text/javascript">
+    var _today = '@DateTime.Now.ToShortDateString()';
+    var _yesterday = '@DateTime.Now.AddDays(-1).ToShortDateString()';
+    window.rootUrl = '@Url.Content("~")';
+
+    
+    head.js("@Url.Content("~/js/json2.js")")
+        .js("@Url.Content("~/js/jQuery/UI/jquery-ui-1.8.10.custom.min.js")")
+        .js("@Url.Content("~/js/common.js")")                    
+        .js("@Url.Content("~/js/jQuery/gridscroller.js")")
+        .js("@Url.Content("~/js/jQuery/Pager/jpager.js")")
+        .js("@Url.Content("~/js/jQuery/autocomplete/jquery.autocomplete.js")")
+        .js("@Url.Content("~/js/jQuery/gridscroller.js")")
+        .js("@Url.Content("~/js/jQuery/Pager/jpager.js")")
+        .js("@Url.Content("~/Views/Report/LiveCasinoWinLoss/Scripts/LiveCasinoWinLoss.js?version=3")");
+            
+ </script>

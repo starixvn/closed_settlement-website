@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C2043B3C-AF85-4334-8542-F9AC2B031D79}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sunplus.Accounting.Entities</RootNamespace>
+    <AssemblyName>Sunplus.Accounting.Entities</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CasinoLibrary">
+      <HintPath>..\..\..\..\Dependency\CasinoLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="DNAide">
+      <HintPath>..\..\..\..\Dependency\DNAide.dll</HintPath>
+    </Reference>
+    <Reference Include="Sunplus.Core.LoggingLib">
+      <HintPath>..\..\..\..\Dependency\Sunplus.Core.LoggingLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\ExternalSiteGridBO.cs" />
+    <Compile Include="BetAggregator\AmtLimitLicensee.cs" />
+    <Compile Include="BetAggregator\BACurrenyGroupDTO.cs" />
+    <Compile Include="BetAggregator\BALicWinlossDaily.cs" />
+    <Compile Include="BetAggregator\BetListRow.cs" />
+    <Compile Include="BetAggregator\BetListDTO.cs" />
+    <Compile Include="BetAggregator\LicenseeConfig.cs" />
+    <Compile Include="BetAggregator\LicenseeWinLossCommDTO.cs" />
+    <Compile Include="Casino\CasinoSettingDetail.cs" />
+    <Compile Include="Casino\CSCustomerDetail.cs" />
+    <Compile Include="Casino\GameKindDetail.cs" />
+    <Compile Include="Casino\GameTypeDetail.cs" />
+    <Compile Include="Casino\StakeLevelDetail.cs" />
+    <Compile Include="Country.cs" />
+    <Compile Include="CreditTerm\Group.cs" />
+    <Compile Include="CustomerDetail.cs" />
+    <Compile Include="Customer\BetSetting.cs" />
+    <Compile Include="Customer\CustomerExRate.cs" />
+    <Compile Include="Customer\ConsolidatedGroup\ConsolidatedGroupTable.cs" />
+    <Compile Include="Customer\ConsolidatedGroup\ConsolidatedMemberTable.cs" />
+    <Compile Include="Customer\CustDetail.cs" />
+    <Compile Include="Customer\ForexAccount.cs" />
+    <Compile Include="Customer\MasterList.cs" />
+    <Compile Include="Customer\Racing\EnableRacebooksStatus.cs" />
+    <Compile Include="ErrorBO.cs" />
+    <Compile Include="ErrorDetail.cs" />
+    <Compile Include="ExchangeRate.cs" />
+    <Compile Include="FunctionBO.cs" />
+    <Compile Include="IPVNBean.cs" />
+    <Compile Include="LogDisplay\Result.cs" />
+    <Compile Include="LogDisplay\SettingPT\Tracking.cs" />
+    <Compile Include="NumberGameResult.cs" />
+    <Compile Include="Others\News.cs" />
+    <Compile Include="PositionTakingDetail.cs" />
+    <Compile Include="PositionTaking\Poker\BetSetting.cs" />
+    <Compile Include="PositionTaking\Poker\DefaultSetting.cs" />
+    <Compile Include="PositionTaking\Poker\PokerStatus.cs" />
+    <Compile Include="PositionTaking\Poker\GameComm.cs" />
+    <Compile Include="PositionTaking\Poker\GameTypeSetting.cs" />
+    <Compile Include="PositionTaking\Poker\PokerSetting.cs" />
+    <Compile Include="PositionTaking\Poker\StakeLevel.cs" />
+    <Compile Include="PositionTaking\Racing\Data.cs" />
+    <Compile Include="PositionTaking\Racing\Bettype.cs" />
+    <Compile Include="PositionTaking\Racing\MeetingComm.cs" />
+    <Compile Include="PositionTaking\Racing\Setting.cs" />
+    <Compile Include="PositionTaking\Racing\Sport.cs" />
+    <Compile Include="PositionTaking\Racing\Tote.cs" />
+    <Compile Include="BetAggregator\LicenseeDTO.cs" />
+    <Compile Include="BetAggregator\LicenseeRow.cs" />
+    <Compile Include="Report\DailyWL\DailyWLDTO.cs" />
+    <Compile Include="Report\DailyWL\DailyWLBO.cs" />
+    <Compile Include="Report\DailyWL\DailyWLDetails.cs" />
+    <Compile Include="Report\DailyWL\DailyWLRowBO.cs" />
+    <Compile Include="Customer\PT\ViewPT\Bettype.cs" />
+    <Compile Include="Customer\PT\ViewPT\Sport.cs" />
+    <Compile Include="Customer\PT\ViewPT\ViewPtDTO.cs" />
+    <Compile Include="Report\CheckBet\CheckBet.cs" />
+    <Compile Include="Report\DownLinceBalance\CurrencyDTO.cs" />
+    <Compile Include="Report\DownLinceBalance\DownLinceBalanceDTO.cs" />
+    <Compile Include="Report\LeagueWL\LeagueWLBettypeBO.cs" />
+    <Compile Include="Report\LeagueWL\LeagueWLBettypeDetailBO.cs" />
+    <Compile Include="Report\LeagueWL\LeagueWLBO.cs" />
+    <Compile Include="Report\External\ExternalWLDaily.cs" />
+    <Compile Include="Report\External\ExternalWLDetail.cs" />
+    <Compile Include="Report\Licensee\LicenseeTotalTransction.cs" />
+    <Compile Include="Report\Licensee\NegativeBalanceMember.cs" />
+    <Compile Include="Report\MatchAnalysis\MatchAnalysis.cs" />
+    <Compile Include="Report\MatchWL\MatchWL2aBONEW.cs" />
+    <Compile Include="Report\MatchWL\MatchWL2aDTONEW.cs" />
+    <Compile Include="Report\Mixparlay\LiveTypeDetail.cs" />
+    <Compile Include="Report\Mixparlay\MixParlayView.cs" />
+    <Compile Include="Report\Mixparlay\SportTypeDetail.cs" />
+    <Compile Include="Report\Mixparlay\WinLossDetail.cs" />
+    <Compile Include="Report\Monitor\Filter.cs" />
+    <Compile Include="Report\Monitor\MAMonitorRow.cs" />
+    <Compile Include="Report\NumberGame\BettypesWinLossDTO.cs" />
+    <Compile Include="Report\NumberGame\Currency.cs" />
+    <Compile Include="Report\Others\NumberOfBets.cs" />
+    <Compile Include="Report\Licensee\ConcurrentUser.cs" />
+    <Compile Include="Report\Licensee\LicenseeRow.cs" />
+    <Compile Include="Report\Licensee\DepositCurrencyBO.cs" />
+    <Compile Include="Report\Licensee\LicenseeDTO.cs" />
+    <Compile Include="Report\MatchWL\MatchWL2aBO.cs" />
+    <Compile Include="Report\MatchWL\MatchWL2aDTO.cs" />
+    <Compile Include="Report\MatchWL\WLbyBettype.cs" />
+    <Compile Include="Report\MemberStatistics\GamesActiveMembers.cs" />
+    <Compile Include="Report\MenuReport.cs" />
+    <Compile Include="Report\Others\DuplicateTickets.cs" />
+    <Compile Include="Report\Poker\PokerBO.cs" />
+    <Compile Include="Report\Racebook\RacingDailyBySiteBO.cs" />
+    <Compile Include="Report\Racebook\RacingDailyWinLossDTO.cs" />
+    <Compile Include="ResetWinning\ResetWinningDTO.cs" />
+    <Compile Include="ResultNG.cs" />
+    <Compile Include="Security\LoginFailedInformation.cs" />
+    <Compile Include="SendMailResult.cs" />
+    <Compile Include="Report\Racebook\RacingWinlossBetlistBO.cs" />
+    <Compile Include="Report\Racebook\RacingWinlossBetlistRowBO.cs" />
+    <Compile Include="Report\Racebook\RacingWinlossDetailsBO.cs" />
+    <Compile Include="Report\Racebook\RacingWinlossCurrencyBO.cs" />
+    <Compile Include="Report\Racebook\RacingWinlossBO.cs" />
+    <Compile Include="Report\Racebook\RacingWinlossDumpFileBO.cs" />
+    <Compile Include="Report\Racebook\RacingWinlossGroupRowBO.cs" />
+    <Compile Include="Report\Racebook\RacingWinlossGroupDTO.cs" />
+    <Compile Include="Report\Racebook\RacingWinlossMeetingBO.cs" />
+    <Compile Include="Report\Racebook\RacingWinlossRowBO.cs" />
+    <Compile Include="Report\NumberGame\MonthlyWinloss.cs" />
+    <Compile Include="Report\TraderPerformance.cs" />
+    <Compile Include="Report\TraderPerformanceDetail.cs" />
+    <Compile Include="Report\Mixparlay\MixparlayWonBO.cs" />
+    <Compile Include="Result.cs" />
+    <Compile Include="Settle\NumberGameBalls.cs" />
+    <Compile Include="Settle\ViewLog.cs" />
+    <Compile Include="Site.cs" />
+    <Compile Include="Report\DailyTurnover\DailyTurnoverDTO.cs" />
+    <Compile Include="SpecialDelete\EarlyKO\MixparlayTicket.cs" />
+    <Compile Include="SpecialDelete\LiveCasino\Choice.cs" />
+    <Compile Include="SpecialDelete\Message.cs" />
+    <Compile Include="IExchangRate.cs" />
+    <Compile Include="IMenuBo.cs" />
+    <Compile Include="IUser.cs" />
+    <Compile Include="Menu.cs" />
+    <Compile Include="MenuBO.cs" />
+    <Compile Include="MenuItem.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\AgentWinLoss.cs" />
+    <Compile Include="Report\IWinLoss.cs" />
+    <Compile Include="Report\MasterWinLoss.cs" />
+    <Compile Include="Report\MemberWinLoss.cs" />
+    <Compile Include="Report\SuperWinLoss.cs" />
+    <Compile Include="Report\TurnoverPositionTakingWinlossMargin.cs" />
+    <Compile Include="Report\WinLossBaseInfo.cs" />
+    <Compile Include="Report\WinLossComm.cs" />
+    <Compile Include="Report\WinLossDailyView.cs" />
+    <Compile Include="SettingControl.cs" />
+    <Compile Include="SpecialDelete\Mixparlay\MixParlayDTO.cs" />
+    <Compile Include="SpecialDelete\SpecialDeleteBO.cs" />
+    <Compile Include="SpecialDelete\SpecialDeleteDTO.cs" />
+    <Compile Include="SpecialDelete\TicketsListing\TicketsListing.cs" />
+    <Compile Include="Statement.cs" />
+    <Compile Include="User.cs" />
+    <Compile Include="UserControlBO.cs" />
+    <Compile Include="ViewModel\DailyTransaction.cs" />
+    <Compile Include="ViewModel\FinanceBettype.cs" />
+    <Compile Include="ViewModel\FinanceTransaction.cs" />
+    <Compile Include="ViewModel\Mixparlay\MixparlayDataGridBO.cs" />
+    <Compile Include="ViewModel\NumberGame\NumberGameByDateTreeGridBO.cs" />
+    <Compile Include="ViewModel\NumberGame\NumberGameDataGridBO.cs" />
+    <Compile Include="ViewModel\NumberGame\NumberGameTreeGridBO.cs" />
+    <Compile Include="ViewModel\NumberGame\NumberGameWinlostByDateBO.cs" />
+    <Compile Include="ViewModel\NumberGame\NumberGameWinlostByMatchBO.cs" />
+    <Compile Include="ViewModel\NumberGame\NumberGameWinlostDetailBO.cs" />
+    <Compile Include="ViewModel\ResetWinning.cs" />
+    <Compile Include="ViewModel\SystemBO.cs" />
+    <Compile Include="ViewModel\TransactionGroup.cs" />
+    <Compile Include="ViewModel\WinningTransaction.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties BuildVersion_UpdateAssemblyVersion="True" BuildVersion_UpdateFileVersion="True" BuildVersion_BuildVersioningStyle="None.None.Increment.Increment" BuildVersion_BuildAction="Both" BuildVersion_AssemblyInfoFilename="" BuildVersion_UseGlobalSettings="False" />
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

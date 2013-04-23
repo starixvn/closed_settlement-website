@@ -1,0 +1,220 @@
+﻿<!--ReportHead-->
+<div class="main">
+    <div class="maincontent">
+        <table border="0" cellpadding="0px" cellspacing="0px" class="maincontent_header">
+                <tr>
+                    <td class="maincontent_headerL"></td>
+                    <td class="maincontent_headerC">{BalanceMovement}</td>
+                    <td class="maincontent_headerR"></td>
+                </tr>
+        </table>
+        <div class="maincontent_box">
+            <div id="header_main">
+                <!--<form method="post">
+                      <input id="export"  type="submit" name="export" value="export"  style="display:none" />
+                </form>-->
+                <!--<div style="clear:both"></div>-->
+                <div style="width:600px">
+                    <input type="radio" id="rdBase" name="balance"  value="1" checked='checked' /> <label for="rdBase">{BaseBal}</label>
+                        <input type="radio" id="rdOriginal" name="balance" value="0" /> <label for="rdOriginal">{OriginalBal}</label>
+                        <span style="padding-left:10px">
+                            <input class="btn"  type="button" name="btnGo" id="btnGo" value="{Refresh}" onclick="DoPostBack()" />   
+                        </span>
+                        <span style='padding-left:10px'>
+                            <input class='btnExcel' id='btnExport' name='btnExport' value='   ' onclick='ExportToExcel();' type='button' title="{ExcelExport}" />                            
+                        </span>
+                        <span style='padding-left:10px'>
+                            <img id='inProgressBar' name='inProgressBar' width="16px" height="16px" style="display:none"  src="../App_Themes/Images/ajax-loader.gif" />
+                        </span>
+                </div>
+            </div>
+        </div>
+        <div class="bg_table">
+            <div id="sData"></div>
+        </div>                
+    </div>
+</div>
+<!--/ReportHead-->
+<!--ReportMain-->
+     <!--excel-replace-->
+     <table id="mainTbl" cellspacing="1" class="tbllayout">
+     <!--/excel-replace-->
+        <!--not-excel-export--><thead><!--/not-excel-export-->
+            <tr bgcolor="#e8e8e8" style="line-height:18px" >
+                <th colspan="41" class="boderTop" align="left">Super {BalType} Balance Movement Report From {from_vl} To {to_vl}</th>
+            </tr>
+            <tr class="title" style="line-height:18px;" align="center">
+                <th colspan="4">&nbsp;<input type="hidden" id="RowCnt" value="{RowCnt_vl}" /></th>
+                <th colspan="5">{Day1}</th>
+                <th colspan="5">{Day2}</th>
+                <th colspan="5">{Day3}</th>
+                <th colspan="5">{Day4}</th>
+                <th colspan="5">{Day5}</th>
+                <th colspan="5">{Day6}</th>
+                <th colspan="5">{Day7}</th>
+                <th colspan="2">&nbsp;</th>
+            </tr>
+            <tr class="title" style="line-height:18px;" align="center">
+                <th>{No}</th>
+                <th>{Agent}</th>
+                <th>{Currency}</th>
+                <th>{Bal}</th>
+            
+                <th>{pos}</th>
+                <th>{com}</th>
+                <th>{bet}</th>
+                <th>{trac}</th>
+                <th>{Bal}</th>
+                
+                <th>{pos}</th>
+                <th>{com}</th>
+                <th>{bet}</th>
+                <th>{trac}</th>
+                <th>{Bal}</th>
+                
+                <th>{pos}</th>
+                <th>{com}</th>
+                <th>{bet}</th>
+                <th>{trac}</th>
+                <th>{Bal}</th>
+                
+                <th>{pos}</th>
+                <th>{com}</th>
+                <th>{bet}</th>
+                <th>{trac}</th>
+                <th>{Bal}</th>
+                
+                <th>{pos}</th>
+                <th>{com}</th>
+                <th>{bet}</th>
+                <th>{trac}</th>
+                <th>{Bal}</th>
+                
+                <th>{pos}</th>
+                <th>{com}</th>
+                <th>{bet}</th>
+                <th>{trac}</th>
+                <th>{Bal}</th>
+                
+                <th>{pos}</th>
+                <th>{com}</th>
+                <th>{bet}</th>
+                <th>{trac}</th>
+                <th>{Bal}</th>
+                
+                <th>{Currency}</th>
+                <th>{Agent}</th>
+            </tr>
+        <!--not-excel-export--></thead><!--/not-excel-export-->
+        <!--not-excel-export--><tbody><!--/not-excel-export-->
+            <!--ReportContent-->
+            <!--normal-row-->
+            <tr class="{odd_even}" align="center">
+                <td align="center">{no_val}</td>
+                <td align="left">{agent_val}</td>
+                <td align="center">{currency_val}</td>
+                <td>{bal_val}</td>
+                
+                <td class="cl1">{pos_d1_val}</td>
+                <td class="cl1">{com_d1_val}</td>
+                <td class="cl1">{bet_d1_val}</td>
+                <td class="cl1">{trac_d1_val}</td>
+                <td class="cl1">{bal_d1_val}</td>
+                
+                <td class="cl2">{pos_d2_val}</td>
+                <td class="cl2">{com_d2_val}</td>
+                <td class="cl2">{bet_d2_val}</td>
+                <td class="cl2">{trac_d2_val}</td>
+                <td class="cl2">{bal_d2_val}</td>
+                
+                <td class="cl1">{pos_d3_val}</td>
+                <td class="cl1">{com_d3_val}</td>
+                <td class="cl1">{bet_d3_val}</td>
+                <td class="cl1">{trac_d3_val}</td>
+                <td class="cl1">{bal_d3_val}</td>
+                
+                <td class="cl2">{pos_d4_val}</td>
+                <td class="cl2">{com_d4_val}</td>
+                <td class="cl2">{bet_d4_val}</td>
+                <td class="cl2">{trac_d4_val}</td>
+                <td class="cl2">{bal_d4_val}</td>
+                
+                <td class="cl1">{pos_d5_val}</td>
+                <td class="cl1">{com_d5_val}</td>
+                <td class="cl1">{bet_d5_val}</td>
+                <td class="cl1">{trac_d5_val}</td>
+                <td class="cl1">{bal_d5_val}</td>
+                
+                <td class="cl2">{pos_d6_val}</td>
+                <td class="cl2">{com_d6_val}</td>
+                <td class="cl2">{bet_d6_val}</td>
+                <td class="cl2">{trac_d6_val}</td>
+                <td class="cl2">{bal_d6_val}</td>
+                
+                <td class="cl1">{pos_d7_val}</td>
+                <td class="cl1">{com_d7_val}</td>
+                <td class="cl1">{bet_d7_val}</td>
+                <td class="cl1">{trac_d7_val}</td>
+                <td class="cl1">{bal_d7_val}</td>
+                
+                <td align="center">{currency_val}</td>
+                <td align="left" {Padding-Right}>{agent_val}</td>
+                
+            </tr>
+            <!--/normal-row-->
+            <!--total-row-->
+            <!--not-excel-export--><tfoot><!--/not-excel-export-->
+            <tr align="right" class="report-footer">
+                <td colspan="3" class="l" style="padding-left: 20px"><b>{GrandTotal}</b></td>
+                <td><b>{bal_val}</td>
+                
+                <td><b>{pos_d1_val}</b></td>
+                <td><b>{com_d1_val}</b></td>
+                <td><b>{bet_d1_val}</b></td>
+                <td><b>{trac_d1_val}</b></td>
+                <td><b>{bal_d1_val}</b></td>
+                
+                <td><b>{pos_d2_val}</b></td>
+                <td><b>{com_d2_val}</b></td>
+                <td><b>{bet_d2_val}</b></td>
+                <td><b>{trac_d2_val}</b></td>
+                <td><b>{bal_d2_val}</b></td>
+                
+                <td><b>{pos_d3_val}</b></td>
+                <td><b>{com_d3_val}</b></td>
+                <td><b>{bet_d3_val}</b></td>
+                <td><b>{trac_d3_val}</b></td>
+                <td><b>{bal_d3_val}</b></td>
+                
+                <td><b>{pos_d4_val}</b></td>
+                <td><b>{com_d4_val}</b></td>
+                <td><b>{bet_d4_val}</b></td>
+                <td><b>{trac_d4_val}</b></td>
+                <td><b>{bal_d4_val}</b></td>
+                
+                <td><b>{pos_d5_val}</b></td>
+                <td><b>{com_d5_val}</b></td>
+                <td><b>{bet_d5_val}</b></td>
+                <td><b>{trac_d5_val}</b></td>
+                <td><b>{bal_d5_val}</b></td>
+                
+                <td><b>{pos_d6_val}</b></td>
+                <td><b>{com_d6_val}</b></td>
+                <td><b>{bet_d6_val}</b></td>
+                <td><b>{trac_d6_val}</b></td>
+                <td><b>{bal_d6_val}</b></td>
+                
+                <td><b>{pos_d7_val}</b></td>
+                <td><b>{com_d7_val}</b></td>
+                <td><b>{bet_d7_val}</b></td>
+                <td><b>{trac_d7_val}</b></td>
+                <td><b>{bal_d7_val}</b></td>
+                
+                <td colspan="2">&nbsp;</td>
+            </tr>
+            <!--not-excel-export--></tfoot><!--/not-excel-export-->
+            <!--/total-row-->
+            <!--/ReportContent-->
+        <!--not-excel-export--></tbody><!--/not-excel-export-->
+     </table>
+<!--/ReportMain-->

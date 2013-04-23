@@ -1,0 +1,60 @@
+<div> 
+  <form id="frmBill">      
+      <!--FGLG-->
+      <table border="0">
+        <tr>
+            <td>
+                <div id="tabs">
+                    <ul>
+                        <li>
+                            <a class="selected" title="Main" href="#">
+                                <span class="selected">Main</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a title="First goal Last goal" href="Calculation.aspx?type=b&p={matchID}|{sportID}&calType=fglg" target="_self">
+                                <span>FGLG</span>
+                            </a>
+                        </li>
+                    </ul>        
+                </div>      
+            </td>
+            <td></td>
+        </tr>
+      </table>
+      <!--/FGLG-->         
+      <table class="tblcollapse">    
+        <tr class="title1 c">         
+            <td colspan="6">LEAGUE:&nbsp;{leaguename}</td>
+        </tr>
+        <tr class="title">
+          <td width="90" >Code</td>
+          <td width="90" >Kick-Off Time</td>
+          <td width="330" >Team</td>
+          <td width="40" >HT Score</td>          
+          <td width="40"  colspan="2">Final Score</td>                              
+        </tr>
+        <tr class="c">
+          <td rowspan="2">{matchcode}</td>
+          <td rowspan="2">{date}</td>
+          <td class="l fontbold hteam pad33">{hometeam}</td>
+          <td>{homeHScore}</td>
+          <td colspan="2">{homeFScore}</td>          
+        </tr>
+        <tr class="c">      
+          <td class="l fontbold ateam pad33">{awayteam}</td>          
+          <td>{awayHScore}</td>
+          <td colspan="2">{awayFScore}</td>                          
+        </tr>      
+      </table>
+ 
+    {Refund}
+    
+	  <br/>
+    <span style="padding-left: 30px;" id="infoMsg" class="info-message"></span>
+    <span style="padding-left: 30px; visibility: hidden;" id="errMsg" class="error-message">Please input valid result!</span>
+    <input type="hidden" id="sParams" name="sParams" value="{params}" />
+    <input type="hidden" id="sAction" name="sAction" /> 
+      <input type="hidden" id="sHasFGLG" name="sHasFGLG" value={hasFGLG} />    
+    </form>    
+</div>

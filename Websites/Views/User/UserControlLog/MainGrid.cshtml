@@ -1,0 +1,104 @@
+﻿<div id="diveUserLogMainGrid" style="display:none; margin-top:2px">
+
+    <table border="1" style="border-collapse:collapse" width="100%">
+        <thead>
+            <tr>
+                <td class="cellborder cellheader col60">
+                    <div class="c">
+                        Log ID
+                    </div>
+                </td>
+                <td class="cellborder cellheader col120">
+                    <div class="c">
+                        Log date
+                    </div>
+                </td>
+                <td class="cellborder cellheader col140">
+                    <div class="c">
+                        Admin/Group
+                    </div>
+                </td>
+                <td class="cellborder cellheader col100">
+                    <div class="c">
+                        Modified by
+                    </div>
+                </td>
+                <td class="cellborder cellheader">
+                    <div class="c">
+                        Action
+                    </div>
+                </td>
+                <td class="cellborder cellheader">
+                    <div class="c">
+                        Description
+                    </div>
+                </td>
+            </tr>
+        </thead>
+        <tbody id="tbodyUserLogMainGrid">
+        </tbody>
+        <script id="scriptTmpUserLogMainGrid" type="text/html">
+            <tr><td class="cellborder">
+                <div class="c">
+                    ${LogId}
+                </div>
+            </td><td class="cellborder">
+                <div class="c">
+                    ${LogDate}
+                </div>
+            </td><td class="cellborder">
+                <div class="c">
+                    {{if ActionId == 1709 && TypeId == 0}}
+                        <span style="color:#11A0E7; cursor: pointer" onclick="javascript:userLog.mainGrid.showMembers(${LogId}, '${AccName}')"><u>${AccName}</u></span>
+                    {{else}}
+                        ${AccName}
+                    {{/if}}
+                </div>
+            </td><td class="cellborder">
+                <div class="c">
+                    ${UserName}
+                </div>
+            </td><td class="cellborder">
+                <div class="l">
+                    ${ActionName}
+                </div>
+            </td><td class="cellborder">
+                <div class="l">
+                    {{if ActionId == 1701}}
+                        Add new account to group <b>${ToGroup}</b>
+                    {{/if}}
+                    {{if ActionId == 1702}}
+                        Add account to group <b>${ToGroup}</b>
+                    {{/if}}
+                    {{if ActionId == 1705}}
+                        ${Status}
+                    {{/if}}
+                    {{if ActionId == 1707}}
+                        ${GroupDescription}
+                    {{/if}}
+                    {{if ActionId == 1708 || ActionId == 1709 || ActionId == 1704 || ActionId == 1703 || ActionId == 1700 || ActionId == 1701}}
+                        <span style="color:#11A0E7; cursor: pointer" onclick="javascript:userLog.mainGrid.showDetail(${LogId}, ${ActionId}, '${AccName}')">[<u>Detail</u>]</span>
+                    {{/if}}
+                </div>
+            </td></tr>
+        </script>
+        <script id="scriptTmpUserLogMainGrid_NoInfo" type="text/html">
+            <tr><td colspan="6" class="cellborder" align="center">
+                <div class="col180 c">There is no information</div>
+            </td></tr>
+        </script>
+    </table>
+        
+    <div paging="true" class="content-pagination bgtitle clearfix">
+        <div class="pagination-scroll">
+            <table style="width: 100%" cellspacing="0" cellpadding="1">
+                <tr>
+                    <td>
+                        <div id="pagination1">
+                            &nbsp;</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

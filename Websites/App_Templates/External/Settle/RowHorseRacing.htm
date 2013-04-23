@@ -1,0 +1,188 @@
+﻿<table class="tbllayout" cellspacing="1">
+    <tbody>
+        <tr class="c title1">
+            
+            <td colspan="9" >
+                EVENT FROM {fdate} TO {tdate}
+            </td>
+        </tr>
+        <tr class="c title">
+            <th colspan="2" width="110">
+                {lblRace}
+            </th>
+            <th colspan="2" width="260">
+                {lblResult}
+            </th>
+            <th width="60">
+                {lblWin}
+            </th>
+            <th width="60">
+                {lblPlace}
+            </th>
+            <th >
+                {lblStatus}
+            </th>
+            <th width="80">
+                {lblEventStatus}
+            </th>
+            <th width="80">
+                {lblCalculate}
+             </th>
+        </tr>
+        {content}
+        <!--content-->
+        <!--league-->
+        <tr class="title2">
+            <td >
+            <input type="button" onclick="Refresh();" value="REFRESH" name="btnRefresh" class="btn" />
+            </td>
+            <td colspan="8">
+                *..::¤&nbsp;{leagueName}&nbsp;¤::..*
+            </td>
+        </tr>
+        <!--/league-->
+        <!--row-->
+        <!--running-->
+        <tr class="{bgEven}">
+            <td class="c b" valign="middle" width="60px" >
+                {raceNumber}
+            </td>
+            <td class="b at" colspan="6">
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               {totalHorses}
+            </td>
+            <td valign="top" class="c">
+                {eventStatus}<br />{eventDate}</td>
+             <td align="center">
+              <!--HostPermission--><span class="canchange" onclick="DoCalHR('b',{Params});">Bill</span><!--/HostPermission-->
+                <!--ReadPermission-->Bill<!--/ReadPermission-->
+             </td>
+        </tr>
+        <!--/running-->
+        <!--info1-->
+        <tr class="{bgEven} c">
+            <td rowspan="{totalPlace}" class="c b" style="width: 60px" >
+                {raceNumber}
+            </td>
+
+            <td class="htsc" style="width: 50px">
+                {placeNumber}
+            </td>
+            <td class="c b" style="width: 50px; color: rgb(0, 51, 153);">
+                {horseNumber}
+            </td>
+            <td class="b l">
+                {horseName}
+            </td>
+            <td class="c">
+                {winOdd}
+            </td>
+            <td class="c">
+                {placeOdd}
+            </td>
+            <td rowspan="{totalPlace}" valign="middle" >
+                <table style="width: 120px;">
+                    <tbody>
+                        <!--Status-->
+                        <tr>
+                            <td class="c b" style="color: rgb(181, 0, 0);">
+                                {Status}
+                            </td>
+                        </tr>
+                        <!--/Status-->
+                        <tr>
+                            <td>
+                                <table class="c">
+                                    <tbody>
+                                        <tr>
+                                            <td class="l b">
+                                            {lblSCR}
+                                            </td>
+                                            <td class="l">
+                                            {SCR}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="r b">
+                                                {lblTF}
+                                            </td>
+                                            <td class="l">
+                                                {TF}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </td>
+            <td rowspan="{totalPlace}" valign="middle">
+                {eventStatus}<br />{eventDate}
+            </td>
+           <td rowspan="{totalPlace}" valign="middle" class="{bgBill}">
+                <!--HostPermission--><span class="canchange" onclick="DoCalHR('b',{Params});">Bill</span><!--/HostPermission-->
+                <!--ReadPermission-->Bill<!--/ReadPermission-->
+           </td>
+        </tr>
+        <!--/info1-->
+        <!--info2-->
+        <tr class="{bgEven} c ">
+            <td class="htsc" style="width: 50px">
+                {placeNumber}
+            </td>
+            <td class="c b l ht" style="width: 50px; color: rgb(0, 51, 153);">
+                {horseNumber}
+            </td>
+            <td class="b l">
+                 {horseName}
+            </td>
+            <td>
+            </td>
+            <td >
+                {placeOdd}
+            </td>
+        </tr>
+        <!--/info2-->
+        <!--running-info-->
+            <tr class="{bgEven} c ">
+                <td class="c b" style="width: 60px" >
+                    {raceNumber}
+                </td>
+                <td colspan="5" class="b at l">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    {totalHorses}
+                </td>
+                <td valign="middle" >
+                    <table class="c">
+                            <tbody>
+                                <tr>
+                                    <td class="l b">
+                                    {lblSCR}
+                                    </td>
+                                    <td class="l">
+                                    {SCR}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="r b">
+                                        {lblTF}
+                                    </td>
+                                    <td class="l">
+                                        {TF}</td>
+                                </tr>
+                            </tbody>
+                     </table>
+                </td>
+                <td  valign="middle" width="120">
+                     {eventStatus}<br />{eventDate}</td>
+               <td  valign="middle" class="{bgBill}" >
+                    <!--HostPermission--><span class="canchange" onclick="DoCalHR('b',{Params});">Bill</span><!--/HostPermission-->
+                    <!--ReadPermission-->Bill<!--/ReadPermission-->
+               </td>
+            </tr>
+            <!--/running-info-->
+        <!--/row-->
+        <!--/content-->
+    </tbody>
+</table>

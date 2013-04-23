@@ -1,0 +1,52 @@
+<span id="errMsg" class="errMsg"></span>
+<table>
+	<tr>
+		<td>
+        <font class="b">Keyword</font>
+    </td>    
+    <td>
+      <input type="text" name="txtSearch" id="txtSearch" value="{search-Val}" onfocus="On_Focus();"  onblur="on_Blur();"  onkeypress="return On_KeyPress(event);"/>
+    </td>
+    <td rowspan="{rowspan}">
+      <input class="btn"  type="button" name="btnGo" id="btnGo" value="REPORT" onclick="return {functionName}();"/>
+      <input type="button" onclick="ExportToExcel();" value="   " name="btnExport" id="btnExport" class="btnExcel"/>
+    </td>
+  </tr>
+  <tr>
+    <td >
+      <font class="b">First Letter </font>
+    </td>
+    <td >
+      <select class="Sel60" name="listAlpha" id="listAlpha">
+        {listAlphaValue}
+      </select>
+    </td>    
+  </tr>
+ 
+  <!--tblFilter-->
+  <tr>
+    <td>
+      <input type="hidden" name="bycom" id="bycom" value="{lfrom}"/>
+        <font class="b">Currency </font>        
+      </td>
+    <td>
+      <select class="Sel60" name="listCurrency" id="listCurrency">
+        <option value="">All</option>
+        {listCurrencyValue}
+      </select>
+    </td>
+  </tr>
+  <!--status-->
+  <tr>
+    <td>
+      <font class="b">Status </font>    
+    </td>
+    <td>
+      <select class="Sel60"  name="listType" id="listType">
+        {listStatus-Val}
+      </select>
+    </td>
+  </tr>
+  <!--/status-->
+  <!--/tblFilter-->
+</table>

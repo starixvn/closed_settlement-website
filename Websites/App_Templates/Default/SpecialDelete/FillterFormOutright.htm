@@ -1,0 +1,56 @@
+<form id='frmDeleteTrans' name='frmDeleteTrans'>
+<div id='dvHeader'>
+    <table border="0px" class="table">
+        <tr>
+            <td class="b">
+                Leagues:
+            </td>
+            <td>
+                <select onchange="ChangeLeague(this);" id="ddlLeague" name="ddlLeague">
+                    {option-league}
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td class="b">
+                Team:
+            </td>
+            <td>
+                <div id="sOutright">
+                    <select id="ddlOutright" name="ddlOutright">
+                        {option-outright}
+                    </select>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="b">
+                From RefNo:
+            </td>
+            <td>
+                <input type="text" id="frefno" name="frefno" size="12" maxlength="12"></input>
+            </td>
+        </tr>
+        <tr>
+            <td class="b">
+                To RefNo:
+            </td>
+            <td>
+                <input type="text" id="trefno" name="trefno" size="12" maxlength="12"></input>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td class="l" style="height: 40px;">
+                <input id="btnSubmit" name="btnSubmit" class="btn" type="button" onclick="GetData_OR();"
+                    value="  Show  " />
+                <img id='inProgressBar' name='inProgressBar' style='display: none' src="../App_Themes/Images/ajax-loader.gif" />
+            </td>
+        </tr>
+    </table>
+</div>
+<br>
+<div id="dvContent">
+</div>
+</form>

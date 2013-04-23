@@ -1,0 +1,61 @@
+<div>       
+    <table>
+        <tr>
+            <td>CUSTOMER</td>
+            <td><b>{CustName}</b>&nbsp;({CustID})</td>
+        </tr>
+        <!--upline-->
+        <tr>
+            <td>{Role}</td>
+            <td>{Name}&nbsp;({ID})</td>            
+        </tr>
+        <!--/upline-->               
+    </table>      
+    <table class="tbllayout" style="width:660px;">
+        <tr class="title">
+            <td colspan="10">COMMISSION</td>            
+        </tr>
+        <tr class="title b">
+            <td width="60">&nbsp;</td>
+            <td>Group A</td>
+            <td>Group B</td>
+            <td>Group C</td>
+            <td>Group D</td>
+            <td>Other</td>
+          <!--1X2-->
+            <td>{lbl1X2}</td>
+          <!--/1X2-->
+          <!--Tote-->
+            <td>{lblTote}</td>
+          <!--/Tote-->
+          <!--Fixed-->
+			      <td>{lblFixed}</td>
+          <!--/Fixed-->
+          <!--Finan-->
+			      <td>FI Comm</td>
+          <!--/Finan-->
+        </tr>
+        <!--row-->
+        <tr onmouseover="this.className='trbgov'" onmouseout="this.className=''">
+            <td  class="tdtitle b">{RoleName}</td>
+            <td>{ga}</td>
+            <td>{gb}</td>
+            <td>{gc}</td>
+            <td>{gd}</td>
+		      	<td>{#}</td>
+          <!--1X2-->
+            <td>{1X2}</td>
+          <!--/1X2-->
+          <!--Tote-->
+	      		<td>{Tote}</td>
+          <!--/Tote-->
+          <!--Fixed-->
+	      		<td>{Fixed}</td>
+          <!--/Fixed-->
+          <!--Finan-->
+	      		<td>{ficomm}</td>
+          <!--/Finan-->
+        </tr>
+        <!--/row-->
+    </table>
+</div>

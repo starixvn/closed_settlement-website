@@ -1,0 +1,302 @@
+<div>
+    <form id="frmBill">
+    <table class="tblcollapse">
+        <tr class="title1 c">
+            <td colspan="15">
+                LEAGUE:&nbsp;{leaguename}
+            </td>
+        </tr>
+        <tr class="title">
+            <td width="80">
+                CODE
+            </td>
+            <td width="85">
+                KICK-OFF TIME
+            </td>
+            <td width="250">
+                TEAM
+            </td>
+            <td width="22">
+                1
+            </td>
+            <td width="22">
+                2
+            </td>
+            <td width="22">
+                3
+            </td>
+            <td width="22">
+                4
+            </td>
+            <td width="22">
+                5
+            </td>
+            <td width="22">
+                6
+            </td>
+            <td width="22">
+                7
+            </td>
+            <td width="22">
+                8
+            </td>
+            <td width="22">
+                9
+            </td>
+            <td width="22">
+                E.I
+            </td>
+            <td width="36">
+                HT Score
+            </td>
+            <td width="36">
+                Final Score
+            </td>
+        </tr>
+        <tr class="c">
+          <td rowspan="2">{matchcode}</td>
+          <td rowspan="2">{date}</td>
+          <td class="b l ht">{hometeam}</td>
+          <td>{value1Home}</td>
+          <td>{value2Home}</td> 
+          <td>{value3Home}</td>      
+          <td>{value4Home}</td>      
+          <td>{value5Home}</td>      
+          <td>{value6Home}</td>      
+          <td>{value7Home}</td>      
+          <td>{value8Home}</td>      
+          <td>{value9Home}</td>      
+          <td>{valueEIHome}</td>      
+          <td>{homeHScore}</td>
+          <td>{homeFScore}</td>                
+        </tr> 
+        <tr class="c">      
+          <td class="b l at">{awayteam}</td>
+          <td>{value1Away}</td>
+          <td>{value2Away}</td> 
+          <td>{value3Away}</td>
+          <td>{value4Away}</td>      
+          <td>{value5Away}</td>      
+          <td>{value6Away}</td>      
+          <td>{value7Away}</td>      
+          <td>{value8Away}</td>      
+          <td>{value9Away}</td>      
+          <td>{valueEIAway}</td>      
+          <td>{awayHScore}</td> 
+          <td>{awayFScore}</td>                
+        </tr>      
+      </table>
+
+      {ApplyHedging}
+      <br/>
+
+      {Refund}
+  
+  <input type="hidden" id="sParams" name="sParams" value="{params}" />  
+      <input type="hidden" id="sAction" name="sAction" />
+      <input type="hidden" id="isSD" name="isSD" value="0" />
+      <input id="hiddenScoreConfirm_homeHScore" name="hiddenScoreConfirm_homeHScore" type="hidden" />
+    <input id="hiddenScoreConfirm_homeFScore" name="hiddenScoreConfirm_homeFScore" type="hidden" />
+    <input id="hiddenScoreConfirm_awayHScore" name="hiddenScoreConfirm_awayHScore" type="hidden" />
+    <input id="hiddenScoreConfirm_awayFScore" name="hiddenScoreConfirm_awayFScore" type="hidden" />
+    <input id="hiddenScoreConfirm_Sport" name="hiddenScoreConfirm_Sport" type="hidden"
+        value="Baseball" />
+    <input type="hidden" id="hiddenBetStatus_ConfirmScore" name="hiddenBetStatus_ConfirmScore" />
+</form>
+
+  <span style="padding-left: 30px;" id="infoMsg" class="info-message"></span>
+  <span style="padding-left: 30px; visibility: hidden;" id="errMsg" class="error-message">Please input valid score!</span>
+  <div id="divScoreConfirm" style="display: none; margin-top: 4px">
+    <div style="text-align:center; margin-bottom:4px">
+    <span style="color:red; font-size:14px">You can only do this <span style="font-weight:bold; padding-left:4px; padding-right:4px">ONCE</span> so please <span style="font-weight:bold; padding-left:4px; padding-right:4px"> DOUBLE-CHECK </span> the scores !!!</span>
+    </div>
+        <table class="tblcollapse">
+            <tbody>
+                <tr class="title">
+                    <td width="250">
+                        TEAM
+                    </td>
+                    <td width="22">
+                        1
+                    </td>
+                    <td width="22">
+                        2
+                    </td>
+                    <td width="22">
+                        3
+                    </td>
+                    <td width="22">
+                        4
+                    </td>
+                    <td width="22">
+                        5
+                    </td>
+                    <td width="22">
+                        6
+                    </td>
+                    <td width="22">
+                        7
+                    </td>
+                    <td width="22">
+                        8
+                    </td>
+                    <td width="22">
+                        9
+                    </td>
+                    <td width="22">
+                        E.I
+                    </td>
+                    <td width="36">
+                        HT Score
+                    </td>
+                    <td width="36">
+                        Final Score
+                    </td>
+                </tr>
+                <tr class="c">
+                    <td class="b l ht">
+                        {hometeam}
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="value1qHome" type="text" value="{value1Home}" beginvalue="{value1Home}"
+                            maxlength="9" size="1" style="text-align: center;" tabindex="1" />
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="value2qHome" type="text" value="{value2Home}" beginvalue="{value2Home}"
+                            maxlength="9" size="1" style="text-align: center;" tabindex="3" />
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="value3qHome" type="text" value="{value3Home}" beginvalue="{value3Home}"
+                            maxlength="9" size="1" style="text-align: center;" tabindex="5" />
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="value4qHome" type="text" value="{value4Home}" beginvalue="{value4Home}"
+                            maxlength="9" size="1" style="text-align: center;" tabindex="7" />
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="value5qHome" type="text" value="{value5Home}" beginvalue="{value5Home}"
+                            maxlength="9" size="1" style="text-align: center;" tabindex="9" />
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="value6qHome" type="text" value="{value6Home}" beginvalue="{value6Home}"
+                            maxlength="9" size="1" style="text-align: center;" tabindex="11" />
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="value7qHome" type="text" value="{value7Home}" beginvalue="{value7Home}"
+                            maxlength="9" size="1" style="text-align: center;" tabindex="13" />
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="value8qHome" type="text" value="{value8Home}" beginvalue="{value8Home}"
+                            maxlength="9" size="1" style="text-align: center;" tabindex="15" />
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="value9qHome" type="text" value="{value9Home}" beginvalue="{value9Home}"
+                            maxlength="9" size="1" style="text-align: center;" tabindex="17" />
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="valueEIHome" type="text" value="{valueEIHome}" beginvalue="{valueEIHome}"
+                            maxlength="9" size="1" style="text-align: center;" tabindex="19" />
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="tbxScoreConfirm_homeHScore"
+                            type="text" value="{homeHScore}" beginvalue="{homeHScore}" maxlength="9" size="4"
+                            style="text-align: center;" tabindex="21" />
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="tbxScoreConfirm_homeFScore"
+                            type="text" value="{homeFScore}" beginvalue="{homeFScore}" maxlength="9" size="4"
+                            style="text-align: center; color: Red" tabindex="23" />
+                    </td>
+                </tr>
+                <tr class="c">
+                    <td class="b l at">
+                        {awayteam}
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="value1qAway" type="text" value="{value1Away}" beginvalue="{value1Away}"
+                            maxlength="9" size="1" style="text-align: center;" tabindex="2" />
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="value2qAway" type="text" value="{value2Away}" beginvalue="{value2Away}"
+                            maxlength="9" size="1" style="text-align: center;" tabindex="4" />
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="value3qAway" type="text" value="{value3Away}" beginvalue="{value3Away}"
+                            maxlength="9" size="1" style="text-align: center;" tabindex="6" />
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="value4qAway" type="text" value="{value4Away}" beginvalue="{value4Away}"
+                            maxlength="9" size="1" style="text-align: center;" tabindex="8" />
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="value5qAway" type="text" value="{value5Away}" beginvalue="{value5Away}"
+                            maxlength="9" size="1" style="text-align: center;" tabindex="10" />
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="value6qAway" type="text" value="{value6Away}" beginvalue="{value6Away}"
+                            maxlength="9" size="1" style="text-align: center;" tabindex="12" />
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="value7qAway" type="text" value="{value7Away}" beginvalue="{value7Away}"
+                            maxlength="9" size="1" style="text-align: center;" tabindex="14" />
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="value8qAway" type="text" value="{value8Away}" beginvalue="{value8Away}"
+                            maxlength="9" size="1" style="text-align: center;" tabindex="16" />
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="value9qAway" type="text" value="{value9Away}" beginvalue="{value9Away}"
+                            maxlength="9" size="1" style="text-align: center;" tabindex="18" />
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="valueEIAway" type="text" value="{valueEIAway}" beginvalue="{valueEIAway}"
+                            maxlength="9" size="1" style="text-align: center;" tabindex="20" />
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="tbxScoreConfirm_awayHScore"
+                            type="text" value="{awayHScore}" beginvalue="{awayHScore}" maxlength="9" size="4"
+                            style="text-align: center;" tabindex="22" />
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="tbxScoreConfirm_awayFScore"
+                            type="text" value="{awayFScore}" beginvalue="{awayFScore}" maxlength="9" size="4"
+                            style="text-align: center; color: Red" tabindex="24" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div style="text-align: right">
+            <input onchange="javascript:Baseball_InputDirectly_Event(event);" id="cbxInputDirectly"
+                type="checkbox">Input HT Score and Final Score directly</span>
+        </div>
+        <div style="text-align: left; margin-top: 4px">
+            <span class="error-message" id="errMsg_ScoreConfirm" style="font-weight: bold; display: none">
+                Please input valid result!</span>
+        </div>
+        <div style="text-align: center; margin-top: 4px">
+            <input id="btnScoreConfirmProceed" type="button" class="btn" value="Proceed" />
+            <input id="btnScoreConfirmCancel" type="button" class="btn" value="Change" />
+        </div>
+        <div style="padding-left:4px; padding-top:8px; padding-bottom:8px; background-color:#F4F8BE; margin-top:4px; width:300px">
+            <table border="0">
+                <tbody>
+                   <tr>
+                        <td>
+                            <span>-&nbsp;<b>REFUND&nbsp;</b>normal tickets</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>-&nbsp;<b>SETTLE determined&nbsp;</b>Over/Under tickets of BETDAQ</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>- Mark remaining tickets of BETDAQ as "Running"</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

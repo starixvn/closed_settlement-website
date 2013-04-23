@@ -1,0 +1,36 @@
+﻿{#template MAIN}
+{#include table root= $T}
+{#/template MAIN}
+
+{#template table}
+<table class="tbllayout" cellspacing="1" cellpadding="0" style="width:300px;">
+	<thead>
+	    <tr class="title">
+		<td rowspan="2">Partner</td>
+        <td colspan="3" style="width: 180px;" class="c" >Commission(%)</td>
+        <td rowspan="2">Fees(%)</td>
+	</tr>
+    <tr class="title">
+	        <td style="width: 60px;" >Win</td>
+		    <td style="width: 60px;" >Place</td>
+		    <td style="width: 60px;" >WinPlace</td>
+    </tr>
+	</thead>
+	<tbody>
+		{#foreach $T.MeetingData as r}
+            {#include row root=$T.r}
+        {#/for}
+	</tbody>
+</table>
+{#/template table}
+
+
+{#template row}
+<tr id="tr_{$T.Partner}" class="{#cycle values=['','evenrow']}">
+	<td class="l"><span class="canchange" onclick="viewMeetingCommDetail('{$T.Partner}');">{$T.Partner}</span></td>
+    <td class="r">{$T.Win}</td>
+	<td class="r">{$T.Place}</td>
+	<td class="r">{$T.WinPlace}</td>
+	<td class="r">{$T.Fees}</td>
+</tr>
+{#/template row}

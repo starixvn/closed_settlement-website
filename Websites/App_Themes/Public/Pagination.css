@@ -1,0 +1,11 @@
+.pagination{width:100%; margin-top:2px; text-align:center; line-height:18px;}
+.pagination span.page-sep{display:none}
+.pagination span strong{padding-right: 2px; padding-left: 2px; margin:0px; font-weight:normal; color:#a2320f; border:1px solid #a2320f;}
+.pagination span a, .pagination span a:link, .pagination span a:visited, .pagination span a:active{padding-right: 2px; padding-left: 2px; font-weight:normal; color:#000; margin:0 1px; border:1px solid #7c98a4; }
+.pagination span a:hover{border-color:#a2320f; color:#a2320f;}
+.pagination img{vertical-align:middle}
+.gotopage_box{border: solid 1px #7c98a4;padding:2px 2px; position:absolute; display:none; background:#fff; z-index:999; }
+.pagination a{outline:none;text-decoration:none; color:#0066CC; cursor:pointer}
+.pagination a:hover{color:#D66D35; cursor:pointer}
+.pagination .txt{width:40px !important;}
+.pagenav_ibtn {line-height:18px;}

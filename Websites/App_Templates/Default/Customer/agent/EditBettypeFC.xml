@@ -1,0 +1,53 @@
+<table width="60%" class="tblSporttypePT">		
+	<tr>
+		<td >
+			<div id="divUpdPT{sportId}" name="divUpdPT{sportId}">
+				<table border="1" width="100%" class="tbllayout">        
+					<tr>
+						<td></td>
+						<td class="c" style="width:150px;">{ou-text}</td>
+						<td class="c" style="width:60px;">{oe-text}</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="r">{a-presetpt-text}</td>
+						<td class="c">{a-ou-val}</td>
+						<td class="c">{a-oe-val}</td>
+						<td class="l" rowspan="{copy-ou-rowspan}">
+							<input type="checkbox" {chk-hdpd} id="chkCopy201OU" name="chkCopy201OU" onclick="CheckCopyPT(this,arr2Super201);"></input>&nbsp;{lblCopyFromBettype}
+						</td>
+					</tr>
+					<tr>
+						<td class="r" style="width:20%">{m-presetpt-text}</td>
+						<td class="c">{m-ou-val}{m-ou-btn}</td>
+						<td class="c">{m-oe-val}</td>
+						
+					</tr>
+					<!--none_edit_MasterPT-->
+					<tr>
+						<td class="r" style="width:10%">{p-presetpt-text}</td>
+						<td class="c">{p-ou-val}{p-ou-btn}</td>
+						<td>{p-oe-val}</td>
+					</tr>
+					
+					<tr>
+						<td  rowspan="2" class="r">{au-presetpt-text}</td>
+						<td class="c">
+							<input type="checkbox" onclick="CheckAutoPreset(this)" id="chkAuto{sportId}OU" name="chkAuto{sportId}OU" {checked-ou}></input>
+						</td>
+						<td class="c">
+							<input type="checkbox" onclick="CheckAutoPreset(this)" id="chkAuto{sportId}OE" name="chkAuto{sportId}OE" {checked-oe}></input>
+						</td>
+						
+					</tr>
+					<tr>						
+						<td class="l">{au-ou-val}{au-ou-btn}</td>
+						<td>{au-oe-val}</td>
+					</tr>
+					<!--/none_edit_MasterPT-->
+				</table>
+			</div>
+		</td>
+	</tr>
+</table>
+

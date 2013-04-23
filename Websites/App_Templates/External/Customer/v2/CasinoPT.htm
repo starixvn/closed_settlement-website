@@ -1,0 +1,167 @@
+﻿{jsdata}
+<table width="100%" class="tblcollapse">
+    <tr class="title">
+        <td colspan="8">{lblCustomerInfomation}</td>
+    </tr>
+    <tr>
+        <td colspan="8">
+            <table width="70%" align="left" class="noneborder">
+                <tbody>
+                    <tr>
+                        <td class="r b">{lblUsername}:&nbsp;</td>
+                        <td class="l">&nbsp;{username}</td>
+                        <td class="r b">{lblUsername2}:&nbsp;</td>
+                        <td class="l">{username2}</td>
+                    </tr>
+                    <tr>
+                        <td class="r b">{lblFirstname}:&nbsp;</td>
+                        <td class="l">&nbsp;{firstname}</td>
+                        <td class="r b">{lblPhone}:&nbsp;</td>
+                        <td class="l">&nbsp;{phone}</td>
+                    </tr>
+                    <tr>
+                        <td class="r b">{lblLastname}:&nbsp;</td>
+                        <td class="l">&nbsp;{lastname}</td>
+                        <td class="r b">{lblMobile}:&nbsp;</td>
+                        <td class="l">&nbsp;{mobile}</td>
+                    </tr>
+                    <tr>
+                        <td class="r b">{lblFax}:&nbsp;</td>
+                        <td class="l">&nbsp;{fax}</td>
+                        
+                        <td class="r b">
+                        <!--inserting-->
+                          {lblEnableCS}:&nbsp;  
+                        <!--/inserting-->
+                        </td>
+                        <td class="l">
+                        <!--inserting-->
+                          {disableCS}  
+                        <!--/inserting-->
+                        </td>
+                        
+                    </tr>
+                    <tr style="display: none">
+                        <td class="r b">{lblClosed}:&nbsp;</td>
+                        <td class="l">&nbsp;{closed}</td>
+                        <td class="r b">{lblSuspend}:&nbsp;</td>
+                        <td class="l">&nbsp;{suspend}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    <!--cs-bet-setting-->
+    <tr class="title" >
+        <td colspan="8">
+            {lblBetSetting}
+        </td>
+    </tr>
+    <tr>
+        <td colspan="8">
+            <table width="90%" align="left" class="noneborder">
+                <tr>
+                    <td class="r b" style="width: 300px">
+                        {lblAccumulated}&nbsp;
+                    </td>
+                    <td class="l" style="white-space: nowrap;">
+                       <div id="lblAccumulatedWL" style="font-weight: normal; float: left">
+                            {accumulatedValue}
+                        </div>
+                        <div style="font-weight: normal; float: right">{Reset}</div>
+                    </td>
+                    <td></td>
+                </tr>
+                <!--max-win-lose-->
+                <tr>
+                    <td class="r b">
+                        {lblMaxWin} &nbsp;
+                    </td>
+                    <td class="l">
+                        &nbsp;{maxWinValue}
+                    </td>
+                    <td class="l">
+                        ({lblMin} = {minValue}; {lblNoLimited} = {noLimitedValue} )
+                    </td>
+                </tr>
+                <tr>
+                    <td class="r b">
+                        {lblMaxLose} &nbsp;
+                    </td>
+                    <td class="l">
+                        &nbsp;{maxLoseValue}
+                    </td>
+                    <td class="l">
+                        ({lblNoLimited} = {noLimitedValue} )
+                    </td>
+                </tr>
+                <!--/max-win-lose-->
+                <!--max-transfer-->
+                <tr>
+                    <td class="r b" style="width: 300px">
+                        {lblMaxTransferCredit} &nbsp;
+                    </td>
+                    <td class="l" style="width: 100px">
+                        {maxTransferCredit}
+                    </td>
+                    <td class="l" style="text-align: left; padding-left: 4px">
+                        <input type="hidden" id="hidTransferCredit" value="{MaxTransferCreditValue}" />
+                        <input id="cbxAutoReset" {disabled} name="cbxAutoReset" {cbxAutoResetchecked} type="checkbox" />
+                        <label for="cbxAutoReset">{autoReset}</label>
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td align="left" style="text-align: left;">
+                        <!--single-edit-->({minLimitedValue} - {noLimitedValue})<!--/single-edit-->
+                    </td>
+                    <td align="left" style="text-align: left;">                                                                        
+                    </td>
+                </tr> 
+                <!--/max-transfer-->
+        </table>
+        <table>
+            <tr>
+                <td>
+                    
+                </td>
+            </tr>
+        </table>
+        </td>
+    </tr>
+    <!--/cs-bet-setting-->
+   
+    <tr class="title">
+        <td colspan="8">{lblPositionTaking}</td>
+    </tr>
+    <!--data-->
+    <tr>
+        <td colspan="8">
+            <table class="tblRpt" border="1">
+                <tr>
+                    <td>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <!--/data-->              
+       
+    
+</table>
+{hidden} 
+<table cellpadding="0" cellspacing="0" border="0">
+		<tr>
+			<td style="height: 4px;">
+			</td>
+		</tr>
+		<tr>
+			<td class="custBtn1">
+			</td>
+			<td style="" class="custBtn2 hand" id="btnAdd" onclick="return CheckConfirmUpdDownline()">Update</td>
+			<td class="l">
+				<span id="error151" class="errMsg"/>
+			</td>
+		</tr>
+</table>

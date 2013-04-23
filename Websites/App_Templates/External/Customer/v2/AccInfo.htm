@@ -1,0 +1,119 @@
+  <input type="hidden"  id="{parentId}" name="{parentId}"  value="{valueParentId}"/>
+  <input type="hidden" id="custId" name="custId" value="{cust-id}" />
+  <input type="hidden" id="isUpdateMember" name="isUpdateMember" value="0" />
+  <input type="hidden" id="memberPT" name="memberPT" value="0" />
+  <input type="hidden" id="maxMemberPT" name="maxMemberPT" value="0" />
+  <input type="hidden" id="roleId" name="roleId" value="{role-id}" />
+
+  <table class="tblcollapse" style="width:950px;">
+    <tr class="title">
+      <td colspan="4">
+        {add-edit-agent} <span class="">{username}</span>
+      </td>
+    </tr>
+    <!--not-edit-->
+    <tr class="{edit-hidden}">
+      <td class="l" width="15%">User Name</td>
+      <td class="l" width="35%">
+        <input class="f8 w130"  type="text" name="txtUsername" id="txtUsername" />
+      </td>
+      <td class="l" width="15%">Password</td>
+      <td class="l" width="35%">
+        <input type="password"  class="f8 w130" name="txtPwd" id="txtPwd" />
+      </td>
+    </tr>
+    <!--/not-edit-->
+    <tr>
+      <td class="l">First Name</td>
+      <td class="l">
+        <input class="f8 w130" name="txtFirstname" id="txtFirstname" value="{firstname}" />
+      </td>
+      <td class="l">Last Name</td>
+      <td class="l">
+        <input class="f8 w130" name="txtLastname" id="txtLastname" value="{lastname}" />
+      </td>
+    </tr>
+    <tr>
+      <td class="l">Phone</td>
+      <td class="l">
+        <input class="f8 w130" name="txtPhone" id="txtPhone" value="{phone}" />
+      </td>
+      <td class="l">Mobile Phone</td>
+      <td class="l">
+        <input class="f8 w130" name="txtMobile" id="txtMobile" value="{mobile}" />
+      </td>
+    </tr>
+    
+    <tr class="{site-curr-hidden}">
+      <!--site-super-->
+      <td class="l">Site</td>
+      <td class="l">
+        <select class="select-group" name="listSite" id="listSite">{listSiteValue}</select>
+      </td>
+      <!--/site-super-->
+      <td class="l">Fax</td>
+      <td class="l">
+        <input class="f8 w130" name="txtFax" id="txtFax" value="{fax}" />
+      </td> 
+        <!--status-->
+      <td class="l">
+        Closed
+      </td>
+      <td class="l">
+       <input type="checkbox" id="chkClosed" value="yes" name="chkClosed" {status} />
+      </td>
+      <!--/status-->
+    </tr>
+
+	  <!--MinMaxPT-->
+	  <tr>
+		  <td class="l">Max Credit</td>
+		  <td class="l">
+			  <input class="f8 w130" maxlength="14" style="{disable_color}" {diable_credit} {mouseover_credit} {mouseout_credit}  name="txtCredit" id="txtCredit" value="{maxcredit-val}"  />
+			  <span class="normal"  id="txtCreditMin">{Min}</span>
+			  <span class="normal"  id="txtCreditMax" style="font-eight:bold;">{MinCredit}</span>
+		  </td>
+		  <!--currency-->
+		  <td class="l">Currency</td>
+		  <td class="l">
+			  <select class="select-group" name="listCurrency" id="listCurrency" onchange="DisableHRByCurr(this);">{listCurrencyValue}</select>
+			  <input type="hidden" id="hdAllowCurr" name="hdAllowCurr" value="0"></input>
+			  <input type="hidden" id="hdCurr" name="hdCurr" value="0"></input>
+		  </td>
+		  <!--/currency-->
+		    <!--not-show-new-->
+		  <td class="l">Suspended</td>
+		  <td class="l ">
+			  <input type="checkbox" value="yes"  id="chkSuspended" name="chkSuspended" {suspend-check} />
+		  </td>
+		  <!--/not-show-new-->
+	  </tr>
+	  <tr class="title">
+      <td colspan="4">{Commission}</td>
+    </tr>
+    <tr >		
+      <td colspan="4">
+		  <table width="100%" class="noneborder" cellpadding="0" cellspacing="0">
+			  <tr>
+				  <td class="c">
+					  Group A <select class="selectcomm" name="listGroupA" id="listGroupA">{listGroupAValue}</select>
+				  </td>
+				  <td class="c">Group B <select class="selectcomm" name="listGroupB" id="listGroupB">{listGroupBValue}</select></td>
+				  <td class="c">
+					  Group C <select class="selectcomm" name="listGroupC" id="listGroupC">{listGroupCValue}</select>
+				  </td>
+				  <td class="c">Group D <select class="selectcomm" name="listGroupD" id="listGroupD">{listGroupDValue}</select></td>
+				  <!--none-1x2-Comm-->
+				  <td class="c">
+					  1x2 Comm <select class="selectcomm" name="listGroup1x2" id="listGroup1x2">{listGroup1x2Value}</select>
+				  </td>
+				  <!--/none-1x2-Comm-->
+				  <td class="c">
+					  Other Comm <select class="selectcomm" name="listOther" id="listOther">{listOtherValue}</select>
+				  </td>
+			  </tr>
+		  </table>		  
+	</td>
+  </tr>
+	  <!--/MinMaxPT-->
+  </table>

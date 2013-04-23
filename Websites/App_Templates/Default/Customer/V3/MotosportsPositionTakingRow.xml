@@ -1,0 +1,71 @@
+<tr>
+  <td style="display:{none-tlposition}" class="right">{super-position}</td>
+  <td>
+    <select class="select-pt" name="listSHdpB{sporttype}" id="listSHdpB{sporttype}" onchange="On_ChangeSuper(this);">{listSHdpBValue}</select>
+    <input type="button" name="btnReduce1"  value=" "   class="btn-dec1"  onclick="ReducePT('listSHdpB{sporttype}',1)"/>
+    <input type="button" name="btnIncrease1" value=" "   class="btn-inc1" onclick="IncreasePT('listSHdpB{sporttype}',1)"/>
+    <input type="button" name="btnReduce10" value=" " class="btn-dec10" onclick="ReducePT('listSHdpB{sporttype}',10)"/>
+    <input type="button" name="btnIncrease10" value=" " class="btn-inc10" onclick="IncreasePT('listSHdpB{sporttype}',10)"/>
+  </td>
+  <td>
+    <select class="select-pt" name="listSMLB{sporttype}" id="listSMLB{sporttype}" onchange="On_ChangeSuper(this);">{listSMLBValue}</select>
+  </td>
+  <td rowspan="{rowspan}" class="left">
+    <input type="checkbox" onclick="CopyPositionTaking(this);" name="chkCopyHdpB{sporttype}" id="chkCopyHdpB{sporttype}"/>
+    Copy From Handicap 
+  </td>
+</tr>
+<!--master-pt-->
+<tr style="display:{ptmaster-none}">
+  <td style="display:{none-tlposition}" class="right">{master-position}</td>
+  <td>
+    <select class="select-pt" onchange="On_ChangeMaster(this);" name="listMHdpB{sporttype}" id="listMHdpB{sporttype}">{listMHdpBValue}</select>
+    <input type="button" id="btnR1HdpB" name="listMHdpB" value=" "   class="btn-dec1" onclick="ReducePT('listMHdpB{sporttype}',1)"/>
+    <input type="button" id="btnI1HdpB" name="listMHdpB" value=" "   class="btn-inc1" onclick="IncreasePT('listMHdpB{sporttype}',1)"/>
+    <input type="button" id="btnR10HdpB" name="listMHdpB" value=" " class="btn-dec10" onclick="ReducePT('listMHdpB{sporttype}',10)"/>
+    <input type="button" id="btnI10HdpB" name="listMHdpB" value=" " class="btn-inc10" onclick="IncreasePT('listMHdpB{sporttype}',10)"/>
+  </td>
+  <td>
+    <select class="select-pt" onchange="On_ChangeMaster(this);" name="listMMLB{sporttype}" id="listMMLB{sporttype}">{listMMLBValue}</select>
+  </td>
+</tr>
+<!--/master-pt-->
+<!--agent-pt-->
+<tr style="display:{spt-none}">
+  <td style="display:{none-tlposition}" class="right">{agent-position}</td>
+  <td>
+    <select class="select-pt" name="listAHdpB{sporttype}" id="listAHdpB{sporttype}">{listAHdpBValue}</select>
+    <input type="button" name="btnReduce1" value=" "   class="btn-dec1" onclick="ReducePT('listAHdpB{sporttype}',1)"/>
+    <input type="button" name="btnIncrease1" value=" "   class="btn-inc1" onclick="IncreasePT('listAHdpB{sporttype}',1)"/>
+    <input type="button" name="btnReduce10" value=" " class="btn-dec10" onclick="ReducePT('listAHdpB{sporttype}',10)"/>
+    <input type="button" name="btnIncrease10" value=" " class="btn-inc10" onclick="IncreasePT('listAHdpB{sporttype}',10)"/>
+  </td>
+  <td>
+    <select class="select-pt" name="listAMLB{sporttype}" id="listAMLB{sporttype}">{listAMLBValue}</select>
+  </td>
+</tr>
+<!--/agent-pt-->
+<!--preset-pt-->
+<tr class="{spt-preset-hidden}">
+  <td style="display:{none-tlposition}" class="c">
+    Auto Super Preset<br />Position
+  </td>
+  <td>
+    <div>
+      <input type="checkbox" value="yes" name="chkSPHdpB" id="chkSPHdpB"  onclick="autoPtSwitch(14);" />
+    </div>
+    <select class="select-pt" name="listSPHdpB" id="listSPHdpB">{listSPHdpBValue}</select>
+    <input type="button" name="listSPHdpB" value=" "   class="btn-dec1" onclick="ReducePT('listSPHdpB',1)"/>
+    <input type="button" name="listSPHdpB" value=" "   class="btn-inc1" onclick="IncreasePT('listSPHdpB',1)"/>
+    <input type="button" name="listSPHdpB" value=" " class="btn-dec10" onclick="ReducePT('listSPHdpB',10)"/>
+    <input type="button" name="listSPHdpB" value=" " class="btn-inc10" onclick="IncreasePT('listSPHdpB',10)"/>
+  </td>
+  <td>
+    <div>
+      <input type="checkbox" value="yes" name="chkSPMLB" id="chkSPMLB"  onclick="autoPtSwitch(16);" />
+    </div>
+    <select class="select-pt" name="listSPMLB{sporttype}" id="listSPMLB{sporttype}">{listSPMLBValue}</select>
+  </td>
+</tr>
+<!--/preset-pt-->
+</table>

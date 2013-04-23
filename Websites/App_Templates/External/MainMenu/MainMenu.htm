@@ -1,0 +1,26 @@
+﻿<script>
+var accMenu = new Array();
+accMenu['item_5'] = new Array("Win/Loss Daily|Report/WinLoss/DailyWinLoss.aspx?noautorender=1",
+                                "&bull; Win/Loss Detail|Report/WinLoss/default.aspx");
+accMenu['item_9'] = new Array("New Customer|Customer/CustomerFrame.aspx",
+                            "Customer List|sMenu9_1",
+                            "Transfer All|Customer/TransferAllMember.aspx");
+var subaccMenu = new Array();
+subaccMenu["sMenu9_1"] = new Array("Super List|Customer/SuperAgentList.aspx");
+
+</script>
+
+ <div id="mainmenu">
+ <ul>
+     <li id="item_5" onclick="menuclick('item_5');MainMenu_Click(this, 'Report/WinLoss/DailyWinLoss.aspx?noautorender=1')">
+        <a href="javascript:void(0)"><span>Report</span></a></li>
+    <li id="item_9" onclick="menuclick('item_9');MainMenu_Click(this, 'Customer/CustomerFrame.aspx')">
+        <a href="javascript:void(0)"><span>Customer</span></a></li>
+</ul>
+</div>
+<div class="accOption"><a onclick="gotoURL('centerFr','VerifyPassword.aspx')"
+            href="javascript:void(0);" class="text_user01">User Info</a> <span class="text_dif">|</span> <a href="PreLogin/LogOut.ashx"
+        class="text_user01">Log out</a></div>
+<div class="subtopmenu" id="submenu">
+</div>
+                    

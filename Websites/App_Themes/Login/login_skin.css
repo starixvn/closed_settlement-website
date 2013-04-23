@@ -1,0 +1,208 @@
+body {
+	font-family:arial,tahoma,verdana,helvetica,sans-serif;
+	font-size:11px;
+	margin:0px;
+	background:url(images/bg.jpg) repeat-x #fff;
+}
+a
+{
+	outline: none opx;
+	}
+input
+{
+	outline:none 0px;
+	}
+/*--Remove dot line onclick button--*/
+button::-moz-focus-inner, 
+input[type="reset"]::-moz-focus-inner, 
+input[type="button"]::-moz-focus-inner, 
+input[type="submit"]::-moz-focus-inner, 
+input[type="file"] >input[type="button"]::-moz-focus-inner{border:none}
+
+.clear{
+	clear: both;
+}
+#table_main{
+	margin-top:174px;
+	width:500px;
+	height:260px;
+	background:url(images/contentRp.png) repeat-x left;
+	text-align:left;
+}
+
+
+.lgRight{
+	float:right;
+	background:url(images/right.jpg) no-repeat ;
+	height:260px;
+	width:17px;
+}
+.lgLeft{
+	float:left;
+	background:url(images/left.jpg) no-repeat ;
+	height:260px;
+	width:14px;
+}
+.lgRp{
+	float:right;
+	/*background:url(images/lgRp.jpg) repeat-x ;*/
+	height:160px;
+	width:320px;
+}
+.key{
+	float:left;
+	margin-top:80px;
+	margin-left:14px;
+	background:url(images/lock.gif) no-repeat;
+	height:117px;
+	width:118px;
+}
+.title{
+	width:auto;
+	height:auto;
+	
+}
+.contents_box{
+	width:500px;
+	height:260px;
+}
+
+.war_box{
+	width:auto;
+	height:auto;
+	margin-top:16px;
+}
+div.comment {
+	color:#F00;
+	font-weight:bold;
+	padding:7px 5px 7px 45px;
+	border:1px solid #ffabab;
+	background:url(images/icAlert.png) no-repeat 10px #f1f1f1;
+}
+div.title {
+	color:#fff;
+	font-weight:bold;
+	height:22px;
+	padding-left:40px;
+	/*background:url(images/key.png) no-repeat ;*/
+}
+.form_log{
+	height:150px;
+	padding-top:0px;
+}
+.foot{
+	color:#333;
+	vertical-align:bottom;
+	height:33px;
+	
+}
+.footLeft{
+	background:url(images/lgFtleft.jpg) no-repeat right;
+	text-align:left;
+	width:26px; 
+	height:33px;
+}
+.footRight{
+	background:url(images/lgFtright.jpg) no-repeat left;
+	text-align:left;
+	width:26px; 
+	height:33px;
+}
+.footRp{
+	background:url(images/lgFtrp.jpg) repeat-x left;
+	text-align:left;
+	color:#113d73;
+	vertical-align:top;
+	font-size:10px;
+	height:33px;
+}
+
+.log_text{
+	color:#155d95;
+	font-weight:bold;
+	padding-left:10px;
+	line-height:35px;
+}
+.footText{
+	color:#999;
+	font-size:10px;
+}
+.btLg{
+	text-decoration:none;
+	background:url(images/btLg.jpg) no-repeat;
+	padding: 4px 35px 5px 6px ;
+	
+	font-weight:bold;
+	color:#069;
+
+	
+}
+.btLg:hover{
+	
+	color:#09F;
+}
+.icUser{
+	background:url(images/icUser.jpg) no-repeat center;
+	width:29px;
+	height:31px;
+}
+.icPass{
+	background:url(images/icPass.jpg) no-repeat center;
+	width:29px;
+	height:31px;
+}
+.icIE{
+	background:url(images/IE.png) no-repeat top;
+
+	height:18px;
+}
+.icFirefox{
+	background:url(images/FF.png) no-repeat top;
+
+	height:15px;
+}
+.log_button 
+{
+	outline: none 0px;
+background:transparent url(images/login.gif) no-repeat scroll 0 0;
+border:medium none;
+cursor:pointer;
+height:24px;
+margin-right:6px;
+text-align:center;
+width:64px;
+padding-bottom:1px;
+}
+.log_button:hover {
+background:transparent url(images/loginHover.gif) no-repeat scroll 0 0;
+}
+.text_copyright
+{
+	width:500px;
+	color:#155D95;
+	font-size:10px;
+	font-weight:normal;
+	padding-right:8px;
+	text-align:right;
+	margin-top:-22px;
+	}
+.viewIE
+{
+	width:34px;
+	height:18px;
+	background:url(images/IE.png) top left no-repeat;
+	}
+.viewFF
+{
+	width:60px;
+	height:18px;
+	background:url(images/FF.png) top left no-repeat;
+	}
+.bestview
+{
+	margin-top:-4px;
+	color:#155D95;
+	font-size:10px;
+	font-weight:normal;
+	}
+

@@ -1,0 +1,65 @@
+<form name="fAdminList">
+<div style="width: 1204px">
+    <table style="width: 400px" border="0">
+        <tr>
+            <td>
+                <font class="b">Keyword</font>
+            </td>
+            <td>
+                <input type="text" name="txtSearch" id="txtSearch" value="{search-Val}" onfocus="On_Focus();"
+                    onblur="on_Blur();" onkeypress="return On_KeyPress(event);" />
+            </td>
+            <td>
+                <font class="b">First Letter</font>
+            </td>
+            <td>
+                <select class="Sel60" name="listAlpha" id="listAlpha">
+                    {listAlphaValue}
+                </select>
+            </td>
+            <td class="r">
+                <input class="btn" type="button" name="btnGo" id="btnGo" value="Search" onclick="return {functionName};" />
+            </td>
+        </tr>
+    </table>
+    <table id="tblallaccountlist" border="0" style="border-collapse:collapse;">
+        <thead>
+            <tr>
+                <td style="width:21px">
+                    No
+                </td>
+                <td style="width:93px">
+                    User Name
+                </td>
+                <td style="width:200px">
+                    First Name
+                </td>
+                <td style="width:200px">
+                    Last Name
+                </td>
+                <td style="width:78px">
+                    Status
+                </td>
+                <td style="width:79px">
+                    Creator
+                </td>
+                <td style="width:150px">
+                    Created Date
+                </td>
+                <td style="width:79px">
+                    Policy
+                </td>
+                <td style="width:90px">
+                    Department
+                </td>
+                <td style="width:73px">
+                    Reset
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            {content}
+        </tbody>
+    </table>
+</div>
+</form>

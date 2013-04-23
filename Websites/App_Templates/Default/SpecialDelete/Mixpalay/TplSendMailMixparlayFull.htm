@@ -1,0 +1,85 @@
+﻿<table cellspacing="0" rules="all" bordercolor="#7C98A4" border="1" id="display"
+    style="border-color: #7C98A4; border-style: Solid; border-collapse: collapse;
+    font-size: 8pt; font-family: Tahoma, Arial, Verdana, Sans-Serif;">
+    <tr align="Center" valign="Middle" style="background-color: #B5C4D0; height: 25px;
+        font-weight: bold;">
+        <td width="50">
+            Code
+        </td>
+        <td nowrap>
+            Event
+        </td>
+        <td width="100">
+            Event Date
+        </td>
+    </tr>
+    <tr align="Center" valign="Middle" style="background-color: #FCFCFC; height: 25px;">
+        <td>
+            {Code}
+        </td>
+        <td>
+            {Home}<!--vs-->-vs-<!--/vs-->{Away}
+        </td>
+        <td>
+            {EventDate}
+        </td>
+    </tr>
+</table>
+<!--mixparlay-bet-->
+<br/>
+<b>{ActionType} Mix Parlay Bets</b>
+<table cellspacing="0" rules="all" bordercolor="#7C98A4" border="1" id="tbl_mixparlay"
+    style="border-color: #7C98A4; border-style: Solid; border-collapse: collapse;
+    font-size: 8pt; font-family: Tahoma, Arial, Verdana, Sans-Serif;" width="100%">
+    <tbody>
+    <tr align="Center" valign="Middle" style="background-color: #CDDEF3; height: 25px;
+        font-weight: bold;">
+        <th width="8%">
+            USER
+        </th>
+        <th width="10%">
+            TRANS.TIME
+        </th>
+        <th width="10%">
+            BETID
+        </th>
+        <th width="10%">
+            BETTYPE</th>
+        <th width="8%">
+            WINLOSS
+        </th>
+        <th width="7%" align="right">
+            ODDS
+        </th>
+        <th width="7%">
+            STAKE
+        </th>
+        <th width="5%">
+            STATUS
+        </th>
+        <th width="5%">
+            SUPER PT
+        </th>
+        <th width="6%">
+            MASTER PT
+        </th>
+        <th width="5%">
+            AGENT PT
+        </th>
+        <!--choice-->
+        <th>
+            CHOICE
+        </th>
+        <!--/choice-->
+    </tr>
+    {Rows_Mix}
+    </tbody>
+</table>
+<!--/mixparlay-bet-->
+<br/>
+<b>{ActionType} by:</b> {UserName}
+<br/>
+<b>Date:</b> {time}
+<br/>
+<br/>
+<i>This is an auto-mail. Please do not reply.</i><br/>

@@ -1,0 +1,14 @@
+<Modules>
+  <Module PersistentId="7EF6B61B-7588-4353-B523-8D0178BDBDE2" ModuleId="Websites" />
+  <Module PersistentId="27984FEE-40DC-40DC-B3B9-3A8776C5511D" ModuleId="Sunplus.Accounting.DataAccess" />
+  <Module PersistentId="C7EB1617-765A-44E2-9267-96865EB5C096" ModuleId="Sunplus.Accounting.Business" />
+  <Module PersistentId="09B74F02-6C21-4C5E-A52C-B6D56595A262" ModuleId="Sunplus.Accounting.Core" />
+  <Module PersistentId="2426F40B-B40E-420E-BD14-80814B949055" ModuleId="Sunplus.Accounting.WcfServiceLibrary" />
+  <Module PersistentId="C2043B3C-AF85-4334-8542-F9AC2B031D79" ModuleId="Sunplus.Accounting.Entities" />
+  <Module PersistentId="F3FE623F-A32F-4DB4-8306-64C166FC4488" ModuleId="Fanex.Tarus.Web.Controllers" />
+  <Module PersistentId="BE4A5642-A3B6-4329-BB8F-4973446E7FA9" ModuleId="Fanex.Tarus.Business.Implement" />
+  <Module PersistentId="98993382-DB96-4EF7-932B-0C384A31199F" ModuleId="Fanex.Tarus.Business.Interface" />
+  <Module PersistentId="ED61A61E-4805-405A-8A5F-44E933DE874A" ModuleId="Fanex.Tarus.Settlement" />
+  <Module PersistentId="3ADA1C70-FD55-4C89-BFEF-1B695B1042CD" ModuleId="Fanex.Tarus.Web.Models" />
+  <Module PersistentId="FA489626-9250-447A-B555-E621B43D3AFF" ModuleId="Fanex.Tarus.User" />
+</Modules>

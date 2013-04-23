@@ -1,0 +1,196 @@
+<center>
+  <span id="errMsg" class="error-message"></span>
+  <input type="hidden"  id="{parentId}" name="{parentId}"  value="{valueParentId}"/>
+  <input type="hidden" id="custId" name="custId" value="{cust-id}" />
+  <input type="hidden" id="isUpdateMember" name="isUpdateMember" value="0" />
+  <input type="hidden" id="memberPT" name="memberPT" value="0" />
+  <input type="hidden" id="maxMemberPT" name="maxMemberPT" value="0" />
+  <input type="hidden" id="roleId" name="roleId" value="{role-id}" />
+  <table class="tblcollapse" border="1px"  width="600px">
+    <tr class="title">
+      <td colspan="4">{add-edit-agent} <span class="">{username}</span>
+      </td>
+    </tr>
+	<!--not-edit-->
+    <tr class="{edit-hidden}">
+      <td class="c">Username</td>
+      <td class="l">
+        <input class="txt-font8pt txt-width-100"  type="text" name="txtUsername" id="txtUsername" />
+      </td>
+      <td class="c">Password</td>
+      <td class="l">
+        <input type="password"  class="txt-font8pt txt-width-100" name="txtPwd" id="txtPwd" />
+      </td>
+    </tr>
+	<!--/not-edit-->
+    <tr>
+      <td class="c">Firstname</td>
+      <td class="l">
+        <input class="txt-font8pt txt-width-100" name="txtFirstname" id="txtFirstname" value="{firstname}" />
+      </td>
+      <td class="c">Lastname</td>
+      <td class="l">
+        <input class="txt-font8pt txt-width-100" name="txtLastname" id="txtLastname" value="{lastname}" />
+      </td>
+    </tr>
+    <tr>
+      <td class="c">Phone</td>
+      <td class="l">
+        <input class="txt-font8pt txt-width-100" name="txtPhone" id="txtPhone" value="{phone}" />
+      </td>
+      <td class="c">Mobile</td>
+      <td class="l">
+        <input class="txt-font8pt txt-width-100" name="txtMobile" id="txtMobile" value="{mobile}" />
+      </td>
+    </tr>
+	 <!--site-super-->
+	<tr class="{site-curr-hidden}">
+		<td class="c">Site</td>
+		<td class="l">
+			<select class="select-group" name="listSite" id="listSite">
+              <option>Select</option>
+            </select>
+		</td>
+		<td class="c">Currency</td>
+		<td>
+			<select class="select-group" name="listCurrency" id="listCurrency">{listCurrencyValue}</select>
+		</td>
+	</tr>
+	<!--/site-super-->
+    <tr>
+      <td class="{mem-group-hidden}">Group</td>
+      <td colspan="{colsGroup}"  class="{mem-group-hidden} add-customer-padd-left">
+		  <input class="txt-font8pt txt-width-50 txt-direction-rtl {read-group}" name="txtGroup" id="txtGroup" value="{group-Val}"  type="text"  readonly="readonly"  />
+        <select class="select-group {select-group}" id="listGroupMember" onchange="UpdateCommission();"  name="listGroupMember">{listGroupMemberValue}</select>
+      </td>
+      <td colspan="{colsmaxcredit}" class="c">Max Credit</td>
+      <td colspan="{colsmaxcredit}" class="add-customer-padd-left c">        
+        <input class="txt-font8pt txt-width-100" maxlength="14" name="txtMaxCredit" id="txtMaxCredit" value="{maxcredit-val}" />
+      </td>
+    </tr>
+  </table>
+  <table class="tblcollapse" border="1px" width="920px">
+    <tr class="title">
+      <td colspan="4">Commission</td>
+    </tr>
+	  <!--member-com-->
+	  <tr class="{memb-com-hidden}" >
+		  <td>Comm for Agent Asian HDP,OU,OE:</td>
+		  <td class="l">
+			  <input class="txt-font8pt txt-width-100" type="text" readonly="readonly" id="txtCommAgent1" name="txtCommAgent1"  value="{vcommA1}"/>
+		  </td>
+		  <td>Comm for Agent 1x2,CS,TG:</td>
+		  <td class="l">
+			  <input class="txt-font8pt txt-width-100" type="text" readonly="readonly" id="txtCommAgent5" name="txtCommAgent5"  value="{vcommA5}"/>
+		  </td>
+	  </tr>
+	  <tr class="{memb-com-hidden}" >
+		  <td>Comm for Member Asian HDP,OU,OE:</td>
+		  <td class="l">
+			  <select class="select-group" id="listCommMem1" name="listCommMem1">{listCommmMem1Value}</select>
+		  </td>
+		  <td>Comm for Member 1x2,CS,TG:</td>
+		  <td class="l">
+			  <select class="select-group" id="listCommMem5" name="listCommMem5">{listCommmMem5Value}</select>
+		  </td>
+	  </tr>
+	  <!--/member-com-->
+	  <!--hid-com-->
+    <tr class="{group-com-hidden}">
+      <td colspan="4" class="c">
+        Group A
+        <select class="selectcomm" name="listGroupA" id="listGroupA">{listGroupAValue}</select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        Group B
+        <select class="selectcomm" name="listGroupB" id="listGroupB">{listGroupBValue}</select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        Group C
+        <select class="selectcomm" name="listGroupC" id="listGroupC">{listGroupCValue}</select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        Group D
+        <select class="selectcomm" name="listGroupD" id="listGroupD">{listGroupDValue}</select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        Other Comm
+        <select class="selectcomm" name="listOther" id="listOther">{listOtherValue}</select>
+      </td>
+    </tr>
+	  <!--/hid-com-->
+    <tr class="title">
+      <td colspan="2">Soccer</td>
+      <td colspan="2">Basketball</td>
+    </tr>
+    <tr>
+      <td class="c" width="18%">Min Bet</td>
+      <td class="l" width="32%">
+        <input class="txt-font8pt txt-width-100" maxlength="14" value="{minbets}" name="txtMinBet" id="txtMinBet"/>
+        <span style="display:{m-max-none}">(&gt;=<span name="txtMinBetMax" id="txtMinBetMax">{vminbetmax}</span>)
+        </span>
+      </td>
+      <td class="c" width="18%">Min Bet</td>
+      <td class="l" width="32%">
+        <input class="txt-font8pt txt-width-100" maxlength="14" value="{minbetb}" name="txtMinBetb" id="txtMinBetb"/>
+        <span style="display:{m-maxb-none}">
+          (&gt;=<span name="txtMinBetMaxb" id="txtMinBetMaxb">{vminbetmaxb}</span>)
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="c">Max Bet</td>
+      <td class="l">
+        <input class="txt-font8pt txt-width-100" maxlength="14" value="{maxbets}" name="txtMaxBet" id="txtMaxBet"/>
+        <span style="display:{m-min-none}">
+          (&lt;=<span name="txtMaxBetMin" id="txtMaxBetMin">{vmaxbetmin}</span>)
+        </span>
+      </td>
+      <td class="c">Max Bet</td>
+      <td class="l">
+        <input class="txt-font8pt txt-width-100" maxlength="14" value="{maxbetb}" name="txtMaxBetb" id="txtMaxBetb"/>
+        <span style="display:{m-minb-none}">
+          (&lt;=<span name="txtMaxBetMinb" id="txtMaxBetMinb" >{vmaxbetminb}</span>)
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="c">
+        Max Per Match
+      </td>
+      <td class="l">
+        <input class="txt-font8pt txt-width-100" maxlength="14" value="{maxpermatchs}" name="txtMaxPerMatch" id="txtMaxPerMatch"/>
+        <span style="display:{per-min-none}">
+          (&gt;=<span name="txtMaxPerMin" id="txtMaxPerMin">{vmaxpermin}</span>)
+        </span>
+        <span style="display:{per-max-none}">
+          (&lt;=<span name="txtMinPerMax" id="txtMinPerMax">{vmaxpermax}</span>)
+        </span>
+      </td>
+      <td class="c">Max Per Match</td>
+      <td class="l">
+        <input class="txt-font8pt txt-width-100" maxlength="14" value="{maxpermatchb}" name="txtMaxPerMatchb" id="txtMaxPerMatchb"/>
+        <span style="display:{per-minb-none};">(&gt;=<span name="txtMaxPerMinb" id="txtMaxPerMinb">{vmaxperminb}</span>)</span>
+        <span style="display:{per-maxb-none}">(&lt;=<span width="50px" name="txtMinPerMaxb" id="txtMinPerMaxb">{vmaxpermaxb}</span>)</span>
+      </td>
+    </tr>
+    <tr class="title">
+      <td colspan="4">Soccer Position Taking</td>
+    </tr>
+    <tr>
+      <td colspan="4">{tableSoccerPT}</td>
+    </tr>
+    <tr  class="title">
+      <td colspan="4">Basketball Position Taking</td>
+    </tr>
+    <tr>
+      <td colspan="4">{tableBasketballPT}</td>
+    </tr>
+	 <!--closed-mem-->
+    <tr class="{status-hidden}">
+      <td width="17%" class="c">Status</td>
+      <td class="l" colspan="3">
+        <input type="checkbox" name="chkClosed" value="yes" {closed-checked} id="chkClosed"/>Closed
+      </td>
+	<!--/closed-mem-->
+    </tr>
+    <tr>
+      <td colspan="4" class="c">
+        <input type="submit" onclick="return CheckInputForm();"  name="btnAdd" id="btnAdd" value="Add" class="btn {add-hidden}"/>
+        <input type="submit" onclick="return CheckInputForm();"  name="btnUpdate" id="btnUpdate" value="Update" class="btn {update-hidden}"/>
+      </td>
+    </tr>
+  </table>
+</center>

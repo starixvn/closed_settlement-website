@@ -1,0 +1,52 @@
+﻿<div class="main">
+    <div class="maincontent">
+        <table border="0" cellpadding="0px" cellspacing="0px" class="maincontent_header">
+            <tr>
+                <td class="maincontent_headerL">
+                </td>
+                <td class="maincontent_headerC">
+                    {Title}
+                </td>
+                <td class="maincontent_headerR">
+                </td>
+            </tr>
+        </table>
+        <div class="maincontent_box">
+            <table width="405px">
+                <tr class="b">
+                    <td>
+                        From:
+                    </td>
+                    <td>
+                        {fdate}
+                    </td>
+                    <td>
+                        To:
+                    </td>
+                    <td>
+                        {tdate}
+                    </td>
+                    <td>
+                        <input type="button" onclick="GetCreatedCustomer()" value="REPORT" class="btn" id="btnSearch">
+                        <input type="button" title="Export to Excel" onclick="ExportToExcel();" value="   "
+                            name="btnExport" id="btnExport" class="btnExcel" style="">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="bg_table">
+            <table>
+                <tr>
+                    <td valign="top" colspan="5" width="380px" style="border-style:none;">
+                        <div id="parentContent">
+                            {mainContent}</div>
+                    </td>
+                    <td valign="top" style="padding-left: 10px; border-style:none;" width="380px">
+                        <div id="childContent">
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

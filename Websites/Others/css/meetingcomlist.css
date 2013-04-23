@@ -1,0 +1,113 @@
+﻿.ui-widget-header { border: 1px solid #7C98A4; background: #B5C4D0;color: #000; font-weight: bold; }
+.ui-widget-footer { border: 1px solid #7C98A4; background: #B5C4D0;color: #000; font-weight: bold; }
+.ui-widget-content{ border: 1px solid #aaaaaa; background: #fff; }
+
+.GridContent table {
+	background:#7C98A4;
+	text-align:center;
+	line-height:18px;
+}
+.GridContent { width: 713px; }
+.GridContent tbody tr { background: #fff}
+.GridContent tbody td { color:#000}
+
+.evenrow td{background:#e6e9f0;}	
+
+
+/*CSS version 2*/
+div.panel_search
+{
+    width: 705px;
+    background-color: #B5C4D0;
+    border: 1px solid #7C98A4;
+    margin-bottom: 5px;
+    text-align:left!important;
+    padding: 3px 5px;
+}
+div#partner_detail
+{
+    width: 715px;
+    border: 1px solid #7C98A4;
+    float: left;
+}
+div#partner_detail div {float: left;}
+div#partner_detail .header 
+{
+    border-bottom: 1px solid #7C98A4;
+    border-right: 1px solid #7C98A4;
+    background-color: #B5C4D0;
+}
+div#partner_detail .header .line
+{
+    text-align: center; 
+    font-weight: bold; 
+    border-bottom: 1px solid #7C98A4;
+}
+div#partner_detail .header .line div 
+{
+    border-right: 1px solid #7C98A4;
+    /*padding: 5px 0px;*/
+}
+div#partner_detail .header .line .label 
+{
+    width: 715px;
+    padding: 5px 0px;
+} 
+div.noborder {border-top: none!important;border-right: none!important;border-bottom: none!important;border-left: none!important;}
+div#partner_detail .content 
+{
+    width: 100%;
+    height: 500px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+div#partner_detail .content .item 
+{
+    width: 697px;
+    text-align: center;
+    border-bottom: 1px solid #7C98A4;
+    border-right: 1px solid #7C98A4;
+    background: #FFF;
+}
+div#partner_detail .content .item div 
+{
+    border-right: 1px solid #7C98A4;
+    padding: 5px 0px;
+    height: 14px;
+}
+div#partner_detail .content .item.even
+{
+    background-color: #DFEAFF;
+}
+div#partner_detail .content .item.active
+{
+    background-color: #F8FF8D !important;
+    cursor: pointer;
+}
+div#partner_detail .content .item .nodata
+{
+    width: 100%;
+}
+div.number
+{
+    width: 50px;
+}
+div.meeting
+{
+    width: 141px;
+}
+div.currency
+{
+    width: 100px;
+}
+div.fee
+{
+    width: 100px;
+}
+div.comm
+{
+    width: 100px;
+    padding: 3px 0px;
+    height: 14px;
+}
+div.hrow {height: 28px;padding-top: 12px;}

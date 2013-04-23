@@ -1,0 +1,66 @@
+﻿<table class="tbllayout" border="0"    cellspacing="1" id="rptMemberStatement">
+<!--ReportHeader-->
+    <thead>
+        <!--verifyheader-->
+        <tr>
+            <th colspan="5"></th><th class="verified"><input type="button"
+                id="btnVerify" style="width:100%" onclick='VerifyTrans(this)'  disabled="disabled" class="verifiedDisabled" value="Verify" /> </th><th colspan="3">
+                </th>
+        </tr>
+        <!--/verifyheader-->
+        <tr class="title" style="text-align: center;">
+            <th style="width:80px">Date</th>
+            <th style="width: 300px;">Remark</th> 
+            <th>Total</th> 
+            <th>Accumulated Total</th>
+            <!--Creator-->
+            <th>Creator</th>
+            <!--/Creator-->
+            <!--verifyheader-->
+            <th class="verify">
+            
+                <input type="checkbox" id="chkAll" onclick='ItemAllClicked()' {AllVerifyDisabled} />
+                
+            </th>
+            <!--/verifyheader-->
+            
+            <th width="70px" class="verify">
+                Verified by
+            </th>
+            <th width="80px" class="verify">
+                Checked Time
+            </th>
+            <!--action-->
+            <th width="50px" class="verify">
+                Action
+            </th>
+            <!--/action-->
+        </tr>
+    </thead>
+<!--/ReportHeader-->
+<!--ReportContent-->
+<tbody>
+<tr class="{odd_even}">
+    <td class="c"><span {link}>{Date}</span></td>
+    <td class="l"><b>{Remark}</b></td>
+    <td {cssNegative} style="text-align:right;">{Total}</td>
+    <td {OkClass} style="text-align:right;">{Total2}</td>
+    <!--CreatorVL-->
+    <td class="c">{Creator}</td>
+    <!--/CreatorVL-->
+         <!--verifyheader-->
+      <td>
+      <!--verifycheckbox-->
+      <input type="checkbox" id="{id}" {checked} {disabled}  onclick="CheckSelectItem(this)"/>
+       <!--/verifycheckbox--></td>  <!--/verifyheader-->
+     <td class="c">{verifiedby}</td>
+    <td class="c">{checkedtime}</td>
+     <!--action-->
+    <td >
+    {action}   
+      </td>
+       <!--/action-->
+</tr>
+</tbody>
+<!--/ReportContent-->
+</table>

@@ -1,0 +1,38 @@
+<table class="tbllayout" cellpadding="0" cellspacing="1" style="width:250px;line-height:21px !important;">
+	<!--PageTitle-->
+	<tr class="title">
+		<td colspan="2">{title}</td>
+	</tr>
+	<!--/PageTitle-->
+	<tr>
+		<td class="l b" style="width:45%" nowrap>{oldUname}:</td>
+		<td class="l" style="padding:2px;">
+			<input class="txt" type="text" name="{txtName1}" id="{txtName1}"/>
+		</td>
+	</tr>
+	<!--hidden-clear-->
+	<tr>
+		<td class="l b" nowrap>{newUname}:</td>
+		<td class="l" style="padding:2px;">
+			<input class="txt {hidden}" type="text" name="{txtName2}" id="{txtName2}"/>
+			<select class="{ddl-hidden}" name="listGroup" id="listGroup">
+				<!--<option value="a">a</option>
+				<option value="b">b</option>
+				<option value="c">c</option>
+				
+				<option value="d">d</option>
+				<option value="hka">hka</option>
+				<option value="hkb">hkb</option>
+				<option value="hkc">hkc</option>
+				<option value="hkd">hkd</option>-->
+                {currencies}
+			</select>
+		</td>
+	</tr>
+	<!--/hidden-clear-->
+	<tr>
+		<td colspan="2" class="c" style="padding:2px;">
+			<input class="btn"  type="button" onclick="return CheckInputValue();"  name="btnSubmit" id="btnSubmit" value="Submit"/>
+		</td>		
+	</tr>
+</table>

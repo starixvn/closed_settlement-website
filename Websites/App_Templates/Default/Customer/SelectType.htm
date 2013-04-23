@@ -1,0 +1,59 @@
+<table>
+    <tr>
+        <td colspan="4"><span id="errMsg" class="error-message"></span></td>
+    </tr>
+	<tr>
+		<td class="l"  style="display:{curnone};">
+			<input class="btn"  type="button" id="btnCurrent" name="btnCurrent" value="{accCurrent}" onclick="OpenFormAdd();" />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</td>
+		<td class="l">
+			<font class="b">{selecttype}:&nbsp;</font>
+			<select id="listType" name="listType" onchange="OpenInputParent();">
+				<option value="{vmember}">{newmember}</option>
+				<option value="{vagent}">{newagent}</option>
+				<option value="{vmaster}">{newmaster}</option>
+				<option value="{vsuper}">{newsuper}</option>
+			</select>&nbsp;&nbsp;&nbsp;
+		</td>
+		<td class="l" style="display:{fInput}">
+			<font class="b">{accUsername}:&nbsp;</font>
+			<input type="text" class="txt" onkeypress="return On_KeyPress(event);" id="txtUsername" name="txtUsername"/>
+			&nbsp;<input class="btn"  type="button" id="btnNext" onclick="CheckUserName();"  value="{next}" name="btnNext"/>
+			
+		</td>
+	</tr>
+</table>
+<table>	
+	<tr style="display:{fSuper}">
+		<td>
+			<table class="tbllayout" style="width:450px;" cellspacing="1">
+				<tr class="title">
+					<td>{createmaster}</td>
+				</tr>
+				<tr>
+					<td class="l">
+						<input checked="true"  type="radio" onclick="On_SelectSuper()"  id="exSuper" name="rdoSuper" />{super}
+						<select id="listSuper" name="listSuper" disabled="true">{listSuperValue}</select>
+					</td>
+				</tr>
+				<tr>
+					<td class="l">
+						<input type="radio" id="inSuper" onclick="On_SelectSuper()"  checked="true"  name="rdoSuper" />{companydirect}
+						&nbsp;&nbsp;&nbsp;
+						<b>{curency}:</b>
+						<select id="listCurrency" name="listCurrency">{listCurrValue}</select>
+						&nbsp;&nbsp;&nbsp;
+						<b>{site}:</b>
+						<select id="listSite" name="listSite">{listSiteValue}</select>
+					</td>
+				</tr>
+				<tr>
+					<td class="c">
+						<input class="btn"  type="button" onclick="OpenFormAdd('',4);" id="btnNext" value="{next}"  name="btnNext"/>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>

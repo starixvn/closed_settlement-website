@@ -1,0 +1,54 @@
+<div>
+  <form id="frmBill"> 
+  <table class="tblcollapse">    
+    <tr class="title1 c">        
+        <td colspan="10">LEAGUE:&nbsp;{leaguename}</td>
+    </tr>
+    <tr class="title">
+      <td width="80" >CODE</td>
+      <td width="85" >KICK-OFF TIME</td>
+      <td width="280" >TEAM</td>
+      <td width="22" >1 Set</td>
+      <td width="22" >2 Set</td>
+      <td width="22" >3 Set</td>
+      <td width="22" >4 Set</td>
+      <td width="22" >5 Set</td>
+      <td width="36" >Total Games</td>
+      <td width="36" >Total Set</td>
+    </tr>
+    <tr class="c">
+      <td rowspan="2">{matchcode}</td>
+      <td rowspan="2">{date}</td>
+      <td class="fontbold l hteam">{hometeam}</td>
+      <td>{value1sHome}</td>
+      <td>{value2sHome}</td> 
+      <td>{value3sHome}</td> 
+      <td>{value4sHome}</td> 
+      <td>{value5sHome}</td> 
+      <td>{valueTGHome}</td>
+      <td>{valueFSHome}</td>                
+    </tr> 
+    <tr class="c">      
+      <td class="fontbold l ateam">{awayteam}</td>
+      <td>{value1sAway}</td>
+      <td>{value2sAway}</td> 
+      <td>{value3sAway}</td>
+      <td>{value4sAway}</td> 
+      <td>{value5sAway}</td> 
+      <td>{valueTGAway}</td>
+      <td>{valueFSAway}</td>                
+    </tr>      
+  </table>
+
+    {Refund}
+    
+    <input type="hidden" id="sParams" name="sParams" value="{params}" />  
+  <input type="hidden" id="sAction" name="sAction" />
+  <input type="hidden" id="isSD" name="isSD" value="0" />
+  </form>
+  
+  <span style="padding-left: 30px;" id="infoMsg" class="info-message"></span>  
+  <span style="padding-left: 30px; visibility: hidden;" id="errMsg" class="error-message">Please input valid score!</span>
+  
+  
+</div>

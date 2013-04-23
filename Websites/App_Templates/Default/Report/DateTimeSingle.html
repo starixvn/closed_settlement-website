@@ -1,0 +1,23 @@
+<table>
+    <tr class="c b">
+        <td class="padright">{Text-value}:</td>
+        <td>{FromDateCal}</td>
+        
+        <td>&nbsp;</td>
+        <td><input type="button" value="REPORT" class="btn" onclick="ViewReport()" /></td>
+        <td><input type='button' onclick='ExportToExcel();' value='   ' name='btnExport' id='btnExport' class='btnExcel' title="Export to Excel" /></td>
+        <td width="25px">
+            <img id='inProgressBar' name='inProgressBar' style='display: none' src="../App_Themes/Images/ajax-loader.gif" />
+        </td>
+    </tr>
+    <!--getdata-->
+    <tr>
+        <td colspan="6">
+           <span id="spHeader"><b>{Title-Report}</b></span> <b>GET DATA FROM</b>
+            <input type ="radio" id="rdMain" name="rdData" /> <span>MAIN</span>
+            <input type ="radio" checked="checked" id="rdRep" name="rdData" /> <span>REPLICATION</span>
+        </td>
+    </tr>
+    <!--/getdata-->
+</table>
+<p></p>

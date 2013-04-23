@@ -1,0 +1,84 @@
+﻿<div>
+  <form id="frmBill">    
+  <table class="tblcollapse">
+        <tbody>
+             <tr>
+                <td colspan="8" class="title1">
+                    *..::¤&nbsp;{leagueName}&nbsp;¤::..*
+                </td>
+            </tr>
+
+             <tr class="c title" style=" text-transform:uppercase;">
+                <td colspan="2">
+                    RACE {raceNumber} - {eventStatus}
+                </td>
+                <td colspan="6" >
+                    EVENT {eventDate}
+                </td>
+            </tr>
+            
+            <tr class="c title">
+                <td width="60">
+                    Position
+                </td>
+                <td width="200">
+                    Horse
+                </td>
+                <td width="60">
+                    SCR
+                </td>
+                <td width="60" >
+                    TF
+                </td>
+
+                <td width="60">
+                    Win
+                </td>
+                <td width="60">
+                    Place
+                </td>
+                <td width="80"></td>
+                 <td width="80"></td>
+            </tr>
+            <!--row-->
+            <tr id="{rowid}" class="{rowEven}" >
+                <td class="c">{placeNumber}</td>
+                <td >
+                    {lblHorseNo_Name}
+                </td>
+                <td class="c">
+                    {inputCheckSCR}
+                </td>
+                <td class="c">
+                    {inputCheckTF}
+                </td>
+                <td class="c">
+                    {txtWin}    
+                </td>
+                <td class="c" >
+                    {txtPlace}
+                </td>
+                <td class="c">
+                    {btnKey}
+                </td>
+                <td class="c">
+                    {btnCalc}
+                </td>
+            </tr>
+            <!--/row-->
+            {rows}
+            <tr>
+            <td class="c" colspan="7">
+                <span id="infoMsg" class="info-message" style="display:none;">SUCCESS!</span>
+                <span id="errMsg" class="error-message" style="display:none;">Please input valid result!</span>
+            </td>
+              <td width="80px">
+                <!--HostPermission--><input id="btnCalculate" class="btn" onclick="DoCalculateHR();" type="button" value="Caclulate All" style=" width:80px;" /><!--/HostPermission-->
+                <!--ReadPermission--><input type="button" class="btn" value="Caclulate All" disabled="disabled" style=" width:80px;" /><!--/ReadPermission-->
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <br />
+    </form>
+</div>

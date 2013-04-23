@@ -1,0 +1,58 @@
+<table width="100%" border="0" align="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td style="height:6pt;">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td style="height:6pt;" width="7" class="rp_LINE_l"></td>
+          <td style="height:6pt;" class="rp_line_rp">&nbsp;</td>
+          <td style="height:6pt;" width="7" class="rp_line_r"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td >
+      <table  border="0" width="100%"  align="left" cellpadding="0" cellspacing="0">
+        <tr>
+          <td height="82" class="rp_main_l"></td>
+          <td valign="bottom" class="rp_main_rp" style="padding-top:5px;">
+            <table border="0"  cellpadding="0" cellspacing="0">
+              <tr class="b">
+                <td width="80"  align="left" valign="middle" class="txt_title">REPORTS: </td>
+                <td width="250">
+                  {ReportList}
+                </td>
+                <td align="left" class="txt_normal" style="padding-right:5px;">From:</td>
+                <td width="150"  align="left">
+                  {fdate}
+                </td>
+                <td align="left" class="txt_normal"  style="padding-right:5px;">To:</td>
+                <td width="150">
+                  {tdate}
+                </td>
+                <td width="100"  align="left">
+                  <input type="submit" name="btnSubmit" id="btnSubmit" class="input-button  button" value="V.Report" onclick="ShowReport();" />                  
+                </td>
+                <td align="left">
+                  <input type="submit" name="btnSubmit" id="btnSubmit" class="input-button  button" value="N.Window" onclick="NewWindow();" />
+                </td>
+              </tr>
+              <tr>
+                <td colspan="8">
+                  <div id="dvSubHeader"></div>
+                </td>
+              </tr>
+            </table>            
+          </td>
+          <td class="rp_main_r"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>  
+  <tr id="trloading" style="display:none">
+    <td>
+      <div id="loading"></div>
+    </td>
+  </tr>
+</table>
+

@@ -1,0 +1,585 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Acc_CustomerInsMember_Ag" xml:space="preserve">
+    <value>Add Bet Setting for member</value>
+  </data>
+  <data name="Acc_CustomerInsMember_Com" xml:space="preserve">
+    <value>Add Bet Setting for super</value>
+  </data>
+  <data name="Acc_CustomerInsMember_MAg" xml:space="preserve">
+    <value>Add Bet Setting for agent</value>
+  </data>
+  <data name="Acc_CustomerInsMember_SAg" xml:space="preserve">
+    <value>Add Bet Setting for master</value>
+  </data>
+  <data name="Acc_CustomerUpdAgent_MinMaxBet" xml:space="preserve">
+    <value>Update Sportsbook Bet Setting for agent</value>
+  </data>
+  <data name="Acc_CustomerUpdMaster_MinMaxBet" xml:space="preserve">
+    <value>Update Sportsbook Bet Setting for master</value>
+  </data>
+  <data name="Acc_CustomerUpdMember_MinMaxBet" xml:space="preserve">
+    <value>Update Sportsbook Bet Setting for member</value>
+  </data>
+  <data name="Acc_CustomerUpdSuper_MinMaxBet" xml:space="preserve">
+    <value>Update Sportsbook Bet Setting for super</value>
+  </data>
+  <data name="Age_CustomerUpdMemBetSetting" xml:space="preserve">
+    <value>Update Sportsbook Bet Setting</value>
+  </data>
+  <data name="a_v161mlivept_89" xml:space="preserve">
+    <value>Live Next Combo</value>
+  </data>
+  <data name="a_v161mlivept_90" xml:space="preserve">
+    <value>Live Number Group</value>
+  </data>
+  <data name="a_v161mlivept_mem_85" xml:space="preserve">
+    <value>Live Next Over/Under</value>
+  </data>
+  <data name="a_v161mlivept_mem_86" xml:space="preserve">
+    <value>Live Next Odd/Even</value>
+  </data>
+  <data name="a_v161mlivept_mem_87" xml:space="preserve">
+    <value>Live Next High/Low</value>
+  </data>
+  <data name="a_v161mlivept_mem_89" xml:space="preserve">
+    <value>Live Next Combo</value>
+  </data>
+  <data name="a_v161mlivept_mem_90" xml:space="preserve">
+    <value>Live Number Group</value>
+  </data>
+  <data name="a_v161mpt_88" xml:space="preserve">
+    <value>Warrior</value>
+  </data>
+  <data name="a_v161mpt_mem_81" xml:space="preserve">
+    <value>1st/Last Over/Under</value>
+  </data>
+  <data name="a_v161mpt_mem_83" xml:space="preserve">
+    <value>1st/Last Odd/Even</value>
+  </data>
+  <data name="a_v161mpt_mem_86" xml:space="preserve">
+    <value>FT.Odd/Even</value>
+  </data>
+  <data name="a_v161mpt_mem_88" xml:space="preserve">
+    <value>Warrior</value>
+  </data>
+  <data name="a_v161slivept_89" xml:space="preserve">
+    <value>Live Next Combo</value>
+  </data>
+  <data name="a_v161slivept_90" xml:space="preserve">
+    <value>Live Number Group</value>
+  </data>
+  <data name="a_v161spt_88" xml:space="preserve">
+    <value>Warrior</value>
+  </data>
+  <data name="isa_v161mlivept_89" xml:space="preserve">
+    <value>Live Next Combo</value>
+  </data>
+  <data name="isa_v161mlivept_90" xml:space="preserve">
+    <value>Live Number Group</value>
+  </data>
+  <data name="isa_v161mlivept_mem_85" xml:space="preserve">
+    <value>Live Next Over/Under</value>
+  </data>
+  <data name="isa_v161mlivept_mem_86" xml:space="preserve">
+    <value>Live Next Odd/Even</value>
+  </data>
+  <data name="isa_v161mlivept_mem_87" xml:space="preserve">
+    <value>Live Next High/Low</value>
+  </data>
+  <data name="isa_v161mlivept_mem_89" xml:space="preserve">
+    <value>Live Next Combo</value>
+  </data>
+  <data name="isa_v161mlivept_mem_90" xml:space="preserve">
+    <value>Live Number Group</value>
+  </data>
+  <data name="isa_v161mpt_88" xml:space="preserve">
+    <value>Warrior</value>
+  </data>
+  <data name="isa_v161mpt_mem_81" xml:space="preserve">
+    <value>1st/Last Over/Under</value>
+  </data>
+  <data name="isa_v161mpt_mem_83" xml:space="preserve">
+    <value>1st/Last Odd/Even</value>
+  </data>
+  <data name="isa_v161mpt_mem_86" xml:space="preserve">
+    <value>FT.Odd/Even</value>
+  </data>
+  <data name="isa_v161mpt_mem_88" xml:space="preserve">
+    <value>Warrior</value>
+  </data>
+  <data name="isa_v161slivept_89" xml:space="preserve">
+    <value>Live Next Combo</value>
+  </data>
+  <data name="isa_v161slivept_90" xml:space="preserve">
+    <value>Live Number Group</value>
+  </data>
+  <data name="isa_v161smlivept_89" xml:space="preserve">
+    <value>Live Next Combo</value>
+  </data>
+  <data name="isa_v161smlivept_90" xml:space="preserve">
+    <value>Live Number Group</value>
+  </data>
+  <data name="isa_v161smpt_88" xml:space="preserve">
+    <value>Warrior</value>
+  </data>
+  <data name="isa_v161spt_88" xml:space="preserve">
+    <value>Warrior</value>
+  </data>
+  <data name="Lrf_CustomerUpdMember_MinMaxBet" xml:space="preserve">
+    <value>Update Sportsbook Bet Setting for member</value>
+  </data>
+  <data name="maxv161livept_89" xml:space="preserve">
+    <value>Max Live Next Combo</value>
+  </data>
+  <data name="maxv161livept_90" xml:space="preserve">
+    <value>Max Live Number Group</value>
+  </data>
+  <data name="maxv161pt_88" xml:space="preserve">
+    <value>Max Warrior</value>
+  </data>
+  <data name="minv161livept_89" xml:space="preserve">
+    <value>Min Live Next Combo</value>
+  </data>
+  <data name="minv161livept_90" xml:space="preserve">
+    <value>Min Live Number Group</value>
+  </data>
+  <data name="minv161pt_88" xml:space="preserve">
+    <value>Min Warrior</value>
+  </data>
+  <data name="OnexTwoComm" xml:space="preserve">
+    <value>1x2Comm</value>
+  </data>
+  <data name="v161alivept_89" xml:space="preserve">
+    <value>Live Next Combo</value>
+  </data>
+  <data name="v161alivept_90" xml:space="preserve">
+    <value>Live Number Group</value>
+  </data>
+  <data name="v161apt_88" xml:space="preserve">
+    <value>Warrior</value>
+  </data>
+  <data name="v161mlivept_89" xml:space="preserve">
+    <value>Live Next Combo</value>
+  </data>
+  <data name="v161mlivept_90" xml:space="preserve">
+    <value>Live Number Group</value>
+  </data>
+  <data name="v161mpt_88" xml:space="preserve">
+    <value>Warrior</value>
+  </data>
+  <data name="v161slivept_89" xml:space="preserve">
+    <value>Live Next Combo</value>
+  </data>
+  <data name="v161slivept_90" xml:space="preserve">
+    <value>Live Number Group</value>
+  </data>
+  <data name="v161spt_88" xml:space="preserve">
+    <value>Warrior</value>
+  </data>
+  <data name="Dot_Dep_CustomerUpdMemBetSetting" xml:space="preserve">
+    <value>Update Bet Setting for Deposit member</value>
+  </data>
+  <data name="v162discount_1101" xml:space="preserve">
+    <value>Comm</value>
+  </data>
+  <data name="v162discount_1102" xml:space="preserve">
+    <value>Roulette</value>
+  </data>
+  <data name="v162discount_1103" xml:space="preserve">
+    <value>Sicbo</value>
+  </data>
+  <data name="auto_v162spostiontaking_1101" xml:space="preserve">
+    <value>Super Auto PT</value>
+  </data>
+  <data name="isauto_v162spostiontaking_1101" xml:space="preserve">
+    <value>Is Super Auto PT</value>
+  </data>
+  <data name="v162mpostiontaking_1101" xml:space="preserve">
+    <value>Master Max PT</value>
+  </data>
+  <data name="v162UpdateAutoPostiontaking_1101" xml:space="preserve">
+    <value>Update Auto PT</value>
+  </data>
+  <data name="v162UpdatePostiontaking_1101" xml:space="preserve">
+    <value>Update PT</value>
+  </data>
+  <data name="v162mpostiontaking_1102" xml:space="preserve">
+    <value>Master Max PT</value>
+  </data>
+  <data name="v162mpostiontaking_1103" xml:space="preserve">
+    <value>Master Max PT</value>
+  </data>
+  <data name="v162UpdateAutoPostiontaking_1102" xml:space="preserve">
+    <value>Update Auto PT</value>
+  </data>
+  <data name="v162UpdateAutoPostiontaking_1103" xml:space="preserve">
+    <value>Update Auto PT</value>
+  </data>
+  <data name="v162UpdatePostiontaking_1102" xml:space="preserve">
+    <value>Update PT</value>
+  </data>
+  <data name="v162UpdatePostiontaking_1103" xml:space="preserve">
+    <value>Update PT</value>
+  </data>
+  <data name="auto_v162spositiontaking_1101" xml:space="preserve">
+    <value>Super Auto PT</value>
+  </data>
+  <data name="auto_v162spositiontaking_1102" xml:space="preserve">
+    <value>Super Auto PT</value>
+  </data>
+  <data name="auto_v162spositiontaking_1103" xml:space="preserve">
+    <value>Super Auto PT</value>
+  </data>
+  <data name="a_v162mpt_mem_1101" xml:space="preserve">
+    <value>Baccarat</value>
+  </data>
+  <data name="a_v162mpt_mem_1102" xml:space="preserve">
+    <value>Roulette</value>
+  </data>
+  <data name="a_v162mpt_mem_1103" xml:space="preserve">
+    <value>Sicbo</value>
+  </data>
+  <data name="disabledLiveCS" xml:space="preserve">
+    <value>Disabled Live Casino</value>
+  </data>
+  <data name="discount162_1101" xml:space="preserve">
+    <value>Baccarat</value>
+  </data>
+  <data name="discount162_1102" xml:space="preserve">
+    <value>Roulette</value>
+  </data>
+  <data name="discount162_1103" xml:space="preserve">
+    <value>Sicbo</value>
+  </data>
+  <data name="enableDownlinesLiveCS" xml:space="preserve">
+    <value>Enable Downlines Live Casino</value>
+  </data>
+  <data name="isauto_v162spositiontaking_1101" xml:space="preserve">
+    <value>Is Super Auto PT</value>
+  </data>
+  <data name="isauto_v162spositiontaking_1102" xml:space="preserve">
+    <value>Is Super Auto PT</value>
+  </data>
+  <data name="isauto_v162spositiontaking_1103" xml:space="preserve">
+    <value>Is Super Auto PT</value>
+  </data>
+  <data name="isa_v162mpt_1101" xml:space="preserve">
+    <value>Baccarat</value>
+  </data>
+  <data name="isa_v162mpt_1102" xml:space="preserve">
+    <value>Roulette</value>
+  </data>
+  <data name="isa_v162mpt_1103" xml:space="preserve">
+    <value>Sicbo</value>
+  </data>
+  <data name="isa_v162mpt_mem_1101" xml:space="preserve">
+    <value>Baccarat</value>
+  </data>
+  <data name="isa_v162mpt_mem_1102" xml:space="preserve">
+    <value>Roulette</value>
+  </data>
+  <data name="isa_v162mpt_mem_1103" xml:space="preserve">
+    <value>Sicbo</value>
+  </data>
+  <data name="max_v162positiontaking_1101" xml:space="preserve">
+    <value>Max Baccarat</value>
+  </data>
+  <data name="max_v162positiontaking_1102" xml:space="preserve">
+    <value>Max Roulette</value>
+  </data>
+  <data name="max_v162positiontaking_1103" xml:space="preserve">
+    <value>Max Sicbo</value>
+  </data>
+  <data name="min_v162positiontaking_1101" xml:space="preserve">
+    <value>Min PT</value>
+  </data>
+  <data name="min_v162positiontaking_1102" xml:space="preserve">
+    <value>Min PT</value>
+  </data>
+  <data name="min_v162positiontaking_1103" xml:space="preserve">
+    <value>Min PT</value>
+  </data>
+  <data name="v162mpt_1101" xml:space="preserve">
+    <value>Baccarat</value>
+  </data>
+  <data name="v162mpt_1102" xml:space="preserve">
+    <value>Roulette</value>
+  </data>
+  <data name="v162mpt_1103" xml:space="preserve">
+    <value>Sicbo</value>
+  </data>
+  <data name="v162playerdiscount_1101" xml:space="preserve">
+    <value>Comm</value>
+  </data>
+  <data name="v162playerdiscount_1102" xml:space="preserve">
+    <value>Comm</value>
+  </data>
+  <data name="v162playerdiscount_1103" xml:space="preserve">
+    <value>Comm</value>
+  </data>
+  <data name="v162spositiontaking_1101" xml:space="preserve">
+    <value>Super PT</value>
+  </data>
+  <data name="v162spositiontaking_1102" xml:space="preserve">
+    <value>Super PT</value>
+  </data>
+  <data name="v162spositiontaking_1103" xml:space="preserve">
+    <value>Super PT</value>
+  </data>
+  <data name="v162UpdateAutoPositiontaking_1101" xml:space="preserve">
+    <value>Update Auto PT</value>
+  </data>
+  <data name="v162UpdateAutoPositiontaking_1102" xml:space="preserve">
+    <value>Update Auto PT</value>
+  </data>
+  <data name="v162UpdateAutoPositiontaking_1103" xml:space="preserve">
+    <value>Update Auto PT</value>
+  </data>
+  <data name="v162UpdatePositiontaking_1101" xml:space="preserve">
+    <value>Update PT</value>
+  </data>
+  <data name="v162UpdatePositiontaking_1102" xml:space="preserve">
+    <value>Update PT</value>
+  </data>
+  <data name="v162UpdatePositiontaking_1103" xml:space="preserve">
+    <value>Update PT</value>
+  </data>
+  <data name="disable162_1101" xml:space="preserve">
+    <value>Disabled Live Casino - Baccarat</value>
+  </data>
+  <data name="BetTypeId" xml:space="preserve">
+    <value>Game Type</value>
+  </data>
+  <data name="g1101" xml:space="preserve">
+    <value>Baccarat</value>
+  </data>
+  <data name="g1102" xml:space="preserve">
+    <value>Roulette</value>
+  </data>
+  <data name="g1103" xml:space="preserve">
+    <value>Sicbo</value>
+  </data>
+  <data name="addfrom01" xml:space="preserve">
+    <value>Accounting Site</value>
+  </data>
+  <data name="addfrom02" xml:space="preserve">
+    <value>Agent Site</value>
+  </data>
+  <data name="auto_v162mpositiontaking_1101" xml:space="preserve">
+    <value>Master Auto Preset PT</value>
+  </data>
+  <data name="auto_v162mpositiontaking_1102" xml:space="preserve">
+    <value>Master Auto Preset PT</value>
+  </data>
+  <data name="auto_v162mpositiontaking_1103" xml:space="preserve">
+    <value>Master Auto Preset PT</value>
+  </data>
+  <data name="auto_v162mpositiontaking_mem_1101" xml:space="preserve">
+    <value>Master Auto PT</value>
+  </data>
+  <data name="isauto_v162mpositiontaking_1101" xml:space="preserve">
+    <value>Is Master Auto PT</value>
+  </data>
+  <data name="isauto_v162mpositiontaking_1102" xml:space="preserve">
+    <value>Is Master Auto PT</value>
+  </data>
+  <data name="isauto_v162mpositiontaking_1103" xml:space="preserve">
+    <value>Is Master Auto PT</value>
+  </data>
+  <data name="isauto_v162mpositiontaking_mem_1101" xml:space="preserve">
+    <value>Is Master Auto PT</value>
+  </data>
+  <data name="newmpositiontaking" xml:space="preserve">
+    <value>New PT</value>
+  </data>
+  <data name="newspositiontaking" xml:space="preserve">
+    <value>New PT</value>
+  </data>
+  <data name="updateallmembers" xml:space="preserve">
+    <value>Update All Members</value>
+  </data>
+  <data name="v162apositiontaking_1101" xml:space="preserve">
+    <value>Agent PT</value>
+  </data>
+  <data name="v162apositiontaking_1102" xml:space="preserve">
+    <value>Agent PT</value>
+  </data>
+  <data name="v162apositiontaking_1103" xml:space="preserve">
+    <value>Agent PT</value>
+  </data>
+  <data name="v162mpositiontaking_1101" xml:space="preserve">
+    <value>Master PT</value>
+  </data>
+  <data name="v162mpositiontaking_1102" xml:space="preserve">
+    <value>Master PT</value>
+  </data>
+  <data name="v162mpositiontaking_1103" xml:space="preserve">
+    <value>Master PT</value>
+  </data>
+  <data name="ExchangeID" xml:space="preserve">
+    <value>Currency</value>
+  </data>
+  <data name="SCustID" xml:space="preserve">
+    <value>Super ID</value>
+  </data>
+  <data name="MCustID" xml:space="preserve">
+    <value>Master ID</value>
+  </data>
+  <data name="ACustID" xml:space="preserve">
+    <value>Agent ID</value>
+  </data>
+  <data name="AddFrom" xml:space="preserve">
+    <value>Add from</value>
+  </data>
+  <data name="SignupIP" xml:space="preserve">
+    <value>IP</value>
+  </data>
+  <data name="RoleID" xml:space="preserve">
+    <value>Role ID</value>
+  </data>
+  <data name="discount_1" xml:space="preserve">
+    <value>Games</value>
+  </data>
+  <data name="discount_2" xml:space="preserve">
+    <value>Private Games</value>
+  </data>
+  <data name="stakelevel1" xml:space="preserve">
+    <value>Play for Fun</value>
+  </data>
+  <data name="stakelevel2" xml:space="preserve">
+    <value>Low</value>
+  </data>
+  <data name="stakelevel3" xml:space="preserve">
+    <value>Medium</value>
+  </data>
+  <data name="stakelevel4" xml:space="preserve">
+    <value>High</value>
+  </data>
+  <data name="stakelevel5" xml:space="preserve">
+    <value>VIP</value>
+  </data>
+  <data name="DisableFunP2Pdownlines" xml:space="preserve">
+    <value>Disable Fun P2P downlines</value>
+  </data>
+  <data name="DisableP2Pdownlines" xml:space="preserve">
+    <value>Disable P2P downlines</value>
+  </data>
+</root>

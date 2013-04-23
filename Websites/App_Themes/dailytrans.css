@@ -1,0 +1,24 @@
+.ui-widget-header { border: 1px solid #7C98A4; background: #B5C4D0;color: #000; font-weight: bold; }
+.ui-widget-footer { border: 1px solid #7C98A4; background: #fff; font-weight: bold; }
+.ui-widget-content{ border: 1px solid #aaaaaa; background: #fff; }
+
+.GridContent table 
+{
+	border-collapse:collapse;
+	border:solid 1px #7C98A4;
+	background-color:#fff;
+	text-align:center;
+	line-height:18px;
+}
+.GridContent table td,  .GridContent table th
+{
+	border-collapse:collapse;
+	border:solid 1px #7C98A4;
+	line-height:18px;
+}
+#dailytrantable
+{
+	width:98%;
+	}
+
+

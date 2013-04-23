@@ -1,0 +1,144 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/d:DirectLogin/f:CRMLogin.aspx.cs" caret="659" fromTop="20" />
+      <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/d:Redirect/f:ViewABS.aspx.cs" caret="0" fromTop="0" />
+      <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/d:Redirect/f:ViewBA.aspx.cs" caret="0" fromTop="0" />
+      <File id="C7EB1617-765A-44E2-9267-96865EB5C096/f:MenuManager.cs" caret="1053" fromTop="26" />
+      <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/d:App_Templates/d:Default/d:Settle/f:MainNumberGame.htm" caret="664" fromTop="20" />
+      <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/d:App_Templates/d:Default/d:Settle/f:RowNumberGame.htm" caret="550" fromTop="13" />
+      <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/f:web_appSettings.config" caret="221" fromTop="5" />
+      <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/d:Configurations/d:StoreProcedureGroup/f:UserControl.config" caret="1713" fromTop="22" />
+      <File id="09B74F02-6C21-4C5E-A52C-B6D56595A262/d:Configurations/f:WebSettings.cs" caret="9867" fromTop="133" />
+      <File id="C7EB1617-765A-44E2-9267-96865EB5C096/d:ExportStatement/f:ExportStatementManager.cs" caret="1341" fromTop="24" />
+      <File id="27984FEE-40DC-40DC-B3B9-3A8776C5511D/d:AdoNet/f:UserDAO.cs" caret="18417" fromTop="31" />
+      <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/d:PreLogIn/f:ProcessLogin.ashx" caret="2763" fromTop="34" />
+      <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/d:PreLogIn/f:LogOut.ashx" caret="981" fromTop="26" />
+      <File id="C7EB1617-765A-44E2-9267-96865EB5C096/d:Security/f:AuthManager.cs" caret="3907" fromTop="27" />
+      <File id="C7EB1617-765A-44E2-9267-96865EB5C096/d:Security/f:Permissions.cs" caret="11159" fromTop="16" />
+      <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/d:PreLogIn/f:DirectLogin.ashx" caret="2237" fromTop="12" />
+      <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/f:Global.asax" caret="1904" fromTop="0" />
+      <File id="27984FEE-40DC-40DC-B3B9-3A8776C5511D/d:IBCDLL/f:UserController.cs" caret="1679" fromTop="18" />
+      <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/d:Handlers/f:OnlineUpd.ashx" caret="1626" fromTop="37" />
+      <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/d:App_Data/f:DangerousSettingOtherSports.xml" caret="523" fromTop="14" />
+      <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/d:Configurations/d:StoreProcedureGroup/f:LiveCasino.xml" caret="3267" fromTop="25" />
+      <File id="ED61A61E-4805-405A-8A5F-44E933DE874A/d:DataAccess/f:LiveCasinoDataAccess.cs" caret="469" fromTop="16" />
+      <File id="ED61A61E-4805-405A-8A5F-44E933DE874A/d:Business/f:ILiveCasinoManager.cs" caret="291" fromTop="8" />
+      <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/d:LiveCasino/d:Settlement/f:ResultLiveCasino.aspx" caret="1626" fromTop="18" />
+      <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/d:LiveCasino/d:Settlement/d:script/f:Result.js" caret="619" fromTop="0" />
+      <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/d:LiveCasino/d:Settlement/d:service/f:SettleLiveCasinoService.svc" caret="108" fromTop="1" />
+      <File id="09B74F02-6C21-4C5E-A52C-B6D56595A262/d:Cache/f:CacheRef.cs" caret="3806" fromTop="37" />
+      <File id="ED61A61E-4805-405A-8A5F-44E933DE874A/d:Business/f:LiveCasinoManager.cs" caret="1913" fromTop="0" />
+      <File id="ED61A61E-4805-405A-8A5F-44E933DE874A/d:Services/f:SettlementService.cs" caret="715" fromTop="18" />
+      <File id="d:Miscellaneous Files/f:CacheRef.cs/l:D!?WORK?PROJECT?ROME1?Accounting?Main?TarusWebSite?Sunplus.Accounting.Core?Cache?CacheRef.cs" caret="3741" fromTop="33" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/d:PreLogIn/f:DirectLogin.ashx" caret="3114" fromTop="38" />
+      <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/d:PreLogIn/f:DirectLogin.ashx" caret="2078" fromTop="28" />
+      <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/d:PreLogIn/f:DirectLogin.ashx" caret="2125" fromTop="23" />
+      <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/d:PreLogIn/f:DirectLogin.ashx" caret="2100" fromTop="17" />
+      <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/d:PreLogIn/f:DirectLogin.ashx" caret="2622" fromTop="24" />
+      <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/d:PreLogIn/f:DirectLogin.ashx" caret="972" fromTop="25" />
+      <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/d:PreLogIn/f:DirectLogin.ashx" caret="756" fromTop="21" />
+      <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/f:web_appSettings.config" caret="6348" fromTop="24" />
+      <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/d:PreLogIn/f:DirectLogin.ashx" caret="2923" fromTop="33" />
+      <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/d:App_Templates/d:Default/d:Settle/f:RowNumberGame.htm" caret="550" fromTop="13" />
+      <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/f:web_appSettings.config" caret="221" fromTop="5" />
+      <File id="27984FEE-40DC-40DC-B3B9-3A8776C5511D/d:IBCDLL/f:UserController.cs" caret="1681" fromTop="24" />
+      <File id="27984FEE-40DC-40DC-B3B9-3A8776C5511D/d:IBCDLL/f:UserController.cs" caret="2109" fromTop="34" />
+      <File id="27984FEE-40DC-40DC-B3B9-3A8776C5511D/d:IBCDLL/f:UserController.cs" caret="15095" fromTop="24" />
+      <File id="27984FEE-40DC-40DC-B3B9-3A8776C5511D/d:IBCDLL/f:UserController.cs" caret="15333" fromTop="31" />
+      <File id="C7EB1617-765A-44E2-9267-96865EB5C096/d:Security/f:AuthManager.cs" caret="1153" fromTop="27" />
+      <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/d:PreLogIn/f:LogOut.ashx" caret="1077" fromTop="26" />
+      <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/f:Global.asax" caret="8820" fromTop="25" />
+      <File id="27984FEE-40DC-40DC-B3B9-3A8776C5511D/d:IBCDLL/f:UserController.cs" caret="1527" fromTop="24" />
+      <File id="27984FEE-40DC-40DC-B3B9-3A8776C5511D/d:IBCDLL/f:UserController.cs" caret="1679" fromTop="29" />
+      <File id="27984FEE-40DC-40DC-B3B9-3A8776C5511D/d:IBCDLL/f:UserController.cs" caret="14771" fromTop="26" />
+      <File id="27984FEE-40DC-40DC-B3B9-3A8776C5511D/d:IBCDLL/f:UserController.cs" caret="14444" fromTop="19" />
+      <File id="27984FEE-40DC-40DC-B3B9-3A8776C5511D/d:IBCDLL/f:UserController.cs" caret="14229" fromTop="12" />
+      <File id="C7EB1617-765A-44E2-9267-96865EB5C096/d:ExportStatement/f:ExportStatementManager.cs" caret="1341" fromTop="24" />
+      <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/d:Handlers/f:OnlineUpd.ashx" caret="933" fromTop="20" />
+      <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/d:PreLogIn/f:DirectLogin.ashx" caret="1500" fromTop="18" />
+      <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/d:PreLogIn/f:DirectLogin.ashx" caret="2237" fromTop="27" />
+      <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/d:Handlers/f:OnlineUpd.ashx" caret="1626" fromTop="37" />
+      <File id="09B74F02-6C21-4C5E-A52C-B6D56595A262/d:Cache/f:CacheRef.cs" caret="3675" fromTop="34" />
+      <File id="09B74F02-6C21-4C5E-A52C-B6D56595A262/d:Cache/f:CacheRef.cs" caret="3854" fromTop="38" />
+    </RecentEdits>
+  </RecentFiles>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir IsNull="False">
+    </NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="public" priority="0" />
+      <Item value="static" priority="0" />
+      <Item value="bool" priority="0" />
+      <Item value="string" priority="2" />
+      <Item value="if" priority="4" />
+      <Item value="userSystemName" priority="1" />
+      <Item value="return" priority="2" />
+      <Item value="false" priority="1" />
+      <Item value="true" priority="0" />
+      <Item value="WebSettings`0" priority="1" />
+      <Item value="system" priority="0" />
+      <Item value="Resources" priority="1" />
+      <Item value="ErrorMsg`0" priority="1" />
+      <Item value="context" priority="0" />
+      <Item value="Convert`0" priority="3" />
+      <Item value="else" priority="2" />
+      <Item value="LogOut`0" priority="4" />
+      <Item value="isOnline" priority="0" />
+      <Item value="accId" priority="4" />
+      <Item value="param" priority="1" />
+      <Item value="systemId" priority="1" />
+      <Item value="int" priority="2" />
+      <Item value="username" priority="0" />
+      <Item value="AccCommon`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.String">
+      <Item value="IsNullOrEmpty`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.String">
+      <Item value="ToLower`0" priority="1" />
+      <Item value="Equals`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Sunplus.Accounting.Core.Configurations.WebSettings">
+      <Item value="SystemName" priority="0" />
+      <Item value="ServerId" priority="4" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Sunplus.Accounting.Business.Security.AuthManager">
+      <Item value="IsUserOnSystem`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Resources.ErrorMsg">
+      <Item value="DenyLoginAccount" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Sunplus.Accounting.Business.Security.Permissions">
+      <Item value="GetAccessPermission`0" priority="0" />
+      <Item value="HasPermission`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Convert">
+      <Item value="ToInt32`0" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Web.Security.FormsAuthentication">
+      <Item value="LoginUrl" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.HttpResponse">
+      <Item value="Redirect`0" priority="0" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+</Configuration>

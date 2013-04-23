@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Services.WCF.Report.ReportWL" CodeBehind="~/App_Code/Services/WCF/Report/ReportWL.cs" %>

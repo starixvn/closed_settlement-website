@@ -1,0 +1,254 @@
+﻿/*
+* monPickr - jQuery Plugin
+* Just a simple month picker
+*
+* Examples and documentation at: http://update.later
+*
+* Copyright (c) 2012 Nexcel Solutions
+*
+* Version: 0.0.1 (6 Jan 2012)
+* Requires: jQuery v1.7+
+*
+* Swatch color: BDC7D8 - base color
+*               333333 - text, link color
+*               999999 - border, button background
+*/
+
+.monPickrWrap {
+    background-color: #FFF;
+    width: 150px;    
+    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+    color: #333;
+    border: #999 solid 1px;
+    z-index: 9999;
+}
+
+.monPickrWrap:hover {
+    box-shadow: 0 0 4px 2px #ccc;
+    -moz-box-shadow: 0 0 4px 2px #ccc;
+    -webkit-box-shadow: 0 0 5px 2px #ccc;
+}
+
+.monPickr {
+    width: 146px;
+    padding: 2px;
+    text-align: center;
+    position:relative;
+}
+
+.monPickr a {
+    border: #999 solid 1px;
+    width: 14px;
+    height: 14px;
+    display: block;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+}
+
+.monPickr a:hover {
+    background-color: #999;
+    text-decoration: underline;
+    color: #FFF;
+}
+
+.selectedMonth {
+    cursor: pointer;
+    padding: 0;
+    font-size:11px;
+}
+
+.selectedMonth:hover {
+    text-decoration: underline;
+}
+
+.monPickr .prev {
+    float: left;
+}
+
+.monPickr .prev b {
+    float: left;
+    margin-left: 4px;
+    margin-top: -3px;
+}
+
+.monPickr .next {
+    float: right;
+    position:absolute;
+    top:2px;
+    left:132px;
+}
+
+.monPickr .next b {
+    float: right;
+    margin-right: 4px;
+    margin-top: -3px;
+}
+
+.monPickrDropDown {
+    display: none;
+    width: 146px;
+    max-height: 330px;
+    overflow: auto;
+    padding: 2px;
+    border-top: 1px solid #999;    
+}
+
+.monPickrDropDown a {
+    text-decoration: none;
+    color: #333;
+}
+
+.monPickrDropDown a:hover {
+}
+
+.monPickrDropDown .monthWrap li:hover {
+    background-color: #D0E9ED;
+}
+
+.monPickrDropDown a.hover:hover {
+    cursor: default;
+}
+
+.monPickrDropDownInner {
+    margin: 0 0 0 20px;
+    padding: 0;
+    list-style-type: none;
+}
+
+.monPickrDropDownInner .year {
+    font-size: 15px;    
+    background-image: url(images/spindown-closed.png);
+    background-repeat: no-repeat;
+    background-position: 0px 8px;
+    padding-left: 14px; 
+}
+
+.monPickrDropDownInner .year_selected {
+    font-size: 15px;    
+    background-image: url(images/spindown-open.png);
+    background-repeat: no-repeat;
+    background-position: 0px 8px;
+    padding-left: 14px; 
+}
+
+.monPickrDropDownInner .monthWrap {
+    display: none;
+}
+
+.monPickrDropDownInner .monthWrap, .monPickrDropDownInner .monthWrap li {
+    list-style-type: none;
+}
+
+.monPickrDropDownInner .monthWrap ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.monPickrDropDownInner .monthWrap a {
+    margin-left: 14px;
+    font-size: 12px;
+}
+
+.monPickrDropDownInner .monthWrap a.selected {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* DATE RANGE   
+----------------------------------------------------------*/
+
+.selectedDayWrap {
+    background-color: #FFF;
+    border: #999 solid 1px;
+    width: 50px;
+    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+    color: #333;
+    z-index: 9999;
+}
+
+.selectedDayWrap:hover {
+    box-shadow: 0 0 4px 2px #ccc;
+    -moz-box-shadow: 0 0 4px 2px #ccc;
+    -webkit-box-shadow: 0 0 5px 2px #ccc;
+}
+
+.selectedDayWrap a {
+    color: #333;
+    text-decoration: none;
+}
+
+.selectedDayWrap a:hover {
+    text-decoration: none;
+}
+
+.dayPickr {
+    width: 40px;
+    padding: 1px;
+    text-indent: 10px;
+    font-size:11px;
+    position:relative;
+}
+
+.dayPickr .selectedDay:hover {
+    cursor: default;
+}
+
+.dayPickr .darr {
+    width: 15px;
+    height: 12px;
+    display: block;
+    float: right;
+    text-decoration: none;
+    font-size: 14px;
+    top:2px;
+    left:32px;
+    position:absolute;
+    border:1px solid #999999;
+}
+
+.dayPickr .darr:hover {
+    cursor: pointer;
+    background-color:#999999;
+    color:White;
+}
+
+.selectedDayWrap:hover .darr {
+    text-decoration: none;
+}
+
+.dayPickr .darr b 
+{
+    font-size: 10px;
+    height: 12px;
+    left:-5px;
+    margin-right: 0px;
+    position:absolute;
+    margin-top:-2px;
+}
+
+.dayPickrDropDown {
+    max-height: 330px;
+    overflow: auto;
+    border-top: #999 solid 1px;
+    display: none;
+}
+
+.dayPickrDropDown ul {
+    margin: 0;
+    padding: 0;
+}
+
+.dayPickrDropDown li {
+    list-style-type: none;
+    text-indent: 13px;
+}
+
+.dayPickrDropDown li:hover {
+    background-color: #999;
+}
+
+.dayPickrDropDown li:hover a {
+    color: #FFF;
+    cursor: default;
+}

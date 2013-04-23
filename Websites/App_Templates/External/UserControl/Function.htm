@@ -1,0 +1,84 @@
+<div id="divFuncUpd" style="display:none;">
+  <form id="frUpd" name="frUpd" action="Function.ashx" method="post" target="frUpd" onsubmit="return CheckForm();">
+    <table class="tbllayout" style="width: 550px;" cellspacing="1">
+      <tr class="title">
+        <td colspan="2">
+          <span id="spTitle">Add Function</span> 
+        </td>
+      </tr>
+      <tr>
+        <td class="r" style="width:100px;">Name</td>
+        <td class="l">
+          <input type="text" id="txtName" name="txtName" value="" style="width: 150px;" />
+        </td>
+      </tr>
+      <tr>
+        <td class="r">Description</td>
+        <td class="l">
+          <input type="text" id="txtDesc" name="txtDesc" value="" style="width:430px;" />
+        </td>
+      </tr>
+      <tr>
+        <td class="r">File Names</td>
+        <td class="l">
+          <textarea rows="5" style="width:430px;" id="txtFileNames" name="txtFileNames"></textarea>
+        </td>
+      </tr>
+		<tr>
+			<td class="r">System</td>
+			<td class="l">
+				<select id="slsystem" name="slsystem" style="width: 150px;" onchange="FuctionParent(this);">
+					<option value="ACCOUNTING" selected="">ACCOUNTING</option>
+					<option value="AFFILIATE">AFFILIATE</option>
+				</select>
+				<input type="hidden" id="hdsystem" name="hdsystem" value="ACCOUNTING"></input>
+			</td>
+		</tr>
+      <tr>
+        <td class="r">Parent Function</td>
+        <td id="parent" class="l">
+          <select id="slParent" name="slParent" style="width: 150px;">
+            {slListParent}
+          </select>
+        </td>
+      </tr>
+		
+      <tr>
+        <td colspan="2" class="c">
+          <input type="submit" id="btnAdd" class="btn"  name="btnAdd" value="Submit" />
+          <input type="button" id="btnCancel" class="btn"  name="btnCancel" value="Cancel" onclick="CancelUpd();" />
+        </td>
+      </tr>
+    </table>
+    <input type="hidden" id="hdAdd" name="hdAdd" value="" />
+    <input type="hidden" id="hdFuncId" name="hdFuncId" />
+  </form>
+</div>
+<div id="clear2"></div>
+<table class="tbllayout" style="width:790px;" cellspacing="1">
+  <tr class="title">
+    <td style="width:100px; white-space: nowrap;" >Func Name</td>
+    <td style="width:100px;">Func Desc</td>
+    <td style="width:400px; word-wrap: break-word;ms-word-wrap:break-word;">File Names</td>
+    <td style="width:50px;">Sub-Func</td>
+	<td style="width:70px;">System</td>
+    <td style="width:35px;">Edit</td>
+    <td style="width:35px;">Del</td>
+  </tr>
+  <!--content-->
+  <tr>
+    <td class="l">{funcname}</td>
+    <td class="l">{funcdesc}</td>
+    <td class="l" style="width:400px;"><div style="width:400px; word-wrap: break-word; overflow:hidden;">{filenames}</div></td>
+    <td class="c">{numsub}</td>
+	<td class="c">{system_value}</td>
+    <td class="c">
+      <img alt="Edit" src="../App_Themes/images/icn_edit.png" onclick="OpenEditDept('{funcid}', '{funcname-val}', '{funcdesc}', '{filenames}', '{parentid}','{system_value}');" style="cursor: pointer;"/>
+    </td>
+    <td class="c">
+      <img border="0" src="../App_Themes/images/icon_del.gif" alt="Del" onclick="DelFunction({funcid});" style="cursor: pointer;"/>
+    </td>
+  </tr>
+  <!--/content-->
+</table>
+<IFrame id="frUpd" name="frUpd" class="hidden" style="height:0px;width:0px;"></IFrame>

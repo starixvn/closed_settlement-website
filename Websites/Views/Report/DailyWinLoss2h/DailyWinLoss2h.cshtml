@@ -1,0 +1,360 @@
+﻿@using DNAide.Core
+@using Fanex.Tarus.Reports.DataAccess.DailyWinLoss2h
+@using Fanex.Tarus.Reports.Entities.DailyWinLoss2h
+@using Fanex.Tarus.Reports.Controllers
+@using Sunplus.Accounting.Business.Report
+@using Sunplus.Accounting.Core.Configurations
+@using Sunplus.Accounting.Business.Security
+@using Sunplus.Accounting.Core.Common
+@using Sunplus.Accounting.Core.Cache;
+@using Sunplus.Accounting.Business.Report.Common;
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="head1">
+    <title>@Reports.Title</title>
+    <link rel="stylesheet" type="text/css" href="~/App_Themes/Public/common.css" />
+    <link rel="stylesheet" type="text/css" href="~/App_Themes/Public/table.css" />
+    <link rel="stylesheet" type="text/css" href="~/App_Themes/Public/input.css" />
+    <link href="~/App_Themes/Report/Report.css" rel="stylesheet" type="text/css" />
+    <link href="~/js/jQuery/UI/css/custom-theme/jquery-ui-1.8.10.custom.css" rel="stylesheet"
+        type="text/css" />
+    <link href="~/App_Themes/Report/reportgrid.css" rel="stylesheet" type="text/css" />
+    <link href="~/js/jQuery/spliter/style.css" rel="stylesheet" type="text/css" />
+    <link href="~/Views/Report/DailyWinLoss2h/Css/DailyWinLoss2h.css?version=@WebSettings.Version" rel="stylesheet"
+        type="text/css" />
+    <link href="~/Views/Report/DailyWinLoss2h/Css/MixparlayAdvance.css?version=@WebSettings.Version" rel="stylesheet"
+        type="text/css" />
+    <link href="~/Views/Report/DailyWinLoss2h/Css/HorseRacingReport.css?version=@WebSettings.Version" rel="stylesheet"
+        type="text/css" />
+    <script src="~/Views/Report/DailyWinLoss2h/Scripts/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="~/js/jQuery/jquery.blockUI.1.33.js" type="text/javascript"></script>
+    <script src="~/js/jQuery/Template/jquery.tmpl.js" type="text/javascript"></script>
+    @*<script src="~/js/jQuery/UI/jquery-ui-1.8.10.custom.min.js" type="text/javascript"></script>*@
+    @*<script src="~/js/jQuery/jquery-ui-1.8.14.custom.min.js" type="text/javascript"></script>*@
+    <script src="~/Views/Report/DailyWinLoss2h/Scripts/jquery-ui-1.8.20.custom.min.js"
+        type="text/javascript">
+    </script>
+    <script src="~/js/jQuery/gridscroller.js" type="text/javascript"></script>
+    <script src="~/Views/Report/DailyWinLoss2h/Scripts/StringFormatter.js?version=@WebSettings.Version" type="text/javascript"></script>
+    <script src="~/Views/Report/DailyWinLoss2h/Scripts/DailyWinLoss2h.js?version=@WebSettings.Version" type="text/javascript"></script>
+    <script src="~/Views/Report/DailyWinLoss2h/Scripts/WL2hShowHideDivManager.js?version=@WebSettings.Version" type="text/javascript"></script>
+    <script src="~/Views/Report/DailyWinLoss2h/Scripts/CombinationMixParlayReportManager.js?version=@WebSettings.Version" type="text/javascript"></script>
+    <script src="~/Views/Report/DailyWinLoss2h/Scripts/AdvanceMixParlayReportManager.js?version=@WebSettings.Version" type="text/javascript"></script>
+    <script src="~/Views/Report/DailyWinLoss2h/Scripts/MixParlayReportManager.js?version=@WebSettings.Version" type="text/javascript"></script>
+    <script src="~/Views/Report/DailyWinLoss2h/Scripts/LiveCasinoReportManager.js?version=@WebSettings.Version" type="text/javascript"></script>
+    <script src="~/Views/Report/DailyWinLoss2h/Scripts/SoccerReportManager.js?version=@WebSettings.Version" type="text/javascript"></script>
+    <script src="~/Views/Report/DailyWinLoss2h/Scripts/HorseRacingReportManager.js?version=@WebSettings.Version" type="text/javascript"></script>
+    <script src="~/Views/Report/DailyWinLoss2h/Scripts/NumberGameReportManager.js?version=@WebSettings.Version" type="text/javascript"></script>
+    <script src="~/Views/Report/DailyWinLoss2h/Scripts/CasinoReportManager.js?version=@WebSettings.Version" type="text/javascript"></script>
+    <script src="~/Views/Report/DailyWinLoss2h/Scripts/BingoReportManager.js?version=@WebSettings.Version" type="text/javascript"></script>
+    <script src="~/Views/Report/DailyWinLoss2h/Scripts/OtherSportsReportManager.js?version=@WebSettings.Version" type="text/javascript"></script>
+    <script src="~/Views/Report/DailyWinLoss2h/Scripts/FinancialReportManager.js?version=@WebSettings.Version" type="text/javascript"></script>
+    <script src="~/js/common.js" type="text/javascript"></script>
+    <script type="text/javascript">     
+    </script>
+</head>
+<body style="" id="pageBody">
+    <div id="dailyWLReportDiv" style="padding-left: 3px;">
+        <div class="main" style="width: 100%;">
+            <table class="maincontent" style="width: 100%;" border="0" cellpadding="0px" cellspacing="0px">
+                <tr style="width: 100%;">
+                    <td>
+                        <table border="0" cellpadding="0px" cellspacing="0px" class="maincontent_header">
+                            <tr>
+                                <td class="maincontent_headerL">
+                                </td>
+                                <td class="maincontent_headerC">
+                                    Daily Win Loss (2h)
+                                </td>
+                                <td class="maincontent_headerR">
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="maincontent_box" style="padding-right: 5px; width: 99%;">
+                            @Html.Partial("Default/Report/DateTimeSinglePath_2h")
+                        </div>
+                        <div>
+                            <div id="InformationMssg" style="display: none; word-wrap: break-word;">
+                            </div>
+                        </div>
+                        <div id="trPath" style="padding: 3px 0px 3px 3px;">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="mainreport" style="margin-top: 2px;">
+                            @Html.Partial("~/Views/Report/DailyWinLoss2h/MainReport_DWL2h.cshtml")
+                            @Html.Partial("~/Views/Report/DailyWinLoss2h/CombinationMixParlayReport.cshtml")
+                            @Html.Partial("~/Views/Report/DailyWinLoss2h/AdvanceMixParlayReport.cshtml")
+                            @Html.Partial("~/Views/Report/DailyWinLoss2h/MixParlayReport.cshtml")
+                            @Html.Partial("~/Views/Report/DailyWinLoss2h/LiveCasinoReport.cshtml")
+                            @Html.Partial("~/Views/Report/DailyWinLoss2h/SoccerReport.cshtml")
+                            @Html.Partial("~/Views/Report/DailyWinLoss2h/HorseRacingReport.cshtml")
+                            @Html.Partial("~/Views/Report/DailyWinLoss2h/NumberGameReport.cshtml")
+                            @Html.Partial("~/Views/Report/DailyWinLoss2h/CasinoReport.cshtml")
+                            @Html.Partial("~/Views/Report/DailyWinLoss2h/BingoReport.cshtml")
+                            @Html.Partial("~/Views/Report/DailyWinLoss2h/OtherSportsReport.cshtml")
+                            @Html.Partial("~/Views/Report/DailyWinLoss2h/FinanceReport.cshtml")
+                            <iframe id="frm" width="0" height="0" frameborder="0" style="display: none"></iframe>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    @{  
+        string btnExport = Request["ExportType"];
+        DailyWinLoss2hParam param = new DailyWinLoss2hParam();
+        param.EmptyReportMessage = "There is no information available.";
+        var bettypeName = "";
+        switch (btnExport)
+        {
+            case "MainReport": // MainReport
+                param.ReportDate = CastAide.AsDateTime(Request["ReportDate"]);
+                param.ReportFileName = "DailyWL_Sporttype_" + param.ReportDate.ToString("MM/dd/yyyy").Replace("/", "_");
+                param.ReportTitle = "DAILY WIN/LOSS REPORT";
+                param.DefaultSheetName = "Main";
+
+                new DailyWinLoss2hController().ExportToExcel(param);
+                break;
+            case "SoccerMain": //MainSoccerReport
+                param.ReportDate = CastAide.AsDateTime(Request["ReportDate"]);
+                param.ReportFileName = "Main_Soccer_" + param.ReportDate.ToString("MM/dd/yyyy").Replace("/", "_");
+                param.DefaultSheetName = "Main-Soccer";
+
+                new DailyWinLoss2hController().ExportToExcel_SoccerMain(param);
+                break;
+            case "SoccerDetails": //DetailsSoccerReport
+                param.ReportDate = CastAide.AsDateTime(Request["ReportDate"]);
+                param.SportType = CastAide.AsInt32(Request["SportType"]);
+                param.BetType = CastAide.AsInt32(Request["BetType"]);
+                bettypeName = CastAide.AsString(Request["BetTypeName"]);
+                param.IsLive = CastAide.AsInt32(Request["IsLive"]);
+                param.IsHedge = CastAide.AsBoolean(Request["IsHedge"]);
+
+                param.ReportFileName = "Main_Soccer_" + bettypeName.Replace(" ", "") + "_" + param.ReportDate.ToString("MM/dd/yyyy").Replace("/", "_");
+                param.DefaultSheetName = "Main-Soccer-" + bettypeName.Replace("/", "_");
+                param.ReportTitle = "Main>Soccer>" + bettypeName.Replace(" ", "");
+                new DailyWinLoss2hController().ExportToExcel_DailyWLDirectDetails(param);
+
+                break;
+
+            case "HorseRacingMain": //HorseRacingReport_MainReport  
+                param.ReportDate = CastAide.AsDateTime(Request["ReportDate"]);
+                param.ReportFileName = "DailyWinLoss_Racing_" + param.ReportDate.ToString("MM/dd/yyyy").Replace("/", "_");
+                param.DefaultSheetName = "DailyWinLossRacing";
+                param.ReportTitle = "Daily WinLoss Racing";
+
+                new DailyWinLoss2hController().Export2ExcelDailyWLDirectRacing(param);
+                break;
+            case "HorseRacingSporttype": //HorseRacingReport_SportReport  
+                param.ReportDate = CastAide.AsDateTime(Request["ReportDate"]);
+                param.ReportFileName = "DailyWinLoss_Racing_" + param.ReportDate.ToString("MM/dd/yyyy").Replace("/", "_");
+                param.DefaultSheetName = "DailyWinLossRacing";
+                param.ReportTitle = "Daily WinLoss Racing";
+
+                new DailyWinLoss2hController().Export2ExcelDailyWLDirectRacing(param);
+                break;
+            case "HorseRacingSportBettype": //HorseRacingReport_SportBettype  
+                param.ReportDate = CastAide.AsDateTime(Request["ReportDate"]);
+                param.SportType = CastAide.AsInt32(Request["SportType"]);
+                param.ReportFileName = "DailyWinLoss_Racing_";
+                param.DefaultSheetName = "DailyWinLossRacing-";
+                param.ReportTitle = "Daily WinLoss Racing|";
+
+                new DailyWinLoss2hController().Export2ExcelDailyWLDirectRacingBySport(param);
+                break;
+            case "HorseRacingSportBettypeDetails": //HorseRacingReport_SportBettypeDetails  
+                param.ReportDate = CastAide.AsDateTime(Request["ReportDate"]);
+                param.SportType = CastAide.AsInt32(Request["SportType"]);
+                param.BetType = CastAide.AsInt32(Request["BetType"]);
+                param.ReportFileName = "DailyWinLossRacing_";
+                param.DefaultSheetName = "DailyWinLossRacing-";
+                param.ReportTitle = "Daily WinLoss Racing - ";
+
+                new DailyWinLoss2hController().Export2ExcelDailyWLDirectRacingBySportDetails(param);
+                break;
+
+            case "CasinoMain":
+                param.ReportDate = CastAide.AsDateTime(Request["ReportDate"]);
+                param.ReportFileName = "Main_Casino_" + param.ReportDate.ToString("MM/dd/yyyy").Replace("/", "_");
+                param.DefaultSheetName = "Main-Casino";
+                new DailyWinLoss2hController().ExportToExcel_CasinoMain(param);
+                break;
+
+            case "BingoMain":
+                param.ReportDate = CastAide.AsDateTime(Request["ReportDate"]);
+                param.ReportFileName = "Main_Bingo_" + param.ReportDate.ToString("MM/dd/yyyy").Replace("/", "_");
+                param.DefaultSheetName = "Main-Bingo";
+                new DailyWinLoss2hController().ExportToExcel_BingoMain(param);
+                break;
+
+            case "AdvanceMixParlay": //AdvanceMixParlayReport   
+                param.ReportDate = CastAide.AsDateTime(Request["ReportDate"]);
+                param.BetType = CastAide.AsInt32(Request["BetType"]);
+                param.ReportFileName = "MixParlayProduct_WinLossReport_" + param.ReportDate.ToString("MM/dd/yyyy").Replace("/", "_");
+                param.ReportTitle = "MIX PARLAY PRODUCT WIN/LOSS REPORT FOR " + param.ReportDate.ToString("MM/dd/yyyy");
+                new DailyWinLoss2hController().Export2Excel_MixParlayAdvanceMain(param);
+                break;
+            case "NormalMixParlay": //MixParlayReport   
+                param.ReportDate = CastAide.AsDateTime(Request["ReportDate"]);
+                param.BetType = CastAide.AsInt32(Request["BetType"]);
+
+                param.ReportFileName = "Main_MixParlay_" + param.ReportDate.ToString("MM/dd/yyyy").Replace("/", "_");
+                param.DefaultSheetName = "Mix Parlay";
+                new DailyWinLoss2hController().ExportToExcel_DailyWLDirect_MixParlay(param);
+                break;
+
+            case "CombinationMixParlayMain": //CombinationMixParlayReport
+                param.ReportDate = CastAide.AsDateTime(Request["ReportDate"]);
+                param.BetType = CastAide.AsInt32(Request["BetType"]);
+                param.ReportFileName = "Main_SystemParlay_" + param.ReportDate.ToString("MM/dd/yyyy").Replace("/", "_");
+                param.DefaultSheetName = "System Parlay";
+                new DailyWinLoss2hController().ExportToExcel_DailyWLDirect_MixParlay(param);
+                break;
+
+            case "OtherSportsMain": //OtherSportsMain  
+                param.ReportDate = CastAide.AsDateTime(Request["ReportDate"]);
+                param.ReportFileName = "DailyWinLoss_OtherSports_" + param.ReportDate.ToString("MM/dd/yyyy").Replace("/", "_");
+                param.DefaultSheetName = "Daily WinLoss Other Sports";
+                param.ReportTitle = "Daily WinLoss Other Sports";
+
+                new DailyWinLoss2hController().ExportToExcel_OtherSportsMain(param);
+                break;
+            case "OtherSportsMain_NoneLive": //OtherSportsMain_NoneLive  
+                param.ReportDate = CastAide.AsDateTime(Request["ReportDate"]);
+                param.ReportFileName = "DailyWinLoss_OtherSports_" + param.ReportDate.ToString("MM/dd/yyyy").Replace("/", "_");
+                param.DefaultSheetName = "Daily WinLoss Other Sports";
+                param.ReportTitle = "Daily WinLoss Other Sports";
+
+                new DailyWinLoss2hController().ExportToExcel_OtherSportsMain_NoneLive(param);
+                break;
+            case "OtherSportsMain_Live": //OtherSportsMain_NoneLive  
+                param.ReportDate = CastAide.AsDateTime(Request["ReportDate"]);
+                param.ReportFileName = "DailyWinLoss_OtherSports_" + param.ReportDate.ToString("MM/dd/yyyy").Replace("/", "_");
+                param.DefaultSheetName = "Daily WinLoss Other Sports";
+                param.ReportTitle = "Daily WinLoss Other Sports";
+                new DailyWinLoss2hController().ExportToExcel_OtherSportsMain_Live(param);
+                break;
+
+            case "OtherSportsBySport": //OtherSportBySport  
+                param.ReportDate = CastAide.AsDateTime(Request["ReportDate"]);
+                param.SportType = CastAide.AsInt32(Request["SportType"]);
+                param.SportTypeName = CacheRef.GetSportName(param.SportType);
+
+                param.ReportFileName = "DailyWinLoss_OtherSports_" + param.SportTypeName.Replace(" ", "") + "_" + param.ReportDate.ToString("MM/dd/yyyy").Replace("/", "_");
+                param.DefaultSheetName = "Daily WinLoss Other Sports - " + param.SportTypeName.Replace("/", "_");
+                param.ReportTitle = "Daily WinLoss Other Sports - " + param.SportTypeName;
+                new DailyWinLoss2hController().ExportToExcel_OtherSportsBySport(param);
+                break;
+
+            case "OtherSportsBySport_NoneLive": //OtherSportBySport_NoneLive  
+                param.ReportDate = CastAide.AsDateTime(Request["ReportDate"]);
+                param.SportType = CastAide.AsInt32(Request["SportType"]);
+                param.SportTypeName = CacheRef.GetSportName(param.SportType);
+
+                param.ReportFileName = "DailyWinLoss_OtherSports_" + param.SportTypeName.Replace(" ", "") + "_" + param.ReportDate.ToString("MM/dd/yyyy").Replace("/", "_");
+                param.DefaultSheetName = "Daily WinLoss Other Sports - " + param.SportTypeName.Replace("/", "_");
+                param.ReportTitle = "Daily WinLoss Other Sports - " + param.SportTypeName;
+                new DailyWinLoss2hController().ExportToExcel_OtherSportsBySport_NoneLive(param);
+                break;
+            case "OtherSportsBySport_Live": //OtherSportBySport_Live  
+                param.ReportDate = CastAide.AsDateTime(Request["ReportDate"]);
+                param.SportType = CastAide.AsInt32(Request["SportType"]);
+                param.SportTypeName = CacheRef.GetSportName(param.SportType);
+
+                param.ReportFileName = "DailyWinLoss_OtherSports_" + param.SportTypeName.Replace(" ", "") + "_" + param.ReportDate.ToString("MM/dd/yyyy").Replace("/", "_");
+                param.DefaultSheetName = "Daily WinLoss Other Sports - " + param.SportTypeName.Replace("/", "_");
+                param.ReportTitle = "Daily WinLoss Other Sports - " + param.SportTypeName;
+
+                new DailyWinLoss2hController().ExportToExcel_OtherSportsBySport_Live(param);
+                break;
+            case "OtherSportsBySportBettypeDetails": //OtherSportsBySportBettypeDetails        
+                param.ReportDate = CastAide.AsDateTime(Request["ReportDate"]);
+                param.SportType = CastAide.AsInt32(Request["SportType"]);
+                param.BetType = CastAide.AsInt32(Request["BetType"]);
+                bettypeName = CastAide.AsString(Request["BetTypeName"]);
+                param.IsLive = CastAide.AsInt32(Request["IsLive"]);
+                param.IsHedge = CastAide.AsBoolean(Request["IsHedge"]);
+                param.SportTypeName = CacheRef.GetSportName(param.SportType);
+
+                param.ReportFileName = "Main_OtherSports_" + param.SportTypeName.Replace(" ", "") + "_" + bettypeName.Replace(" ", "") + "_" + param.ReportDate.ToString("MM/dd/yyyy").Replace("/", "_");
+                param.DefaultSheetName = "Main - Other Sports - " + param.SportTypeName.Replace("/", "_") + " - " + bettypeName.Replace("/", "_");
+                param.ReportTitle = "Main>OtherSports|" + param.SportTypeName + ">" + bettypeName.Replace(" ", "");
+                new DailyWinLoss2hController().ExportToExcel_DailyWLDirectDetails(param);
+
+                break;
+
+            case "NumberGameMain": //MainNumberGameReport
+                param.ReportDate = CastAide.AsDateTime(Request["ReportDate"]);
+                param.ReportFileName = "Main_NumberGame_" + param.ReportDate.ToString("MM/dd/yyyy").Replace("/", "_");
+                param.DefaultSheetName = "Main-NumberGame";
+
+                new DailyWinLoss2hController().ExportToExcel_NumberGameMain(param);
+                break;
+            case "NumberGameDetails": //DetailsNumberGameReport
+                param.ReportDate = CastAide.AsDateTime(Request["ReportDate"]);
+                param.SportType = CastAide.AsInt32(Request["SportType"]);
+                param.BetType = CastAide.AsInt32(Request["BetType"]);
+                bettypeName = CastAide.AsString(Request["BetTypeName"]);
+                param.IsLive = CastAide.AsInt32(Request["IsLive"]);
+                param.IsHedge = CastAide.AsBoolean(Request["IsHedge"]);
+
+                param.ReportFileName = "Main_NumberGame_" + bettypeName.Replace(" ", "") + "_" + param.ReportDate.ToString("MM/dd/yyyy").Replace("/", "_");
+                param.DefaultSheetName = "Main-NumberGame-" + bettypeName.Replace("/", "_");
+                param.ReportTitle = "Main>NumberGame>" + bettypeName.Replace(" ", "");
+                new DailyWinLoss2hController().ExportToExcel_NumberGameDetails(param);
+
+                break;
+
+            case "LiveCasino": //LiveCasinoReport   
+                param.DefaultSheetName = "Live Casino";
+                param.ReportDate = CastAide.AsDateTime(Request["ReportDate"]);
+                param.BetType = CastAide.AsInt32(Request["BetType"]);
+                param.ReportFileName = "LiveCasinoProduct_WinLossReport_" + param.ReportDate.ToString("MM/dd/yyyy").Replace("/", "_");
+                param.ReportTitle = "LIVE CASINO PRODUCT WIN/LOSS REPORT ";
+
+                new DailyWinLoss2hController().ExportExcel_LiveCasinoMain(param);
+                break;
+        }
+       
+    }
+    @{int isAllowRead = Permissions.HasPermission(Enumerations.Functions.Reports.Report2h) ? 1 : 0;}
+    @{int isAllowRead2HO = Permissions.HasPermission(Enumerations.Functions.Reports.Report2HO) ? 1 : 0;}
+    @{int isAllowRead2HS = Permissions.HasPermission(Enumerations.Functions.Reports.Report2HS) ? 1 : 0;}
+    @{
+        RMReportUtils utilsBARM = new RMReportUtils(RMReportUtils.ReportName.Report2h, RMReportUtils.RMType.BARM);
+        string barmStr = utilsBARM.DisplayName;
+        string isBARMActive = utilsBARM.IsActive.ToString().ToLower();
+    }
+    <script type="text/javascript">
+        window.rootUrl = '@Url.Content("~")';
+        var today = '@string.Format("{0:MM/dd/yyyy}", DateTime.Now)';
+        var yesterday = '@string.Format("{0:MM/dd/yyyy}", DateTime.Now.AddDays(-1))';
+        var fdate = '@Request["reportDate"]';
+        if (fdate == undefined || fdate == "") {
+            fdate = '@DateTime.Now.ToShortDateString()';
+        }
+
+        var dailyWLMP_WebSettings = '@CastAide.AsDateTime(WebSettings.getDateDailyWLMP)';
+        var frmDate = new Date(fdate);
+        var isAllowRead = @CastAide.AsInt32(@isAllowRead);
+        var barmStr =  '@CastAide.AsString(@barmStr)';
+        var isBARMActive =  '@CastAide.AsString(@isBARMActive)';
+        var isAllowRead2HOReport = @CastAide.AsInt32(@isAllowRead2HO); 
+        var isAllowReadCombinationMixParlayReport = @CastAide.AsInt32(@isAllowRead2HO); 
+        var isAllowReadMixParlayReport = @CastAide.AsInt32(@isAllowRead2HO);
+        var isAllowReadLiveCasinoReport = @CastAide.AsInt32(@isAllowRead2HO);
+        var isAllowReadSoccerReport = @CastAide.AsInt32(@isAllowRead2HS);
+        var isAllowReadHorseRacingReport = @CastAide.AsInt32(@isAllowRead2HO);
+        var isAllowReadNumberGameReport = @CastAide.AsInt32(@isAllowRead2HO);
+        var isAllowReadCasinoReport = @CastAide.AsInt32(@isAllowRead2HO);
+        var isAllowReadBingoReport = @CastAide.AsInt32(@isAllowRead2HO);
+
+        var isAllowReadOtherSportsReport = @CastAide.AsInt32(@isAllowRead2HO);
+        var isAllowReadFinanceReport = @CastAide.AsInt32(@isAllowRead2HO);
+        var balanceUpDay =  '@CastAide.AsDateTime(Sunplus.Accounting.DataAccess.Report.ReportUtils.BalanceUp.BalanceUpDay).ToString("MM/dd/yyyy")';
+    </script>
+</body>
+</html>

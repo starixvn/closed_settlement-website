@@ -1,0 +1,17 @@
+<tr class="{color}">
+	<td class="l" style="padding-left:3px;">{funcname}</td>
+	<td class="c">
+		{indent}<input type="checkbox" id="chkR{funcidHR}" name="chkR{funcidHR}"  onclick="OnCheckRead({funcid},'{num_sub}');" {read-checked}/>		
+	</td>
+	<td class="c">
+		{indent}<input type="checkbox" id="chkH{funcidHR}" name="chkH{funcidHR}"  onclick="OnCheckHost({funcid},'{num_sub}');" {host-checked}/>		
+	</td>
+  <!--individual-->
+  <td class="c">
+	  {indent}<input type="checkbox" disabled="" {gread-checked}/>
+  </td>
+  <td class="c">
+    {indent}<input type="checkbox" disabled="" {ghost-checked}/>
+  </td>
+  <!--/individual-->
+</tr>

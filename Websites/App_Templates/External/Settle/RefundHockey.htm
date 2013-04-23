@@ -1,0 +1,46 @@
+<div>  
+  <form id="frmBill">   
+  <table style="width:100%" class="tblcollapse">    
+    <tr class="title1 c">        
+        <td colspan="8">LEAGUE:&nbsp;{leaguename}</td>
+    </tr>
+    <tr class="title">
+      <td width="80" >CODE</td>
+      <td width="90" >KICK-OFF TIME</td>
+      <td width="250" >TEAM</td>
+      <td width="22" >1P</td>
+      <td width="22" >2P</td>
+      <td width="22" >3P</td>    
+      <td width="22" >O.T</td>   
+      <td width="36" >Final Score</td>
+    </tr> 
+    <tr class="c">
+      <td rowspan="2">{matchcode}</td>
+      <td rowspan="2">{date}</td>
+      <td class="fontbold l hteam">{hometeam}</td>
+      <td>{value1pHome}</td>
+      <td>{value2pHome}</td> 
+      <td>{value3pHome}</td>      
+      <td>{valueOTHome}</td>      
+      <td>{homeFScore}</td>                
+    </tr> 
+    <tr class="c">      
+      <td class="fontbold l ateam">{awayteam}</td>
+      <td>{value1pAway}</td>
+      <td>{value2pAway}</td> 
+      <td>{value3pAway}</td>
+      <td>{valueOTAway}</td>      
+      <td>{awayFScore}</td>                
+    </tr>      
+  </table>
+
+    {Refund}
+
+   <input type="hidden" id="sParams" name="sParams" value="{params}" />  
+  <input type="hidden" id="sAction" name="sAction" />
+  <input type="hidden" id="isSD" name="isSD" value="0" />
+  </form>
+  
+  <span style="padding-left: 30px;" id="infoMsg" class="info-message"></span>
+  <span style="padding-left: 30px; visibility: hidden;" id="errMsg" class="error-message">Please input valid result!</span>
+</div>

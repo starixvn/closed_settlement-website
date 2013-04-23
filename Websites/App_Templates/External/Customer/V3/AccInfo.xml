@@ -1,0 +1,182 @@
+<center>  
+  <input type="hidden"  id="{parentId}" name="{parentId}"  value="{valueParentId}"/>
+  <input type="hidden" id="custId" name="custId" value="{cust-id}" />
+  <input type="hidden" id="isUpdateMember" name="isUpdateMember" value="0" />
+  <input type="hidden" id="memberPT" name="memberPT" value="0" />
+  <input type="hidden" id="maxMemberPT" name="maxMemberPT" value="0" />
+  <input type="hidden" id="roleId" name="roleId" value="{role-id}" />
+  <input type="hidden" id="typeUdp" name="typeUdp"/>
+  <table width="650px">
+    <tr>
+      <td>
+        <span id="err" class="errMsg"></span>
+        <span id="errMsg" class="error-message"></span>
+      </td>
+    </tr>
+  </table>
+  <table class="txtnormal" cellspacing="8" cellpadding="0" width="670px">
+    <tr>
+      <td>
+        <table  border="1px" class="tblPT" width="100%" bordercolor="#CDCDCD">
+          <tr>
+            <td colspan="4" class="pt-bgheader padd15 b">
+              {add-edit-agent} <span class="">{username}</span>
+            </td>
+          </tr>
+          <!--not-edit-->
+          <tr class="{edit-hidden}">
+            <td class="add-customer-padd-rigth" width="15%">User Name</td>
+            <td class="add-customer-padd-left" width="35%">
+              <input class="txt-font8pt txt-width-130"  type="text" name="txtUsername" id="txtUsername" />
+            </td>
+            <td class="add-customer-padd-rigth" width="15%">Password</td>
+            <td class="add-customer-padd-left" width="35%">
+              <input type="password"  class="txt-font8pt txt-width-130" name="txtPwd" id="txtPwd" />
+            </td>
+          </tr>
+          <!--/not-edit-->
+          <tr>
+            <td class="add-customer-padd-rigth">First Name</td>
+            <td class="add-customer-padd-left">
+              <input class="txt-font8pt txt-width-130" name="txtFirstname" id="txtFirstname" value="{firstname}" />
+            </td>
+            <td class="add-customer-padd-rigth">Last Name</td>
+            <td class="add-customer-padd-left">
+              <input class="txt-font8pt txt-width-130" name="txtLastname" id="txtLastname" value="{lastname}" />
+            </td>
+          </tr>
+          <tr>
+            <td class="add-customer-padd-rigth">Phone</td>
+            <td class="add-customer-padd-left">
+              <input class="txt-font8pt txt-width-130" name="txtPhone" id="txtPhone" value="{phone}" />
+            </td>
+            <td class="add-customer-padd-rigth">Mobile Phone</td>
+            <td class="add-customer-padd-left">
+              <input class="txt-font8pt txt-width-130" name="txtMobile" id="txtMobile" value="{mobile}" />
+            </td>
+          </tr>
+
+          <tr class="{site-curr-hidden}">
+            <!--site-super-->
+            <td class="add-customer-padd-rigth">Site</td>
+            <td class="add-customer-padd-left">
+              <select class="select-group" name="listSite" id="listSite">{listSiteValue}</select>
+            </td>
+            <!--/site-super-->
+            <td class="add-customer-padd-rigth">Fax</td>
+            <td class="add-customer-padd-left">
+              <input class="txt-font8pt txt-width-130" name="txtFax" id="txtFax" value="{fax}" />
+            </td>
+            
+            <!--blank-->
+            <td colspan="2" align="right">
+              <input style="width:55px;" type="button" name="btnUpdateInfo" value="Update" id="btnUpdateInfo" class="btn" onclick="UpdateCustInfo();"/>
+            </td>
+            <!--/blank-->
+
+          </tr>
+          <!--MinMaxPT-->
+
+          <!--currency-->
+          <tr>
+            <td class="add-customer-padd-rigth">Currency</td>
+            <td class="add-customer-padd-left">
+              <select class="select-group" name="listCurrency" id="listCurrency">{listCurrencyValue}</select>
+            </td>
+            <td colspan="2"></td>
+          </tr>
+          <!--/currency-->
+
+          <!--/MinMaxPT-->
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <table class="tblPT" style="background-color:#eceeef;" border="1" bordercolor="#cdcdcd" width="100%">
+          <tr>
+            <td class="add-customer-padd-rigth" width="16%">Max Credit</td>
+            <td class="add-customer-padd-left">
+              <input class="txt-font8pt txt-width-130" maxlength="14" name="txtCredit" id="txtCredit" value="{maxcredit-val}"  />
+              <span class="normal"  id="txtCreditMin">{Min}</span>
+              <span class="normal"  id="txtCreditMax">{MinCredit}</span>
+            </td>
+            <td style="width:10%" align="right">
+              <input style="width:55px;" type="button" name="btnUdpCredit" value="Update" id="btnUdpCredit" class="btn" onclick="UpdateCredit();"/>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <!--status-->
+    <tr>
+      <td>
+        <table class="tblPT" border="1" bordercolor="#cdcdcd" width="100%">
+          <tr>            
+            <td class="add-customer-padd-left right" width="45%">
+              <input type="checkbox" id="chkClosed" value="yes" name="chkClosed" {status} /> 
+            </td>
+            <td class="add-customer-padd-left left" width="45%">Closed</td>
+            <td style="width:10%" align="right">
+              <input style="width:55px;" type="button" name="btnStatus" value="Update" id="btnStatus" class="btn" onclick="UpdateStatus();"/>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <!--/status-->
+
+    <!--suspend-->
+    <tr>
+      <td>
+        <table class="tblPT" style="background-color:#eceeef;" border="1" bordercolor="#cdcdcd" width="100%">
+          <tr>
+            <td class="add-customer-padd-left r" width="45%">
+              <input type="checkbox" id="chkSuspend" value="yes" name="chkSuspend" {status-Suspend} />
+            </td>
+            <td class="add-customer-padd-left left" width="45%">
+              Suspended
+            </td>
+            <td style="width:10%" align="right">
+              <input style="width:55px;" type="button" name="btnSuspend" value="Update" id="btnSuspend" class="btn" onclick="UpdateSuspend();"/>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <!--/suspend-->
+
+    <!--commission-->
+    <tr>
+      <td>
+        <table class="tblPT" style="background-color:#eceeef;" border="1" bordercolor="#cdcdcd" width="100%">
+          <tr>
+            <td  class="pt-bgheader padd15 b">{Commission}</td>
+            <td style="width:10%" align="right">
+              <input style="width:55px;" type="button" name="btnComm" value="Update" id="btnComm" class="btn" onclick="UpdateComm();"/>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2"  class="c">
+              Group A
+              <select class="select-group" name="listGroupA" id="listGroupA">{listGroupAValue}</select>&nbsp;&nbsp;&nbsp;
+              Group B
+              <select class="select-group" name="listGroupB" id="listGroupB">{listGroupBValue}</select>&nbsp;&nbsp;&nbsp;
+
+              Group C
+              <select class="select-group" name="listGroupC" id="listGroupC">{listGroupCValue}</select>&nbsp;&nbsp;&nbsp;
+              Group D
+              <select class="select-group" name="listGroupD" id="listGroupD">{listGroupDValue}</select>&nbsp;&nbsp;&nbsp;
+              Other Comm
+              <select class="select-group" name="listOther" id="listOther">{listOtherValue}</select>
+            </td>
+            
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <!--/commission-->
+    
+  </table>
+</center>

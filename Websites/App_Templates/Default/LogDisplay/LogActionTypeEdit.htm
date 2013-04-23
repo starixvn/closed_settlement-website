@@ -1,0 +1,44 @@
+﻿<table cellpadding="0" cellspacing="0" class="tblcollapse" style="text-align:left">
+<tr>
+    <td class="b">ActionTypeID</td>
+    <td><span><b>{_ActionTypeID}</b></span>
+    <input type="hidden" id="txtActionTypeID" value="{_ActionTypeID}" />
+    </td>
+</tr>
+<tr>
+    <td class="b">English Name</td>
+    <td><input type="text" id="txtEN" value="{_txtEN}" style="width:350px" onkeypress="return PreSubmit(event);" /></td>
+</tr>
+<tr>
+    <td class="b">Chinese Traditional Name</td>
+    <td><input type="text" id="txtCH" value="{_txtCH}" style="width:350px" onkeypress="return PreSubmit(event);" /></td>
+</tr>
+<tr>
+    <td class="b">Chinese Simplified Name</td>
+    <td><input type="text" id="txtCS" value="{_txtCS}" style="width:350px" onkeypress="return PreSubmit(event);" /></td>
+</tr>
+<tr>
+    <td class="b">Japanese Name</td>
+    <td><input type="text" id="txtJP" value="{_txtJP}" style="width:350px" onkeypress="return PreSubmit(event);" /></td>
+</tr>
+<tr>
+    <td class="b">Thai Name</td>
+    <td><input type="text" id="txtTH" value="{_txtTH}" style="width:350px" onkeypress="return PreSubmit(event);" /></td>
+</tr>
+<tr>
+    <td class="b">Korean Name</td>
+    <td><input type="text" id="txtKO" value="{_txtKO}" style="width:350px" onkeypress="return PreSubmit(event);" /></td>
+</tr>
+<tr>
+    <td class="b">Italian Name</td>
+    <td><input type="text" id="txtIT" value="{_txtIT}" style="width:350px" onkeypress="return PreSubmit(event);" /></td>
+</tr>
+
+
+<tr>
+    <td></td>
+    <td><input type="button" value="Submit" class="btn" id="btnSubmit" onclick="UpdateActionType()" /></td>
+</tr>
+</table>
+<div id="divErr" style="display:none;color:Red"></div>
+<img id="displayBox" src="../App_Themes/SteelBlue/Images/waiting7.gif" alt="" style="display: none;" />

@@ -1,0 +1,137 @@
+<table width="94%" >	
+	<tr>
+		<td>
+			<div id="divUpdPT1" name="divUpdPT1">
+				<table class="tblcollapse" width="100%">
+                  <!--no-header-->
+                    <tr class="title">
+                    <td colspan="{col-title}">{pt-text}</td>
+                    </tr>
+                    <!--/no-header-->
+                    {bettype-header}
+                    <tr >
+						<td rowspan="{dead-row}">{deadball-text}</td>
+						<!--none-Multi-->						
+						<!--none-edit-min-->
+						<td class="r">{a-presetpt-text}</td>
+						<td>{a-hdp-val}</td>
+						<td>{a-ou-val}</td>
+						<td>{a-1sthdp-val}</td>
+						<td>{a-1stou-val}</td>
+						<td>{a-oe-val}</td>
+						<td>{a-1x2-val}</td>
+						<td>{a-cs-val}</td>
+						<td>{a-tg-val}</td>
+						<td>{a-mp-val}</td>
+						<td>{a-or-val}</td>
+					</tr>	
+												
+					<tr>					
+					<!--/none-Multi-->		
+						<td class="l">{p-presetpt-text}</td><!--/none-edit-min-->
+						<td>{p-hdp-val}{p-hdp-btn}</td>
+						<td>{p-ou-val}</td>
+						<td>{p-1sthdp-val}</td>
+						<td>{p-1stou-val}</td>
+						<td>{p-oe-val}</td>
+						<td>{p-1x2-val}{p-1x2-btn}</td>
+						<td>{p-cs-val}</td>
+						<td>{p-tg-val}</td>
+						<td>{p-mp-val}</td>
+						<td>{p-or-val}</td>
+					</tr>
+					<!--none-Master-->	
+					<!--auto-preset-->									
+					<tr class="{hdauto}">
+						<!--none-edit-min-->	
+						<td rowspan="2" class="l">{au-presetpt-text}</td>
+						<td>{chkAutoHdpD}</td>
+						<td>{chkAutoOUD}</td>
+						<td>{chkAuto1stHdpD}</td>
+						<td>{chkAuto1stOUD}</td>
+						<td>{chkAutoOE}</td>
+						<td>{chkAuto1x2}</input></td>
+						<td>{chkAutoCS}</input></td>
+						<td>{chkAutoTG}</td>
+						<td>{chkAutoMP}</td>
+						<td>{chkAutoOR}</td>	
+					</tr>
+					<tr class="{hdauto}">
+						<td>{au-hdp-val}{au-hdp-btn}</td>
+						<td>{au-ou-val}</td>
+						<td>{au-1sthdp-val}</td>
+						<td>{au-1stou-val}</td>
+						<td>{au-oe-val}</td>
+						<td>{au-1x2-val}{au-1x2-btn}</td>
+						<td>{au-cs-val}</td>
+						<td>{au-tg-val}</td>
+						<td>{au-mp-val}</td>
+						<td>{au-or-val}</td>
+					</tr>
+					<!--/auto-preset-->	
+					<!--/none-Master-->									
+					<tr>
+						<td></td><!--/none-edit-min-->	
+						<td colspan="5" class="l">
+							<!--limit-CopyHdp-->
+							<input type="checkbox" {chk-hdpd} {disabled-copyhdpd} id="chkCopy1HdpDeadball" name="chkCopy1HdpDeadball" onclick="CheckCopyPT(this,arr1Super1);"></input>
+							{copy-hdp-text}
+							<!--/limit-CopyHdp-->
+						</td>
+						<td colspan="5" class="l">
+							<!--limit-Copy1x2-->
+							<input type="checkbox" {chk-1x2} {disabled-copy1x2} id="chkCopy11x2" name="chkCopy11x2" onclick="CheckCopyPT(this,arr2Super1);"></input>
+							{copy-1x2-text}
+							<!--/limit-Copy1x2-->
+						</td>
+					</tr>									
+					<tr>
+						<td rowspan="{live-row}">{live-text}</td>
+						<!--none-Multi-->	
+						<!--none-edit-min-->					
+						<td class="l">{a-preset-live}</td>
+						<td>{a-Lhdp-val}</td>
+						<td>{a-Lou-val}</td>
+						<td>{a-L1stHdp-val}</td>
+						<td>{a-L1stou-val}</td>		 
+						<td colspan="6" rowspan="{cols-live}"></td>				
+					</tr>
+													
+					<tr>	
+					<!--/none-Multi-->							
+						<td class="l">{p-preset-live}</td><!--/none-edit-min-->			
+						<td>{p-Lhdp-val}{p-Lhdp-btn}</td>
+						<td>{p-Lou-val}</td>
+						<td>{p-L1stHdp-val}</td>
+						<td>{p-L1stou-val}</td>	
+						<td colspan="6" rowspan="{copy-live-col}" class="l">
+							<!--limit-CopyHdpL-->
+							<input type="checkbox" {chk-hdpl} {disabled-copyhdpl} id="chkCopy1HdpLive" name="chkCopy1HdpLive" onclick="CheckCopyPT(this,arr3Super1);"></input>
+							{copy-hdp-text}
+							<!--/limit-CopyHdpL-->
+						</td>				
+					</tr>		
+					<!--none-Master-->	
+					<!--none-edit-min-->	
+					<!--auto-preset-->	
+					<tr class="{hdauto}">		
+						<td rowspan="2" class="l">{au-preset-live}</td>
+						<td>{chkAutoHdpL}</input></td>
+						<td>{chkAutoOUL}</td>
+						<td>{chkAuto1stHdpL}</td>
+						<td>{chkAuto1stOUL}</td>					
+					</tr>		
+					<tr class="{hdauto}">		
+						<td>{au-Lhdp-val}{au-Lhdp-btn}</td>
+						<td>{au-Lou-val}</td>
+						<td>{au-L1stHdp-val}</td>
+						<td>{au-L1stou-val}</td>		
+					</tr>
+					<!--/auto-preset-->	
+					<!--/none-Master-->		
+					<!--/none-edit-min-->				
+				</table>
+			</div>
+		</td>
+	</tr>
+</table>

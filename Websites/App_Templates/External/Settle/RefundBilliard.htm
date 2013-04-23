@@ -1,0 +1,35 @@
+<div>
+  <form id="frmBill">  
+  <table class="tblcollapse">    
+    <tr class="title1 c">        
+        <td colspan="7">LEAGUE:&nbsp;{leaguename}</td>
+    </tr>
+    <tr class="title">
+      <td width="100" >CODE</th>
+      <td width="90" >KICK-OFF TIME</th>
+      <td  >TEAM</th>     
+      <td width="80" >Final Score</th>
+    </tr>
+    <tr class="c">
+      <td rowspan="2">{matchcode}</td>
+      <td rowspan="2">{date}</td>
+      <td class="fontbold l hteam">{hometeam}</td>      
+      <td>{homeFScore}</td>                
+    </tr> 
+    <tr class="c">      
+      <td class="fontbold l ateam">{awayteam}</td>
+      <td>{awayFScore}</td>                
+    </tr>       
+  </table>
+    
+    {Refund}
+    
+  <input type="hidden" id="sParams" name="sParams" value="{params}" />  
+  <input type="hidden" id="sAction" name="sAction" />
+  </form>
+  <br/>
+
+  <span style="padding-left: 30px;" id="infoMsg" class="info-message"></span>  
+  <span style="padding-left: 30px; visibility: hidden;" id="errMsg" class="error-message">Please input valid score!</span>
+  
+</div>

@@ -1,0 +1,111 @@
+﻿ <!--agent-pt1-->
+    <tr>
+        <td rowspan="{rowspan}" class="c">
+            Deadball
+        </td>
+        <td class="l">
+            {agent-position}
+        </td>
+        <td>
+            <select class="select-pt copyAll" name="listM1stOUD" id="listM1stOUD">
+                {listM1stOUDValue}
+            </select>
+            <input type="button" name="btnReduce1" value=" " class="btn-dec1" onclick="ReducePT('listM1stOUD',1)" />
+            <input type="button" name="btnIncrease1" value=" " class="btn-inc1" onclick="IncreasePT('listM1stOUD',1)" />
+            <input type="button" name="btnReduce10" value=" " class="btn-dec10" onclick="ReducePT('listM1stOUD',10)" />
+            <input type="button" name="btnIncrease10" value=" " class="btn-inc10" onclick="IncreasePT('listM1stOUD',10)" />
+        </td>
+        <td>
+            <select class="select-pt copyfromD" name="listM1stOED" id="listM1stOED">
+                {listM1stOEDValue}
+            </select>
+        </td>
+        <td>
+            <select class="select-pt copyfromD" name="listM1stWarriorD" id="listM1stWarriorD">
+                {listM1stWarriorDValue}
+            </select>
+        </td>
+        <td>
+            <select class="select-pt copyfromD" name="listM1stOEFTD" id="listM1stOEFTD">
+                {listM1stOEFTDValue}
+            </select>
+        </td>
+       <td rowspan="{rowspan}" colspan="2">
+            <input class="copyAll" type="checkbox" onclick="NumberGameCopyPT('Deadball');"
+                name="chkCopy1stOUD" id="chkCopy1stOUD" />
+            Copy From 1st Last O/U
+       </td>
+    </tr>
+    <!--/agent-pt1-->
+    
+    <!--master-pt2-->
+    <tr>
+       <td class="l">
+            {master-position}
+        </td>
+        <td>
+            <select {statuslstS1stOUD} class="select-pt copyAll" name="listS1stOUD" id="listS1stOUD" onchange="SelectOnChange('listS1stOUD');">
+                {listS1stOUDValue}
+            </select>
+            <input type="button" name="btnReduce1" value=" " class="btn-dec1" onclick="ReducePT('listS1stOUD',1)" />
+            <input type="button" name="btnIncrease1" value=" " class="btn-inc1" onclick="IncreasePT('listS1stOUD',1)" />
+            <input type="button" name="btnReduce10" value=" " class="btn-dec10" onclick="ReducePT('listS1stOUD',10)" />
+            <input type="button" name="btnIncrease10" value=" " class="btn-inc10" onclick="IncreasePT('listS1stOUD',10)" />
+        </td>
+        <td>
+            <select {statuslstS1stOED} class="select-pt copyfromD" name="listS1stOED" id="listS1stOED" onchange="SelectOnChange('listS1stOED');">
+                {listS1stOEDValue}
+            </select>
+        </td>
+        <td>
+            <select {statuslstS1stWarriorD} class="select-pt copyfromD" name="listS1stWarriorD" id="listS1stWarriorD" onchange="SelectOnChange('listS1stWarriorD');">
+                {listS1stWarriorDValue}
+            </select>
+        </td>
+        <td>
+            <select {statuslstS1stOEFTD} class="select-pt copyfromD" name="listS1stOEFTD" id="listS1stOEFTD" onchange="SelectOnChange('listS1stOEFTD');">
+                {listS1stOEFTDValue}
+            </select>
+        </td>
+           
+    </tr>
+    <!--/master-pt2-->
+    
+  <!--auto-master-pt1-->
+    <tr>
+        <td class="l" rowspan="2">
+            {auto-master-position}
+        </td>
+        <td><input {statuschkAuto1stOUD} type="checkbox" id="chkAuto1stOUD" name="chkAuto1stOUD" onclick="CheckAutoPreset(this);" /></td>
+        <td><input {statuschkAuto1stOED} class="copyfromD" type="checkbox" id="chkAuto1stOED" name="chkAuto1stOED" onclick="CheckAutoPreset(this);" /></td>
+        <td><input {statuschkAuto1stWarriorD} class="copyfromD" type="checkbox" id="chkAuto1stWarriorD" name="chkAuto1stWarriorD" onclick="CheckAutoPreset(this);" /></td>
+        <td><input {statuschkAuto1stOEFTD} class="copyfromD" type="checkbox" id="chkAuto1stOEFTD" name="chkAuto1stOEFTD" onclick="CheckAutoPreset(this);" /></td>
+    </tr>
+    <tr>
+        
+        <td>
+            <select {statuslstSAuto1stOUD} class="select-pt copyAll" name="listSAuto1stOUD" id="listSAuto1stOUD">
+                {listSAuto1stOUDValue}
+            </select>
+            <input type="button" name="btnReduce1" value=" " class="btn-dec1" onclick="ReducePT('listSAuto1stOUD',1)" />
+            <input type="button" name="btnIncrease1" value=" " class="btn-inc1" onclick="IncreasePT('listSAuto1stOUD',1)" />
+            <input type="button" name="btnReduce10" value=" " class="btn-dec10" onclick="ReducePT('listSAuto1stOUD',10)" />
+            <input type="button" name="btnIncrease10" value=" " class="btn-inc10" onclick="IncreasePT('listSAuto1stOUD',10)" />
+        </td>
+        <td>
+            <select {statuslstSAuto1stOED} class="select-pt copyfromD" name="listSAuto1stOED" id="listSAuto1stOED">
+                {listSAuto1stOEDValue}
+            </select>
+        </td>
+        <td>
+            <select {statuslstSAuto1stWarriorD} class="select-pt copyfromD" name="listSAuto1stWarriorD" id="listSAuto1stWarriorD">
+                {listSAuto1stWarriorDValue}
+            </select>
+        </td>
+        <td>
+            <select {statuslstSAuto1stOEFTD} class="select-pt copyfromD" name="listSAuto1stOEFTD" id="listSAuto1stOEFTD">
+                {listSAuto1stOEFTDValue}
+            </select>
+        </td>
+    </tr>
+    <!--/auto-master-pt1-->

@@ -1,0 +1,91 @@
+<table width="75%" class="tblSporttypePT">	
+	<tr> 
+		<td>
+			<div id="divUpdInfo201" name="divUpdInfo201">
+				<table width="100%" class="tbllayout">
+					<tr class="title">					
+						<td colspan="3">
+							{bet-text}
+						</td>
+					</tr>
+					<tr>
+						<td class="r">{minbet-text}&nbsp;
+							<input type="text" maxlength="14" id="txtMinbet201" name="txtMinbet201" value="{minbet201-val}"></input>					
+							<span class="{mbMin}">&gt;=<span id="txtMinbet_Min201">{minbet-min-201}</span></span>
+						</td>
+						<td class="r">{maxbet-text}&nbsp;
+							<input type="text" maxlength="14" id="txtMaxbet201" name="txtMaxbet201" value="{maxbet201-val}"></input>					
+							<span class="{mbMax}">&lt;=<span id="txtMaxbet_Max201">{maxbet-max-201}</span></span>
+						</td>
+						<td class="r">{maxpermatch-text}&nbsp;
+							<input type="text" maxlength="14" id="txtMaxPerMatch201" name="txtMaxPerMatch201" value="{maxpermatch201-val}"></input>					
+							<span class="{mpmMin}">&gt;=<span id="txtMaxPerMatch_Min201">{maxpermatch-min-201}</span> and</span>
+							<span class="{mpmMax}">&lt;=<span id="txtMaxPerMatch_Max201">{maxpermatch-max-201}</span></span>
+						</td>
+					</tr>				
+				</table>
+			</div>
+		</td>
+	</tr>	
+	<tr>
+		<td >
+			<div id="divUpdPT201" name="divUpdPT201">
+				<table border="1" width="100%" class="tbllayout">
+					<tr class="title">						
+						<td colspan="{title-col}">{pt-text}</td>
+						
+					</tr>
+					<!--none-edit-->
+					<tr style="display:none">
+						<td class="r">{auto-super-text}</td>
+						<td class="c">							
+						</td>
+					</tr>
+					<!--/none-edit-->
+					<tr>
+						<!--none-member--><td></td><!--/none-member-->
+						<td class="c" style="width:150px;">{ou-text}</td>
+						<td class="c" style="width:60px;">{oe-text}</td>
+						<td></td>
+						
+					</tr>
+					<tr>
+						<!--none-member--><td class="r">{a-presetpt-text}</td><!--/none-member-->
+						<td class="c">{a-ou-val}{a-ou-btn}</td>
+						<td>{a-oe-val}</td>	
+						<td rowspan="{copy-ou-span}" class="l">
+							<input type="checkbox" id="chkCopy201OU" name="chkCopy201OU" onclick="CheckCopyPT(this,arr2Super201,arr2Master201,'{chkCopy-1}');"></input>&nbsp; {lblCopyFromBettype}
+						</td>						
+					</tr>
+					<!--none-member-->
+					<tr>
+						<td class="r" style="width:25%">{p-presetpt-text}</td>
+						<td class="c">{p-ou-val}{p-ou-btn}</td>
+						<td>{p-oe-val}</td>	
+										
+					</tr>
+					<!--/none-member-->					
+					
+					<!--auto-preset-->
+					<tr class="{hdauto}">
+						<td rowspan="2" class="r">{au-presetpt-text}</td>
+						<td class="c">
+							<input type="checkbox" onclick="CheckAutoPreset(this)" id="chkAuto201OU" name="chkAuto201OU" {checked-OU}></input>
+						</td>
+						<td>
+						    <input type="checkbox" onclick="CheckAutoPreset(this, 'chkCopy201OU')" id="chkAuto201OE" name="chkAuto201OE" {checked-OE}></input>    
+						</td>
+						
+					</tr>
+					<tr class="{hdauto}">
+						<td class="c">{au-ou-val} {au-ou-btn}</td>
+						<td>{au-oe-val}</td>	
+																				
+					</tr>
+					<!--/auto-preset-->
+				</table>
+			</div>
+		</td>
+	</tr>
+</table>
+

@@ -1,0 +1,257 @@
+<table class="tblcollapse" style="width:800px">
+     <!--Deadball-->
+     {headerpregame}
+      <tr>
+        <td class="l" rowspan="5" >
+            Deadball
+        </td>
+        <td class="l">
+            Agent
+        </td>
+        <td>
+            {listA1stOUDValue}
+        </td>
+        <td>
+            {listA1stOEDValue}
+        </td>
+        <td>
+            {listA1stWaFTDValue}
+        </td>
+        <td>
+            {listA1stOEFTDValue}
+        </td>       
+       <td rowspan="2" colspan="2">           
+       </td>
+    </tr>
+    <tr>
+        <td class="l">
+            Master
+        </td>
+        <td>
+            {listM1stOUDValue}
+        </td>
+        <td>
+            {listM1stOEDValue}
+        </td>
+        <td>
+            {listM1stWaFTDValue}
+        </td>
+        <td>
+            {listM1stOEFTDValue}
+        </td>
+    </tr>
+    <tr>
+        <td class="l">
+            Super
+        </td>
+        <td>
+            <!--1stOUD-->
+            <select {statuslistS1stOUD} class="select-pt copyAll" name="listS1stOUD" id="listS1stOUD">
+                {listS1stOUDValue}
+            </select>
+            <input type="button" name="btnReduce1" value=" " class="btn-dec1" onclick="ReducePT('listS1stOUD',1)" />
+            <input type="button" name="btnIncrease1" value=" " class="btn-inc1" onclick="IncreasePT('listS1stOUD',1)" />
+            <input type="button" name="btnReduce10" value=" " class="btn-dec10" onclick="ReducePT('listS1stOUD',10)" />
+            <input type="button" name="btnIncrease10" value=" " class="btn-inc10" onclick="IncreasePT('listS1stOUD',10)" />
+            <!--/1stOUD-->
+        </td>
+        <td>
+            <!--1stOED-->
+            <select {statuslistS1stOED} class="select-pt copyfromD" name="listS1stOED" id="listS1stOED">
+                {listS1stOEDValue}
+            </select>
+            <!--/1stOED-->
+        </td>
+        <td>
+            <!--1stWaFTD-->
+            <select {statuslistS1stWaFTD} class="select-pt copyfromD" name="listS1stWaFTD" id="listS1stWaFTD">
+                {listS1stWaFTDValue}
+            </select>
+            <!--/1stWaFTD-->
+        </td>
+        <td>
+            <!--1stOEFTD-->
+            <select {statuslistS1stOEFTD} class="select-pt copyfromD" name="listS1stOEFTD" id="listS1stOEFTD">
+                {listS1stOEFTDValue}
+            </select>
+            <!--/1stOEFTD-->
+        </td>
+       <td rowspan="3" colspan ="2">
+            <input {statuscopy-} class="copyAll" type="checkbox" onclick="NumberGameCopyPT('Deadball');" name="chkCopy1stOUD" id="chkCopy1stOUD" />
+            Copy From 1st Last O/U
+       </td>
+    </tr>
+    <tr>
+        <td rowspan="2">Super Auto</td>
+        <td><input {statuschkAuto1stOUD} type="checkbox" id="chkAuto1stOUD" name="chkAuto1stOUD" onclick="CheckAutoPresetOthers(this);" /></td>
+        <td><input {statuschkAuto1stOED} class="copyfromD" type="checkbox" id="chkAuto1stOED" name="chkAuto1stOED" onclick="CheckAutoPreset(this, 'chkCopy1stOUD');" /></td>
+        <td><input {statuschkAuto1stWaFTD} class="copyfromD" type="checkbox" id="chkAuto1stWaFTD" name="chkAuto1stWaFTD" onclick="CheckAutoPreset(this, 'chkCopy1stOUD');;" /></td>
+        <td><input {statuschkAuto1stOEFTD} class="copyfromD" type="checkbox" id="chkAuto1stOEFTD" name="chkAuto1stOEFTD" onclick="CheckAutoPreset(this, 'chkCopy1stOUD');;" /></td>
+    </tr>
+    <tr>
+        <td>
+            <select {statuslstSAuto1stOUD} class="select-pt copyAll" name="listSAuto1stOUD" id="listSAuto1stOUD">
+                {listSAuto1stOUDValue}
+            </select>
+            <input type="button" name="btnReduce1" value=" " class="btn-dec1" onclick="ReducePT('listSAuto1stOUD',1)" />
+            <input type="button" name="btnIncrease1" value=" " class="btn-inc1" onclick="IncreasePT('listSAuto1stOUD',1)" />
+            <input type="button" name="btnReduce10" value=" " class="btn-dec10" onclick="ReducePT('listSAuto1stOUD',10)" />
+            <input type="button" name="btnIncrease10" value=" " class="btn-inc10" onclick="IncreasePT('listSAuto1stOUD',10)" />
+        </td>
+        <td>
+            <select {statuslstSAuto1stOED} class="select-pt copyfromD" name="listSAuto1stOED" id="listSAuto1stOED">
+                {listSAuto1stOEDValue}
+            </select>
+        </td>
+        <td>
+            <select {statuslstSAuto1stWaFTD} class="select-pt copyfromD" name="listSAuto1stWaFTD" id="listSAuto1stWaFTD">
+                {listSAuto1stWaFTDValue}
+            </select>
+        </td>
+        <td>
+            <select {statuslstSAuto1stOEFTD} class="select-pt copyfromD" name="listSAuto1stOEFTD" id="listSAuto1stOEFTD">
+                {listSAuto1stOEFTDValue}
+            </select>
+        </td>
+    </tr>
+    <!--/Deadball-->
+    
+    <!--Live-->
+    {headerrunninggame}
+    <tr>
+        <td rowspan="5" >
+            Live
+        </td>
+        <td>Agent</td>
+        <td>
+           {listANBOULValue}
+        </td>
+        <td>
+            {listANBOELValue}
+        </td>
+        <td>
+            {listAHLLValue}
+        </td>
+        <td>
+            {listANCLValue}
+        </td>
+        <!--NG-Key-->
+        <td>
+            {listANGLValue}            
+        </td>
+        <!--/NG-Key-->
+        <td rowspan="2"></td>
+    </tr>
+    <tr>
+        <td>Master</td>
+        <td>
+           {listMNBOULValue}
+        </td>
+        <td>
+            {listMNBOELValue}
+        </td>
+        <td>
+            {listMHLLValue}
+        </td>
+        <td>
+            {listMNCLValue}
+        </td>
+        <!--NG-Key-->
+        <td>            
+            {listMNGLValue}            
+        </td>
+        <!--/NG-Key-->
+    </tr>
+    <tr>
+        <td>Super</td>
+         <td>
+            <!--NBOUL-->
+            <select {statuslistSNBOUL} class="select-pt copyAll" name="listSNBOUL" id="listSNBOUL">
+                {listSNBOULValue}
+            </select>
+            <input type="button" name="btnReduce1" value=" " class="btn-dec1" onclick="ReducePT('listSNBOUL',1)" />
+            <input type="button" name="btnIncrease1" value=" " class="btn-inc1" onclick="IncreasePT('listSNBOUL',1)" />
+            <input type="button" name="btnReduce10" value=" " class="btn-dec10" onclick="ReducePT('listSNBOUL',10)" />
+            <input type="button" name="btnIncrease10" value=" " class="btn-inc10" onclick="IncreasePT('listSNBOUL',10)" />
+            <!--/NBOUL-->
+        </td>
+        <td>
+            <!--NBOEL-->
+            <select {statuslistSNBOEL} class="select-pt copyfromL" name="listSNBOEL" id="listSNBOEL">
+                {listSNBOELValue}
+            </select>
+            <!--/NBOEL-->
+        </td>
+        <td>
+            <!--HLL-->
+            <select {statuslistSHLL} class="select-pt copyfromL" name="listSHLL" id="listSHLL">
+                {listSHLLValue}
+            </select>
+            <!--/HLL-->
+        </td>
+        <td>
+            <!--NCL-->
+            <select {statuslistSNCL} class="select-pt copyfromL" name="listSNCL" id="listSNCL">
+                {listSNCLValue}
+            </select>
+            <!--/NCL-->
+        </td>
+        <!--NG-Key-->
+        <td>            
+            <!--NGL-->
+            <select {statuslistSNGL} class="select-pt copyfromL" name="listSNGL" id="listSNGL">
+                {listSNGLValue}
+            </select>
+            <!--/NGL-->            
+        </td>
+        <!--/NG-Key-->
+        <td rowspan="3">
+              <input {statuscopy-live} class="copyAll" type="checkbox" onclick="NumberGameCopyPT('Live');" name="chkCopyNBOUL" id="chkCopyNBOUL" />
+               Copy From Over/Under
+        </td>
+    </tr>
+    <tr>
+        <td class="l" rowspan="2">
+           Super Auto
+        </td>
+        <td><input {statuschkAutoNBOUL} type="checkbox" id="chkAutoNBOUL" name="chkAutoNBOUL" onclick="CheckAutoPresetOthers(this);" /></td>
+        <td><input {statuschkAutoNBOEL} class="copyfromL" type="checkbox" id="chkAutoNBOEL" name="chkAutoNBOEL" onclick="CheckAutoPreset(this, 'chkCopyNBOUL');" /></td>
+        <td><input {statuschkAutoHLL} class="copyfromL" type="checkbox" id="chkAutoHLL" name="chkAutoHLL" onclick="CheckAutoPreset(this, 'chkCopyNBOUL');" /></td>
+        <td><input {statuschkAutoNCL} class="copyfromL" type="checkbox" id="chkAutoNCL" name="chkAutoNCL" onclick="CheckAutoPreset(this, 'chkCopyNBOUL');" /></td>
+        <!--NG-Key--><td><input {statuschkAutoNGL} class="copyfromL" type="checkbox" id="chkAutoNGL" name="chkAutoNGL" onclick="CheckAutoPreset(this, 'chkCopyNBOUL');" /></td><!--/NG-Key-->
+    </tr>
+    <tr>
+        <td>
+            <select {statuslstSAutoNBOUL} class="select-pt copyAll" name="listSAutoNBOUL" id="listSAutoNBOUL">
+                {listSAutoNBOULValue}
+            </select>
+            <input type="button" name="btnReduce1" value=" " class="btn-dec1" onclick="ReducePT('listSAutoNBOUL',1)" />
+            <input type="button" name="btnIncrease1" value=" " class="btn-inc1" onclick="IncreasePT('listSAutoNBOUL',1)" />
+            <input type="button" name="btnReduce10" value=" " class="btn-dec10" onclick="ReducePT('listSAutoNBOUL',10)" />
+            <input type="button" name="btnIncrease10" value=" " class="btn-inc10" onclick="IncreasePT('listSAutoNBOUL',10)" />
+        </td>
+        <td>
+            <select {statuslstSAutoNBOEL} class="select-pt copyfromL" name="listSAutoNBOEL" id="listSAutoNBOEL">
+                {listSAutoNBOELValue}
+            </select>
+        </td>
+        <td>
+            <select {statuslstSAutoHLL} class="select-pt copyfromL" name="listSAutoHLL" id="listSAutoHLL">
+                {listSAutoHLLValue}
+            </select>
+        </td>
+        <td>
+            <select {statuslstSAutoNCL} class="select-pt copyfromL" name="listSAutoNCL" id="listSAutoNCL">
+                {listSAutoNCLValue}
+            </select>
+        </td>
+        <!--NG-Key-->
+        <td>            
+            <select {statuslstSAutoNGL} class="select-pt copyfromL" name="listSAutoNGL" id="listSAutoNGL">
+                {listSAutoNGLValue}
+            </select>            
+        </td>
+        <!--/NG-Key-->
+    </tr>
+    <!--/Live-->
+</table>

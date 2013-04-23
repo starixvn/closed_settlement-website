@@ -1,0 +1,18 @@
+﻿.ViewPTTable{
+		background-color:#fff;}
+.ViewPTHeader 
+{
+	background-color:#b5c4d0 !important; color:#000; font-weight:bold;
+}
+.ViewPTTable td, .ViewPTTable th 
+{
+	 border:solid 1px #7c98a4 !important;
+	 line-height:18px;
+}
+
+.trbgov:hover{background-color:#FFF5A5}
+
+
+.disableFlag{background:url(images/flag02.gif) no-repeat center #fce9fb}
+.OpenFlag{background:url(images/flag01.gif) no-repeat center #EEECEE}
+.disColorMPT {background-color: #fce9fb;}

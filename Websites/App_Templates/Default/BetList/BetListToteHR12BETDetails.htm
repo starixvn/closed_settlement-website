@@ -1,0 +1,101 @@
+﻿<table id="table" cellspacing="1px" class="c tbllayout">
+    <thead>
+    <tr>
+        <th colspan="11" class="c" style="font-weight:bold; background-color:#ffabab;">
+            Tote Odds Racing (12BET) Detail Bet List 
+            - Race <span id="spRaceNo">{RaceNo}</span>  
+            - <span id="spLeagueName">{LeagueName}</span>
+            - <span id="spCurrency">{Currency} </span>
+            - <span id="spWLDate">{WLDate}</span>
+        </th>
+    </tr>
+    <tr class="c title" id="trHeader">
+        <th class="title" style="width:30px;">No</th>
+        <th class="title" style="width:105px;">Member</th>
+        <th class="title" style="width:105px;">UserName2</th>
+        <th class="title" style="width:120px;">Trans.Time</th>
+        <th class="title" style="width:250px;">Horse/Bet type</th>
+        <th class="title" style="width:80px;">Odds</th>
+        <th class="title" style="width:80px;">Stake</th>
+        <th class="title" style="width:80px;">Member WinLoss/Com</th>
+        <th class="title" style="width:80px;">Agency WinLoss/Com</th>
+        <th class="title" style="width:80px;">Status</th>
+        <th class="title">Dividend</th>
+    </tr>
+    </thead>
+    
+    <!--content-->
+    <tr class="c {odd_even}">
+        <td>{No}</td>
+        <td>{Member}</td>
+        <td>{UserName2}</td>
+        <td>
+            Ref No: <b>{TransID}</b> <br/>
+            {TransTime}
+         </td>
+        <td class="r">
+            <span class="bl-choice">{choice}</span><br>
+            <div class="bl-bettype">{bettype}</div>
+        </td>
+        <td class="r">
+            <!--winplace-odds-->
+            <table width="100%" border="0">
+                <tr>
+                    <td><b>Win :<b></td>
+                    <td>{WinOdds}</td>
+                </tr>
+                <tr>
+                    <td><b>Place :<b></td>
+                    <td>{PlaceOdds}</td>
+                </tr>
+            </table>
+            <!--/winplace-odds-->
+            {Odds}
+        </td>
+        <td align="right">{Stake}
+             <!--Exchangerate-->
+            <br />
+            <span class="r exrate2">{ExchangeRate}</span>
+            <br />
+            <span class="r exrate2">(Ex.Rate 2)</span>
+            <!--/Exchangerate-->
+        </td>
+        <td align="right">
+            {WinLoss} <br>
+            <span class="bl-sporttype">{PlayerComm}</span>
+        </td>
+        <td align="right">
+            {WLPTAgency} <br>
+            <span class="bl-sporttype">{CommIncomeAgency}</span>
+        </td>
+        <td>
+            <!--winplace-status-->
+            <table width="100%" border="0">
+                <tr>
+                    <td align="right"><b>Win :<b></td>
+                    <td>{WinStatus}</td>
+                </tr>
+                <tr>
+                    <td align="right"><b>Place :<b></td>
+                    <td>{PlaceStatus}</td>
+                </tr>
+            </table>
+            <!--/winplace-status-->
+            {Status}
+        </td>
+        <td align="right" class="rspace">{Dividend}</td>
+    </tr>
+    <!--/content-->
+    <tfoot>
+    <!--total-->
+    <tr align="right" style="font-weight:bold;" class="report-footer" id="trFooter" >
+        <td colspan="6" >Total:</td>
+        <td>{TotalStake}</td>
+        <td>{TotalWL}<div style="margin-top:5px" class="bl-sporttype">{TotalCom}</span></td>
+        <td>{TotalAgWL}<div style="margin-top:5px" class="bl-sporttype">{TotalAgCom}</div></td>
+        <td colspan="1"></td>        
+        <td>{TotalDividend}</td>
+    </tr>
+    <!--/total-->
+    </tfoot>
+</table>

@@ -1,0 +1,67 @@
+<table id="tplcontent" style="margin-top:9px; border-collapse:collapse; border: solid 1px #666666; font-family:Tahoma, Verdana; font-size:8pt;" {border} >
+	<tbody>  
+    <tr align="center">
+        <td colspan="16" style=" background-color:#ffabab;"><span id="Span1"><b>Racing Group Daily</b></span></td>
+    </tr>
+    <tr align="center" style="font-weight:bold">	
+        <td style="background-color:#d8dde2;border-collapse:collapse; border: solid 1px #666666;" rowspan="2">Date</td>
+        <td style="background-color:#d0e8fb;border-collapse:collapse; border: solid 1px #666666;" colspan="5">Turnover (RM)</td>
+        <td style="background-color:#d8dde2;border-collapse:collapse; border: solid 1px #666666;" colspan="4">IBC Income</td>
+        <td style="background-color:#d0e8fb;border-collapse:collapse; border: solid 1px #666666;" colspan="4">12BET Income</td>
+        <td nowrap style="background-color:#d8dde2;border-collapse:collapse; border: solid 1px #666666;" rowspan="2">Group Total<br> Income</td>
+        <td nowrap style="background-color:#d8dde2;border-collapse:collapse; border: solid 1px #666666;" rowspan="2">Group Total<br> Income (M-T-D)</td>
+     </tr>	
+     <tr style="font-weight:bold" align="center">
+        <td style="width:100px;background-color:#d0e8fb;border-collapse:collapse; border: solid 1px #666666;">Agents</td>
+        <td style="width:100px;background-color:#d0e8fb;border-collapse:collapse; border: solid 1px #666666;">IBC</td>
+        <td style="width:100px;background-color:#d0e8fb;border-collapse:collapse; border: solid 1px #666666;">Phu</td>
+        <td style="width:100px;background-color:#d0e8fb;border-collapse:collapse; border: solid 1px #666666;">Total</td>
+        <td style="width:100px;background-color:#d0e8fb;border-collapse:collapse; border: solid 1px #666666;">Total M-T-D</td>
+        
+        <td style="width:100px;background-color:#d8dde2;border-collapse:collapse; border: solid 1px #666666;">PT</td>
+        <td style="width:100px;background-color:#d8dde2;border-collapse:collapse; border: solid 1px #666666;">Net Comm</td>
+        <td style="width:100px;background-color:#d8dde2;border-collapse:collapse; border: solid 1px #666666;">Total</td>
+        <td style="width:100px;background-color:#d8dde2;border-collapse:collapse; border: solid 1px #666666;">Total M-T-D</td>
+        
+        <td style="width:100px;background-color:#d0e8fb;border-collapse:collapse; border: solid 1px #666666;">PT</td>
+        <td style="width:100px;background-color:#d0e8fb;border-collapse:collapse; border: solid 1px #666666;">Comm</td>
+        <td style="width:100px;background-color:#d0e8fb;border-collapse:collapse; border: solid 1px #666666;">Total</td>
+        <td style="width:100px;background-color:#d0e8fb;border-collapse:collapse; border: solid 1px #666666;">Total M-T-D</td>      
+        
+     </tr>    
+	
+	<!--content-->
+    <tr align="right" {style} >
+        <td align="left" style="border-collapse:collapse; border: solid 1px #666666;">{Date}</td>
+        
+        <td nowrap style="border-collapse:collapse; border: solid 1px #666666;">{TO_Agent}</td>
+        <td nowrap style="border-collapse:collapse; border: solid 1px #666666;">{TO_IBC}</td>
+        <td nowrap style="border-collapse:collapse; border: solid 1px #666666;">{TO_Phu}</td>
+        <td nowrap style="border-collapse:collapse; border: solid 1px #666666;">{TO_Total}</td>
+        <td nowrap style="border-collapse:collapse; border: solid 1px #666666;">{TO_TotalMTD}</td>
+        
+        <td nowrap style="border-collapse:collapse; border: solid 1px #666666;">{IBC_PT}</td>
+        <td nowrap style="border-collapse:collapse; border: solid 1px #666666;">{IBC_NetComm}</td>
+        <td nowrap style="border-collapse:collapse; border: solid 1px #666666;">{IBC_Total}</td>        
+        <td nowrap style="border-collapse:collapse; border: solid 1px #666666;">{IBC_TotalMTD}</td>
+        
+        <td nowrap style="border-collapse:collapse; border: solid 1px #666666;">{12BET_PT}</td>
+        <td nowrap style="border-collapse:collapse; border: solid 1px #666666;">{12BET_Comm}</td>
+        <td nowrap style="border-collapse:collapse; border: solid 1px #666666;">{12BET_Total}</td>        
+        <td nowrap style="border-collapse:collapse; border: solid 1px #666666;">{12BET_TotalMTD}</td>
+        
+        <td nowrap style="border-collapse:collapse; border: solid 1px #666666;">{GroupTotal}</td>
+        <td nowrap style="border-collapse:collapse; border: solid 1px #666666;">{GroupTotalMTD}</td>
+    </tr>
+	<!--/content-->
+	
+	</tbody>
+</table>
+
+<!--footer-send-email-->
+<br><br>
+<b>Sent by:</b> {username} <br>
+<b>Date:</b> {datetime} <br/><br/>
+
+<i>This is an auto-mail. Please do not reply.</i>
+<!--/footer-send-email-->

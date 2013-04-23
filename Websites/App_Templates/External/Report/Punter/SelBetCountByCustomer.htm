@@ -1,0 +1,39 @@
+﻿<table id="tableBET" class="tbllayout" cellspacing="1px" cellpadding="1px">
+	<thead>
+	<tr bgcolor="white">
+	    <th colspan="5" class="c">
+	        <span>Punter {UserName} by bet count from {fromdate} to {todate}</span> 
+	        <input type="button" onclick="ExportToExcel();" value="&nbsp;&nbsp;" name="btnExport" id="Button1" class="btnExcel" title="Export to Excel">
+	    </th>
+	</tr>
+	<tr class="title" id="trHeaderBET">
+			<th style="width:100px">Date</th>
+            <th style="width:100px">Bet Count</th>
+            <th style="width:100px">Win Count</th>
+			<th style="width:100px">Draw Count</th>
+			<th style="width:100px">Winloss</th>
+		</tr>		
+	</thead>
+	<tbody>
+	    <!--Content-->
+		<tr bgcolor="white">	
+	        <td class="l">{Date}</td>
+            <td class="r">{BetCount}</td>
+            <td class="r">{WinCount}</td>
+	        <td class="r">{DrawCount}</td>
+	        <td class="r rspace">{WinLoss}</td>
+        </tr>        
+        <!--/Content-->
+	</tbody>
+	<tfoot>
+	    <!--Footer-->
+	    <tr bgcolor="white" class="report-footer" id="trFooterBET">	
+	        <td class="l">Total</td>
+            <td class="r">{BetCount}</td>
+            <td class="r">{WinCount}</td>
+	        <td class="r">{DrawCount}</td>
+	        <td class="r">{WinLoss}</td>
+        </tr>        
+        <!--/Footer-->
+	</tfoot>	
+</table>

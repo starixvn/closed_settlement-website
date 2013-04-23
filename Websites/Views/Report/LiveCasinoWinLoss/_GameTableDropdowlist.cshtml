@@ -1,0 +1,3 @@
+﻿@model List<Fanex.Tarus.Entities.Report.Category>
+
+@Html.DropDownList("GameTableID", new SelectList(Model.ToArray(), "Id", "Name",0))

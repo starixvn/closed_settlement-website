@@ -1,0 +1,44 @@
+<!--SearchContent-->
+<table cellspacing="0" cellpadding="0" border="0">
+    <tr class="m">
+        <td class="b">From:&nbsp;</td>
+        <td>{FromDateCal}&nbsp;&nbsp;</td>
+        <td class="b">To:&nbsp;</td>
+        <td>{ToDateCal}</td>
+        <td>&nbsp;&nbsp;<input type="button" onclick="SearchInvalidExRate();" value="Submit" id="dSubmit" class="btn" /></td>        
+        <td>&nbsp;<span id="errMsg" style="color:Red"></span></td>        
+    </tr>
+</table>
+<!--/SearchContent-->
+<table class="tbllayout" cellspacing="1" style="white-space:nowrap; width:900px;" id="tblResult">      
+    <tr class="title c">
+        <td style="width:20px;">#</td>
+        <td style="width:120px;">Transaction Date</td>
+        <td style="width:90px;">From Customer</td>
+        <td style="width:90px;">To Customer</td>
+        <td style="width:90px;">From Currency</td>
+        <td style="width:90px;">To Currency</td>
+        <td style="width:90px;">Min Ex.Rate</td>
+        <td style="width:90px;">Max Ex.Rate</td>
+        <td style="width:80px;">Input Rate</td>
+        <td style="width:80px;">Amount</td>
+        <td style="width:80px;">Creator</td>               
+    </tr>
+    <tbody id="content">
+    <!--limit-content-->
+    <tr class="{bgcolor-row} c">
+        <td>{No_Value}</td>
+        <td>{TransactionDate_Value}</td>
+        <td>{FromCustomer_Value}</td>
+        <td>{ToCustomer_Value}</td>
+        <td>{FromCurrency_Value}</td>
+        <td>{ToCurrency_Value}</td>
+        <td>{Min_Value}</td>
+        <td>{Max_Value}</td>
+        <td>{InputRate_Value}</td>
+        <td>{Amount_Value}</td>
+        <td>{Creator_Value}</td>             
+    </tr>
+    <!--/limit-content-->
+    </tbody>
+</table>

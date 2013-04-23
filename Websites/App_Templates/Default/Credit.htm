@@ -1,0 +1,28 @@
+<div>
+  <table class="tbllayout" cellspacing="1">
+    <tr class="title">
+      <td class="c">Date</td>
+      <td class="c">Ref.No</td>
+      <td class="c">Remark</td>
+      <td class="c">Type</td>
+      <td class="c">Credit</td>
+    </tr>
+    <tr>
+      <td class="c">{date}</td>
+      <td class="c">{refno}</td>
+      <td class="c">{remark}</td>
+      <td class="c">{type}</td>
+      <td class="r">
+        <input type="text" id="credit" name="credit" value="{credit}" onkeypress="return checkKeyPress(event);"></input>
+      </td>
+    </tr>
+    <tr class="report-footer">
+      <td colspan="5" class="c">
+        <input class="btn" type="submit" id="update" name="update" value="Update" onclick="return validateCredit();"></input>
+        <input type="hidden" id="postBack" name="postBack" value="" />
+      </td>
+    </tr>
+  </table>
+  <br/>
+  <span id="errMsg" class="error-message"></span>
+</div>

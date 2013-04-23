@@ -1,0 +1,317 @@
+<tr>
+    <td rowspan="{rowspan}" colspan="{colspan-d}" class="c">Deadball</td>
+    <td style="display:{none-tlposition} ; "  class="c {width}">{super-position}</td>
+    <td>
+      <select class="select-pt" name="listSHdpD1" id="listSHdpD1" onchange="On_ChangeSuper(this);">{listSHdpDValue}</select>
+      <input type="button" name="btnReduce1" value=" "   class="btn-dec1" onclick="ReducePT('listSHdpD1',1)"/>
+      <input type="button" name="btnIncrease1" value=" "   class="btn-inc1" onclick="IncreasePT('listSHdpD1',1)"/>
+      <input type="button" name="btnReduce10" value=" " class="btn-dec10" onclick="ReducePT('listSHdpD1',10)"/>
+      <input type="button" name="btnIncrease10" value=" " class="btn-inc10" onclick="IncreasePT('listSHdpD1',10)"/>
+    </td>
+    <td>
+      <select class="select-pt" name="listSOUD1" id="listSOUD1" onchange="On_ChangeSuper(this);">{listSOUDValue}</select>
+    </td>
+    <td>
+      <select class="select-pt" name="listS1stHdpD1" id="listS1stHdpD1" onchange="On_ChangeSuper(this);">{listS1stHdpDValue}</select>
+    </td>
+    <td>
+      <select class="select-pt" name="listS1stOUD1" id="listS1stOUD1" onchange="On_ChangeSuper(this);">{listS1stOUDValue}</select>
+    </td>
+    <td>
+      <select class="select-pt" name="listSOE1" id="listSOE1" onchange="On_ChangeSuper(this);">{listSOEValue}</select>
+    </td>
+    <td>
+      <select class="select-pt" name="listS1x21" id="listS1x21" onchange="On_ChangeSuper(this);">{listS1x2Value}</select>
+      <input type="button" name="btnReduce1" value=" "   class="btn-dec1" onclick="ReducePT('listS1x21',1)"/>
+      <input type="button" name="btnIncrease1" value=" "   class="btn-inc1" onclick="IncreasePT('listS1x21',1)"/>
+      <input type="button" name="btnReduce10" value=" " class="btn-dec10" onclick="ReducePT('listS1x21',10)"/>
+      <input type="button" name="btnIncrease10" value=" " class="btn-inc10" onclick="IncreasePT('listS1x21',10)"/>
+    </td>
+    <td>
+      <select class="select-pt" name="listSCS1" id="listSCS1" onchange="On_ChangeSuper(this);">{listSCSValue}</select>
+    </td>
+    <td>
+      <select class="select-pt" name="listSTG1" id="listSTG1" onchange="On_ChangeSuper(this);">{listSTGValue}</select>
+    </td>
+    <td>
+      <select class="select-pt" name="listSMP1" id="listSMP1" onchange="On_ChangeSuper(this);">{listSMPValue}</select>
+    </td>
+    <td>
+      <select class="select-pt" name="listSOutright1" id="listSOutright1" onchange="On_ChangeSuper(this);">{listSOutrightValue}</select>
+    </td>
+  </tr>
+  <!--master-pt1-->
+  <tr style="display:{ptmaster-none}">
+    <td style="display:{none-tlposition}" class="c">{master-position}</td>
+    <td>
+      <select class="select-pt" name="listMHdpD1" onchange="On_ChangeMaster(this);"  id="listMHdpD1">{listMHdpDValue}</select>
+      <input type="button" id="btnR1Hdp"  name="listMHdpD" value=" "   class="btn-dec1"  onclick="ReducePT('listMHdpD1',1)"/>
+      <input type="button" id="btnI1Hdp" name="listMHdpD" value=" "   class="btn-inc1" onclick="IncreasePT('listMHdpD1',1)"/>
+      <input type="button" id="btnR10Hdp" name="listMHdpD" value=" " class="btn-dec10" onclick="ReducePT('listMHdpD1',10)"/>
+      <input type="button" id="btnI10Hdp" name="listMHdpD" value=" " class="btn-inc10" onclick="IncreasePT('listMHdpD1',10)"/>
+    </td>
+    <td>
+      <select class="select-pt" onchange="On_ChangeMaster(this);" name="listMOUD1" id="listMOUD1">{listMOUDValue}</select>
+    </td>
+    <td>
+      <select class="select-pt" onchange="On_ChangeMaster(this);" name="listM1stHdpD1" id="listM1stHdpD1">{listM1stHdpDValue}</select>
+    </td>
+    <td>
+      <select class="select-pt" onchange="On_ChangeMaster(this);" name="listM1stOUD1" id="listM1stOUD1">{listM1stOUDValue}</select>
+    </td>
+    <td>
+      <select class="select-pt" onchange="On_ChangeMaster(this);" name="listMOE1" id="listMOE1">{listMOEValue}</select>
+    </td>
+    <td>
+      <select class="select-pt" onchange="On_ChangeMaster(this);" name="listM1x21" id="listM1x21">{listM1x2Value}</select>
+      <input type="button" id="btnR11x2" name="listM1x2"  value=" "   class="btn-dec1"  onclick="ReducePT('listM1x21',1)"/>
+      <input type="button" id="btnI11x2" name="listM1x2" value=" "   class="btn-inc1" onclick="IncreasePT('listM1x21',1)"/>
+      <input type="button" id="btnR101x2" name="listM1x2" value=" " class="btn-dec10" onclick="ReducePT('listM1x21',10)"/>
+      <input type="button" id="btnI101x2" name="listM1x2" value=" " class="btn-inc10" onclick="IncreasePT('listM1x21',10)"/>
+    </td>
+    <td>
+      <select class="select-pt" onchange="On_ChangeMaster(this);" name="listMCS1" id="listMCS1">{listMCSValue}</select>
+    </td>
+    <td>
+      <select class="select-pt" onchange="On_ChangeMaster(this);" name="listMTG1" id="listMTG1">{listMTGValue}</select>
+    </td>
+    <td>
+      <select class="select-pt" onchange="On_ChangeMaster(this);" name="listMMP1" id="listMMP1">{listMMPValue}</select>
+    </td>
+    <td>
+      <select class="select-pt" onchange="On_ChangeMaster(this);" name="listMOutright1" id="listMOutright1">{listMOutrightValue}</select>
+    </td>
+  </tr>
+  <!--/master-pt1-->
+  <!--agent-pt1-->
+  <tr style="display:{spt-none}">
+    <td style="display:{none-tlposition}" class="c">{agent-position}</td>
+    <td>
+      <select class="select-pt" name="listAHdpD1" id="listAHdpD1">{listAHdpDValue}</select>
+      <input type="button" name="btnReduce1"  value=" "   class="btn-dec1"  onclick="ReducePT('listAHdpD1',1)"/>
+      <input type="button" name="btnIncrease1" value=" "   class="btn-inc1" onclick="IncreasePT('listAHdpD1',1)"/>
+      <input type="button" name="btnReduce10" value=" " class="btn-dec10" onclick="ReducePT('listAHdpD1',10)"/>
+      <input type="button" name="btnIncrease10" value=" " class="btn-inc10" onclick="IncreasePT('listAHdpD1',10)"/>
+    </td>
+    <td>
+      <select class="select-pt" name="listAOUD1" id="listAOUD1">{listAOUDValue}</select>
+    </td>
+    <td>
+      <select class="select-pt" name="listA1stHdpD1" id="listA1stHdpD1">{listA1stHdpDValue}</select>
+    </td>
+    <td>
+      <select class="select-pt" name="listA1stOUD1" id="listA1stOUD1">{listA1stOUDValue}</select>
+    </td>
+    <td>
+      <select class="select-pt" name="listAOE1" id="listAOE1">{listAOEValue}</select>
+    </td>
+    <td>
+      <select class="select-pt" name="listA1x21" id="listA1x21">{listA1x2Value}</select>
+      <input type="button" name="btnReduce1"  value=" "   class="btn-dec1"  onclick="ReducePT('listA1x21',1)"/>
+      <input type="button" name="btnIncrease1" value=" "   class="btn-inc1" onclick="IncreasePT('listA1x21',1)"/>
+      <input type="button" name="btnReduce10" value=" " class="btn-dec10" onclick="ReducePT('listA1x21',10)"/>
+      <input type="button" name="btnIncrease10" value=" " class="btn-inc10" onclick="IncreasePT('listA1x21',10)"/>
+    </td>
+    <td>
+      <select class="select-pt" name="listACS1" id="listACS1">{listACSValue}</select>
+    </td>
+    <td>
+      <select class="select-pt" name="listATG1" id="listATG1">{listATGValue}</select>
+    </td>
+    <td>
+      <select class="select-pt" name="listAMP1" id="listAMP1">{listAMPValue}</select>
+    </td>
+    <td>
+      <select class="select-pt" name="listAOutright1" id="listAOutright1">{listAOutrightValue}</select>
+    </td>
+  </tr>
+  <!--/agent-pt1-->
+  <!--preset-pt1-->
+  <tr>
+    <td style="display:{none-tlposition}" class="c">
+      Auto Super Preset<br />Position
+    </td>
+    <td>
+      <div>
+        <input type="checkbox" value="yes" name="chkSPHdpD1" id="chkSPHdpD1"  onclick="autoPtSwitch(0);" />
+      </div>
+      <select class="select-pt" name="listSPHdpD" id="listSPHdpD">{listSPHdpDValue}</select>
+      <input type="button" name="listSPHdpD"  value=" "   class="btn-dec1"  onclick="ReducePT('listSPHdpD1',1)"/>
+      <input type="button" name="listSPHdpD" value=" "   class="btn-inc1" onclick="IncreasePT('listSPHdpD1',1)"/>
+      <input type="button" name="listSPHdpD" value=" " class="btn-dec10" onclick="ReducePT('listSPHdpD1',10)"/>
+      <input type="button" name="listSPHdpD" value=" " class="btn-inc10" onclick="IncreasePT('listSPHdpD1',10)"/>
+    </td>
+    <td>
+      <div>
+        <input type="checkbox" value="yes" name="chkSPOUD1" id="chkSPOUD1"  onclick="autoPtSwitch(1);" />
+      </div>
+      <select class="select-pt" name="listSPOUD1" id="listSPOUD1">{listSPOUDValue}</select>
+    </td>
+    <td>
+      <div>
+        <input type="checkbox" value="yes" name="chkSP1stHdpD1" id="chkSP1stHdpD1"  onclick="autoPtSwitch(2);" />
+      </div>
+      <select class="select-pt" name="listSP1stHdpD1" id="listSP1stHdpD1">{listSP1stHdpDValue}</select>
+    </td>
+    <td>
+      <div>
+        <input type="checkbox" value="yes" name="chkSP1stOUD1" id="chkSP1stOUD1"  onclick="autoPtSwitch(3);" />
+      </div>
+      <select class="select-pt" name="listSP1stOUD1" id="listSP1stOUD1">{listSP1stOUDValue}</select>
+    </td>
+    <td>
+      <div>
+        <input type="checkbox" value="yes" name="chkSPOE1" id="chkSPOE1"  onclick="autoPtSwitch(4);" />
+      </div>
+      <select class="select-pt" name="listSPOE1" id="listSPOE1">{listSPOEValue}</select>
+    </td>
+    <td>
+      <div>
+        <input type="checkbox" value="yes" name="chkSP1x21" id="chkSP1x21"  onclick="autoPtSwitch(5);" />
+      </div>
+      <select class="select-pt" name="listSP1x21" id="listSP1x21">{listSP1x2Value}</select>
+      <input type="button" name="listSP1x2"  value=" "   class="btn-dec1"  onclick="ReducePT('listSP1x21',1)"/>
+      <input type="button" name="listSP1x2" value=" "   class="btn-inc1" onclick="IncreasePT('listSP1x21',1)"/>
+      <input type="button" name="listSP1x2" value=" " class="btn-dec10" onclick="ReducePT('listSP1x21',10)"/>
+      <input type="button" name="listSP1x2" value=" " class="btn-inc10" onclick="IncreasePT('listSP1x21',10)"/>
+    </td>
+    <td>
+      <div>
+        <input type="checkbox" value="yes" name="chkSPCS1" id="chkSPCS1"  onclick="autoPtSwitch(6);" />
+      </div>
+      <select class="select-pt" name="listSPCS1" id="listSPCS1">{listSPCSValue}</select>
+    </td>
+    <td>
+      <div>
+        <input type="checkbox" value="yes" name="chkSPTG1" id="chkSPTG1"  onclick="autoPtSwitch(7);" />
+      </div>
+      <select class="select-pt" name="listSPTG1" id="listSPTG1">{listSPTGValue}</select>
+    </td>
+    <td>
+      <div>
+        <input type="checkbox" value="yes" name="chkSPMP1" id="chkSPMP1"  onclick="autoPtSwitch(8);" />
+      </div>
+      <select class="select-pt" name="listSPMP1" id="listSPMP1">{listSPMPValue}</select>
+    </td>
+    <td>
+      <div>
+        <input type="checkbox" value="yes" name="chkSPOutright1" id="chkSPOutright1"  onclick="autoPtSwitch(9);" />
+      </div>
+      <select class="select-pt" name="listSPOutright1" id="listSPOutright1">{listSPOutrightValue}</select>
+    </td>
+  </tr>
+  <!--/preset-pt1-->
+  <tr>
+    <td></td>
+    <!--super-mix-max-->
+    <td></td>
+    <!--/super-mix-max-->
+    <td colspan="5" class="left">
+      <input type="checkbox" onclick="CopyPositionTaking(this);"  name="chkCopyHdpD1" id="chkCopyHdpD1"/>
+      Copy From Handicap
+    </td>
+    <td colspan="5" class="left">
+      <input type="checkbox" name="chkCopy1x21" onclick="CopyPositionTaking(this);" id="chkCopy1x21"/>
+      Copy From 1 X 2
+    </td>
+
+  </tr>
+  <tr>
+    <td rowspan="{rowspan}" colspan="{colspan-d}">Live</td>
+    <td style="display:{none-tlposition}" class="padright">{super-live-position}</td>
+    <td>
+      <select class="select-pt" name="listSHdpL1" id="listSHdpL1" onchange="On_ChangeSuper(this);">{listSHdpLValue}</select>
+      <input type="button" name="btnReduce1"  value=" "   class="btn-dec1"  onclick="ReducePT('listSHdpL1',1)"/>
+      <input type="button" name="btnIncrease1" value=" "   class="btn-inc1" onclick="IncreasePT('listSHdpL1',1)"/>
+      <input type="button" name="btnReduce10" value=" " class="btn-dec10" onclick="ReducePT('listSHdpL1',10)"/>
+      <input type="button" name="btnIncrease10" value=" " class="btn-inc10" onclick="IncreasePT('listSHdpL1',10)"/>
+    </td>
+    <td>
+      <select class="select-pt" name="listSOUL1" id="listSOUL1" onchange="On_ChangeSuper(this);">{listSOULValue}</select>
+    </td>
+    <td>
+      <select class="select-pt" name="listS1stHdpL1" id="listS1stHdpL1" onchange="On_ChangeSuper(this);">{listS1stHdpLValue}</select>
+    </td>
+    <td>
+      <select class="select-pt" name="listS1stOUL1" id="listS1stOUL1" onchange="On_ChangeSuper(this);">{listS1stOULValue}</select>
+    </td>
+      <td colspan="6" rowspan="{rowspan}" class="left"><input type="checkbox" onclick="CopyPositionTaking(this,arrHdpLiveId,'arrHdpLiveId_sapt');" id="chkCopyHdpL1"  name="chkCopyHdpL1"/>
+        Copy From Handicap
+      </td>    
+  </tr>
+<!--master-pt2-->
+<tr style="display:{ptmaster-none}">
+	<td style="display:{none-tlposition}" class="padright">{master-live-position}</td>
+	<td>
+		<select class="select-pt" name="listMHdpL1" onchange="On_ChangeMaster(this);" id="listMHdpL1">{listMHdpLValue}</select>
+		<input type="button" id="btnR1HdpL" name="listMHdpL"  value=" "   class="btn-dec1"  onclick="ReducePT('listMHdpL1',1)"/>
+		<input type="button" id="btnI1HdpL" name="listMHdpL" value=" "   class="btn-inc1" onclick="IncreasePT('listMHdpL1',1)"/>
+		<input type="button" id="btnR10HdpL" name="listMHdpL"  value=" " class="btn-dec10" onclick="ReducePT('listMHdpL1',10)"/>
+		<input type="button" id="btnI10HdpL" name="listMHdpL" value=" " class="btn-inc10" onclick="IncreasePT('listMHdpL1',10)"/>
+	</td>
+	<td>
+		<select class="select-pt" onchange="On_ChangeMaster(this);" name="listMOUL1" id="listMOUL1">{listMOULValue}</select>
+	</td>
+	<td>
+		<select class="select-pt" onchange="On_ChangeMaster(this);" name="listM1stHdpL1" id="listM1stHdpL1">{listM1stHdpLValue}</select>
+	</td>
+	<td>
+		<select class="select-pt" onchange="On_ChangeMaster(this);" name="listM1stOUL1" id="listM1stOUL1">{listM1stOULValue}</select>
+	</td>
+</tr>
+<!--/master-pt2-->
+<!--agent-pt2-->
+  <tr style="display:{spt-none}">
+    <td style="display:{none-tlposition}" class="padright">{agent-live-position}</td>
+    <td>
+      <select class="select-pt" name="listAHdpL1" id="listAHdpL1">{listAHdpLValue}</select>
+      <input type="button" name="btnReduce1"  value=" "   class="btn-dec1"  onclick="ReducePT('listAHdpL1',1)"/>
+      <input type="button" name="btnIncrease1" value=" "   class="btn-inc1" onclick="IncreasePT('listAHdpL1',1)"/>
+      <input type="button" name="btnReduce10" value=" " class="btn-dec10" onclick="ReducePT('listAHdpL1',10)"/>
+      <input type="button" name="btnIncrease10" value=" " class="btn-inc10" onclick="IncreasePT('listAHdpL1',10)"/>
+    </td>
+    <td>
+      <select class="select-pt" name="listAOUL1" id="listAOUL1">{listAOULValue}</select>
+    </td>
+    <td>
+      <select class="select-pt" name="listA1stHdpL1" id="listA1stHdpL1">{listA1stHdpLValue}</select>
+    </td>
+    <td>
+      <select class="select-pt" name="listA1stOUL1" id="listA1stOUL1">{listA1stOULValue}</select>
+    </td>
+  </tr>
+<!--/agent-pt2-->
+<!--preset-pt2-->
+  <tr>
+    <td style="display:{none-tlposition}" class="c">Auto Super Preset<br /> Live Poisition</td>
+    <td>
+      <div>
+        <input type="checkbox" value="yes" name="chkSPHdpL1" id="chkSPHdpL1"  onclick="autoPtSwitch(10);" />
+      </div>
+      <select class="select-pt" name="listSPHdpL1" id="listSPHdpL1">{listSPHdpLValue}</select>
+      <input type="button" name="listSPHdpL"  value=" "   class="btn-dec1"  onclick="ReducePT('listSPHdpL1',1)"/>
+      <input type="button" name="listSPHdpL" value=" "   class="btn-inc1" onclick="IncreasePT('listSPHdpL1',1)"/>
+      <input type="button" name="listSPHdpL" value=" " class="btn-dec10" onclick="ReducePT('listSPHdpL1',10)"/>
+      <input type="button" name="listSPHdpL" value=" " class="btn-inc10" onclick="IncreasePT('listSPHdpL1',10)"/>
+    </td>
+    <td>
+      <div>
+        <input type="checkbox" value="yes" name="chkSPOUL1" id="chkSPOUL1"  onclick="autoPtSwitch(11);" />
+      </div>
+      <select class="select-pt" name="listSPOUL1" id="listSPOUL1">{listSPOULValue}</select>
+    </td>
+    <td>
+      <div>
+        <input type="checkbox" value="yes" name="chkSP1stHdpL1" id="chkSP1stHdpL1"  onclick="autoPtSwitch(12);" />
+      </div>
+      <select class="select-pt" name="listSP1stHdpL1" id="listSP1stHdpL1">{listSP1stHdpLValue}</select>
+    </td>
+    <td>
+      <div>
+        <input type="checkbox" value="yes" name="chkSP1stOUL1" id="chkSP1stOUL1"  onclick="autoPtSwitch(13);" />
+      </div>
+      <select class="select-pt" name="listSP1stOUL1" id="listSP1stOUL1">{listSP1stOULValue}</select>
+    </td>
+  </tr>
+<!--/preset-pt2-->
+</table>

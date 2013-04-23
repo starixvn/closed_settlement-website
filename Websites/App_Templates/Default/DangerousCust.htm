@@ -1,0 +1,49 @@
+<div style="color:#000;cursor: pointer; white-space: nowrap; border: solid 1px #ffffff; text-align: left; padding-left: 5px;
+    " id="td{name}" onclick="{onclick}">
+    <table cellspacing="0px" cellpadding="0px" border="0" width="125px" style="line-height:16px;">
+        <tr>
+            <td style="cursor: pointer; border: none 0px; width: 70px;">
+                {type}
+            </td>
+            <td style="border: none 0px; width: 35px; text-align: center;background-color: {dangerColor};" id="tdvalue{name}">
+                <span name="{name}" id="spanDangerous{name}">{value}</span>
+            </td>
+            <td style=" cursor: pointer; border: none 0px; width: 20px; text-align: center;">
+                <!--ImgDropdownLevel-->
+                <img title="Detail" border="0" src="App_themes/images/menu_open_right.gif" style=" text-align:center; vertical-align: middle;" />
+                <!--/ImgDropdownLevel-->
+            </td>
+        </tr>
+    </table>
+</div>
+<!--DropdownLevel-->
+<div id="divLevel{name}" class="divLevel" style="display: none;">
+    <table id="popupMenu1" class="tbllayout" border="0" style="line-height:16px; width:100%;color:#000;" cellspacing="1px">
+        <!--LevelItem-->
+        <tr>
+            <td id="dangertd" style="text-align:center; background-color: {level_color}; cursor: pointer;width:50px;" onclick="{level_onclick}">
+                {LevelName}
+             
+            </td>
+        </tr>
+           <div id="dangerousAgentpopup{dangerousType}_{LevelID}" class="Popupsetting" style="top: -40px; left: -80px;
+                    width: 170px">
+                    <b>Update Level Dangerous</b><br>
+                    <input type="checkbox" name="chkDisabledHRL" onclick="changeDisableDangerAgent('{dangerousType}','{LevelName}')" id="disabledDangerchk{dangerousType}_{LevelName}" value="yes" />&nbsp;Agent<!--chkdownlineL-->
+                    <span style="font-weight: normal;" id="disabledCSboxDL">
+                        <input type="checkbox" name="disabledCSchkDL" disabled="disabled" id="disabledangerouschkDL{dangerousType}_{LevelName}">Agent's
+                        downlines<!--/chkdownlineL--></span><br>
+                    <input id="UpdateDangerous{dangerousType}_{LevelName}" type="button" class="btn" value="Update" disabled="disabled" onclick="UpdateDangerousCustomer('{type}','{dangerousType}','{LevelName}')" />&nbsp;<input
+                        type="button" class="btn" onclick="ClosePopUpDanger('dangerousAgentpopup{dangerousType}_{LevelName}');" value="Cancel" /></div>
+        <!--/LevelItem-->
+        
+        {content}
+</table>
+ 
+</div>
+ <div class="overlay" id="dangerousAgentoverlay" style="display: none;"></div>  
+
+<input type="hidden" id="currentLevel{name}" value="{currentLevel}"/>
+<!--/DropdownLevel-->
+
+

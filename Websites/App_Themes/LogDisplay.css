@@ -1,0 +1,39 @@
+﻿.detail
+{
+    font-weight:bold;
+    color:#0000ff;
+    cursor:pointer;
+    text-align:right;
+}
+.infosetting       
+{
+    width:100%;
+}
+table.infosetting td
+{
+    width:25%;
+}
+table.PT td
+{
+    width:12%;
+}
+
+a
+{
+    font-weight:bold;
+    color:#0000ff;
+    cursor:pointer;
+    text-align:right;
+}
+a:active
+{
+    color:#ff0000;
+}
+.e1e9f1 td
+{
+background-color:#e1e9f1;
+}   
+.f5eddd  td
+{
+background-color:#f5eddd;
+}      

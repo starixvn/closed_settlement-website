@@ -1,0 +1,580 @@
+﻿@using Sunplus.Accounting.Business.BetAggregator
+@using Sunplus.Accounting.Business.BootStrappers
+<link href="~/App_Themes/Public/table.css" rel="stylesheet" type="text/css" />
+<script src="~/js/common.js" type="text/javascript"></script>
+<script src="~/js/jQuery/jquery-latest.js" type="text/javascript"></script>
+<script src="~/js/jQuery/Number/jquery.caret.1.02.js" type="text/javascript"></script>
+<script src="~/js/jQuery/jquery.json-1.3.js" type="text/javascript"></script>
+<script src="~/js/json2.js" type="text/javascript"></script>
+<script src="~/js/jQuery/Number/jquery.formattyping.js" type="text/javascript"></script>
+<script src="~/js/jQuery/Number/jquery.setcaretposition.js" type="text/javascript"></script>
+<script src="~/Views/Customer/DepositCustomer/Js/Common.js?version=@Sunplus.Accounting.Core.Configurations.WebSettings.Version" type="text/javascript"></script>
+<script src="~/Views/Customer/DepositCustomer/Js/NewLicensee.js?version=@Sunplus.Accounting.Core.Configurations.WebSettings.Version" type="text/javascript"></script>
+
+@helper GetSites()
+{
+    var depositCustomerService = new Fanex.Tarus.Business.Implement.Customer.DepositCustomerService();
+    var listLicensee = depositCustomerService.SelAllLicensee();
+    
+    var isFirst = true;
+    foreach (var licensee in listLicensee)
+    {
+        if (isFirst)
+        {
+            @:<option selected="selected" value="@licensee.Id">@licensee.Name</option>";
+            isFirst = false;
+        }
+        else
+        {
+            @:<option value="@licensee.Id">@licensee.Name</option>";
+        }
+    }
+}
+@helper GetCurrency()
+    {
+    var result = CommonBootStrapper.Locator.GetInstance<IServiceDownLineBalance>();
+    var listEntity = result.GetCurrenciesBySystem();
+    var isFirst = true;
+    foreach (var currency in listEntity.Currencies)
+    {
+        if (isFirst)
+        {
+                @:<option selected="selected" value="@currency.Id">@currency.Value</option>";
+                isFirst = false;
+        }
+        else
+        {
+                @:<option value="@currency.Id">@currency.Value</option>";
+        }
+    }
+}
+
+@helper GenerateBetSettingSportsbook()
+{
+    var sports = Sunplus.Accounting.Core.Configurations.SportsSection.Instance.Sports;
+    foreach (Sunplus.Accounting.Core.Configurations.SportsElement sport in sports)
+    {
+        if (!sport.Active || sport.Id == "161")
+        {
+            continue;
+        }
+        
+        var flat = "";
+        flat = sport.Id == "1" ? "soccer='true'" : "remainsport='true'";
+
+        var minBetv = "minbetv" + @sport.Id.ToLower();
+        var maxBetv = "maxbetv" + @sport.Id.ToLower();
+        var maxPerMatchv = "maxpermatchv" + @sport.Id.ToLower();
+        
+        
+        <tr>
+            <td align="left" style="padding-left: 4px">
+                <span>@sport.Name</span>
+            </td>
+            <td>
+                <input id="@minBetv" minbet="true" type="text" @flat style="width: 128px; text-align: right" value="@sport.Minbet" />
+            </td>
+            <td>
+                <input id="@maxBetv" maxbet="true" type="text" @flat style="width: 128px; text-align: right" value="@sport.Maxbet" />
+            </td>
+            <td>
+                <input id="@maxPerMatchv" maxpermatch="true" type="text" @flat style="width: 128px; text-align: right" value="@sport.Maxpermatch" />
+            </td>
+        </tr>
+    }
+}
+@helper GenerateBetSettingComPtRacing()
+{
+    var racings = Sunplus.Accounting.Core.Configurations.RacingSection.Instance.Racings;
+    foreach (Sunplus.Accounting.Core.Configurations.RacingElement racing in racings)
+    {
+        if (!racing.Active)
+        {
+            continue;
+        }
+        var isFirst = true;
+        var activeCounter = 0;
+        foreach (Sunplus.Accounting.Core.Configurations.ToteElement tote in racing.Totes)
+        {
+            if (tote.Active)
+            {
+                activeCounter++;
+            }
+        }
+        foreach (Sunplus.Accounting.Core.Configurations.ToteElement tote in racing.Totes)
+        {
+            var flat = "";
+            if (racing.Id == "151" && tote.Id == "41")
+            {
+                flat = "copyfrom";
+            }
+            else
+            {
+                flat = "copyto";
+            }
+
+            var minBetId = "v" + racing.Id.ToLower() + "minbet_" + tote.Id;
+            var maxBetId = "v" + racing.Id.ToLower() + "maxbet_" + tote.Id;
+            var maxpermatchId = "v" + racing.Id.ToLower() + "maxpermatch_" + tote.Id;
+            var commId = "v" + racing.Id.ToLower() + "discount_" + tote.Id;
+            var winplaceId = "v" + racing.Id.ToLower() + "spositiontaking_" + tote.Id;
+            var horseAutoId = "v" + racing.Id.ToLower() + "ibcpositiontaking_" + tote.Id;
+            var disableId = "disable" + racing.Id.ToLower() + "_" + tote.Id;
+            <tr>
+                @if (isFirst && activeCounter != 0)
+                {
+                    isFirst = false;
+                    <td rowspan="@activeCounter" align="left" style="padding-left: 4px">
+                        <span>@racing.Name</span>
+                    </td>
+                }
+                @if (!tote.Active)
+                {
+                    continue;
+                }
+                <td align="left" style="padding-left: 4px">
+                    <span>@tote.Name</span>
+                </td>
+                <td style="padding-right: 4px">
+                    <input id="@minBetId" @flat type="text" minbet="true" style="width: 100%; text-align: right" value="@tote.Minbet" />
+                </td>
+                <td style="padding-right: 4px">
+                    <input id="@maxBetId" @flat type="text" maxbet="true" style="width: 100%; text-align: right" value="@tote.Maxbet" />
+                </td>
+                <td style="padding-right: 4px">
+                    <input id="@maxpermatchId" @flat type="text" maxpermatch="true" style="width: 100%; text-align: right" value="@tote.Maxpermatch" />
+                </td>
+                <td align="center">
+                    <select id="@commId" @flat comm="true" style="width: 60px; text-align:left">
+                    </select>
+                </td>
+                <td align="center">
+                    <select id="@winplaceId" @flat winplacept="true" style="width: 60px; text-align:left">
+                    </select>
+                </td>
+                <td align="center">
+                    <select id="@horseAutoId" @flat houseautopt="true" style="width: 60px; text-align:left">
+                    </select>
+                </td>
+                <td align="center">
+                    <input id="@disableId" @flat type="checkbox" /><span>Enable</span>
+                </td>
+            </tr>
+        }
+    }
+}
+
+@{
+    var sports = Sunplus.Accounting.Core.Configurations.SportsSection.Instance.Sports;
+}
+
+<script type="text/javascript">
+    var arrNumberGameBettypes = [];
+    @{
+        foreach (Sunplus.Accounting.Core.Configurations.SportsElement sport in sports)
+        {
+            if (sport.Id.Trim() == "161")
+            {
+                if (sport.Bettype != null && sport.Bettype != "NA" && sport.Bettype != string.Empty)
+                {
+                    if (!string.IsNullOrWhiteSpace(sport.Bettype.Trim()))
+                    {
+                        var bettypes = sport.Bettype.Split(new char[] { ',' });
+                        foreach (var bettype in bettypes)
+                        {
+                           @:window.arrNumberGameBettypes.push(@bettype);
+                        }
+                    }
+                }
+                break;
+            }
+        }
+    }
+</script>
+
+<script type="text/javascript">
+    var sports = [];
+    (function () {
+    @{
+        @:var sport;
+        foreach (Sunplus.Accounting.Core.Configurations.SportsElement sport in sports)
+        {
+            if (!sport.Active || sport.Id == "161")
+            {
+                continue;
+            }
+            @:sport = {Id: '@sport.Id.ToLower()', Bettype: []};
+            if (sport.Bettype != null && sport.Bettype != "NA" && sport.Bettype != string.Empty)
+            {
+                if (!string.IsNullOrWhiteSpace(sport.Bettype.Trim()))
+                {
+                    var bettypes = sport.Bettype.Split(new char[] { ',' });
+                    foreach (var bettype in bettypes)
+                    {
+                       @:sport.Bettype.push(@bettype);
+                    }
+                }
+            }
+            @:window.sports.push(sport);
+        }
+    }
+    })();
+</script>
+
+<script type="text/javascript">
+var arrRacing = [];
+(function () {
+    var racing;
+    var tote;
+@{
+    var racings = Sunplus.Accounting.Core.Configurations.RacingSection.Instance.Racings;
+    foreach (Sunplus.Accounting.Core.Configurations.RacingElement racing in racings)
+    {
+        if (!racing.Active)
+        {
+            continue;
+        }
+        @:racing = { Id: "" , totes: [] };
+        @:racing.Id = @racing.Id;
+        foreach (Sunplus.Accounting.Core.Configurations.ToteElement tote in racing.Totes)
+        {
+            if (!tote.Active)
+            {
+                continue;
+            }
+            @:tote = {Id: @tote.Id};
+            if (tote.BetType == null || tote.BetType == "NA" || tote.BetType == string.Empty || string.IsNullOrWhiteSpace(tote.BetType.Trim()))
+            {
+                @:tote.Bettype = [];
+            }
+            else
+            {
+                var _bettypes = tote.BetType.Split(new char[] { ',' });
+                @:tote.Bettype = [];
+                foreach (var bettype in _bettypes)
+                {
+                   @:tote.Bettype.push(@bettype);
+                }
+            }
+            @:racing.totes.push(tote);
+        }
+        @:window.arrRacing.push(racing);
+    }
+}
+})();
+
+</script>
+
+<input id="hiddenAccID" type="hidden" value="@Sunplus.Accounting.Core.Common.AppSession.AccId"/>
+<div class="main">
+    <div class="maincontent">
+        <table cellspacing="0px" cellpadding="0px" border="0" class="maincontent_header">
+            <tbody>
+                <tr>
+                    <td class="maincontent_headerL">
+                    </td>
+                    <td class="maincontent_headerC fixfont">
+                        New Licensee
+                    </td>
+                    <td class="maincontent_headerR">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div id="divErr" style="display: none">
+        </div>
+        <div class="bg_table">
+            <table border="0" style="margin-left: 10px">
+                <tbody>
+                    <tr>
+                        <td>
+                            <table border="0">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <span style="font-weight: bold">Site</span>
+                                        </td>
+                                        <td style="padding-left: 5px">
+                                            <select id="selSites" style="width: 120px">
+                                                @GetSites()
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td style="padding-left: 20px">
+                            <table border="0">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <span style="font-weight: bold">Currency</span>
+                                        </td>
+                                        <td style="padding-left: 5px">
+                                            <select id="selCurrency" style="width: 80px">
+                                                @GetCurrency()
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td style="padding-left: 20px">
+                            <table border="0">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <input id="cbxEnableNumberGame" type="checkbox" />
+                                        </td>
+                                        <td>
+                                            Enable Number Game
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table border="0" style="margin-left: 10px">
+                <tbody>
+                    <tr>
+                        <td valign="middle">
+                            <span style="font-weight: bold">Username</span>
+                        </td>
+                        <td style="padding-left: 20px">
+                            <table class="tblcollapse">
+                                <tbody>
+                                    <tr>
+                                        <td style="text-align: left; width: 80px; padding-left: 4px; background-color: #B5C4D0 !important">
+                                            <span>Super</span>
+                                        </td>
+                                        <td style="background-color: white">
+                                            <input id="tbxSuperName" type="text" style="width: 280px" maxlength="30" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left; padding-left: 4px; background-color: #B5C4D0 !important">
+                                            <span>Master</span>
+                                        </td>
+                                        <td style="background-color: white">
+                                            <input id="tbxMasterName" type="text" style="width: 280px" maxlength="30" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left; padding-left: 4px; background-color: #B5C4D0 !important">
+                                            <span>Agent</span>
+                                        </td>
+                                        <td style="background-color: white">
+                                            <input id="tbxAgentName" type="text" style="width: 280px" maxlength="30" />
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table cellspacing="0" cellpadding="0" border="0" class="tblPTheader"
+                style="margin-top: 15px">
+                <tbody id="tblTabSBNG">
+                    <tr id="btntop" style="cursor: pointer;">
+                        <td class="btnleft">
+                        </td>
+                        <td width="170" align="left" class="btnmiddle">
+                            <span class="mp">Sportsbook & Number Game</span>
+                        </td>
+                        <td width="20" class="md2 r" arrow="true">
+                        </td>
+                        <td class="btnright">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div id="divSBNGContainer">
+                <table border="0">
+                    <tbody>
+                        <tr>
+                            <td align="left">
+                                <input id="cbxCopyAllSportsBook" type="checkbox" />
+                            </td>
+                            <td>
+                                <span style="font-weight: bold">Copy all Bet Setting from Soccer (Excluding
+                                    Number Game)</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="tblcollapse" style="width: 520px; margin-left: 7px">
+                    <tbody>
+                        <tr class="title">
+                            <td colspan="4" align="center">
+                                <span style="font-weight: bold">Bet Setting</span>
+                            </td>
+                        </tr>
+                        <tr class="title">
+                            <td style="width: 130px">
+                            </td>
+                            <td style="width: 130px" align="center">
+                                <span style="font-weight: bold">Min Bet</span>
+                            </td>
+                            <td style="width: 130px" align="center">
+                                <span style="font-weight: bold">Max Bet</span>
+                            </td>
+                            <td style="width: 130px" align="center">
+                                <span style="font-weight: bold">Max Per Match</span>
+                            </td>
+                        </tr>
+                        @GenerateBetSettingSportsbook()
+                        <tr>
+                            <td valign="middle" align="left" style="padding-left: 4px">
+                                <span>Number Game</span>
+                            </td>
+                            <td colspan="3">
+                                <table class="tblcollapse" style="width: 400px">
+                                    <tbody>
+                                        <tr class="title">
+                                            <td align="center" style="width: 97px">
+                                                <span style="font-weight: bold">Min Bet</span>
+                                            </td>
+                                            <td align="center" style="width: 97px">
+                                                <span style="font-weight: bold">Max Bet</span>
+                                            </td>
+                                            <td align="center" style="width: 97px">
+                                                <span style="font-weight: bold">Max Per Match</span>
+                                            </td>
+                                            <td align="center">
+                                                <span style="font-weight: bold">Max Per Ball</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input id="minbetv161" numbergame="true" minbet="true" type="text" style="width: 96px; text-align: right" value="0" />
+                                            </td>
+                                            <td>
+                                                <input id="maxbetv161" numbergame="true" maxbet="true" type="text" style="width: 96px; text-align: right" value="0" />
+                                            </td>
+                                            <td>
+                                                <input id="maxpermatchv161" numbergame="true" maxpermatch="true" type="text" style="width: 96px; text-align: right" value="0" />
+                                            </td>
+                                            <td>
+                                                <input id="maxperballv161" numbergame="true" maxperball="true" type="text" style="width: 96px; text-align: right" value="0" />
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="tblcollapse" style="width: 520px; margin-left: 7px; margin-top: 15px">
+                    <tbody>
+                        <tr class="title">
+                            <td colspan="4" align="center">
+                                <span style="font-weight: bold">Position Taking</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" style="padding-left: 4px;">
+                                <span>Sportsbook</span>
+                            </td>
+                            <td style="width: 100px" align="left">
+                                <select id="selSBPT" style="width: 60px; text-align:left">
+                                </select>
+                            </td>
+                            <td style="padding-left: 4px" align="right">
+                                <span>Number Game</span>
+                            </td>
+                            <td style="width: 100px" align="left">
+                                <select id="selNGPT" style="width: 60px; text-align:left">
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <table id="tblTabRacing" cellspacing="0" cellpadding="0" border="0" class="tblPTheader"
+                style="margin-top: 15px">
+                <tbody>
+                    <tr id="btntop" style="cursor: pointer;">
+                        <td class="btnleft">
+                        </td>
+                        <td width="80" align="left" class="btnmiddle">
+                            <span class="mp">Racing</span>
+                        </td>
+                        <td width="20" class="md2 r" arrow="true">
+                        </td>
+                        <td class="btnright">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div id="divRacingContainer">
+                <table border="0">
+                    <tbody>
+                        <tr>
+                            <td align="left">
+                                <input id="cbxCopyRacing" type="checkbox" />
+                            </td>
+                            <td>
+                                <span style="font-weight: bold">Copy all Bet Setting, Commission & Position Taking from
+                                    Horse Racing UK/Irish Tote</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="tblcollapse" style="width: 880px; margin-left: 7px">
+                    <tbody>
+                        <tr class="title">
+                            <td colspan="2">
+                            </td>
+                            <td colspan="3" align="center">
+                                <span style="font-weight: bold">Bet Setting</span>
+                            </td>
+                            <td colspan="3" align="center">
+                                <span style="font-weight: bold">Comm & PT Setting</span>
+                            </td>
+                            <td align="center" rowspan="2" style="width: 80px">
+                                <span style="font-weight: bold">Status</span>
+                            </td>
+                        </tr>
+                        <tr class="title">
+                            <td colspan="2">
+                            </td>
+                            <td align="center" style="width: 100px">
+                                <span style="font-weight: bold">Min Bet</span>
+                            </td>
+                            <td align="center" style="width: 100px">
+                                <span style="font-weight: bold">Max Bet</span>
+                            </td>
+                            <td align="center" style="width: 100px">
+                                <span style="font-weight: bold">Max Per Match</span>
+                            </td>
+                            <td align="center" style="width: 100px">
+                                <span style="font-weight: bold">Comm</span>
+                            </td>
+                            <td align="center" style="width: 100px">
+                                <span style="font-weight: bold">Win/ Place PT</span>
+                            </td>
+                            <td align="center" style="width: 100px">
+                                <span style="font-weight: bold">House Auto PT</span>
+                            </td>
+                        </tr>
+                        @GenerateBetSettingComPtRacing()
+                    </tbody>
+                </table>
+            </div>
+            <table id="tblAdd" cellspacing="0" cellpadding="0" border="0" style="margin-top: 15px">
+                <tbody>
+                    <tr>
+                        <td class="custBtn1">
+                        </td>
+                        <td class="custBtn2 hand">
+                            Add
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+    <table border="0px" class="table">
+    <!--confirm-->
+      <tr>
+        <td colspan="2" class="l">
+          <span style="color:#d84e1f;font-weight:bold;font-size:9pt">{confirm-msg}</span>          
+        </td>
+      </tr>
+      <!--/confirm-->
+		<tr>
+		    <td colspan="2">
+		        <table width="500px" border="0">
+		            <tr>
+		                <td class="b">Match ID:</td>
+		                <td align="left"><input type="text" size="12" maxlength="12" id="matchid" name="matchid" onkeypress="return CheckDecNumber(event);" /></td>
+		                <td class="b">From Refno:</td>
+			            <td><input type="text" size="12" maxlength="12" id="frefno" name="frefno" onkeypress="return CheckDecNumber(event);" /></td>
+			            <td class="b">To Refno:</td>
+			            <td><input type="text" size="12" maxlength="12" id="trefno" name="trefno" onkeypress="return CheckDecNumber(event);" /></td>
+		            </tr>
+		        </table>
+		    </td>
+		</tr> 
+		
+		<tr>
+			<td colspan="2">                
+			    {newbt}
+			</td>
+		</tr>    
+		
+		<tr style="display:none;">
+			<td colspan="2" class="c">				                
+                <input type="hidden" id="bettype" name="bettype" />
+                <input type="hidden" id="bettypename" name="bettypename" />                
+			</td>
+		</tr>
+	</table>
+<br/>
+<input class="btn" type="submit" onclick="return on_submit();"  value="  Show  " />
+<p><hr /></p>
+

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Database Name="bodb02" Class="DailyWLSporttypeDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=10.20.20.214;Initial Catalog=bodb02;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="bodb02ConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.Acc_Rpt_DailyWLDirect_Sporttype" Method="Acc_Rpt_DailyWLDirect_Sporttype">
+    <Parameter Name="winlostdate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="LineTotal" Parameter="lineTotal" Type="System.Decimal" DbType="Money" Direction="InOut" />
+    <Parameter Name="WinLost_8RM" Parameter="winLost_8RM" Type="System.Decimal" DbType="Money" Direction="InOut" />
+    <Parameter Name="FI_3rdShare" Parameter="fI_3rdShare" Type="System.Decimal" DbType="Money" Direction="InOut" />
+    <ElementType Name="Acc_Rpt_DailyWLDirect_SporttypeResult">
+      <Column Name="SportName" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="SportType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ibc" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="WinLost" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Position" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Commission" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="LineTotal" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Turnover" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

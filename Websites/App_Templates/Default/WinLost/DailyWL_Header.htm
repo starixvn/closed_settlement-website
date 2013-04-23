@@ -1,0 +1,31 @@
+  <table>
+    <tr class="c b">
+      <td align="right">From: </td>
+      <td>{FromDateCal}</td>
+      <td align="right">To: </td>
+      <td>{ToDateCal}</td>
+      <td colspan="3">
+        <input type="submit" value="REPORT" class="btn" onclick="showProgressBar(true);"/>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="7" style="height:25px;">
+        <!--GetData-->
+        <b>GET DATA FROM</b>
+        <input type="radio" id="dbMain" name="db" value="Main" {status-main}></input> <b>MAIN</b>
+        <input type="radio" id="dbRep" name="db"  value="Rep" {status-rep}></input> <b>REPLICATION</b>
+        <!--/GetData-->
+		 <img id='inProgressBar' name='inProgressBar'  style='display:none'   src="../App_Themes/Images/ajax-loader.gif" />
+      </td>
+    </tr>
+    <tr>
+      <td colspan ="3">{path}</td>
+      <td class="r"  colspan ="3">
+        <b>Export To Excel</b>
+        <input class="btnExcel" type ="submit" id ="btnExport" name="btnExport" value="  "  style="width:20px;height:20px;" />
+      </td>
+      <td></td>
+    </tr>
+  </table>
+
+      

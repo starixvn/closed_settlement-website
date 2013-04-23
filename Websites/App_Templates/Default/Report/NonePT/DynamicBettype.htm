@@ -1,0 +1,18 @@
+<table class="tblcollapse" style="width:700px; text-align:left;">
+    <tr class="title">
+	    <td colspan="3" style="text-align:center;">Bet types</td>
+	</tr>
+    <!--content--> 
+    <tr>
+        <td><!--bt1--> <input class="hand" onclick="on_changeBetype(this);" type="checkbox" id="chk{Bettype1}" name="chkBettype" value="{Bettype1}^{BettypeName1}" />{BettypeName1} <!--/bt1--></td>
+        <td><!--bt2--> <input class="hand" onclick="on_changeBetype(this);" type="checkbox" id="chk{Bettype2}" name="chkBettype" value="{Bettype2}^{BettypeName2}" />{BettypeName2} <!--/bt2--></td>
+        <td><!--bt3--> <input class="hand" onclick="on_changeBetype(this);" type="checkbox" id="chk{Bettype3}" name="chkBettype" value="{Bettype3}^{BettypeName3}" />{BettypeName3} <!--/bt3--></td>
+    </tr>
+    <!--/content-->
+    <tr>		    
+		<td colspan="3" align="left">
+		    <input type="checkbox" id="chkAllBettype" name="chkAllBettype" class="hand" onclick="CheckAllBettype(this);" />
+		    <b>All Bet types</b>
+		</td>	    
+	</tr> 
+</table>

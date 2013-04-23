@@ -1,0 +1,83 @@
+  <center>
+    <span id="errMsg" class="error-message">{errmsg}</span>
+    <table class="tbllayout" cellspacing="1" style="width:96%; margin-top:10px">
+       <tr class="title">
+        <td colspan="5">
+            Edit Betting Graph
+        </td>
+      </tr>
+      <tr>
+        <td width="25%" class="h5bold calign">
+          <b>A/C</b>
+        </td>
+        <td width="25%" class="l">
+          {username}
+        </td>
+        <td width="25%" class="h5bold calign">
+          <b>K.O.T</b>
+        </td>
+        <td width="25%" class="l">
+          {ShowTime}
+        </td>
+      </tr>
+      <tr>
+        <td class="h5bold calign " >Event</td>
+        <td colspan="3" class="l">{Event}</td>
+      </tr>
+      <tr>
+        <td class="h5bold calign">Team</td>
+        <td class="l">
+          {Team}
+        </td>
+        <td class="h5bold calign">HDP - O/U</td>
+        <td class="l">
+          {hdp1} &nbsp; {hdp2}
+        </td>
+      </tr>
+      <!--Live-->
+      <tr id="trLiveScore">
+        <td class="h5bold calign">
+          Home Live Score
+        </td>
+        <td class="l">
+          <input style="font-weight:normal;"  class="calign txth13"  type="text" size="4" id="txtHScore" name="txtHScore"  value="{HomeScore-val}"></input>
+        </td>
+        <td class="h5bold calign">
+          Away Live Score
+        </td>
+        <td class="l">
+          <input style="font-weight:normal;"  class="calign txth13"  type="text" size="4" id="txtAScore" name="txtAScore" value="{AwayScore-val}"></input>
+        </td>
+      </tr>
+      <!--/Live-->
+      <tr>
+        <td class="h5bold calign">Price</td>
+        <td class="l">
+          <input type="text" class=" calign txth13"   size="4"  id="txtPrice" name="txtPrice"  value="{Price-val}"></input>
+        </td>
+        <td class="h5bold calign">Amount</td>
+        <td class="l">
+          <input type="text" class=" ralign txth13"   size="18"  id="txtAmount" name="txtAmount"  value="{Amount-val}"></input>
+        </td>
+      </tr>
+      <tr>
+        <td class="h5bold calign">Remark</td>
+        <td class="l" colspan="3">
+          <input type="text" id="txtRemark" name="txtRemark" size="70" style="width:100%;"  value="{Remark-val}"></input>
+        </td>
+      </tr>
+      <tr>
+        <td class="h5bold calign">Creator </td>
+        <td class="l" colspan="3">
+          {CreatorBy}
+        </td>
+      </tr>
+      <tr>
+        <td class="c" colspan="4">
+          <input type="submit" value="Submit" id="btnSubmit" name="btnSubmit" class="btn" onclick="return ValidDataInfo();"/>
+          <input type="hidden" value="{Live}" id="txtLive" name="txtLive"></input>
+          <input type="hidden" value="{TransID}" id="txtTransID" name="txtTransID"></input>
+        </td>
+      </tr>
+    </table>
+  </center>

@@ -1,0 +1,26 @@
+﻿<table id="tbTransferOption" style="width: 400px; margin: 4px 0 10px;" class="tblcollapse">
+    <tr class="title">
+        <td>
+            Account Balance Transfer Condition
+        </td>
+    </tr>
+    <tr>
+        <td width="30%" class="l m">
+            <input type="radio" style="vertical-align: middle;" onclick="selectTranferTime(this);"
+                name="transferCondition" id="rdDaily" value="daily" />Daily
+        </td>
+    </tr>
+    <tr>
+        <td class="l m" id="alldays">
+            <input type="radio" name="transferCondition" onclick="selectTranferTime(this);" id="rdWeekly"
+                value="weekly"></input>Weekly &nbsp;
+            <input type="checkbox" name="chkMon" id="chkMon" onclick="return ChooseDateTransfer();" />Mon&nbsp;
+            <input type="checkbox" name="chkTue" id="chkTue" onclick="return ChooseDateTransfer();" />Tue&nbsp;
+            <input type="checkbox" name="chkWed" id="chkWed" onclick="return ChooseDateTransfer();" />Wed&nbsp;
+            <input type="checkbox" name="chkThurs" id="chkThurs" onclick="return ChooseDateTransfer();" />Thurs&nbsp;
+            <input type="checkbox" name="chkFri" id="chkFri" onclick="return ChooseDateTransfer();" />Fri&nbsp;
+            <input type="checkbox" name="chkSat" id="chkSat" onclick="return ChooseDateTransfer();" />Sat&nbsp;
+            <input type="checkbox" name="chkSun" id="chkSun" onclick="return ChooseDateTransfer();" />Sun
+        </td>
+    </tr>
+</table>

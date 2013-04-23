@@ -1,0 +1,44 @@
+<form name="fEditAcc" method="post" action="UpdateAccount.ashx?type=edit" target="frUpd">
+<input type="hidden" name="custId" id="custId" value="{custid}"></input>
+<input type="hidden" name="groupId" id="groupId" value="{groupid}"></input>
+<input type="hidden" name="dept" id="dept" value="{dept}"></input>
+<span id="err"></span>
+<table class="tbllayout" cellspacing="1">
+    <tr class="title">
+        <td colspan="2">
+            Edit: {user}
+        </td>
+    </tr>
+    <tr>
+        <td class="r">
+            First Name
+        </td>
+        <td class="l">
+            <input type="text" name="txtFName" id="txtFName" value="{fname}" />
+        </td>
+    </tr>
+    <tr>
+        <td class="r">
+            Last Name
+        </td>
+        <td class="l">
+            <input type="text" name="txtLName" id="txtLName" value="{lname}" />
+        </td>
+    </tr>
+    <tr>
+        <td class="r">
+            Department
+        </td>
+        <td class="l">
+            <select style="width: 120px" id="selGroup" name="selGroup">
+                {dept-val}
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" class="c">
+            <input type="submit" id="btnSubmit" name="btnSubmit" value="Submit" class="btn"></input>
+        </td>
+    </tr>
+</table>
+</form>

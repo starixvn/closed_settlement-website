@@ -1,0 +1,74 @@
+﻿<div class="maincontent">
+    <table cellspacing="0px" cellpadding="0px" border="0" class="maincontent_header">
+        <tbody>
+            <tr>
+                <td class="maincontent_headerL">
+                </td>
+                <td class="maincontent_headerC">
+                    Agency Analysis
+                </td>
+                <td class="maincontent_headerR">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <!--Header-->
+    <div class="maincontent_box">
+        <table>
+            <tr>
+                <td>
+                    From
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>
+                                {fdate}
+                            </td>
+                            <td>
+                                To
+                            </td>
+                            <td>
+                                {tdate}
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td rowspan="3">
+                    <input type="button" onclick="ViewReport()" class="btn" value="REPORT" name="btnReport"
+                        id="btnReport" />
+                </td>
+                <td rowspan="3">
+                    <input type="button" title="Export to Excel" class="btnExcel" id="btnExport" name="btnExport"
+                        value="&nbsp;&nbsp;" onclick="ExportToExcel();" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Statistic
+                </td>
+                <td>
+                    <input type="checkbox" checked="checked" id="chkWL" name="chk" onclick="CheckOnStatistic();" />
+                    Winlost
+                    <input type="checkbox" checked="checked" id="chkTO" name="chk" onclick="CheckOnStatistic();" />
+                    Turnover
+                    <input type="checkbox" checked="checked" id="chkMar" name="chk" onclick="CheckOnStatistic();" />
+                    Margin <span style="padding-left: 5px;" id="msg" class="error-message"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    UserName
+                </td>
+                <td>
+                    <input type="text" id="txtUserName" name="txtUserName" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <!--/Header-->
+    <div class="bg_table" id="dvTable" style="display:none">
+        <div id="sData">
+        </div>
+    </div>
+</div>

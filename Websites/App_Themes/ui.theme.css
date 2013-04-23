@@ -1,0 +1,10 @@
+.ui-widget-header { border: 1px solid #7C98A4; background: #B5C4D0;color: #000; font-weight: bold; }
+.ui-widget-footer { border: 1px solid #7C98A4; background: #B5C4D0;color: #000; font-weight: bold; }
+.ui-widget-content{ border: 1px solid #aaaaaa; background: #fff; }
+
+.main table {
+	background:#7C98A4;
+}
+.main tbody tr { background: #fff}
+.main tbody td { color:#000}
+.main { width:100%;}

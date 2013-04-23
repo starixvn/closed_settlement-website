@@ -1,0 +1,108 @@
+<br/>
+<form id="frmDeleteTrans" >
+  <table border="0px" class="table">
+    <tr>
+      <td>USERNAME:</td> 
+      <td>
+        <input type='text' name='username' id='username' />
+      </td>
+    </tr>
+    <tr>
+      <td>PASSWORD:</td>
+      <td>
+        <input type='password' name='userpwd' id='userpwd' />
+      </td>
+    </tr> 
+    <tr>
+        <td colspan="2"><div id='ErrorMessage' class='error-message'></div>
+    </td>
+    </tr>
+  </table>
+  <table border="0px" class="table">
+    <tr>
+      <th colspan="3" bgcolor="#88aaff">Please include "@@" in message content for replacing ticket numbers</th>
+    </tr>
+    <tr bgcolor="#ADADAD" class="tableBw">
+      <th align="center">
+        <span style="color:Red;">*</span>Message En
+      </th>
+      <th align="center">
+        <span style="color:Red;">*</span>Message Ch
+      </th>
+      <th align="center">Message Cs</th>
+    </tr>
+    <tr>
+      <td>
+        <textarea rows="10" id="men" name="men" cols="36"></textarea>
+      </td>
+      <td>
+        <textarea rows="10" id="mch" name="mch" cols="36"></textarea>
+      </td>
+      <td>
+        <textarea rows="10" id="mcs" name="mcs" cols="36"></textarea>
+      </td>
+    </tr>
+    <tr>
+      <th colspan="3" bgcolor="#88aaff">
+        <a id="other_display" onclick="hideLanguage(this)" href="#">
+          <span style="color: Black;">Other Languages</span> [+]
+        </a>
+      </th>
+    </tr>
+    <tr bgcolor="#ADADAD" class="tableBw" id="otherLanguage_title" style="display:none;">
+      <th align="center">Message Th</th>
+      <th align="center">Message It</th>
+      <th align="center">Message Jp</th>
+    </tr>
+    <tr id="otherLanguage_content" style="display:none;">
+      <td>
+        <textarea rows="10" id="mth" name="mth" cols="36"></textarea>
+      </td>
+      <td>
+        <textarea rows="10" id="mit" name="mit" cols="36"></textarea>
+      </td>
+      <td>
+        <textarea rows="10" id="mjp" name="mjp" cols="36"></textarea>
+      </td>
+    </tr>
+    <tr bgcolor="#ADADAD" class="tableBw" id="otherLanguage_title2" style="display:none;">
+      <th align="center">Message Es</th>
+      <th align="center"></th>
+      <th align="center"></th>
+    </tr>
+    <tr id="otherLanguage_content2" style="display:none;">
+      <td>
+        <textarea rows="10" id="mes" name="mes" cols="36"></textarea>
+      </td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+  <table border="0px" class="table">    
+    <tr id="trMsg2" style="display:none;">
+      <td colspan='2'>
+        
+        <input type='hidden' id='DelOption' name='DelOption'></input>
+        <input type='hidden' id='transids' name='transids'></input>
+        <input type='hidden' id='DelOption_BD' name='DelOption_BD'></input>
+        <input type='hidden' id='transids_BD' name='transids_BD'></input>
+        <input type='hidden' id='DelOption_12EU' name='DelOption_12EU'></input>
+        <input type='hidden' id='transids_12EU' name='transids_12EU'></input>
+        <input type='hidden' id='DelOption_MHC' name='DelOption_MHC'></input>
+        <input type='hidden' id='transids_MHC' name='transids_MHC'></input>        
+        <input type='hidden' name='frefno' value='{FromRefno}' />
+        <input type='hidden' name='trefno' value='{ToRefno}' />
+        <input type='hidden' name='matchid' id='matchid' value='{MatchId}' />
+        <input type='hidden' name='bettype' id="bettype" value='{Bettype}' />        
+        <input type='hidden' name='betteam1378' id="betteam1378" value='{Betteam1378}' />
+        <input type='hidden' name='betteam515' id="betteam515" value='{Betteam515}' />
+        <input type='hidden' name='betteam4' id="betteam4" value='{Betteam4}' />
+        <input type='hidden' name='liveindicator' id="liveindicator" value='{liveindicator}' />        
+        <input type='hidden' name='hdp' id="hdp" value='{Hdp}' />         
+        <input type="hidden" name="IsAllCSType" id="IsAllCSType" />
+      </td>
+    </tr>
+  </table>
+</form>
+
+<input class="btn" type='button' value='  Delete  ' onclick='return on_delete();' />

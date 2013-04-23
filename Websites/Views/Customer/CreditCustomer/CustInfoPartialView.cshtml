@@ -1,0 +1,492 @@
+﻿@using Fanex.Tarus.Customer.CreditCustomer.Entities;
+@model Fanex.Tarus.Customer.CreditCustomer.Entities.CustomerSettingView
+<table class="tblcollapse" style="width: 850px; margin-bottom: 10px;">
+    <tr class="title">
+        <td colspan="4">
+            @Model.TitlePage
+        </td>
+    </tr>
+    <!--not-edit-->
+    @if (Model.IsInsertPage == true)
+    {
+        <tr class="{edit-hidden}">
+            <td class="l" width="15%">
+                @Resources.Language.lblUsername
+            </td>
+            <td class="l" width="35%">
+                <input class="f8 w130" maxlength="30" type="text" name="txtUsername" id="txtUsername"
+                    data-bind="value: customer.userName" />
+            </td>
+            <td class="l" width="15%">
+                @Resources.Language.Password
+            </td>
+            <td class="l" width="35%">
+                <input type="password" maxlength="30" class="f8 w130" name="txtPwd" id="txtPwd" data-bind="value: customer.password" />
+            </td>
+        </tr>
+    }
+    <!--/not-edit-->
+    <tr>
+        <td class="l" @if (!Model.IsInsertPage)
+                      {
+                        @: width="12%"
+                      }>
+            @Resources.Language.lblFirstname
+        </td>
+        <td class="l" @if (!Model.IsInsertPage)
+                      {
+                        @: width="45%"
+                      }>
+            <input class="f8 w130" maxlength="50" name="txtFirstname" id="txtFirstname" data-bind="value: customer.firstName" />
+        </td>
+        <td class="l" @if (!Model.IsInsertPage)
+                      {
+                        @: width="12%"
+                      }>
+            @Resources.Language.lblLastname
+        </td>
+        <td class="l" @if (!Model.IsInsertPage)
+                      {
+                        @: width="31%"
+                      }>
+            <input class="f8 w130" maxlength="50" name="txtLastname" id="txtLastname" data-bind="value: customer.lastName" />
+        </td>
+    </tr>
+    <tr>
+        <td class="l">
+            @Resources.Language.Phone
+        </td>
+        <td class="l">
+            <input class="f8 w130" maxlength="50" name="txtPhone" id="txtPhone" data-bind="value: customer.phone" />
+        </td>
+        <td class="l">
+            @Resources.Language.lblMobilePhone
+        </td>
+        <td class="l">
+            <input class="f8 w130" maxlength="50" name="txtMobile" id="txtMobile" data-bind="value: customer.mobilePhone" />
+        </td>
+    </tr>
+    <tr class="{site-curr-hidden}">
+        @if (Model.IsInsertPage && Model.IsSuperSetting)
+        {
+            <!--site-super-->
+            <td class="l">
+                @Resources.Language.Site
+            </td>
+            <td class="l">
+                <select name="listSite" id="listSite" class="select-group">
+                    <option>Select</option>
+                    @foreach (Sites sites in (List<Sites>)ViewData["listSite"])
+                    {
+                        <optgroup label="@sites.Name">
+                            @foreach (Site site in sites.ListSite)
+                            {
+                                <option id="@site.Id" value="@site.Name" >@site.Name</option>
+                            }
+                        </optgroup>
+                    }
+                </select>
+            </td>
+            <!--/site-super-->
+                    //fax
+            <td class="l">
+                @Resources.Language.lblFax
+            </td>
+            <td class="l">
+                <input class="f8 w130" maxlength="50" name="txtFax" id="txtFax" data-bind="value: customer.fax" />
+            </td>
+        }
+        else
+        {
+            //edit page here
+        }
+    </tr>
+    <!--MinMaxPT-->
+    <tr>
+        <td class="l">
+            @if (Model.IsMemberSetting)
+            {
+                @Resources.Language.lblMemberMaxCredit
+            }
+            else if (Model.IsMasterSetting)
+            {
+                @Resources.Language.lblMasterMaxCredit
+            }
+            else if (Model.IsAgentSetting)
+            {
+                @Resources.Language.lblAgentMaxCredit
+            }
+            else
+            {
+                @:Max Credit
+            
+            }
+        </td>
+        <td class="l">
+            <!--accMaxcredit-->
+            <input class="f8 w130" maxlength="18" name="txtCredit" id="txtCredit" data-bind="value: customer.credit"
+                onkeyup="return Fanex.FormatNumber(event, true);"
+                @if (Model.CanEditCredit == false)
+                {
+                         @:  onmouseout="UnTip()" onmouseover="Tip('You do not have permission on update credit.',ABOVE, true,OFFSETX, -100, PADDING, 4, FONTCOLOR, '#FF0000');" readonly="" style="background-color: rgb(232, 232, 232); border: 1px solid rgb(127, 157, 185); color: rgb(160, 160, 160); text-align:right;" maxlength="14" class="f8 w130"
+                    //, BALLOON, true, ABOVE, true, OFFSETX, -100, PADDING, 4)" readonly="" style="background-color: rgb(232, 232, 232); border: 1px solid rgb(127, 157, 185); color: rgb(160, 160, 160);" maxlength="14" class="f8 w130"
+                }
+                else
+                {
+                         @: style="text-align:right;"
+                     }
+                /><!--/accMaxcredit-->
+            <!--extMaxcredit-->
+            @if (Model.IsInsertPage && (Model.IsMasterSetting || Model.IsAgentSetting || Model.IsMemberSetting))
+            {
+                <span name="lblExtCredit" id="lblExtCredit"></span>
+                @:<=
+                    <span class="normal" id="txtCreditMax"></span>
+            }
+            else if (Model.IsInsertPage == false && (Model.IsSuperSetting))
+            {
+                @:>=
+                <span class="normal" id="txtCreditMin"></span>
+            }
+            else if (Model.IsInsertPage == false && (Model.IsMasterSetting || Model.IsAgentSetting))
+            {
+                @:>=
+                <span class="normal" id="txtCreditMin"></span>
+                @:and <=
+                            <span class="normal" id="txtCreditMax"></span>
+            }
+        </td>
+        @if (Model.IsInsertPage && Model.IsSuperSetting)
+        {
+            <!--currency-->
+            <td class="l">
+                @Resources.Language.Currency
+            </td>
+            <td class="l">
+                <select class="select-group" name="listCurrency" id="listCurrency">
+                    <option>Select</option>
+                    @foreach (Currency currency in (List<Currency>)ViewData["listCurrency"])
+                    {
+                        <option value="@currency.Value" >@currency.Text</option>
+                    }
+                </select>
+            </td>
+            <!--/currency-->
+        }
+        else
+        {
+            //edit page here
+            //if (Model.IsInsertPage)
+            //{
+            //fax
+            <td class="l">
+                @Resources.Language.lblFax
+            </td>
+            <td class="l">
+                <input class="f8 w130" maxlength="50" name="txtFax" id="txtFax" data-bind="value: customer.fax" />
+            </td>
+            //}
+        }
+    </tr>
+    @if (Model.IsInsertPage && Model.IsSuperSetting)
+    {
+        <!--Internal-->
+        <tr>
+            <td class="l">
+                @Resources.Language.lblInternalUser
+            </td>
+            <td class="l" style="text-align: left;">
+                <input type="checkbox" id="chbInternal" name="chbInternal" data-bind="checked: customer.isInternal" />
+            </td>
+            <td class="r" colspan="4">
+            </td>
+        </tr>
+        <!--/Internal-->
+    }
+    else
+    {
+        if (Model.IsMasterSetting && Model.IsInsertPage == true)
+        {
+        <tr>
+            <td colspan="2">
+            </td>
+            <td class="l">
+                Allow Auto PT
+            </td>
+            <td class="l" style="text-align: left;">
+                <input type="checkbox" id="chbAllowAutoPT" name="chbAllowAutoPT" data-bind="checked: customer.statusSetting.disableAutoMPT" />
+            </td>
+        </tr>
+        }
+        else if (Model.IsAgentSetting)
+        {
+        <tr>
+            <td class="l">
+                @Resources.Language.lblMemberMaxCredit
+            </td>
+            <td class="l" style="text-align: left;">
+                <input class="f8 w130" maxlength="18" name="txtMemberCredit" id="txtMemberCredit"
+                    value="0" onkeyup="return Fanex.FormatNumber(event, true);"
+                     @if (Model.CanEditCredit == false)
+                     {
+                         @:  onmouseout="UnTip()" onmouseover="Tip('You do not have permission on update credit.',ABOVE, true,OFFSETX, -100, PADDING, 4, FONTCOLOR, '#FF0000');" readonly="" style="background-color: rgb(232, 232, 232); border: 1px solid rgb(127, 157, 185); color: rgb(160, 160, 160); text-align:right;" maxlength="14" class="f8 w130"
+                    //, BALLOON, true, ABOVE, true, OFFSETX, -100, PADDING, 4)" readonly="" style="background-color: rgb(232, 232, 232); border: 1px solid rgb(127, 157, 185); color: rgb(160, 160, 160);" maxlength="14" class="f8 w130"
+                     }
+                     else
+                     {
+                         @: style="text-align:right;"
+                     }
+                    /><!--/accMaxcredit-->
+                @if(Model.IsInsertPage)
+                {
+                    @:<= <span class="normal" id="txtMemberCreditMax"></span>
+                }
+                else
+                {
+                    @:>= <span class="normal" id="txtMemberCreditMin"></span> and <= <span class="normal" id="txtMemberCreditMax"></span>
+                }
+
+            </td>
+            <td colspan="2">
+            </td>
+        </tr>
+                if (Model.IsInsertPage == false)
+                {
+                <tr> <td class="l">
+                @Resources.Language.lblStatusClosed
+                </td> <td class="l"> <input type="checkbox" onclick="" class="" name="chkClosed"
+                id="chkClosed" data-bind="checked: customer.statusSetting.closed"> </td> <td class="l">
+                @Resources.Language.lblSuspended
+            </td> <td class="l"> <input type="checkbox" onclick="" class="" name="chkSuspended"
+            id="chkSuspended" data-bind="checked: customer.statusSetting.suspended"> </td> </tr>
+                }
+        }
+        else if (Model.IsMemberSetting)
+        {
+        <tr>
+            <td class="l">
+                @Resources.Language.lblGroup
+            </td>
+            <td class="l">
+                @if(Model.IsInsertPage)
+                {
+                    <select name="ddlUGruop" id="ddlUGruop">
+                        @foreach (MemberGroup membergroup in (List<MemberGroup>)ViewData["listMemberGroup"])
+                        {
+                            <option value="@membergroup.GroupValue" >@membergroup.GroupName</option>
+                        }
+                    </select>
+                }
+                else
+                {
+                    <span name="lblGroup" id="lblGroup"></span>
+                }
+            </td>
+            <td class="l">
+                @Resources.Language.lblStatusClosed
+            </td>
+            <td class="l">
+                <input type="checkbox" onclick="" class="" name="chkClosed" id="chkClosed" 
+                @if(Model.IsInsertPage)
+                {
+                    @:data-bind="checked: customer.statusSetting.closed, disable: customer.statusSetting.closed"
+                }
+                else
+                {
+                    @:data-bind="checked: customer.statusSetting.closed"
+                }
+                >
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+            </td>
+            <td class="l">
+                @Resources.Language.lblSuspended
+            </td>
+            <td class="l">
+                <input type="checkbox" onclick="" class="" name="chkSuspended" id="chkSuspended"
+                 @if(Model.IsInsertPage)
+                {
+                    @:data-bind="checked: customer.statusSetting.suspended, disable: customer.statusSetting.suspended"
+                }
+                else
+                {
+                     @:data-bind="checked: customer.statusSetting.suspended"
+                 }
+                     >
+            </td>
+        </tr>
+        }
+        else if (Model.IsInsertPage == false)
+        {
+        <tr>
+            <td class="l">
+                @Resources.Language.lblStatusClosed
+            </td>
+            <td class="l">
+                <input type="checkbox" onclick="" class="" name="chkClosed" id="chkClosed" data-bind="checked: customer.statusSetting.closed">
+            </td>
+            <td class="l">
+                @Resources.Language.lblSuspended
+            </td>
+            <td class="l">
+                <input type="checkbox" onclick="" class="" name="chkSuspended" id="chkSuspended"
+                    data-bind="checked: customer.statusSetting.suspended">
+            </td>
+        </tr>
+        }
+    }
+    <tr class="title">
+        <td colspan="4">
+            Commission
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            @if (Model.IsMemberSetting == false)
+            {
+                <table width="100%" class="noneborder" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td class="r">
+                            Group A
+                        </td>
+                        <td class="l">
+                            <select class="selectcomm" name="listGroupA" id="listGroupA">
+                            </select>
+                        </td>
+                        <td class="r">
+                            Group B
+                        </td>
+                        <td class="l">
+                            <select class="selectcomm" name="listGroupB" id="listGroupB">
+                            </select>
+                        </td>
+                        <td class="r">
+                            Group C
+                        </td>
+                        <td class="l">
+                            <select class="selectcomm" name="listGroupC" id="listGroupC">
+                            </select>
+                        </td>
+                        <td class="r">
+                            Group D
+                        </td>
+                        <td class="l">
+                            <select class="selectcomm" name="listGroupD" id="listGroupD">
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <!--none-1x2-Comm-->
+                        <td class="r">
+                            @Resources.Language.lbl1x2Comm
+                        </td>
+                        <td class="l">
+                            <select class="selectcomm" name="listGroup1x2" id="listGroup1x2">
+                            </select>
+                        </td>
+                        <!--/none-1x2-Comm-->
+                        <td class="r">
+                            @Resources.Language.OtherComm
+                        </td>
+                        <td class="l">
+                            <select class="selectcomm" name="listOther" id="listOther">
+                            </select>
+                        </td>
+                        <!--game-comm-->
+                        <td class="r">
+                            @Resources.Language.lblGameComm
+                        </td>
+                        <td class="l">
+                            <select class="selectcomm" name="listGameComm" id="listGameComm">
+                            </select>
+                        </td>
+                        <td colspan="2">
+                        </td>
+                        <!--/game-comm-->
+                    </tr>
+                </table>
+            }
+            else
+            {
+                <table class="tblcollapse" width="100%">
+                    <!--header-->
+                    <tr class="title">
+                        <td>
+                        </td>
+                        <td>
+                            @Resources.Language.CommissionForAgent
+                        </td>
+                        <td>
+                            @Resources.Language.CommissionForMember
+                        </td>
+                    </tr>
+                    <!--/header-->
+                    <!--HDPOUOE-->
+                    <tr>
+                        <td class="r" style="width: 25%;">
+                            @Resources.Language.lblAsianHDC_OU_OE
+                        </td>
+                        <td>
+                            <input class="selectcomm" type="text" id="txtHDPOUOE" name="txtHDPOUOE" disabled="disabled"
+                                data-bind="value: customer.commissionSettings[0].groupA" style="text-align: right;" />
+                        </td>
+                        <td>
+                            <select class="selectcomm" name="listHDPOUOE" id="listHDPOUOE">
+                            </select>
+                        </td>
+                    </tr>
+                    <!--/HDPOUOE-->
+                    <!--1x2-->
+                    <tr>
+                        <td class="r" style="width: 25%;">
+                            @Resources.Language.lbl1x2
+                        </td>
+                        <td>
+                            <input class="selectcomm" type="text" id="txt1X2" name="txt1X2" disabled="disabled"
+                                data-bind="value: customer.commissionSettings[0].discount1x2" style="text-align: right;" />
+                        </td>
+                        <td>
+                            <select class="selectcomm" name="list1X2" id="list1X2">
+                            </select>
+                        </td>
+                    </tr>
+                    <!--/1x2-->
+                    <!--other-->
+                    <tr>
+                        <td class="r" style="width: 25%;">
+                            @Resources.Language.lblOtherBettypes
+                        </td>
+                        <td>
+                            <input class="selectcomm" type="text" id="txtOtherBettypes" name="txtOtherBettypes"
+                                disabled="disabled" data-bind="value: customer.commissionSettings[0].discountCS"
+                                style="text-align: right;" />
+                        </td>
+                        <td>
+                            <select class="selectcomm" name="listOtherBettypes" id="listOtherBettypes">
+                            </select>
+                        </td>
+                    </tr>
+                    <!--/other-->
+                    <!--game-comm-->
+                    <tr>
+                        <td class="r" style="width: 25%;">
+                            @Resources.Language.lblGameComm
+                        </td>
+                        <td>
+                            <input class="selectcomm" type="text" id="txtDiscountNB" name="txtDiscountNB" disabled="disabled"
+                                data-bind="value: customer.commissionSettings[0].discountNumber" style="text-align: right;" />
+                        </td>
+                        <td>
+                            <select class="selectcomm" name="listGameComm" id="listGameComm">
+                            </select>
+                        </td>
+                    </tr>
+                    <!--/game-comm-->
+                </table>
+            }
+        </td>
+    </tr>
+    <!--/MinMaxPT-->
+</table>

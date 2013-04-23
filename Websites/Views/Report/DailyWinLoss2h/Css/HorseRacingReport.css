@@ -1,0 +1,46 @@
+﻿.w80
+{
+    width: 80px;
+}
+
+/*Racing winloss style*/
+.blue
+{
+    color: Blue;
+    cursor: pointer;
+}
+.blue:hover
+{
+    color: #C16605;
+    text-decoration: underline;
+}
+.red
+{
+    color: red;
+}
+
+td.linetotal
+{
+    background-color: #82C7FF;
+}
+
+#splitterContainer
+{
+    /* Main splitter element */
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    margin-top: 5px;
+}
+
+#leftPane
+{
+    float: left;
+}
+
+#rightPane
+{
+    /*Contains toolbar and horizontal splitter*/
+    text-align: left;
+}

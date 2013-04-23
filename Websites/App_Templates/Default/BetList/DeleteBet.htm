@@ -1,0 +1,97 @@
+<center>
+    <div class="maincontent_box">
+        <table border="0">
+          <tr>
+            <td colspan="2" class="c">
+              Delete bet: <span style="font-weight:bold">{BetId}</span>
+            </td>
+          </tr>
+          <tr>
+            <td>Username:</td>
+            <td>
+              <input type='text' name='username' id='username' style="width:120px" maxlength="50" disabled="disabled" />
+            </td>
+          </tr>
+          <tr>
+            <td>Password:</td>
+            <td>
+              <input type='password' name='password' id='password' style="width:120px" maxlength="50" />
+            </td>
+          </tr>
+        </table>
+    </div>
+    <div class="bg_table">
+        <table border="0px">
+          <tr>
+            <th colspan="3" bgcolor="#88aaff">Please include "@@" in message content for replace ticket numbers</th>
+          </tr>
+          <tr bgcolor="#ADADAD">
+            <th  align="center">
+              <span style="color:Red;">*</span>Message En
+            </th>
+            <th  align="center">
+              <span style="color:Red;">*</span>Message Ch
+            </th>
+            <th  align="center">Message Cs</th>
+          </tr>
+          <tr>
+            <td>
+              <textarea rows="10" id="men" name="men" cols="25"></textarea>
+            </td>
+            <td>
+              <textarea rows="10" id="mch" name="mch" cols="25"></textarea>
+            </td>
+            <td>
+              <textarea rows="10" id="mcs" name="mcs" cols="25"></textarea>
+            </td>
+          </tr>
+          <tr>
+            <th colspan="3" bgcolor="#88aaff">
+              <a id="other_display" onclick="hideLanguage()" href="#">
+                <span style="color: Black;">Other Languages</span> [+]
+              </a>
+            </th>
+          </tr>
+          <tr bgcolor="#ADADAD" id="otherLanguage_title" style="display:none;">
+            <th  align="center">Message Th</th>
+            <th  align="center">Message It</th>
+            <th align="center">Message Jp</th> 
+          </tr>
+          <tr id="otherLanguage_content" style="display:none;">
+            <td>
+              <textarea rows="10" id="mth" name="mth" cols="25"></textarea>
+            </td>
+            <td>
+              <textarea rows="10" id="mit" name="mit" cols="25"></textarea>
+            </td>
+            <td>
+              <textarea rows="10" id="mjp" name="mjp" cols="25"></textarea>
+            </td>
+          </tr>
+          <tr bgcolor="#ADADAD" id="otherLanguage_title1" style="display:none;">
+            <th  align="center">Message Es</th>
+            <th  align="center"></th>
+            <th align="center"></th>
+          </tr>
+          <tr id="otherLanguage_content1" style="display:none;">
+            <td>
+              <textarea rows="10" id="mes" name="mes" cols="25"></textarea>
+            </td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+        <table>
+          <tr>
+            <td colspan='2' class='c'>
+              <input class="btn" type='submit' name='delBtn' onclick="executeDel()" value='Delete' />
+            </td>
+          </tr>
+        </table>
+        <span style="color:#FF0000" id='errormsg'></span>
+    </div>
+</center>
+<input type="hidden" id="betfrom" name="betfrom" value="{betfrom_vl}" />
+<input type="hidden" id="betID" name="betfrom" value="{BetId}" />
+<input type="hidden" id="matchID" name="betfrom" value="{MatchId}" />
+<input type="hidden" id="Bettype" name="bettype" value="{Bettype}" />

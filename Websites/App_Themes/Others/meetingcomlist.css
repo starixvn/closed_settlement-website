@@ -1,0 +1,18 @@
+﻿.ui-widget-header { border: 1px solid #7C98A4; background: #B5C4D0;color: #000; font-weight: bold; }
+.ui-widget-footer { border: 1px solid #7C98A4; background: #B5C4D0;color: #000; font-weight: bold; }
+.ui-widget-content{ border: 1px solid #aaaaaa; background: #fff; }
+
+.GridContent table {
+	background:#7C98A4;
+	text-align:center;
+	line-height:18px;
+}
+.GridContent tbody tr { background: #fff}
+.GridContent tbody td { color:#000}
+.GridContent { 
+	width:387px;
+	!width:385px;
+	}
+.evenrow td{background:#e6e9f0;}	
+.rowhighlight td{background:#f8ff8d !important;font-weight:bold !important;}		
+

@@ -1,0 +1,261 @@
+﻿@model IList<Fanex.Tarus.Entities.AgentAccess>
+<link href="~/App_Themes/Public/Message.css" rel="stylesheet" type="text/css" />
+<link href="~/js/jQuery/Pager/pagination.css" rel="stylesheet" type="text/css" />
+<link href="~/App_Themes/Report/reportgrid.css" rel="stylesheet" type="text/css" />
+<script src="~/js/jQuery/gridscroller.js" type="text/javascript"></script>
+<script src="~/js/jQuery/Template/jquery.tmpl.js" type="text/javascript"></script>
+<script src="~/js/jQuery/Pager/jpager.js" type="text/javascript"></script>
+<script src="~/js/jQuery/Jlinq/jlinq.js" type="text/javascript"></script>
+<script src="~/js/common.js" type="text/javascript"></script>
+<script src="~/Views/Admin/Js/GrantAccess.js?version=@Sunplus.Accounting.Core.Configurations.WebSettings.Version" type="text/javascript"></script>
+@{
+    var pageSize = 200;
+}
+
+<style type="text/css">
+    .bgedit td{background-color:#FFDDFE;}
+</style>
+
+<script type="text/javascript">
+grantAccess.pageSize = @pageSize;
+grantAccess.model = @Html.Raw(Json.Encode(Model));
+grantAccess.modelForSearch = @Html.Raw(Json.Encode(Model));
+</script>
+@helper RenderRow(bool isServer, string no, string AccountId, string Account, string Role, string GrantAccess, string AddedDate
+                , string AddedBy, string LastModified, string LastModifiedBy, string Remark)
+    {<tr
+        @if(!isServer)
+        {
+            @:{{if Index % 2 == 0}}class='bgeven'{{/if}}
+        }
+        else 
+        {
+            var index = int.Parse(no);
+            if (index % 2 == 0)
+            {
+                @:class='bgeven'
+            }
+        }
+    >
+        <td>
+            <div class="col40 c">
+                @no
+            </div>
+        </td>
+        <td>
+            <div class="col160 c">
+                @Account
+            </div>
+        </td>
+        <td>
+            <div class="col100 c">
+                @Role
+            </div>
+        </td>
+        <td>
+            <div class="col100 c">
+                <input grantaccess="true" type="checkbox" disabled="disabled"
+                @if(!isServer)
+                {
+                    @:{{if GrantAccess }}checked='checked'{{/if}}
+                }
+                else 
+                {
+                    if (GrantAccess.Trim().ToLower() == "true")
+                    {
+                        @:checked="checked"
+                    }
+                }
+                 />
+            </div>
+        </td>
+        <td>
+            <div class="col120 c">
+                @AddedDate
+            </div>
+        </td>
+        <td>
+            <div class="col120 c">
+                @AddedBy
+            </div>
+        </td>
+        <td>
+            <div class="col120 c">
+                @LastModified
+            </div>
+        </td>
+        <td>
+            <div class="col120 c">
+                @LastModifiedBy
+            </div>
+        </td>
+        <td>
+            <div class="col160 c">
+                <span remark="true">@Remark</span>
+            </div>
+        </td>
+        <td>
+            <div class="col60 c">
+                <img src="~/App_Themes/Images/icn_edit.png" onclick="javascript:grantAccess.beginEdit(event);" style="cursor:pointer" title="Edit" />
+                <img src="~/App_Themes/Images/Save.png" onclick="javascript:grantAccess.endEdit(event, 'Save', @AccountId);" style="cursor:pointer;display:none" title="Save" />
+                <img src="~/App_Themes/Images/undo.png" onclick="javascript:grantAccess.endEdit(event, 'Cancel');" style="cursor:pointer;display:none" title="Cancel" />
+            </div>
+        </td>
+        <td>
+            <div class="col60 c">
+                <img src="~/App_Themes/Images/icn_del.png" style="cursor:pointer" onclick="javascript:grantAccess.remove(@AccountId, '@Account');" title="Remove" />
+            </div>
+        </td>
+    </tr>
+}
+<div class="main">
+    <div class="maincontent">
+        <table border="0" cellpadding="0px" cellspacing="0px" class="maincontent_header">
+            <tr>
+                <td class="maincontent_headerL">
+                </td>
+                <td class="maincontent_headerC">
+                    Grant Access to Agent Site with Test Accounts
+                </td>
+                <td class="maincontent_headerR">
+                </td>
+            </tr>
+        </table>
+        <div class="errMsg" id="msgError" style="display:none; margin-left:0px; padding-left:0px"></div>
+        <div class="maincontent_box" style="width: 1206px">
+            <table border="0">
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="b">
+                                Account:</div>
+                        </td>
+                        <td>
+                            <input id="tbxAccount" type="text" class="txt" />
+                        </td>
+                        <td>
+                            <div class="b" style="padding-left: 10px">
+                                Remark:</div>
+                        </td>
+                        <td>
+                            <input id="tbxRemark" type="text" class="txt" />
+                        </td>
+                        <td>
+                            <input id="btnAdd" type="button" class="btn" value="Add" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="divContainer" style="margin-top: 4px">
+            <div id="divMainGrid" class="content-warper hidden">
+                <div class="content-header clearfix">
+                    <div class="header-scroll">
+                        <table class="tbl-header-scroll">
+                            <tr>
+                                <td style="border-bottom: none 0px;" class="title2">
+                                    <div class="col40 c">
+                                        No.
+                                    </div>
+                                </td>
+                                <td style="border-bottom: none 0px;" class="title2">
+                                    <div class="col160 c" id="divAccountSearch" title="Filter by account" style="cursor:pointer">
+                                        Account
+                                    </div>
+                                </td>
+                                <td style="border-bottom: none 0px;" class="title2">
+                                    <div class="col100 c">
+                                        Role
+                                    </div>
+                                </td>
+                                <td style="border-bottom: none 0px;" class="title2">
+                                    <div class="col100 c">
+                                        Grant Access
+                                    </div>
+                                </td>
+                                <td style="border-bottom: none 0px;" class="title2">
+                                    <div class="col120 c">
+                                        Added Date
+                                    </div>
+                                </td>
+                                <td style="border-bottom: none 0px;" class="title2">
+                                    <div class="col120 c">
+                                        Added By
+                                    </div>
+                                </td>
+                                <td style="border-bottom: none 0px;" class="title2">
+                                    <div class="col120 c">
+                                        Last Modified
+                                    </div>
+                                </td>
+                                <td style="border-bottom: none 0px;" class="title2">
+                                    <div class="col120 c">
+                                        Last Modified By
+                                    </div>
+                                </td>
+                                <td style="border-bottom: none 0px;" class="title2">
+                                    <div class="col160 c">
+                                        Remark
+                                    </div>
+                                </td>
+                                <td style="border-bottom: none 0px;" class="title2">
+                                    <div class="col60 c">
+                                        Update
+                                    </div>
+                                </td>
+                                <td style="border-bottom: none 0px;" class="title2">
+                                    <div class="col60 c">
+                                        Remove
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="content-body clearfix">
+                    <div class="body-scroll">
+                        <table class="tbl-body-scroll">
+                            <tbody id="tobdyMainGrid">
+                                @if (Model.Count > 0)
+                                {
+                                    var _pageSize = Model.Count <= pageSize ? Model.Count : pageSize;
+
+                                    for (var i = 0; i < _pageSize; ++i)
+                                    {
+                                        @RenderRow(true, Model[i].Index.ToString(), Model[i].AccountId.ToString(), Model[i].Account, Model[i].Role,
+                                        Model[i].GrantAccess.ToString(), Model[i].AddedDate, Model[i].AddedBy, Model[i].LastModified,
+                                        Model[i].LastModifiedBy, Model[i].Remark);
+                                    }
+                                }
+                                else
+                                {
+                                    <tr>
+                                        <td>
+                                            <div style="text-align: center; width: 1190px">
+                                                There is no information!
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <script id="scriptMainTemplate" type="text/x-jquery-tmpl">@RenderRow(false, "${Index}", "${AccountId}", "${Account}", "${Role}", "${GrantAccess}", "${AddedDate}",
+                                     "${AddedBy}", "${LastModified}", "${LastModifiedBy}", "${Remark}")</script>
+                    </div>
+                </div>
+                <div class="content-pagination bgtitle clearfix">
+                    <div class="pagination-scroll">
+                        <table style="width: 100%" cellspacing="0" cellpadding="1">
+                            <tr>
+                                <td>
+                                    <div id="pagination">
+                                        &nbsp;</div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

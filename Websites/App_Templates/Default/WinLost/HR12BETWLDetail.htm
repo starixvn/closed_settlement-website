@@ -1,0 +1,49 @@
+<!--header-->
+<table style="display:none;" height="25" border="0"  width="1000px">
+		<tbody>
+			<tr>
+				<td colspan="2"  class="calign fontbold" style=" background-color:#ffabab;">
+          <span id="spBettype"> {bettype}</span> Daily Report: <span id="spWLDate">{wldate}</span>          
+        </td>				
+			</tr>
+		</tbody>
+	</table>
+<!--/header-->
+	<table id="tplcontent" border="1" class="settlement " style="margin-top:9px; width="1000px">
+		<tbody>  
+      <!--title-->
+        <!--content-title-->
+      <!--/title-->
+			<tr align="center">	
+        <td id="tdRace_C" rowspan="2"  width="68" align="center" valign="center"><b>Race</b></td>
+        <td id="tdCurrency_C" rowspan="2" width="100"><b>Currency</b></td>
+        <td colspan="3"><b>Turnover</b></td>
+        <td rowspan="2" width="100"><b>Turnover Total</b></td>
+        <td id="tdCommEarned_C" colspan="2" width="100"><b>Commission Earned</b></td>                
+        <td id="tdDividend_C" colspan="2" width="100"><b>Dividend Won</b></td>        
+      </tr>
+			<tr align="center">
+        <td id="tdWin_C" width="100"><b>Win</b></td>
+        <td id="tdPlace_C" width="100"><b>Place</b></td>
+        <td id="tdWinPlace_C" width="100"><b>Win Place</b></td>
+        <td id="tdBase_C" width="100"><b>Base(RM)</b></td>
+        <td id="tdOriginal_C" width="100"><b>Original Amt</b></td>
+        <td id="tdBase_C_dividon" width="100"><b>Base(RM)</b></td>
+        <td id="tdOriginal_C_dividon" width="100"><b>Original Amt</b></td>
+			</tr>
+			<!--content-->{MeetingName}
+      <tr class="{report-row}">
+				<!--Race--><td  rowspan="{rowspan}"  class="c fontbold">{RaceName}</td><!--/Race-->
+				<td classs="c">{Currency}</td>
+				<td class="r">{Win}</td>
+				<td class="r">{Plase}</td>
+				<td class="r">{WinPlace}</td>
+                <td class="r">{TotalTO}</td>
+				<td class="r">{CommEarned}</td>
+				<td class="r">{commEarned_origin}</td>				
+				<td class="r">{DividendWon}</td>
+				<td class="r">{DividendWonOrginal}</td>				
+			</tr>
+			<!--/content-->			
+		</tbody>
+	</table>

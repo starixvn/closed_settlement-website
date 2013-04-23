@@ -1,0 +1,125 @@
+﻿<table border="0" align="left" style="width: 240px;" cellspacing="1">
+    <tr>
+        <td class="dot_left" style="width: 100px;">
+            Total Cash
+        </td>
+        <td class="dot_right b" style="width: 140px;">
+            {CurTotalCashBalCur}<span class="{colorTotalCash}" onclick="DoTransfer(this, '{TotalCashBal}');">{TotalCashBalCur}</span>
+        </td>
+    </tr>
+    <tr>
+        <td class="dot_left">
+            Yesterday Cash
+        </td>
+        <td class="dot_right b">
+            {CurYesterdayCashBalCur} <span class="{colorYesterdayCash}" onclick="DoTransfer(this, '{YesterdayCashBal}', true);">
+                {YesterdayCashBalCur}</span>
+        </td>
+    </tr>
+    <tr class="{hiddenbalance}">
+        <td class="dot_left">
+            Total Balance
+        </td>
+        <td class="dot_right b">
+            {CurTotalBalCur}<span class="{colorTotalBal}" onclick="DoTransfer(this, '{TotalBal}');">{TotalBalCur}</span>
+        </td>
+    </tr>
+    <tr class="{hiddenbalance}">
+        <td class="dot_left">
+            Yesterday Balance
+        </td>
+        <td class="dot_right b">
+            {CurYesterdayBalCur}<span class="{colorYesterdayBal}" onclick="DoTransfer(this, '{YesterdayBal}', true);">
+                {YesterdayBalCur}</span>
+        </td>
+    </tr>
+    <tr>
+        <td class="dot_left">
+            Outstanding
+        </td>
+        <td class="dot_right b">
+            {AccOutstandTxn}
+        </td>
+    </tr>
+    <tr>
+        <td class="dot_left">
+            Given Credit
+        </td>
+        <td class="dot_right b">
+            <!--AllowGiven-->
+            {GivenCreditCurrency}
+            <input style="display: none; width: 100px; margin-top: -3px;" class="form_top" maxlength="14"
+                onkeypress="return checkKeyPress(event);" onblur="ChangeGivenCredit();" type="text"
+                id="txtGivenCredit" name="txtGivenCredit" />
+            <span id="spanGivenCredit" name="spanGivenCredit" class="{givencreditClass}" onclick="{givencreditOnclick}">
+                {GivenCredit}</span>
+            <!--/AllowGiven-->
+            <!--NotAllowGiven-->
+            {GivenCreditCurrency} <span id="span1" name="spanGivenCredit" class="{givencreditClass}">
+                {GivenCredit}</span>
+            <!--/NotAllowGiven-->
+        </td>
+    </tr>
+    <!--betcredit-->
+    <tr>
+        <td class="dot_left">
+            Bet Credit
+        </td>
+        <td class="dot_right b">
+            {BetCredit}
+        </td>
+    </tr>
+    <!--/betcredit-->
+    <tr>
+        <td class="dot_left">
+            Virtual Rate(%)
+        </td>
+        <td class="dot_right b">
+            <span class="{virtualRateClass}" onclick="{virtualRateOnclick}">{VirtualRate}</span>
+            <a href="#" onclick="ViewVRHistory('{CustId}','{Username}')">&nbsp;[History]</a>
+        </td>
+    </tr>
+    <tr class="{hiddenbalance}">
+        <td class="dot_left">
+            {AgentType} Outstanding
+        </td>
+        <td class="dot_right b">
+            {OutstandTxn}
+        </td>
+    </tr>
+    <tr class="{hiddenbalance}">
+        <td class="dot_left">
+            <span>Used Credit [<a href="javascript: parent.gotoURL('centerFr','UsedCreditDetail.aspx');">Detail</a>]</span>
+        </td>
+        <td class="dot_right b">
+            <span>{UsedCredit}</span>
+        </td>
+    </tr>
+    <tr class="{masterhidden}">
+        <td class="dot_left" onmouseover="Tip('Total Master Active/Closed/Suspended', BALLOON, true, ABOVE, true, OFFSETX, -100, PADDING, 8)"
+            onmouseout="UnTip()">
+            Masters A/C/S&nbsp;
+        </td>
+        <td class="dot_right b">
+            {masteractive}&nbsp;
+        </td>
+    </tr>
+    <tr class="{agenthidden}">
+        <td class="dot_left" onmouseover="Tip('Total Agent Active/Closed/Suspended', BALLOON, true, ABOVE, true, OFFSETX, -100, PADDING, 8)"
+            onmouseout="UnTip()">
+            Agents A/C/S&nbsp;
+        </td>
+        <td class="dot_right b">
+            {agentavtive}&nbsp;
+        </td>
+    </tr>
+    <tr class="{memberhidden}">
+        <td class="dot_left" onmouseover="Tip('Total Member Active/Closed/Suspended', BALLOON, true, ABOVE, true, OFFSETX, -100, PADDING, 8)"
+            onmouseout="UnTip()">
+            Members A/C/S&nbsp;
+        </td>
+        <td class="dot_right b">
+            {memberactive}&nbsp;
+        </td>
+    </tr>
+</table>

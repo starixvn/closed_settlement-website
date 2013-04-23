@@ -1,0 +1,25 @@
+
+<script type="text/javascript">
+  function reset_date(){
+  var dayNoReset={DayNoReset};
+  var fdateId='{Fdate}';
+  var tdateId='{Tdate}';
+  var td = new Date();
+  var fd=new Date(td.getTime()-dayNoReset*24*60*60*1000);
+  document.getElementById(fdateId).value=(fd.getMonth()+1)+"/"+fd.getDate()+"/"+fd.getFullYear();
+  document.getElementById(tdateId).value=(td.getMonth()+1)+"/"+td.getDate()+"/"+td.getFullYear();
+  }
+</script>
+
+<table>
+	<tr>
+	  <td>From date:</td>
+	  <td>{FromDateCal}</td>
+	  <td>To:</td>
+	  <td>{ToDateCal}</td>
+	  <td>
+		  <input class="btn"  type="submit" value="Submit" style="margin-left:2px;" />
+		  <input class="btn" type="button" value="Reset" style="margin-left:2px;" onclick="javascript:reset_date();" />
+	</td>
+	</tr>
+</table>

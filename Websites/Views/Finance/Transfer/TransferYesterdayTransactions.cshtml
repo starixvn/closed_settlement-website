@@ -1,0 +1,48 @@
+﻿<div>
+    <table class="tbllayout" style="width: 500px;" cellspacing="1">
+        <tr>
+            <td class="l b">
+                From:
+                <td class="l">
+                    <span class="b">@Request.QueryString["fromCustName"]</span>
+                </td>
+            </td>
+            <td class="l b">
+                To:
+            </td>
+            <td class="l">
+                <input class="txt" type="text" id="touser" name="touser" size="10" />
+            </td>
+        </tr>
+        <tr>
+            <td class="l b">
+                Ex.Rate:
+            </td>
+            <td class="l">
+                <input class="txt" type="text" id="exrate" name="exrate" size="5" value="1.00" onkeypress="return CheckDecNumber(event);" />
+            </td>
+            <td class="l b">
+                Amount:
+            </td>
+            <td class="l">
+                <input type="text" class="txt" id="txtamount" name="txtamount" size="10" value="0.00"
+                    style="text-align: right" onkeypress="return CheckDecNumber_Ne(event);" />
+            </td>
+        </tr>
+        <tr>
+            <td class="l b" colspan="2">
+                Description:
+            </td>
+            <td class="l" colspan="2">
+                <input type="text" class="txt" id="remark" name="remark" size="50" style="width: 265px;" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4" class="c">
+                <input class="btn" type="button" id="transfer" value="Transfer" onclick="javascript:validateValue();"></input>
+            </td>
+        </tr>
+    </table>
+</div>
+<iframe id="frmTransfer" width="350px" scrolling="no" height="110px" frameborder="0"
+    style="border: 0px none; margin-top: 5px"></iframe>

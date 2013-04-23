@@ -1,0 +1,240 @@
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <!--editsuper-->
+  <tr>
+    <td colspan="2">{accinfo}</td>
+  </tr>
+  <!--/editsuper-->
+	<!--limit-copyAll-->
+	<!--none-Mult-->
+	<tr class="{none-copy}">	
+		<td colspan="2" class="l">
+      <!--chk-copyall-->
+			<input type='checkbox'  {disabled-copyall} id="chkCopyAll" onclick="CopyAllPT(this);" name="chkCopyAll"></input>
+      <!--/chk-copyall-->
+      <b><span class="mp1 b" style="cursor:pointer;" onclick="obj('chkCopyAll').click();">{copy-all-text}</span></b>
+		</td>
+	</tr>
+	<!--/none-Mult-->
+	<!--/limit-copyAll-->
+	<tr>		
+		<td class="l" colspan="2" id="linkSoccer" >
+			<table class="tblPTheader" cellspacing="0" cellpadding="0" border="0" style="margin-right:20px;">
+                <tr style="cursor: pointer;" id="btntop">
+                    <td class="btnleft" onclick="MenuItemClick('divsoccer', 'panelSoccer');" />
+                    <td align="left" width="80" id="menusoccer" onclick="MenuItemClick('divsoccer','panelSoccer');" class="btnmiddle">
+                        <span class="mp">{soccer-text}</span>
+                    </td>
+                    <td width="20" id="tdsoccer" class="md2 r" onclick="MenuItemClick('divsoccer','panelSoccer');" class="r" />
+                    <td class="btnright" />
+                </tr>
+            </table>  
+            <span class="errMsg" id="error1"></span>
+		</td>
+	</tr>	
+	<tr id="panelSoccer">
+		<td colspan="2" style="width:950px; margin-top:2px;">{soccerPT}</td>
+	</tr>
+	<!--limit-CopyBasket-->
+	<!--none-Mult-->
+	<tr class="{none-copy}">	
+		<td colspan="2" class="l">
+			<div style="height:6px;"></div>
+			<input type='checkbox' id="chkCopyBasket" {disabled-copybasketall} onclick="CopyBasketPT(this);" name="chkCopyBasket"></input>
+			<b><span class="mp1 b" style="cursor:pointer;" onclick="obj('chkCopyBasket').click();" >{copy-basket-text}</span></b>
+		</td>
+	</tr>
+	<!--/none-Mult-->
+	<!--/limit-CopyBasket-->
+	<tr>		
+		<td class="l" id="linkBasket" colspan="2" >
+			<table class="tblPTheader" cellspacing="0" cellpadding="0" border="0">
+                <tr style="cursor: pointer;" id="btntop">
+                    <td class="btnleft" onclick="MenuItemClick('divbasket', 'panelBasket');" />
+                    <td align="left" width="80" id="menubasket" onclick="MenuItemClick('divbasket', 'panelBasket');" class="btnmiddle">
+                        <span class="mp">{basket-text}</span>
+                    </td>
+                    <td width="20" id="tdbasket" class="md3 r" onclick="MenuItemClick('divbasket', 'panelBasket');" class="r" />
+                    <td class="btnright" />
+                </tr>
+            </table> 
+            <span class="errMsg" id="error2"></span> 
+		</td>
+	
+	</tr>
+	<tr class="hidden" id="panelBasket">
+		<td colspan="2" >{basketPT}</td>
+	</tr>
+	<tr>
+		<td class="l" id="linkFootball" colspan="2" >
+			<table class="tblPTheader" cellspacing="0" cellpadding="0" border="0">
+                <tr style="cursor: pointer;" id="btntop">
+                    <td class="btnleft" onclick="MenuItemClick('divfootball','panelFootball');" />
+                    <td align="left" width="80" id="Td2" onclick="MenuItemClick('divfootball','panelFootball');" class="btnmiddle">
+                        <span class="mp">{football-text}</span>
+                    </td>
+                    <td width="20" id="tdfootball" class="md3 r" onclick="MenuItemClick('divfootball','panelFootball');" class="r" />
+                    <td class="btnright" />
+                </tr>
+            </table>  
+            <span class="errMsg" id="error3"></span>
+		</td>
+		
+	</tr>
+	<tr class="hidden" id="panelFootball">
+		<td colspan="2" >{footballPT}</td>
+	</tr>
+	<tr>
+		<td class="l" id="linkTennis" colspan="2" >
+			<table class="tblPTheader" cellspacing="0" cellpadding="0" border="0">
+                <tr style="cursor: pointer;" id="btntop">
+                    <td class="btnleft" onclick="MenuItemClick('divtennis','panelTennis');" />
+                    <td align="left" width="80" id="menutennis" onclick="MenuItemClick('divtennis','panelTennis');" class="btnmiddle">
+                        <span class="mp">{tennis-text}</span>
+                    </td>
+                    <td width="20" id="tdtennis" class="md3 r" onclick="MenuItemClick('divtennis','panelTennis');" class="r" />
+                    <td class="btnright" />
+                </tr>
+            </table>
+            <span class="errMsg" id="error5"></span>  
+		</td>
+	</tr>
+	<tr class="hidden" id="panelTennis">
+		<td colspan="2" >{tennisPT}</td>
+	</tr>
+	<tr>
+		<td class="l" id="linkBaseball" colspan="2" >
+			<table class="tblPTheader" cellspacing="0" cellpadding="0" border="0">
+                <tr style="cursor: pointer;" id="btntop">
+                    <td class="btnleft" onclick="MenuItemClick('divbaseball','panelBaseball');" />
+                    <td align="left" width="80" id="menubaseball" onclick="MenuItemClick('divbaseball','panelBaseball');" class="btnmiddle">
+                        <span class="mp">{baseball-text}</span>
+                    </td>
+                    <td width="20" id="tdbaseball" class="md3 r" onclick="MenuItemClick('divbaseball','panelBaseball');" class="r" />
+                    <td class="btnright" />
+                </tr>
+            </table>  
+            <span class="errMsg" id="error8"></span>
+		</td>
+	
+	</tr>
+	<tr class="hidden" id="panelBaseball">
+		<td colspan="2">{baseballPT}</td>
+	</tr>
+	<tr>
+		<td class="l" id="linkGolf" colspan="2">
+			<table class="tblPTheader" cellspacing="0" cellpadding="0" border="0">
+                <tr style="cursor: pointer;" id="btntop">
+                    <td class="btnleft" onclick="MenuItemClick('divgolf','panelGolf');" />
+                    <td align="left" width="80" id="menugolf" onclick="MenuItemClick('divgolf','panelGolf');" class="btnmiddle">
+                        <span class="mp">{golf-text}</span>
+                    </td>
+                    <td width="20" id="tdgolf" class="md3 r" onclick="MenuItemClick('divgolf','panelGolf');" class="r" />
+                    <td class="btnright" />
+                </tr>
+            </table>
+            <span class="errMsg" id="error10"></span>
+		</td>
+	</tr>
+	<tr class="hidden" id="panelGolf">
+		<td colspan="2">{golfPT}</td>
+	</tr>
+	<tr>
+		<td class="l" id="linkMoto" colspan="2">
+			<table class="tblPTheader" cellspacing="0" cellpadding="0" border="0">
+                <tr style="cursor: pointer;" id="btntop">
+                    <td class="btnleft" onclick="MenuItemClick('divmoto','panelMoto');" />
+                    <td align="left" width="80" id="menumoto" onclick="MenuItemClick('divmoto','panelMoto');" class="btnmiddle">
+                        <span class="mp">{moto-text}</span>
+                    </td>
+                    <td width="20" id="tdmoto" class="md3 r" onclick="MenuItemClick('divmoto','panelMoto');" class="r" />
+                    <td class="btnright" />
+                </tr>
+            </table>
+            <span class="errMsg" id="error11"></span>
+		</td>
+	</tr>
+	<tr class="hidden" id="panelMoto">
+		<td colspan="2">{motoPT}</td>
+	</tr>
+	<!--none-edit-Min-->
+	<!--/none-edit-Min-->
+	
+	
+
+	<tr>
+		<td class="l" id="linkOther" colspan="2">
+			<table class="tblPTheader" cellspacing="0" cellpadding="0" border="0">
+                <tr style="cursor: pointer;" id="btntop">
+                    <td class="btnleft" onclick="MenuItemClick('divothers','panelOtherSports');" />
+                    <td align="left" width="80" id="menuothers" onclick="MenuItemClick('divothers','panelOtherSports');" class="btnmiddle">
+                        <span class="mp">{othersports-text}</span>
+                    </td>
+                    <td width="20" id="tdothers" class="md3 r" onclick="MenuItemClick('divothers','panelOtherSports');" class="r" />
+                    <td class="btnright" />
+                </tr>
+            </table>
+            <span class="errMsg" id="error99"></span>
+		</td>
+	</tr>
+	<tr class="hidden" id="panelOtherSports">
+		<td colspan="2">{otherPT}</td>
+	</tr>
+	
+	<!--MixedSports-->
+		<tr>
+		<td class="l" id="linkMixedSports" colspan="2">
+			<table class="tblPTheader" cellspacing="0" cellpadding="0" border="0">
+                <tr style="cursor: pointer;" id="Tr2">
+                    <td class="btnleft" onclick="MenuItemClick('divmixedsports','panelMixedSports');" />
+                    <td align="left" width="120px" style="padding-right:2px" id="menumixedsports" onclick="MenuItemClick('divmixedsports','panelMixedSports');" class="btnmiddle">
+                        <span class="mp">{MixedSports-text}</span>
+                    </td>
+                    <td width="20" id="tdmixedsports" class="md3 r" onclick="MenuItemClick('divmixedsports','panelMixedSports');" class="r" />
+                    <td class="btnright" />
+                </tr>
+            </table>
+            <span class="errMsg" id="error99_9"></span>
+		</td>
+	</tr>
+	<tr class="hidden" id="panelMixedSports">
+		<td colspan="2">{MixedSportsPT}</td>
+	</tr>
+	<!--/MixedSports-->
+	
+    <!--NumberGame-->
+	<tr>
+		<td class="l" id="linkNumberGame" colspan="2">
+			<table class="tblPTheader" cellspacing="0" cellpadding="0" border="0">
+                <tr style="cursor: pointer;" id="Tr1">
+                    <td class="btnleft" onclick="MenuItemClick('divnumbergame','panelNumberGame');" />
+                    <td align="left" width="80" id="menunumbergame" onclick="MenuItemClick('divnumbergame','panelNumberGame');" class="btnmiddle">
+                        <span class="mp">{NumberGame-text}</span>
+                    </td>
+                    <td width="20" id="tdnumbergame" class="md3 r" onclick="MenuItemClick('divnumbergame','panelNumberGame');" class="r" />
+                    <td class="btnright" />
+                </tr>
+            </table>
+            <span class="errMsg" id="error161"></span>
+		</td>
+	</tr>
+	<tr id="panelNumberGame">
+		<td colspan="2">{NumberGamePT}</td>
+	</tr>
+	<!--/NumberGame-->
+
+	<tr >		
+		<td class="l">
+			<table cellpadding="0" border="0" cellspacing="0">				
+				<tr>
+				<td class="custBtn1"></td>
+				<td class="custBtn2 center" style="cursor:pointer;" id="{add-id}" onclick="BtnOnClick();">{add-text}</td>
+				</tr>
+			</table>
+		</td>
+		<td style="text-align:left">
+		</td>
+	</tr>
+</table>
+<!--casino-->
+<input id="hidSynCS" name="hidSynCS" type="hidden" value="{hidSynCS}" />
+<!--/casino-->

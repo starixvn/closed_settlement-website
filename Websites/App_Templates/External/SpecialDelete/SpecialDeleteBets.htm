@@ -1,0 +1,113 @@
+{MatchInfo} <br>
+
+<!--Bets-->
+<table id="griddelete" cellspacing="1px" class="tbllayout c content">
+
+<!--NormalBets-->
+    <!--HeaderNomalBets-->
+    <thead>
+    <tr class="title c" id="trHeader" style="height:25px">
+	  <th width="20">NO</th>
+	  <th width="70">ACCOUNT</th> 
+      <th width="70">REFNO</th>
+      <th width="70">BET TYPE</th>
+      <th width="30">BET</th>
+      <th width="50">ODDS</th>
+      <th width="70">AMOUNT</th>
+      <th width='60'>CURRENCY</th>
+      <th width="40">HDP</th>
+      <th width="125">TRANS.TIME</th>
+      <th width="70" colspan="2">SCORE</th>
+      <th width="70">CREATOR</th>
+      <th width="70">STATUS</th>
+      <!--DeleteOption-->
+      <th width="70">OPTION</th>
+      <!--/DeleteOption--> 
+    </tr>  
+    </thead>
+    <!--/HeaderNomalBets-->
+<tbody>
+
+    <!--ContentNomalBets-->
+    <tr class="c h22" bgcolor="white" >
+	    <td>{no}</td>
+	    <td>{Account}</td>
+	    <td>{Refno}</td>
+	    <td>{Bettype}</td>
+	    <td>{Bet}</td>
+      <td style="text-align:right"><b><font color="blue">{Odds}</font>
+        <div class='bl-leaguename'>{OddsType}</div>
+      </b></td>
+	    <td style="text-align:right"><b><font color='red'>{Amount}</font></b></td>
+      <td>{currency}</td>
+	    <td>{Hdp}</td>
+	    <td>{TransTime}</td>
+	    <td>{HomeScore}</td>
+	    <td>{AwayScore}</td>
+	    <td>{Creator}</td>
+	    <td>{Status}</td>
+	    <!--DeleteOption-->
+	    <td></td>
+	    <!--/DeleteOption-->  
+
+    </tr> 
+    <!--/ContentNomalBets-->
+<!--/NormalBets-->
+
+<!--SpecialBets-->
+    <!--HeaderSpecialBets-->
+    <tr class="c" style="color:#fff;text-align:center;" >
+	    <td colspan="14" style="background:{SB_Color};"><b>{SB_Name}</b></td>
+	    <td style="background:{SB_Color};"> 
+            <select id="ddl{SB}" name="ddl{SB}" onchange="ddl_change('{SB}');">
+		      <option value="0" selected="selected">Not Delete</option> 
+              <option value="1"> Delete All</option>
+              <option value="2"> Optional</option>
+            </select>   
+      </td>
+    </tr>
+    <!--/HeaderSpecialBets-->
+
+    <!--ContentSpecialBets-->
+    <tr class="c h22" bgcolor="white">
+	    <td>{no}</td>
+	    <td>{Account}</td>
+	    <td>{Refno}</td>
+	    <td>{Bettype}</td>
+	    <td>{Bet}</td>
+      <td style="text-align:right"><b><font color="blue">{Odds}</font>
+        <div class='bl-leaguename'>{OddsType}</div>
+      </b></td>
+	    <td style="text-align:right"><b><font color='red'>{Amount}</font></b></td>
+      <td>{currency}</td>
+	    <td>{Hdp}</td>
+	    <td>{TransTime}</td>
+	    <td>{HomeScore}</td>
+	    <td>{AwayScore}</td>
+	    <td>{Creator}</td> 
+	    <td>{Status}</td>
+      <td > 
+        <input type='checkbox' id='{Refno}-{SB}-{IsDelete}' name='chk{SB}' disabled></input>
+      </td>
+    </tr>
+    <!--/ContentSpecialBets-->
+<!--/SpecialBets-->
+
+<!--no-info-->
+<tr bgcolor="white">
+  <td colspan='15' align='center'>There is no information available</td>
+</tr>
+<!--/no-info-->
+
+<tr id="trFooter" style="display:none"><td colspan="14"></td></tr>
+</tbody>
+</table>
+<!--/Bets-->
+
+<input type="hidden" id="rowcount" name="rowcount" value="{rowcount}"></input>
+<input type="hidden" id="rowcountDeposit" name="rowcountDeposit" value="{rowcountDeposit}"></input>
+<input type="hidden" id="rowcountBD" name="rowcountBD" value="{rowcountBD}"></input>
+<input type="hidden" id="rowcount12EU" name="rowcount12EU" value="{rowcount12EU}"></input>
+<input type="hidden" id="rowcountMHC" name="rowcountMHC" value="{rowcountMHC}"></input>
+
+{DeleteBetsForm} 

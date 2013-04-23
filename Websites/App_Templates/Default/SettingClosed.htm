@@ -1,0 +1,13 @@
+﻿<span class="{classname}" id="ClosedStatus" name="ClosedStatus" onclick="{onclick}" onmouseout="{onmouseout}" onmouseover="{onmouseover}"></span>
+<!--ClearCredit-->
+<div class="overlay" id="ClosedStatusoverlay">
+</div>
+<div id="ClosedStatusPop" class="Popupsetting">
+	<b>Close {UserName}</b><br/>
+	<input type="checkbox" name="chkClosed" checked="true" disabled />Closed
+	<input type="checkbox"  name="chkClearCredit" id="chkClearCredit" />Clear All Credit
+	<br/>
+	<input type="button" value="Update" onclick="{btonclick}" class="btn" /><input type="button" onclick="HideClosedPop('ClosedStatusPop');" value="Cancel" class="btn" />
+</div>
+<!--/ClearCredit-->
+<input type="hidden" id="isallowupdatecredit" name="isallowupdatecredit" value="{isallowupdatecredit}" />

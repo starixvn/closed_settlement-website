@@ -1,0 +1,150 @@
+﻿.title
+{
+    font-family: Tahoma;
+    font-size:8pt;   
+    font-weight:bold;
+    text-transform:uppercase; 
+}
+
+a:hover {
+    color:#C16605;
+    cursor:pointer;
+    text-decoration:underline;
+}
+
+a {
+    color:#0000FF;
+    text-decoration:none;
+}
+
+.lalign {
+    text-align:left;
+}
+
+.ralign {
+    text-align:right;
+}
+
+.table {
+    border-collapse:collapse;
+    font-family:Tahoma,Verdana;
+    font-size:8pt;
+}
+
+td {
+height:20px;
+}
+
+.btn 
+{
+	outline: none;
+	text-align:center;
+	font-size:11px;
+	font-weight:bold;
+	color:#000;
+	background:url(../images/buttons/bg_btn.jpg) repeat-x left;
+	cursor:pointer;
+	border:1px solid #7C98A4;
+	margin:0px 0px 0px 2px;
+	vertical-align:middle;
+	height:18px;
+	padding:0 4px;
+}
+.btn:hover
+{
+	color:#195687;
+}
+select {
+    font-family:Tahoma,Verdana;
+    font-size:8pt;
+}
+
+input {
+    font-family:Tahoma,Verdana;
+    font-size:8pt;
+}
+
+.error-message {
+    color:#FF0000;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.report {
+    border-collapse:collapse;
+    border-color:#CDCDCD;
+    border-style:solid;
+}
+
+.content {
+    font-family:Tahoma,Verdana;
+    font-size:8pt;
+}
+
+.report-header {
+	background:transparent url(../../App_Themes/SteelBlue/images/report-header-bg.gif) repeat-x scroll left top;
+	color:#FFFFFF;
+	font-weight:bold;
+	line-height:18px;
+	text-align:center;
+}
+ .header
+ {
+ BACKGROUND: url(../../App_Themes/SteelBlue/Images/report-header-bg.gif) repeat-x top left;
+ color:#fff;
+ font-weight:bold;
+ text-align:center;
+ line-height:18px;
+ } 
+.calign {
+    line-height:18px;
+    text-align:center;
+}
+
+.h3 {
+    font-size:11px;
+    font-weight:bold;
+    line-height:18px;
+}
+
+.bg{ background-color:#999999;}
+
+.h22
+{
+    height:22px;    
+}
+
+.info-message
+{
+	text-transform:uppercase;
+	color:#00f;
+	list-style-type:none;
+	font-size: 12px;
+}
+
+
+.report-row-even {
+    -moz-background-clip:border;
+    -moz-background-inline-policy:continuous;
+    -moz-background-origin:padding;
+    background:#DFEAFF none repeat scroll 0 0;
+}
+
+.match {
+    background-color:#F0F1F3;
+    border:1px solid #452903;
+    border-collapse:collapse;
+    font-size:8pt;
+}
+
+/*css for datagridview*/
+.datagrid-header-inner table tr td{background:url(../images/bg-nav-top-left.jpg) repeat-x;color:#fff;font-weight:bold;}
+.datagrid-header td.datagrid-header-over{background:url(../images/bg-nav-top-left.jpg) repeat-x !important;}
+.datagrid-body-inner table {background-color:#fff;}
+.datagrid-body table{background-color:#fff;}
+.datagrid-body td{font-size:11px !important;} 
+.datagrid-header td{font-size:11px !important;}
+.pagination-page-list{width:50px !important;}
+.pagination-num {width:40px !important; padding:2px 0;}
+
+.red{col;o}

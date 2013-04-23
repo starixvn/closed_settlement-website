@@ -1,0 +1,110 @@
+﻿<div class="maincontent">
+    <table cellspacing="0px" cellpadding="0px" border="0" class="maincontent_header">
+        <tbody>
+            <tr>
+                <td class="maincontent_headerL">
+                </td>
+                <td class="maincontent_headerC">
+                    Punter Analysis
+                </td>
+                <td class="maincontent_headerR">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <!--Header-->
+    <div id="dvMainHeader" style="padding-bottom: 5px; padding-top: 5px; min-width: 500px;
+        border: 1px solid Silver;" id="header_main">
+        <table border="0">
+            <tr>
+                <td>
+                    Search by
+                </td>
+                <td colspan="3" class="l">
+                    <input type="radio" id="rdAllUser" name="rdSearch" checked="checked" value="1" onclick="SearchBy();" />
+                    All Users
+                    <input type="radio" id="rdByUser" name="rdSearch" value="0" onclick="SearchBy();" />
+                    User
+                    <input type="radio" id="rdByLeague" name="rdSearch" value="2" onclick="SearchBy();" />
+                    League
+                </td>
+            </tr>
+            <tr id="trToprows">
+                <td>
+                    Top rows
+                </td>
+                <td colspan="3" class="l">
+                    <input maxlength="4" style="width: 30px" type="text" id="txtTopRow" name="txtTopRow"
+                        value="10" onkeypress="return CheckDecNumber(event);" />
+                </td>
+            </tr>
+            <tr id="trOrderby">
+                <td>
+                    Order by
+                </td>
+                <td colspan="3" align="left">
+                    <select id="ddlOrderby" name="ddlOrderby" style="width: 80px" onclick="OrderBy();">
+                        <option value="1">Winlost</option>
+                        <option value="2">Turnover</option>
+                        <option value="3">Margin</option>
+                    </select>
+                    &nbsp;
+                    <select id="ddlOrderType" name="ddlOrderType">
+                        <option value="1">Descending</option>
+                        <option value="0">Ascending</option>
+                    </select>
+                </td>
+            </tr>
+            <tr id="trUserName" style="display: none">
+                <td>
+                    UserName
+                </td>
+                <td colspan="3" class="l">
+                    <input type="text" id="txtUserName" name="txtUserName" maxlength="50" style="width: 120px" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Period type
+                </td>
+                <td colspan="3" class="l">
+                    <input type="radio" id="rdMonthly" name="rd" checked="checked" onclick="DisplayPeriodType();"
+                        value="month" />
+                    Monthly
+                    <input type="radio" id="rdAnnual" name="rd" onclick="DisplayPeriodType();" value="annal" />
+                    Annual
+                    <input type="radio" id="rdLongRange" name="rd" onclick="DisplayPeriodType();" value="longrange" />
+                    Long Range
+                </td>
+            </tr>
+        </table>
+        <div id="dvCarlendarType">
+            {Carlendar}
+        </div>
+        <div id="dvLeague" style="display: none">
+            <table>
+                <tr>
+                    <td>
+                        Sport
+                    </td>
+                    <td>
+                        <span id="spSports"></span>
+                    </td>
+                    <td>
+                        League
+                    </td>
+                    <td>
+                        <span id="spLeagues"></span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <!--/Header-->
+    <div style="width:600px">
+        <div class="bg_table">
+            <div id="sData">
+            </div>
+        </div>
+    </div>
+</div>

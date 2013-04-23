@@ -1,0 +1,23 @@
+﻿<input type="hidden" id="hiddenCurrentDate" value="@DateTime.Now.ToString("MM/dd/yyyy")" />
+<div class="maincontent_box" style="margin-top:2px; width:100%">
+   
+    <div style="margin-top: 4px">
+        <label style="color: Black; margin-left: 18px">
+            Date</label>
+        <label style="margin-left: 14px">
+            From</label>
+        <input id="tbxFromDate" type="text" readonly="readonly" class="txtdate" style="margin-left: 2px" />
+        <label style="margin-left: 14px">
+            To</label>
+        <input id="tbxToDate" type="text" readonly="readonly" class="txtdate" style="margin-left: 2px" />
+    </div>
+    <div style="margin-top: 4px">
+        <label style="color: Black; margin-left: 18px">
+            Filter by</label>
+        <input type="radio" id="rdoGroup" name="filterby" style="margin-left: 14px" checked="checked" /><label>Group</label>
+        <input type="radio" id="rdoAdmin" name="filterby" /><label>Admin</label>
+        <input type="text" id="txtFilterBy" style="margin-left: 2px" />
+    </div>
+    <input style="margin-left: 8px; margin-top: 4px" type="button" class="btn" id="btnSearch"
+        value="Search" />
+</div>

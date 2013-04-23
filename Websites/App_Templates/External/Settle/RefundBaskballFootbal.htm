@@ -1,0 +1,80 @@
+<div>
+  <form id="frmBill">
+    <table class="tblcollapse">
+      <tr class="title1 c">
+        <td colspan="10">LEAGUE:&nbsp;{leaguename}</td>
+      </tr>
+      <tr class="title">
+        <td width="80" >CODE</td>
+        <td width="90" >KICK-OFF TIME</td>
+        <td width="220" >TEAM</td>
+        <td width="22" >1Q</td>
+        <td width="22" >2Q</td>
+        <td width="22" >3Q</td>
+        <td width="22" >4Q</td>
+        <td width="22" >OT</td>
+        <td width="36" >HT Score</td>
+        <td width="36" >Final Score</td>
+      </tr>
+      <tr class="c"> 
+        <td rowspan="2">{matchcode}</td>
+        <td rowspan="2">{date}</td>
+        <td class="fontbold l hteam">{hometeam}</td>
+        <td>
+          {value1qHome}
+        </td>
+        <td>
+          {value2qHome}
+        </td>
+        <td>
+          {value3qHome}
+        </td>
+        <td>
+          {value4qHome}
+        </td>
+        <td>
+          {valueOTHome}
+        </td>
+        <td>
+          {homeHScore}
+        </td>
+        <td>
+          {homeFScore}
+        </td>
+      </tr>
+      <tr class="c">
+        <td class="fontbold l ateam">{awayteam}</td>
+        <td>
+          {value1qAway}
+        </td>
+        <td>
+          {value2qAway}
+        </td>
+        <td>
+          {value3qAway}
+        </td>
+        <td>
+          {value4qAway}
+        </td>
+        <td>
+          {valueOTAway}
+        </td>
+        <td>
+          {awayHScore}
+        </td>
+        <td>
+          {awayFScore}
+        </td>
+      </tr>
+    </table>
+
+  {Refund}
+  
+    <span style="padding-left: 30px;" id="infoMsg" class="info-message"></span>
+    <span style="padding-left: 30px; visibility: hidden;" id="errMsg" class="error-message">Please input valid result!</span>
+    <input type="hidden" id="sParams" name="sParams" value="{params}" />
+    <input type="hidden" id="sAction" name="sAction" />
+    <input type="hidden" id="IsHTOnly" name="IsHTOnly"  value="{IsHTOnly}" />
+    <input type="hidden" id="isSD" name="isSD" value="0" />
+  </form>
+</div>

@@ -1,0 +1,82 @@
+﻿{#template MAIN}
+    {#include SuperOnMember root= $T}
+{#/template MAIN}
+ 
+{#template SuperOnMember}
+<table class="tblcollapse" style="width:600px; margin:6px 0px;" id="tblminigame">
+    <!--PT-->
+    <tr class="title">
+        <td colspan="2">
+            Position Taking
+        </td>
+    </tr>
+    <!--Super PT -->
+    <tr>
+        <td class="l">
+            Super Position Taking
+        </td>
+        <td>
+            <select {#if $T.isautopt== "True"}disabled="disabled"{#else}{#/if} id="listSPT252" max="{roundNumber($T.maxspt,2)}" min="{roundNumber($T.minspt,2)}" name="listSPT252" class="select-pt" >
+                <option value="{roundNumber($T.spt,2)}" selected="true">{roundNumber($T.spt,2)}</option>
+            </select>
+            <input type="button" onclick="ReducePT('listSPT252',1)" class="btn-dec1" id="chkR1SPre252"  
+                 {#if $T.isautopt== "True"}Disabled{#else}{#/if}>
+            <input type="button" onclick="IncreasePT('listSPT252',1)" class="btn-inc1" id="chkI1SPre252"   
+                 {#if $T.isautopt== "True"}Disabled{#else}{#/if}>
+            <input type="button" onclick="ReducePT('listSPT252',10)" class="btn-dec10" id="chkR10SPre252" 
+                 {#if $T.isautopt== "True"}Disabled{#else}{#/if}>
+            <input type="button" onclick="IncreasePT('listSPT252',10)" class="btn-inc10" id="chkI10SPre252" 
+                 {#if $T.isautopt== "True"}Disabled{#else}{#/if}>
+        </td>
+    </tr>
+    <!--/Super PT -->
+    <!--Auto Super PT -->
+    <tr>
+        <td class="l" rowspan="2">
+                        Super Auto Position Taking</td>
+        <td>
+            <input type="checkbox" onclick="CheckIsAuto(this);"  {#if $T.isautopt== "True"}checked="checked"{#else}{#/if} name="chkAutoMiniGame" id="chkAutoMiniGame">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <select {#if $T.isautopt== "True"}&nbsp;{#else}Disabled="Disabled"{#/if} id="listSAutoPT252" max="{roundNumber($T.maxsautopt,2)}" min="{roundNumber($T.minspt,2)}" name="listSAutoPT252" class="select-pt" >
+                <option value="{roundNumber($T.sautopt,2)}" selected="true">{roundNumber($T.sautopt,2)}</option>
+            </select>
+            <input type="button" onclick="ReducePT('listSAutoPT252',1)" class="btn-dec1" id="chkR1SAutoPre252"  
+                 {#if $T.isautopt== "True"}{#else}Disabled{#/if}>
+            <input type="button" onclick="IncreasePT('listSAutoPT252',1)" class="btn-inc1" id="chkI1SAutoPre252" 
+                 {#if $T.isautopt== "True"}{#else}Disabled{#/if}>
+            <input type="button" onclick="ReducePT('listSAutoPT252',10)" class="btn-dec10"  id="chkR10SAutoPre252"
+                 {#if $T.isautopt== "True"}{#else}Disabled{#/if}>
+            <input type="button" onclick="IncreasePT('listSAutoPT252',10)" class="btn-inc10" id="chkI10SAutoPre252" 
+                 {#if $T.isautopt== "True"}{#else}Disabled{#/if}>
+        </td>
+    </tr>
+    <!--/Auto Super PT-->
+     <!--Master PT -->
+    <tr>
+        <td class="l w130">
+            Master Position Taking</td>
+        <td>{roundNumber($T.mpt,2)}</td>
+    </tr>
+    <!--/Master PT -->
+    <!--Agent PT -->
+    <tr>
+        <td class="l w130">
+            Agent Position Taking
+        </td>
+        <td>{roundNumber($T.apt,2)}</td>
+    </tr>
+    <!--/Agent PT -->
+</table>
+<table cellspacing="0" cellpadding="0" border="0">
+    <tr>
+        <td class="custBtn1">
+        </td>
+        <td onclick="updateSuperOnMember();" class="custBtn2 hand" id="Td1">
+            Submit
+        </td>
+    </tr>
+</table>
+{#/template SuperOnMember} 

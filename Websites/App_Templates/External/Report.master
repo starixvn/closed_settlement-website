@@ -1,0 +1,37 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Report.master.cs" Inherits="App_Templates_Report" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <title><%=Resources.Language.lblAccountingSystem%></title>
+    <asp:ContentPlaceHolder ID="ReportHeader" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+    <div id="ReportDiv" align="left">
+        <table id="ReportTitleTbl" border="0" cellspacing="0" cellpadding="0">
+            <tr class="report-title">
+                <td class="report-title-left"></td>
+                <td class="report-title-middle">
+                    <asp:ContentPlaceHolder ID="ReportTitle"  runat="server"></asp:ContentPlaceHolder>                                        
+                </td>                
+                <td class="report-title-right">                    
+                </td>                
+            </tr>
+        </table>
+        <asp:contentplaceholder id="ReportContent" runat="server">
+        </asp:contentplaceholder>
+        <table id="ReportFooterTbl" border="0" width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+                <td class="report-footer-left"></td>
+                <td class="report-footer-middle">
+                    <asp:ContentPlaceHolder ID="ReportFooter" runat="server">
+                    
+                    </asp:ContentPlaceHolder>
+                </td>
+                <td class="report-footer-right"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

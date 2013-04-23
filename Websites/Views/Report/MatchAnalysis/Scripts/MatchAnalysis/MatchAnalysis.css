@@ -1,0 +1,66 @@
+﻿
+
+.divCheckbox 
+{
+    border-bottom-left-radius: 2px;
+    border-bottom-top-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-bottom-bottom-radius: 2px;
+    margin-top:2px;
+    margin-bottom:2px;
+}
+
+.divCheckbox:hover 
+{
+    cursor: pointer;
+    background-color: #F7CF7A;
+}
+.divCheckbox-select 
+{
+    background-color: #F7CF7A;
+}
+.divCheckbox-normal
+{
+    background-color: #EEEEEE;
+}
+
+.ui-div-corner-all 
+{
+    border-bottom-left-radius: 2px;
+    border-bottom-top-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-bottom-bottom-radius: 2px;
+}
+
+
+.divReportBy 
+{  
+}
+.betTypeCkb
+{
+}
+
+.betTypeCkb:hover 
+{
+    cursor: pointer;
+}
+
+.custom-ui-widget-header 
+{
+    background-color: #CDDEF3;
+    font-weight: bold; 
+}
+
+.custom-multi-select-rtUL
+{ 
+  background-position: 0 1.273em;
+  background-repeat: repeat-y;
+  margin: 0;
+  padding-left: 20px;
+  -moz-user-select: -moz-none;
+}
+
+.ui-datepicker-week-end 
+{
+    color: #FF0000 !important;
+}

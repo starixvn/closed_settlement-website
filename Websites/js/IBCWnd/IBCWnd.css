@@ -1,0 +1,99 @@
+﻿.IBCWnd 
+{
+	border: solid 1px #d4d0c8;
+	background-color: #eeeeee;
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+	border-collapse: collapse;
+}
+
+.IBCWndMask
+{
+	border: dashed 2px #999999;
+	background-color: transparent;
+	z-index: 1002;
+	border-style: dotted;
+	cursor: move;
+}
+
+.IBCWndTitleMask
+{
+	border: solid 0px #ff;
+	background-color: #727272; 
+	height: 20px;
+	cursor: move;
+	position: absolute;
+	top: 0px; left: 0px;
+	filter: alpha(opacity=01);
+	-moz-opacity: .01;
+	-khtml-opacity: 0.01;
+	opacity: 0.01;	
+	z-index: 1002;
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+	border-style: none;
+}
+
+.IBCWndTable
+{
+	table-layout: fixed;
+	cursor: default;
+	width: 100%;
+	border: solid 1px #000000;
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;	
+}
+
+.IBCWndTitle
+{
+	background: #000000 url('bg_popup.jpg');
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 12px;
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+	-moz-user-select: no;
+}
+
+.IBCWndTitleText
+{
+	text-align: left;
+	cursor: pointer;
+}
+
+.IBCWndTitleButton
+{
+	text-align: right;
+	width: 20px;
+	height: 20px;
+	overflow: hidden;
+	padding-right: 1px;
+}
+
+.IBCWndCloseButton
+{
+	width: 15px;
+	height: 15px;
+	background-image: url('x.jpg');
+	line-height: 0px;
+	display: block;
+	cursor: pointer;
+}
+
+.IBCWndNoPadding
+{
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+}
+.clssBackground
+{
+    background-color:#f8b72b;
+}
+.class1
+{
+	border: solid 0px #000000;
+}
+.class2
+{
+	background: #000000 url(bg_popup.jpg);
+}

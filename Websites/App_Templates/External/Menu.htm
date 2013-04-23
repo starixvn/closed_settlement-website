@@ -1,0 +1,88 @@
+<style type="text/css">
+  .sm-menu
+  {
+  width: 105px;
+  }
+  .lg-menu
+  {
+  width: 120px;
+  }
+</style>
+<form id="frUser" name="frUser" target="mainFr" action="CustSearch.aspx" method="post">
+  <table cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td class="wrapper_1_1">&nbsp; </td>
+    <td class="user_info_bg" style="padding-top: 3px;width:110px;">
+        <table cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td style="width:80px;">
+              <input name="username" class="user" id="username" style="width:80px;" value="Enter User" type="text" onfocus="this.className = '';" onblur="this.className = 'user';" />
+            </td>
+            <td align="right">
+              <div class="refresh" id="divRefresh" onclick="CustInfo();"></div>
+            </td>
+          </tr>
+        </table>
+    </td>
+    <td class="user_info_bg_right"></td>
+    <td class="bg_nav1">
+      <div style="padding-top: 5px;padding-left: 5px;">
+        <table cellpadding="0" cellspacing="0" class="menu" width="920">
+          <tr>
+            <td onclick="ShowSub('', this, 'menu-focus', 'SpecialDelete/Index.aspx', '');">
+              <img src="{path}/images/icspecdelete.png" width="17" height="17" align="absmiddle" border="0" /> {SpecialDel}
+            </td>
+            <td onclick="ShowSub('', this, 'menu-focus','ExRate/ExchangeRate.aspx', '');">
+              <img src="{path}/images/iccurrency.png" width="17" height="17" align="absmiddle" border="0" /> Ex. Rate
+            </td>
+            <td onclick="ShowSub(subSettle, this, 'menu-focus', 'Settle/Index.aspx', 'bg_nav2');">
+              <img src="{path}/images/icsettlement.png" width="17" height="17" align="absmiddle" border="0" /> {Settlement}
+            </td>
+            <td onclick="ShowSub('', this, 'menu-focus', 'Report/Index.aspx', '');">
+              <img src="{path}/images/icreport.png" width="17" height="17" align="absmiddle" border="0" /> {Report}
+            </td>
+            <td onclick="ShowSub('', this, 'menu-focus', 'Statement/AccAllStatement.aspx?repno=5', '');">
+              <img src="{path}/images/icstatement.png" width="17" height="17" align="absmiddle" border="0" /> {Statement}
+            </td>
+            <td onclick="ShowSub('', this, 'menu-focus', 'Report/CompBalance.aspx', '');">
+              <img src="{path}/images/icbalance.png" width="17" height="17" align="absmiddle" border="0" /> {Balance}
+            </td>
+            <td onclick="ShowSub(subUser, this, 'menu-focus', 'UserControl/Default.aspx', 'bg_nav2');">
+              <img src="{path}/images/icuser.png" width="17" height="17" align="absmiddle" border="0" /> User
+            </td>
+            <td onclick="ShowSub(subCustomer, this, 'menu-focus', 'Customer/default.aspx', 'bg_nav2');">
+              <img src="{path}/images/iccustomer.png" width="17" height="17" align="absmiddle" border="0" /> Customer
+            </td>
+            <td onclick="ShowSub('', this, 'menu-focus', 'DailyTransaction.aspx', '');">
+              <img src="{path}/images/icdaily.png" width="17" height="17" align="absmiddle" border="0" /> Daily Txn.
+            </td>
+            <td >
+              <span>
+                <img src="{path}/images/iclogout.png" width="17" height="17" align="absmiddle" border="0" /> Log-out
+              </span> | <span>{Username}</span>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </td>
+    <td class="wrapper_1_2">
+      &nbsp;
+    </td>
+  </tr>
+</table>
+<table cellpadding="0" cellspacing="0" width="100%">
+  <tr class="bg_nav2" id="trSub">
+    <td class="wrapper_2_1">
+      &nbsp;
+    </td>
+    <td colspan="3">
+      <div id="divSubM" style="padding:0px;min-width: 1100px;">
+        &nbsp;
+      </div>
+    </td>
+    <td class="wrapper_2_2">
+      &nbsp;
+    </td>
+  </tr>
+</table>
+</form>

@@ -1,0 +1,99 @@
+<table width="75%" class="tblSporttypePT">	
+	<tr>
+		<td>
+			<div id="divUpdInfo99" name="divUpdInfo99">
+				<table width="100%" class="tbllayout" border="1">
+					<tr class="title">					
+						<td colspan="3">
+							{bet-text}
+						</td>
+					</tr>
+					<tr>
+						<td class="r">{minbet-text}&nbsp;
+							<input type="text" maxlength="14" id="txtMinbet99" name="txtMinbet99" value="{minbet99-val}"></input>					
+							<span class="{mbMin}">&gt;=<span id="txtMinbet_Min99">{minbet-min-99}</span></span>
+						</td>
+						<td class="r">{maxbet-text}&nbsp;
+							<input type="text" maxlength="14" id="txtMaxbet99" name="txtMaxbet99" value="{maxbet99-val}"></input>					
+							<span class="{mbMax}">&lt;=<span id="txtMaxbet_Max99">{maxbet-max-99}</span></span>
+						</td>
+						<td class="r">{maxpermatch-text}&nbsp;
+							<input type="text" maxlength="14" id="txtMaxPerMatch99" name="txtMaxPerMatch99" value="{maxpermatch99-val}"></input>					
+							<span class="{mpmMin}">&gt;=<span id="txtMaxPerMatch_Min99">{maxpermatch-min-99}</span> and</span>
+							<span class="{mpmMax}">&lt;=<span id="txtMaxPerMatch_Max99">{maxpermatch-max-99}</span></span>
+						</td>
+					</tr>				
+				</table>
+			</div>
+		</td>
+	</tr>	
+	<tr>
+		<td>
+			<div id="divUpdPT99" name="divUpdPT99">
+				<table border="1" width="100%" class="tbllayout">
+					<tr class="title">
+						<td colspan="{title-col}">{pt-text}</td>
+					</tr>
+					<!--none-edit-->
+					<tr style="display:none">
+						<td class="r">{auto-super-text}</td>
+						<td colspan="5" class="l">
+							<input type="checkbox" id="chkAuto99" onclick="CheckAutoPreset(this,arrDdl99);" name="chkAuto99"></input>
+						</td>
+					</tr>
+					<!--/none-edit-->
+					<tr class="title">
+						<!--none-member--><td></td><!--/none-member-->
+						<td>{hdp-text}</td>
+						<td>{ou-text}</td>
+						<td>{oe-text}</td>
+						<td>{ml-text}</td>
+						<td></td>
+					</tr>
+					<tr>
+						<!--none-member--><td class="r">{a-presetpt-text}</td><!--/none-member-->
+						<td>{a-hdp-val}{a-hdp-btn}</td>
+						<td>{a-ou-val}</td>
+						<td>{a-oe-val}</td>
+						<td>{a-ml-val}</td>
+						<td rowspan="{copy-hdp-col}" class="l"><input type="checkbox" {chk-hdp} id="chkCopy99Hdp" name="chkCopy99Hdp" onclick="CheckCopyPT(this,arrSuper99,arrMaster99,'{chkAuto-99}');"></input>
+							{copy-hdp-text}</td>
+					</tr>
+					<!--none-member-->
+					<tr>
+						<td class="r">{p-presetpt-text}</td>
+						<td>{p-hdp-val}{p-hdp-btn}</td>
+						<td>{p-ou-val}</td>
+						<td>{p-oe-val}</td>
+						<td>{p-ml-val}</td>
+					</tr>
+					<!--/none-member-->
+					<!--auto-preset-->
+					<tr class="{hdauto}">
+						<td rowspan="2" class="r">{au-presetpt-text}</td>
+						<td>
+							<input type="checkbox" onclick="CheckAutoPreset(this)" id="chkAuto99Hdp" name="chkAuto99Hdp" {checked-Hdp}></input>
+						</td>
+						<td>
+							<input type="checkbox" onclick="CheckAutoPreset(this,'chkCopy99Hdp')" id="chkAuto99OU" name="chkAuto99OU" {checked-OU}></input>
+						</td>
+						<td>
+							<input type="checkbox" onclick="CheckAutoPreset(this,'chkCopy99Hdp')" id="chkAuto99OE" name="chkAuto99OE" {checked-OE}></input>
+						</td>
+						<td>
+							<input type="checkbox" onclick="CheckAutoPreset(this,'chkCopy99Hdp')" id="chkAuto99ML" name="chkAuto99ML" {checked-ML}></input>
+						</td>
+					</tr>
+					<tr class="{hdauto}">
+						<td>{au-hdp-val}&nbsp;{au-hdp-btn}</td>
+						<td>{au-ou-val}</td>
+						<td>{au-oe-val}</td>
+						<td>{au-ml-val}</td>
+					</tr>
+					<!--/auto-preset-->
+				</table>
+			</div>
+		</td>
+	</tr>
+</table>
+

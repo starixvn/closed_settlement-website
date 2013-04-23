@@ -1,0 +1,33 @@
+<center>
+  <div style="width:650px" class="l">
+    <span id="err" class="errMsg"></span>
+    <span id="errMsg" class="error-message"></span>
+  </div>  
+  <input type="hidden"  id="{parentId}" name="{parentId}"  value="{valueParentId}"/>
+  <input type="hidden" id="custId" name="custId" value="{cust-id}" />
+  <input type="hidden" id="isUpdateMember" name="isUpdateMember" value="0" />
+  <input type="hidden" id="memberPT" name="memberPT" value="0" />
+  <input type="hidden" id="maxMemberPT" name="maxMemberPT" value="0" />
+  <input type="hidden" id="roleId" name="roleId" value="{role-id}" />
+  <table border="1px" class="tblPT" width="650px" bordercolor="#CDCDCD">
+    <tr class="pt-bgheader b">
+      <td colspan="6" class="padd15">{add-edit-agent}</td>
+    </tr>
+    <tr>
+      <td width="16%" class="r">User Name</td>
+      <td width="16%">{username}</td>
+      <td width="16%" class="r">First Name</td>
+      <td width="16%">{firstname}</td>
+      <td width="16%" class="r">Last Name</td>
+      <td width="16%">{lastname}</td>
+    </tr>
+    <tr>
+      <td class="r">Phone</td>
+      <td>{phone}</td>
+      <td class="r">Mobile Phone</td>
+      <td>{mobile}</td>
+      <td class="r">Fax</td>
+      <td>{fax}</td>
+    </tr>
+  </table>
+</center>

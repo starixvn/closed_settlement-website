@@ -1,0 +1,287 @@
+﻿@helper GenerateCurrencyCodes(){
+    var group = Fanex.Tarus.Finance.Infrastructure.Configurations.AppSettings.CrossBaseCurrency;
+    var listCurrencyCodes = group.Split(',');
+    <option value="">[Select]</option>
+    foreach(string code in listCurrencyCodes)
+    {
+        @:<option value="@code">@code</option>
+    }
+}
+<script type="text/javascript">
+@{
+    var _crossTransferService = new Fanex.Tarus.Finance.Business.Transfer.CrossTransferService();
+    var listExchangeRate = _crossTransferService.SelectAllExchangeRate();
+    @:var arrExchangeRate = [];
+    foreach(var exchangeRate in listExchangeRate)
+    {
+        @:arrExchangeRate.push({Code: "@exchangeRate.Code", ActualRate : @exchangeRate.ActualRate, Currency : "@exchangeRate.Currency", ExchangeId : @exchangeRate.ExchangeId});
+    }
+}
+</script>
+<style type="text/css">
+    .calregion td
+    {
+        background-color: #EBEADD
+    }
+</style>
+<div style="border: 1px solid #7C98A4; width: 570px">
+    <table class="tblFinance" border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse">
+        <tbody>
+            <tr>
+                <td align="left">
+                    <div align="left" style="width: 66px; text-align: left; font-weight: bold">
+                        From User:</div>
+                </td>
+                <td align="left">
+                    <div align="left" style="width: 140px; text-align: left; position: relative">
+                        <div id="divAjaxLoaderImageFromUser2" style="display: none; width: 16px; height: 16px;
+                            position: absolute; background-image: url('../App_Themes/Images/ajax-loader.gif');
+                            right: 0px">
+                        </div>
+                        <input class="txt" type="text" id="tbxFromUser2" size="10" value="
+                        @{
+                            if (Request["fromCustName"] != null)
+                            {
+                                @Request["fromCustName"] 
+                            }
+                            else
+                            {
+                                if (!string.IsNullOrEmpty(Sunplus.Accounting.Core.Common.AppSession.CustUName))
+                                {
+                                    @Sunplus.Accounting.Core.Common.AppSession.CustUName
+                                }
+                            }
+                        }" />
+                    </div>
+                </td>
+                <td align="left">
+                    <div style="width: 30px;">
+                    </div>
+                </td>
+                <td align="left">
+                    <div align="left" style="width: 66px; text-align: left; font-weight: bold">
+                        To User:</div>
+                </td>
+                <td align="left">
+                    <div align="left" style="width: 140px; text-align: left; position: relative">
+                        <div id="divAjaxLoaderImageToUser2" style="display: none; width: 16px; height: 16px;
+                            position: absolute; background-image: url('../App_Themes/Images/ajax-loader.gif');
+                            right: 0px">
+                        </div>
+                        <input class="txt" type="text" id="tbxToUser2" name="tbxToUser" size="10" />
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td align="left">
+                    <div align="left" style="width: 66px; text-align: left;">
+                        Currency:
+                    </div>
+                </td>
+                <td>
+                    <div align="left" style="width: 140px; text-align: left">
+                        <span id="spanCurrencyFromUser2" style="font-weight: bold"></span>
+                    </div>
+                </td>
+                <td align="left">
+                    <div style="width: 30px;">
+                    </div>
+                </td>
+                <td align="left">
+                    <div align="left" style="width: 66px; text-align: left;">
+                        Currency:
+                    </div>
+                </td>
+                <td>
+                    <div align="left" style="width: 140px; text-align: left">
+                        <span id="spanCurrencyToUser2" style="font-weight: bold"></span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td align="left">
+                    <div align="left" style="width: 80px; text-align: left; font-weight: bold">
+                        From Amount:
+                    </div>
+                </td>
+                <td align="left">
+                    <div align="left" style="width: 125px; text-align: left">
+                        <input class="txt" type="text" id="tbxFromAmount2" name="tbxFromAmount" style="text-align: right" />
+                    </div>
+                </td>
+                <td align="left">
+                    <div style="width: 30px;">
+                    </div>
+                </td>
+                <td align="left">
+                    <div align="left" style="width: 80px; text-align: left; font-weight: bold">
+                        To Amount:
+                    </div>
+                </td>
+                <td align="left">
+                    <div align="left" style="width: 125px; text-align: left">
+                        <input class="txt" type="text" id="tbxToAmount2" style="text-align: right" />
+                    </div>
+                </td>
+            </tr>
+            <tr id="trToUserCurrency2">
+                <td align="left">
+                    <div align="left" style="width: 80px; text-align: left;">
+                        <span>Ex.Rate (RM):</span>
+                    </div>
+                </td>
+                <td align="left">
+                    <div align="left" style="width: 125px; text-align: left">
+                        <span id="spanExRateFromUser2" style="font-weight: bold"></span>
+                    </div>
+                </td>
+                <td align="left">
+                    <div style="width: 30px;">
+                    </div>
+                </td>
+                <td align="left">
+                    <div align="left" style="width: 80px; text-align: left;">
+                        <span>Ex.Rate (RM):</span>
+                    </div>
+                </td>
+                <td align="left">
+                    <div align="left" style="width: 125px; text-align: left">
+                        <span id="spanExRateToUser2" style="font-weight: bold"></span>
+                    </div>
+                </td>
+            </tr>
+            <tr class="calregion">
+                <td align="left">
+                    <div align="left" style="width: 100px; text-align: left; font-weight: bold">
+                        Currency Codes:
+                    </div>
+                </td>
+                <td>
+                    <div align="left">
+                        <select id="selectCurrencyCodeFromUser2" style="width: 120px" disabled="disabled">
+                            @GenerateCurrencyCodes()
+                        </select>
+                    </div>
+                </td>
+                <td align="left">
+                    <div style="width: 30px;">
+                    </div>
+                </td>
+                <td align="left">
+                    <div align="left" style="width: 100px; text-align: left; font-weight: bold">
+                        Currency Codes:
+                    </div>
+                </td>
+                <td>
+                    <div align="left">
+                        <select id="selectCurrencyCodeToUser2" style="width: 120px" disabled="disabled">
+                            @GenerateCurrencyCodes()
+                        </select>
+                    </div>
+                </td>
+            </tr>
+            <tr class="calregion">
+                <td align="left">
+                    <div align="left" style="width: 80px; text-align: left;">
+                        <span>Ex.Rate (RM):</span>
+                    </div>
+                </td>
+                <td align="left">
+                    <div align="left" style="width: 125px; text-align: left">
+                        <span id="spanExRateFromUser2Left" style="font-weight: bold"></span>
+                    </div>
+                </td>
+                <td align="left">
+                    <div style="width: 30px;">
+                    </div>
+                </td>
+                <td align="left">
+                    <div align="left" style="width: 80px; text-align: left;">
+                        <span>Ex.Rate (RM):</span>
+                    </div>
+                </td>
+                <td align="left">
+                    <div align="left" style="width: 125px; text-align: left">
+                        <span id="spanExRateToUser2Right" style="font-weight: bold"></span>
+                    </div>
+                </td>
+            </tr>
+            <tr class="calregion">
+                <td align="left">
+                    <div align="left" style="width: 80px; text-align: left; font-weight: bold">
+                        Amount:
+                    </div>
+                </td>
+                <td align="left">
+                    <div align="left" style="width: 145px; text-align: left">
+                        <input class="txt" type="text" id="tbxFromAmountConvert2" style="text-align: right; background-color:#DDDDDD" disabled="disabled" />
+                        <div id="imgCalculateLeft" title="Calculate" style="float:right;width:19px; height:18px; background-image:url(@Url.Content("~/Views/Finance/Transfer/img/icon_check.png"));background-position:19px 0px">&nbsp;</div>
+                    </div>
+                </td>
+                <td align="left">
+                    <div style="width: 30px;">
+                    </div>
+                </td>
+                <td align="left">
+                    <div align="left" style="width: 80px; text-align: left; font-weight: bold">
+                        Amount:
+                    </div>
+                </td>
+                <td align="left">
+                    <div align="left" style="width: 145px; text-align: left">
+                        <input class="txt" type="text" id="tbxToAmountConvert2" style="text-align: right; background-color:#DDDDDD" disabled="disabled" />
+                        <div id="imgCalculateRight" title="Calculate" style="float:right;width:19px; height:18px; background-image:url(@Url.Content("~/Views/Finance/Transfer/img/icon_check.png"));background-position:19px 0px">&nbsp;</div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="5">
+                    <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse">
+                        <tr>
+                            <td align="left">
+                                <div align="left" style="width: 76px; text-align: left;">
+                                    Forex account:
+                                </div>
+                            </td>
+                            <td align="left">
+                                <div align="left" style="width: 140px; text-align: left">
+                                    <select id="selectForexAccount2" style="width: 120px; margin-left: 34px">
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr id="trSystemTransExRate2" style="display: none">
+                <td colspan="5">
+                    <div>
+                        <span>System Ex.Rate </span>(<span id="spanPerCurrencySystem2"></span>)<span>: </span>
+                        <span id="spanExRateSystem2" style="font-weight: bold"></span><span style="padding-left: 50px">
+                            Trans Ex.Rate</span> (<span id="spanPerCurrencyTrans2"></span>)<span>: </span>
+                        <span id="spanExRateTrans2" style="font-weight: bold"></span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td align="left">
+                    <div align="left" style="width: 66px; text-align: left;">
+                        Remark:
+                    </div>
+                </td>
+                <td colspan="4" align="left">
+                    <div align="left">
+                        <input class="txt" type="text" id="tbxDescription2" style="width: 400px" maxlength="200" />
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td align="center" colspan="5">
+                    <div>
+                        <input class="btn" type="button" id="btnTransfer2" value="Transfer" />
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

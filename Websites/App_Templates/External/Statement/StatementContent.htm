@@ -1,0 +1,24 @@
+﻿<table class="tbllayout"  style="width:700px;" cellspacing="1">
+<!--ReportHeader-->
+<tr class="title">
+    <td style="text-align:center;">Date</td> 
+    <td style="width:300px;text-align:center;">Remark</td>
+    <td style="text-align:center;">Total</td>
+    <td style="text-align:center;">Accumulated Total</td>
+    <!--Creator-->
+    <td style="text-align:center;">Creator</td>
+    <!--/Creator-->
+</tr>
+<!--/ReportHeader-->
+<!--ReportContent-->
+<tr class="{odd_even}">
+    <td class="c"><span {link}>{Date}</span></td>
+    <td class="l"><b>{Remark}</b></td>
+    <td {cssNegative} style="text-align:right;">{Total}</td>
+    <td {OkClass} style="text-align:right;">{Total2}</td>
+    <!--CreatorVL-->
+    <td class="c">{Creator}</td>
+    <!--/CreatorVL-->
+</tr>
+<!--/ReportContent-->
+</table>

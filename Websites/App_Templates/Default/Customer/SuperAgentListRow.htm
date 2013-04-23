@@ -1,0 +1,56 @@
+<tr class="{bgcolor} {odd_even}">
+  <td class="c">{no}</td>
+  <td class="c">
+    <!--statusEnabled-->
+    <span class="canchange" onclick="OpenEdit('{uplineid}','{custid}','{username}');">{status}</span>
+    <!--/statusEnabled-->
+    <!--statusDisabled-->
+        {status}
+    <!--/statusDisabled-->
+  </td>
+  <td class="c {PosHidden}"><span class="canchange" onclick="OpenEditMinMaxPT('{custid}','{type}');">Edit</span></td>
+  <td class="c"><span class="canchange" onclick="OpenEditCustInfo('{custid}','{type}');">Edit</span></td>
+  <!--horseracing-edit-->
+  <td class="c">
+	<span class="{linkHR}" onclick="OpenEditHR('{custid}', '{username}', '{roleid}', '{parentid}')">{lblEditHR}</span>
+  </td>
+  <!--/horseracing-edit-->
+  <!--casino-edit-->
+  <td class="c">
+	<span class="{linkCS}" {onclickCS}>{lblEditCS}</span>
+  </td>
+  <!--/casino-edit-->
+  <!--finance-edit-->
+  <td class="c">
+    <span class="{linkFI}" onclick="OpenEditFI('{custid}', '{parentid}', '{roleid}')">{lblEditFI}</span>
+  </td>
+  <!--/finance-edit-->
+  <td class="c {PosHidden}"><span class="canchange" onclick="OpenEditMaxEx('{custid}','{username}',{exval},'{type}')">{maxEx}</span></td>  
+  <td class="c">
+    <!--virRate-->
+    <span class="canchange" onclick="OpenEditVirtualExRate('{custid}','{username}','{type}')">{virExrate}</span>
+    <!--/virRate-->
+  </td>  
+  <td class="c">{username}</td>
+  <!--nickname-->
+  <td class="c">{nickname}</td>
+  <!--/nickname-->
+  <td class="c" style="word-wrap: break-word;" >{firstname}</td>
+  <td class="c" style="word-wrap: break-word;">{lastname}</td>
+  <td class="c {PosHidden}"><a href="{link}" target="_self">View</a></td>
+  <td class="c">{groupa}</td>
+  <td class="c">{groupb}</td>
+  <td class="c">{groupc}</td>
+  <td class="c">{groupd}</td>
+  <!--com1X2-->
+  <td class="c">{1X2}</td>
+  <!--/com1X2-->
+  <!--Ocom-->
+  <td class="c">{othercom}</td>
+  <!--/Ocom-->
+  <td class="c" style="word-wrap: break-word;"><span class='canchange' onclick="ViewIP('{loginip}')">{loginip}</span></td>
+	<!--noneSuper-->
+	<td class="c"><span class="canchange" onclick="OpenEditTransferTime('{custid}',{isAgent});">Edit</span></td>
+	<!--/noneSuper-->
+  <td class="c"><span class="canchange" onclick="OpenChangePwd('{custid}','{username}');">Reset</span></td>
+</tr>

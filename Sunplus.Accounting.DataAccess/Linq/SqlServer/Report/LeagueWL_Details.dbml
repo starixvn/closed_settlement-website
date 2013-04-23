@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Database Name="bodb02" Class="LeagueWL_DetailsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=10.20.20.214;Initial Catalog=bodb02;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="bodb02ConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.Acc_Rpt_LeagueWL_Details" Method="Acc_Rpt_LeagueWL_Details">
+    <Parameter Name="winlostdate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="leagueid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="sporttype" Type="System.Int32" DbType="Int" />
+    <Parameter Name="bettype" Type="System.Int32" DbType="Int" />
+    <Parameter Name="liveindicator" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="IsHedge" Parameter="isHedge" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="WinLost_8RM" Parameter="winLost_8RM" Type="System.Decimal" DbType="Money" Direction="InOut" />
+    <ElementType Name="Acc_Rpt_LeagueWL_DetailsResult">
+      <Column Name="matchcode" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="HomeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AwayId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="liveindicator" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="BetType" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="leagueid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WinLost" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Position" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Commission" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Turnover" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="IsNeutral" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>

@@ -1,0 +1,416 @@
+﻿@using DNAide.Core
+@using Sunplus.Accounting.DataAccess.Report
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="~/App_Themes/Public/Message.css" rel="stylesheet" type="text/css" />
+    <link href="~/js/jQuery/Pager/pagination.css" rel="stylesheet" type="text/css" />
+    <link href="~/App_Themes/Report/reportgrid.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="~/App_Themes/Public/common.css" />
+    <link rel="stylesheet" type="text/css" href="~/App_Themes/Public/table.css" />
+    <link rel="stylesheet" type="text/css" href="~/App_Themes/Public/input.css" />
+    <link href="~/js/MultipleSelect/jquery.multiselect.css" rel="stylesheet" type="text/css" />
+    <link href="~/Views/Report/MatchAnalysis/Scripts/MatchAnalysis/MatchAnalysis.css"
+        rel="stylesheet" type="text/css" />
+    <link href="~/js/jQuery/UI/css/custom-theme/jquery-ui-1.8.10.custom.css" rel="stylesheet"
+        type="text/css" />
+    @*<script src="~/js/jQuery/jquery-1.7.1.min.js" type="text/javascript"></script>*@
+    <script src="~/js/jQuery/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="~/js/jQuery/Template/jquery.tmpl.js" type="text/javascript"></script>
+    @*<script src="~/js/jQuery/UI/jquery-ui-1.8.10.custom.min.js" type="text/javascript"></script>*@
+    @*<script src="~/js/jQuery/jquery-ui-1.8.14.custom.min.js" type="text/javascript"></script>*@    
+    <script src="~/js/jQuery/jquery-ui-1.8.20.custom.min.js" type="text/javascript"></script>
+    <script src="~/js/jQuery/gridscroller.js" type="text/javascript"></script>
+    <script src="~/js/jQuery/jquery.blockUI.1.33.js" type="text/javascript"></script>
+    <script src="~/js/BlockUI.js" type="text/javascript"></script>
+    <script src="~/Views/Report/MatchAnalysis/Scripts/MatchAnalysis.js?version=@Sunplus.Accounting.Core.Configurations.WebSettings.Version" type="text/javascript"></script>
+    <script src="~/Views/Report/MatchAnalysis/Scripts/MatchSelection.js?version=@Sunplus.Accounting.Core.Configurations.WebSettings.Version" type="text/javascript"></script>
+    <script src="~/Views/Report/MatchAnalysis/Scripts/MatchReportDetails.js?version=@Sunplus.Accounting.Core.Configurations.WebSettings.Version" type="text/javascript"></script>
+    <script src="~/js/MultipleSelect/jquery.multiselect.js" type="text/javascript"></script>
+    <script type="text/javascript" src="~/js/common.js"></script>
+    <script type="text/javascript">    
+    </script>
+</head>
+<body style="width: 900px;">
+    <div id="matchSelectionDiv" style="display: none;">
+        <div class="main" style="padding-left: 3px;">
+            <div class="maincontent">
+                <table border="0" cellpadding="0px" cellspacing="0px" class="maincontent_header">
+                    <tr>
+                        <td class="maincontent_headerL">
+                        </td>
+                        <td class="maincontent_headerC">
+                            Match Selection
+                        </td>
+                        <td class="maincontent_headerR">
+                        </td>
+                    </tr>
+                </table>
+                <div class="maincontent_box" style="width: 821px;">
+                    <div id="header_matchSelection">
+                        <table>
+                            <tr>
+                                <td>
+                                    <b>Date:</b>
+                                </td>
+                                <td>
+                                    <input type="text" id="txtfromdate" readonly="readonly" class="txtdate" style="width: 100px;" />
+                                </td>
+                                <td>
+                                    League:
+                                </td>
+                                <td>
+                                    <div id="ddlLeague" class="multiselect" multiple="multiple" style="padding-top: 2px;">
+                                    </div>
+                                </td>
+                                <td style="width: 100px; height: 30px;">
+                                    <input id="btnGo" name="btnGo" type="button" value="Go" class="btn" style="width: 60px;"
+                                        onclick="MatchSelectionManager.viewMatchList()" />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div>
+                    <div id="InformationMssg" style="display: none; width: 827px; word-wrap: break-word;">
+                    </div>
+                </div>
+                <div id="mainreport" style="margin-top: 2px;">
+                    <div id="matchLeagueList" class="content-warper hidden" style="width: 808px;">
+                        <div class="content-header clearfix">
+                            <div class="header-scroll">
+                                <table class="tbl-header-scroll">
+                                    <tr>
+                                        <td style="border-bottom: none 0px;">
+                                            <div style="width: 152px; text-align: center;">
+                                                Match Code</div>
+                                        </td>
+                                        <td style="border-bottom: none 0px;">
+                                            <div style="width: 649px; text-align: center;">
+                                                Event</div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="content-body clearfix">
+                            <div class="body-scroll" id="MatchDetailBody" style="height: 800px; width: 808px;">
+                                <table id="tblMatchDetail" class="tbl-body-scroll">
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="mchReportDetailsDiv" style="display: none;">
+        <div class="main" style="padding-left: 3px;">
+            <div class="maincontent" id="rptMaincontent">
+                <table border="0" cellpadding="0px" cellspacing="0px" class="maincontent_header">
+                    <tr>
+                        <td class="maincontent_headerL">
+                        </td>
+                        <td class="maincontent_headerC">
+                            Special Match Analysis (Base on RM)
+                        </td>
+                        <td class="maincontent_headerR">
+                        </td>
+                    </tr>
+                </table>
+                <div id="maincontent_boxRpt" class="maincontent_box" style="width: 940px;">
+                    <div id="header_matchReportDetails">
+                        <table>
+                            <tr>
+                                <td colspan="4" style="padding-left: 2px; width: 890px; text-align: left; overflow: hidden;">
+                                    <div>
+                                        <table class="tbl-header-scroll">
+                                            <tr>
+                                                <td style="width: 90px; height: 20px; text-align: center; background-color: #BDC7D8; border-width:1px; border-style:solid; border-color:#7C98A4;">
+                                                    <b>Event Date</b>
+                                                </td>
+                                                <td style="width: 450px; height: 20px; text-align: center; background-color: #BDC7D8; border-width:1px; border-style:solid; border-color:#7C98A4;">
+                                                    <b>League</b>
+                                                </td>
+                                                <td style="width: 350px; height: 20px; text-align: center; background-color: #BDC7D8; border-width:1px; border-style:solid; border-color:#7C98A4;">
+                                                    <b>Event</b>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 90px; height: 20px; text-align: center; border-width:1px; border-style:solid; border-color:#7C98A4;" id="hEventDate">
+                                                </td>
+                                                <td style="width: 450px; height: 20px; text-align: center; border-width:1px; border-style:solid; border-color:#7C98A4;" id="hLeague">
+                                                </td>
+                                                <td style="width: 350px; height: 20px; text-align: center; border-width:1px; border-style:solid; border-color:#7C98A4;" id="hMatch">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    @*<b id="matchReportDetailsHeader"></b>*@
+                                </td>
+                                <td style="float: right; width: 50px;">
+                                    <input type="button" onclick="MatchReportManager.exportToExcel();" value="" name="btnExport"
+                                        id="btnExport" class="btnExcel" title="Export to Excel" style="padding-left: 2px;
+                                        width: 20px;" />
+                                    <input id="btnBack" name="btnBack" type="button" value="" class="btn" style="width: 16px;
+                                        height: 16px; background-image: url('../App_Themes/Images/back.png'); background-size: 100%;
+                                        border: none; padding-left: 2px;" onclick="MatchAnalysisManager.backMatchSelection()" />
+                                </td>
+                            </tr>
+                            <tr id="mainHeaderCmmd">
+                                <td style="padding-left: 2px; padding-top: 3px; width: 150px; text-align: left;">
+                                    <div id="ddlFilterBy" class="ui-multiselect ui-multiselect-widget ui-multiselect-state-default ui-multiselect-state-hover ui-multiselect-state-active"
+                                        style="width: 150px;">
+                                        <input readonly="readonly" type="text" class="ui-multiselect-state-default" value="Filter by"
+                                            style="width: 130px;" />
+                                        <span class="ui-multiselect-icon ui-multiselect-icon-triangle-1-s" style="margin-top: 0px;">
+                                        </span>
+                                    </div>
+                                </td>
+                                <td style="padding-left: 10px; padding-top: 3px; width: 180px; text-align: left;">
+                                    <div id="ddlBetType" class="ui-multiselect ui-multiselect-widget ui-multiselect-state-default ui-multiselect-state-hover ui-multiselect-state-active"
+                                        style="width: 170px;">
+                                        <input readonly="readonly" type="text" class="ui-multiselect-state-default" value="Bet type"
+                                            style="float: left; width: 150px;" />
+                                        <span class="ui-multiselect-icon ui-multiselect-icon-triangle-1-s" style="float: right;
+                                            margin-top: 0px;"></span>
+                                    </div>
+                                </td>
+                                <td style="padding-left: 2px; width: 65px;">
+                                    <input id="btnViewReport" name="btnViewReport" type="button" value="Submit" class="btn"
+                                        style="width: 60px;" onclick="MatchReportManager.viewMatchReport()" />
+                                </td>
+                                <td style="width: 495px;">
+                                </td>
+                                <td style="float: right; width: 50px;">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div>
+                    <div id="InformationMssg_MatchRprt" style="display: none; width: 946px; word-wrap: break-word;">
+                    </div>
+                </div>
+                <div style="margin-top: 6px;">
+                    <div id="matchAnalysis" class="content-warper hidden" style="width: 904px;">
+                        <div class="content-header clearfix">
+                            <div class="header-scroll">
+                                <table class="tbl-header-scroll" id="tblHeader">
+                                    <tr>
+                                        <td style="border-bottom: none 0px;">
+                                            <div class="col100 c" id="ttlreportType">
+                                            </div>
+                                        </td>
+                                        <td style="border-bottom: none 0px;">
+                                            <div class="col120 c">
+                                                Member Turnover</div>
+                                        </td>
+                                        <td style="border-bottom: none 0px;">
+                                            <div class="col100 c">
+                                                Member Winloss</div>
+                                        </td>
+                                        <td style="border-bottom: none 0px;">
+                                            <div class="col100 c">
+                                                Bet Count</div>
+                                        </td>
+                                        <td style="border-bottom: none 0px;">
+                                            <div class="col100 c">
+                                                House Turnover</div>
+                                        </td>
+                                        <td style="border-bottom: none 0px;">
+                                            <div class="col100 c">
+                                                House Winloss</div>
+                                        </td>
+                                        <td style="border-bottom: none 0px;">
+                                            <div class="col100 c">
+                                                SMA Turnover</div>
+                                        </td>
+                                        <td style="border-bottom: none 0px;">
+                                            <div class="col100 c">
+                                                SMA Winloss</div>
+                                        </td>
+                                        <td style="border-bottom: none 0px;" id="colCurrency" class="hidden">
+                                            <div class="col80 c">
+                                                Currency</div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="content-body clearfix">
+                            <div class="body-scroll">
+                                <table id="tblContent" class="tbl-body-scroll">
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="content-footer clearfix" id="reportFooter">
+                            <div class="footer-scroll">
+                                <table class="tbl-footer-scroll" id="tblFooter">
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <iframe id="frm" width="0" height="0" frameborder="0" style="display: none"></iframe>
+                <div id="filterByPopup" style="left: 10px; top: 106px; position: absolute; width: 150px;
+                    background-color: #EEEEEE; display: none;" class="ui-multiselect-options RadTreeView RadTreeView_Office2010Silver ui-multiselect-shadow ui-multiselect-widget ui-multiselect-widget-content ui-multiselect-corner-all">
+                    <div style="padding-left: 2px;">
+                        <div>
+                            <div id="reportByHeader" style="background-color: #CCCCCC; font-weight: bold; padding-left: 5px;"
+                                class="ui-div-corner-all">
+                                Report by
+                            </div>
+                            <div id="Currency" class="divCheckbox" onclick="filterManagement.changReportBySelection(this)">
+                                <div style="text-align: left; margin-left: 20px;">
+                                    Currency
+                                </div>
+                            </div>
+                            <div id="BetType" class="divCheckbox" onclick="filterManagement.changReportBySelection(this)">
+                                <div style="text-align: left; margin-left: 20px;">
+                                    Bet type
+                                </div>
+                            </div>
+                            <div id="Super" class="divCheckbox" onclick="filterManagement.changReportBySelection(this)">
+                                <div style="text-align: left; margin-left: 20px;">
+                                    Super
+                                </div>
+                            </div>
+                            <div id="Member" class="divCheckbox" onclick="filterManagement.changReportBySelection(this)">
+                                <div style="text-align: left; margin-left: 20px;">
+                                    Member
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div id="statusHeader" style="background-color: #CCCCCC; font-weight: bold; padding-left: 5px;"
+                                class="ui-div-corner-all">
+                                Status
+                            </div>
+                            <div id="StatusAll" class="divCheckbox" onclick="filterManagement.allStatusCheck()">
+                                <div style="text-align: left; margin-left: 20px;">
+                                    All
+                                </div>
+                            </div>
+                            <div id="StatusWin" class="divCheckbox" onclick="filterManagement.winStatusCheck()">
+                                <div id="" style="text-align: left; margin-left: 20px;">
+                                    Won
+                                </div>
+                            </div>
+                            <div id="StatusLose" class="divCheckbox" onclick="filterManagement.loseStatusCheck()">
+                                <div id="" style="text-align: left; margin-left: 20px;">
+                                    Lose
+                                </div>
+                            </div>
+                            <div id="StatusDraw" class="divCheckbox" onclick="filterManagement.drawStatusCheck()">
+                                <div id="" style="text-align: left; margin-left: 20px;">
+                                    Draw
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div id="liveStatusHeader" style="background-color: #CCCCCC; font-weight: bold; padding-left: 5px;"
+                                class="ui-div-corner-all">
+                                Live Status
+                            </div>
+                            <div id="LiveStatusAll" class="divCheckbox" onclick="filterManagement.changLiveStatusBySelection(this)">
+                                <div style="text-align: left; margin-left: 20px;">
+                                    All
+                                </div>
+                            </div>
+                            <div id="LiveStatusLive" class="divCheckbox" onclick="filterManagement.changLiveStatusBySelection(this)">
+                                <div id="" style="text-align: left; margin-left: 20px;">
+                                    Live
+                                </div>
+                            </div>
+                            <div id="LiveStatusNoneLive" class="divCheckbox" onclick="filterManagement.changLiveStatusBySelection(this)">
+                                <div id="" style="text-align: left; margin-left: 20px;">
+                                    Non-live
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="betTypesPopup" style="left: 176px; top: 102px; position: absolute; width: 300px;
+                    background-color: #EEEEEE; display: none;" class="ui-multiselect-options RadTreeView RadTreeView_Office2010Silver ui-multiselect-shadow ui-multiselect-widget ui-multiselect-widget-content ui-multiselect-corner-all">
+                    <div style="padding-left: 2px;">
+                        <table>
+                            <tr id="trBettype" style="display:none;">
+                                <td colspan="2">
+                                    <div>
+                                        <input type="checkbox" value="All bet types" id="cbAllBetType" checked="checked"
+                                            class="betTypeCkb" />
+                                        <label for="cbAllBetType" style="margin-top: -6px;">
+                                            All bet types</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr id="trNoBettype" style="display:none;">
+                                <td colspan="2">
+                                    <div>                                     
+                                        <label style="margin-top: -6px; padding-left: 2px;">
+                                           <b>No bettype found.</b></label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                        <table id="tblBetTypeDetail">
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @{
+        if (Request["IsExport"] != null && Request["IsExport"] == "1")
+        {
+            var param = new Fanex.Tarus.Entities.Report.MatchAnalysisParam();
+            param.EventDate = CastAide.AsString(Request["EventDate"]);
+            param.MatchId = CastAide.AsInt32(Request["MatchId"]);
+            param.MatchCode = CastAide.AsString(Request["MatchCode"]);
+            param.Liveindicator = CastAide.AsInt32(Request["Liveindicator"]);
+            param.Bettypes = CastAide.AsString(Request["Bettypes"]);
+            param.MoveBetsDay = CastAide.AsString(Request["MoveBetsDay"]);
+            param.BalanceUpDay = CastAide.AsString(Request["BalanceUpDay"]);
+            param.StatusId = CastAide.AsInt32(Request["StatusId"]);
+            param.ReportType = CastAide.AsInt32(Request["ReportType"]);
+            param.LeagueId = CastAide.AsInt32(Request["LeagueId"]);
+            param.HomeId = CastAide.AsInt32(Request["HomeId"]);
+            param.AwayId = CastAide.AsInt32(Request["AwayId"]);
+            param.SportTypeId = CastAide.AsInt32(Request["SportTypeId"]);
+            param.ShowTime = CastAide.AsString(Request["ShowTime"]);
+
+            new Fanex.Tarus.Web.Controllers.Report.MatchAnalysisController().ExportReportToExcel(param);
+
+        }
+    }
+    @{int isAllowRead = Sunplus.Accounting.Business.Security.Permissions.HasPermission(Sunplus.Accounting.Core.Common.Enumerations.Functions.Reports.SpecialMatchAnalysis) ? 1 : 0;}
+    @{int isAllowHost = Sunplus.Accounting.Business.Security.Permissions.HasHostPermission(Sunplus.Accounting.Core.Common.Enumerations.Functions.Reports.SpecialMatchAnalysis) ? 1 : 0;}
+    @{int numberGameSportId = Sunplus.Accounting.Core.Common.Constants.Sport.NumberGame;}
+    @{int liveCasinoSportId = Sunplus.Accounting.Core.Common.Constants.Sport.LiveCasino;}
+    @{string numberGamePrefix = Sunplus.Accounting.Core.Configurations.SpecialMatchAnalysisSection.Instance.DisplayText["NumberGamePrefix"].Value;}
+    @{string liveCasinoPrefix = Sunplus.Accounting.Core.Configurations.SpecialMatchAnalysisSection.Instance.DisplayText["LiveCasinoPrefix"].Value;}
+    <script type="text/javascript">
+        window.rootUrl = '@Url.Content("~")';
+        var today = '@DateTime.Now';
+        var currentDate =  '@DateTime.Now.Day';
+        var currentMonth =  '@DateTime.Now.Month';
+        var currentYear =  '@DateTime.Now.Year';
+
+        var moveBetDay = '@ReportUtils.BalanceUp.MoveBetsDay.ToShortDateString()';
+        var balanceUpDay = '@ReportUtils.BalanceUp.BalanceUpDay.ToShortDateString()';
+
+        var isAllowRead = @CastAide.AsInt32(@isAllowRead);
+        var isAllowHost = @CastAide.AsInt32(isAllowHost);
+
+        var numberGameSportId = @CastAide.AsInt32(numberGameSportId);
+        var liveCasinoSportId = @CastAide.AsInt32(liveCasinoSportId);
+
+        var numberGamePrefix = '@CastAide.AsString(numberGamePrefix)';
+        var liveCasinoPrefix = '@CastAide.AsString(liveCasinoPrefix)';
+    </script>
+</body>
+</html>

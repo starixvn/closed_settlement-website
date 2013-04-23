@@ -1,0 +1,59 @@
+<div>
+  <form id="frmBill">
+      <table class="tblcollapse">    
+        <tr class="title1 c">        
+            <td colspan="10">LEAGUE:&nbsp;{leaguename}</td>
+        </tr>
+        <tr class="title">
+          <td width="80" class="header011">CODE</td>
+          <td width="90" class="header011">KICK-OFF TIME</td>
+          <td width="220" class="header011">TEAM</td>
+          <td width="22" class="header011">1Q</td>
+          <td width="22" class="header011">2Q</td>
+          <td width="22" class="header011">3Q</td>
+          <td width="22" class="header011">4Q</td>
+          <td width="22" class="header011">OT</td>
+          <td width="36" class="header011">HT Score</td>
+          <td width="36" class="header011">Final Score</td>
+        </tr>
+        <tr >
+          <td rowspan="2">{matchcode}</td>
+          <td rowspan="2">{date}</td>
+          <td class="b l ht">{hometeam}</td>
+          <td><input type="text" id="txt1qHome" name="txt1qHome" tabindex="1" size="1" class="c txth13" value="{value1qHome}" onkeypress="return OnKP(event, this);" onkeyup="OnKUBasketball(event);"/></td>
+          <td><input type="text" id="txt2qHome" name="txt2qHome" tabindex="3" size="1" class="c txth13" value="{value2qHome}" onkeypress="return OnKP(event, this);" onkeyup="OnKUBasketball(event);"/></td> 
+          <td><input type="text" id="txt3qHome" name="txt3qHome" tabindex="5" size="1" class="c txth13" value="{value3qHome}" onkeypress="return OnKP(event, this);" onkeyup="OnKUBasketball(event);"/></td>
+          <td><input type="text" id="txt4qHome" name="txt4qHome" tabindex="7" size="1" class="c txth13" value="{value4qHome}" onkeypress="return OnKP(event, this);" onkeyup="OnKUBasketball(event);"/></td> 
+          <td><input type="text" id="txtOTHome" name="txtOTHome" tabindex="9" size="1" class="c txth13" value="{valueOTHome}" onkeypress="return OnKP(event, this);" onkeyup="OnKUBasketball(event);"/></td> 
+          <td><input type="text" id="homeH" name="homeH" size="2" class="htsc c txth13" value="{homeHScore}" disabled="disabled"/></td>
+          <td><input type="text" id="homeF" name="homeF" size="2" class="ftsc c txth13" value="{homeFScore}" disabled="disabled"/></td>                
+        </tr> 
+        <tr >      
+          <td class="b l at">{awayteam}</td>
+          <td><input type="text" id="txt1qAway" name="txt1qAway" tabindex="2" size="1" class="c txth13" value="{value1qAway}" onkeypress="return OnKP(event, this);" onkeyup="OnKUBasketball(event);"/></td>
+          <td><input type="text" id="txt2qAway" name="txt2qAway" tabindex="4" size="1" class="c txth13" value="{value2qAway}" onkeypress="return OnKP(event, this);" onkeyup="OnKUBasketball(event);"/></td> 
+          <td><input type="text" id="txt3qAway" name="txt3qAway" tabindex="6" size="1" class="c txth13" value="{value3qAway}" onkeypress="return OnKP(event, this);" onkeyup="OnKUBasketball(event);"/></td>
+          <td><input type="text" id="txt4qAway" name="txt4qAway" tabindex="8" size="1" class="c txth13" value="{value4qAway}" onkeypress="return OnKP(event, this);" onkeyup="OnKUBasketball(event);"/></td> 
+          <td><input type="text" id="txtOTAway" name="txtOTAway" tabindex="10" size="1" class="c txth13" value="{valueOTAway}" onkeypress="return OnKP(event, this);" onkeyup="OnKUBasketball(event);"/></td> 
+          <td><input type="text" id="awayH" name="awayH" size="2" class="htsc c txth13" value="{awayHScore}" disabled="disabled"/></td>
+          <td><input type="text" id="awayF" name="awayF" size="2" class="ftsc c txth13" value="{awayFScore}" disabled="disabled"/></td>                
+        </tr>      
+      </table>
+      <input type="hidden" id="sParams" name="sParams" value="{params}" />  
+      <input type="hidden" id="sAction" name="sAction" />
+      <input type="hidden" id="isSD" name="isSD" value="0" />
+  </form>  
+  <span style="float:right;">    
+    <input type="checkbox" id="scoreDirect" name="scoreDirect" value="1"  onclick="ChangeInputWay(this);"></input> Input HT Score and Final Score directly&nbsp;&nbsp;
+  </span>
+  <br />
+  <input type="button" class="btn" style="width: 100px;  " id="btnSubmit" value="{btnSubmitValue}" onclick="DoCalculate('{type}');"/>
+  <span style="padding-left: 30px; display:none;" id="errMsg" class="error-message">Please input valid score!</span>
+  <!--RefundBlock-->
+  <br />
+  <br />        
+  <input type="button" class="btn" style="width: 180px;" value="REFUND/CANCEL" onclick="DoCalculate('refund');"/>      
+  <br />
+  <input type="button" class="btn" style="width: 180px;" value="REFUND FULLTIME" onclick="DoCalculate('refundfulltime');"/>            
+  <!--/RefundBlock-->  
+</div>

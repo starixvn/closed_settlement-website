@@ -1,0 +1,36 @@
+﻿<table class="tbllayout"   cellspacing="1" id="rptMemberStatement">
+<!--ReportHeader-->
+    <thead>        
+        <tr class="title" style="text-align: center;">
+            <th>Date</th> <th style="width: 300px;">Remark</th> <th>Total</th> 
+            <th>Accumulated Total</th>
+                <!--Creator--><th>Creator</th> <!--/Creator-->
+                
+                    <th width="70px" class="verify">
+                        Verified by
+                    </th>
+                    <th width="80px" class="verify">
+                        Checked time
+                    </th>
+                    
+        </tr>
+    </thead>
+<!--/ReportHeader-->
+<!--ReportContent-->
+<tbody>
+<tr class="{odd_even}">
+    <td class="c"><span {link}>{Date}</span></td>
+    <td class="l"><b>{Remark}</b></td>
+    <td {cssNegative} style="text-align:right;">{Total}</td>
+    <td {OkClass} style="text-align:right;">{Total2}</td>
+    <!--CreatorVL-->
+    <td class="c">{Creator}</td>
+    <!--/CreatorVL-->
+     
+     <td >{verifiedby}</td>
+    <td >{checkedtime}</td>
+   
+</tr>
+</tbody>
+<!--/ReportContent-->
+</table>

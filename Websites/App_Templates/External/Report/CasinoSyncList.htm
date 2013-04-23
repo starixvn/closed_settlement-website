@@ -1,0 +1,29 @@
+﻿<!--HeaderContent-->
+<tr class="b c" style="border-color:White">
+    {FHeader_TD}
+    <td {bgColor}>Role</td>
+    <td {bgColor}>User{parentUser}</td>    
+    {LHeader_TD}
+</tr>
+<!--/HeaderContent-->
+
+<!--RowContent-->
+<tr style="border-color:White">
+    {FRow_TD}
+    <td style="background-color:#efeff9">{role}</td>
+    <td {bgDisableCas}>
+        <!--LinkSyncUpd-->        
+        <!--<a href="javascript:OpenSyncUpd({custid})">{username}</a>-->
+        <!--/LinkSyncUpd-->
+        <!--LinkSync-->
+        <a href="javascript:OpenEditCS({custid})">{username}</a>
+        <!--/LinkSync-->
+        <!--NoLinkSync-->
+        {username}
+        <!--/NoLinkSync-->
+    </td>	    
+	{LRow_TD}
+</tr>
+<!--/RowContent-->
+
+

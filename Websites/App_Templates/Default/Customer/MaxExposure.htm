@@ -1,0 +1,17 @@
+<input type="hidden"  id="matchLimit" name="matchLimit"/>
+<table class="tbllayout" style="width:220px;" cellspacing="1">
+	<tr class="title">
+		<td colspan="2">{title-user}</td>
+	</tr>
+	<tr>
+		<td class="c">Max Exposure</td>
+		<td class="">
+			<input type="text" class="txt" maxlength="6"  name="txtValue" onkeypress="return On_KeyPress(event);"  id="txtValue"  value="{ex-Val}"/>%
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" class="c">
+			<input class="btn"  type="submit" onclick="return CheckInputValue();"  name="btnSubmit" id="btnSubmit"  value="Update"/>
+		</td>
+	</tr>
+</table>

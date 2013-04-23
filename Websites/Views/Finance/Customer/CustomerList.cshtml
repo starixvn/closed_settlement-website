@@ -1,0 +1,178 @@
+﻿<div style="border: 1px solid #7C98A4; width: 490px">
+    <table class="tblFinance" border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse">
+        <tbody>
+            <tr>
+                <td align="left">
+                    <div align="left" style="width: 66px; text-align: left; font-weight: bold">
+                        From User:</div>
+                </td>
+                <td align="left">
+                    <div align="left" style="width: 140px; text-align: left; position: relative">
+                        <div id="divAjaxLoaderImageFromUser" style="display: none; width: 16px; height: 16px;
+                            position: absolute; background-image: url('../App_Themes/Images/ajax-loader.gif');
+                            right: 0px">
+                        </div>
+                        <input class="txt" type="text" id="tbxFromUser" size="10" value="
+                        @{
+                            if (Request["fromCustName"] != null)
+                            {
+                                @Request["fromCustName"] 
+                            }
+                            else
+                            {
+                                if (!string.IsNullOrEmpty(Sunplus.Accounting.Core.Common.AppSession.CustUName))
+                                {
+                                    @Sunplus.Accounting.Core.Common.AppSession.CustUName
+                                }
+                            }
+                        }" />
+                    </div>
+                </td>
+                <td align="left">
+                    <div style="width: 30px;">
+                    </div>
+                </td>
+                <td align="left">
+                    <div align="left" style="width: 80px; text-align: left; font-weight: bold">
+                        From Amount:
+                    </div>
+                </td>
+                <td align="left">
+                    <div align="left" style="width: 125px; text-align: left">
+                        <input class="txt" type="text" id="tbxFromAmount" name="tbxFromAmount" style="text-align: right" />
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td align="left">
+                    <div align="left" style="width: 66px; text-align: left;">
+                        Currency:
+                    </div>
+                </td>
+                <td>
+                    <div align="left" style="width: 140px; text-align: left">
+                        <span id="spanCurrencyFromUser" style="font-weight: bold"></span>
+                    </div>
+                </td>
+                <td align="left">
+                    <div style="width: 30px;">
+                    </div>
+                </td>
+                <td align="left">
+                    <div align="left" style="width: 80px; text-align: left;">
+                        <span>Ex.Rate (RM):</span>
+                    </div>
+                </td>
+                <td align="left">
+                    <div align="left" style="width: 125px; text-align: left">
+                        <span id="spanExRateFromUser" style="font-weight: bold"></span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td align="left">
+                    <div align="left" style="width: 66px; text-align: left; font-weight: bold">
+                        To User:</div>
+                </td>
+                <td align="left">
+                    <div align="left" style="width: 140px; text-align: left; position: relative">
+                        <div id="divAjaxLoaderImageToUser" style="display: none; width: 16px; height: 16px;
+                            position: absolute; background-image: url('../App_Themes/Images/ajax-loader.gif');
+                            right: 0px">
+                        </div>
+                        <input class="txt" type="text" id="tbxToUser" name="tbxToUser" size="10" />
+                    </div>
+                </td>
+                <td align="left">
+                    <div style="width: 30px;">
+                    </div>
+                </td>
+                <td align="left">
+                    <div align="left" style="width: 80px; text-align: left; font-weight: bold">
+                        To Amount:
+                    </div>
+                </td>
+                <td align="left">
+                    <div align="left" style="width: 125px; text-align: left">
+                        <input class="txt" type="text" id="tbxToAmount" name="tbxToAmount" style="text-align: right" />
+                    </div>
+                </td>
+            </tr>
+            <tr id="trToUserCurrency">
+                <td align="left">
+                    <div align="left" style="width: 66px; text-align: left;">
+                        Currency:
+                    </div>
+                </td>
+                <td>
+                    <div align="left" style="width: 140px; text-align: left">
+                        <span id="spanCurrencyToUser" style="font-weight: bold"></span>
+                    </div>
+                </td>
+                <td align="left">
+                    <div style="width: 30px;">
+                    </div>
+                </td>
+                <td align="left">
+                    <div align="left" style="width: 80px; text-align: left;">
+                        <span>Ex.Rate (RM):</span>
+                    </div>
+                </td>
+                <td align="left">
+                    <div align="left" style="width: 125px; text-align: left">
+                        <span id="spanExRateToUser" style="font-weight: bold"></span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="5">
+                    <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse">
+                        <tr>
+                            <td align="left">
+                                <div align="left" style="width: 76px; text-align: left;">
+                                    Forex account:
+                                </div>
+                            </td>
+                            <td align="left">
+                                <div align="left" style="width: 140px; text-align: left">
+                                    <select id="selectForexAccount" style="width: 120px">
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr id="trSystemTransExRate" style="display: none">
+                <td colspan="5">
+                    <div>
+                        <span>System Ex.Rate </span>(<span id="spanPerCurrencySystem"></span>)<span>: </span>
+                        <span id="spanExRateSystem" style="font-weight: bold"></span><span style="padding-left: 50px">
+                            Trans Ex.Rate</span> (<span id="spanPerCurrencyTrans"></span>)<span>: </span>
+                        <span id="spanExRateTrans" style="font-weight: bold"></span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td align="left">
+                    <div align="left" style="width: 66px; text-align: left;">
+                        Remark:
+                    </div>
+                </td>
+                <td colspan="4" align="left">
+                    <div align="left">
+                        <input class="txt" type="text" id="tbxDescription" name="tbxRemark" style="width: 400px"
+                            maxlength="200" />
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td align="center" colspan="5">
+                    <div>
+                        <input class="btn" type="button" id="btnTransfer" value="Transfer" />
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

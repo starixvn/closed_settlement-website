@@ -1,0 +1,34 @@
+<!--main-->
+<br>
+<span class='action'  onclick="open_dailyreport('DailyWL_Sporttype.aspx?fdate={fdate}&db={db}&tdate={tdate}');">
+  <font color ="blue">
+   <u class='font-small'>Back to Main Menu</u>
+  </font>
+</span>
+<br>
+<br>
+ <!--/main-->
+
+<b>Note : report will auto-recalculate every 2 hours <br>
+Click following date to recalculate the report right now </b> <br>
+  <table>
+    <tr>
+      <td style="height:26px;">
+        <b>
+          <font color ="blue">
+            <a onclick="showProgressBar(true);"  href='{url-today}' >
+              <u>Today ( {Today} )</u>
+            </a> &nbsp; &nbsp;
+
+            <a onclick="showProgressBar(true);" href='{url-yesterday}' >
+              <u>Yesterday ( {Yesterday} )</u>
+            </a>                        
+            </font>
+        </b>      
+      </td>
+      <td>
+        <img id='inProgressBar' name='inProgressBar'  style='display:none'   src="../App_Themes/Images/ajax-loader.gif" />
+      </td>
+    </tr>
+  </table>
+  

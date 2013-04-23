@@ -1,0 +1,16 @@
+﻿<!--StatementHeader-->
+<table cellpadding="0" cellspacing="0" border="0" style="padding-top:6px;">
+    <tr>
+        <td class="b">From:</td>
+        <td style="padding-left:5px;">{FromDateCal}</td>
+        <td style="padding-left:10px;" class="b">To:</td>
+        <td style="padding-left:5px;">{ToDateCal}</td>
+        <td style="padding-left:10px;"><input id="btnSubmit" name="btnSubmit" type="button" value="Submit" class="btn" onclick="GetDataReport()" /></td>
+        <td style="padding-left:5px;"><input id="btnReset" name="btnReset" type="button" value="Reset" class="btn" onclick="reset_date()" /></td>
+        <td style="padding-left:10px;"><input id="btnExport" name="btnExport" title="Export to Excel" class='btnExcel' id='btnExport' name='btnExport' value='   ' onclick='ExportToExcel();' type='button' /></td>
+    </tr>
+</table>
+<span style="padding-left:5px;vertical-align:middle;">
+        <input type="hidden" id="repno" value="{reportNo}" />
+    </span> 
+<!--/StatementHeader-->

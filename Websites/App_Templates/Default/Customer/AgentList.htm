@@ -1,0 +1,280 @@
+<div id="gbox_JQGrid1">
+    <div id="gview_JQGrid1">
+        <div id="divtitle">
+            <table border="0" style="border-collapse:collapse" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                    <td>
+                        <div id="hdiv1">
+                            <table border="0" cellpadding="0" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th colspan="5" style="border-bottom:1px solid #7C98A4">&nbsp;</th>
+                                    </tr>
+                                    <tr>
+                                      <th>
+                                        <div style="width: 40px;height:0px"></div>
+                                        No
+                                      </th>
+                                      <th>
+                                        <div style="width: 50px;height:0px"></div>Status
+                                      </th>
+                                      <th>
+                                        <div style="width: 40px;height:0px"></div>Edit
+                                      </th>
+                                      <th>
+                                        <div style="width: 120px;height:0px">
+                                        </div>
+                                        User Name
+                                      </th>
+                                      <!--nickname-->
+                                      <th>
+                                        <div style="width: 120px;height:0px"></div>Nick Name
+                                      </th>
+                                      <!--/nickname-->
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </td>
+                    <td style="vertical-align:top">
+                        <div style="overflow:hidden; top:0px">
+                            <div id="hdiv2">
+                                <table border="0" cellpadding="0"
+                                    cellspacing="0">
+                                    <thead> 
+                                        <tr>
+                                            <th id="th1_bdiv" colspan="5" style="border-bottom:1px solid #7C98A4">&nbsp;</th>
+                                            <th colspan="7" style="border-bottom:1px solid #7C98A4">Commission</th>
+                                            <th style="border-bottom:1px solid #7C98A4">&nbsp;</th>
+                                          </tr>
+                                        <tr>
+                                          <!--maxExposure-->
+                                          <th>
+                                            <div style="width: 120px;height:0px"></div>Max Exposure (%)
+                                          </th>
+                                          <!--/maxExposure-->
+                                          <!--virtualRate-->
+                                          <th>
+                                            <div style="width: 100px;height:0px"></div>
+                                            Virtual Rate (%)
+                                          </th>
+                                          <!--/virtualRate-->
+                                          <th>
+                                            <div style="width: 140px;height:0px"></div>First Name
+                                          </th>
+                                          <th>
+                                            <div style="width: 140px;height:0px"></div>Last Name
+                                          </th>
+                                          <th>
+                                            <div style="width: 40px;height:0px"></div>{Group}
+                                          </th>
+                                          <th>
+                                            <div style="width: 90px;height:0px"></div>{groupa}
+                                          </th>
+                                          <th>
+                                            <div style="width: 90px;height:0px"></div>{groupb}
+                                          </th>
+                                          <th>
+                                            <div style="width: 90px;height:0px"></div>{groupc}
+                                          </th>
+                                          <th>
+                                            <div style="width: 90px;height:0px"></div>{groupd}
+                                          </th>
+                                          <th>
+                                            <div style="width: 90px;height:0px"></div>{12}
+                                          </th>
+                                          <th>
+                                            <div style="width: 90px;height:0px"></div>{Others}
+                                          </th>
+                                          <!--numbergame-->
+                                          <th>
+                                            <div style="width: 100px;height:0px"></div>{NG}
+                                          </th>
+                                          <!--/numbergame-->
+                                          <th>
+                                            <div style="width: 80px;height:0px"></div>Last Login IP
+                                          </th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="divTable" style="overflow:hidden; border:0px none">
+            <!--noinfomation-->
+            <div type='noinfomation' style="text-align:center">There is no information!.</div>
+            <!--/noinfomation-->
+            <!--haveinfomation-->
+            <table border="0" style="border-collapse:collapse" cellpadding="0" cellspacing="0">
+                <tbody>
+                    <tr>
+                        <td id="td_body_left" style="vertical-align:top; background-color:White" align="left">
+                            <div style="overflow:hidden">
+                                <div id="bdiv2">
+                                    <table id="bdiv1" border="0" cellpadding="0" cellspacing="0">
+                                        <tbody>
+                                            {content2}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </td>
+                        <td style="vertical-align:top" align="left">
+                            <div id="bdiv" style="height: 523px;overflow:auto;">
+                                <table id="btable" border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        {content}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <!--/haveinfomation-->
+        </div>
+    </div>
+</div>
+
+
+<!--row2-->
+<tr status="{status}">
+  <td style="text-align:center; vertical-align:middle">
+    <div style="width: 40px; vertical-align:middle;"><div style="display:inline">{no}</div></div>
+  </td>
+  <td style="text-align:center">
+    <div style="width: 50px;">
+        <!--statusEnabled-->
+        <span class="canchange" onclick="OpenEdit('{uplineid}','{custid}','{username}');">{status}</span>
+        <!--/statusEnabled-->
+        <!--statusDisabled-->
+            {status}
+        <!--/statusDisabled-->
+    </div>
+  </td>
+  <td style="text-align:center">
+    <div style="width: 40px;">
+        <span class="canchange" onclick="showeditbox('div_{custid}')" onmouseout="hideeditbox('div_{custid}')">Edit</span>
+            <ul id="div_{custid}" class="openedit" onmouseover="editboxhover()"  onmouseout="hideeditbox('div_{custid}')" style="display:none;">
+                <!--minmaxPT-->
+                <li class="canchange" onclick="OpenEditMinMaxPT('{custid}','{type}');"  >Min Max PT</li>
+                <!--/minmaxPT-->
+                <li class="canchange" onclick="OpenEditCustInfo('{custid}','{type}');" >Info</li>
+                <!--horseracing-edit-->
+                <li class="canchange" onclick="OpenEditHR('{custid}',{roleid})" >Racing</li>
+                <!--/horseracing-edit-->
+                <!--casino-edit-->
+                <li class="canchange" {onclickCS} >Casino</li>
+                <!--/casino-edit-->
+                <!--finance-edit-->
+                <li class="canchange" onclick="OpenEditFI('{custid}', '{parentid}', '{roleid}')" >Finance</li>
+                <!--/finance-edit-->
+                <!--bingo-edit-->
+                <li class="canchange" onclick="OpenEditBI('{custid}', '{parentid}', '{roleid}')" >Bingo</li>
+                <!--/bingo-edit-->
+                 <!--noneSuper-->
+	            <li class="canchange" onclick="OpenEditTransferTime('{custid}',{isAgent});">Transfer Condition</li>
+	            <!--/noneSuper-->
+	            <li class="canchange" onclick="OpenChangePwd('{custid}','{username}');">Password</li>
+	            <!--edit-p2p-->
+	            <li class="canchange" onclick="editSetting('{custid}', '{roleid}');">P2P</li>
+	            <!--/edit-p2p-->
+                <!--edit-liveCasino-->
+	            <li class="canchange" onclick="liveCasinoSetting('{custid}', '0', '{parentid}');">Live Casino</li>
+	            <!--/edit-liveCasino-->
+            </ul>
+    </div>
+  </td>
+  <td style="text-align:center">
+    <div style="width: 120px;">{username}</div>
+  </td>
+  <!--nickname-->
+  <td style="text-align:center">
+    <div style="width: 120px; overflow:hidden; vertical-align:middle" title="{nickname}">
+        <span style="white-space:nowrap">{nickname}</span>
+    </div>
+  </td>
+  <!--/nickname-->
+</tr>
+<!--/row2-->
+
+<!--row-->
+<tr status="{status}">
+  <!--maxExposure-->
+  <td style="text-align:center">
+    <div style="width: 120px;">
+        <span class="canchange" onclick="OpenEditMaxEx('{custid}','{username}',{exval},'{type}')">{maxEx}</span>
+    </div>
+  </td>  
+  <!--/maxExposure-->
+    <!--virtualRate-->
+  <td style="text-align:center">
+    <div style="width: 100px;">
+        <span class="canchange" onclick="OpenEditVirtualExRate('{custid}','{username}','{type}')">{virExrate}</span>
+    </div>
+  </td>  
+  <!--/virtualRate-->
+  <td style="text-align:center">
+    <div style="width: 140px;overflow:hidden;vertical-align:middle;" title="{firstname}">
+        <span style="white-space:nowrap">{firstname}</span>
+    </div>
+  </td>
+  <td style="text-align:center">
+    <div style="width: 140px;overflow:hidden;vertical-align:middle;" title="{lastname}">
+        <span style="white-space:nowrap">{lastname}</span>
+    </div>
+  </td>
+  <td style="text-align:center">
+    <div style="width: 40px;">
+        {GroupView}
+    </div>
+  </td>
+  <td style="text-align:center">
+    <div style="width: 90px;">
+        {groupa}
+    </div>
+  </td>
+  <td style="text-align:center">
+    <div style="width: 90px;">
+        {groupb}
+    </div>
+  </td>
+  <td style="text-align:center">
+    <div style="width: 90px">
+        {groupc}
+    </div>
+  </td>
+  <td style="text-align:center">
+    <div style="width: 90px;">
+        {groupd}
+    </div>
+  </td>
+  <td style="text-align:center">
+    <div style="width: 90px;;">
+        {1X2}
+    </div>
+  </td>
+  <td style="text-align:center">
+    <div style="width: 90px;">
+        {othercom}
+    </div>
+  </td>
+  <!--numbergame-->
+  <td style="text-align:center">
+    <div style="width: 100px;">
+        {ngcom}
+    </div>
+  </td>
+  <!--/numbergame-->
+  <td style="text-align:center">
+    <div style="width: 80px;">
+        <span class='canchange' onclick="ViewIP('{loginip}')" style="overflow:hidden;height:20px">{loginip}</span>
+    </div>
+  </td>
+</tr>
+<!--/row-->
+
+

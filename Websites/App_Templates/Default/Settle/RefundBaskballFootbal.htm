@@ -1,0 +1,257 @@
+<div>
+    <form id="frmBill">
+    <table class="tblcollapse">
+        <tr class="title1 c">
+            <td colspan="10">
+                LEAGUE:&nbsp;{leaguename}
+            </td>
+        </tr>
+        <tr class="title">
+            <td width="80">
+                CODE
+            </td>
+            <td width="90">
+                KICK-OFF TIME
+            </td>
+            <td width="220">
+                TEAM
+            </td>
+            <td width="22">
+                1Q
+            </td>
+            <td width="22">
+                2Q
+            </td>
+            <td width="22">
+                3Q
+            </td>
+            <td width="22">
+                4Q
+            </td>
+            <td width="22">
+                OT
+            </td>
+            <td width="36">
+                HT Score
+            </td>
+            <td width="36">
+                Final Score
+            </td>
+        </tr>
+        <tr class="c">
+            <td rowspan="2">
+                {matchcode}
+            </td>
+            <td rowspan="2">
+                {date}
+            </td>
+            <td class="fontbold l hteam">
+                {hometeam}
+            </td>
+            <td>
+                {value1qHome}
+            </td>
+            <td>
+                {value2qHome}
+            </td>
+            <td>
+                {value3qHome}
+            </td>
+            <td>
+                {value4qHome}
+            </td>
+            <td>
+                {valueOTHome}
+            </td>
+            <td>
+                {homeHScore}
+            </td>
+            <td>
+                {homeFScore}
+            </td>
+        </tr>
+        <tr class="c">
+            <td class="fontbold l ateam">
+                {awayteam}
+            </td>
+            <td>
+                {value1qAway}
+            </td>
+            <td>
+                {value2qAway}
+            </td>
+            <td>
+                {value3qAway}
+            </td>
+            <td>
+                {value4qAway}
+            </td>
+            <td>
+                {valueOTAway}
+            </td>
+            <td>
+                {awayHScore}
+            </td>
+            <td>
+                {awayFScore}
+            </td>
+        </tr>
+    </table>
+
+    {ApplyHedging}
+
+    {Refund}
+  
+    <span style="padding-left: 30px;" id="infoMsg" class="info-message"></span>
+    <span style="padding-left: 30px; visibility: hidden;" id="errMsg" class="error-message">Please input valid result!</span>
+    <input type="hidden" id="sParams" name="sParams" value="{params}" />
+    <input type="hidden" id="sAction" name="sAction" />
+    <input type="hidden" id="IsHTOnly" name="IsHTOnly" value="{IsHTOnly}" />
+    <input type="hidden" id="isSD" name="isSD" value="0" />
+   
+    <input id="hiddenScoreConfirm_homeHScore" name="hiddenScoreConfirm_homeHScore" type="hidden" />
+    <input id="hiddenScoreConfirm_homeFScore" name="hiddenScoreConfirm_homeFScore" type="hidden" />
+    <input id="hiddenScoreConfirm_awayHScore" name="hiddenScoreConfirm_awayHScore" type="hidden" />
+    <input id="hiddenScoreConfirm_awayFScore" name="hiddenScoreConfirm_awayFScore" type="hidden" />
+    <input id="hiddenScoreConfirm_Sport" name="hiddenScoreConfirm_Sport" type="hidden"  value="BasketballFootbal" />
+    <input type="hidden" id="hiddenBetStatus_ConfirmScore" name="hiddenBetStatus_ConfirmScore" />
+    </form>
+    <div id="divScoreConfirm" style="display: none; margin-top: 4px">
+    <div style="text-align:center; margin-bottom:4px">
+    <span style="color:red; font-size:14px">You can only do this <span style="font-weight:bold; padding-left:4px; padding-right:4px">ONCE</span> so please <span style="font-weight:bold; padding-left:4px; padding-right:4px"> DOUBLE-CHECK </span> the scores !!!</span>
+    </div>
+        <table class="tblcollapse">
+            <tbody>
+                <tr class="title">
+                    <td width="220">
+                        TEAM
+                    </td>
+                    <td width="22">
+                        1Q
+                    </td>
+                    <td width="22">
+                        2Q
+                    </td>
+                    <td width="22">
+                        3Q
+                    </td>
+                    <td width="22">
+                        4Q
+                    </td>
+                    <td width="22">
+                        OT
+                    </td>
+                    <td width="36">
+                        HT Score
+                    </td>
+                    <td width="36">
+                        Final Score
+                    </td>
+                </tr>
+                <tr class="c">
+                    <td class="fontbold l hteam">
+                        {hometeam}
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="value1qHome" type="text" value="{value1qHome}" beginvalue="{value1qHome}"
+                            maxlength="9" size="1" style="text-align: center;" tabindex="1" />
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="value2qHome" type="text" value="{value2qHome}" beginvalue="{value2qHome}"
+                            maxlength="9" size="1" style="text-align: center;" tabindex="3" />
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="value3qHome" type="text" value="{value3qHome}" beginvalue="{value3qHome}"
+                            maxlength="9" size="1" style="text-align: center;" tabindex="5" />
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="value4qHome" type="text" value="{value4qHome}" beginvalue="{value4qHome}"
+                            maxlength="9" size="1" style="text-align: center;" tabindex="7" />
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="valueOTHome" type="text" value="{valueOTHome}" beginvalue="{valueOTHome}"
+                            maxlength="9" size="1" style="text-align: center;" tabindex="9" />
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="tbxScoreConfirm_homeHScore"
+                            type="text" value="{homeHScore}" beginvalue="{homeHScore}" maxlength="9" size="4"
+                            style="text-align: center;" tabindex="11" />
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="tbxScoreConfirm_homeFScore"
+                            type="text" value="{homeFScore}" beginvalue="{homeFScore}" maxlength="9" size="4"
+                            style="text-align: center; color: Red" tabindex="13" />
+                    </td>
+                </tr>
+                <tr class="c">
+                    <td class="fontbold l ateam">
+                        {awayteam}
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="value1qAway" type="text" value="{value1qAway}" beginvalue="{value1qAway}"
+                            maxlength="9" size="1" style="text-align: center;" tabindex="2" />
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="value2qAway" type="text" value="{value2qAway}" beginvalue="{value2qAway}"
+                            maxlength="9" size="1" style="text-align: center;" tabindex="4" />
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="value3qAway" type="text" value="{value3qAway}" beginvalue="{value3qAway}"
+                            maxlength="9" size="1" style="text-align: center;" tabindex="6" />
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="value4qAway" type="text" value="{value4qAway}" beginvalue="{value4qAway}"
+                            maxlength="9" size="1" style="text-align: center;" tabindex="8" />
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="valueOTAway" type="text" value="{valueOTAway}" beginvalue="{valueOTAway}"
+                            maxlength="9" size="1" style="text-align: center;" tabindex="10" />
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="tbxScoreConfirm_awayHScore"
+                            type="text" value="{awayHScore}" beginvalue="{awayHScore}" maxlength="9" size="4"
+                            style="text-align: center;" tabindex="12" />
+                    </td>
+                    <td>
+                        <input disabled="disabled" id="tbxScoreConfirm_awayFScore"
+                            type="text" value="{awayFScore}" beginvalue="{awayFScore}" maxlength="9" size="4"
+                            style="text-align: center; color: Red" tabindex="14" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div style="text-align:right">
+            <input onchange="javascript:BasketballFootbal_InputDirectly_Event(event);" id="cbxInputDirectly"
+                                type="checkbox">Input HT Score and Final Score directly</span>
+        </div>
+        <div style="text-align: left; margin-top: 4px">
+            <span class="error-message" id="errMsg_ScoreConfirm" style="font-weight: bold; display: none">
+                Please input valid result!</span>
+        </div>
+        <div style="text-align: center; margin-top: 4px">
+            <input id="btnScoreConfirmProceed" type="button" class="btn" value="Proceed" />
+            <input id="btnScoreConfirmCancel" type="button" class="btn" value="Change" />
+        </div>
+        <div style="padding-left:4px; padding-top:8px; padding-bottom:8px; background-color:#F4F8BE; margin-top:4px; width:300px">
+            <table border="0">
+                <tbody>
+                   <tr>
+                        <td>
+                            <span>-&nbsp;<b>REFUND&nbsp;</b>normal tickets</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>-&nbsp;<b>SETTLE determined&nbsp;</b>Over/Under tickets of BETDAQ</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>- Mark remaining tickets of BETDAQ as "Running"</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

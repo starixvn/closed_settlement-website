@@ -1,0 +1,46 @@
+<!--Header-->  
+<div class="main">
+        <div class="maincontent">
+             <table border="0" cellpadding="0px" cellspacing="0px" class="maincontent_header">
+                <tr>
+                    <td class="maincontent_headerL"></td>
+                    <td class="maincontent_headerC">Trader Performance</td>
+                    <td class="maincontent_headerR"></td>
+                </tr>
+            </table>
+            <div class="maincontent_box">
+                <div id="header_main" style="padding-bottom:10px">
+                    <div>
+                          <b><span class='{clsSoccer_vl}' onclick='SwitchViewTrader(this);'  id='soccer'>SOCCER</span>&nbsp;|&nbsp;<span class='{clsOther_vl}' onclick='SwitchViewTrader(this);' id='other'>OTHER SPORT</span>&nbsp;Risk Controller Report</b>&nbsp;|&nbsp;<span class='lnk' onclick="LoadTraderDetail()">DETAIL</span>
+                          <span style='padding-left:10px'>
+                            <input id="btnExportIcon" name="btnExport" title="Export to Excel" class='btnExcel' id='btnExport' name='btnExport' value='   ' onclick='ExportToExcel();' type='button' />
+                          </span>
+                          <input type='hidden' id='IsSoccer' name='IsSoccer' value='{IsSoccer_vl}' />
+                          <input id="export" type="submit" name="export" value="export" style="display:none" />
+                          <input id="sortCol" type="text" name="sortCol" value="{sortCol}" style="display:none" />
+                          <input id="order" type="text" name="order" value="{order}" style="display:none" />
+                          <input id="sort" type="submit" name="sort" value="sort" style="display:none" />
+                     </div>
+                     <div style="clear:both"></div>
+                     <div>
+                        <span class="padright b">From: </span>
+                        <span style="padding-left:5px;">
+                            {FromDateCal}
+                        </span>
+                        <span class="pL20 b">To:</span>
+                        <span style="padding-left:5px;">
+                            {ToDateCal}
+                        </span>
+                        &nbsp;
+                        <span style="padding-left:5px;vertical-align:middle;">
+                            <input id="btnReport" name="btnReport" type="button" value="REPORT" class="btn" onclick="DoPostBack()" />
+                        </span>
+                     </div>
+                  </div>  
+            </div>
+            <div class="bg_table">
+                <div id="sData"></div>
+            </div>
+        </div>
+    </div>     
+<!--/Header-->

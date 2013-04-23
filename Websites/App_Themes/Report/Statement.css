@@ -1,0 +1,39 @@
+﻿.f3green
+{
+	text-align:center;
+	color:#adff2f;		
+	font-weight:bold;
+}
+.f3pink
+{
+	text-align:center;
+	background:#ffb6c1;
+}
+
+.error-message {
+color:#FF0000;
+font-size:12px;
+}
+.info-message
+{
+	text-transform:uppercase;
+	color:#00f;
+	list-style-type:none;
+	font-size: 12px;
+}
+.lnk
+{
+	 color:#0000ff;
+	 text-decoration:none;
+	 cursor:pointer; 	
+}
+.lnk:hover
+{
+	color:#c16605;
+	text-decoration:underline;
+	cursor:pointer;
+}
+.text_red
+{
+	color:#EE0000;
+	}

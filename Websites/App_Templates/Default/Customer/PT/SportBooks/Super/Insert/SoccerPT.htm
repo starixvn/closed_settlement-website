@@ -1,0 +1,453 @@
+﻿{#template MAIN}
+    {#include SuperPT root= $T}
+{#/template MAIN}
+ 
+{#template SuperPT}
+<div style="padding:2px 0px;">
+ <input type="checkbox" name="chkCopyAll" onclick="CopyAllPT(this);" id="chkCopyAll"><b><span class="b" onclick="obj('chkCopyAll').click();" style="cursor: pointer;">Copy all Bet Setting and Position Taking from Soccer Handicap</span></b>
+</div>
+<div id="clear2"></div>
+<table cellspacing="0" cellpadding="0" border="0" class="tblPTheader">
+    <tr id="btntop" style="cursor: pointer;">
+        <td onclick="MenuItemClick('divsoccer','panelSoccer');" class="btnleft">
+        </td>
+        <td align="left" width="80" class="btnmiddle" onclick="MenuItemClick('tdsoccer','tblsoccer');" id="menusoccer">
+            <span class="mp">Soccer</span>
+        </td>
+        <td width="20" class="md2 r" onclick="MenuItemClick('tdsoccer','tblsoccer');" id="tdsoccer">
+        </td>
+        <td class="btnright">
+        </td>
+    </tr>
+</table>
+<div id="clear2"></div>
+<table class="tblcollapse" style="width:950px" id="tblsoccer">
+    <!--Bet Setting-->
+    <tr class="title">
+        <td colspan="12">
+            Bet Setting
+        </td>
+    </tr>
+    <tr>
+        <td colspan="12">
+            <table cellspacing="0" cellpadding="0" width="100%" class="noneborder">
+                <tbody>
+                    <tr>
+                        <td class="l">
+                            Min Bet&nbsp;
+                            <input type="text" value="0" name="txtMinbet1" id="txtMinbet1" onkeypress="return AllowNumber(event)"
+                                maxlength="14">
+                        </td>
+                        <td class="c">
+                            Max Bet&nbsp;
+                            <input type="text" value="0" name="txtMaxbet1" id="txtMaxbet1" onkeypress="return AllowNumber(event)"
+                                maxlength="14">
+                        </td>
+                        <td class="r">
+                            Max Per Match&nbsp;
+                            <input type="text" value="0" name="txtMaxPerMatch1" id="txtMaxPerMatch1" onkeypress="return AllowNumber(event)"
+                                maxlength="14">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    <!--/Bet Setting-->
+    <!--PT-->
+    <tr class="title">
+        <td colspan="12">
+            Position Taking
+        </td>
+    </tr>
+    <tr class="title">
+        <td width="15%" colspan="2">
+        </td>
+        <td class="c">
+            Handicap/Next Goal
+        </td>
+        <td class="c">
+            Over/Under
+        </td>
+        <td class="c">
+            1st Hdp
+        </td>
+        <td class="c">
+            1st O/U
+        </td>
+        <td class="c">
+            Odd/Even
+        </td>
+        <td class="c">
+            1 X 2
+        </td>
+        <td class="c">
+            Correct Score
+        </td>
+        <td class="c">
+            Total Goal
+        </td>
+        <td class="c">
+            Mix Parlay
+        </td>
+        <td class="c">
+            Outright
+        </td>
+    </tr>
+    <!--Super PT Deadball-->
+    <tr>
+        <td class="l" rowspan="3">
+            Deadball
+        </td>
+        <td class="l w130">
+            Super Max Position
+        </td>
+        <td>
+            <select onchange="On_ChangeSuper(this);" id="listSHdpD1" max="0.9" min="0" min="0" name="listSHdpD1" class="select-pt">
+                <option value="0.9" selected="true">0.9</option>
+            </select>
+            <input type="button" onclick="ReducePT('listSHdpD1',1)" class="btn-dec1" value=" "
+                name="btnReduce1">
+            <input type="button" onclick="IncreasePT('listSHdpD1',1)" class="btn-inc1" value=" "
+                name="btnIncrease1">
+            <input type="button" onclick="ReducePT('listSHdpD1',10)" class="btn-dec10" value=" "
+                name="btnReduce10">
+            <input type="button" onclick="IncreasePT('listSHdpD1',10)" class="btn-inc10" value=" "
+                name="btnIncrease10">
+        </td>
+        <td>
+            <select onchange="On_ChangeSuper(this);" id="listSOUD1" max="0.9" min="0" name="listSOUD1" class="select-pt">
+                <option value="0.9" selected="true">0.9</option>
+            </select>
+        </td>
+        <td>
+            <select onchange="On_ChangeSuper(this);" id="listS1stHdpD1" max="0.9" min="0"  name="listS1stHdpD1"
+                class="select-pt">
+                <option value="0.9" selected="true">0.9</option>
+            </select>
+        </td>
+        <td>
+            <select onchange="On_ChangeSuper(this);" id="listS1stOUD1" max="0.9" min="0"  name="listS1stOUD1" class="select-pt">
+                <option value="0.9" selected="true">0.9</option>
+            </select>
+        </td>
+        <td>
+            <select onchange="On_ChangeSuper(this);" id="listSOE1" max="0.9" min="0" name="listSOE1" class="select-pt">
+                <option value="0.9" selected="true">0.9</option>
+            </select>
+        </td>
+        <td>
+            <select onchange="On_ChangeSuper(this);" id="listS1x21" max="0.9" min="0" name="listS1x21" class="select-pt">
+                <option value="0.9" selected="true">0.9</option>
+            </select>
+            <input type="button" onclick="ReducePT('listS1x21',1)" class="btn-dec1" value=" "
+                name="btnReduce1">
+            <input type="button" onclick="IncreasePT('listS1x21',1)" class="btn-inc1" value=" "
+                name="btnIncrease1">
+            <input type="button" onclick="ReducePT('listS1x21',10)" class="btn-dec10" value=" "
+                name="btnReduce10">
+            <input type="button" onclick="IncreasePT('listS1x21',10)" class="btn-inc10" value=" "
+                name="btnIncrease10">
+        </td>
+        <td>
+            <select onchange="On_ChangeSuper(this);" id="listSCS1" max="0.9" min="0" name="listSCS1" class="select-pt">
+                <option value="0.9" selected="true">0.9</option>
+            </select>
+        </td>
+        <td>
+            <select onchange="On_ChangeSuper(this);" id="listSTG1" max="0.9" min="0" name="listSTG1" class="select-pt">
+                <option value="0.9" selected="true">0.9</option>
+            </select>
+        </td>
+        <td>
+            <select onchange="On_ChangeSuper(this);" id="listSMP1" max="0.9" min="0" name="listSMP1" class="select-pt">
+                <option value="0.9" selected="true">0.9</option>
+            </select>
+        </td>
+        <td>
+            <select onchange="On_ChangeSuper(this);" id="listSOutright1" max="0.9" min="0" name="listSOutright1" class="select-pt">
+                <option value="0.9" selected="true">0.9</option>
+            </select>
+        </td>
+    </tr>
+    <!--/Super PT Deadball-->
+    <!--Master PT Deadball-->
+    <tr>
+        <td class="l" style="">
+            Master Max Position
+        </td>
+        <td>
+            <select id="listMHdpD1" onchange="On_ChangeMaster(this);" max="0.9" min="0" min="0" name="listMHdpD1" class="select-pt">
+                <option value="0.9" selected="true">0.9</option>
+            </select>
+            <input type="button" onclick="ReducePT('listMHdpD1',1)" class="btn-dec1" value=" "
+                name="listMHdpD" id="btnR1Hdp">
+            <input type="button" onclick="IncreasePT('listMHdpD1',1)" class="btn-inc1" value=" "
+                name="listMHdpD" id="btnI1Hdp">
+            <input type="button" onclick="ReducePT('listMHdpD1',10)" class="btn-dec10" value=" "
+                name="listMHdpD" id="btnR10Hdp">
+            <input type="button" onclick="IncreasePT('listMHdpD1',10)" class="btn-inc10" value=" "
+                name="listMHdpD" id="btnI10Hdp">
+        </td>
+        <td>
+            <select id="listMOUD1" max="0.9" min="0" name="listMOUD1" onchange="On_ChangeMaster(this);" class="select-pt">
+                <option value="0.9" selected="true">0.9</option>
+            </select>
+        </td>
+        <td>
+            <select id="listM1stHdpD1" max="0.9" min="0" name="listM1stHdpD1" onchange="On_ChangeMaster(this);"
+                class="select-pt">
+                <option value="0.9" selected="true">0.9</option>
+            </select>
+        </td>
+        <td>
+            <select id="listM1stOUD1" max="0.9" min="0" name="listM1stOUD1" onchange="On_ChangeMaster(this);" class="select-pt">
+                <option value="0.9" selected="true">0.9</option>
+            </select>
+        </td>
+        <td>
+            <select id="listMOE1" max="0.9" min="0" name="listMOE1" onchange="On_ChangeMaster(this);" class="select-pt">
+                <option value="0.9" selected="true">0.9</option>
+            </select>
+        </td>
+        <td>
+            <select id="listM1x21" max="0.9" min="0" name="listM1x21" onchange="On_ChangeMaster(this);" class="select-pt">
+                <option value="0.9" selected="true">0.9</option>
+            </select>
+            <input type="button" onclick="ReducePT('listM1x21',1)" class="btn-dec1" value=" "
+                name="listM1x2" id="btnR11x2">
+            <input type="button" onclick="IncreasePT('listM1x21',1)" class="btn-inc1" value=" "
+                name="listM1x2" id="btnI11x2">
+            <input type="button" onclick="ReducePT('listM1x21',10)" class="btn-dec10" value=" "
+                name="listM1x2" id="btnR101x2">
+            <input type="button" onclick="IncreasePT('listM1x21',10)" class="btn-inc10" value=" "
+                name="listM1x2" id="btnI101x2">
+        </td>
+        <td>
+            <select id="listMCS1" max="0.9" min="0" name="listMCS1" onchange="On_ChangeMaster(this);" class="select-pt">
+                <option value="0.9" selected="true">0.9</option>
+            </select>
+        </td>
+        <td>
+            <select id="listMTG1" max="0.9" min="0" name="listMTG1" onchange="On_ChangeMaster(this);" class="select-pt">
+                <option value="0.9" selected="true">0.9</option>
+            </select>
+        </td>
+        <td>
+            <select id="listMMP1" max="0.9" min="0" name="listMMP1" onchange="On_ChangeMaster(this);" class="select-pt">
+                <option value="0.9" selected="true">0.9</option>
+            </select>
+        </td>
+        <td>
+            <select id="listMOutright1" max="0.9" min="0" name="listMOutright1" onchange="On_ChangeMaster(this);"
+                class="select-pt">
+                <option value="0.9" selected="true">0.9</option>
+            </select>
+        </td>
+    </tr>
+    <!--/Master PT Deadball-->
+    <!--Agent PT Deadball-->
+    <tr>
+        <td class="l" style="">
+            Agent Max Position
+        </td>
+        <td>
+            <select id="listAHdpD1" max="0.9" min="0" name="listAHdpD1" class="select-pt">
+                <option value="0.9" selected="true">0.9</option>
+            </select>
+            <input type="button" onclick="ReducePT('listAHdpD1',1)" class="btn-dec1" value=" "
+                name="btnReduce1">
+            <input type="button" onclick="IncreasePT('listAHdpD1',1)" class="btn-inc1" value=" "
+                name="btnIncrease1">
+            <input type="button" onclick="ReducePT('listAHdpD1',10)" class="btn-dec10" value=" "
+                name="btnReduce10">
+            <input type="button" onclick="IncreasePT('listAHdpD1',10)" class="btn-inc10" value=" "
+                name="btnIncrease10">
+        </td>
+        <td>
+            <select id="listAOUD1" max="0.9" min="0" name="listAOUD1" class="select-pt">
+                <option value="0.9" selected="true">0.9</option>
+            </select>
+        </td>
+        <td>
+            <select id="listA1stHdpD1" max="0.9" min="0" name="listA1stHdpD1" class="select-pt">
+                <option value="0.9" selected="true">0.9</option>
+            </select>
+        </td>
+        <td>
+            <select id="listA1stOUD1" max="0.9" name="listA1stOUD1" class="select-pt">
+                <option value="0.9" selected="true">0.9</option>
+            </select>
+        </td>
+        <td>
+            <select id="listAOE1" max="0.9" min="0" name="listAOE1" class="select-pt">
+                <option value="0.9" selected="true">0.9</option>
+            </select>
+        </td>
+        <td>
+            <select id="listA1x21" max="0.9" min="0" name="listA1x21" class="select-pt">
+                <option value="0.9" selected="true">0.9</option>
+            </select>
+            <input type="button" onclick="ReducePT('listA1x21',1)" class="btn-dec1" value=" "
+                name="btnReduce1">
+            <input type="button" onclick="IncreasePT('listA1x21',1)" class="btn-inc1" value=" "
+                name="btnIncrease1">
+            <input type="button" onclick="ReducePT('listA1x21',10)" class="btn-dec10" value=" "
+                name="btnReduce10">
+            <input type="button" onclick="IncreasePT('listA1x21',10)" class="btn-inc10" value=" "
+                name="btnIncrease10">
+        </td>
+        <td>
+            <select id="listACS1" max="0.9" min="0" name="listACS1" class="select-pt">
+                <option value="0.9" selected="true">0.9</option>
+            </select>
+        </td>
+        <td>
+            <select id="listATG1" max="0.9" min="0" name="listATG1" class="select-pt">
+                <option value="0.9" selected="true">0.9</option>
+            </select>
+        </td>
+        <td>
+            <select id="listAMP1" max="0.9" min="0" name="listAMP1" class="select-pt">
+                <option value="0.9" selected="true">0.9</option>
+            </select>
+        </td>
+        <td>
+            <select id="listAOutright1" max="0.9" min="0" name="listAOutright1" class="select-pt">
+                <option value="0.9" selected="true">0.9</option>
+            </select>
+        </td>
+    </tr>
+    <!--/Agent PT Deadball-->
+    <!--Copy from Hdp 1x2-->
+    <tr>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td class="l" colspan="5">
+            <input type="checkbox" id="chkCopyHdpD1" name="chkCopyHdpD1" onclick="CopyPositionTaking(this);">
+            Copy From Handicap
+        </td>
+        <td class="l" colspan="5">
+            <input type="checkbox" id="chkCopy1x21" onclick="CopyPositionTaking(this);" name="chkCopy1x21">
+            Copy From 1 X 2
+        </td>
+    </tr>
+    <!--/Copy from Hdp 1x2-->
+    <!--Super PT Live-->
+    <tr>
+        <td class="l" rowspan="3">
+            Live
+        </td>
+        <td class="l" style="">
+            Super Max Position
+        </td>
+        <td>
+            <select onchange="On_ChangeSuper(this);" max="0.9" min="0" id="listSHdpL1" name="listSHdpL1" class="select-pt">
+                <option value="0.9" selected="true">0.9</option>
+            </select>
+            <input type="button" onclick="ReducePT('listSHdpL1',1)" class="btn-dec1" value=" "
+                name="btnReduce1">
+            <input type="button" onclick="IncreasePT('listSHdpL1',1)" class="btn-inc1" value=" "
+                name="btnIncrease1">
+            <input type="button" onclick="ReducePT('listSHdpL1',10)" class="btn-dec10" value=" "
+                name="btnReduce10">
+            <input type="button" onclick="IncreasePT('listSHdpL1',10)" class="btn-inc10" value=" "
+                name="btnIncrease10">
+        </td>
+        <td>
+            <select onchange="On_ChangeSuper(this);" max="0.9" min="0" id="listSOUL1" name="listSOUL1" class="select-pt">
+                <option value="0.9" selected="true">0.9</option>
+            </select>
+        </td>
+        <td>
+            <select onchange="On_ChangeSuper(this);" max="0.9" min="0" id="listS1stHdpL1" name="listS1stHdpL1"
+                class="select-pt">
+                <option value="0.9" selected="true">0.9</option>
+            </select>
+        </td>
+        <td>
+            <select onchange="On_ChangeSuper(this);" max="0.9" min="0" id="listS1stOUL1" name="listS1stOUL1" class="select-pt">
+                <option value="0.9" selected="true">0.9</option>
+            </select>
+        </td>
+        <td class="l" rowspan="3" colspan="6">
+            <input type="checkbox" name="chkCopyHdpL1" id="chkCopyHdpL1" onclick="CopyPositionTaking(this);">
+            Copy From Handicap
+        </td>
+    </tr>
+    <!--/Super PT Live-->
+    <!--Master PT Live-->
+    <tr>
+        <td class="l" style="">
+            Master Max Position
+        </td>
+        <td>
+            <select id="listMHdpL1" onchange="On_ChangeMaster(this);" max="0.9" min="0" name="listMHdpL1" class="select-pt">
+                <option value="0.9" selected="true">0.9</option>
+            </select>
+            <input type="button" onclick="ReducePT('listMHdpL1',1)" class="btn-dec1" value=" "
+                name="listMHdpL" id="btnR1HdpL">
+            <input type="button" onclick="IncreasePT('listMHdpL1',1)" class="btn-inc1" value=" "
+                name="listMHdpL" id="btnI1HdpL">
+            <input type="button" onclick="ReducePT('listMHdpL1',10)" class="btn-dec10" value=" "
+                name="listMHdpL" id="btnR10HdpL">
+            <input type="button" onclick="IncreasePT('listMHdpL1',10)" class="btn-inc10" value=" "
+                name="listMHdpL" id="btnI10HdpL">
+        </td>
+        <td>
+            <select id="listMOUL1" name="listMOUL1" max="0.9" min="0" onchange="On_ChangeMaster(this);" class="select-pt">
+                <option value="0.9" selected="true">0.9</option>
+            </select>
+        </td>
+        <td>
+            <select id="listM1stHdpL1" max="0.9" min="0" name="listM1stHdpL1" onchange="On_ChangeMaster(this);"
+                class="select-pt">
+                <option value="0.9" selected="true">0.9</option>
+            </select>
+        </td>
+        <td>
+            <select id="listM1stOUL1" max="0.9" min="0" name="listM1stOUL1" onchange="On_ChangeMaster(this);" class="select-pt">
+                <option value="0.9" selected="true">0.9</option>
+            </select>
+        </td>
+    </tr>
+    <!--/Master PT Live-->
+    <!--Agent PT Live2-->
+    <tr>
+        <td class="l" style="">
+            Agent Max Position
+        </td>
+        <td>
+            <select id="listAHdpL1" max="0.9" min="0" name="listAHdpL1" class="select-pt">
+                <option value="0.9" selected="true">0.9</option>
+            </select>
+            <input type="button" onclick="ReducePT('listAHdpL1',1)" class="btn-dec1" value=" "
+                name="btnReduce1">
+            <input type="button" onclick="IncreasePT('listAHdpL1',1)" class="btn-inc1" value=" "
+                name="btnIncrease1">
+            <input type="button" onclick="ReducePT('listAHdpL1',10)" class="btn-dec10" value=" "
+                name="btnReduce10">
+            <input type="button" onclick="IncreasePT('listAHdpL1',10)" class="btn-inc10" value=" "
+                name="btnIncrease10">
+        </td>
+        <td>
+            <select id="listAOUL1" max="0.9" min="0" name="listAOUL1" class="select-pt">
+                <option value="0.9" selected="true">0.9</option>
+            </select>
+        </td>
+        <td>
+            <select id="listA1stHdpL1" max="0.9" min="0" name="listA1stHdpL1" class="select-pt">
+                <option value="0.9" selected="true">0.9</option>
+            </select>
+        </td>
+        <td>
+            <select id="listA1stOUL1" max="0.9" min="0" name="listA1stOUL1" class="select-pt">
+                <option value="0.9" selected="true">0.9</option>
+            </select>
+        </td>
+    </tr>
+    <!--/Agent PT Live2-->
+</table>
+{#/template SuperPT} 

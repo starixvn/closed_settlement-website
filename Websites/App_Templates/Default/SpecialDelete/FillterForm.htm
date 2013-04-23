@@ -1,0 +1,70 @@
+<!--start-form-->
+<form method="post" action="TransList.aspx">
+<!--/start-form-->
+    <table border="0px">
+      <!--special-del-->
+      <tr>
+        <td colspan="2" class="c">
+          <span style="color:#d84e1f;font-weight:bold;font-size:9pt">{confirm-msg}</span>          
+        </td>
+      </tr>
+      <!--/special-del-->
+		<tr>
+			<td class="b">Match Id:</td>
+			<td><input type="text" size="12" maxlength="12" id="matchid" name="matchid" /></td>
+		</tr> 
+		<tr>
+			<td class="b">From Refno:</td>
+			<td><input type="text" size="12" maxlength="12" id="frefno" name="frefno" /></td>
+		</tr>
+		<tr>
+			<td class="b">To Refno:</td>
+			<td><input type="text" size="12" maxlength="12" id="trefno" name="trefno" /></td>
+		</tr>
+		<tr>
+			<td class="b">Bettype:</td>  
+			<td >
+           <select id="bettype" name="bettype" onchange="on_changeBetype();">
+					  {bettype} 
+				  </select>
+			</td>
+		</tr>
+      <!--type-->
+		<tr>
+			<td class="b">Type:</td>
+			<td ><select id="type" name="type">
+			        <option value="0" selected="selected">Dead Ball</option>
+					<option value="1">Live Ball</option>										
+				</select>
+			</td>
+		</tr>
+      <!--/type-->
+		<tr>
+			<td colspan="2" class="b">
+				Advanced mode:
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" class="b">
+				Type:
+				<select id="choice" name="choice">
+          <!--All-Choice-->
+        <option value="All">All</option>
+        <!--/All-Choice-->
+					<option value="h">Home/Over</option>
+					<option value="a">Away/Under</option>
+				</select>
+				HDP:				   
+        <input type="text" id="hdp" name="hdp" size="5" maxlength="5"></input>  
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" class="c">
+				<input class="btn" type="submit" onclick="return on_submit();"  value="  Show  " />
+        <img id='inProgressBar' name='inProgressBar'  style='display:none'   src="../App_Themes/Images/ajax-loader.gif" />
+			</td>
+		</tr>
+	</table>
+<!--end-form-->    
+</form>
+<!--/end-form-->

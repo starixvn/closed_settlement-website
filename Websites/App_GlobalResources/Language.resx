@@ -1,0 +1,2392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccountFunction" xml:space="preserve">
+    <value>Account Function</value>
+  </data>
+  <data name="AccumTotal" xml:space="preserve">
+    <value>Accum Total</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="AddTrans" xml:space="preserve">
+    <value>Add Transaction</value>
+  </data>
+  <data name="Balance" xml:space="preserve">
+    <value>Balance</value>
+  </data>
+  <data name="CDT" xml:space="preserve">
+    <value>CDT</value>
+  </data>
+  <data name="Credit" xml:space="preserve">
+    <value>Credit</value>
+  </data>
+  <data name="Currency" xml:space="preserve">
+    <value>Currency</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="Debit" xml:space="preserve">
+    <value>Debit</value>
+  </data>
+  <data name="Del" xml:space="preserve">
+    <value>Del</value>
+  </data>
+  <data name="DEP" xml:space="preserve">
+    <value>DEP</value>
+  </data>
+  <data name="Desc" xml:space="preserve">
+    <value>Desc</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="editExchangeRate" xml:space="preserve">
+    <value>Edit Exchange Rate</value>
+  </data>
+  <data name="ExRate" xml:space="preserve">
+    <value>Exchange Rate</value>
+  </data>
+  <data name="MinBet" xml:space="preserve">
+    <value>Min Bet</value>
+  </data>
+  <data name="NewCustomer" xml:space="preserve">
+    <value>New Customer</value>
+  </data>
+  <data name="Rate" xml:space="preserve">
+    <value>Rate</value>
+  </data>
+  <data name="Report" xml:space="preserve">
+    <value>Report</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Settlement" xml:space="preserve">
+    <value>Settlement</value>
+  </data>
+  <data name="SpecialDel" xml:space="preserve">
+    <value>Special Delete</value>
+  </data>
+  <data name="Statement" xml:space="preserve">
+    <value>Statement</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="WIT" xml:space="preserve">
+    <value>WIT</value>
+  </data>
+  <data name="Master" xml:space="preserve">
+    <value>Master</value>
+  </data>
+  <data name="Base" xml:space="preserve">
+    <value>Base (RM)</value>
+  </data>
+  <data name="MasterBalance" xml:space="preserve">
+    <value>Master Balance</value>
+  </data>
+  <data name="AllAgentTurnOver" xml:space="preserve">
+    <value>All Agent Turn Over</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="TurnOver" xml:space="preserve">
+    <value>Turnover</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="SuperBalance" xml:space="preserve">
+    <value>Super Balance</value>
+  </data>
+  <data name="AgentBalance" xml:space="preserve">
+    <value>Agent Balance</value>
+  </data>
+  <data name="MemberBalance" xml:space="preserve">
+    <value>Member Balance</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>UserName</value>
+  </data>
+  <data name="AllCustomerTurnOver" xml:space="preserve">
+    <value>All Customer Turn Over</value>
+  </data>
+  <data name="AllCustBalanceByCurrency" xml:space="preserve">
+    <value>All Customer Balance By Currency</value>
+  </data>
+  <data name="Oustxn" xml:space="preserve">
+    <value>OUSTXN</value>
+  </data>
+  <data name="thereisnodata" xml:space="preserve">
+    <value>There is no information available.</value>
+  </data>
+  <data name="AllCustBalance" xml:space="preserve">
+    <value>All Customer Balance</value>
+  </data>
+  <data name="Running" xml:space="preserve">
+    <value>Running</value>
+  </data>
+  <data name="SuperDay" xml:space="preserve">
+    <value>Super Daily Win/Loss</value>
+  </data>
+  <data name="MasterDay" xml:space="preserve">
+    <value>Master Daily Win/Loss</value>
+  </data>
+  <data name="AgentDay" xml:space="preserve">
+    <value>Agent Daily Win/Loss</value>
+  </data>
+  <data name="MemberDay" xml:space="preserve">
+    <value>Member Daily Win/Loss</value>
+  </data>
+  <data name="MatchWinLostSingleBet" xml:space="preserve">
+    <value>Match Win Loss Single Bet</value>
+  </data>
+  <data name="Match" xml:space="preserve">
+    <value>Match</value>
+  </data>
+  <data name="MatchWinLost" xml:space="preserve">
+    <value>Match Win Loss</value>
+  </data>
+  <data name="Commission" xml:space="preserve">
+    <value>Commission</value>
+  </data>
+  <data name="PositionTaking" xml:space="preserve">
+    <value>Position Taking</value>
+  </data>
+  <data name="Finaltotal" xml:space="preserve">
+    <value>Final Total</value>
+  </data>
+  <data name="Bettype" xml:space="preserve">
+    <value>Bettype</value>
+  </data>
+  <data name="MatchWinLostByBettype" xml:space="preserve">
+    <value>Match Win Loss By Bet Type</value>
+  </data>
+  <data name="BaseMatchWinLost" xml:space="preserve">
+    <value>Base Match WinLoss</value>
+  </data>
+  <data name="BaseCommission" xml:space="preserve">
+    <value>Base Commission</value>
+  </data>
+  <data name="BasePositionTaking" xml:space="preserve">
+    <value>Base Position Taking</value>
+  </data>
+  <data name="WinLost" xml:space="preserve">
+    <value>WinLoss</value>
+  </data>
+  <data name="AWinLost" xml:space="preserve">
+    <value>A.WinLoss</value>
+  </data>
+  <data name="MWinLost" xml:space="preserve">
+    <value>M.WinLoss</value>
+  </data>
+  <data name="SWinLost" xml:space="preserve">
+    <value>S.WinLoss</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Position" xml:space="preserve">
+    <value>Position</value>
+  </data>
+  <data name="Com" xml:space="preserve">
+    <value>Com.</value>
+  </data>
+  <data name="LineTotal" xml:space="preserve">
+    <value>Line Total.</value>
+  </data>
+  <data name="ExRisk" xml:space="preserve">
+    <value>Ex.Risk</value>
+  </data>
+  <data name="ExMatchWinLost" xml:space="preserve">
+    <value>Ex Match WinLoss</value>
+  </data>
+  <data name="CurrentSelectSite" xml:space="preserve">
+    <value>Current selected site</value>
+  </data>
+  <data name="CustomerWinLost" xml:space="preserve">
+    <value>Customer Win Loss</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>From</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>To</value>
+  </data>
+  <data name="whichbetvia" xml:space="preserve">
+    <value>which bet via</value>
+  </data>
+  <data name="GrandToTal" xml:space="preserve">
+    <value>GRAND TOTAL</value>
+  </data>
+  <data name="Ex" xml:space="preserve">
+    <value>Ex:</value>
+  </data>
+  <data name="Company" xml:space="preserve">
+    <value>Company</value>
+  </data>
+  <data name="Live" xml:space="preserve">
+    <value>Live</value>
+  </data>
+  <data name="BaseBalance" xml:space="preserve">
+    <value>Base Balance</value>
+  </data>
+  <data name="BaseCredit" xml:space="preserve">
+    <value>Base Credit</value>
+  </data>
+  <data name="BaseDebit" xml:space="preserve">
+    <value>Base Debit</value>
+  </data>
+  <data name="CompanyBalance" xml:space="preserve">
+    <value>Company Balance</value>
+  </data>
+  <data name="DebitCompleted" xml:space="preserve">
+    <value>Debit Completed</value>
+  </data>
+  <data name="DebitRunning" xml:space="preserve">
+    <value>Debit Running</value>
+  </data>
+  <data name="ForeignBalance" xml:space="preserve">
+    <value>Foreign Balance</value>
+  </data>
+  <data name="ForeignCredit" xml:space="preserve">
+    <value>Foreign Credit</value>
+  </data>
+  <data name="ForeignDebit" xml:space="preserve">
+    <value>Foreign Debit</value>
+  </data>
+  <data name="WinLostMultipleBetOnLy" xml:space="preserve">
+    <value>Win Loss (Multiple Bet OnLy)</value>
+  </data>
+  <data name="RefNo" xml:space="preserve">
+    <value>REF.NO</value>
+  </data>
+  <data name="fromdate" xml:space="preserve">
+    <value>From Date</value>
+  </data>
+  <data name="todate" xml:space="preserve">
+    <value>To</value>
+  </data>
+  <data name="events" xml:space="preserve">
+    <value>Event</value>
+  </data>
+  <data name="selectLeague" xml:space="preserve">
+    <value>Select League</value>
+  </data>
+  <data name="unCalGame" xml:space="preserve">
+    <value>Un-Calculate Game Only</value>
+  </data>
+  <data name="unCalMultiple" xml:space="preserve">
+    <value>UnCal-Multiple Only</value>
+  </data>
+  <data name="Odd" xml:space="preserve">
+    <value>Odds</value>
+  </data>
+  <data name="Even" xml:space="preserve">
+    <value>Even</value>
+  </data>
+  <data name="Over" xml:space="preserve">
+    <value>Over</value>
+  </data>
+  <data name="Under" xml:space="preserve">
+    <value>Under</value>
+  </data>
+  <data name="Current" xml:space="preserve">
+    <value>Current</value>
+  </data>
+  <data name="MatchWinLostNew" xml:space="preserve">
+    <value>Match Win Loss (NEW)</value>
+  </data>
+  <data name="AddNewAgent" xml:space="preserve">
+    <value>Add New Agent</value>
+  </data>
+  <data name="AddNewMaster" xml:space="preserve">
+    <value>Add New Master</value>
+  </data>
+  <data name="AddNewMember" xml:space="preserve">
+    <value>Add New Member</value>
+  </data>
+  <data name="AddNewSuper" xml:space="preserve">
+    <value>Add New Super</value>
+  </data>
+  <data name="Agent" xml:space="preserve">
+    <value>Agent</value>
+  </data>
+  <data name="Member" xml:space="preserve">
+    <value>Member</value>
+  </data>
+  <data name="Super" xml:space="preserve">
+    <value>Super</value>
+  </data>
+  <data name="SelectType" xml:space="preserve">
+    <value>Select Type</value>
+  </data>
+  <data name="MarginReport" xml:space="preserve">
+    <value>Margin Report</value>
+  </data>
+  <data name="HDP" xml:space="preserve">
+    <value>Hdp</value>
+  </data>
+  <data name="OU" xml:space="preserve">
+    <value>O/U</value>
+  </data>
+  <data name="Wining" xml:space="preserve">
+    <value>Winning</value>
+  </data>
+  <data name="Ratio" xml:space="preserve">
+    <value>Ratio</value>
+  </data>
+  <data name="CompanyDirect" xml:space="preserve">
+    <value>Company Direct</value>
+  </data>
+  <data name="CreateMasterAgent" xml:space="preserve">
+    <value>Create Master Agent</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="Site" xml:space="preserve">
+    <value>Site</value>
+  </data>
+  <data name="Bet" xml:space="preserve">
+    <value>Bet</value>
+  </data>
+  <data name="Transdate" xml:space="preserve">
+    <value>Transdate</value>
+  </data>
+  <data name="pr" xml:space="preserve">
+    <value>Type/Bet</value>
+  </data>
+  <data name="Stake" xml:space="preserve">
+    <value>Stake</value>
+  </data>
+  <data name="AgUsername" xml:space="preserve">
+    <value>Agent's username</value>
+  </data>
+  <data name="MAgUsername" xml:space="preserve">
+    <value>Master agent's username</value>
+  </data>
+  <data name="CreditTerm" xml:space="preserve">
+    <value>Credit Term</value>
+  </data>
+  <data name="Role" xml:space="preserve">
+    <value>Role</value>
+  </data>
+  <data name="Curr" xml:space="preserve">
+    <value>Curr</value>
+  </data>
+  <data name="Pre" xml:space="preserve">
+    <value>Pre-Agreed Amount</value>
+  </data>
+  <data name="Remark" xml:space="preserve">
+    <value>Remark</value>
+  </data>
+  <data name="RemarkTime" xml:space="preserve">
+    <value>Remark Timestamp</value>
+  </data>
+  <data name="Timestamp" xml:space="preserve">
+    <value>Timestamp</value>
+  </data>
+  <data name="RM" xml:space="preserve">
+    <value>RM</value>
+  </data>
+  <data name="AgentMaxPosition" xml:space="preserve">
+    <value>Agent Max Position</value>
+  </data>
+  <data name="Basketball" xml:space="preserve">
+    <value>Basketball</value>
+  </data>
+  <data name="BasketballPositionTaking" xml:space="preserve">
+    <value>Basketball Position Taking</value>
+  </data>
+  <data name="CopyFrom1x2" xml:space="preserve">
+    <value>Copy From 1x2</value>
+  </data>
+  <data name="CopyFromHdp" xml:space="preserve">
+    <value>Copy From Handicap</value>
+  </data>
+  <data name="CorrectScore" xml:space="preserve">
+    <value>Correct Score</value>
+  </data>
+  <data name="Deadball" xml:space="preserve">
+    <value>Deadball</value>
+  </data>
+  <data name="FirstHdp" xml:space="preserve">
+    <value>1st Hdp</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>First Name</value>
+  </data>
+  <data name="FirstOU" xml:space="preserve">
+    <value>1st O/U</value>
+  </data>
+  <data name="GroupA" xml:space="preserve">
+    <value>Group A</value>
+  </data>
+  <data name="GroupB" xml:space="preserve">
+    <value>Group B</value>
+  </data>
+  <data name="GroupC" xml:space="preserve">
+    <value>Group C</value>
+  </data>
+  <data name="GroupD" xml:space="preserve">
+    <value>Group D</value>
+  </data>
+  <data name="Handicap" xml:space="preserve">
+    <value>Handicap</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Last Name</value>
+  </data>
+  <data name="MasterMaxPosition" xml:space="preserve">
+    <value>Master Max Position</value>
+  </data>
+  <data name="MaxBet" xml:space="preserve">
+    <value>Max Bet</value>
+  </data>
+  <data name="MaxBetb" xml:space="preserve">
+    <value>Max Bet</value>
+  </data>
+  <data name="MaxPerMatch" xml:space="preserve">
+    <value>Max Per Match</value>
+  </data>
+  <data name="MaxPerMatchb" xml:space="preserve">
+    <value>Max Per Match</value>
+  </data>
+  <data name="MinBetb" xml:space="preserve">
+    <value>Min Bet</value>
+  </data>
+  <data name="MixParlay" xml:space="preserve">
+    <value>Mix Parlay</value>
+  </data>
+  <data name="Mobile" xml:space="preserve">
+    <value>Mobile</value>
+  </data>
+  <data name="OddEven" xml:space="preserve">
+    <value>Odd/Even</value>
+  </data>
+  <data name="OtherComm" xml:space="preserve">
+    <value>Others Comm</value>
+  </data>
+  <data name="Outright" xml:space="preserve">
+    <value>Outright</value>
+  </data>
+  <data name="OverUnder" xml:space="preserve">
+    <value>Over/Under</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="Soccer" xml:space="preserve">
+    <value>Soccer</value>
+  </data>
+  <data name="SoccerPositionTaking" xml:space="preserve">
+    <value> Soccer Position Taking</value>
+  </data>
+  <data name="str1x2" xml:space="preserve">
+    <value>1 X 2</value>
+  </data>
+  <data name="SuperMaxCredit" xml:space="preserve">
+    <value>Super Max Credit</value>
+  </data>
+  <data name="SuperMaxPosition" xml:space="preserve">
+    <value>Super Max Position</value>
+  </data>
+  <data name="TotalGoal" xml:space="preserve">
+    <value>Total Goal</value>
+  </data>
+  <data name="CrurrentSelectedSite" xml:space="preserve">
+    <value>Crurrent Selected Site: </value>
+  </data>
+  <data name="InternetPhone" xml:space="preserve">
+    <value>Internet + Phone</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="CustomerTurnOverFrom" xml:space="preserve">
+    <value>Customer Turn Over From </value>
+  </data>
+  <data name="InvalidFormatNumber" xml:space="preserve">
+    <value>Invalid Format Number</value>
+  </data>
+  <data name="stotal" xml:space="preserve">
+    <value>'s Total:</value>
+  </data>
+  <data name="MemberTreeWinLost" xml:space="preserve">
+    <value>Member Tree Win/Loss</value>
+  </data>
+  <data name="MemberWinLost" xml:space="preserve">
+    <value>Member WinLoss</value>
+  </data>
+  <data name="AgentWinLost" xml:space="preserve">
+    <value>Agent WinLoss</value>
+  </data>
+  <data name="MasterWinLost" xml:space="preserve">
+    <value>Master WinLoss</value>
+  </data>
+  <data name="SuperWinLost" xml:space="preserve">
+    <value>Super WinLoss</value>
+  </data>
+  <data name="TOverPT" xml:space="preserve">
+    <value>T.Over(PT)</value>
+  </data>
+  <data name="TOverRM" xml:space="preserve">
+    <value>T.Over(RM)</value>
+  </data>
+  <data name="Comm" xml:space="preserve">
+    <value>Commission</value>
+  </data>
+  <data name="TotalRM" xml:space="preserve">
+    <value>Total RM</value>
+  </data>
+  <data name="Transfer" xml:space="preserve">
+    <value>Transfer</value>
+  </data>
+  <data name="SuccessMsg" xml:space="preserve">
+    <value>Success !</value>
+  </data>
+  <data name="dailyTransaction" xml:space="preserve">
+    <value>Daily Transactions</value>
+  </data>
+  <data name="AddOperator" xml:space="preserve">
+    <value>Add Operator</value>
+  </data>
+  <data name="OperatorList" xml:space="preserve">
+    <value>Operator List</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="AddSuper" xml:space="preserve">
+    <value>Add Super</value>
+  </data>
+  <data name="EditSuper" xml:space="preserve">
+    <value>Edit Super</value>
+  </data>
+  <data name="EditMaster" xml:space="preserve">
+    <value>Edit Master</value>
+  </data>
+  <data name="EditAgent" xml:space="preserve">
+    <value>Edit Agent</value>
+  </data>
+  <data name="CustomerBalance" xml:space="preserve">
+    <value>CustBal</value>
+  </data>
+  <data name="lblSoccer" xml:space="preserve">
+    <value>Soccer</value>
+  </data>
+  <data name="lblBasketball" xml:space="preserve">
+    <value>Basketball</value>
+  </data>
+  <data name="lblML" xml:space="preserve">
+    <value>Money Line</value>
+  </data>
+  <data name="lblFootball" xml:space="preserve">
+    <value>Football</value>
+  </data>
+  <data name="lblTennis" xml:space="preserve">
+    <value>Tennis</value>
+  </data>
+  <data name="lblBaseball" xml:space="preserve">
+    <value>Baseball</value>
+  </data>
+  <data name="lblGolf" xml:space="preserve">
+    <value>Golf</value>
+  </data>
+  <data name="lblMotosports" xml:space="preserve">
+    <value>Motorsports</value>
+  </data>
+  <data name="lblOthersports" xml:space="preserve">
+    <value>Other Sports</value>
+  </data>
+  <data name="lblCopyAllPTfromHdp" xml:space="preserve">
+    <value>Copy all Bet Setting and Position Taking from Soccer Handicap (Excluding Number Game)</value>
+  </data>
+  <data name="lblCopyAllPTfromHdp_MinMax" xml:space="preserve">
+    <value>Copy all Position Taking from Soccer Handicap (Excluding Number Game)</value>
+  </data>
+  <data name="alertLessthanMinPT" xml:space="preserve">
+    <value>{1} and {2} must be not less than </value>
+  </data>
+  <data name="lblBetSetting" xml:space="preserve">
+    <value>Bet Setting</value>
+  </data>
+  <data name="lblConfirmEditMaster" xml:space="preserve">
+    <value>You have changed this {0} not to take auto position taking.&lt;br&gt;Do you want to update all member's position taking to:</value>
+  </data>
+  <data name="lblCopyBasketHdp" xml:space="preserve">
+    <value>Copy all Bet Setting and Position Taking from Basketball Handicap (Excluding Number Game)</value>
+  </data>
+  <data name="lblCopyBasketHdp_MinMax" xml:space="preserve">
+    <value>Copy Position Taking from Basketball Handicap (Excluding Number Game)</value>
+  </data>
+  <data name="lblAgentMaxCredit" xml:space="preserve">
+    <value>Agent Max Credit</value>
+  </data>
+  <data name="btnAdd" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="btnReset" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="lblAddNewMember" xml:space="preserve">
+    <value>Add New Member</value>
+  </data>
+  <data name="lblMemberMaxCredit" xml:space="preserve">
+    <value>Member Max Credit</value>
+  </data>
+  <data name="lblGroup" xml:space="preserve">
+    <value>Group</value>
+  </data>
+  <data name="lblMinBet" xml:space="preserve">
+    <value>Min Bet</value>
+  </data>
+  <data name="lblMaxBet" xml:space="preserve">
+    <value>Max Bet</value>
+  </data>
+  <data name="lblMaxPerMatch" xml:space="preserve">
+    <value>Max Per Match</value>
+  </data>
+  <data name="lblMoneyLine" xml:space="preserve">
+    <value>Money Line</value>
+  </data>
+  <data name="lblOpenTote" xml:space="preserve">
+    <value>UK Tote</value>
+  </data>
+  <data name="lblFloatingOdds" xml:space="preserve">
+    <value>Floating Odds</value>
+  </data>
+  <data name="lblPasswordRequire" xml:space="preserve">
+    <value>Password must have at least 6 characters, including at least 2 numbers and at least 2 digits. (e.g:pass22)</value>
+  </data>
+  <data name="alertPasswordEmpty" xml:space="preserve">
+    <value>Sorry, password can not be empty!!!</value>
+  </data>
+  <data name="alertUserName" xml:space="preserve">
+    <value>Please Enter User Name.</value>
+  </data>
+  <data name="alertMaxLessMin" xml:space="preserve">
+    <value>Min Bet cannot be greater than Max Bet</value>
+  </data>
+  <data name="alertIncorrectMinBet" xml:space="preserve">
+    <value>Incorrect Min Bet</value>
+  </data>
+  <data name="alertIncorrectMaxBet" xml:space="preserve">
+    <value>Incorrect Max Bet</value>
+  </data>
+  <data name="alertMaxLessMaxPer" xml:space="preserve">
+    <value>Max Bet cannot be greater than Max Per Match</value>
+  </data>
+  <data name="alertIncorrectMaxPerMatch" xml:space="preserve">
+    <value>Incorrect Max Per Match</value>
+  </data>
+  <data name="lblMinPosition" xml:space="preserve">
+    <value>Min Position</value>
+  </data>
+  <data name="lblMaxPosition" xml:space="preserve">
+    <value>Max Position</value>
+  </data>
+  <data name="alertIncorrectCredit" xml:space="preserve">
+    <value>Incorrect Max Credit</value>
+  </data>
+  <data name="alertMinLessCredit" xml:space="preserve">
+    <value>Max credit must be more than or equal to </value>
+  </data>
+  <data name="lblMinMaxPT" xml:space="preserve">
+    <value>Min &amp; Max Position</value>
+  </data>
+  <data name="lblMinPT" xml:space="preserve">
+    <value>Min Position</value>
+  </data>
+  <data name="lblCopyAllPTfromHdpMin" xml:space="preserve">
+    <value>Copy all Position Taking from Soccer Handicap (Excluding Number Game)</value>
+  </data>
+  <data name="lblCopyBasketHdpMin" xml:space="preserve">
+    <value>Copy all Position Taking from Basketball Handicap (Excluding Number Game)</value>
+  </data>
+  <data name="alertIncorrectAmaxcredit" xml:space="preserve">
+    <value>Incorrect Agent Maximum Credit</value>
+  </data>
+  <data name="lblalertMinbetCompare" xml:space="preserve">
+    <value>Min Bet must be more than or equal to</value>
+  </data>
+  <data name="lblalerMaxbetCompare" xml:space="preserve">
+    <value>Max Bet must be less than or equal to</value>
+  </data>
+  <data name="lblalertMaxPerMatchCompare" xml:space="preserve">
+    <value>Max Per Match must be less than or equal to {1}.</value>
+  </data>
+  <data name="lblalertMaxPerMatchCompareMin" xml:space="preserve">
+    <value>Max Bet Match must be more than or equal to</value>
+  </data>
+  <data name="lblalertMaxPerMatchCompareMax" xml:space="preserve">
+    <value>Max Bet Match must be less than or equal to</value>
+  </data>
+  <data name="lblCreditInvalid" xml:space="preserve">
+    <value>{0} must be between {1} and {2}</value>
+  </data>
+  <data name="lblMasterPresetPositionH_OU_OE" xml:space="preserve">
+    <value>Master Preset Position (hdp, o/u, o/e)</value>
+  </data>
+  <data name="lblSuperPresetPosition" xml:space="preserve">
+    <value>Super Preset Position</value>
+  </data>
+  <data name="lblMasterPresetPosition" xml:space="preserve">
+    <value>Master Preset Position</value>
+  </data>
+  <data name="lblAsianHDC_OU_OE" xml:space="preserve">
+    <value>Asian HDC, OU, OE </value>
+  </data>
+  <data name="lblOtherTypes" xml:space="preserve">
+    <value>Other Bettypes</value>
+  </data>
+  <data name="lblFax" xml:space="preserve">
+    <value>Fax</value>
+  </data>
+  <data name="lblStatusClosed" xml:space="preserve">
+    <value>Closed</value>
+  </data>
+  <data name="lblMasterMaxCredit" xml:space="preserve">
+    <value>Master Max Credit</value>
+  </data>
+  <data name="lblAutoSuperPresetPosition" xml:space="preserve">
+    <value>Auto Super Preset Position</value>
+  </data>
+  <data name="lblCopyFromOE" xml:space="preserve">
+    <value>Copy From Odd/Even</value>
+  </data>
+  <data name="lblAccBalanceTranCondition" xml:space="preserve">
+    <value>Account Balance Transfer Condition</value>
+  </data>
+  <data name="lblDaily" xml:space="preserve">
+    <value>Daily</value>
+  </data>
+  <data name="lblWeekly" xml:space="preserve">
+    <value>Weekly</value>
+  </data>
+  <data name="lblMon" xml:space="preserve">
+    <value>Mon</value>
+  </data>
+  <data name="lblTue" xml:space="preserve">
+    <value>Tue</value>
+  </data>
+  <data name="lblWed" xml:space="preserve">
+    <value>Wed</value>
+  </data>
+  <data name="lblThurs" xml:space="preserve">
+    <value>Thur</value>
+  </data>
+  <data name="lblFri" xml:space="preserve">
+    <value>Fri</value>
+  </data>
+  <data name="lblSat" xml:space="preserve">
+    <value>Sat</value>
+  </data>
+  <data name="lblSun" xml:space="preserve">
+    <value>Sun</value>
+  </data>
+  <data name="lblConfirmChooseDaily" xml:space="preserve">
+    <value>Please choose Daily instead of 7 days.</value>
+  </data>
+  <data name="lblChooseOneDay" xml:space="preserve">
+    <value>Please select at least one day.</value>
+  </data>
+  <data name="lblAddNewMaster" xml:space="preserve">
+    <value>Add New Master</value>
+  </data>
+  <data name="lblAgentPosition" xml:space="preserve">
+    <value>Agent Position</value>
+  </data>
+  <data name="EditMember" xml:space="preserve">
+    <value>Edit Member</value>
+  </data>
+  <data name="CommissionForAgent" xml:space="preserve">
+    <value>Comm for Agent</value>
+  </data>
+  <data name="CommissionForMaster" xml:space="preserve">
+    <value>Comm for Master</value>
+  </data>
+  <data name="CommissionForMember" xml:space="preserve">
+    <value>Comm for Member</value>
+  </data>
+  <data name="SuperAuto" xml:space="preserve">
+    <value>Super Auto</value>
+  </data>
+  <data name="lblVirtualTotalRM" xml:space="preserve">
+    <value>Virtual Total RM</value>
+  </data>
+  <data name="lblVariance" xml:space="preserve">
+    <value>Variance</value>
+  </data>
+  <data name="alertCurrency" xml:space="preserve">
+    <value>Please Select Currency</value>
+  </data>
+  <data name="alertSite" xml:space="preserve">
+    <value>Please Select Site</value>
+  </data>
+  <data name="a" xml:space="preserve">
+    <value>auto</value>
+  </data>
+  <data name="Acc_CustomerInsMember_Ag" xml:space="preserve">
+    <value>Add new member &lt;br/&gt; (Acc_CustomerInsMember_Ag)</value>
+  </data>
+  <data name="Acc_CustomerInsMember_Com" xml:space="preserve">
+    <value>Add new super &lt;br/&gt; (Acc_CustomerInsMember_Com)</value>
+  </data>
+  <data name="Acc_CustomerInsMember_MAg" xml:space="preserve">
+    <value> Add new agent &lt;br/&gt; (Acc_CustomerInsMember_MAg)</value>
+  </data>
+  <data name="Acc_CustomerInsMember_SAg" xml:space="preserve">
+    <value>Add new master&lt;br/&gt; (Acc_CustomerInsMember_SAg)</value>
+  </data>
+  <data name="Acc_CustomerUpdEditCustomer_Ag" xml:space="preserve">
+    <value>Edit member &lt;br/&gt;(Acc_CustomerUpdMember_All)</value>
+  </data>
+  <data name="Acc_CustomerUpdEditCustomer_Com" xml:space="preserve">
+    <value>Edit super&lt;br/&gt; (Acc_CustomerUpdSuper_All)</value>
+  </data>
+  <data name="Acc_CustomerUpdEditCustomer_MAg" xml:space="preserve">
+    <value>Edit agent&lt;br/&gt; (Acc_CustomerUpdAgent_All)</value>
+  </data>
+  <data name="Acc_CustomerUpdEditCustomer_SAg" xml:space="preserve">
+    <value>Edit master&lt;br/&gt; (Acc_CustomerUpdMaster_All)</value>
+  </data>
+  <data name="Acc_CustomerUpdMaster_Member" xml:space="preserve">
+    <value>Edit master PT on member &lt;br/&gt;(Acc_CustomerUpdMember_Master)</value>
+  </data>
+  <data name="Acc_CustomerUpdSuper_Member" xml:space="preserve">
+    <value>Edit super PT on member &lt;br/&gt;(Acc_CustomerUpdMember_Super)</value>
+  </data>
+  <data name="Acc_CustOverrideUpd" xml:space="preserve">
+    <value>Edit Min/Max PT&lt;br/&gt;(Acc_CustOverrideUpd)</value>
+  </data>
+  <data name="fname" xml:space="preserve">
+    <value>first name</value>
+  </data>
+  <data name="lname" xml:space="preserve">
+    <value>last name</value>
+  </data>
+  <data name="MaxB" xml:space="preserve">
+    <value>Soccer-Max Bet</value>
+  </data>
+  <data name="MinB" xml:space="preserve">
+    <value>Soccer-Min Bet</value>
+  </data>
+  <data name="mphone" xml:space="preserve">
+    <value>Mobile phone</value>
+  </data>
+  <data name="MPM" xml:space="preserve">
+    <value>Soccer-Max per match</value>
+  </data>
+  <data name="pt" xml:space="preserve">
+    <value>position taking</value>
+  </data>
+  <data name="UMMB" xml:space="preserve">
+    <value>UpdateMinMaxBet</value>
+  </data>
+  <data name="upd" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="_1" xml:space="preserve">
+    <value>Hdp</value>
+  </data>
+  <data name="_10" xml:space="preserve">
+    <value>Outright</value>
+  </data>
+  <data name="_2" xml:space="preserve">
+    <value>OE</value>
+  </data>
+  <data name="_20" xml:space="preserve">
+    <value>ML</value>
+  </data>
+  <data name="_21" xml:space="preserve">
+    <value>Fixed Odds</value>
+  </data>
+  <data name="_22" xml:space="preserve">
+    <value>Floating Odds</value>
+  </data>
+  <data name="_3" xml:space="preserve">
+    <value>OU</value>
+  </data>
+  <data name="_4" xml:space="preserve">
+    <value>CS</value>
+  </data>
+  <data name="_5" xml:space="preserve">
+    <value>1x2</value>
+  </data>
+  <data name="_6" xml:space="preserve">
+    <value>TG</value>
+  </data>
+  <data name="_7" xml:space="preserve">
+    <value>1st Hdp</value>
+  </data>
+  <data name="_8" xml:space="preserve">
+    <value>1st OU</value>
+  </data>
+  <data name="_9" xml:space="preserve">
+    <value>MP</value>
+  </data>
+  <data name="mpt" xml:space="preserve">
+    <value>Mag PT </value>
+  </data>
+  <data name="spt" xml:space="preserve">
+    <value>Sag PT </value>
+  </data>
+  <data name="a_spt" xml:space="preserve">
+    <value>auto PT</value>
+  </data>
+  <data name="isa_spt" xml:space="preserve">
+    <value>is auto position </value>
+  </data>
+  <data name="alivept" xml:space="preserve">
+    <value>Ag live PT</value>
+  </data>
+  <data name="mlivept" xml:space="preserve">
+    <value>Mag live PT</value>
+  </data>
+  <data name="slivept" xml:space="preserve">
+    <value>Sag live PT</value>
+  </data>
+  <data name="MaxBv10" xml:space="preserve">
+    <value>Golf-Max bet</value>
+  </data>
+  <data name="MaxBv11" xml:space="preserve">
+    <value>Motosport-Max bet</value>
+  </data>
+  <data name="MaxBv12" xml:space="preserve">
+    <value>Finance-Max bet </value>
+  </data>
+  <data name="MaxBv2" xml:space="preserve">
+    <value>Basketball-Max bet</value>
+  </data>
+  <data name="MaxBv3" xml:space="preserve">
+    <value>Football-Max bet</value>
+  </data>
+  <data name="MaxBv5" xml:space="preserve">
+    <value>Tennis-Max bet</value>
+  </data>
+  <data name="MaxBv8" xml:space="preserve">
+    <value>Baseball-Max bet</value>
+  </data>
+  <data name="MaxBv99" xml:space="preserve">
+    <value>OtherSports-Max bet </value>
+  </data>
+  <data name="MinBv10" xml:space="preserve">
+    <value>Golf-Min bet</value>
+  </data>
+  <data name="MinBv11" xml:space="preserve">
+    <value>Motosport-Min bet</value>
+  </data>
+  <data name="MinBv12" xml:space="preserve">
+    <value>Finance-Min bet </value>
+  </data>
+  <data name="MinBv2" xml:space="preserve">
+    <value>Basketball-Min bet</value>
+  </data>
+  <data name="MinBv3" xml:space="preserve">
+    <value>Football-Min bet</value>
+  </data>
+  <data name="MinBv5" xml:space="preserve">
+    <value>Tennis-Min bet</value>
+  </data>
+  <data name="MinBv8" xml:space="preserve">
+    <value>Baseball-Min bet</value>
+  </data>
+  <data name="MinBv99" xml:space="preserve">
+    <value>OtherSports-Min bet </value>
+  </data>
+  <data name="MPMv10" xml:space="preserve">
+    <value>Golf-Max per match </value>
+  </data>
+  <data name="MPMv11" xml:space="preserve">
+    <value>Motosport-Max per match </value>
+  </data>
+  <data name="MPMv12" xml:space="preserve">
+    <value>Finance-Max per match </value>
+  </data>
+  <data name="MPMv2" xml:space="preserve">
+    <value>Basketball-Max per match </value>
+  </data>
+  <data name="MPMv3" xml:space="preserve">
+    <value>Football-Max per match </value>
+  </data>
+  <data name="MPMv5" xml:space="preserve">
+    <value>Tennis-Max per match </value>
+  </data>
+  <data name="MPMv8" xml:space="preserve">
+    <value>Baseball-Max per match </value>
+  </data>
+  <data name="MPMv99" xml:space="preserve">
+    <value>OtherSports-Max per match </value>
+  </data>
+  <data name="traderPerformance" xml:space="preserve">
+    <value>Trader Performance</value>
+  </data>
+  <data name="TraderPerformanceDetail" xml:space="preserve">
+    <value>Risk Controller Report By Match</value>
+  </data>
+  <data name="MinMaxExchangeRate" xml:space="preserve">
+    <value>Min Max Ex.Rate</value>
+  </data>
+  <data name="IsNeutral" xml:space="preserve">
+    <value> (N)</value>
+  </data>
+  <data name="lblAutoMasterResestPosition" xml:space="preserve">
+    <value>Auto Master Preset</value>
+  </data>
+  <data name="CommFinancial" xml:space="preserve">
+    <value>Finance Comm</value>
+  </data>
+  <data name="CommissionFinancial" xml:space="preserve">
+    <value>Finance Commission</value>
+  </data>
+  <data name="CommissionHR" xml:space="preserve">
+    <value>Racing Commission</value>
+  </data>
+  <data name="CommissionUK" xml:space="preserve">
+    <value>UK Meeting</value>
+  </data>
+  <data name="lblHorseRacing" xml:space="preserve">
+    <value>Racing</value>
+  </data>
+  <data name="DisabledHR" xml:space="preserve">
+    <value>Disabled HR</value>
+  </data>
+  <data name="lblCommHR" xml:space="preserve">
+    <value>Commission</value>
+  </data>
+  <data name="lblDisabledHR" xml:space="preserve">
+    <value>Enable SA Tote</value>
+  </data>
+  <data name="lblFirstname" xml:space="preserve">
+    <value>First Name</value>
+  </data>
+  <data name="lblLastname" xml:space="preserve">
+    <value>Last Name</value>
+  </data>
+  <data name="lblMobilePhone" xml:space="preserve">
+    <value>Mobile Phone</value>
+  </data>
+  <data name="lblOthersMeeting" xml:space="preserve">
+    <value>SA Meeting</value>
+  </data>
+  <data name="lblPhone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="lblUKMeeting" xml:space="preserve">
+    <value>UK Meeting</value>
+  </data>
+  <data name="lblUpdate" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="lblUsername" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="lblalertMaxBetNegative" xml:space="preserve">
+    <value>Max Bet must be greater than zero</value>
+  </data>
+  <data name="lblalertMaxPerMatchNegative" xml:space="preserve">
+    <value>Max per Match must be greater than zero</value>
+  </data>
+  <data name="lblalertMinBetNegative" xml:space="preserve">
+    <value>Min Bet must be greater than zero</value>
+  </data>
+  <data name="lblProcessing" xml:space="preserve">
+    <value>Processing...</value>
+  </data>
+  <data name="typebet" xml:space="preserve">
+    <value>Bettype</value>
+  </data>
+  <data name="lblFinancial" xml:space="preserve">
+    <value>Finance</value>
+  </data>
+  <data name="lblOther" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="lblUK" xml:space="preserve">
+    <value>UK</value>
+  </data>
+  <data name="specialDelConfirm" xml:space="preserve">
+    <value>You can only delete the unsettled tickets and refunded ones</value>
+  </data>
+  <data name="lblHRHeader" xml:space="preserve">
+    <value>HR</value>
+  </data>
+  <data name="lblIsUpdDownlineHR" xml:space="preserve">
+    <value>Change all downlines status</value>
+  </data>
+  <data name="lblInvalidCurrencyHR" xml:space="preserve">
+    <value>This customer is not allowed to bet on Racing</value>
+  </data>
+  <data name="lblUpdatedHRSuccessfull" xml:space="preserve">
+    <value>Racing setting was updated successfully</value>
+  </data>
+  <data name="lblHRComm" xml:space="preserve">
+    <value>Comm for {1}</value>
+  </data>
+  <data name="CommissionForCompany" xml:space="preserve">
+    <value>Comm for Company</value>
+  </data>
+  <data name="CommissionForSuper" xml:space="preserve">
+    <value>Comm for Super</value>
+  </data>
+  <data name="lblHRSettingTitle" xml:space="preserve">
+    <value>Racing Setting</value>
+  </data>
+  <data name="lblConfirmEditAgent" xml:space="preserve">
+    <value>You have changed this agent not to take auto position taking.&lt;br&gt;Do you want to update all member's position taking to:</value>
+  </data>
+  <data name="lblCommType" xml:space="preserve">
+    <value>Comm Type</value>
+  </data>
+  <data name="lblMeetingEn" xml:space="preserve">
+    <value>Meeting</value>
+  </data>
+  <data name="lblMeetingSC" xml:space="preserve">
+    <value>Meeting (SC)</value>
+  </data>
+  <data name="lblMeetingTC" xml:space="preserve">
+    <value>Meeting (TC)</value>
+  </data>
+  <data name="lblAlertDisableHR" xml:space="preserve">
+    <value>WARNING!!! \n\n Are you sure you want to disable Racing on this customer and all downlines?</value>
+  </data>
+  <data name="lblAlertDisableHRMember" xml:space="preserve">
+    <value>WARNING!!! \n\n Are you sure you want to disable Racing on this customer?</value>
+  </data>
+  <data name="lblAlertEnableHR" xml:space="preserve">
+    <value>Are you sure you want to enable Racing on this customer?</value>
+  </data>
+  <data name="lblAlertEnableHRDownline" xml:space="preserve">
+    <value>Do you want to enable Racing on all downlines?</value>
+  </data>
+  <data name="lblPlace" xml:space="preserve">
+    <value>Place</value>
+  </data>
+  <data name="lblWin" xml:space="preserve">
+    <value>Win</value>
+  </data>
+  <data name="lblWinPlace" xml:space="preserve">
+    <value>Win Place</value>
+  </data>
+  <data name="lblSaMeeting" xml:space="preserve">
+    <value>SA Meeting</value>
+  </data>
+  <data name="lblFICall" xml:space="preserve">
+    <value>Call</value>
+  </data>
+  <data name="lblFIPut" xml:space="preserve">
+    <value>Put</value>
+  </data>
+  <data name="No1" xml:space="preserve">
+    <value>1st</value>
+  </data>
+  <data name="No2" xml:space="preserve">
+    <value>2nd</value>
+  </data>
+  <data name="No3" xml:space="preserve">
+    <value>3rd</value>
+  </data>
+  <data name="NoOthers" xml:space="preserve">
+    <value>th</value>
+  </data>
+  <data name="lblDisabledFIUplineTT" xml:space="preserve">
+    <value>The Finance has been disabled at upline</value>
+  </data>
+  <data name="lblDisabledHRUplineTT" xml:space="preserve">
+    <value>SA Tote status has been disabled at upline</value>
+  </data>
+  <data name="HR" xml:space="preserve">
+    <value>Racing</value>
+  </data>
+  <data name="Place" xml:space="preserve">
+    <value>Place</value>
+  </data>
+  <data name="Race" xml:space="preserve">
+    <value>Race</value>
+  </data>
+  <data name="HorseNo" xml:space="preserve">
+    <value>Runner</value>
+  </data>
+  <data name="lblResult" xml:space="preserve">
+    <value>Result</value>
+  </data>
+  <data name="lblCallPut" xml:space="preserve">
+    <value>Call/Put</value>
+  </data>
+  <data name="lblRaceResult" xml:space="preserve">
+    <value>Race Result</value>
+  </data>
+  <data name="strNotAccessPage" xml:space="preserve">
+    <value>Sorry, You don't have permission to access this page.</value>
+  </data>
+  <data name="lblDisabledFI" xml:space="preserve">
+    <value>Disabled Finance</value>
+  </data>
+  <data name="lblSCR" xml:space="preserve">
+    <value>SCR</value>
+  </data>
+  <data name="lblTF" xml:space="preserve">
+    <value>TF</value>
+  </data>
+  <data name="lblCopyFromBettype" xml:space="preserve">
+    <value>Copy from {0}</value>
+  </data>
+  <data name="lblAway" xml:space="preserve">
+    <value>Away</value>
+  </data>
+  <data name="lblGoalHistory" xml:space="preserve">
+    <value>Goal History</value>
+  </data>
+  <data name="lblHome" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="HandicapNextGoal" xml:space="preserve">
+    <value>Handicap/Next Goal</value>
+  </data>
+  <data name="lblOver" xml:space="preserve">
+    <value>Over</value>
+  </data>
+  <data name="lblUnder" xml:space="preserve">
+    <value>Under</value>
+  </data>
+  <data name="MaxBv201" xml:space="preserve">
+    <value>Finance-Max bet </value>
+  </data>
+  <data name="MinBv201" xml:space="preserve">
+    <value>Finance-Min bet</value>
+  </data>
+  <data name="MPMv201" xml:space="preserve">
+    <value>Finance-Max per match</value>
+  </data>
+  <data name="lblAutoPT" xml:space="preserve">
+    <value>{0} Auto Preset Position</value>
+  </data>
+  <data name="lblCommPT" xml:space="preserve">
+    <value>{0} Commission</value>
+  </data>
+  <data name="lblMaxPT" xml:space="preserve">
+    <value>{0} Max Position</value>
+  </data>
+  <data name="lblPresetPT" xml:space="preserve">
+    <value>{0} Preset Position</value>
+  </data>
+  <data name="MinPT" xml:space="preserve">
+    <value>{0} Min PT</value>
+  </data>
+  <data name="lblGroupSetting" xml:space="preserve">
+    <value>Group Setting</value>
+  </data>
+  <data name="lblBettingLimit" xml:space="preserve">
+    <value>Betting Limit</value>
+  </data>
+  <data name="lblAccumulatedWinLoss" xml:space="preserve">
+    <value>Accumulated transferable amount</value>
+  </data>
+  <data name="lblMaxLoseAllowed" xml:space="preserve">
+    <value>Max lose allowed</value>
+  </data>
+  <data name="lblMaxWinAllowed" xml:space="preserve">
+    <value>Max win allowed</value>
+  </data>
+  <data name="lblMin" xml:space="preserve">
+    <value>Min</value>
+  </data>
+  <data name="lblNoLimited" xml:space="preserve">
+    <value>No limited</value>
+  </data>
+  <data name="lblCustomerInfomation" xml:space="preserve">
+    <value>Customer Information</value>
+  </data>
+  <data name="lblEnabledCasino" xml:space="preserve">
+    <value>Enable Casino</value>
+  </data>
+  <data name="lblMaxTransferCredit" xml:space="preserve">
+    <value>Member Max Transfer Credit</value>
+  </data>
+  <data name="lblSuspend" xml:space="preserve">
+    <value>Suspend</value>
+  </data>
+  <data name="lblUsername2" xml:space="preserve">
+    <value>Nick Name</value>
+  </data>
+  <data name="lblDisabledCSUpline" xml:space="preserve">
+    <value>Casino was disabled at upline</value>
+  </data>
+  <data name="lblCSHeader" xml:space="preserve">
+    <value>CS</value>
+  </data>
+  <data name="lblPositionTakingFormat" xml:space="preserve">
+    <value>{0} Position</value>
+  </data>
+  <data name="strConfirmDisableCS" xml:space="preserve">
+    <value>WARNING!!! \n\n Are you sure you want to disable Casino on this customer and all it's downlines?</value>
+  </data>
+  <data name="strConfirmEnableCS" xml:space="preserve">
+    <value>Do you want to enable Casino on this customer and all it's downlines?</value>
+  </data>
+  <data name="lblCustomerSite" xml:space="preserve">
+    <value>Site</value>
+  </data>
+  <data name="lblCopyFrom" xml:space="preserve">
+    <value>Copy from {0}</value>
+  </data>
+  <data name="lblMaxPositionTaking" xml:space="preserve">
+    <value>Max Position</value>
+  </data>
+  <data name="lblMinPositionTaking" xml:space="preserve">
+    <value>Min Position</value>
+  </data>
+  <data name="lblEnabledFI" xml:space="preserve">
+    <value>Enable Finance</value>
+  </data>
+  <data name="lblUpdatedSuccessfully" xml:space="preserve">
+    <value>* Updated Successfully</value>
+  </data>
+  <data name="lblHeaderFI" xml:space="preserve">
+    <value>FI</value>
+  </data>
+  <data name="lblAuto" xml:space="preserve">
+    <value>{0} Auto</value>
+  </data>
+  <data name="lblUplineHaveNotSyncToCasino" xml:space="preserve">
+    <value>Please synchronize Upline of this customer to Casino first.</value>
+  </data>
+  <data name="lbl1x2" xml:space="preserve">
+    <value>1x2</value>
+  </data>
+  <data name="lblCommFor" xml:space="preserve">
+    <value>Comm for {0}</value>
+  </data>
+  <data name="lblHDPOUOE" xml:space="preserve">
+    <value>Asian HDP, OU, OE </value>
+  </data>
+  <data name="lblOtherBettypes" xml:space="preserve">
+    <value>Other Bettypes</value>
+  </data>
+  <data name="lbl1x2Comm" xml:space="preserve">
+    <value>1x2 Comm</value>
+  </data>
+  <data name="lblOpenToteComm" xml:space="preserve">
+    <value>UK Tote Comm</value>
+  </data>
+  <data name="lblToteComm" xml:space="preserve">
+    <value>SA Tote Comm</value>
+  </data>
+  <data name="lblTote" xml:space="preserve">
+    <value>SA Tote</value>
+  </data>
+  <data name="lblUnAvailable" xml:space="preserve">
+    <value>Sorry, {0} is currently unavailable. </value>
+  </data>
+  <data name="IBC" xml:space="preserve">
+    <value>House</value>
+  </data>
+  <data name="lblAutoPositionTaking" xml:space="preserve">
+    <value>{0} Auto Position</value>
+  </data>
+  <data name="lblHRCopyAllSuper" xml:space="preserve">
+    <value>Copy all  Bet Setting and Position Taking from {0} - {1} and House Auto Position</value>
+  </data>
+  <data name="transferCreditMsg" xml:space="preserve">
+    <value>Max transfer credit must be between min and max limit value.</value>
+  </data>
+  <data name="unlimited" xml:space="preserve">
+    <value>No limit</value>
+  </data>
+  <data name="lblHRCopyAll" xml:space="preserve">
+    <value>Copy all Bet Setting and Position Taking from {0} - {1}</value>
+  </data>
+  <data name="lblOpenToteFormat" xml:space="preserve">
+    <value>SA Tote {0}</value>
+  </data>
+  <data name="lblToteFormat" xml:space="preserve">
+    <value>UK Tote {0}</value>
+  </data>
+  <data name="lblSuspendedUpline" xml:space="preserve">
+    <value>Upline has been suspended</value>
+  </data>
+  <data name="resetFailed" xml:space="preserve">
+    <value>Reset accumulated transferable amount failed!</value>
+  </data>
+  <data name="updCustSettingFailed" xml:space="preserve">
+    <value>Update cust setting failed!</value>
+  </data>
+  <data name="maxTransferInvalid" xml:space="preserve">
+    <value>Max Transfer must be an integer value</value>
+  </data>
+  <data name="lblCopyPreset" xml:space="preserve">
+    <value>Apply {0} Preset {1}  PT to all Members</value>
+  </data>
+  <data name="autoReset" xml:space="preserve">
+    <value>Daily auto reset limit (at 12 noon GMT+8)</value>
+  </data>
+  <data name="includeTodayWL" xml:space="preserve">
+    <value>Include today's Win/Loss</value>
+  </data>
+  <data name="DirectAgent" xml:space="preserve">
+    <value>Direct Agent</value>
+  </data>
+  <data name="DirectBalance" xml:space="preserve">
+    <value>Direct Balance</value>
+  </data>
+  <data name="DirectMaster" xml:space="preserve">
+    <value>Direct Master</value>
+  </data>
+  <data name="DirectMember" xml:space="preserve">
+    <value>Direct Member</value>
+  </data>
+  <data name="agentdownline" xml:space="preserve">
+    <value>Agent's downlines</value>
+  </data>
+  <data name="masterdownline" xml:space="preserve">
+    <value>Master's downlines</value>
+  </data>
+  <data name="superdownline" xml:space="preserve">
+    <value>Super's downlines</value>
+  </data>
+  <data name="getDataFrom" xml:space="preserve">
+    <value>Get Data From</value>
+  </data>
+  <data name="main" xml:space="preserve">
+    <value>Main</value>
+  </data>
+  <data name="replication" xml:space="preserve">
+    <value>Replication</value>
+  </data>
+  <data name="search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="lblAllowOutright" xml:space="preserve">
+    <value>Allow Outright</value>
+  </data>
+  <data name="lblDisabledORUpline" xml:space="preserve">
+    <value>Outright has been disallowed at upline</value>
+  </data>
+  <data name="lblDisabledAccount" xml:space="preserve">
+    <value>This account was disabled</value>
+  </data>
+  <data name="lblNA" xml:space="preserve">
+    <value>N/A</value>
+  </data>
+  <data name="casinodownlines" xml:space="preserve">
+    <value>Casino Downlines</value>
+  </data>
+  <data name="casinodownlinesdisabled" xml:space="preserve">
+    <value>Casino downlines will be disabled as well</value>
+  </data>
+  <data name="casinoFullResetSuccessfully" xml:space="preserve">
+    <value>Full reset Casino max transfer Successfully</value>
+  </data>
+  <data name="casinoFullResetUnSuccessful" xml:space="preserve">
+    <value>Full reset Casino max transfer UnSuccessfully</value>
+  </data>
+  <data name="lblAccountingUser" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="SuperBalanceMovement" xml:space="preserve">
+    <value>Super Balance Movement</value>
+  </data>
+  <data name="OriginalBalance" xml:space="preserve">
+    <value>Original Balance</value>
+  </data>
+  <data name="ExcelExport" xml:space="preserve">
+    <value>Export To Excel</value>
+  </data>
+  <data name="Day1" xml:space="preserve">
+    <value>Day 1</value>
+  </data>
+  <data name="Day2" xml:space="preserve">
+    <value>Day 2</value>
+  </data>
+  <data name="Day3" xml:space="preserve">
+    <value>Day 3</value>
+  </data>
+  <data name="Day4" xml:space="preserve">
+    <value>Day 4</value>
+  </data>
+  <data name="Day5" xml:space="preserve">
+    <value>Day 5</value>
+  </data>
+  <data name="Day6" xml:space="preserve">
+    <value>Day 6</value>
+  </data>
+  <data name="Day7" xml:space="preserve">
+    <value>Day 7</value>
+  </data>
+  <data name="POS" xml:space="preserve">
+    <value>POS</value>
+  </data>
+  <data name="Trac" xml:space="preserve">
+    <value>Trac</value>
+  </data>
+  <data name="lblAccountingSystem" xml:space="preserve">
+    <value>Accounting Admin System</value>
+  </data>
+  <data name="lblCopyRight" xml:space="preserve">
+    <value>&amp;copy; Copyright 2009</value>
+  </data>
+  <data name="DirectAgentBalance" xml:space="preserve">
+    <value>Direct Agent Balance</value>
+  </data>
+  <data name="DirectMasterBalance" xml:space="preserve">
+    <value>Direct Master Balance</value>
+  </data>
+  <data name="DirectMemberBalance" xml:space="preserve">
+    <value>Direct Member Balance</value>
+  </data>
+  <data name="userBetting" xml:space="preserve">
+    <value>Betting</value>
+  </data>
+  <data name="userInternal" xml:space="preserve">
+    <value>Internal</value>
+  </data>
+  <data name="refresh" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="lblCannotChangeMemberInternal" xml:space="preserve">
+    <value>Cannot change Internal status for Member!</value>
+  </data>
+  <data name="lblUplineIsInternalUser" xml:space="preserve">
+    <value>Upline is Internal User</value>
+  </data>
+  <data name="lblInternalUser" xml:space="preserve">
+    <value>Internal User</value>
+  </data>
+  <data name="betAt" xml:space="preserve">
+    <value>Bet at</value>
+  </data>
+  <data name="pBetAt" xml:space="preserve">
+    <value>P-Bet at</value>
+  </data>
+  <data name="pSettle" xml:space="preserve">
+    <value>P-Settled</value>
+  </data>
+  <data name="settle" xml:space="preserve">
+    <value>Settled</value>
+  </data>
+  <data name="wBetAt" xml:space="preserve">
+    <value>W-Bet at</value>
+  </data>
+  <data name="WSettle" xml:space="preserve">
+    <value>W-Settled</value>
+  </data>
+  <data name="BLIPLimitVN" xml:space="preserve">
+    <value>You're not authorized to view Bet list by this IP.</value>
+  </data>
+  <data name="lblUplineClosed" xml:space="preserve">
+    <value>Upline has been closed</value>
+  </data>
+  <data name="DailyCreatedCustomers" xml:space="preserve">
+    <value>Daily Created Customers</value>
+  </data>
+  <data name="CreateDate" xml:space="preserve">
+    <value>Created Date</value>
+  </data>
+  <data name="CreatedBy" xml:space="preserve">
+    <value>Created By</value>
+  </data>
+  <data name="DailyCreatedCustomerReport" xml:space="preserve">
+    <value>Daily Created Customers Report</value>
+  </data>
+  <data name="finalscore" xml:space="preserve">
+    <value>Final Score</value>
+  </data>
+  <data name="kickofftime" xml:space="preserve">
+    <value>Kick Off. Time</value>
+  </data>
+  <data name="lbl1" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lbl1Set" xml:space="preserve">
+    <value>1 Set</value>
+  </data>
+  <data name="lbl2" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lbl2Set" xml:space="preserve">
+    <value>2 Set</value>
+  </data>
+  <data name="lbl3" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lbl3Set" xml:space="preserve">
+    <value>3 Set</value>
+  </data>
+  <data name="lbl4" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lbl4Set" xml:space="preserve">
+    <value>4 Set</value>
+  </data>
+  <data name="lbl5" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lbl5Set" xml:space="preserve">
+    <value>5 Set</value>
+  </data>
+  <data name="lbl6" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="lbl7" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="lbl8" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="lbl9" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="lblEI" xml:space="preserve">
+    <value>E.I</value>
+  </data>
+  <data name="lblHTScore" xml:space="preserve">
+    <value>HT Score</value>
+  </data>
+  <data name="lblTeam" xml:space="preserve">
+    <value>Team</value>
+  </data>
+  <data name="league" xml:space="preserve">
+    <value>League</value>
+  </data>
+  <data name="OT" xml:space="preserve">
+    <value>OT</value>
+  </data>
+  <data name="P1" xml:space="preserve">
+    <value>1P</value>
+  </data>
+  <data name="P2" xml:space="preserve">
+    <value>2P</value>
+  </data>
+  <data name="P3" xml:space="preserve">
+    <value>3P</value>
+  </data>
+  <data name="Q1" xml:space="preserve">
+    <value>1Q</value>
+  </data>
+  <data name="Q2" xml:space="preserve">
+    <value>2Q</value>
+  </data>
+  <data name="Q3" xml:space="preserve">
+    <value>3Q</value>
+  </data>
+  <data name="Q4" xml:space="preserve">
+    <value>4Q</value>
+  </data>
+  <data name="totalgame" xml:space="preserve">
+    <value>Total Games</value>
+  </data>
+  <data name="totalpoint" xml:space="preserve">
+    <value>Total Points</value>
+  </data>
+  <data name="totalset" xml:space="preserve">
+    <value>Total Set</value>
+  </data>
+  <data name="firstgoal" xml:space="preserve">
+    <value>First Goal</value>
+  </data>
+  <data name="lastgoal" xml:space="preserve">
+    <value>Last Goal</value>
+  </data>
+  <data name="goalHistory" xml:space="preserve">
+    <value>Goal history</value>
+  </data>
+  <data name="sport" xml:space="preserve">
+    <value>Sport</value>
+  </data>
+  <data name="exitCSConfirmMsg" xml:space="preserve">
+    <value>Are you sure you want to exit without saving your casino setting?</value>
+  </data>
+  <data name="resetMaxtransferSucceed" xml:space="preserve">
+    <value>Accumulated transferable amount has been reset successfully.</value>
+  </data>
+  <data name="MarginReportHis" xml:space="preserve">
+    <value>Margin Report History</value>
+  </data>
+  <data name="badminton" xml:space="preserve">
+    <value>Badminton</value>
+  </data>
+  <data name="billiard" xml:space="preserve">
+    <value>Billiard</value>
+  </data>
+  <data name="fieldHockey" xml:space="preserve">
+    <value>Field Hockey</value>
+  </data>
+  <data name="iceHockey" xml:space="preserve">
+    <value>Ice Hockey</value>
+  </data>
+  <data name="rugby" xml:space="preserve">
+    <value>Rugby</value>
+  </data>
+  <data name="squash" xml:space="preserve">
+    <value>Squash</value>
+  </data>
+  <data name="volleyBall" xml:space="preserve">
+    <value>VolleyBall</value>
+  </data>
+  <data name="winterSports" xml:space="preserve">
+    <value>Winter Sports</value>
+  </data>
+  <data name="lblDisabledHROpentote" xml:space="preserve">
+    <value>Enable UK Tote</value>
+  </data>
+  <data name="lblDisabledHRUplineTTUK" xml:space="preserve">
+    <value>UK Tote status has been disabled at upline</value>
+  </data>
+  <data name="lblDisabledBingoGame" xml:space="preserve">
+    <value>Enable Bingo</value>
+  </data>
+  <data name="lblDisabledBingoGameUpline" xml:space="preserve">
+    <value>Bingo status has been disabled at upline</value>
+  </data>
+  <data name="lblDisabledNumberGame" xml:space="preserve">
+    <value>Enable Num Game</value>
+  </data>
+  <data name="lblDisabledNumberGameUpline" xml:space="preserve">
+    <value>Number Game status has been disabled at upline</value>
+  </data>
+  <data name="lblNumberGame" xml:space="preserve">
+    <value>Number Game</value>
+  </data>
+  <data name="lblIBCbetBingo" xml:space="preserve">
+    <value>IBCbet Bingo</value>
+  </data>
+  <data name="lblMixedSports" xml:space="preserve">
+    <value>Mix Sports Parlay</value>
+  </data>
+  <data name="lblGameComm" xml:space="preserve">
+    <value>Number Game Comm</value>
+  </data>
+  <data name="lblInsertExSuccessful" xml:space="preserve">
+    <value>The process to add new currency is not complete, please contact IT-Programmer for the further assistance. Thanks!</value>
+  </data>
+  <data name="lblSuspended" xml:space="preserve">
+    <value>Suspended</value>
+  </data>
+  <data name="lblApplyDownline" xml:space="preserve">
+    <value>Apply Downline</value>
+  </data>
+  <data name="lblSelectedBetting" xml:space="preserve">
+    <value>Selected Betting</value>
+  </data>
+  <data name="lblSelectedBettingUL" xml:space="preserve">
+    <value>Selected Betting status has been selected at upline</value>
+  </data>
+  <data name="lblNumberGameNo" xml:space="preserve">
+    <value>Number Game No</value>
+  </data>
+  <data name="lblWinLostSponDemoTitle" xml:space="preserve">
+    <value>Spondemo Win Loss</value>
+  </data>
+  <data name="Spondemo" xml:space="preserve">
+    <value>SponDemo</value>
+  </data>
+  <data name="lblWinLostMS88Title" xml:space="preserve">
+    <value>Mansion88 Win Loss</value>
+  </data>
+  <data name="MS88" xml:space="preserve">
+    <value>Mansion88</value>
+  </data>
+  <data name="Dela" xml:space="preserve">
+    <value>Dela</value>
+  </data>
+  <data name="lblWinLostDelaTitle" xml:space="preserve">
+    <value>Dela Win Loss</value>
+  </data>
+  <data name="DailyFinanceTitle" xml:space="preserve">
+    <value>Daily Finance Transactions</value>
+  </data>
+  <data name="MaxBv161" xml:space="preserve">
+    <value>Number Game-Max Bet</value>
+  </data>
+  <data name="MaxBv99MP" xml:space="preserve">
+    <value>Mix Sports Parlay-Max Bet</value>
+  </data>
+  <data name="MinBv161" xml:space="preserve">
+    <value>Number Game-Min Bet</value>
+  </data>
+  <data name="MinBv99MP" xml:space="preserve">
+    <value>Mix Sports Parlay-Min Bet</value>
+  </data>
+  <data name="MPBv161" xml:space="preserve">
+    <value>Number Game-Max Per Ball</value>
+  </data>
+  <data name="MPMv161" xml:space="preserve">
+    <value>Number Game-Max Per Match</value>
+  </data>
+  <data name="MPMv99MP" xml:space="preserve">
+    <value>Mix Sports Parlay-Max Per Match</value>
+  </data>
+  <data name="iplogin" xml:space="preserve">
+    <value>Last Login IP</value>
+  </data>
+  <data name="lblAUTote" xml:space="preserve">
+    <value>Aust Tote</value>
+  </data>
+  <data name="lblAUTote51" xml:space="preserve">
+    <value>Win.Aust Tote</value>
+  </data>
+  <data name="lblAUTote52" xml:space="preserve">
+    <value>Place.Aust Tote</value>
+  </data>
+  <data name="Greyhound" xml:space="preserve">
+    <value>Greyhound</value>
+  </data>
+  <data name="Harness" xml:space="preserve">
+    <value>Harness</value>
+  </data>
+  <data name="lblFIComm" xml:space="preserve">
+    <value>FI Comm</value>
+  </data>
+  <data name="lblRacingGroupDaily" xml:space="preserve">
+    <value>Racing Group Daily</value>
+  </data>
+  <data name="lblRacingGroupDailyForTote" xml:space="preserve">
+    <value>Racing Group Daily For Tote</value>
+  </data>
+  <data name="GroupTotalInCome" xml:space="preserve">
+    <value>Group Total Income</value>
+  </data>
+  <data name="lbl12Bet" xml:space="preserve">
+    <value>12Bet</value>
+  </data>
+  <data name="lblAgency" xml:space="preserve">
+    <value>Agency</value>
+  </data>
+  <data name="lblAmountDue" xml:space="preserve">
+    <value>Amount Due</value>
+  </data>
+  <data name="lblCommExpense" xml:space="preserve">
+    <value>Comm Expense</value>
+  </data>
+  <data name="lblDividendWon" xml:space="preserve">
+    <value>Dividend Won</value>
+  </data>
+  <data name="lblFee" xml:space="preserve">
+    <value>Fee</value>
+  </data>
+  <data name="lblIbc" xml:space="preserve">
+    <value>IBC</value>
+  </data>
+  <data name="lblNetComm" xml:space="preserve">
+    <value>Net Comm</value>
+  </data>
+  <data name="lblPartner" xml:space="preserve">
+    <value>Partner</value>
+  </data>
+  <data name="lblPT" xml:space="preserve">
+    <value>PT</value>
+  </data>
+  <data name="lblTotalTO" xml:space="preserve">
+    <value>Total TO</value>
+  </data>
+  <data name="PartnerType" xml:space="preserve">
+    <value>PartnerType</value>
+  </data>
+  <data name="TotalIncome" xml:space="preserve">
+    <value>Total Income</value>
+  </data>
+  <data name="lblBetCount" xml:space="preserve">
+    <value>Bet Count</value>
+  </data>
+  <data name="lblNumberOfBets" xml:space="preserve">
+    <value>Number of Bets</value>
+  </data>
+  <data name="lblComm" xml:space="preserve">
+    <value>Comm</value>
+  </data>
+  <data name="lblRacingGroupDailyMailContent" xml:space="preserve">
+    <value>&lt;i&gt;This is an auto-mail. Please do not reply.&lt;/i&gt;
+&lt;br/&gt;
+Accounting System - Racing Group Daily Report from {0} to {1}.
+&lt;br/&gt;
+The message is ready to be sent with the attached file {2}.</value>
+  </data>
+  <data name="lblSendMailFail" xml:space="preserve">
+    <value>Send Mail Failed </value>
+  </data>
+  <data name="lblSendMailSuccessfully" xml:space="preserve">
+    <value>Your mail has been sent. </value>
+  </data>
+  <data name="lblInsertCasinoSetting" xml:space="preserve">
+    <value>Insert Casino Setting</value>
+  </data>
+  <data name="lblUpdatePTCasino" xml:space="preserve">
+    <value>Update PT Casino</value>
+  </data>
+  <data name="lblMathWinloss" xml:space="preserve">
+    <value>Match Win Loss (2a)</value>
+  </data>
+  <data name="titleRacingDailyReportforTote" xml:space="preserve">
+    <value>Racing Daily Report (for Tote)</value>
+  </data>
+  <data name="lblCommIncome" xml:space="preserve">
+    <value>Comm Income</value>
+  </data>
+  <data name="lblMeetingCurrency" xml:space="preserve">
+    <value>Meeting-Currency</value>
+  </data>
+  <data name="lblPGIAmtoteFee" xml:space="preserve">
+    <value>PGI/Amtote Fee</value>
+  </data>
+  <data name="lblPlaceTO" xml:space="preserve">
+    <value>Place TO</value>
+  </data>
+  <data name="lblPTWinLoss" xml:space="preserve">
+    <value>PT Win/Loss</value>
+  </data>
+  <data name="lblWinTO" xml:space="preserve">
+    <value>Win TO</value>
+  </data>
+  <data name="lblWPTO" xml:space="preserve">
+    <value>W/P TO</value>
+  </data>
+  <data name="plumelelaTitle" xml:space="preserve">
+    <value>Phumelela</value>
+  </data>
+  <data name="lblRacingWinlossBySite" xml:space="preserve">
+    <value>Racing Daily Report</value>
+  </data>
+  <data name="lblAmountduetoIBC" xml:space="preserve">
+    <value>Amount due to IBC</value>
+  </data>
+  <data name="lblDepositReport" xml:space="preserve">
+    <value>Deposit Report</value>
+  </data>
+  <data name="lblTotalTrans" xml:space="preserve">
+    <value>Total Trans</value>
+  </data>
+  <data name="lblLicensee" xml:space="preserve">
+    <value>Licensee</value>
+  </data>
+  <data name="lblTotalTransaction" xml:space="preserve">
+    <value>Total Transactions </value>
+  </data>
+  <data name="titleNegativeBalanceReport" xml:space="preserve">
+    <value>Negative Balance Report for {0}</value>
+  </data>
+  <data name="lblNegativeBalanceReport" xml:space="preserve">
+    <value>Negative Balance Report</value>
+  </data>
+  <data name="lblThereisnodata" xml:space="preserve">
+    <value>There is no data.</value>
+  </data>
+  <data name="lblNagetiveBalanceReportMailContent" xml:space="preserve">
+    <value>Please download the attached file for Negative Balance Member(s).</value>
+  </data>
+  <data name="lblSendby" xml:space="preserve">
+    <value>&lt;br&gt;&lt;br&gt;&lt;b&gt;Sent by:&lt;/b&gt; {0}&lt;br&gt;&lt;b&gt;Date:&lt;/b&gt; {1}</value>
+  </data>
+  <data name="lblThisIsAutoMail" xml:space="preserve">
+    <value>&lt;br&gt;&lt;br&gt;&lt;i&gt;This is an auto-mail. Please do not reply.&lt;/i&gt;</value>
+  </data>
+  <data name="lblNegativeBalanceReportMailTitle" xml:space="preserve">
+    <value>Accounting system - Negative Balance Report</value>
+  </data>
+  <data name="lblRacingGroupDailyContentMail" xml:space="preserve">
+    <value>Dear Mr./ Ms.&lt;br&gt; The report of Racing Group Daily has been sent to you as requested by &lt;b&gt;{0} &lt;/b&gt;on {1}. &lt;br&gt;Please, refer to the attachment for more details.&lt;br&gt;&lt;br&gt; Thanks you. &lt;br&gt;&lt;br&gt;&lt;hr&gt;&lt;i&gt;This email is confidential. If you are not the addressee you may not copy, forward, disclose or use any part of it. If you have received this message in error, please delete it from your system. This is an auto-generated email, please do not reply.&lt;/i&gt;</value>
+  </data>
+  <data name="lblRacingGroupDailyForToteContentMail" xml:space="preserve">
+    <value>Dear Mr./ Ms.&lt;br&gt; The report of Racing Group Daily for Tote has been sent to you as requested by &lt;b&gt;{0}&lt;/b&gt; on {1}. &lt;br&gt;Please, refer to the attachment for more details.&lt;br&gt;&lt;br&gt; Thanks you. &lt;br&gt;&lt;br&gt;&lt;hr&gt;&lt;i&gt;This email is confidential. If you are not the addressee you may not copy, forward, disclose or use any part of it. If you have received this message in error, please delete it from your system. This is an auto-generated email, please do not reply.&lt;/i&gt;</value>
+  </data>
+  <data name="mailTitleRacingGroupDaily" xml:space="preserve">
+    <value>Accounting System - Racing Group Daily Report from {0} to {1}.</value>
+  </data>
+  <data name="Netball" xml:space="preserve">
+    <value>NetBall</value>
+  </data>
+  <data name="AmtDueto" xml:space="preserve">
+    <value>Amount Due to</value>
+  </data>
+  <data name="BA" xml:space="preserve">
+    <value>BA</value>
+  </data>
+  <data name="CustomerWL" xml:space="preserve">
+    <value>Customer W/L</value>
+  </data>
+  <data name="GrossProfit" xml:space="preserve">
+    <value>Gross Profit</value>
+  </data>
+  <data name="LicenseeWL" xml:space="preserve">
+    <value>Licensee W/L (SB + NG)</value>
+  </data>
+  <data name="AmtDuetoBA" xml:space="preserve">
+    <value>Amount Due to BA</value>
+  </data>
+  <data name="licenseeComm" xml:space="preserve">
+    <value>Licensee Comm</value>
+  </data>
+  <data name="lblGame" xml:space="preserve">
+    <value>Game</value>
+  </data>
+  <data name="PokerPageTitle" xml:space="preserve">
+    <value>Update Poker Setting</value>
+  </data>
+  <data name="companycommbase" xml:space="preserve">
+    <value>Company Comm Base (RM)</value>
+  </data>
+  <data name="grosscomm" xml:space="preserve">
+    <value>Gross Comm</value>
+  </data>
+  <data name="grosscommbase" xml:space="preserve">
+    <value>Gross Comm Base (RM)</value>
+  </data>
+  <data name="lblWinLoss" xml:space="preserve">
+    <value>Win/Loss</value>
+  </data>
+  <data name="Agency12bet" xml:space="preserve">
+    <value>Licensee (12Bet)</value>
+  </data>
+  <data name="MemberOverall" xml:space="preserve">
+    <value>Member (Overall)</value>
+  </data>
+  <data name="PTWinloss" xml:space="preserve">
+    <value>PT Win/Loss</value>
+  </data>
+  <data name="BAComm" xml:space="preserve">
+    <value>BA Comm</value>
+  </data>
+  <data name="RacingRevenue" xml:space="preserve">
+    <value>Racing Revenue</value>
+  </data>
+  <data name="lblTotalTransactionEurCost" xml:space="preserve">
+    <value>Transaction Cost (EUR)</value>
+  </data>
+  <data name="systemParlay" xml:space="preserve">
+    <value>System Parlay</value>
+  </data>
+  <data name="lblLineTotal" xml:space="preserve">
+    <value>Line Total</value>
+  </data>
+  <data name="lblMargin" xml:space="preserve">
+    <value>Margin</value>
+  </data>
+  <data name="lblPosition" xml:space="preserve">
+    <value>Position</value>
+  </data>
+  <data name="lblCode" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="lblEventStatus" xml:space="preserve">
+    <value>Event Status</value>
+  </data>
+  <data name="LicenseeWLNG" xml:space="preserve">
+    <value>LicenseeW/L(NG)</value>
+  </data>
+  <data name="LicenseeWLSB" xml:space="preserve">
+    <value>LicenseeW/L(SB)</value>
+  </data>
+  <data name="SBNG" xml:space="preserve">
+    <value>SB+NG</value>
+  </data>
+  <data name="CrossCurrencyTransfer" xml:space="preserve">
+    <value>Cross-Currency Transfer</value>
+  </data>
+  <data name="BaseRM" xml:space="preserve">
+    <value>Base(RM)</value>
+  </data>
+  <data name="lblUpdateP2PSetting" xml:space="preserve">
+    <value>Update P2P Setting</value>
+  </data>
+  <data name="liveCasinoTitle" xml:space="preserve">
+    <value>Live Casino</value>
+  </data>
+  <data name="UpdateLiveCasinoGameSettingFail" xml:space="preserve">
+    <value>Updated Game Setting {0} fail because {1}.</value>
+  </data>
+  <data name="UpdateLiveCasinoGameSettingSuccess" xml:space="preserve">
+    <value>Updated Game Setting Successfully.</value>
+  </data>
+  <data name="UpdateLiveCasinoGameSettingUnSuccess" xml:space="preserve">
+    <value>Updated Game Setting UnSuccessfully.</value>
+  </data>
+  <data name="UpdateLiveCasinoPTSettingSuccess" xml:space="preserve">
+    <value>Updated Position Taking/Commission successfully.</value>
+  </data>
+  <data name="UpdateLiveCasinoPTSettingUnSuccess" xml:space="preserve">
+    <value>Updated Position Taking/Commission Unsuccessfully.</value>
+  </data>
+  <data name="disableLiveCasino" xml:space="preserve">
+    <value>Disable Live Casino</value>
+  </data>
+  <data name="enableLiveCasino" xml:space="preserve">
+    <value>Enable Live Casino</value>
+  </data>
+  <data name="lblDisabledLCSUpline" xml:space="preserve">
+    <value>Live Casino was disabled at upline</value>
+  </data>
+  <data name="lblDisabledLiveCasinoUpline" xml:space="preserve">
+    <value>Live Casino status has been disabled at upline</value>
+  </data>
+  <data name="_101" xml:space="preserve">
+    <value>Updated Commission Successfully.</value>
+  </data>
+  <data name="_102" xml:space="preserve">
+    <value>Updated Min Position Successfully.</value>
+  </data>
+  <data name="_103" xml:space="preserve">
+    <value>Updated Position Taking Successfully.</value>
+  </data>
+  <data name="CS0000" xml:space="preserve">
+    <value>Updated successfully.</value>
+  </data>
+  <data name="LiveCasinoGameStatisticReportTiltle" xml:space="preserve">
+    <value>Live Casino Game Statistic Report</value>
+  </data>
+  <data name="CompanyNetIncome" xml:space="preserve">
+    <value>Company net income</value>
+  </data>
+  <data name="GameIncome" xml:space="preserve">
+    <value>Game income</value>
+  </data>
+  <data name="GamePayout" xml:space="preserve">
+    <value>Game payout %</value>
+  </data>
+  <data name="NoGames" xml:space="preserve">
+    <value>No. Games</value>
+  </data>
+  <data name="NoPlayers" xml:space="preserve">
+    <value>No. Players</value>
+  </data>
+  <data name="Totalbets" xml:space="preserve">
+    <value>Total bets</value>
+  </data>
+  <data name="TotalRefund" xml:space="preserve">
+    <value>Total refund</value>
+  </data>
+  <data name="TotalWins" xml:space="preserve">
+    <value>Total Wins</value>
+  </data>
+  <data name="UnCheckBettingLimit" xml:space="preserve">
+    <value>Notice: If you UNCHECK all the betting limit, it will be effected to downline. Please be carefull.</value>
+  </data>
+  <data name="UnCheckBettingLimitMember" xml:space="preserve">
+    <value>do not have any Betting Limit becaue the upline UNCHECK all, it is effetced to downline. By default, it will be taken the smallest Betting Limit from UPLINE</value>
+  </data>
+  <data name="CheckSynchronize" xml:space="preserve">
+    <value>If moved Master/Agent is already Synced Live Casino and new Super/Master is UnSynced then not allow to move</value>
+  </data>
+  <data name="P2PGames" xml:space="preserve">
+    <value>P2P Games</value>
+  </data>
+  <data name="lblP2PGameComm" xml:space="preserve">
+    <value>Game</value>
+  </data>
+  <data name="lblP2PPrivateGameComm" xml:space="preserve">
+    <value>Private Game</value>
+  </data>
+  <data name="UpdateLiveCasinoStatusSuccess" xml:space="preserve">
+    <value>Updated Status Successfully.</value>
+  </data>
+  <data name="UpdateLiveCasinoStatusUnSuccess" xml:space="preserve">
+    <value>Updated Status unsuccessfully because Live Casino status has been disabled at upline.</value>
+  </data>
+  <data name="Action" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="ATurnover" xml:space="preserve">
+    <value>Agent Turnover</value>
+  </data>
+  <data name="CNT" xml:space="preserve">
+    <value>CNT</value>
+  </data>
+  <data name="DateTime" xml:space="preserve">
+    <value>Date Time</value>
+  </data>
+  <data name="IBCTurnover" xml:space="preserve">
+    <value>IBC Turnover</value>
+  </data>
+  <data name="MTurnover" xml:space="preserve">
+    <value>Master Turnover</value>
+  </data>
+  <data name="STurnover" xml:space="preserve">
+    <value>Super Turnover</value>
+  </data>
+  <data name="totalTurnover" xml:space="preserve">
+    <value>Total Turnover</value>
+  </data>
+  <data name="BaseCurr" xml:space="preserve">
+    <value>EUR/Unit</value>
+  </data>
+  <data name="CurrencyCode" xml:space="preserve">
+    <value>Currency Code</value>
+  </data>
+  <data name="CompanyComm" xml:space="preserve">
+    <value>Company Comm</value>
+  </data>
+  <data name="CompanyTO" xml:space="preserve">
+    <value>Company T/O</value>
+  </data>
+  <data name="LiveCasinoGameAgencyWinLossReportTitle" xml:space="preserve">
+    <value>Live Casino Game - Agency Win/Loss</value>
+  </data>
+  <data name="numberBet" xml:space="preserve">
+    <value>#Bets</value>
+  </data>
+  <data name="RollingTO" xml:space="preserve">
+    <value>Rolling T/O</value>
+  </data>
+  <data name="WinLoss" xml:space="preserve">
+    <value>Win/Loss</value>
+  </data>
+  <data name="TimeOutError" xml:space="preserve">
+    <value>The Operation has timed out due to intensive processes. Please, reselect filter options appropriatedly to avoid the time-out situation.</value>
+  </data>
+  <data name="AllTotalSummary" xml:space="preserve">
+    <value>All Total</value>
+  </data>
+  <data name="GrandTotalSummary" xml:space="preserve">
+    <value>Grand Total</value>
+  </data>
+  <data name="IBCTotalSummary" xml:space="preserve">
+    <value>IBC(8RM) Total</value>
+  </data>
+  <data name="TotalSummary" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="EmptyReportMessage" xml:space="preserve">
+    <value>There is no information available.</value>
+  </data>
+  <data name="IBCSuffix" xml:space="preserve">
+    <value>8RM</value>
+  </data>
+  <data name="lblClosedAccount" xml:space="preserve">
+    <value>This account was closed</value>
+  </data>
+  <data name="lblSuspendedAccount" xml:space="preserve">
+    <value>This account was suspended</value>
+  </data>
+</root>

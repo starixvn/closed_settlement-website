@@ -1,0 +1,44 @@
+<div>  
+  <form id="frmBill">
+      <table class="tblcollapse" style="width:100%">    
+        <tr class="title1 c">        
+            <td colspan="5">LEAGUE:&nbsp;{leaguename}</td>
+        </tr>
+        <tr class="title">
+          <td width="80" >CODE</td>
+          <td width="90" >KICK-OFF TIME</td>
+          <td width="250" >TEAM</td>
+          <td width="36" >HT Score</td>
+          <td width="36" >Final Score</td>
+        </tr>
+        <tr>
+          <td rowspan="2">{matchcode}</td>
+          <td rowspan="2">{date}</td>
+          <td class="l b ht">{hometeam}</td>
+          <td><input type="text" id="homeH" name="homeH" tabindex="1" size="4" class="htsc c txth13" value="{homeHScore}" onkeypress="return OnKP(event, this);"/></td>
+          <td><input type="text" id="homeF" name="homeF" tabindex="3" size="4" class="ftsc c txth13" value="{homeFScore}" onkeypress="return OnKP(event, this);"/></td>                
+        </tr> 
+        <tr >      
+          <td class="l b at">{awayteam}</td>
+          <td><input type="text" id="awayH" name="awayH" tabindex="2" size="4" class="htsc c txth13" value="{awayHScore}" onkeypress="return OnKP(event, this);"/></td>
+          <td><input type="text" id="awayF" name="awayF" tabindex="4" size="4" class="ftsc c txth13" value="{awayFScore}" onkeypress="return OnKP(event, this);"/></td>                
+        </tr>      
+      </table>
+      <input type="hidden" id="sParams" name="sParams" value="{params}" />  
+      <input type="hidden" id="sAction" name="sAction" /> 
+    </form>   
+      <br/>  
+      <!--CalcRead--><input type="button" class="btn" style="width: 100px;" id="btnSubmit" name="btnSubmit" disabled="disabled" value="{btnSubmitValue}" /><!--/CalcRead--><!--CalcHost--><input type="button" class="btn" style="width: 100px;" id="btnSubmit" name="btnSubmit" value="{btnSubmitValue}" onclick="DoCalculate('{type}');"/><!--/CalcHost-->
+      <!--Unsettle-->
+      <!--UnSeRead-->
+  <input type="button" style="width: 100px;" class="btn" id="btnSubmit_1" disabled="disabled"  value="Unsettle" /><!--/UnSeRead--><!--UnSeHost--><input type="button" class="btn" style="width: 100px; " id="btnSubmit_1" {disableUS} value="Unsettle" onclick="DoCalculate('unsettle');"/><!--/UnSeHost-->
+      <!--/Unsettle-->
+      <span style="padding-left: 30px; display:none;" id="errMsg" class="error-message">Please input valid score!</span>
+      <!--RefundBlock-->
+      <br />
+      <br />      
+      <input type="button" class="btn" style="width: 180px;" value="REFUND/CANCEL" onclick="DoCalculate('refund');"/>      
+      <br />
+      <input type="button" class="btn" style="width: 180px;" value="REFUND FULLTIME" onclick="DoCalculate('refundfulltime');"/>            
+      <!--/RefundBlock-->    
+</div>

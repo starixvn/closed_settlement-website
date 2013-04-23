@@ -1,0 +1,11 @@
+﻿<div class="pagination">
+    <a id="GotoPage" onclick="openGotoBox();return false;" href="javascript:void(0);">Page</a>:&nbsp;<span>{PageList}<a href="#" style="padding: 0px; border: none;"></a></span>
+    <div id="page_menu" class="c gotopage_box" style="display: none;">
+        Go to Page:
+        <input type="text" size="4" onkeypress="return PagerKeyPress(event);" class="txt" id="txtpage" name="txtpage" />
+        &nbsp;<a class="btn pagenav_ibtn" href="#" id="pagenav_ibtn">Go</a>
+    </div>
+</div>
+<!--PageItem-->
+<a class="pagerlink" id="page_{PageText}" onclick="{jsonclick}" href="#{PageText}">{PageText}</a>
+<!--/PageItem-->

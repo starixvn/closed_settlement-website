@@ -1,0 +1,64 @@
+﻿@using Fanex.Tarus.Entities.Report
+@model Fanex.Tarus.Entities.Report.PunterAnalysisTotalDTO
+
+<div id="racinggridSummary" class="content-warper" style="width:905px">
+    <div class="content-toolbox bgtitle">
+        <div id="gridtitleSummary" class="gridtitle"></div>
+        <div class="btngroup"><input type="button" onclick="" value="  " id="Button1" class="btnExcel" title="Export to Excel" /></div>
+    </div>
+    <div class="content-header clearfix">
+        <div id="header-frozenSummary" class="header-frozen">
+            <table class="tbl-header-frozen">
+                <tr>
+                    <td>
+                        <div class="col100 c" style="height:18px;">Username</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="header-scrollSummary" class="header-scroll">
+            <table class="tbl-header-scroll">
+                <tr>
+                    <td>
+                        <div class="col100 c">Winlost</div>
+                    </td>
+                    <td>
+                        <div class="col100 c">Turnover</div>
+                    </td>
+                    <td>
+                        <div class="col100 c">Margin</div>
+                    </td>
+                    <td>
+                        <div class="col100 c">IP</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="content-body clearfix">
+        <div id="content-frozenSummary" class="body-frozen">
+            <table id="tblbodyfrozenSummary" class="tbl-body-frozen">                               
+                 @foreach (PunterAnalysis item in Model.Items)
+                 { 
+                    <tr>
+                        <td><div class="col100">@item.Name</div></td>
+                    </tr>
+                 }
+            </table>
+        </div>
+        <div id="content-scrollSummary" class="body-scroll">
+            <table id="tblbodyscrollSummary" class="tbl-body-scroll">                               
+            </table>
+        </div>
+    </div>
+    <div class="content-footer">
+                <div id="footer-frozen" class="footer-frozen">
+                    <table id="tblfooterfrozen" class="tbl-footer-frozen">
+                    </table>
+                </div>
+                <div id="foorer-scrollSummary" class="footer-scroll">
+                    <table class="tbl-footer-scroll" id="tblfooterPT">
+                    </table>
+                </div>
+             </div>
+</div>

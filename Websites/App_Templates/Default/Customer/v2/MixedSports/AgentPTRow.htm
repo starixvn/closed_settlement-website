@@ -1,0 +1,51 @@
+﻿<table class="tblcollapse" style="{tblWidth}" id="tbl99_9">
+    {ptheader}
+    
+     <!--agent-pt1-->    
+    <tr>
+        <td class="l">{agent-position}</td>
+        <td>
+            <select class="select-pt copyall" name="listMMixParlay" id="listMMixParlay" onchange="SelectOnChange('listMMixParlay');">{listAMixParlayValue}</select>
+            <input type="button" name="btnReduce1"  value=" "   class="btn-dec1"  onclick="ReducePT('listMMixParlay',1)"/>
+            <input type="button" name="btnIncrease1" value=" "   class="btn-inc1" onclick="IncreasePT('listMMixParlay',1)"/>
+            <input type="button" name="btnReduce10" value=" " class="btn-dec10" onclick="ReducePT('listMMixParlay',10)"/>
+            <input type="button" name="btnIncrease10" value=" " class="btn-inc10" onclick="IncreasePT('listMMixParlay',10)"/>                
+        </td>
+    </tr>
+     <!--/agent-pt1-->    
+    
+    <!--master-pt2-->
+    <tr>
+        <td class='l'>{master-position}</td>
+        <td>
+            <select {statuslstSMixParlay} class="select-pt copyall" name="listSMixParlay" id="listSMixParlay" onchange="SelectOnChange('listSMixParlay');">{listMMixParlayValue}</select>
+            <input type="button" name="btnReduce1"  value=" "   class="btn-dec1"  onclick="ReducePT('listSMixParlay',1)"/>
+            <input type="button" name="btnIncrease1" value=" "   class="btn-inc1" onclick="IncreasePT('listSMixParlay',1)"/>
+            <input type="button" name="btnReduce10" value=" " class="btn-dec10" onclick="ReducePT('listSMixParlay',10)"/>
+            <input type="button" name="btnIncrease10" value=" " class="btn-inc10" onclick="IncreasePT('listSMixParlay',10)"/>        
+        </td>
+    </tr>
+    <!--/master-pt2-->    
+    
+    <!--auto-master-pt1-->
+    <tr class="{hdauto}">
+        <td class="l" rowspan="2">
+            {auto-master-position}
+        </td>
+        <td><input {statuschkMixParlay} class="copyall" type="checkbox" id="chkAutoMixParlay" name="chkAutoMixParlay" onclick="CheckAutoPreset(this);" /></td>
+    </tr>
+    
+    <tr class="{hdauto}">
+        
+        <td>
+            <select {statuslstSAutoMixParlay} class="select-pt copyall" name="autoSMixParlay" id="autoSMixParlay">
+                {listSAutoMixParlayValue}
+            </select>
+            <input type="button" name="btnReduce1" value=" " class="btn-dec1" onclick="ReducePT('autoSMixParlay',1)" />
+            <input type="button" name="btnIncrease1" value=" " class="btn-inc1" onclick="IncreasePT('autoSMixParlay',1)" />
+            <input type="button" name="btnReduce10" value=" " class="btn-dec10" onclick="ReducePT('autoSMixParlay',10)" />
+            <input type="button" name="btnIncrease10" value=" " class="btn-inc10" onclick="IncreasePT('autoSMixParlay',10)" />
+        </td>        
+    </tr>
+    <!--/auto-master-pt1-->
+</table>

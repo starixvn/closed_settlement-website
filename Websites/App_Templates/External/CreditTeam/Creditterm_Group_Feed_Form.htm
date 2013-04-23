@@ -1,0 +1,40 @@
+{msg}
+<!--Filter-->
+<table>
+    <tr>
+        <td class="l b" style="width:120px;">GroupID:</td>
+        <td>{groupid}</td>
+        <td></td>
+    </tr>
+    <tr>    
+        <td class="b">User Name:</td>
+        <td><input type ="text" name ="txtuser" id="txtuser"/></td>
+        <td><input class="btn" type="button" onclick="ExecuteCreditTerm('1');" value="Add to Group" name="btnadd"></input>  </td>
+    </tr>
+</table>
+<!--/Filter-->
+<div id="dvcontent">
+<table class="tbllayout" cellspacing="1">
+    <tr class="title">
+        <td>UserName</td>
+        <td style="width:100px;">Set Headline</td>
+        <td style="width:100px;"><input type="checkbox" id="chkcheckall" onclick="checkall();" /></td>
+    </tr>
+    <!--UserRow-->
+    <tr align="center" class="{row-even}">
+        <td class="{headlineclasstext}">{UserName}</td>
+        <td class="c">
+            <img src="{headline}" onclick="{jsaddheadline}" title="{title}" width="16px" height="14px" border="0" style="cursor:pointer;" />
+       </td>
+        <td class="c">{removeitem}</td>
+    </tr>
+    <!--/UserRow-->
+    {UserRowList}
+    <tr>
+        <td></td>
+        <td></td>
+        <td class="c"><input class="btn" onclick="ExecuteCreditTerm('3');" type="button" value="Remove" name="btnremove"></input></td>
+    </tr>
+</table>
+</div>
+

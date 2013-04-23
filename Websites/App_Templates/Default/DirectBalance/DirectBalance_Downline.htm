@@ -1,0 +1,52 @@
+﻿<!--headerLink-->
+<div id="divHeader">
+    <span style="text-transform:uppercase;font-weight:bold">{headerContent}</span>
+    <span>
+        <img id='inProgressBar' name='inProgressBar' width="16px" height="16px" style="display:none"  src="../App_Themes/Images/ajax-loader.gif" />
+    </span>
+</div>
+<div style="clear:both"></div>
+<!--/headerLink-->
+
+<!--Content-->
+<div id="divDirectBalanceDLTemplate">
+    <div>
+        <table class="theader" border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse">
+            <thead>
+                <tr id="trHeader">
+                    <th align="center" colspan="6"><b id="bhead1">{BalanceHeader}</b></th>
+                </tr>
+                <tr>
+                    <th style="width:40px"><b id="bhead2">{No}</b></th>
+                    <th style="width:100px"><b id="bhead3">{Username}</b></th>
+                    <th style="width:60px"><b id="bhead4">{Curr}</b></th>
+                    <th style="width:131px"><b id="bhead5">{Balance}</b></th>
+                    <th style="width:131px"><b id="bhead6">{Base}</b></th>
+                    <th id="thDLHeaderScrollbar">&nbsp;</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <div style="overflow-y:auto; overflow-x:hidden; max-height:600px; height:auto; border-right:1px solid #7C98A4">
+        <table id="tcontentdl" class="tcontent" border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse">
+            <tbody>
+                <!--Rows-->
+                <tr class="{odd_even}">
+                    <td class="c"><div style="width:40px">{No_vl}</div></td>
+                    <td class="l"><div style="width:100px"><span style="margin-left:2px">{Username_vl}</span></div></td>
+                    <td class="c"><div style="width:60px">{Curr_vl}</div></td>
+                    <td class="r"><div style="width:131px"><span style="margin-right:2px">{Balance_vl}</span></div></td>
+                    <td class="r"><div style="width:131px"><span style="margin-right:2px">{Base_vl}</span></div></td>
+                    <td><div id="divDLBodyScrollbar"></div></td>
+                </tr>
+                <!--/Rows-->
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <div id="divFooter1" style="background:none repeat scroll 0 0 #CCFFCC ;width:334px; border:1px solid #7C98A4;  border-right:0px none; font-weight:bold; text-align:center; float:left">TOTAL</div>
+        <div id="divFooterTotalValue" style="background:none repeat scroll 0 0 #CCFFCC;width:131px;border:1px solid #7C98A4; border-right:0px none; float:left; font-weight:bold; text-align:right">{total}</div>
+        <div id="divDLFooterScrollbar" style="background:none repeat scroll 0 0 #CCFFCC;border:1px solid #7C98A4; float:left">&nbsp;</div>
+    </div>
+</div>
+<!--/Content-->

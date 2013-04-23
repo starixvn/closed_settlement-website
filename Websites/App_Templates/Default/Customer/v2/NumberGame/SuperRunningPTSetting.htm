@@ -1,0 +1,124 @@
+﻿ <!--super-pt1-->
+    <tr>
+        <td rowspan="3">
+            Live
+        </td>
+        <td class="l">
+            {super-live-position}
+        </td>
+        <td>
+            <select class="select-pt copyAll" name="listSNBOUL" id="listSNBOUL" onchange="On_ChangeSuper(this);">
+                {listSNBOULValue}
+            </select>
+            <input type="button" name="btnReduce1" value=" " class="btn-dec1" onclick="ReducePT('listSNBOUL',1)" />
+            <input type="button" name="btnIncrease1" value=" " class="btn-inc1" onclick="IncreasePT('listSNBOUL',1)" />
+            <input type="button" name="btnReduce10" value=" " class="btn-dec10" onclick="ReducePT('listSNBOUL',10)" />
+            <input type="button" name="btnIncrease10" value=" " class="btn-inc10" onclick="IncreasePT('listSNBOUL',10)" />
+        </td>
+        <td>
+            <select class="select-pt copyfromL" name="listSNBOEL" id="listSNBOEL" onchange="On_ChangeSuper(this);">
+                {listSNBOELValue}
+            </select>
+        </td>
+        <td>
+            <select class="select-pt copyfromL" name="listSHLL" id="listSHLL" onchange="On_ChangeSuper(this);">
+                {listSHLLValue}
+            </select>
+        </td>
+        <td>
+            <select class="select-pt copyfromL" name="listSNCL" id="listSNCL" onchange="On_ChangeSuper(this);">
+                {listSNCLValue}
+            </select>
+        </td>
+        <!--NG-Key-->
+        <td>
+            <select class="select-pt copyfromL" name="listSNGL" id="listSNGL" onchange="On_ChangeSuper(this);">
+                {listSNGLValue}
+            </select>
+        </td>
+        <!--/NG-Key-->
+        <td rowspan="3">
+              <input class="copyAll" type="checkbox" onclick="NumberGameCopyPT('Live');" name="chkCopyNBOUL" id="chkCopyNBOUL" />
+               Copy From Over/Under
+        </td>
+    </tr>
+    <!--/super-pt1-->
+    
+    <!--master-pt2-->
+    <tr>
+        <td class="l">
+            {master-live-position}
+        </td>
+        <td>
+            <select class="select-pt copyAll" name="listMNBOUL" id="listMNBOUL" onchange="On_ChangeMaster(this);">
+                {listMNBOULValue}
+            </select>
+            <input type="button" name="btnReduce1" value=" " class="btn-dec1" onclick="ReducePT('listMNBOUL',1)" />
+            <input type="button" name="btnIncrease1" value=" " class="btn-inc1" onclick="IncreasePT('listMNBOUL',1)" />
+            <input type="button" name="btnReduce10" value=" " class="btn-dec10" onclick="ReducePT('listMNBOUL',10)" />
+            <input type="button" name="btnIncrease10" value=" " class="btn-inc10" onclick="IncreasePT('listMNBOUL',10)" />
+        </td>
+        <td>
+            <select class="select-pt copyfromL" name="listMNBOEL" id="listMNBOEL" onchange="On_ChangeMaster(this);">
+                {listMNBOELValue}
+            </select>
+        </td>
+        <td>
+            <select class="select-pt copyfromL" name="listMHLL" id="listMHLL" onchange="On_ChangeMaster(this);">
+                {listMHLLValue}
+            </select>
+        </td>
+         <td>
+            <select class="select-pt copyfromL" name="listMNCL" id="listMNCL" onchange="On_ChangeMaster(this);">
+                {listMNCLValue}
+            </select>
+        </td>
+        <!--NG-Key-->
+          <td>
+            <select class="select-pt copyfromL" name="listMNGL" id="listMNGL" onchange="On_ChangeMaster(this);">
+                {listMNGLValue}
+            </select>
+        </td>
+       <!--/NG-Key-->
+    </tr>
+    <!--/master-pt2-->
+    
+    <!--agent-pt2-->
+    <tr>
+        <td class="l">
+            {agent-live-position}
+        </td>
+        <td>
+            <select class="select-pt copyAll" name="listANBOUL" id="listANBOUL">
+                {listANBOULValue}
+            </select>
+            <input type="button" name="btnReduce1" value=" " class="btn-dec1" onclick="ReducePT('listANBOUL',1)" />
+            <input type="button" name="btnIncrease1" value=" " class="btn-inc1" onclick="IncreasePT('listANBOUL',1)" />
+            <input type="button" name="btnReduce10" value=" " class="btn-dec10" onclick="ReducePT('listANBOUL',10)" />
+            <input type="button" name="btnIncrease10" value=" " class="btn-inc10" onclick="IncreasePT('listANBOUL',10)" />
+        </td>
+        <td>
+            <select class="select-pt copyfromL" name="listANBOEL" id="listANBOEL">
+                {listANBOELValue}
+            </select>
+        </td>
+        
+        <td>
+            <select class="select-pt copyfromL" name="listAHLL" id="listAHLL">
+                {listAHLLValue}
+            </select>
+        </td>
+          <td>
+            <select class="select-pt copyfromL" name="listANCL" id="listANCL">
+                {listANCLValue}
+            </select>
+        </td>
+        <!--NG-Key-->
+        <td>
+            <select class="select-pt copyfromL" name="listANGL" id="listANGL">
+                {listANGLValue}
+            </select>
+        </td>
+        <!--/NG-Key-->
+    </tr>
+    <!--/agent-pt2-->

@@ -1,0 +1,13 @@
+﻿.checkBA
+{
+	background:transparent url(Images/check.png) no-repeat scroll 0 ;
+	/*cursor: pointer;*/
+	height: 18px;
+	margin-left:25px;
+	margin-top:0px;
+}
+
+.col35
+{
+    width:35px;
+    }

@@ -1,0 +1,54 @@
+﻿<table class="tbllayout" cellspacing="1" style="width:690px;" align="center">
+    <tr class="l bl-leaguename" style="background-color:#DFEAFF">
+        <th colspan="5" align="center">
+            <span class="bl_time"><span class="b bl_stype">{lblSportName} - </span>&nbsp;<span class="b">{leaguename}</span></span>
+        </th>
+    </tr>
+    <tr class="title">
+        <td width="90px">
+            {lblKickOffTime}
+        </td>
+        <td width="380px">
+            {lblTeam}
+        </td>
+        <td width="70px">
+            {lblHTScore}
+        </td>
+        <td width="70px">
+            {lblFinalScore}
+        </td>
+        <td width="80px">
+            {lblEventStatus}
+        </td>
+    </tr>
+    <!--row-->
+    <tr>
+        <td rowspan="2" class="bl_time">
+            {date}
+        </td>
+        <td class="l {homestyle}">
+            {hometeam} {hfgoal} {hlgoal}
+        </td>
+        <td class="b c">
+            {homeHScore}
+        </td>
+        <td class="b c">
+            {homeFScore}
+        </td>
+        <td class="b c {bgEventStatus}" rowspan="2" >
+            {eventstatus}
+        </td>
+    </tr>
+    <tr>
+        <td class="l {awaystyle}">
+            {awayteam} {afgoal} {algoal}
+        </td>
+        <td class="b c">
+            {awayHScore}
+        </td>
+        <td class="b c">
+            {awayFScore}
+        </td>
+    </tr>
+    <!--/row-->
+</table>

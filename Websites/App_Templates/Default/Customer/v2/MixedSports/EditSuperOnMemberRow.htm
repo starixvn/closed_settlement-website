@@ -1,0 +1,53 @@
+﻿<table class="tblcollapse" style="width:auto" id="tbl99_9">
+    {ptheader}
+    
+    <!--Agent-->
+    <tr>
+        <td class="l">{agent-text}</td>
+        <td>{a-mp-val}</td>
+    </tr>
+    <!--/Agent-->
+    
+    <!--Master-->
+    <tr>
+        <td class="l">{master-text}</td>
+        <td>{m-mp-val}</td>
+    </tr>
+    <!--/Master-->
+    
+    <!--Super-->
+    <tr>
+        <td class="l">{super-text}</td>
+        <!--sauto-->
+        <td>{s-mp-val}</td>
+        <!--/sauto-->
+        <!--none-sauto-->
+        <td>
+            <select {statuslstSMixParlay} name="listSMixParlay" id="listSMixParlay" class="select-pt copyall">{listSMixParlayValue}</select>
+            <input type="button" id="Button5" name="btnReduce1" value=" "   class="btn-dec1" onclick="ReducePT('listSMixParlay',1)"/>
+            <input type="button" id="Button6" name="btnIncrease1" value=" "   class="btn-inc1" onclick="IncreasePT('listSMixParlay',1)"/>
+            <input type="button" id="Button7" name="btnReduce10" value=" " class="btn-dec10" onclick="ReducePT('listSMixParlay',10)"/>
+            <input type="button" id="Button8" name="btnIncrease10" value=" " class="btn-inc10" onclick="IncreasePT('listSMixParlay',10)"/>
+        </td>
+        <!--/none-sauto-->
+    </tr>
+    <!--/Super-->
+    
+    <!--SuperAuto-->
+    <tr>
+        <td rowspan="2" class="l">{superauto-text}</td>
+        <td>
+            <input {statuschkSAutoMixParlay} type="checkbox" onclick="CheckAutoPresetOthers(this)" class="copyall" name="chkAutoMixParlay" value="" id="chkAutoMixParlay">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <select {statuslstSAutoMixParlay} name="autoSMixParlay" id="autoSMixParlay" class="select-pt copyall">{listSAutoMixParlayValue}</select>
+            <input type="button" id="Button1" name="btnReduce1" value=" "   class="btn-dec1" onclick="ReducePT('autoSMixParlay',1)"/>
+            <input type="button" id="Button2" name="btnIncrease1" value=" "   class="btn-inc1" onclick="IncreasePT('autoSMixParlay',1)"/>
+            <input type="button" id="Button3" name="btnReduce10" value=" " class="btn-dec10" onclick="ReducePT('autoSMixParlay',10)"/>
+            <input type="button" id="Button4" name="btnIncrease10" value=" " class="btn-inc10" onclick="IncreasePT('autoSMixParlay',10)"/>
+        </td>
+    </tr>
+    <!--/SuperAuto-->
+</table>

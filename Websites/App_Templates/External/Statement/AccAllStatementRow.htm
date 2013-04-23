@@ -1,0 +1,43 @@
+<tr height="22px" class="{odd_even}">
+	<td class="c"><a href="{DetailUrl}fdate={Date}">{DateLink}</a>{DateNoLink}</td>
+
+  <!--RefNo-->
+  <td class="{IsDetail}">{RefNo}</td>
+  <!--/RefNo-->
+
+  <!--Remark-->
+	<td class="l {NotComp}">{Remark}</td>
+  <!--/Remark-->
+
+  <!--Type-->
+  <td class='c {IsType}'>{Type}</td>
+  <!--/Type-->
+
+  <!--Debit-->
+  <td class="r {IsDetail}">{Debit}</td>
+  <!--/Debit-->
+
+  <!--Credit-->
+  <td class="r {IsDetail}">{Credit}</td>
+  <!--/Credit-->
+  
+	<td class="r">{Total}</td>
+
+  <!--Total2-->
+	<td class="r {OkClass} {NotDetail}">{Total2}</td>
+  <!--/Total2-->
+  
+  <!--uname-->
+  <td class="c">{uname}</td>
+  <!--/uname-->
+
+  <!--Del-->
+  <td class="c {IsDetail}">
+	<!--del-link-->
+    <a href="DelTrans.ashx?refno={RefNo}" onclick="return confirm_delete({RefNo});">
+      <img src="../App_Themes/Images/icon_del.gif" width="14px" border="0" />
+    </a>
+	<!--/del-link-->
+  </td>
+  <!--/Del-->
+</tr>

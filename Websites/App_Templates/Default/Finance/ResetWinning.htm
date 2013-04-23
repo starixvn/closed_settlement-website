@@ -1,0 +1,18 @@
+﻿<tr>
+    <td>       
+        {date}
+    </td>
+    <td class="r {amtcss}">
+        {amount}
+    </td>
+    <td class="r">
+        {balance}
+    </td>
+    <td>
+        <!--viewtrans--><a href="javascript:ViewBalance('{date}','{amount}','{isreset}');">View</a><!--/viewtrans-->        
+    </td>
+    <td>
+        <!--reset--><input type="button" class="btn" value="Reset" {disabled} onclick="ResetWinning('{date}');" /><!--/reset-->
+        <!--view--><span class="checked">&nbsp;</span><!--/view-->
+    </td>                        
+</tr>   

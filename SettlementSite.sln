@@ -1,0 +1,252 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sunplus.Accounting.Business", "Sunplus.Accounting.Business\Sunplus.Accounting.Business.csproj", "{C7EB1617-765A-44E2-9267-96865EB5C096}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sunplus.Accounting.Core", "Sunplus.Accounting.Core\Sunplus.Accounting.Core.csproj", "{09B74F02-6C21-4C5E-A52C-B6D56595A262}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sunplus.Accounting.DataAccess", "Sunplus.Accounting.DataAccess\Sunplus.Accounting.DataAccess.csproj", "{27984FEE-40DC-40DC-B3B9-3A8776C5511D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sunplus.Accounting.Entities", "Sunplus.Accounting.Entities\Sunplus.Accounting.Entities.csproj", "{C2043B3C-AF85-4334-8542-F9AC2B031D79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sunplus.Accounting.WcfServiceLibrary", "Sunplus.Accounting.WcfServiceLibrary\Sunplus.Accounting.WcfServiceLibrary.csproj", "{2426F40B-B40E-420E-BD14-80814B949055}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sunplus.Data.DataAbstract", "Sunplus.Data.DataAbstract\Sunplus.Data.DataAbstract.csproj", "{1B2228C6-443E-48FF-90EF-A122810D77E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fanex.Tarus.Settlement", "Fanex.Tarus.Settlement\Fanex.Tarus.Settlement.csproj", "{ED61A61E-4805-405A-8A5F-44E933DE874A}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Websites", "Websites", "{7EF6B61B-7588-4353-B523-8D0178BDBDE2}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = "SAK"
+		SccAuxPath = "SAK"
+		SccLocalPath = "SAK"
+		SccProvider = "SAK"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		ProjectReferences = "{C7EB1617-765A-44E2-9267-96865EB5C096}|Sunplus.Accounting.Business.dll;{09B74F02-6C21-4C5E-A52C-B6D56595A262}|Sunplus.Accounting.Core.dll;{C2043B3C-AF85-4334-8542-F9AC2B031D79}|Sunplus.Accounting.Entities.dll;{1B2228C6-443E-48FF-90EF-A122810D77E7}|Sunplus.Data.DataAbstract.dll;{27984FEE-40DC-40DC-B3B9-3A8776C5511D}|Sunplus.Accounting.DataAccess.dll;{2426F40B-B40E-420E-BD14-80814B949055}|Sunplus.Accounting.WcfServiceLibrary.dll;{F3FE623F-A32F-4DB4-8306-64C166FC4488}|Fanex.Tarus.Web.Controllers.dll;{3ADA1C70-FD55-4C89-BFEF-1B695B1042CD}|Fanex.Tarus.Web.Models.dll;{BE4A5642-A3B6-4329-BB8F-4973446E7FA9}|Fanex.Tarus.Business.Implement.dll;{98993382-DB96-4EF7-932B-0C384A31199F}|Fanex.Tarus.Business.Interface.dll;{9780010A-7EEC-4726-959B-D2CFFB1875EE}|Fanex.Tarus.DataAccess.Implement.dll;{1EE1DE7D-1D0D-4443-A82A-B1EADE5E8F14}|Fanex.Tarus.DataAccess.Interface.dll;{0D0F3C0D-F85C-4B0D-B033-16424E1AE5E0}|Fanex.Tarus.Entities.dll;{ED61A61E-4805-405A-8A5F-44E933DE874A}|Fanex.Tarus.Settlement.dll;{FA489626-9250-447A-B555-E621B43D3AFF}|Fanex.Tarus.User.dll;{CCC0446A-42E7-4850-B09C-4DAC278F23B3}|Fanex.Tarus.Infrastructure.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/Websites"
+		Debug.AspNetCompiler.PhysicalPath = "Websites\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Websites\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/Websites"
+		Release.AspNetCompiler.PhysicalPath = "Websites\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\Websites\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "50273"
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebForm", "WebForm", "{FA1F6B54-C01D-4120-8347-B2896E2C217F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MVC", "MVC", "{702C7178-BB46-4B71-8E56-5F018CD448A7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{825A9E60-4EBF-427B-90BF-CD3DA8BD3F69}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccess", "DataAccess", "{20D92DA4-269C-41BE-BC7D-A787A953D168}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Entities", "Entities", "{6411AE5F-5205-47F1-89C0-ED9828FD770A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{BDB42C3B-A3FA-433F-AF01-DC1FD51049C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fanex.Tarus.Business.Interface", "Fanex.Tarus.Business.Interface\Fanex.Tarus.Business.Interface.csproj", "{98993382-DB96-4EF7-932B-0C384A31199F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fanex.Tarus.Business.Implement", "Fanex.Tarus.Business.Implement\Fanex.Tarus.Business.Implement.csproj", "{BE4A5642-A3B6-4329-BB8F-4973446E7FA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fanex.Tarus.DataAccess.Interface", "Fanex.Tarus.DataAccess.Interface\Fanex.Tarus.DataAccess.Interface.csproj", "{1EE1DE7D-1D0D-4443-A82A-B1EADE5E8F14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fanex.Tarus.DataAccess.Implement", "Fanex.Tarus.DataAccess.Implement\Fanex.Tarus.DataAccess.Implement.csproj", "{9780010A-7EEC-4726-959B-D2CFFB1875EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fanex.Tarus.Web.Controllers", "Fanex.Tarus.Web.Controller\Fanex.Tarus.Web.Controllers.csproj", "{F3FE623F-A32F-4DB4-8306-64C166FC4488}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fanex.Tarus.Web.Models", "Fanex.Tarus.Web.Models\Fanex.Tarus.Web.Models.csproj", "{3ADA1C70-FD55-4C89-BFEF-1B695B1042CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fanex.Tarus.Entities", "Fanex.Tarus.Entities\Fanex.Tarus.Entities.csproj", "{0D0F3C0D-F85C-4B0D-B033-16424E1AE5E0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{78CF7258-A6DD-4CD1-8662-FF83E5945B5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fanex.Tarus.Infrastructure", "Fanex.Tarus.Infrastructure\Fanex.Tarus.Infrastructure.csproj", "{CCC0446A-42E7-4850-B09C-4DAC278F23B3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{19B3D7D1-DE44-4A4C-B3E5-9DD76060FE50}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fanex.Tarus.User", "Fanex.Tarus.User\Fanex.Tarus.User.csproj", "{FA489626-9250-447A-B555-E621B43D3AFF}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 18
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://10.18.200.210:8080/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Sunplus.Accounting.Business\\Sunplus.Accounting.Business.csproj
+		SccProjectTopLevelParentUniqueName1 = SettlementSite.sln
+		SccProjectName1 = Sunplus.Accounting.Business
+		SccLocalPath1 = Sunplus.Accounting.Business
+		SccProjectUniqueName2 = Sunplus.Accounting.Core\\Sunplus.Accounting.Core.csproj
+		SccProjectTopLevelParentUniqueName2 = SettlementSite.sln
+		SccProjectName2 = Sunplus.Accounting.Core
+		SccLocalPath2 = Sunplus.Accounting.Core
+		SccProjectUniqueName3 = Sunplus.Accounting.DataAccess\\Sunplus.Accounting.DataAccess.csproj
+		SccProjectTopLevelParentUniqueName3 = SettlementSite.sln
+		SccProjectName3 = Sunplus.Accounting.DataAccess
+		SccLocalPath3 = Sunplus.Accounting.DataAccess
+		SccProjectUniqueName4 = Sunplus.Accounting.Entities\\Sunplus.Accounting.Entities.csproj
+		SccProjectTopLevelParentUniqueName4 = SettlementSite.sln
+		SccProjectName4 = Sunplus.Accounting.Entities
+		SccLocalPath4 = Sunplus.Accounting.Entities
+		SccProjectUniqueName5 = Sunplus.Accounting.WcfServiceLibrary\\Sunplus.Accounting.WcfServiceLibrary.csproj
+		SccProjectTopLevelParentUniqueName5 = SettlementSite.sln
+		SccProjectName5 = Sunplus.Accounting.WcfServiceLibrary
+		SccLocalPath5 = Sunplus.Accounting.WcfServiceLibrary
+		SccProjectUniqueName6 = Sunplus.Data.DataAbstract\\Sunplus.Data.DataAbstract.csproj
+		SccProjectTopLevelParentUniqueName6 = SettlementSite.sln
+		SccProjectName6 = Sunplus.Data.DataAbstract
+		SccLocalPath6 = Sunplus.Data.DataAbstract
+		SccProjectUniqueName7 = Fanex.Tarus.Business.Interface\\Fanex.Tarus.Business.Interface.csproj
+		SccProjectTopLevelParentUniqueName7 = SettlementSite.sln
+		SccProjectName7 = Fanex.Tarus.Business.Interface
+		SccLocalPath7 = Fanex.Tarus.Business.Interface
+		SccProjectUniqueName8 = Fanex.Tarus.Business.Implement\\Fanex.Tarus.Business.Implement.csproj
+		SccProjectTopLevelParentUniqueName8 = SettlementSite.sln
+		SccProjectName8 = Fanex.Tarus.Business.Implement
+		SccLocalPath8 = Fanex.Tarus.Business.Implement
+		SccProjectUniqueName9 = Fanex.Tarus.DataAccess.Interface\\Fanex.Tarus.DataAccess.Interface.csproj
+		SccProjectTopLevelParentUniqueName9 = SettlementSite.sln
+		SccProjectName9 = Fanex.Tarus.DataAccess.Interface
+		SccLocalPath9 = Fanex.Tarus.DataAccess.Interface
+		SccProjectUniqueName10 = Fanex.Tarus.DataAccess.Implement\\Fanex.Tarus.DataAccess.Implement.csproj
+		SccProjectTopLevelParentUniqueName10 = SettlementSite.sln
+		SccProjectName10 = Fanex.Tarus.DataAccess.Implement
+		SccLocalPath10 = Fanex.Tarus.DataAccess.Implement
+		SccProjectUniqueName11 = Fanex.Tarus.Web.Controller\\Fanex.Tarus.Web.Controllers.csproj
+		SccProjectTopLevelParentUniqueName11 = SettlementSite.sln
+		SccProjectName11 = Fanex.Tarus.Web.Controller
+		SccLocalPath11 = Fanex.Tarus.Web.Controller
+		SccProjectUniqueName12 = Fanex.Tarus.Web.Models\\Fanex.Tarus.Web.Models.csproj
+		SccProjectTopLevelParentUniqueName12 = SettlementSite.sln
+		SccProjectName12 = Fanex.Tarus.Web.Models
+		SccLocalPath12 = Fanex.Tarus.Web.Models
+		SccProjectUniqueName13 = Fanex.Tarus.Entities\\Fanex.Tarus.Entities.csproj
+		SccProjectTopLevelParentUniqueName13 = SettlementSite.sln
+		SccProjectName13 = Fanex.Tarus.Entities
+		SccLocalPath13 = Fanex.Tarus.Entities
+		SccProjectUniqueName14 = Fanex.Tarus.Settlement\\Fanex.Tarus.Settlement.csproj
+		SccProjectTopLevelParentUniqueName14 = SettlementSite.sln
+		SccProjectName14 = Fanex.Tarus.Settlement
+		SccLocalPath14 = Fanex.Tarus.Settlement
+		SccProjectUniqueName15 = Fanex.Tarus.Infrastructure\\Fanex.Tarus.Infrastructure.csproj
+		SccProjectTopLevelParentUniqueName15 = SettlementSite.sln
+		SccProjectName15 = Fanex.Tarus.Infrastructure
+		SccLocalPath15 = Fanex.Tarus.Infrastructure
+		SccProjectUniqueName16 = Fanex.Tarus.User\\Fanex.Tarus.User.csproj
+		SccProjectTopLevelParentUniqueName16 = SettlementSite.sln
+		SccProjectName16 = Fanex.Tarus.User
+		SccLocalPath16 = Fanex.Tarus.User
+		SccWebProject17 = true
+		SccProjectUniqueName17 = Websites
+		SccProjectName17 = Websites
+		SccLocalPath17 = Websites
+		SccProjectEnlistmentChoice17 = 2
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C7EB1617-765A-44E2-9267-96865EB5C096}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7EB1617-765A-44E2-9267-96865EB5C096}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7EB1617-765A-44E2-9267-96865EB5C096}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7EB1617-765A-44E2-9267-96865EB5C096}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09B74F02-6C21-4C5E-A52C-B6D56595A262}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09B74F02-6C21-4C5E-A52C-B6D56595A262}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09B74F02-6C21-4C5E-A52C-B6D56595A262}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09B74F02-6C21-4C5E-A52C-B6D56595A262}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27984FEE-40DC-40DC-B3B9-3A8776C5511D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27984FEE-40DC-40DC-B3B9-3A8776C5511D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27984FEE-40DC-40DC-B3B9-3A8776C5511D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27984FEE-40DC-40DC-B3B9-3A8776C5511D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2043B3C-AF85-4334-8542-F9AC2B031D79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2043B3C-AF85-4334-8542-F9AC2B031D79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2043B3C-AF85-4334-8542-F9AC2B031D79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2043B3C-AF85-4334-8542-F9AC2B031D79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2426F40B-B40E-420E-BD14-80814B949055}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2426F40B-B40E-420E-BD14-80814B949055}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2426F40B-B40E-420E-BD14-80814B949055}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2426F40B-B40E-420E-BD14-80814B949055}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B2228C6-443E-48FF-90EF-A122810D77E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B2228C6-443E-48FF-90EF-A122810D77E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B2228C6-443E-48FF-90EF-A122810D77E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B2228C6-443E-48FF-90EF-A122810D77E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED61A61E-4805-405A-8A5F-44E933DE874A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED61A61E-4805-405A-8A5F-44E933DE874A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED61A61E-4805-405A-8A5F-44E933DE874A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED61A61E-4805-405A-8A5F-44E933DE874A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EF6B61B-7588-4353-B523-8D0178BDBDE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EF6B61B-7588-4353-B523-8D0178BDBDE2}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EF6B61B-7588-4353-B523-8D0178BDBDE2}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{98993382-DB96-4EF7-932B-0C384A31199F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98993382-DB96-4EF7-932B-0C384A31199F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98993382-DB96-4EF7-932B-0C384A31199F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98993382-DB96-4EF7-932B-0C384A31199F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE4A5642-A3B6-4329-BB8F-4973446E7FA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE4A5642-A3B6-4329-BB8F-4973446E7FA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE4A5642-A3B6-4329-BB8F-4973446E7FA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE4A5642-A3B6-4329-BB8F-4973446E7FA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EE1DE7D-1D0D-4443-A82A-B1EADE5E8F14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EE1DE7D-1D0D-4443-A82A-B1EADE5E8F14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EE1DE7D-1D0D-4443-A82A-B1EADE5E8F14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EE1DE7D-1D0D-4443-A82A-B1EADE5E8F14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9780010A-7EEC-4726-959B-D2CFFB1875EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9780010A-7EEC-4726-959B-D2CFFB1875EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9780010A-7EEC-4726-959B-D2CFFB1875EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9780010A-7EEC-4726-959B-D2CFFB1875EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3FE623F-A32F-4DB4-8306-64C166FC4488}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3FE623F-A32F-4DB4-8306-64C166FC4488}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3FE623F-A32F-4DB4-8306-64C166FC4488}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3FE623F-A32F-4DB4-8306-64C166FC4488}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3ADA1C70-FD55-4C89-BFEF-1B695B1042CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3ADA1C70-FD55-4C89-BFEF-1B695B1042CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3ADA1C70-FD55-4C89-BFEF-1B695B1042CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3ADA1C70-FD55-4C89-BFEF-1B695B1042CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D0F3C0D-F85C-4B0D-B033-16424E1AE5E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D0F3C0D-F85C-4B0D-B033-16424E1AE5E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D0F3C0D-F85C-4B0D-B033-16424E1AE5E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D0F3C0D-F85C-4B0D-B033-16424E1AE5E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCC0446A-42E7-4850-B09C-4DAC278F23B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCC0446A-42E7-4850-B09C-4DAC278F23B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCC0446A-42E7-4850-B09C-4DAC278F23B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCC0446A-42E7-4850-B09C-4DAC278F23B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA489626-9250-447A-B555-E621B43D3AFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA489626-9250-447A-B555-E621B43D3AFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA489626-9250-447A-B555-E621B43D3AFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA489626-9250-447A-B555-E621B43D3AFF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{09B74F02-6C21-4C5E-A52C-B6D56595A262} = {FA1F6B54-C01D-4120-8347-B2896E2C217F}
+		{27984FEE-40DC-40DC-B3B9-3A8776C5511D} = {FA1F6B54-C01D-4120-8347-B2896E2C217F}
+		{C2043B3C-AF85-4334-8542-F9AC2B031D79} = {FA1F6B54-C01D-4120-8347-B2896E2C217F}
+		{2426F40B-B40E-420E-BD14-80814B949055} = {FA1F6B54-C01D-4120-8347-B2896E2C217F}
+		{1B2228C6-443E-48FF-90EF-A122810D77E7} = {FA1F6B54-C01D-4120-8347-B2896E2C217F}
+		{C7EB1617-765A-44E2-9267-96865EB5C096} = {FA1F6B54-C01D-4120-8347-B2896E2C217F}
+		{ED61A61E-4805-405A-8A5F-44E933DE874A} = {78CF7258-A6DD-4CD1-8662-FF83E5945B5A}
+		{FA489626-9250-447A-B555-E621B43D3AFF} = {78CF7258-A6DD-4CD1-8662-FF83E5945B5A}
+		{825A9E60-4EBF-427B-90BF-CD3DA8BD3F69} = {702C7178-BB46-4B71-8E56-5F018CD448A7}
+		{20D92DA4-269C-41BE-BC7D-A787A953D168} = {702C7178-BB46-4B71-8E56-5F018CD448A7}
+		{6411AE5F-5205-47F1-89C0-ED9828FD770A} = {702C7178-BB46-4B71-8E56-5F018CD448A7}
+		{BDB42C3B-A3FA-433F-AF01-DC1FD51049C8} = {702C7178-BB46-4B71-8E56-5F018CD448A7}
+		{19B3D7D1-DE44-4A4C-B3E5-9DD76060FE50} = {702C7178-BB46-4B71-8E56-5F018CD448A7}
+		{98993382-DB96-4EF7-932B-0C384A31199F} = {825A9E60-4EBF-427B-90BF-CD3DA8BD3F69}
+		{BE4A5642-A3B6-4329-BB8F-4973446E7FA9} = {825A9E60-4EBF-427B-90BF-CD3DA8BD3F69}
+		{1EE1DE7D-1D0D-4443-A82A-B1EADE5E8F14} = {20D92DA4-269C-41BE-BC7D-A787A953D168}
+		{9780010A-7EEC-4726-959B-D2CFFB1875EE} = {20D92DA4-269C-41BE-BC7D-A787A953D168}
+		{0D0F3C0D-F85C-4B0D-B033-16424E1AE5E0} = {6411AE5F-5205-47F1-89C0-ED9828FD770A}
+		{F3FE623F-A32F-4DB4-8306-64C166FC4488} = {BDB42C3B-A3FA-433F-AF01-DC1FD51049C8}
+		{3ADA1C70-FD55-4C89-BFEF-1B695B1042CD} = {BDB42C3B-A3FA-433F-AF01-DC1FD51049C8}
+		{CCC0446A-42E7-4850-B09C-4DAC278F23B3} = {19B3D7D1-DE44-4A4C-B3E5-9DD76060FE50}
+	EndGlobalSection
+EndGlobal

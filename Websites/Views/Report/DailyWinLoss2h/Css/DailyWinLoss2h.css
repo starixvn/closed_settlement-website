@@ -1,0 +1,34 @@
+﻿
+
+.emtyBottomBorder
+{
+    border-bottom: none 0px;
+}
+
+.whiteBackground
+{
+    background-color: #FFFFFF;
+}
+
+.ui-datepicker-week-end
+{
+    color: #FF0000 !important;
+}
+
+
+.longtext-wrapper
+{
+    word-wrap: break-word;
+}
+
+.col90
+{
+    width: 90px;
+    word-wrap: break-word;
+}
+
+.col50
+{
+    width: 50px;
+    word-wrap: break-word;
+}

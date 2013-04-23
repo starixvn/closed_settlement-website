@@ -1,0 +1,151 @@
+	<table id="table" cellspacing="1px" cellpadding="1px" class="c bg" width="2300px" border="0">
+      <thead>       
+	  <tr class="c bg">	
+	    <th colspan="2" class="ag" align="center" valign="center">&nbsp;</th>        
+        <th class="ibc" width="60" align="center" valign="center">&nbsp;</th>
+        
+        <th class="ag" colspan="6"><b>Agency</b></th>
+        <th class="ibc" colspan="9"><b>IBC</b></th>
+        <th class="phu" colspan="8"><b>Partner</b></th>       
+        
+        <th class="ibc" width="60" align="center" valign="center">&nbsp;</th>
+        <th colspan="2" class="phu"  style="!border-bottom:solid 1px #cdcdcd;">&nbsp;</th>     
+        
+      </tr>
+	  <tr class="c bg" id="trHeader">	  
+	    <th colspan="2" class="ag" align="center" valign="center">Pool-Currency</th>  
+	    <th class="ibc" width="60" align="center" valign="center"><b>Currency</b></th>
+	    
+        <th class="ag" ><b>Win TO</b></th>
+        <th class="ag" ><b>Place TO</b></th>
+        <th class="ag" ><b>W/P TO</b></th>
+        <th class="ag" ><b>Total TO</b></th>
+        <th class="ag" ><b>Comm <br/>Income</b></th>
+        <th class="ag" ><b>PT <br/>Win/Loss</b></th>
+        
+        <th class="ibc" ><b>Win TO</b></th>
+        <th class="ibc" ><b>Place TO</b></th>
+        <th class="ibc" ><b>W/P TO</b></th>
+        <th class="ibc" ><b>Total TO</b></th>
+        <th class="ibc" ><b>Comm <br/>Income</b></th>
+        <th class="ibc" ><b>Tote Fee</b></th>
+        <th class="ibc" ><b>Comm<br/>Expense</b></th>
+        <th class="ibc" ><b>PT <br/>Win/Loss</b></th>
+        <th class="ibc" ><b>Net <br/>Income</b></th>
+        
+        <th class="phu" ><b>Win TO</b></th>
+        <th class="phu" ><b>Place TO</b></th>
+        <th class="phu" ><b>W/P TO</b></th>
+        <th class="phu" ><b>Total TO</b></th>
+        <th class="phu" ><b>Dividend <br/>Won</b></th>
+        <th class="phu" ><b>Comm <br/>Expense</b></th>
+        <th class="phu" ><b>Tote Fee</b></th>
+        <th class="phu" ><b>Amount <br/>Due</b></th>
+        
+        <th class="ibc" width="60" align="center" valign="center"><b>Currency</b></th>
+        <th colspan="2" class="ag" align="center" valign="center">Pool-Currency</th>  	    
+	  </tr>
+	  </thead>
+	<!--content-->
+      <tr class="{bgcolor}">
+		<!--Blank--><td  rowspan="{rowspan}" colspan="2"  class="c fontbold">{Pool_Currency}</td><!--/Blank-->
+		<td class="c" nowrap>{Currency}</td>
+		
+		<td class="r">{AgWinTO}</td>
+		<td class="r">{AgPlaceTO}</td>  
+		<td class="r">{AgWinPlaceTO}</td>
+        <td class="r">{AgTotalTO}</td>
+		<td class="r">{AgCommInc}</td>
+		<td class="r">{AgWL}</td>
+		
+		<td class="r">{IBCWinTO}</td>
+		<td class="r">{IBCPlaceTO}</td>
+		<td class="r">{IBCWinPlaceTO}</td>
+        <td class="r">{IBCTotalTO}</td>
+		<td class="r">{IBCCommInc}</td>
+		<td class="r">{IBCToteFee}</td>
+		<td class="r">{IBCCommExp}</td>
+		<td class="r">{IBCPTWL}</td>
+		<td class="r">{IBCNetInc}</td>
+		
+		<td class="r">{PartnerWinTO}</td>
+		<td class="r">{PartnerPlaceTO}</td>
+		<td class="r">{PartnerWinPlaceTO}</td>
+        <td class="r">{PartnerTotalTO}</td>
+        <td class="r">{PartnerDividendWon}</td>
+        <td class="r">{PartnerCommExp}</td>      
+        <td class="r">{IBCToteFee}</td>  
+		<td class="r">{PartnerAmountDue}</td>
+		
+		<td class="c" nowrap>{Currency}</td>
+		<!--Blank2--><td  rowspan="{rowspan}" colspan="2"  class="c fontbold rborder">{Pool_Currency}</td><!--/Blank2-->
+		
+	 </tr>
+	<!--/content-->		
+	
+	<!--Comparision-->
+	<tr class="b bgodd">
+	    <td colspan="21"></td>
+	    <td colspan="2" class="c bgcompare">OpenTote Comparision</td>
+	    <td colspan="6"></td>
+	</tr>
+	
+	<tr class="b bgodd">
+	    <td colspan="21"></td>
+	    <td class="c {clssTOMatched}">{valueTOMatched}</td>
+	    <td class="c {clssDividendWonMatched}">{valueDividendWonMatched}</td>
+	    <td colspan="6"></td>
+	</tr>
+	<!--/Comparision-->
+	
+	<!--footer-->
+	<tfoot>
+    
+
+    
+	 <tr class="report-footer bg">
+		<td  class="c report-footer" rowspan="{rowspan}" colspan="2">Grand Total</td>		 		
+		<!--sub-footer-->
+		<td class="report-footer" style="text-align:center" nowrap>{currency}</td>
+        
+		<td class="r report-footer">{AgWinTO}</td>
+		<td class="r report-footer">{AgPlaceTO}</td>  
+		<td class="r report-footer">{AgWinPlaceTO}</td>
+        <td class="r report-footer">{AgTotalTO}</td>
+		<td class="r report-footer">{AgCommInc}</td>
+		<td class="r report-footer">{AgWL}</td>
+		
+		<td class="r report-footer">{IBCWinTO}</td>
+		<td class="r report-footer">{IBCPlaceTO}</td>
+		<td class="r report-footer">{IBCWinPlaceTO}</td>
+        <td class="r report-footer">{IBCTotalTO}</td>
+		<td class="r report-footer">{IBCCommInc}</td>
+		<td class="r report-footer">{IBCToteFee}</td>
+		<td class="r report-footer">{IBCCommExp}</td>
+		<td class="r report-footer">{IBCPTWL}</td>
+		<td class="r report-footer">{IBCNetInc}</td>
+		
+		<td class="r report-footer">{PartnerWinTO}</td>
+		<td class="r report-footer">{PartnerPlaceTO}</td>
+		<td class="r report-footer">{PartnerWinPlaceTO}</td>
+        <td class="r report-footer">{PartnerTotalTO}</td>
+        <td class="r report-footer">{PartnerDividendWon}</td>
+        <td class="r report-footer">{PartnerCommExp}</td>
+        <td class="r report-footer">{IBCToteFee}</td>        
+		<td class="r report-footer">{PartnerAmountDue}</td>
+		
+		<td class="c report-footer" style="text-align:center" nowrap>{currency}</td>		
+		<!--/sub-footer-->    		
+		<td class="c report-footer rborder" rowspan="{rowspan}" colspan="2">Grand Total</td>		
+	 </tr>
+    {footerCurrency}
+    <!--copy-footer-->
+	 <tr class="report-footer bg" id="trFooter">
+	    <!--sub-footer2-->
+	        <!--sub-footer2-content-->
+	    <!--/sub-footer2-->
+	 </tr>
+     <!--/copy-footer-->
+	</tfoot>
+	<!--/footer-->
+ </table>

@@ -1,0 +1,368 @@
+﻿body
+{
+	font-family:Tahoma,Verdana;
+	font-size: 8pt;
+	margin: 3px 10px 10px;
+}
+.c {
+	text-align:center;
+}
+
+.l {
+	text-align:left;
+}
+
+.r {
+	text-align:right;
+}
+.b
+{
+	font-weight:bold;
+}
+.bl_total_under
+{
+	color: #01122B;
+	font-weight: bold;
+}
+.bl_total_fav
+{
+	font-weight: bold;
+	color: #B50000;	
+}
+.bl_btype
+{
+	color: #003399;
+	font-weight: 600;
+}
+.bl_match
+{
+	color: #000000;
+	font-weight: normal;
+	line-height:15px;
+}
+.bl_stype
+{
+	color: #0066CC;
+}
+.bl_lname
+{
+	color: #666666;
+	line-height:15px;
+	margin-top:1px;
+}
+.bl_evt
+{
+	font-size: 11px;
+	color: #ffffff;
+}
+
+.bl_num
+{
+	color: #003399;
+	font-size: 8pt;
+}
+.bl_status
+{
+	color: #606060;
+	font-size:11px;
+	font-weight:bold;
+}
+
+.bl_bold
+{
+	font-weight: bold;
+}
+
+.bl_lg
+{
+	background: url(Images/lastGoal.gif) no-repeat center center;
+	height: 10px;
+	width: 14px;
+	display: inline;
+	padding: 0 4px;
+}
+.bl_fg
+{
+	background: url(Images/firstGoal.gif) no-repeat center center;
+	height: 10px;
+	width: 14px;
+	display: inline;
+	padding: 0 4px;
+}
+
+.bl_favorite {
+color:#B50000;
+font-weight:bold !important;
+}
+
+.bl_blue
+{
+	color:#2673CE;	
+}
+.FirstGoal {
+background:transparent url(../../App_Themes/SteelBlue/Images/firstGoal.gif) no-repeat scroll center center;
+display:inline;
+height:10px;
+padding:0 4px;
+width:14px;
+}
+.LastGoal {
+background:transparent url(../../App_Themes/SteelBlue/Images/lastGoal.gif) no-repeat scroll center center;
+display:inline;
+height:10px;
+padding:0 4px;
+width:14px;
+}
+.bl_underdog {
+color:#01122B;
+font-weight:bold !important;
+}
+.bl_oddtype
+{
+	color:#586985; /*434343;*/
+	font-weight:bold;
+}
+.bl_time
+{
+	color: #434343;
+	font-size: 7pt !important;
+	font-weight:normal;
+	text-align:center;
+}
+tr.report-header
+{
+	BACKGROUND: url(../../App_Themes/SteelBlue/Images/report-header-bg.gif) repeat-x top left;
+	color:#fff;
+	font-weight:bold;
+	text-align:center;
+	line-height:18px;
+}
+.bgcolor-nodata
+{
+	background-color:#fff;
+	text-align:center;
+}
+tr.r-o
+{
+	background:#F9F9F7;
+}
+tr.r-e
+{
+	background:#DFEAFF;
+}
+
+tr.event-live
+{
+	background:#ffffcc;
+}
+tr.r-footer
+{
+	background-color: #d9ddda;
+	text-align:right;
+	font-weight:bold;
+}
+
+table.fxheader  
+{
+	text-align: left;
+	font-size: 8pt;
+	font-family: Tahoma,Verdana;
+	border-right: 1px solid #7C98A4;
+	line-height:18px;
+}
+
+table.fxheader td {
+	border-left: 1px solid #7C98A4;
+	border-bottom: 1px solid #7C98A4;
+	white-space: nowrap;
+}
+table.fxheader th {
+	border-left: 1px solid #7C98A4;
+	border-bottom: 1px solid #7C98A4;
+}
+
+table.fxheader2  
+{
+	text-align: left;
+	font-size: 8pt;
+	font-family: Tahoma,Verdana;
+	background-color:#7C98A4;
+    border-collapse:separate;
+    line-height:18px;
+}
+.lnk
+{
+	 color:#0000ff;
+	 text-decoration:none;
+	 cursor:pointer; 	
+}
+.lnk:hover
+{
+	color:#c16605;
+	text-decoration:underline;
+	cursor:pointer;
+}
+.bl-choice
+{
+	font-family: Tahoma;
+	font-size: 13px;
+	color: #FF0000;
+	font-weight:bold;
+}
+.bl-bettype
+{
+	font-family: Tahoma;
+	font-size: 11px;
+	color: #003399;
+	font-weight: 600;
+} 
+.bl-leaguename
+{
+	font-size: 11px;
+	color: #666666;
+	font-family:Tahoma;
+}
+.bl-event
+{
+	font-size: 11px;
+	font-family: Tahoma;
+	color: #000000;
+}   
+.bl-sporttype
+{
+	font-family: Tahoma;
+	font-size: 10px;
+	color: #0066CC;
+	font-weight:bold;
+}
+.hide
+{
+	display: none;
+}
+.show
+{
+	display:inline;
+}
+table.report
+{
+	border-collapse:collapse;
+	border-color:#cdcdcd;
+	border-style:solid;	
+}
+table.report td
+{
+	height: 18px;
+	
+}
+tr.report-footer
+{
+	background:#357EC7;
+	color:#fff;
+	font-weight:bold;
+	text-align:center;
+}
+input,select {
+font-family:Tahoma,Verdana;
+font-size:8pt;
+}
+.vbmenu_popup
+{
+	background: #FFFFFF;
+	color: #000000;
+	border: 1px solid #0B198C;
+}
+.img-date-selector 
+{
+	border:0px;
+	cursor:pointer;
+	vertical-align:middle;
+}
+div#ReportDiv {
+vertical-align:top;
+}
+form {
+margin:0;
+}
+table {
+border-collapse:collapse;
+font-family:Tahoma,Verdana;
+font-size:8pt;
+}
+.txtdate-no-time {
+vertical-align:middle;
+width:75px;
+}
+.btn
+{
+	font-size:11px;
+	height:20px;
+	border:1px solid #ccc7ba;
+	margin:0;
+	padding-left:3px;
+	padding-right:3px;
+	overflow:visible;
+	background:url(Images/button_orange.jpg) repeat-x;
+	cursor:pointer;
+}
+.btn:hover
+{
+	cursor: pointer;
+	border:1px solid #ffffff;
+}
+.hand
+{
+	cursor:pointer;	
+}
+a:hover {
+color:#C16605;
+cursor:pointer;
+text-decoration:underline;
+}
+a {
+color:#0000FF;
+text-decoration:none;
+}
+table.content {
+border:1px solid #BCB9B2;
+width:100%;
+}
+span.link {
+color:#16178D;
+cursor:pointer;
+text-decoration:none;
+}
+span.link:hover {
+color:#FF0000;
+cursor:pointer;
+text-decoration:underline;
+}
+.b_mix
+{
+	font-weight: bold;
+	width: auto;
+	line-height: 16px;
+	float: left;
+	height: 20px;
+}
+.s-datavalue-minus {
+color:#FF0000;
+font-family:Tahoma;
+font-size:11px;
+font-weight:600;
+}
+.s-total-minus {
+color:#FF0000;
+font-family:Tahoma;
+font-size:12px;
+font-weight:bold;
+}
+.bl_stype
+{
+	color: #0066CC;
+}
+
+.exrate2
+{
+    color: #0066CC;
+    font-size: 9px;
+}

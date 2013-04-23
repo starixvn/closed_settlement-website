@@ -1,0 +1,27 @@
+	<table id="tplcontent" cellspacing="1" class="tbllayout" style="width:700px;">		
+      <tr align="center" style="height:25px; font-weight:bold;">
+        <td colspan="7" class="c" style="background-color:#ffabab;">
+          <span id="spBettype"> {bettype}</span> Daily Report: <span id="spWLDate">{wldate}</span>                    
+        </td>	
+      </tr>
+	  <tr align="center" class="title">	
+        <td style="width:100px;">Bettype</td>
+        <td style="width:100px;">Currency</td>
+        <td style="width:100px;">Turnover</td>
+        <td style="width:100px;">Winloss</td>
+        <td style="width:100px;">Position</td>
+        <td style="width:100px;">Commission</td>
+        <td style="width:100px;">Line Total</td>
+      </tr>		
+		<!--content-->
+        <tr class="{report-row}" >
+				<!--Bettype--><td  rowspan="{rowspan}" {bgcolor}  class="c" style="font-weight:bold;" >{Bettype}</td><!--/Bettype-->
+				<!--Currency--><td class="{align}" {bgcolor}>{Currency}</td><!--/Currency-->
+				<td class="r" {bgcolor}>{turnover}</td>
+				<td class="r" {bgcolor}>{winlost}</td>
+				<td class="r" {bgcolor}>{pos}</td>
+				<td class="r" {bgcolor}>{comm}</td>
+				<td class="r" {bgcolor}>{linetotal}</td>        
+		</tr>		
+		<!--/content-->			
+	</table>

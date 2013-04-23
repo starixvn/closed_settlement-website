@@ -1,0 +1,38 @@
+﻿.tblcollapse
+{
+	background:#fff;
+	border-collapse: collapse;
+	border:solid 1px #7c98a4;
+	width:100%;
+	text-align:center;
+	line-height:18px;
+	font-family:Tahoma,Arial ,helvetica ,sans-serif;
+	font-size:11px;
+}
+.tblcollapse td
+{
+	border:solid 1px #7c98a4;
+	line-height:18px;
+	padding:1px;
+}
+.tblcollapse th
+{
+    border:solid 1px #7c98a4;
+	background:#b5c4d0;
+}
+.tblcollapse a{cursor:pointer}
+.tblcollapse .title
+{
+	font-weight:bold;
+	color:#000;
+	padding:1px;
+}
+
+.tblcollapse .title td{background:#b5c4d0 !important;}	
+.tblcollapse tr
+{
+    padding:2px;
+    vertical-align:top;
+}
+.evenrow td{background:#e6e9f0;}	
+.overrow td{background:#f8ff8d !important;}	

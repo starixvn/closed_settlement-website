@@ -1,0 +1,131 @@
+<div>
+    <form id="frmBill">
+    <table class="tblcollapse">
+        <tr class="title1 c">
+            <td colspan="5">
+                LEAGUE:&nbsp;{leaguename}
+            </td>
+        </tr>
+        <tr class="title">
+            <td width="80">
+                CODE
+            </td>
+            <td width="90">
+                KICK-OFF TIME
+            </td>
+            <td width="250">
+                TEAM
+            </td>
+            <td width="36">
+                HT Score
+            </td>
+            <td width="36">
+                Final Score
+            </td>
+        </tr>
+        <tr class="c">
+          <td rowspan="2">{matchcode}</td>
+          <td rowspan="2">{date}</td>
+          <td class="l fontbold hteam">{hometeam}</td>
+          <td>{homeHScore}</td>
+          <td>{homeFScore}</td>                
+        </tr> 
+        <tr class="c">      
+          <td class="l fontbold ateam">{awayteam}</td>
+          <td>{awayHScore}</td>
+          <td>{awayFScore}</td>                
+        </tr>      
+      </table>
+
+      {ApplyHedging}
+    
+      {Refund}
+    
+    <input type="hidden" id="sParams" name="sParams" value="{params}" />  
+    <input type="hidden" id="sAction" name="sAction" />
+      <input id="hiddenScoreConfirm_homeHScore" name="hiddenScoreConfirm_homeHScore" type="hidden" />
+    <input id="hiddenScoreConfirm_homeFScore" name="hiddenScoreConfirm_homeFScore" type="hidden" />
+    <input id="hiddenScoreConfirm_awayHScore" name="hiddenScoreConfirm_awayHScore" type="hidden" />
+    <input id="hiddenScoreConfirm_awayFScore" name="hiddenScoreConfirm_awayFScore" type="hidden" />
+    <input id="hiddenScoreConfirm_Sport" name="hiddenScoreConfirm_Sport" type="hidden"
+        value="Common" />
+    </form>
+    <span style="padding-left: 30px; visibility: hidden;" id="errMsg" class="error-message">
+        Please input valid score!</span> <span style="padding-left: 30px; visibility: hidden;"
+            id="errMsg" class="error-message">Please input valid score!</span>
+    <div id="divScoreConfirm" style="display: none; margin-top: 4px">
+    <div style="text-align:center; margin-bottom:4px">
+    <span style="color:red; font-size:14px">You can only do this <span style="font-weight:bold; padding-left:4px; padding-right:4px">ONCE</span> so please <span style="font-weight:bold; padding-left:4px; padding-right:4px"> DOUBLE-CHECK </span> the scores !!!</span>
+    </div>
+        <table class="tblcollapse">
+            <tbody>
+                <tr class="title">
+                    <td width="330">
+                        Team
+                    </td>
+                    <td width="40">
+                        HT Score
+                    </td>
+                    <td width="40">
+                        Final Score
+                    </td>
+                </tr>
+                <tr class="c">
+                    <td class="l fontbold hteam pad33">
+                        {hometeam}
+                    </td>
+                    <td>
+                        <input id="tbxScoreConfirm_homeHScore" type="text" value="{homeHScore}" beginvalue="{homeHScore}"
+                            maxlength="4" size="4" style="text-align: center" disabled="disabled" tabindex="1" />
+                    </td>
+                    <td>
+                        <input id="tbxScoreConfirm_homeFScore" type="text" value="{homeFScore}" beginvalue="{homeFScore}"
+                            maxlength="4" size="4" style="text-align: center" disabled="disabled" tabindex="3" />
+                    </td>
+                </tr>
+                <tr class="c">
+                    <td class="l fontbold ateam pad33">
+                        {awayteam}
+                    </td>
+                    <td>
+                        <input id="tbxScoreConfirm_awayHScore" type="text" value="{awayHScore}" beginvalue="{awayHScore}"
+                            maxlength="4" size="4" style="text-align: center" disabled="disabled" tabindex="2" />
+                    </td>
+                    <td>
+                        <input id="tbxScoreConfirm_awayFScore" type="text" value="{awayFScore}" beginvalue="{awayFScore}"
+                            maxlength="4" size="4" style="text-align: center" disabled="disabled" tabindex="4" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div style="text-align: left; margin-top: 4px">
+            <span class="error-message" id="errMsg_ScoreConfirm" style="font-weight: bold; display: none">
+                Please input valid result!</span>
+        </div>
+        <div style="text-align: center; margin-top: 4px">
+            <input id="btnScoreConfirmProceed" type="button" class="btn" value="Proceed" />
+            <input id="btnScoreConfirmCancel" type="button" class="btn" value="Change" />
+        </div>
+        <div style="padding-left:4px; padding-top:8px; padding-bottom:8px; background-color:#F4F8BE; margin-top:4px; width:300px">
+            <table border="0">
+                <tbody>
+                   <tr>
+                        <td>
+                            <span>-&nbsp;<b>REFUND&nbsp;</b>normal tickets</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>-&nbsp;<b>SETTLE determined&nbsp;</b>Over/Under tickets of BETDAQ</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>- Mark remaining tickets of BETDAQ as "Running"</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

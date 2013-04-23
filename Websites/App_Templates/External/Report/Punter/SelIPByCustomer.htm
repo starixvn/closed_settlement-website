@@ -1,0 +1,29 @@
+﻿<table id="tableIP" class="tbllayout" cellspacing="1px" cellpadding="1px">
+	<thead>
+	<tr bgcolor="white">
+	    <th colspan="4" class="c">
+	        <span>Punter {UserName} by IP from {fromdate} to {todate}</span> 
+	        <input type="button" onclick="ExportToExcel();" value="&nbsp;&nbsp;" name="btnExport" id="btnExport" class="btnExcel" title="Export to Excel">
+	    </th>
+	</tr>
+	<tr class="title" id="trHeaderIP">
+			<th style="width:100px">Month</th>
+            <th style="width:100px">Year</th>
+            <th style="width:100px">IP</th>
+			<th style="width:100px">Country</th>
+		</tr>		
+	</thead>
+	<tbody>
+	    <!--Content-->
+		<tr bgcolor="white">	
+	        <td class="r">{Month}</td>
+            <td class="r">{Year}</td>
+            <td class="l">{IP}</td>
+	        <td class="c rspace">{Country}</td>
+        </tr>        
+        <!--/Content-->
+        <tr id="trFooterIP" style="display:none">
+            <td colspan="4"></td>
+        </tr>
+	</tbody>	
+</table>

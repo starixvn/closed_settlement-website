@@ -1,0 +1,168 @@
+﻿<div class="main">
+    <div class="maincontent">
+        <!--PageTitle-->
+        <table border="0" cellpadding="0px" cellspacing="0px" class="maincontent_header">
+        <tr>
+            <td class="maincontent_headerL">
+            </td>
+            <td class="maincontent_headerC">
+                Settlement Log
+            </td>
+            <td class="maincontent_headerR">
+            </td>
+        </tr>
+        </table>
+        <div class="maincontent_box">
+            <table>
+                <tr>
+                    <td class="pad73 b">
+                        Match Code:
+                    </td>
+                    <td>
+                        <input type="text" id="txtMatchCode" name="txtMatchCode" maxlength="40" size="16"
+                            value="{MatchCode}" />
+                    </td>
+                    <td class="pad73 b" id="tdFromDate">
+                        From:
+                    </td>
+                    <td>
+                        {fromdate}
+                    </td>
+                    <td class="pad73 b" id="tdToDate">
+                        To:
+                    </td>
+                    <td>
+                        {todate}
+                    </td>
+                    <td class="pad73" colspan="2" align="right">
+                        <input type="button" class="btn" id="btnSubmit" name="btnSubmit" value="Search" onclick="GetMatchSettleLog()" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!--/PageTitle-->
+        <div id="sData"></div>
+         <!--Body-->
+        <div class="bg_table">
+            <!--Content-->
+            <!--MatchInfo-->
+            <div style="width: 500px">
+                <table  class="tbllayout" cellspacing="1">
+                    <tr class="title">
+                        <td nowrap>
+                            CODE
+                        </td>
+                        <td>
+                            MATCH EVENT
+                        </td>
+                        <td width="150">
+                            EVENT DATE
+                        </td>
+                    </tr>
+                    <!--Rows-->
+                    <tr class="h3 calign">
+                        <td>
+                            {MatchCode}
+                        </td>
+                        <td nowrap>
+                            {Home}-vs-{Away}
+                        </td>
+                        <td>
+                            {EventDate}
+                        </td>
+                    </tr>
+                    <!--/Rows-->
+                </table>
+                <!--/MatchInfo-->
+            </div>
+            <div id="clear2"></div>
+            <!--MatchDetail-->
+            <table id="table" class="tbllayout" cellspacing="1px" cellpadding="1px" style="width:900px;">
+                <thead>
+                    <tr id="trHeader" class="title">
+                        <th style="width: 30">
+                            #
+                        </th>
+                        <th style="width: 50" nowrap>
+                            Logged Date
+                        </th>
+                        <th style="width: 50">
+                            UserName
+                        </th>
+                        <th style="width: 50">
+                            MatchId
+                        </th>
+                        <th style="width: 100">
+                            Action Name
+                        </th>
+                        <th style="width: 30" colspan="2">
+                            HT Score
+                        </th>
+                        <th style="width: 30" colspan="2">
+                            FT Score
+                        </th>
+                        <th style="width: 50">
+                            GoalRecord
+                        </th>
+                        <th style="width: 70">
+                            BetStatus
+                        </th>
+                        <th>
+                            Remark
+                        </th>
+                        <th style="width: 100">
+                            IP
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--ContentDetail-->
+                    <tr >
+                        <td class="c">
+                            {No}
+                        </td>
+                        <td class="c">
+                            {LogDate}
+                        </td>
+                        <td class="c">
+                            {UserName}
+                        </td>
+                        <td class="c">
+                            {MatchId}
+                        </td>
+                        <td>
+                            {ActionName}
+                        </td>
+                        <td class="c" colspan="2">
+                            {HTHomeScore} - {HTAwayScore}
+                        </td>
+                        <td class="c" colspan="2">
+                            {FTHomeScore} - {FTAwayScore}
+                        </td>
+                        <td>
+                            {GoalRecord}
+                        </td>
+                        <td>
+                            {BetStatus}
+                        </td>
+                        <td>
+                            {ReMark}
+                        </td>
+                        <td class="rspace">
+                            {IP}
+                        </td>
+                    </tr>
+                    <!--/ContentDetail-->
+                    <tr id="trFooter" style="display: none">
+                        <td colspan="13">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <!--/MatchDetail-->
+            <!--/Content-->
+        </div>
+        <!--/Body-->
+    </div>
+</div>
+<br />

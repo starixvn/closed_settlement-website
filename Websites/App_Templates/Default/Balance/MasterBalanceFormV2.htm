@@ -1,0 +1,27 @@
+<script type="text/javascript">
+  function Load()
+  {
+    document.getElementById('inProgressBar').style.display = ''; 
+  }
+</script>
+<form action ="{action}" method ="get">
+  <table>
+    <tr>
+      <td>
+        <b>GET DATA FROM</b>
+        <input type ="hidden" name ="custid" value ="{custid}"></input>
+        <input type ="hidden" name ="view" value ="{view}"></input>
+      </td>
+      <td></td>
+    </tr>
+    <tr height="27px;">
+      <td>
+        <input class="input-button  button"  type ="submit" value ="MAIN" name ="btnmain" id ="btnmain" onclick="Load();"></input>
+        <input class="input-button  button"  type ="submit" value ="REP" name ="btnrep" id ="btnrep" onclick="Load();"></input>
+      </td>
+      <td>
+        <img id='inProgressBar' name='inProgressBar'  style='display:none'   src ="../../App_Themes/Images/ajax-loader.gif" />
+      </td>
+    </tr>
+  </table>
+</form>

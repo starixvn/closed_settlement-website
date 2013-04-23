@@ -1,0 +1,1107 @@
+﻿@using DNAide.Core
+@using Fanex.Tarus.Web.Controllers.Report;
+@using Fanex.Tarus.Reports.Entities.PunterAnalysis;
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PunterAnalysis</title>
+    <link href="~/App_Themes/Public/Message.css" rel="stylesheet" type="text/css" />
+    <link href="~/js/jQuery/Pager/pagination.css" rel="stylesheet" type="text/css" />
+    <link href="~/App_Themes/Report/reportgrid.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="~/App_Themes/Public/common.css" />
+    <link rel="stylesheet" type="text/css" href="~/App_Themes/Public/table.css" />
+    <link rel="stylesheet" type="text/css" href="~/App_Themes/Public/input.css" />
+    <link href="~/js/MultipleSelect/jquery.multiselect.css" rel="stylesheet" type="text/css" />
+    <link href="~/Views/Report/PunterAnalysis/StyleSheet/PunterAnalysis.css" rel="stylesheet"
+        type="text/css" />
+    <link href="~/js/jQuery/UI/css/custom-theme/jquery-ui-1.8.10.custom.css" rel="stylesheet"
+        type="text/css" />
+    <link href="~/js/jQuery/GridScroller/gridscroller.css" rel="stylesheet" type="text/css" />
+    <script src="~/js/jQuery/jquery-1.7.js" type="text/javascript"></script>
+    <script src="~/js/json2.js" type="text/javascript"></script>
+    <script src="~/js/jQuery/jquery-ui-1.8.20.custom.min.js" type="text/javascript"></script>
+    <script src="~/js/MultipleSelect/jquery.multiselect.js" type="text/javascript"></script>
+    <script src="~/js/jQuery/jquery.blockUI.1.33.js" type="text/javascript"></script>
+    <script src="~/js/jQuery/GridScroller/jquery.gridscroller.js?version=@Sunplus.Accounting.Core.Configurations.WebSettings.Version" type="text/javascript"></script>
+    <script src="~/js/BlockUI.js" type="text/javascript"></script>
+    <script src="~/Views/Report/PunterAnalysis/Scripts/PunterAnalysisExportExcel.js?version=@Sunplus.Accounting.Core.Configurations.WebSettings.Version" type="text/javascript"></script>
+    <script type="text/javascript" src="~/js/common.js"></script>
+    <script type="text/javascript">    
+    </script>
+</head>
+<body>
+    <div id="fullHeight" style="height: 100%; position: absolute; z-index: -999; margin-left: -9999">
+        &nbsp;
+    </div>
+    <div class="main" style="margin-bottom: 6px;">
+        <div class="maincontent">
+            <table border="0" cellpadding="0px" cellspacing="0px" class="maincontent_header">
+                <tr>
+                    <td class="maincontent_headerL">
+                    </td>
+                    <td class="maincontent_headerC">
+                        Punter Analysis
+                    </td>
+                    <td class="maincontent_headerR">
+                    </td>
+                </tr>
+            </table>
+            <div class="maincontent_box">
+                <div id="header">
+                    <div id="dvSearchBy">
+                        <span id="spSearchBy">Search by</span> <span style="padding-left: 30px;">
+                            <input onclick="punter.setSearchBy(0)" type="radio" id="rdUser" name="rdSearchBy"
+                                checked="true" /></span> <span id="spUser" class="pright30">User</span>
+                        <span>
+                            <input onclick="punter.setSearchBy(1)" type="radio" id="rdLeague" name="rdSearchBy" /></span>
+                        <span id="spLeague" class="pright30">League</span> <span>Top rows</span> <span style="padding-left: 5px">
+                            <input type="text" onblur="punter.setDefaultTopRows();" onkeypress="return CheckDecNumber(event);"
+                                id="txtTopRows" value="10" maxlength="4" style="width: 30px" />
+                        </span><span style="padding-left: 30px">Order by</span> <span style="padding-left: 5px">
+                            <select id="ddlOrderby" style="width: 80px">
+                                <option value="1">Winlost</option>
+                                <option value="2">Turnover</option>
+                                <option value="3">Margin</option>
+                            </select>
+                        </span><span>
+                            <select id="ddlOrderType">
+                                <option value="1">Descending</option>
+                                <option value="0">Ascending</option>
+                            </select>
+                        </span>
+                    </div>
+                    <div id="dvUserName" class="space6" style="float: left;">
+                        <span>UserName</span> <span style="padding-left: 35px">
+                            <input type="text" value="All" id="txtUserName" maxlength="50" style="width: 120px"
+                                onclick="punter.onclickUserName()" onblur="punter.onblurUserName()" />
+                        </span>
+                    </div>
+                    <div id="dvSport" class="space6" style="float: left;">
+                        <span style="padding-left: 35px">Sport type</span> <span style="padding-left: 5px;">
+                            <span id="ddlSportUser"></span></span>
+                    </div>
+                    <div style="clear: both;">
+                    </div>
+                    <div id="dvPeriodType" class="space6">
+                        <span>Period type</span> <span style="padding-left: 23px">
+                            <input onclick="punter.setPeriodType(0);" type="radio" id="rdMonthly" name="rdPeriodType"
+                                checked="checked" /></span><span class="pright30">Monthly</span> <span>
+                                    <input onclick="punter.setPeriodType(1);" type="radio" id="rdAnnual" name="rdPeriodType" /></span><span
+                                        class="pright30">Annual</span> <span>
+                                            <input onclick="punter.setPeriodType(2);" type="radio" id="rdLongRange" name="rdPeriodType" /></span><span
+                                                class="pright30">Long Range</span>
+                    </div>
+                    <div id="dvMonthly" class="space6">
+                        <span id="spPeriodType"></span><span id="spReport1">
+                            <input type="button" id="btnReport1" name="btnReport" value="REPORT" class="btn"
+                                onclick="punter.generateReport();" /></span>
+                    </div>
+                    <div id="dvSportByLeague" class="space6">
+                        <span>Sport</span> <span style="padding-left: 58px;"><span id="spSportLeague"></span>
+                        </span><span>League</span> <span>
+                            <select id="ddlLeagues" class="limited-width" style="width: 200px" onmousedown="if($.browser.msie){this.style.position='absolute';this.style.width='auto'}"
+                                onblur="this.style.position='';this.style.width='200px'" onchange="this.style.position='';this.style.width='200px'">
+                                <option value="0">There is no information available.</option>
+                            </select></span> <span id="spReport2">
+                                <input type="button" id="btnReport2" name="btnReport" value="REPORT" class="btn"
+                                    onclick="punter.generateReport();" /></span>
+                    </div>
+                </div>
+                <div id="msg">
+                </div>
+            </div>
+            <div>
+            </div>
+        </div>
+    </div>
+    <div style="padding-left: 2px;">
+        <div id="mainreport" class="freegrid hidden">
+            <div class="grid-title">
+                <div class="grid-title-lable" id="gridtitleSummary">
+                    Title</div>
+                <div class="grid-toolbox">
+                    <input type="button" onclick="PunterAnalysisExportExcel.exportExcelTopPunterSummary()"
+                        value="  " id="btnExportExcelTopPunterSummary" class="btnExcel" title="Export to Excel" />
+                </div>
+            </div>
+            <div class="free-cell free-top-left">
+                <table class="grid-fixed-table free-cell-top-left">
+                </table>
+            </div>
+            <div class="free-cell free-bottom-left">
+                <table class="grid-fixed-table">
+                    <thead>
+                        <tr>
+                            <th class="free-cell-bottom-left">
+                                <div>
+                                    &nbsp;</div>
+                            </th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="free-cell free-top-right">
+                <table class="grid-fixed-table">
+                    <thead>
+                        <tr>
+                            <th class="free-cell-top-right">
+                                <div>
+                                    &nbsp;</div>
+                            </th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="free-cell free-bottom-right">
+                <table class="grid-fixed-table">
+                    <thead>
+                        <tr>
+                            <th class="free-cell-bottom-right">
+                                <div>
+                                    &nbsp;</div>
+                            </th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="row_header row-headers-background">
+                <table class="grid-fixed-table row_header_content">
+                </table>
+            </div>
+            <div class="grid-container col_header row-headers-background scroll-y">
+                <div class="header-container">
+                    <table class="grid-fixed-table col_header_content">
+                    </table>
+                </div>
+            </div>
+            <div class="grid-container container">
+                <div class="content-container">
+                    <table id="grid1" class="grid-fixed-table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <div style="height: 30px; width: 100px;" class="table-cell">
+                                        Username</div>
+                                </th>
+                                <th>
+                                    <div style="height: 30px; width: 100px;" class="table-cell">
+                                        Winlost</div>
+                                </th>
+                                <th>
+                                    <div style="height: 30px; width: 100px;" class="table-cell">
+                                        Turnover</div>
+                                </th>
+                                <th>
+                                    <div style="height: 30px; width: 100px;" class="table-cell">
+                                        Margin</div>
+                                </th>
+                                <th>
+                                    <div style="height: 30px; width: 100px;" class="table-cell">
+                                        Bet Cnt</div>
+                                </th>
+                                <th class="hidden IPHeader">
+                                    <div style="height: 30px; width: 100px;" class="table-cell">
+                                        IP</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="y-scrollbar">
+                <div class="scrollbar-y-content">
+                    &nbsp;</div>
+            </div>
+            <div class="x-scrollbar">
+                <div class="scrollbar-x-content">
+                    &nbsp;</div>
+            </div>
+            <div class="row_footer row-footer-background z999">
+                <table class="grid-fixed-table row_footer_content">
+                    <thead>
+                    </thead>
+                </table>
+            </div>
+            <div class="col_footer row-footer-background scroll-y">
+                <div class="footer-container">
+                    <table class="col_footer_content grid-fixed-table">
+                        <thead>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div id="PunterByCustIdreport" class="freegrid hidden">
+            <div class="grid-title">
+                <div class="grid-title-lable" id="gridtitleByCustId">
+                    Title</div>
+                <div class="grid-toolbox">
+                    <input type="button" onclick="PunterAnalysisExportExcel.exportExcelTopPunterByCustID()"
+                        value="  " id="btnExportExcelCustId" class="btnExcel" title="Export to Excel" />
+                </div>
+            </div>
+            <div class="free-cell free-top-left">
+                <table class="grid-fixed-table free-cell-top-left">
+                </table>
+            </div>
+            <div class="free-cell free-bottom-left">
+                <table class="grid-fixed-table">
+                    <thead>
+                        <tr>
+                            <th class="free-cell-bottom-left">
+                                <div>
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="free-cell free-top-right">
+                <table class="grid-fixed-table">
+                    <thead>
+                        <tr>
+                            <th class="free-cell-top-right">
+                                <div>
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="free-cell free-bottom-right">
+                <table class="grid-fixed-table">
+                    <thead>
+                        <tr>
+                            <th class="free-cell-bottom-right">
+                                <div>
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="row_header row-headers-background">
+                <table class="grid-fixed-table row_header_content">
+                </table>
+            </div>
+            <div class="grid-container col_header row-headers-background scroll-y">
+                <div class="header-container">
+                    <table class="grid-fixed-table col_header_content">
+                    </table>
+                </div>
+            </div>
+            <div class="grid-container container">
+                <div class="content-container">
+                    <table id="grid2" class="grid-fixed-table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <div style="height: 30px; width: 100px;" class="table-cell">
+                                        Sport type</div>
+                                </th>
+                                <th>
+                                    <div style="height: 30px; width: 100px;" class="table-cell">
+                                        Winlost</div>
+                                </th>
+                                <th>
+                                    <div style="height: 30px; width: 100px;" class="table-cell">
+                                        Turnover</div>
+                                </th>
+                                <th>
+                                    <div style="height: 30px; width: 100px;" class="table-cell">
+                                        Margin</div>
+                                </th>
+                                <th>
+                                    <div style="height: 30px; width: 100px;" class="table-cell">
+                                        Bet Cnt</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="y-scrollbar">
+                <div class="scrollbar-y-content">
+                    &nbsp;</div>
+            </div>
+            <div class="x-scrollbar">
+                <div class="scrollbar-x-content">
+                    &nbsp;</div>
+            </div>
+            <div class="row_footer row-footer-background z999">
+                <table class="grid-fixed-table row_footer_content">
+                    <thead>
+                    </thead>
+                </table>
+            </div>
+            <div class="col_footer row-footer-background scroll-y">
+                <div class="footer-container">
+                    <table class="col_footer_content grid-fixed-table">
+                        <thead>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div id="PunterBySporttypereport" class="freegrid hidden">
+            <div class="grid-title">
+                <div class="grid-title-lable" id="gridtitleBySporttype">
+                    Title</div>
+                <div class="grid-toolbox">
+                    <input type="button" onclick="PunterAnalysisExportExcel.exportExcelTopPunterBySporttype()"
+                        value="  " id="btnExportExcelTopPunterBySporttype" class="btnExcel" title="Export to Excel" />
+                </div>
+            </div>
+            <div class="free-cell free-top-left">
+                <table class="grid-fixed-table free-cell-top-left">
+                    <thead>
+                        <tr>
+                            <th>
+                                <div style="height: 39px; width: 100px;" class="table-cell">
+                                    Bet type</div>
+                            </th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="free-cell free-bottom-left">
+                <table class="grid-fixed-table">
+                    <thead>
+                        <tr>
+                            <th class="free-cell-bottom-left">
+                                <div>
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="free-cell free-top-right">
+                <table class="grid-fixed-table">
+                    <thead>
+                        <tr>
+                            <th class="free-cell-top-right">
+                                <div>
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="free-cell free-bottom-right">
+                <table class="grid-fixed-table">
+                    <thead>
+                        <tr>
+                            <th class="free-cell-bottom-right">
+                                <div>
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="row_header row-headers-background">
+                <table id="grid3rowheader" class="grid-fixed-table row_header_content">
+                    <thead>
+                        <tr>
+                            <th>
+                                <div style="height: 39px; width: 100px;">
+                                    Bet type</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col_header row-headers-background scroll-y">
+                <div class="header-container">
+                    <table class="grid-fixed-table col_header_content">
+                        <thead>
+                            <tr>
+                                <th rowspan="2">
+                                    <div style="width: 100px;">
+                                    </div>
+                                </th>
+                                <th colspan="4">
+                                    <div style="height: 17px;">
+                                        None Live</div>
+                                </th>
+                                <th colspan="4">
+                                    <div style="height: 17px;">
+                                        Live</div>
+                                </th>
+                                <th colspan="4">
+                                    <div style="height: 17px;">
+                                        None Live &amp; Live</div>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <div style="height: 17px; width: 100px;">
+                                        Winlost</div>
+                                </th>
+                                <th>
+                                    <div style="height: 17px; width: 100px;">
+                                        Turnover</div>
+                                </th>
+                                <th>
+                                    <div style="height: 17px; width: 100px;">
+                                        Margin</div>
+                                </th>
+                                <th>
+                                    <div style="height: 17px; width: 100px;">
+                                        Bet Cnt</div>
+                                </th>
+                                <th>
+                                    <div style="height: 17px; width: 100px;">
+                                        Winlost</div>
+                                </th>
+                                <th>
+                                    <div style="height: 17px; width: 100px;">
+                                        Turnover</div>
+                                </th>
+                                <th>
+                                    <div style="height: 17px; width: 100px;">
+                                        Margin</div>
+                                </th>
+                                <th>
+                                    <div style="height: 17px; width: 100px;">
+                                        Bet Cnt</div>
+                                </th>
+                                <th>
+                                    <div style="height: 17px; width: 100px;">
+                                        Winlost</div>
+                                </th>
+                                <th>
+                                    <div style="height: 17px; width: 100px;">
+                                        Turnover</div>
+                                </th>
+                                <th>
+                                    <div style="height: 17px; width: 100px;">
+                                        Margin</div>
+                                </th>
+                                <th>
+                                    <div style="height: 17px; width: 100px;">
+                                        Bet Cnt</div>
+                                </th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+            <div class="grid-container container">
+                <div class="content-container">
+                    <table id="grid3" class="grid-fixed-table col_header_content">
+                        <thead>
+                            <tr>
+                                <th rowspan="2">
+                                    <div style="width: 100px;">
+                                        &nbsp;</div>
+                                </th>
+                                <th colspan="4">
+                                    <div style="height: 17px; width: 415px;">
+                                        &nbsp;</div>
+                                </th>
+                                <th colspan="4">
+                                    <div style="height: 17px; width: 415px;">
+                                        &nbsp;</div>
+                                </th>
+                                <th colspan="4">
+                                    <div style="height: 17px; width: 415px;">
+                                        &nbsp;</div>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <div style="height: 17px; width: 100px;">
+                                        &nbsp;</div>
+                                </th>
+                                <th>
+                                    <div style="height: 17px; width: 100px;">
+                                        &nbsp;</div>
+                                </th>
+                                <th>
+                                    <div style="height: 17px; width: 100px;">
+                                        &nbsp;</div>
+                                </th>
+                                <th>
+                                    <div style="height: 17px; width: 100px;">
+                                        &nbsp;</div>
+                                </th>
+                                <th>
+                                    <div style="height: 17px; width: 100px;">
+                                        &nbsp;</div>
+                                </th>
+                                <th>
+                                    <div style="height: 17px; width: 100px;">
+                                        &nbsp;</div>
+                                </th>
+                                <th>
+                                    <div style="height: 17px; width: 100px;">
+                                        &nbsp;</div>
+                                </th>
+                                <th>
+                                    <div style="height: 17px; width: 100px;">
+                                        &nbsp;</div>
+                                </th>
+                                <th>
+                                    <div style="height: 17px; width: 100px;">
+                                        &nbsp;</div>
+                                </th>
+                                <th>
+                                    <div style="height: 17px; width: 100px;">
+                                        &nbsp;</div>
+                                </th>
+                                <th>
+                                    <div style="height: 17px; width: 100px;">
+                                        &nbsp;</div>
+                                </th>
+                                <th>
+                                    <div style="height: 17px; width: 100px;">
+                                        &nbsp;</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="y-scrollbar">
+                <div class="scrollbar-y-content">
+                    &nbsp;</div>
+            </div>
+            <div class="x-scrollbar">
+                <div class="scrollbar-x-content">
+                    &nbsp;</div>
+            </div>
+            <div class="row_footer row-footer-background z999">
+                <table class="grid-fixed-table row_footer_content">
+                    <thead>
+                    </thead>
+                </table>
+            </div>
+            <div class="col_footer row-footer-background scroll-y">
+                <div class="footer-container">
+                    <table class="grid-fixed-table col_footer_content">
+                        <thead>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div id="SummaryLongRange" style="padding-left: 200px">
+        </div>
+        <div id="PunterByBettypereport" class="freegrid hidden">
+            <div class="grid-title">
+                <div class="grid-title-lable" id="gridtitleByBettype">
+                </div>
+                <div class="grid-toolbox">
+                    <input type="button" onclick="PunterAnalysisExportExcel.exportExcelTopPunterByBettype()"
+                        value="  " id="btnExportExcelTopPunterByBettype" class="btnExcel" title="Export to Excel" />
+                </div>
+            </div>
+            <div class="free-cell free-top-left">
+                <table class="grid-fixed-table free-cell-top-left">
+                    <thead>
+                        <tr>
+                            <th>
+                                <div style="height: 39px; width: 300px;" class="c table-cell">
+                                    League</div>
+                            </th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="free-cell free-bottom-left">
+                <table class="grid-fixed-table">
+                    <thead>
+                        <tr>
+                            <th class="free-cell-bottom-left">
+                                <div>
+                                    &nbsp;</div>
+                            </th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="free-cell free-top-right">
+                <table class="grid-fixed-table">
+                    <thead>
+                        <tr>
+                            <th class="free-cell-top-right">
+                                <div>
+                                    &nbsp;</div>
+                            </th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="free-cell free-bottom-right">
+                <table class="grid-fixed-table">
+                    <thead>
+                        <tr>
+                            <th class="free-cell-bottom-right">
+                                <div>
+                                    &nbsp;</div>
+                            </th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="row_header row-headers-background">
+                <table id="grid4rowheader" class="grid-fixed-table row_header_content">
+                    <thead>
+                        <tr>
+                            <th>
+                                <div style="height: 39px; width: 300px;" class="c table-cell">
+                                    League</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <div class="grid-container col_header row-headers-background scroll-y">
+                <div class="header-container">
+                    <table class="grid-fixed-table col_header_content">
+                        <thead>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+            <div class="grid-container container">
+                <div class="content-container">
+                    <table id="grid4" class="grid-fixed-table col_header_content">
+                        <thead>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="y-scrollbar">
+                <div class="scrollbar-y-content">
+                    &nbsp;</div>
+            </div>
+            <div class="x-scrollbar">
+                <div class="scrollbar-x-content">
+                    &nbsp;</div>
+            </div>
+            <div class="row_footer row-footer-background z999">
+                <table class="grid-fixed-table row_footer_content">
+                    <thead>
+                    </thead>
+                </table>
+            </div>
+            <div class="col_footer row-footer-background scroll-y">
+                <div class="footer-container">
+                    <table class="col_footer_content grid-fixed-table">
+                        <thead>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div id="PunterSelIPByCustomerreport" class="freegrid hidden">
+            <div class="grid-title">
+                <div class="grid-title-lable" id="gridtitleSelIPByCustomer">
+                    Title</div>
+                <div class="grid-toolbox">
+                    <input type="button" onclick="PunterAnalysisExportExcel.exportExcelTopPunterSelIPByCustomer()"
+                        value="  " id="btnExportExcelTopPunterSelIPByCustomer" class="btnExcel" title="Export to Excel" />
+                </div>
+            </div>
+            <div class="free-cell free-top-left">
+                <table class="grid-fixed-table free-cell-top-left">
+                </table>
+            </div>
+            <div class="free-cell free-bottom-left">
+                <table class="grid-fixed-table">
+                    <thead>
+                        <tr>
+                            <th class="free-cell-bottom-left">
+                                <div>
+                                    &nbsp;</div>
+                            </th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="free-cell free-top-right">
+                <table class="grid-fixed-table">
+                    <thead>
+                        <tr>
+                            <th class="free-cell-top-right">
+                                <div>
+                                    &nbsp;</div>
+                            </th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="free-cell free-bottom-right">
+                <table class="grid-fixed-table">
+                    <thead>
+                        <tr>
+                            <th class="free-cell-bottom-right">
+                                <div>
+                                    &nbsp;</div>
+                            </th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="row_header row-headers-background">
+                <table class="grid-fixed-table row_header_content">
+                </table>
+            </div>
+            <div class="grid-container col_header row-headers-background scroll-y">
+                <div class="header-container">
+                    <table class="grid-fixed-table col_header_content">
+                    </table>
+                </div>
+            </div>
+            <div class="grid-container container">
+                <div class="content-container">
+                    <table id="grid5" class="grid-fixed-table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <div style="height: 30px; width: 100px;" class="table-cell">
+                                        Month</div>
+                                </th>
+                                <th>
+                                    <div style="height: 30px; width: 100px;" class="table-cell">
+                                        Year</div>
+                                </th>
+                                <th>
+                                    <div style="height: 30px; width: 100px;" class="table-cell">
+                                        IP</div>
+                                </th>
+                                <th>
+                                    <div style="height: 30px; width: 100px;" class="table-cell">
+                                        Country</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="y-scrollbar">
+                <div class="scrollbar-y-content">
+                    &nbsp;</div>
+            </div>
+            <div class="x-scrollbar">
+                <div class="scrollbar-x-content">
+                    &nbsp;</div>
+            </div>
+            <div class="row_footer row-footer-background z999">
+                <table class="grid-fixed-table row_footer_content">
+                    <thead>
+                    </thead>
+                </table>
+            </div>
+            <div class="col_footer row-footer-background scroll-y">
+                <div class="footer-container">
+                    <table class="col_footer_content grid-fixed-table">
+                        <thead>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div id="PunterSelBetCountByCustomerreport" class="freegrid hidden">
+            <div class="grid-title">
+                <div class="grid-title-lable" id="gridtitleSelBetCountByCustomer">
+                    Title</div>
+                <div class="grid-toolbox">
+                    <input type="button" onclick="PunterAnalysisExportExcel.exportExcelTopPunterSelBetCountByCustomer()"
+                        value="  " id="btnExportExcelTopPunterSelBetCountByCustomer" class="btnExcel"
+                        title="Export to Excel" />
+                </div>
+            </div>
+            <div class="free-cell free-top-left">
+                <table class="grid-fixed-table free-cell-top-left">
+                </table>
+            </div>
+            <div class="free-cell free-bottom-left">
+                <table class="grid-fixed-table">
+                    <thead>
+                        <tr>
+                            <th class="free-cell-bottom-left">
+                                <div>
+                                    &nbsp;</div>
+                            </th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="free-cell free-top-right">
+                <table class="grid-fixed-table">
+                    <thead>
+                        <tr>
+                            <th class="free-cell-top-right">
+                                <div>
+                                    &nbsp;</div>
+                            </th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="free-cell free-bottom-right">
+                <table class="grid-fixed-table">
+                    <thead>
+                        <tr>
+                            <th class="free-cell-bottom-right">
+                                <div>
+                                    &nbsp;</div>
+                            </th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="row_header row-headers-background">
+                <table class="grid-fixed-table row_header_content">
+                </table>
+            </div>
+            <div class="grid-container col_header row-headers-background scroll-y">
+                <div class="header-container">
+                    <table class="grid-fixed-table col_header_content">
+                    </table>
+                </div>
+            </div>
+            <div class="grid-container container">
+                <div class="content-container">
+                    <table id="grid6" class="grid-fixed-table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <div style="height: 30px; width: 100px;" class="table-cell">
+                                        Date</div>
+                                </th>
+                                <th>
+                                    <div style="height: 30px; width: 100px;" class="table-cell">
+                                        Bet Count</div>
+                                </th>
+                                <th>
+                                    <div style="height: 30px; width: 100px;" class="table-cell">
+                                        Win Count</div>
+                                </th>
+                                <th>
+                                    <div style="height: 30px; width: 100px;" class="table-cell">
+                                        Draw Count</div>
+                                </th>
+                                <th>
+                                    <div style="height: 30px; width: 100px;" class="table-cell">
+                                        Winlost</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="y-scrollbar">
+                <div class="scrollbar-y-content">
+                    &nbsp;</div>
+            </div>
+            <div class="x-scrollbar">
+                <div class="scrollbar-x-content">
+                    &nbsp;</div>
+            </div>
+            <div class="row_footer row-footer-background z999">
+                <table class="grid-fixed-table row_footer_content">
+                    <thead>
+                    </thead>
+                </table>
+            </div>
+            <div class="col_footer row-footer-background scroll-y">
+                <div class="footer-container">
+                    <table class="col_footer_content grid-fixed-table">
+                        <thead>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <iframe id="frm" width="0" height="0" frameborder="0" style="display: none"></iframe>
+    @{  
+        string exportType = Request["ExportType"];
+        PunterAnalysisParam param = new PunterAnalysisParam();
+        if (!string.IsNullOrEmpty(exportType))
+        {
+            switch (exportType)
+            {
+                case "TopPunterSummary":
+                    param.FromDate = CastAide.AsString(Request["FromDate"]);
+                    param.ToDate = CastAide.AsString(Request["ToDate"]);
+                    param.SportId = CastAide.AsString(Request["SportId"]);
+                    param.SportName = CastAide.AsString(Request["SportName"]);
+                    param.UserName = CastAide.AsString(Request["UserName"]);
+                    param.OrderBy = CastAide.AsString(Request["OrderBy"]);
+                    param.OrderType = CastAide.AsString(Request["OrderType"]);
+                    param.TopRow = CastAide.AsString(Request["TopRow"]);
+                    param.LeagueId = CastAide.AsString(Request["LeagueId"]);
+                    param.ReportFileName = "TopPunterSummary";
+                    param.DefaultSheetName = "TopPunterSummary";
+                    param.OrderByName = CastAide.AsString(Request["OrderByName"]);
+                    param.OrderTypeName = CastAide.AsString(Request["OrderTypeName"]);
+                    param.LeagueName = CastAide.AsString(Request["LeagueName"]);
+                    param.PeriodType = CastAide.AsString(Request["PeriodType"]);
+
+                    new PunterAnalysisController().ExportExcelTopPunterSummary(param);
+                    break;
+                case "TopPunterSummaryByLeague":
+                    param.FromDate = CastAide.AsString(Request["FromDate"]);
+                    param.ToDate = CastAide.AsString(Request["ToDate"]);
+                    param.SportId = CastAide.AsString(Request["SportId"]);
+                    param.SportName = CastAide.AsString(Request["SportName"]);
+                    param.UserName = CastAide.AsString(Request["UserName"]);
+                    param.OrderBy = CastAide.AsString(Request["OrderBy"]);
+                    param.OrderType = CastAide.AsString(Request["OrderType"]);
+                    param.TopRow = CastAide.AsString(Request["TopRow"]);
+                    param.LeagueId = CastAide.AsString(Request["LeagueId"]);
+                    param.ReportFileName = "TopPunterSummary";
+                    param.DefaultSheetName = "TopPunterSummary";
+                    param.OrderByName = CastAide.AsString(Request["OrderByName"]);
+                    param.OrderTypeName = CastAide.AsString(Request["OrderTypeName"]);
+                    param.LeagueName = CastAide.AsString(Request["LeagueName"]);
+                    param.PeriodType = CastAide.AsString(Request["PeriodType"]);
+
+                    new PunterAnalysisController().ExportExcelTopPunterSummaryByLeague(param);
+                    break;
+                case "TopPunterByCustID":
+                    param.FromDate = CastAide.AsString(Request["FromDate"]);
+                    param.ToDate = CastAide.AsString(Request["ToDate"]);
+                    param.OrderBy = CastAide.AsString(Request["OrderBy"]);
+                    param.OrderType = CastAide.AsString(Request["OrderType"]);
+                    param.OrderByName = CastAide.AsString(Request["OrderByName"]);
+                    param.OrderTypeName = CastAide.AsString(Request["OrderTypeName"]);
+                    param.CustId = CastAide.AsString(Request["CustId"]);
+                    param.CustName = CastAide.AsString(Request["CustName"]);
+                    param.PeriodType = CastAide.AsString(Request["PeriodType"]);
+                    param.SearchBy = CastAide.AsString(Request["SearchBy"]);
+                    param.SportId = CastAide.AsString(Request["SportId"]);
+                    param.SportName = CastAide.AsString(Request["SportName"]);
+                    param.ReportFileName = "TopPunterSummary";
+                    param.DefaultSheetName = "TopPunterSummary";
+
+                    new PunterAnalysisController().ExportExcelTopPunterByCustID(param);
+                    break;
+                case "TopPunterBySporttypeSum":
+                    param.FromDate = CastAide.AsString(Request["FromDate"]);
+                    param.ToDate = CastAide.AsString(Request["ToDate"]);
+                    param.OrderBy = CastAide.AsString(Request["OrderBy"]);
+                    param.OrderType = CastAide.AsString(Request["OrderType"]);
+                    param.OrderByName = CastAide.AsString(Request["OrderByName"]);
+                    param.OrderTypeName = CastAide.AsString(Request["OrderTypeName"]);
+                    param.CustId = CastAide.AsString(Request["CustId"]);
+                    param.CustName = CastAide.AsString(Request["CustName"]);
+                    param.LeagueId = CastAide.AsString(Request["LeagueId"]);
+                    param.LeagueName = CastAide.AsString(Request["LeagueName"]);
+                    param.PeriodType = CastAide.AsString(Request["PeriodType"]);
+                    param.SearchBy = CastAide.AsString(Request["SearchBy"]);
+                    param.SportId = CastAide.AsString(Request["SportId"]);
+                    param.SportName = CastAide.AsString(Request["SportName"]);
+                    param.ReportFileName = "TopPunterSummary";
+                    param.DefaultSheetName = "TopPunterSummary";
+
+                    new PunterAnalysisController().ExportExcelTopPunterBySporttypeSum(param);
+                    break;
+                case "TopPunterBySporttype":
+                    param.FromDate = CastAide.AsString(Request["FromDate"]);
+                    param.ToDate = CastAide.AsString(Request["ToDate"]);
+                    param.OrderBy = CastAide.AsString(Request["OrderBy"]);
+                    param.OrderType = CastAide.AsString(Request["OrderType"]);
+                    param.OrderByName = CastAide.AsString(Request["OrderByName"]);
+                    param.OrderTypeName = CastAide.AsString(Request["OrderTypeName"]);
+                    param.CustId = CastAide.AsString(Request["CustId"]);
+                    param.CustName = CastAide.AsString(Request["CustName"]);
+                    param.LeagueId = CastAide.AsString(Request["LeagueId"]);
+                    param.LeagueName = CastAide.AsString(Request["LeagueName"]);
+                    param.SportId = CastAide.AsString(Request["SportTypeId"]);
+                    param.SportName = CastAide.AsString(Request["SportTypeName"]);
+                    param.PeriodType = CastAide.AsString(Request["PeriodType"]);
+                    param.SearchBy = CastAide.AsString(Request["SearchBy"]);
+                    param.ReportFileName = "TopPunterSummary";
+                    param.DefaultSheetName = "TopPunterSummary";
+
+                    new PunterAnalysisController().ExportExcelTopPunterBySporttype(param);
+                    break;
+
+                case "TopPunterByBettype":
+                    param.FromDate = CastAide.AsString(Request["FromDate"]);
+                    param.ToDate = CastAide.AsString(Request["ToDate"]);
+                    param.OrderBy = CastAide.AsString(Request["OrderBy"]);
+                    param.OrderType = CastAide.AsString(Request["OrderType"]);
+                    param.OrderByName = CastAide.AsString(Request["OrderByName"]);
+                    param.OrderTypeName = CastAide.AsString(Request["OrderTypeName"]);
+                    param.CustId = CastAide.AsString(Request["CustId"]);
+                    param.CustName = CastAide.AsString(Request["CustName"]);
+                    param.SportId = CastAide.AsString(Request["SportTypeId"]);
+                    param.SportName = CastAide.AsString(Request["SportTypeName"]);
+                    param.BettypeId = CastAide.AsString(Request["BettypeId"]);
+                    param.BettypeName = CastAide.AsString(Request["BettypeName"]);
+                    param.LiveIndicator = CastAide.AsString(Request["LiveIndicator"]);
+                    param.PeriodType = CastAide.AsString(Request["PeriodType"]);
+                    param.SearchBy = CastAide.AsString(Request["SearchBy"]);
+                    param.LeagueId = CastAide.AsString(Request["LeagueId"]);
+                    param.LeagueName = CastAide.AsString(Request["LeagueName"]);
+                    param.ReportFileName = "TopPunterSummary";
+                    param.DefaultSheetName = "TopPunterSummary";
+
+                    new PunterAnalysisController().ExportExcelTopPunterByBettype(param);
+                    break;
+                case "IPByCustId_TopPunterSummary":
+                    param.FromDate = CastAide.AsString(Request["FromDate"]);
+                    param.ToDate = CastAide.AsString(Request["ToDate"]);
+                    param.CustId = CastAide.AsString(Request["CustId"]);
+                    param.CustName = CastAide.AsString(Request["CustName"]);
+                    param.PeriodType = CastAide.AsString(Request["PeriodType"]);
+                    param.SearchBy = CastAide.AsString(Request["SearchBy"]);
+                    param.SportId = CastAide.AsString(Request["SportId"]);
+                    param.SportName = CastAide.AsString(Request["SportName"]);
+                    param.ReportFileName = "TopPunterSummary";
+                    param.DefaultSheetName = "TopPunterSummary";
+
+                    new PunterAnalysisController().ExportExcelIPByCustId_TopPunterSummary(param);
+                    break;
+                case "BetCountByCustId_TopPunterSummary":
+                    param.FromDate = CastAide.AsString(Request["FromDate"]);
+                    param.ToDate = CastAide.AsString(Request["ToDate"]);
+                    param.CustId = CastAide.AsString(Request["CustId"]);
+                    param.CustName = CastAide.AsString(Request["CustName"]);
+                    param.LeagueId = CastAide.AsString(Request["LeagueId"]);
+                    param.LeagueName = CastAide.AsString(Request["LeagueName"]);
+                    param.PeriodType = CastAide.AsString(Request["PeriodType"]);
+                    param.LiveIndicator = CastAide.AsString(Request["LiveIndicator"]);
+                    param.SportId = CastAide.AsString(Request["SportTypeId"]);
+                    param.SportName = CastAide.AsString(Request["SportTypeName"]);
+                    param.BettypeId = CastAide.AsString(Request["BettypeId"]);
+                    param.BettypeName = CastAide.AsString(Request["BettypeName"]);
+                    param.SearchBy = CastAide.AsString(Request["SearchBy"]);
+                    param.ReportFileName = "TopPunterSummary";
+                    param.DefaultSheetName = "TopPunterSummary";
+
+                    new PunterAnalysisController().ExportExcelBetCountByCustId_TopPunterSummary(param);
+                    break;
+            }
+        }
+    }
+    <script src="~/Views/Report/PunterAnalysis/Scripts/PunterAnalysis.js?version=@Sunplus.Accounting.Core.Configurations.WebSettings.Version" type="text/javascript"></script>
+    <script type="text/javascript">
+        window.rootUrl = '@Url.Content("~")';
+    </script>
+</body>
+</html>

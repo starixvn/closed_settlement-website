@@ -1,0 +1,42 @@
+<center>
+  <p></p>
+	<table class="" style="margin-top: 5px;"  border="0px">
+		<tr>
+			<!--RefundFT-->
+			<td >
+				<input class="btn" type="button" tabindex="9" style="width: 130px; " value="Refund HT" onclick="DoCalculate('refundhalftime');"/>
+			</td>
+			<!--/RefundFT-->
+			<td >
+				<input type="button" class="btn" tabindex="9" {disableFT} style="width: 130px; " value="Refund FT" onclick="DoCalculate('refundfulltime');"/>
+			</td>
+			<td >
+				<input type="button" class="btn" tabindex="10" style="width: 130px; " value="Refund All" onclick="DoCalculate('refund');"/>
+			</td>      
+      </tr>
+      <tr>
+			<!--RefundFT-->
+			<td >
+				<input type="button" class="btn" tabindex="11" style="width: 130px; " value="Refund Multiple FT" onclick="DoCal2('rft','{params}');"/>
+			</td>
+			<!--/RefundFT-->
+			<td >
+				<input type="button" class="btn" tabindex="12" style="width: 130px; " value="Refund Multiple All" onclick="DoCal2('r','{params}');"/>
+			</td>
+        <!--MoveBetdaq-->
+          <td>
+            <input type="button" class="btn" id="btnMovebetdaq"  class="movebet" tabindex="13" style="width: 130px; " value="Move Betdaq Tickets" onclick="MoveBetdaqTickets('{matchID}', '{matchcode}');"/>
+          </td>
+        <!--/MoveBetdaq-->
+      </tr>
+    
+    <!--ExcludeBetdaq-->
+    <tr>
+      <td colspan="3">
+        <input class="hand" type="checkbox" id="chkIsExcludeBetdaq" name="chkIsExcludeBetdaq" /> Exclude Betdaq Tickets in Refund
+      </td>
+    </tr>
+    <!--/ExcludeBetdaq-->
+	</table>
+  <input type="hidden" id="IsRefund" name="IsRefund" value="1"></input>
+</center>

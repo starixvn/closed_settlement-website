@@ -1,0 +1,40 @@
+6/2/2010 7:01:44 AM -- Object reference not set to an instance of an object.
+ SOURCE: App_Code.jhq-ekmg
+ FORM: matchid=759075
+ QUERYSTRING: 
+ TARGETSITE: System.Data.DataTable Settlement_BetDaq_SelectMatches(Int32)
+ STACKTRACE:    at Sunplus.Accounting.DataAccess.IBCDLL.Accounting.Settle.Settlement_BetDaq_SelectMatches(Int32 matchid) in d:\WORK\PROJECT\IBC\6.Implementation\Accounting\Main\AccV2\App_Code\IBCDLL\Accounting\Settle.cs:line 576
+   at BetdaqGetMatches.ProcessRequest(HttpContext context) in d:\WORK\PROJECT\IBC\6.Implementation\Accounting\Main\AccV2\Settle\MoveBet\BetdaqGetMatches.ashx:line 29
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) -- General
+----------------------------------------
+6/2/2010 7:09:26 AM -- Object reference not set to an instance of an object.
+ SOURCE: App_Code.jhq-ekmg
+ FORM: matchid=759075
+ QUERYSTRING: 
+ TARGETSITE: System.Data.DataTable Settlement_BetDaq_SelectMatches(Int32)
+ STACKTRACE:    at Sunplus.Accounting.DataAccess.IBCDLL.Accounting.Settle.Settlement_BetDaq_SelectMatches(Int32 matchid) in d:\WORK\PROJECT\IBC\6.Implementation\Accounting\Main\AccV2\App_Code\IBCDLL\Accounting\Settle.cs:line 576
+   at BetdaqGetMatches.ProcessRequest(HttpContext context) in d:\WORK\PROJECT\IBC\6.Implementation\Accounting\Main\AccV2\Settle\MoveBet\BetdaqGetMatches.ashx:line 29
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) -- General
+----------------------------------------
+6/2/2010 7:27:52 AM -- Object reference not set to an instance of an object.
+ SOURCE: App_Code.jhq-ekmg
+ FORM: matchid=759075
+ QUERYSTRING: 
+ TARGETSITE: System.Data.DataTable Settlement_BetDaq_SelectMatches(Int32)
+ STACKTRACE:    at Sunplus.Accounting.DataAccess.IBCDLL.Accounting.Settle.Settlement_BetDaq_SelectMatches(Int32 matchid) in d:\WORK\PROJECT\IBC\6.Implementation\Accounting\Main\AccV2\App_Code\IBCDLL\Accounting\Settle.cs:line 576
+   at BetdaqGetMatches.ProcessRequest(HttpContext context) in d:\WORK\PROJECT\IBC\6.Implementation\Accounting\Main\AccV2\Settle\MoveBet\BetdaqGetMatches.ashx:line 29
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) -- General
+----------------------------------------
+6/2/2010 7:29:32 AM -- Object reference not set to an instance of an object.
+ SOURCE: App_Code.jhq-ekmg
+ FORM: matchid=759075
+ QUERYSTRING: 
+ TARGETSITE: System.Data.DataTable Settlement_BetDaq_SelectMatches(Int32)
+ STACKTRACE:    at Sunplus.Accounting.DataAccess.IBCDLL.Accounting.Settle.Settlement_BetDaq_SelectMatches(Int32 matchid) in d:\WORK\PROJECT\IBC\6.Implementation\Accounting\Main\AccV2\App_Code\IBCDLL\Accounting\Settle.cs:line 576
+   at BetdaqGetMatches.ProcessRequest(HttpContext context) in d:\WORK\PROJECT\IBC\6.Implementation\Accounting\Main\AccV2\Settle\MoveBet\BetdaqGetMatches.ashx:line 29
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) -- General
+----------------------------------------

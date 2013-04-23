@@ -1,0 +1,24 @@
+	<table id="tplcontent" cellspacing="1" class="tbllayout" style="width:700px;">		
+      <tr align="center" style="height:25px; font-weight:bold;">
+        <td colspan="7" class="c">Casino Mini Game Daily Report: <span id="spWLDate">{wldate}</span></td>
+      </tr>
+	  <tr align="center" class="title">	
+        <!--<td style="width:100px;">Bettype</td>-->
+        <td style="width:100px;">Currency</td>
+        <td style="width:100px;">Turnover</td>
+        <td style="width:100px;">Winloss</td>
+        <td style="width:100px;">Position</td>
+        <td style="width:100px;">Commission</td>
+        <td style="width:100px;">Line Total</td>
+      </tr>		
+		<!--content-->
+        <tr class="{report-row}">
+				<!--Currency--><td class="{align}">{Currency}</td><!--/Currency-->
+				<td class="r">{turnover}</td>
+				<td class="r">{winlost}</td>
+				<td class="r">{pos}</td>
+				<td class="r">{comm}</td>
+				<td class="r">{linetotal}</td>        
+		</tr>		
+		<!--/content-->			
+	</table>

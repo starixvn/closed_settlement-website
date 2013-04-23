@@ -1,0 +1,31 @@
+<table width="75%" class="tblSporttypePT">	
+	<tr> 
+		<td>
+			<div id="divUpdInfo151" name="divUpdInfo151">
+				<table width="100%" class="tbllayout" border="1">
+					<tr class="title">					
+						<td colspan="3">
+							{bet-text}
+						</td>
+					</tr>
+					<tr>
+						<td class="r">{minbet-text}&nbsp;
+							<input type="text" maxlength="14" id="txtMinbet151" name="txtMinbet151" value="{minbet151-val}"></input>					
+							<span class="{mbMin}">&gt;=<span id="txtMinbet_Min151">{minbet-min-151}</span></span>
+						</td>
+						<td class="r">{maxbet-text}&nbsp;
+							<input type="text" maxlength="14" id="txtMaxbet151" name="txtMaxbet151" value="{maxbet151-val}"></input>					
+							<span class="{mbMax}">&lt;=<span id="txtMaxbet_Max151">{maxbet-max-151}</span></span>
+						</td>
+						<td class="r">{maxpermatch-text}&nbsp;
+							<input type="text" maxlength="14" id="txtMaxPerMatch151" name="txtMaxPerMatch151" value="{maxpermatch151-val}"></input>					
+							<span class="{mpmMin}">&gt;=<span id="txtMaxPerMatch_Min151">{maxpermatch-min-151}</span> and</span>
+							<span class="{mpmMax}">&lt;=<span id="txtMaxPerMatch_Max151">{maxpermatch-max-151}</span></span>
+						</td>
+					</tr>				
+				</table>
+			</div>
+		</td>
+	</tr>		
+</table>
+

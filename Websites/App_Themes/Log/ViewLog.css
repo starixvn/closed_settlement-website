@@ -1,0 +1,190 @@
+﻿html
+{
+	font-family: Tahoma,Arial ,helvetica ,sans-serif;
+	font-size: 11px;
+	color: #171717;
+	margin: 0px;
+	text-align: left;
+}
+
+#content
+{
+	margin-top: 5px;
+}
+
+.tablelog
+{
+	border-collapse: collapse;
+	border: solid 1px #CCCCCC;
+}
+
+.divLogType
+{
+	padding-top: 5px;
+}
+div#ddlLogActionType
+{
+	padding-left:15px;
+}
+div#header
+{
+	padding: 5px;
+}
+/**/
+input, select {
+font-family:Tahoma,Verdana;
+font-size:8pt;
+}
+
+.img-date-selector {
+border:1px solid red;
+cursor:pointer;
+vertical-align:middle;
+padding-bottom:2px;
+}
+/**/
+
+.imgCalendar
+{
+	margin: 0px; 
+	cursor:pointer; 
+	position:relative; 
+	top:5px; 
+	left:2px;
+}
+
+td.Value
+{
+    text-align: right;
+    padding-right: 5px;
+}
+td.Doing
+{
+   padding-left: 5px;
+   padding-right: 5px;
+   text-align:justify;
+}
+td.ActionName
+{   
+   padding-left: 5px;
+   padding-right: 5px;
+   text-align:justify;
+   width: 170px;
+}
+
+.colWidth
+{
+	width:100px;
+}
+
+.required
+{
+	color : Red;	
+}
+
+/* Start - Xml Tracking Value*/
+
+
+.colW { width:100px; }            
+.colW1  
+{
+    background-color: #EAEAEA;
+    text-align: left;
+    text-transform :capitalize;
+    width: 100px;
+    padding-left: 5px;
+    font-weight :normal;   
+}        
+.colW2 
+{ width:130px; 
+  text-transform : capitalize; 
+}
+
+.colTitle
+{
+    background-color: #EAEAEA;
+    text-align: left;
+    width: 100px;
+    padding-left: 5px;
+    font-weight :normal;
+    text-transform :capitalize;
+}
+
+.colValue
+{
+    width: 100px;
+     text-transform : capitalize; 
+}
+.headerDetail
+{
+    background-color: #b1b0b0;
+    vertical-align: middle;
+    text-align: left;
+    color : #990000;     
+    text-transform : capitalize;
+    cursor :pointer; 
+    font-weight:bold;
+    padding-left : 2px;
+}
+.headerDetailNormal
+{
+    background-color: #b1b0b0;
+    vertical-align: middle;
+    text-align: left;
+    color : #990000;     
+    text-transform : capitalize;     
+    padding-left : 2px;
+    font-weight:bold;
+}
+.headerSportTypeDetail
+{
+    background-color: #D3D6DB;    
+    text-transform : capitalize;
+    text-align: left;  
+    height : 20px;    
+    vertical-align :middle;
+    font-weight:bold;
+}
+
+.tblDesc
+{        	
+	border-collapse: collapse;        	
+	width:100%;
+}
+.tblDesc td 
+{ 
+	border:0px;
+	text-align:left;
+}
+
+.tblDesc .title1 td, .title2 td
+{
+	/*background-color:Gray;*/
+	font-weight:bold;
+	color:#FFFFFF;
+	background-color:#2F5773 !important;
+}
+.tblDesc .title3 td
+{
+	color:#000080;
+	font-weight:bold;
+}
+.tblDesc .rowOdd td
+{
+	background-color:#E1E9F1;        	        	
+}        
+
+.tblDesc .rowEven td 
+{
+	background-color:#F5EDDD;        	        	
+}    
+.b
+{
+    font-weight:bold;
+}
+/**/
+.mouseMove
+{	
+	background-color:#ffebcb;	
+}
+/* End - Xml Tracking Value*/

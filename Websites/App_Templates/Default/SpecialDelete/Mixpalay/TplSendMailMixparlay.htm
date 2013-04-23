@@ -1,0 +1,34 @@
+﻿<table cellspacing="0" rules="all" bordercolor="DodgerBlue" border="1" id="display" style="border-color:DodgerBlue; border-style:Solid;border-collapse:collapse;font-size:8pt; font-family:Tahoma, Arial, Verdana, Sans-Serif;">
+  <tr align="Center" valign="Middle" style="background-color:#DEEDEF;height:25px;font-weight:bold; ">
+    <td width="50">Code</td>
+    <td nowrap>Event</td>
+    <td width="100">Event Date</td>
+  </tr>
+  <tr align="Center" valign="Middle" style="background-color:#FCFCFC;height:25px;">
+    <td>{Code}</td>
+    <td>{Home}<!--vs-->-vs-<!--/vs-->{Away}</td>
+    <td>{EventDate}</td>
+  </tr>
+</table>
+<!--mixparlay-bet-->
+<br>
+<b>{ActionType} Mix Parlay Bets</b>
+<table cellspacing="0" rules="all" bordercolor="DodgerBlue" border="1" id="tbl_mixparlay" style="border-color:DodgerBlue; border-style:Solid;border-collapse:collapse;font-size:8pt; font-family:Tahoma, Arial, Verdana, Sans-Serif;">
+  <tr align="Center" valign="Middle" style="background-color:#DEEDEF;height:25px;font-weight:bold; ">
+    <td width="100">Username</td>
+    <td width="150">Refno</td>
+    
+    <!--choice-->
+    <td colspan="8" width="470">Choice</td>
+    <!--/choice-->
+    
+    <td width="70">Stake</td>
+    <td width="50">Currency</td>
+  </tr>
+  {Rows_Mix}
+</table>
+<!--/mixparlay-bet-->
+<br>
+    <b>{ActionType} by:</b> {UserName} <br>
+      <b>Date:</b> {time} <br><br>
+<i>This is an auto-mail. Please do not reply.</i><br>

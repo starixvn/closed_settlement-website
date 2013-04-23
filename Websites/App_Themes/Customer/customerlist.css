@@ -1,0 +1,33 @@
+﻿
+.add-customer-internal, .add-customer-internal td {
+background-color:#e2ebcb;
+}
+/*closed*/
+.add-customer-bggray, .add-customer-bggray td {
+background-color:#CCC7BA;
+}
+.add-customer-disabled, .add-customer-disabled td {
+background-color:#A0A97A;
+}
+.suspend_row, .suspend_row td
+{
+	background-color:#F8DED7;
+}
+
+ul.openedit
+{	
+	list-style-type:none;
+	margin:0px;
+	position:absolute;
+	padding:6px;
+	border:solid 1px;
+	background:#fff;
+	text-align:left;
+}
+ul.openedit li
+{	
+	background:url("../images/icon_button02.gif") no-repeat scroll left center transparent;
+	padding-left:13px;
+	
+}
+.evenrow td{background:#e6e9f0;}	

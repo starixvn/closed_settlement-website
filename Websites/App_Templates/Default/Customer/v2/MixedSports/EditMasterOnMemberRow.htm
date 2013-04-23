@@ -1,0 +1,46 @@
+﻿<table class="tblcollapse" style="width:auto" id="tbl99_9">
+    {ptheader}
+    
+    <!--Agent-->
+    <tr>
+        <td class="l">{agent-text}</td>
+        <td>{a-mp-val}</td>
+    </tr>
+    <!--/Agent-->
+    
+    <!--Master-->
+    <tr>
+        <td class="l">{master-text}</td>
+        <!--mauto-->
+        <td>{m-mp-val}</td>
+        <!--/mauto-->
+        <!--none-mauto-->
+        <td>
+            <select {statuslstMMixParlay} name="listMMixParlay" id="listMMixParlayOnMember" class="select-pt copyall">{listMMixParlayValue}</select>
+            <input type="button" id="Button5" name="btnReduce1" value=" "   class="btn-dec1" onclick="ReducePT('listMMixParlayOnMember',1)"/>
+            <input type="button" id="Button6" name="btnIncrease1" value=" "   class="btn-inc1" onclick="IncreasePT('listMMixParlayOnMember',1)"/>
+            <input type="button" id="Button7" name="btnReduce10" value=" " class="btn-dec10" onclick="ReducePT('listMMixParlayOnMember',10)"/>
+            <input type="button" id="Button8" name="btnIncrease10" value=" " class="btn-inc10" onclick="IncreasePT('listMMixParlayOnMember',10)"/>
+        </td>
+        <!--/none-mauto-->
+    </tr>
+    <!--/Master-->
+    
+    <!--MasterAuto-->
+    <tr>
+        <td rowspan="2" class="l">{master-auto-text}</td>
+        <td>
+            <input {statuschkMAutoMixParlay} type="checkbox" onclick="CheckAutoPresetOthers(this)" class="copyall" name="chkAutoMixParlay" value="" id="chkAutoMixParlayOnMember">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <select {statuslstMAutoMixParlay} name="autoMMixParlay" id="autoMMixParlayOnMember" class="select-pt copyall">{listMAutoMixParlayValue}</select>
+            <input type="button" id="Button1" name="btnReduce1" value=" "   class="btn-dec1" onclick="ReducePT('autoMMixParlayOnMember',1)"/>
+            <input type="button" id="Button2" name="btnIncrease1" value=" "   class="btn-inc1" onclick="IncreasePT('autoMMixParlayOnMember',1)"/>
+            <input type="button" id="Button3" name="btnReduce10" value=" " class="btn-dec10" onclick="ReducePT('autoMMixParlayOnMember',10)"/>
+            <input type="button" id="Button4" name="btnIncrease10" value=" " class="btn-inc10" onclick="IncreasePT('autoMMixParlayOnMember',10)"/>
+        </td>
+    </tr>
+    <!--/MasterAuto-->
+</table>

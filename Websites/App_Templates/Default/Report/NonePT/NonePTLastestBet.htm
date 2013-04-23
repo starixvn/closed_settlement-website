@@ -1,0 +1,87 @@
+﻿
+<div style="width: 888px;" id="gbox_JQGrid1" class="ui-jqgrid ui-widget ui-widget-content">
+    <div style="width: 888px;" id="gview_JQGrid1" class="ui-jqgrid-view">
+        <div id="divtitle" class="ui-state-default ui-jqgrid-hdiv" style="width: 888px;">
+            <div class="ui-jqgrid-hbox">
+                <table class="ui-jqgrid-htable" style="width: 870px;" border="0" cellpadding="0" cellspacing="0">
+                    <thead>
+                        <tr class="ui-jqgrid-labels" id="trHeader">
+                            <th style="width: 30px;" class="ui-state-default ui-th-column ui-th-ltr">
+                               #
+                            </th>
+                            <th style="width: 100px;" class="ui-state-default ui-th-column ui-th-ltr">
+                                User Name
+                            </th>
+                             <th style="width: 120px;" class="ui-state-default ui-th-column ui-th-ltr">
+                                Trans.Time
+                            </th>
+                             <th style="width: 300px;" class="ui-state-default ui-th-column ui-th-ltr">
+                                Event
+                            </th>
+                            <th style="width: 50px;"  class="ui-state-default ui-th-column ui-th-ltr">
+                                Odds
+                            </th>
+                             <th style="width: 80px;"  class="ui-state-default ui-th-column ui-th-ltr">
+                                Stake
+                            </th>
+                             <th style="width: 50px;"  class="ui-state-default ui-th-column ui-th-ltr">
+                                Currency
+                            </th>
+                             <th style="width: 100px;"  class="ui-state-default ui-th-column ui-th-ltr">
+                                Status
+                            </th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+        <div id="bdiv" style="height: auto; width: 888px;" class="ui-jqgrid-bdiv">
+            <div style="position: relative;">
+                <table id="btable" style="width: 870px;" class="ui-jqgrid-btable" border="0" cellpadding="0" cellspacing="0">
+                    <tbody>
+                       <!--content-->
+                         <tr class="ui-widget-content jqgrow ui-row-ltr r {live} {odd_even}">
+                             <td style="width: 30px; text-align:center;">
+                               {Order}
+                            </td>
+                            <td style="width: 100px; text-align:center;">
+                                {UserName}
+                            </td>
+                             <td style="width: 120px; text-align:center;">
+                                   <div><b>{RefNo}</b></div>
+                                   <div>{TransTime}</div>
+                            </td>
+                             <td style="width: 300px; text-align:right;">
+                                {Event}
+                            </td>
+                            <td style="width: 50px; text-align:right;" >
+                                {Odds}
+                            </td>
+                             <td style="width: 80px; text-align:right">
+                                {Stake}
+                                
+                                 <!--Exchangerate-->
+                                    <br />
+                                    <span class="r exrate2">{ExchangeRate}</span>
+                                    <br />
+                                    <span class="r exrate2">(Ex.Rate 2)</span>
+                                 <!--/Exchangerate-->
+                            </td>
+                             <td  style="width: 50px; text-align:center;">
+                                {Currency}
+                            </td>
+                             <td  style="width: 100px; text-align:center;">
+                                   <div>{Status}</div>    
+                                   <div>{IP}</div>
+                            </td>
+                        </tr>
+                    <!--/content-->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="dvPaging" style="width:888px">{paging}</div>
+
+

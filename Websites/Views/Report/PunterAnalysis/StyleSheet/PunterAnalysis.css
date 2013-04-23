@@ -1,0 +1,147 @@
+﻿
+
+.divCheckbox 
+{
+    border-bottom-left-radius: 2px;
+    border-bottom-top-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-bottom-bottom-radius: 2px;
+    margin-top:2px;
+    margin-bottom:2px;
+}
+
+.divCheckbox:hover 
+{
+    cursor: pointer;
+    background-color: #F7CF7A;
+}
+.divCheckbox-select 
+{
+    background-color: #F7CF7A;
+}
+.divCheckbox-normal
+{
+    background-color: #EEEEEE;
+}
+
+.ui-div-corner-all 
+{
+    border-bottom-left-radius: 2px;
+    border-bottom-top-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-bottom-bottom-radius: 2px;
+}
+
+
+
+.custom-ui-widget-header 
+{
+    background-color: #CDDEF3;
+    font-weight: bold; 
+}
+
+.custom-multi-select-rtUL
+{ 
+  background-position: 0 1.273em;
+  background-repeat: repeat-y;
+  margin: 0;
+  padding-left: 20px;
+  -moz-user-select: -moz-none;
+}
+
+.pright30
+{
+    padding-right:30px;    
+}
+
+.pright15
+{
+    padding-right:15px;    
+}
+
+.space10
+{
+    padding-top:10px;    
+}
+.space6
+{
+    padding-top:6px;    
+}
+
+.pleft30
+{
+    padding-left:30px;    
+}
+
+input[type=radio]
+{
+    cursor:pointer;    
+}
+
+input[type=checkbox]
+{
+    cursor:pointer;    
+}
+
+.link
+{
+    cursor:pointer;
+    text-decoration:underline;
+    color:Blue;    
+}
+
+.tblSum
+{
+	background-color:#fff;
+	border-collapse: collapse;
+	border:solid 1px #7c98a4;	
+	text-align:center;
+	line-height:18px;
+	font-family:Tahoma,Arial ,helvetica ,sans-serif;
+	font-size:11px;
+	border:solid 1px #7c98a4;
+}
+.tblSum td, .tblSum th 
+{
+	border:solid 1px #7c98a4;
+	line-height:18px;
+	padding:1px;
+}
+.tblSum a{cursor:pointer}
+.tblSum .title
+{
+	font-weight:bold;
+	color:#000;
+	padding:1px;
+	background-color:#CDDEF3;
+}
+.tblSum .title td, .tblSum .title th
+{
+	border:solid 1px #7c98a4;
+}
+
+
+.tblSum .title1
+{
+	font-weight:bold;
+	color:#fff;
+	padding:1px;
+}
+.tblSum .title1 td{background-color:#587281 !important;}	
+
+.tblSum .title2
+{
+	font-weight:bold;
+	color:#000;
+	padding:1px;
+}
+.tblSum .title2 td{background-color:#e1effa !important;}	
+
+.linkpath{
+    background: url("images/report_check.png") no-repeat scroll left center transparent;
+    color: #000000;
+    /*float: left;*/
+    height: 18px;
+    padding-left: 18px;
+    padding-top: 4px;
+}

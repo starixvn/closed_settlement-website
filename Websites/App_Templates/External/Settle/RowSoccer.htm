@@ -1,0 +1,24 @@
+<tr class="fs10 c {bgClass}">
+  <td >{code}</td>  
+  <td rowspan="2">{date}</td>
+  <td class="b teamname ht">{hometeam}&nbsp;{hgoal}</td>
+  <td class="htsc">{homeHT}</td>
+  <td class="ftsc">{homeFT}</td>
+  <td rowspan="2" {bgEventStatus}>{eventstatus}</td>  
+  {calLink}
+   <!--betcount-->
+   <td rowspan="2">{betcnt}</td>
+    <!--/betcount-->
+  <!--confirmht-->
+  <td rowspan="2">{confirmht}</td>
+  <!--/confirmht-->
+  <!--confirmft-->
+  <td rowspan="2">{confirmft}</td>
+  <!--/confirmft-->
+</tr>
+<tr class="fs10 c {bgClass}">
+  <td ><div onclick="ShowSettlementLog('{code}');" class="viewhis"></div></td>
+  <td class="b teamname at">{awayteam}&nbsp;{agoal}</td>
+  <td class="htsc">{awayHT}</td>
+  <td class="ftsc">{awayFT}</td>
+</tr>

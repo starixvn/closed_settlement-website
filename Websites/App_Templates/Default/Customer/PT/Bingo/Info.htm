@@ -1,0 +1,114 @@
+﻿{#template MAIN}
+{#include Info root= $T}
+{#/template MAIN}
+
+{#template Info}
+<table class="tblcollapse" style="width: 100%;">
+    <tr class="title">
+        <td colspan="4">
+          Customer Information
+        </td>
+    </tr>
+    <tr>
+        <td class="l" width="200px">
+            Username:
+        </td>
+        <td class="l">
+            {toString($T.UserName)}
+        </td>
+        <td class="l" width="200px">
+            Nick Name:
+        </td>
+        <td class="l">
+           {toString($T.NickName)}
+        </td>
+    </tr>
+    <tr>
+        <td class="l" >
+            First Name:
+        </td>
+        <td class="l">
+            {toString($T.FirstName)}
+        </td>
+        <td class="l">
+            Last Name:
+        </td>
+        <td class="l">
+           {toString($T.LastName)}
+        </td>
+    </tr>
+    <tr>
+        <td class="l">
+            Phone:
+        </td>
+        <td class="l">
+            {toString($T.Phone)}
+        </td>
+        <td class="l">
+            Mobile Phone:
+        </td>
+        <td class="l">
+            {toString($T.MobilePhone)}
+        </td>
+    </tr>
+    <tr>
+        <td class="l">
+            Fax:
+        </td>
+        <td class="l">
+             {toString($T.Fax)}
+        <td class="l">
+          
+        </td>
+        <td class="l">
+            </td>
+    </tr>
+    <!--Bet Setting-->
+    <tr class="title">
+        <td colspan="4">
+          Bet Setting
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4" class="c">
+            <table cellpadding="4" cellspacing="0" border="0" width="100%" class="noneborder">
+                <tr >
+                    <td class="r" style="width:300px">
+                        <b>Accumulated transferable amount</b> 
+                    </td>
+                    <td class="l" style="width:100px">
+                       {$T.AccummulatedTransfer}
+                    </td>
+                    <td class="l" colspan="2">
+                         <span onclick="ResetMaxTransfer('{$T.CustID}')" class="canchange">Reset</span>
+                    </td>
+                </tr>
+                 <tr>
+                    <td class="r" style="width:300px">
+                        <b>Member Max Transfer Credit</b>
+                    </td>
+                     <td class="l" style="width:100px">
+                        <input type="text" name="txtMaxTransferCredit" value="{$T.MaxTransferCredit}" id="txtMaxTransferCredit">
+                    </td>
+                    <td class="l" colspan="2">
+                         <input type="checkbox" {#if $T.AutoReset==true} checked {#else}{#/if} name="cbxAutoReset" id="cbxAutoReset"> <label for="cbxAutoReset">Daily auto reset limit (at 12 noon GMT+8)</label>
+                    </td>
+                </tr>
+                 <tr>
+                    <td class="r" style="width:300px">
+                       
+                    </td>
+                     <td class="l" style="width:100px">
+                        (100 - No limited)
+                    </td>
+                    <td class="l" colspan="2">
+                         
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <!--/Bet Setting-->
+</table>
+{#/template Info}
+

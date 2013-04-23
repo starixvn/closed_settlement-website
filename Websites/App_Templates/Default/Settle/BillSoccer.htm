@@ -1,0 +1,163 @@
+<div>
+	<form id="frmBill">
+		<table class="tblcollapse">
+			<tr class="title1 c">
+				<td colspan="6">LEAGUE:&nbsp;{leaguename}</td>
+			</tr>
+			<tr class="title">
+				<td width="90" >Code</td>
+				<td width="90" >Kick-Off Time</td>
+				<td width="330" >Team</td>
+				<td width="40" >HT Score</td>
+				<td width="40"  colspan="2">Final Score</td>
+			</tr>
+			<tr >
+				<td rowspan="2">
+					{matchcode}
+					<input type="hidden" id="txtMatchCode" name="txtMatchCode" value="{matchcode}"></input>
+					<input type="hidden" id="txtIsExistsNG" name="txtIsExistsNG" value="{IsExistsNG}"></input>
+					<input type="hidden" id="txtIsLive" name="txtIsLive" value="{IsLive}"></input>
+				</td>
+				<td rowspan="2">{date}</td> 
+				<td class="l b ht">
+					{hometeam}&nbsp;<!--FGLG--><img id="hfgoal" style="display:{hfgoaldisplay};" src="../App_Themes/Images/firstGoal.gif" width="14px" height="10px" border="0px" /><img id="hlgoal" style="display:{hlgoaldisplay};" src="../App_Themes/Images/lastGoal.gif" width="14px" height="10px" border="0px" /><!--/FGLG-->
+				</td>
+				<td>
+					<input type="text" id="homeH" name="homeH" tabindex="1" size="4" class="htsc c txth13" value="{homeHScore}" onkeypress="return OnKP(event, this);" onkeyup="return OnKUSoccer();"/>
+				</td>
+				<td colspan="2">
+					<input type="text" id="homeF" name="homeF" tabindex="3" size="4" {disableFT} class="ftsc c txth13" value="{homeFScore}" onkeypress="return OnKP(event, this);" onkeyup="return OnKUSoccer();"/>
+				</td>
+			</tr>
+			<tr >
+				<td class="l b at">
+					{awayteam}&nbsp;<!--FGLG--><img id="afgoal" style="display:{afgoaldisplay};" src="../App_Themes/Images/firstGoal.gif" width="14px" height="10px" border="0px" /><img id="algoal" style="display:{algoaldisplay};" src="../App_Themes/Images/lastGoal.gif" width="14px" height="10px" border="0px" /><!--/FGLG-->
+				</td>
+				<td>
+					<input type="text" id="awayH" name="awayH" tabindex="2" size="4" class="htsc c txth13" value="{awayHScore}" onkeypress="return OnKP(event, this);" onkeyup="return OnKUSoccer();"/>
+				</td>
+				<td colspan="2">
+					<input type="text" id="awayF" name="awayF" tabindex="4" size="4" {disableFT} class="ftsc c txth13" value="{awayFScore}" onkeypress="return OnKP(event, this);" onkeyup="return OnKUSoccer();"/>
+				</td>
+			</tr>
+
+			<!--goalrecord-->
+			<tr>
+				<td class="b" colspan="3" align="right" style="padding-right:15px;">Goal Record</td>
+				<td colspan="3" align="center">
+					<!--CalcNGRead-->
+					<input tabindex="5" {disabledGR} enable="false" type="text" id="GR" name="GR" value="{GoalRecord}" size="13" class="ftsc c txth13" ></input>
+					<!--/CalcNGRead-->
+					<!--CalcNGHost-->
+					<input tabindex="5" {disabledGR} type="text" onkeypress="return GoalRecords.InputGoalRecord(event);" onkeyup="GoalRecords.RePlaceStr(event); GoalRecords.DisplayGoalHistory();" id="GR" name="GR" value="{GoalRecord}" size="13" class="ftsc c txth13" ></input>
+					<!--/CalcNGHost-->
+				</td>
+			</tr>
+			<!--/goalrecord-->
+
+		</table>
+
+        {ApplyHedging}
+
+		<!--RefundBlock-->
+		<table class="tbllayout c" style="margin-top: 5px;" cellspacing="1">
+			<tr>
+				<td width="82" class="l" style="color: #41586A; font-weight: bold;">First Half</td>
+				<td width="90" {HTbgcolor}>{HTStatus}</td>
+				<td width="207">
+					<!--CalcHTRead-->
+					<input class="btn" type="button" style="width: 120px;" id="btnSubmit1" name="btnSubmit1" tabindex="6" disabled="disabled" value="Calculate HT" />
+					<!--/CalcHTRead-->
+					<!--CalcHTHost-->
+					<input class="btn" type="button" style="width: 120px;" id="btnSubmit1" name="btnSubmit1" tabindex="6" value="Calculate HT" onclick="DoCalculate('bill','HT');"/>
+					<!--/CalcHTHost-->
+				</td>
+				<!--RefundButton1-->
+				<td width="207">
+				</td>
+				<!--/RefundButton1-->
+				<td style="vertical-align:middle;" rowspan="3">
+					<!--CalcAllRead-->
+					<input type="button" class="btn" style="width: 120px; font-weight: bold;" id="Button1" name="btnSubmit" tabindex="9"  value="Calculate ALL" disabled="disabled" />
+					<!--/CalcAllRead-->
+					<!--CalcAllHost-->
+					<input type="button" class="btn" style="width: 120px; font-weight: bold;" id="Button2" name="btnSubmit" tabindex="9" {disableFT} value="Calculate ALL" onclick="DoCalculate('bill');"/>
+					<!--/CalcAllHost-->
+					<!--UnSeRead-->
+					<input type="button" class="btn" style="width: 120px; margin-top:2px;" id="btnSubmit_4" name="btnSubmit_4" tabindex="10" disabled="disabled" value="Unsettle" />
+					<!--/UnSeRead-->
+					<!--UnSeHost-->
+					<input type="button" class="btn" style="width: 120px; margin-top:2px;" id="btnSubmit_4" name="btnSubmit_4" tabindex="10" {disableUS} value="Unsettle" onclick="DoCalculate('unsettle');" />
+					<!--/UnSeHost-->
+				</td>
+			</tr>
+			<tr>
+				    <td class="l" style="color: #41586A; font-weight: bold;">Full Time</td>
+				    <td alt="" {FTbgcolor} >{FTStatus}</td>
+					<td>
+						<!--CalcFTRead-->
+						<input type="button" class="btn" style="width: 120px;" id="btnSubmit2" name="btnSubmit2" tabindex="8" value="Calculate FT" disabled="disabled" />
+						<!--/CalcFTRead-->
+						<!--CalcFTHost-->
+						<input type="button" class="btn" style="width: 120px;" id="btnSubmit2" name="btnSubmit2" tabindex="8" {disableFTCal} value="Calculate FT" onclick="DoCalculate('bill','FT');"/>
+						<!--/CalcFTHost-->
+					</td>
+					<!--RefundButton2-->
+					<td>
+						<input type="button" tabindex="11" {disableFT} style="width: 120px; color: #D84E1F;" value="REFUND FT" onclick="DoCalculate('refundfulltime');"/>
+					</td>
+					<!--/RefundButton2-->
+				</tr>
+			<tr>
+				<td class="l" style="color: #41586A; font-weight: bold;">
+					<!--FGLG-->
+					FGLG
+					<!--/FGLG-->
+				</td>
+				<td  {FGLGbgcolor} >
+					<!--FGLG-->
+					{FGLGStatus}
+					<!--/FGLG-->
+				</td>
+				<td class="b">
+					<!--FGLG-->
+					<!--CalcAllRead-->
+					<input type="button" class="btn" style="width: 180px;" id="btnSubmit"
+						name="btnSubmit" tabindex="9"  value="Calc First Goal and No Goal"
+						disabled="disabled" />
+					<!--/CalcAllRead-->
+					<!--CalcAllHost-->
+					<input type="button" class="btn" style="width: 180px;" id="btnSubmit"
+						name="btnSubmit" tabindex="9"  value="Calc First Goal and No Goal"
+						onclick="DoCalculate('calculate');"/>
+					<!--/CalcAllHost-->
+					<!--/FGLG-->
+				</td>
+				<!--RefundButton3-->
+				<td>
+					<input type="button" class="btn" tabindex="10" style="width: 120px; color: #D84E1F; font-weight: bold;" value="REFUND ALL" onclick="DoCalculate('refund');"/>
+				</td>
+				<!--/RefundButton3-->
+				<!--<td>
+            &nbsp;
+          </td>-->
+			</tr>
+		</table>
+		<!--/RefundBlock-->        
+
+		<!--KeyScore-->
+		<br />
+		<input type="button" class="btn" style="width: 100px;" id="btnSubmit" name="btnSubmit" tabindex="7" value="KEY SCORE" onclick="DoCalculate('keyscore');"/>
+		<!--/KeyScore-->
+
+		<span id="spGoalHistory">
+			{ShowGoalHistory}
+		</span>
+		<span id="infoMsg" class="info-message" style="padding-left: 30px;display:none;">SUCCESS!</span>
+		<span style="padding-left: 30px;display:none; " id="errMsg" class="error-message">Please input valid score!</span>
+		<input type="hidden" id="sParams" name="sParams" value="{params}" />
+		<input type="hidden" id="sAction" name="sAction" />
+		<input type="hidden" id="sHasFGLG" name="sHasFGLG" value="{hasFGLG}" />
+		<input type="hidden" id="statusFGLG" name="statusFGLG" value="{statusFGLG}" />
+	</form>
+</div>

@@ -1,0 +1,37 @@
+<div id="errMsg"></div>
+<div id="clear2"></div>
+<div id="editForm">
+<table class="tbllayout"  cellspacing="1"> 
+  <tr>
+	<td class="l b" style="width:120px">From Currency:</td>
+	<td class="l">
+	    <select id="fromcur" name="fromcur" {disabled}>
+	        {optionFromcur}
+	    </select>
+	</td>	
+  
+	<td class="l b" style="width:120px">To Currency:</td>
+	<td class="l">
+	    <select id="tocur" name="tocur" {disabled}>
+	        {optionTocur}
+	    </select>
+	</td>	
+  </tr>
+  <tr style="white-space:nowrap;">
+	<td class="l b">Min Ex.Rate:</td>
+	<td class="l">
+	    <input type="text" id="txtmin" name="txtmin" value="{minvalue}" style="width:55px" onkeypress="return CheckDecNumber_ExRate(event);" onkeyup="FixValue(event);" onblur="Blur(this);"/>(%)
+	</td>	
+  
+	<td class="l b">Max Ex.Rate:</td>
+	<td class="l">
+	    <input type="text" id="txtmax" name="txtmax" value="{maxvalue}" style="width:55px" onkeypress="return CheckDecNumber_ExRate(event);"/>(%)
+	</td>	
+  </tr>
+  <tr>
+	<td colspan="4" class="c">
+	    <input type="button" id="btnsubmit" class="btn"  value="Submit" onclick="OnSubmit('{status}');" />
+	</td>	
+  </tr>
+</table> 
+</div>

@@ -1,0 +1,27 @@
+<tr class="{odd_even}" width ="100%">
+  <td class="c">{role}</td> 
+  <td class="c"><b>{username}</b></td>
+	<td class="c">{curr}</td>
+	<td class="r">{pre}</td>
+	<td class="r" >{balance}</td>
+	<td class="r">{basecurrency}</td>
+  <td class="l">
+    <div id="dv{custid}" name="dv{custid}">{remark}</div>
+    <!--no_excel-->
+    <input type="text" id="txt{custid}" name="txt{custid}" value="{remark}" style="display:none;" onblur="UpdateEditRemark('{custid}');" onkeypress="on_UpdateEditRemark(event, '{custid}')"></input>
+    <!--/no_excel-->
+  </td>
+  <!--phone-checker-->
+  <td class="l">{Phone}</td>
+  <td class="l">{Checker}</td>
+  <!--/phone-checker-->
+
+  <!--edit-->
+  <td>
+    <div id="{custid}"  class="edit hand" onclick="EditRemark(this);">Edit</div>
+  </td>
+  <!--/edit-->
+  <td class="r">
+	  <div id="dvTime_{custid}">{time}</div>
+  </td>  
+</tr>

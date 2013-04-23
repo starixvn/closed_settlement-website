@@ -1,0 +1,10 @@
+<table>
+	<tr class="mid">
+		<td class="b">IP:</td>
+		<td ><input type='text' class='txt' name='ip' id='ip' value='{ip}'/></td>
+		<td class="b">Date:</td>
+		<td>{Calendar}</td>
+		<td style="padding-left:10px;"><input onclick="if ($('ip').value.trim()=='') { alert('Please input IP!'); return false;} else {try{parent.BlockUI();}catch(e){}}" class="btn" type='submit' value='Submit' /></td>
+        <td style='padding-left:10px;font-weight:bold'>{LinkIP}</td>
+	</tr>
+</table>

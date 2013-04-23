@@ -1,0 +1,27 @@
+<div>
+  <span id="errMsg" class="error-message"></span><br/>
+  <input class="btn"  type="button" value="Add New User" onclick="openWindow('AddUser.aspx','',300,290);"/>&nbsp;
+  <input class="btn"  type="button" value="Add Existed Admin" onclick="openWindow('AddExistedUser.aspx','',300,100);"/>
+  <table class="tbllayout" cellspacing="1">
+    <tr class="title">      
+      <td class="c" rowspan="2">User Name</td>
+      <td class="c" rowspan="2">First Name</td>
+      <td class="c" rowspan="2">Last Name</td>
+      <td class="c" rowspan="2">Status</td>
+      <td colspan="5" class="c">Page Access</td>
+      <td class="c" rowspan="2">Password</td>
+      <td class="c" rowspan="2">Edit</td>
+    </tr>
+    <tr class="title">
+      <td class="c">Settlement</td>
+      <td class="c">Transfer</td>
+      <td class="c">Report</td>
+      <td class="c">Customer</td>
+      <td class="c">Admin</td>      
+    </tr>
+    {content}
+  </table>
+  <iframe name="InfoUpdate" id="InfoUpdate"  frameborder="0" scrolling="no" src="" border="0" height="0" width="0"></iframe>
+  <br/>
+  <input class="btn"  type="button" value="Refresh" onclick="javascript:document.location.replace(document.location);"/>
+</div>

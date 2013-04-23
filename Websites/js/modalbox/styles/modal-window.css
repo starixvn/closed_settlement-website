@@ -1,0 +1,52 @@
+﻿.modal-overlay {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	/*background: #131313;
+	opacity: .75;
+	filter: alpha(opacity=75);*/
+	z-index: 101;
+}
+.modal-window {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	margin: 0;
+	padding: 0;
+	z-index: 102;
+	background: #fff;
+	border: solid 8px #000;
+	/*-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;*/
+}
+.modal-title 
+{
+	position:absolute;
+	height:18px;
+	background-color:Red;
+	cursor:move;
+	vertical-align:middle;
+	padding:2px 0px;
+	}
+.modal-title span
+{
+	font-weight:bold;
+	padding-left:12px;
+	}
+.modal-content
+{
+	position: absolute;
+	}
+.close-window {
+	position: absolute;
+	width: 47px;
+	height: 47px;
+	background: transparent url(../images/close-button.png) no-repeat scroll right top;
+	cursor: pointer;
+}

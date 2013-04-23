@@ -1,0 +1,93 @@
+﻿{#template MAIN}
+    {#include MasterPT root= $T}
+{#/template MAIN}
+ 
+{#template MasterPT}
+<table class="tblcollapse" style="width:600px; margin:6px 0px;" id="tblminigame">
+    <!--PT-->
+    <tr class="title">
+        <td colspan="2">
+            Position Taking
+        </td>
+    </tr>
+    <!--Super Preset PT -->
+    <tr>
+        <td class="l">
+            Super Preset Position
+        </td>
+        <td>
+            <select {#if $T.isautopt== "True"}disabled="disabled"{#else}{#/if} id="listSPre252" onchange="On_ChangeSuper()" max="{roundNumber($T.maxspt,2)}" min="0" minupline="{roundNumber($T.minspt,2)}" name="listSPre252" class="select-pt" >
+                <option value="{roundNumber($T.spt,2)}" selected="true">{roundNumber($T.spt,2)}</option>
+            </select>
+            <input type="button" onclick="ReducePT('listSPre252',1)" class="btn-dec1" id="chkR1SPre252" >
+            <input type="button" onclick="IncreasePT('listSPre252',1)" class="btn-inc1" id="chkI1SPre252" >
+            <input type="button" onclick="ReducePT('listSPre252',10)" class="btn-dec10" id="chkR10SPre252">
+            <input type="button" onclick="IncreasePT('listSPre252',10)" class="btn-inc10" id="chkI10SPre252" >
+        </td>
+    </tr>
+    <!--/Super Preset PT -->
+    <!--Auto Super Preset PT -->
+    <tr>
+        <td class="l" rowspan="2">
+            Auto Super Preset Position
+        </td>
+        <td>
+            <input type="checkbox" onclick="CheckIsAuto(this);"  {#if $T.isautopt== "True"}checked="checked"{#else}{#/if} name="chkAutoMiniGame" id="chkAutoMiniGame">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <select {#if $T.isautopt== "True"}&nbsp;{#else}Disabled="Disabled"{#/if} id="listSAutoPre252" onchange="On_ChangeSuperAuto()" max="{roundNumber($T.maxspt,2)}" min="0" minupline="{roundNumber($T.minspt,2)}" name="listSAutoPre252" class="select-pt" >
+                <option value="{roundNumber($T.sautopt,2)}" selected="true">{roundNumber($T.sautopt,2)}</option>
+            </select>
+            <input type="button" onclick="ReducePT('listSAutoPre252',1)" class="btn-dec1" id="chkR1SAutoPre252" >
+            <input type="button" onclick="IncreasePT('listSAutoPre252',1)" class="btn-inc1" id="chkI1SAutoPre252">
+            <input type="button" onclick="ReducePT('listSAutoPre252',10)" class="btn-dec10"  id="chkR10SAutoPre252">
+            <input type="button" onclick="IncreasePT('listSAutoPre252',10)" class="btn-inc10" id="chkI10SAutoPre252">
+        </td>
+    </tr>
+    <!--/Auto Super Preset PT-->
+     <!--Master Max PT -->
+    <tr>
+        <td class="l w130">
+            Master Max Position
+        </td>
+        <td>
+            
+            <select  id="listMMax252" onchange="On_ChangeMaster()" max="{roundNumber($T.maxmpt,2)}" min="{changeMinValue($T.isautopt,roundNumber($T.minmpt,2),roundNumber($T.spt,2),roundNumber($T.sautopt,2))}" name="listMMax252" class="select-pt">
+                <option value="{roundNumber($T.mpt,2)}" selected="true">{roundNumber($T.mpt,2)}</option>
+            </select>
+            <input type="button" onclick="ReducePT('listMMax252',1)" class="btn-dec1" >
+            <input type="button" onclick="IncreasePT('listMMax252',1)" class="btn-inc1" >
+            <input type="button" onclick="ReducePT('listMMax252',10)" class="btn-dec10">
+            <input type="button" onclick="IncreasePT('listMMax252',10)" class="btn-inc10" >
+        </td>
+    </tr>
+    <!--/Master Max PT -->
+    <!--Master Min PT -->
+    <tr>
+        <td class="l w130">
+            Master Min Position
+        </td>
+        <td>
+            <select id="listMMin252" max="{roundNumber($T.mpt,2)}" min="{changeMinValue($T.isautopt,roundNumber($T.minmpt,2),roundNumber($T.spt,2),roundNumber($T.sautopt,2))}" name="listMMin252" class="select-pt">
+                <option value="{roundNumber($T.minpt,2)}" selected="true">{roundNumber($T.minpt,2)}</option>
+            </select>
+            <input type="button" onclick="ReducePT('listMMin252',1)" class="btn-dec1" >
+            <input type="button" onclick="IncreasePT('listMMin252',1)" class="btn-inc1" >
+            <input type="button" onclick="ReducePT('listMMin252',10)" class="btn-dec10" >
+            <input type="button" onclick="IncreasePT('listMMin252',10)" class="btn-inc10">
+        </td>
+    </tr>
+    <!--/Master Min PT -->
+</table>
+<table cellspacing="0" cellpadding="0" border="0">
+    <tr>
+        <td class="custBtn1">
+        </td>
+        <td onclick="updateMaster();" class="custBtn2 hand" id="Td1">
+            Submit
+        </td>
+    </tr>
+</table>
+{#/template MasterPT} 

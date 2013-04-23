@@ -1,0 +1,96 @@
+﻿<table id="table" cellspacing="1px" class="c bg">
+    <thead>
+    <tr>
+        <th colspan="11" class="c" style="font-weight:bold; background-color:#ffabab;">
+            Fixed Odds Racing (12BET) Detail Bet List 
+            - Race <span id="spRaceNo">{RaceNo}</span>  
+            - <span id="spLeagueName">{LeagueName}</span>
+            - <span id="spCurrency">{Currency} </span>
+            - <span id="spWLDate">{WLDate}</span>
+        </th>
+    </tr>
+    <tr class="title" id="trHeader">
+        <th style="width:30px;">No</th>
+        <th style="width:105px;">Member</th>
+        <th style="width:105px;">UserName2</th>
+        <th style="width:120px;">Trans.Time</th>
+        <th style="width:250px;">Horse/Bet type</th>
+        <th style="width:110px;">Odds</th>
+        <th style="width:80px;">Stake</th>
+        <th style="width:80px;">Member WinLoss/Com</th>
+        <th style="width:80px;">Agency WinLoss/Com</th>
+        <th style="width:80px;">Status</th>
+        <th>Dividend</th>
+    </tr>
+    </thead>
+    
+    <!--content-->
+    <tr class="c {odd_even}">
+        <td>{No}</td>
+        <td>{Member}</td>
+        <td>{UserName2}</td>
+        <td>
+            Ref No: <b>{TransID}</b> <br/>
+            {TransTime}
+         </td>
+        <td class="r">
+            <span class="bl-choice">{choice}</span><br>
+            <div class="bl-bettype">{bettype}</div>
+        </td>
+        <td class="r">
+            <!--WO43-->
+            <table width="100%">
+                <!--winOdds43-->
+                <tr><td><b>{lblWinOdds}:</b></td><td>{WinOdds}</td></tr>        
+                <!--/winOdds43-->
+                <tr><td><b>{lblWinOddsSet}:</b></td><td>{WinOddsSet}</td></tr>
+                <!--winplace43-->
+                <!--PlaceOdds43-->
+                <tr><td><b>{lblPlaceOdds}:</b></td><td>{PlaceOdds}</td></tr>
+                <!--/PlaceOdds43-->
+                <tr><td><b>{lblPlaceOddsSet}:</b></td><td>{PlaceOddsSet}</td></tr>
+                <!--/winplace43-->
+            </table>
+            <!--/WO43-->
+            {Odds}
+        </td>
+        <td align="right">{Stake}</td>
+        <td align="right">
+            {WinLoss} <br>
+            <span class="bl-sporttype">{PlayerComm}</span>
+        </td>
+        <td align="right">
+            {WLPTAgency} <br>
+            <span class="bl-sporttype">{CommIncomeAgency}</span>
+        </td>
+        <td>
+            <!--winplace-status-->
+            <table width="100%" border="0">
+                <tr>
+                    <td align="right"><b>Win :<b></td>
+                    <td>{WinStatus}</td>
+                </tr>
+                <tr>
+                    <td align="right"><b>Place :<b></td>
+                    <td>{PlaceStatus}</td>
+                </tr>
+            </table>
+            <!--/winplace-status-->
+            {Status}
+        </td>
+        <td align="right" class="rspace">{Dividend}</td>
+    </tr>
+    <!--/content-->
+    <tfoot>
+    <!--total-->
+    <tr align="right" style="font-weight:bold;" class="bl-total bg" id="trFooter" >
+        <th colspan="6" >Total:</th>
+        <th>{TotalStake}</th>
+        <th>{TotalWL}<div style="margin-top:5px" class="bl-sporttype">{TotalCom}</span></th>
+        <th>{TotalAgWL}<div style="margin-top:5px" class="bl-sporttype">{TotalAgCom}</div></th>
+        <th colspan="1"></th>        
+        <th>{TotalDividend}</th>
+    </tr>
+    <!--/total-->
+    </tfoot>
+</table>

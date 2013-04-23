@@ -1,0 +1,38 @@
+<form name="fAdminList">    
+    <table style="width:400px" border="0">
+      <tr>
+        <td>
+          <font class="b">Keyword</font>
+        </td>
+        <td>
+          <input type="text" name="txtSearch" id="txtSearch" value="{search-Val}" onfocus="On_Focus();"  onblur="on_Blur();"  onkeypress="return On_KeyPress(event);"/>
+        </td>
+        <td>
+          <font class="b">First Letter</font>
+        </td>
+        <td >
+          <select class="Sel60" name="listAlpha" id="listAlpha">
+            {listAlphaValue}
+          </select>
+        </td>
+         <td class="r">
+          <input class="btn" type="button" name="btnGo" id="btnGo" value="Search" onclick="return {functionName};"/>
+        </td>
+      </tr>
+    </table>    
+  <table class="tbllayout" style="width:100%" cellspacing="1" id="tblallaccountlist">    
+  <tr class="title">
+    <td>No</td>
+    <td>User Name</td>
+    <td>First Name</td>
+    <td>Last Name</td>
+    <td>Status</td>
+    <td>Creator</td>
+    <td>Created Date</td>    
+    <td>Policy</td>
+    <td>Department</td>
+    <td>Reset</td>
+  </tr>
+  {content} 
+</table>  
+</form>
