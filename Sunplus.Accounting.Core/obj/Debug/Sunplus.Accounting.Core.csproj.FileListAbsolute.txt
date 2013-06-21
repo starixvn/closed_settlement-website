@@ -53,3 +53,17 @@ D:\WORK\PROJECT\ROME1\Settlement\Main\SettlementSite\Sunplus.Accounting.Core\bin
 D:\WORK\PROJECT\ROME1\Settlement\Main\SettlementSite\Sunplus.Accounting.Core\obj\Debug\Sunplus.Accounting.Core.dll
 D:\WORK\PROJECT\ROME1\Settlement\Main\SettlementSite\Sunplus.Accounting.Core\obj\Debug\Sunplus.Accounting.Core.pdb
 D:\WORK\PROJECT\ROME1\Settlement\Main\SettlementSite\Sunplus.Accounting.Core\obj\Debug\Sunplus.Accounting.Core.csprojResolveAssemblyReference.cache
+D:\3.Working\11.GIT\MAIN\ibcsettlement\Sunplus.Accounting.Core\obj\Debug\Sunplus.Accounting.Core.csprojResolveAssemblyReference.cache
+D:\3.Working\11.GIT\MAIN\ibcsettlement\Sunplus.Accounting.Core\obj\Debug\Sunplus.Accounting.Core.pdb
+D:\3.Working\11.GIT\MAIN\ibcsettlement\Sunplus.Accounting.Core\bin\Debug\Sunplus.Accounting.Core.dll
+D:\3.Working\11.GIT\MAIN\ibcsettlement\Sunplus.Accounting.Core\bin\Debug\Sunplus.Accounting.Core.pdb
+D:\3.Working\11.GIT\MAIN\ibcsettlement\Sunplus.Accounting.Core\bin\Debug\Sunplus.Accounting.Entities.dll
+D:\3.Working\11.GIT\MAIN\ibcsettlement\Sunplus.Accounting.Core\bin\Debug\Sunplus.Data.DataAbstract.dll
+D:\3.Working\11.GIT\MAIN\ibcsettlement\Sunplus.Accounting.Core\bin\Debug\Norm.dll
+D:\3.Working\11.GIT\MAIN\ibcsettlement\Sunplus.Accounting.Core\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+D:\3.Working\11.GIT\MAIN\ibcsettlement\Sunplus.Accounting.Core\bin\Debug\Enyim.Caching.dll
+D:\3.Working\11.GIT\MAIN\ibcsettlement\Sunplus.Accounting.Core\bin\Debug\Microsoft.Practices.Unity.dll
+D:\3.Working\11.GIT\MAIN\ibcsettlement\Sunplus.Accounting.Core\bin\Debug\Sunplus.Data.DataAbstract.pdb
+D:\3.Working\11.GIT\MAIN\ibcsettlement\Sunplus.Accounting.Core\bin\Debug\Sunplus.Accounting.Entities.pdb
+D:\3.Working\11.GIT\MAIN\ibcsettlement\Sunplus.Accounting.Core\bin\Debug\Microsoft.Practices.Unity.pdb
+D:\3.Working\11.GIT\MAIN\ibcsettlement\Sunplus.Accounting.Core\obj\Debug\Sunplus.Accounting.Core.dll

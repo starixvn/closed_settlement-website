@@ -2,3 +2,7 @@ D:\WORK\PROJECT\ROME1\Settlement\Main\SettlementSite\Fanex.Tarus.Entities\bin\De
 D:\WORK\PROJECT\ROME1\Settlement\Main\SettlementSite\Fanex.Tarus.Entities\bin\Debug\Fanex.Tarus.Entities.pdb
 D:\WORK\PROJECT\ROME1\Settlement\Main\SettlementSite\Fanex.Tarus.Entities\obj\Debug\Fanex.Tarus.Entities.dll
 D:\WORK\PROJECT\ROME1\Settlement\Main\SettlementSite\Fanex.Tarus.Entities\obj\Debug\Fanex.Tarus.Entities.pdb
+D:\3.Working\11.GIT\MAIN\ibcsettlement\Fanex.Tarus.Entities\bin\Debug\Fanex.Tarus.Entities.dll
+D:\3.Working\11.GIT\MAIN\ibcsettlement\Fanex.Tarus.Entities\bin\Debug\Fanex.Tarus.Entities.pdb
+D:\3.Working\11.GIT\MAIN\ibcsettlement\Fanex.Tarus.Entities\obj\Debug\Fanex.Tarus.Entities.dll
+D:\3.Working\11.GIT\MAIN\ibcsettlement\Fanex.Tarus.Entities\obj\Debug\Fanex.Tarus.Entities.pdb

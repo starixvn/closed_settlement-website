@@ -25,3 +25,7 @@ D:\WORK\PROJECT\ROME1\Settlement\Main\SettlementSite\Sunplus.Accounting.Entities
 D:\WORK\PROJECT\ROME1\Settlement\Main\SettlementSite\Sunplus.Accounting.Entities\obj\Debug\Sunplus.Accounting.Entities.pdb
 D:\WORK\PROJECT\ROME1\Settlement\Main\SettlementSite\Sunplus.Accounting.Entities\bin\Debug\ILogger.dll
 D:\WORK\PROJECT\ROME1\Settlement\Main\SettlementSite\Sunplus.Accounting.Entities\obj\Debug\Sunplus.Accounting.Entities.csprojResolveAssemblyReference.cache
+D:\3.Working\11.GIT\MAIN\ibcsettlement\Sunplus.Accounting.Entities\bin\Debug\Sunplus.Accounting.Entities.dll
+D:\3.Working\11.GIT\MAIN\ibcsettlement\Sunplus.Accounting.Entities\bin\Debug\Sunplus.Accounting.Entities.pdb
+D:\3.Working\11.GIT\MAIN\ibcsettlement\Sunplus.Accounting.Entities\obj\Debug\Sunplus.Accounting.Entities.dll
+D:\3.Working\11.GIT\MAIN\ibcsettlement\Sunplus.Accounting.Entities\obj\Debug\Sunplus.Accounting.Entities.pdb
