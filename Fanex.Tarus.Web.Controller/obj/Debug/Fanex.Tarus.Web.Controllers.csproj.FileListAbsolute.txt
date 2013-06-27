@@ -345,6 +345,3 @@ D:\3.Working\11.GIT\Dev\ibcsettlement-lcs-newbettype\Fanex.Tarus.Web.Controller\
 D:\3.Working\11.GIT\Dev\ibcsettlement-lcs-newbettype\Fanex.Tarus.Web.Controller\obj\Debug\Fanex.Tarus.Web.Controllers.csprojResolveAssemblyReference.cache
 D:\3.Working\11.GIT\Dev\ibcsettlement-lcs-newbettype\Fanex.Tarus.Web.Controller\obj\Debug\Fanex.Tarus.Web.Controllers.dll
 D:\3.Working\11.GIT\Dev\ibcsettlement-lcs-newbettype\Fanex.Tarus.Web.Controller\obj\Debug\Fanex.Tarus.Web.Controllers.pdb
-D:\3.Working\11.GIT\Dev\ibcsettlement-lcs-newbettype\Fanex.Tarus.Web.Controller\bin\Couchbase.dll
-D:\3.Working\11.GIT\Dev\ibcsettlement-lcs-newbettype\Fanex.Tarus.Web.Controller\bin\Microsoft.Practices.ServiceLocation.pdb
-D:\3.Working\11.GIT\Dev\ibcsettlement-lcs-newbettype\Fanex.Tarus.Web.Controller\bin\Microsoft.Practices.ServiceLocation.xml
