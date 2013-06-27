@@ -184,3 +184,4 @@ D:\3.Working\11.GIT\Dev\ibcsettlement-lcs-newbettype\Fanex.Tarus.User\bin\Debug\
 D:\3.Working\11.GIT\Dev\ibcsettlement-lcs-newbettype\Fanex.Tarus.User\obj\Debug\Fanex.Tarus.User.csprojResolveAssemblyReference.cache
 D:\3.Working\11.GIT\Dev\ibcsettlement-lcs-newbettype\Fanex.Tarus.User\obj\Debug\Fanex.Tarus.User.dll
 D:\3.Working\11.GIT\Dev\ibcsettlement-lcs-newbettype\Fanex.Tarus.User\obj\Debug\Fanex.Tarus.User.pdb
+D:\3.Working\11.GIT\Dev\ibcsettlement-lcs-newbettype\Fanex.Tarus.User\bin\Debug\Couchbase.dll
