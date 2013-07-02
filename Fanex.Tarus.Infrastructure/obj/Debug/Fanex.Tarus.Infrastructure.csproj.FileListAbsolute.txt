@@ -95,10 +95,10 @@ D:\3.Working\11.GIT\Dev\ibcsettlement-lcs-newbettype\Fanex.Tarus.Infrastructure\
 D:\3.Working\11.GIT\Dev\ibcsettlement-lcs-newbettype\Fanex.Tarus.Infrastructure\bin\Debug\Sunplus.Core.LoggingLib.dll
 D:\3.Working\11.GIT\Dev\ibcsettlement-lcs-newbettype\Fanex.Tarus.Infrastructure\bin\Debug\Sunplus.Accounting.Core.pdb
 D:\3.Working\11.GIT\Dev\ibcsettlement-lcs-newbettype\Fanex.Tarus.Infrastructure\bin\Debug\Sunplus.Accounting.Entities.pdb
+D:\3.Working\11.GIT\Dev\ibcsettlement-lcs-newbettype\Fanex.Tarus.Infrastructure\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
 D:\3.Working\11.GIT\Dev\ibcsettlement-lcs-newbettype\Fanex.Tarus.Infrastructure\bin\Debug\Microsoft.Practices.ServiceLocation.xml
 D:\3.Working\11.GIT\Dev\ibcsettlement-lcs-newbettype\Fanex.Tarus.Infrastructure\obj\Debug\Fanex.Tarus.Infrastructure.csprojResolveAssemblyReference.cache
 D:\3.Working\11.GIT\Dev\ibcsettlement-lcs-newbettype\Fanex.Tarus.Infrastructure\obj\Debug\Fanex.Tarus.Infrastructure.Resource.ErrorLanguage.resources
 D:\3.Working\11.GIT\Dev\ibcsettlement-lcs-newbettype\Fanex.Tarus.Infrastructure\obj\Debug\Fanex.Tarus.Infrastructure.csproj.GenerateResource.Cache
 D:\3.Working\11.GIT\Dev\ibcsettlement-lcs-newbettype\Fanex.Tarus.Infrastructure\obj\Debug\Fanex.Tarus.Infrastructure.dll
 D:\3.Working\11.GIT\Dev\ibcsettlement-lcs-newbettype\Fanex.Tarus.Infrastructure\obj\Debug\Fanex.Tarus.Infrastructure.pdb
-D:\3.Working\11.GIT\Dev\ibcsettlement-lcs-newbettype\Fanex.Tarus.Infrastructure\bin\Debug\Microsoft.Practices.ServiceLocation.pdb

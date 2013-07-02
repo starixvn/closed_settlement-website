@@ -86,6 +86,7 @@ D:\3.Working\11.GIT\MAIN\ibcsettlement\Fanex.Tarus.Settlement\bin\Debug\Microsof
 D:\3.Working\11.GIT\MAIN\ibcsettlement\Fanex.Tarus.Settlement\obj\Debug\Fanex.Tarus.Settlement.dll
 D:\3.Working\11.GIT\Dev\ibcsettlement-lcs-newbettype\Fanex.Tarus.Settlement\bin\Debug\Fanex.Tarus.Settlement.dll
 D:\3.Working\11.GIT\Dev\ibcsettlement-lcs-newbettype\Fanex.Tarus.Settlement\bin\Debug\Fanex.Tarus.Settlement.pdb
+D:\3.Working\11.GIT\Dev\ibcsettlement-lcs-newbettype\Fanex.Tarus.Settlement\bin\Debug\LVCasinoSetting.dll
 D:\3.Working\11.GIT\Dev\ibcsettlement-lcs-newbettype\Fanex.Tarus.Settlement\bin\Debug\Sunplus.Accounting.Core.dll
 D:\3.Working\11.GIT\Dev\ibcsettlement-lcs-newbettype\Fanex.Tarus.Settlement\bin\Debug\TplCore.dll
 D:\3.Working\11.GIT\Dev\ibcsettlement-lcs-newbettype\Fanex.Tarus.Settlement\bin\Debug\Newtonsoft.Json.dll

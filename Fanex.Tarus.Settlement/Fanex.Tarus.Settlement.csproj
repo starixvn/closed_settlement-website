@@ -63,8 +63,7 @@
       <HintPath>..\..\..\..\Dependency\3rdParty\LiveCasino\LVAPILibrary_GameRule.dll</HintPath>
     </Reference>
     <Reference Include="LVCasinoSetting, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Dependency\3rdParty\LiveCasino\LVCasinoSetting.dll</HintPath>
+      <HintPath>..\Dependency\3rdParty\LiveCasino\LVCasinoSetting.dll</HintPath>
     </Reference>
     <Reference Include="LVCasinoUtility">
       <HintPath>..\..\..\..\Dependency\3rdParty\LiveCasino\LVCasinoUtility.dll</HintPath>

@@ -14,14 +14,18 @@ namespace Fanex.Tarus.Settlement.Core.Common
     {
         public enum Bettype
         {
-            Baccarat = 1101,
-            Routle = 1102
+            PartyBaccarat = 1101,
+            PartyRoutle = 1102,
+            LiveBaccarat = 1103,
+            LiveRoutle = 1104,
         }
 
         public class GameType
         {
-            public static string Baccarat = "L0001";
-            public static string Routle = "L0003";
+            public static string PartyBaccarat = "L0001";
+            public static string PartyRoutle = "L0003";
+            public static string LiveBaccarat = "L0002";
+            public static string LiveRoutle = "L0006";
         }
     }
 }

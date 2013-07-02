@@ -95,12 +95,17 @@ namespace Fanex.Tarus.Settlement.Core.Cache
             string result = string.Empty;
             switch (bettypeId)
             {
-                case (int)Enumerations.Bettype.Baccarat:
+                case (int)Enumerations.Bettype.PartyBaccarat:
                     result = RemotingRef.RefData.GetCasinoBetItem(resultId.ToString(), TWLang("en-US"));;
                     break;
-                case (int)Enumerations.Bettype.Routle:
+                case (int)Enumerations.Bettype.PartyRoutle:
+                    result = resultId == 0 ? "-" : RemotingRef.RefData.GetRouletteBetItem(resultId.ToString(), TWLang("en-US"));                    
+                    break;
+                case (int)Enumerations.Bettype.LiveBaccarat:
+                    result = RemotingRef.RefData.GetCasinoBetItem(resultId.ToString(), TWLang("en-US")); ;
+                    break;
+                case (int)Enumerations.Bettype.LiveRoutle:
                     result = resultId == 0 ? "-" : RemotingRef.RefData.GetRouletteBetItem(resultId.ToString(), TWLang("en-US"));
-                    
                     break;
                 default:
                     break;
