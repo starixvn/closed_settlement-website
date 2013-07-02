@@ -327,7 +327,7 @@ namespace Fanex.Tarus.Settlement.Business
 
         public string ReCalc(int MatchID, int IBCBetTypeID, string BankerCard, string PlayerCard, int AdminID, string AdminName, string IP, string ShowDate)
         {
-            if (IBCBetTypeID == (int)Enumerations.Bettype.PartyBaccarat)
+            if (IBCBetTypeID == (int)Enumerations.Bettype.PartyBaccarat || IBCBetTypeID == (int)Enumerations.Bettype.LiveBaccarat)
                 return ReCalcBaccarat(MatchID, IBCBetTypeID, BankerCard, PlayerCard, AdminID, AdminName, IP, ShowDate);
             else
                 return ReCalcRoutle(MatchID, IBCBetTypeID, BankerCard, PlayerCard, AdminID, AdminName, IP, ShowDate);
@@ -359,7 +359,14 @@ namespace Fanex.Tarus.Settlement.Business
                 param.Add("PlayerCard", PlayerCard);
                 param.Add("AdminID", AdminID.ToString());
                 param.Add("AdminName", AdminName);
-                param.Add("GameTypeNo", Enumerations.GameType.PartyBaccarat);
+
+                var GameTypeNo = "";
+                if (IBCBetTypeID == 1101)
+                    GameTypeNo = Enumerations.GameType.PartyBaccarat;
+                else 
+                    GameTypeNo = Enumerations.GameType.LiveBaccarat;
+
+                param.Add("GameTypeNo", GameTypeNo);
                 //Update result/bet tickets Game Server by API
                 LVAPILibrary.IBCMgr.ReSettlement(param);
 
@@ -437,7 +444,14 @@ namespace Fanex.Tarus.Settlement.Business
                 param.Add("PlayerCard", PlayerCard);
                 param.Add("AdminID", AdminID.ToString());
                 param.Add("AdminName", AdminName);
-                param.Add("GameTypeNo", Enumerations.GameType.PartyRoutle);
+
+                var GameTypeNo = "";
+                if (IBCBetTypeID == 1102)
+                    GameTypeNo = Enumerations.GameType.PartyRoutle;
+                else
+                    GameTypeNo = Enumerations.GameType.LiveRoutle;
+
+                param.Add("GameTypeNo", GameTypeNo);
                 //Update result/bet tickets Game Server by API
                 LVAPILibrary.IBCMgr.ReSettlement(param);
                                 
