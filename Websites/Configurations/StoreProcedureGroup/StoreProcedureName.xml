@@ -39,6 +39,8 @@
     <Setting Key="Acc_Set_MatchSelForBill" SpName="Acc_Set_MatchSelForBill" DbName="DBTXN.BODB02" />
     <Setting Key="Acc_Set_MatchSelScore" SpName="Acc_Set_MatchSelScore" DbName="DBTXN.BODB02" />
     <Setting Key="Admin_Settlement_Refund_FGLG" SpName="Admin_Settlement_Refund_FGLG" DbName="DBTXN.BODB02" />
+    
+    <Setting Key="Admin_Settlement_ReplicateData_UnSettled" SpName="Dot_Repl_UnSettled" DbName="DB04" />
   </Function>
   
   <Function Name="Settlement - Live Casino">
