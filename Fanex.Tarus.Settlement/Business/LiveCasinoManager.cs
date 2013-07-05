@@ -360,13 +360,14 @@ namespace Fanex.Tarus.Settlement.Business
                 param.Add("AdminID", AdminID.ToString());
                 param.Add("AdminName", AdminName);
 
-                var GameTypeNo = "";
-                if (IBCBetTypeID == 1101)
+                var GameTypeNo = string.Empty;
+                if (IBCBetTypeID == (int)Enumerations.Bettype.PartyBaccarat)
                     GameTypeNo = Enumerations.GameType.PartyBaccarat;
                 else 
                     GameTypeNo = Enumerations.GameType.LiveBaccarat;
 
                 param.Add("GameTypeNo", GameTypeNo);
+                //SettingMgr.GetInstance("01").Initialize(SiteEnum.AgentSite);
                 //Update result/bet tickets Game Server by API
                 LVAPILibrary.IBCMgr.ReSettlement(param);
 
@@ -446,7 +447,7 @@ namespace Fanex.Tarus.Settlement.Business
                 param.Add("AdminName", AdminName);
 
                 var GameTypeNo = "";
-                if (IBCBetTypeID == 1102)
+                if (IBCBetTypeID == (int)Enumerations.Bettype.PartyRoutle)
                     GameTypeNo = Enumerations.GameType.PartyRoutle;
                 else
                     GameTypeNo = Enumerations.GameType.LiveRoutle;

@@ -47,3 +47,14 @@ D:\3.Working\11.GIT\Dev\ibcsettlement-lcs-newbettype\Fanex.Tarus.DataAccess.Inte
 D:\3.Working\11.GIT\Dev\ibcsettlement-lcs-newbettype\Fanex.Tarus.DataAccess.Interface\obj\Debug\Fanex.Tarus.DataAccess.Interface.csprojResolveAssemblyReference.cache
 D:\3.Working\11.GIT\Dev\ibcsettlement-lcs-newbettype\Fanex.Tarus.DataAccess.Interface\obj\Debug\Fanex.Tarus.DataAccess.Interface.dll
 D:\3.Working\11.GIT\Dev\ibcsettlement-lcs-newbettype\Fanex.Tarus.DataAccess.Interface\obj\Debug\Fanex.Tarus.DataAccess.Interface.pdb
+D:\NexcelProjects\GIT_Resources\Settlement\ibcsettlement-lcs-newbettype\Fanex.Tarus.DataAccess.Interface\bin\Debug\Fanex.Tarus.DataAccess.Interface.dll
+D:\NexcelProjects\GIT_Resources\Settlement\ibcsettlement-lcs-newbettype\Fanex.Tarus.DataAccess.Interface\bin\Debug\Fanex.Tarus.DataAccess.Interface.pdb
+D:\NexcelProjects\GIT_Resources\Settlement\ibcsettlement-lcs-newbettype\Fanex.Tarus.DataAccess.Interface\bin\Debug\Fanex.Tarus.Entities.dll
+D:\NexcelProjects\GIT_Resources\Settlement\ibcsettlement-lcs-newbettype\Fanex.Tarus.DataAccess.Interface\bin\Debug\Sunplus.Accounting.Entities.dll
+D:\NexcelProjects\GIT_Resources\Settlement\ibcsettlement-lcs-newbettype\Fanex.Tarus.DataAccess.Interface\bin\Debug\DNAide.dll
+D:\NexcelProjects\GIT_Resources\Settlement\ibcsettlement-lcs-newbettype\Fanex.Tarus.DataAccess.Interface\bin\Debug\Sunplus.Core.LoggingLib.dll
+D:\NexcelProjects\GIT_Resources\Settlement\ibcsettlement-lcs-newbettype\Fanex.Tarus.DataAccess.Interface\bin\Debug\Fanex.Tarus.Entities.pdb
+D:\NexcelProjects\GIT_Resources\Settlement\ibcsettlement-lcs-newbettype\Fanex.Tarus.DataAccess.Interface\bin\Debug\Sunplus.Accounting.Entities.pdb
+D:\NexcelProjects\GIT_Resources\Settlement\ibcsettlement-lcs-newbettype\Fanex.Tarus.DataAccess.Interface\obj\Debug\Fanex.Tarus.DataAccess.Interface.csprojResolveAssemblyReference.cache
+D:\NexcelProjects\GIT_Resources\Settlement\ibcsettlement-lcs-newbettype\Fanex.Tarus.DataAccess.Interface\obj\Debug\Fanex.Tarus.DataAccess.Interface.dll
+D:\NexcelProjects\GIT_Resources\Settlement\ibcsettlement-lcs-newbettype\Fanex.Tarus.DataAccess.Interface\obj\Debug\Fanex.Tarus.DataAccess.Interface.pdb

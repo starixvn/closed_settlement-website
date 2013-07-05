@@ -24,7 +24,7 @@ namespace Fanex.Tarus.Settlement.Core.Common
         {
             public static string PartyBaccarat = "L0001";
             public static string PartyRoutle = "L0003";
-            public static string LiveBaccarat = "L0002";
+            public static string LiveBaccarat = "L0006";
             public static string LiveRoutle = "L0006";
         }
     }

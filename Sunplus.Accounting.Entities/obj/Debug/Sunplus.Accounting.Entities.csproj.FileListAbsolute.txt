@@ -34,3 +34,7 @@ D:\3.Working\11.GIT\Dev\ibcsettlement-lcs-newbettype\Sunplus.Accounting.Entities
 D:\3.Working\11.GIT\Dev\ibcsettlement-lcs-newbettype\Sunplus.Accounting.Entities\bin\Debug\Sunplus.Accounting.Entities.pdb
 D:\3.Working\11.GIT\Dev\ibcsettlement-lcs-newbettype\Sunplus.Accounting.Entities\obj\Debug\Sunplus.Accounting.Entities.dll
 D:\3.Working\11.GIT\Dev\ibcsettlement-lcs-newbettype\Sunplus.Accounting.Entities\obj\Debug\Sunplus.Accounting.Entities.pdb
+D:\NexcelProjects\GIT_Resources\Settlement\ibcsettlement-lcs-newbettype\Sunplus.Accounting.Entities\bin\Debug\Sunplus.Accounting.Entities.dll
+D:\NexcelProjects\GIT_Resources\Settlement\ibcsettlement-lcs-newbettype\Sunplus.Accounting.Entities\bin\Debug\Sunplus.Accounting.Entities.pdb
+D:\NexcelProjects\GIT_Resources\Settlement\ibcsettlement-lcs-newbettype\Sunplus.Accounting.Entities\obj\Debug\Sunplus.Accounting.Entities.dll
+D:\NexcelProjects\GIT_Resources\Settlement\ibcsettlement-lcs-newbettype\Sunplus.Accounting.Entities\obj\Debug\Sunplus.Accounting.Entities.pdb

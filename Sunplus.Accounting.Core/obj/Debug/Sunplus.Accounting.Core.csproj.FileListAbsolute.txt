@@ -81,3 +81,17 @@ D:\3.Working\11.GIT\Dev\ibcsettlement-lcs-newbettype\Sunplus.Accounting.Core\bin
 D:\3.Working\11.GIT\Dev\ibcsettlement-lcs-newbettype\Sunplus.Accounting.Core\obj\Debug\Sunplus.Accounting.Core.csprojResolveAssemblyReference.cache
 D:\3.Working\11.GIT\Dev\ibcsettlement-lcs-newbettype\Sunplus.Accounting.Core\obj\Debug\Sunplus.Accounting.Core.dll
 D:\3.Working\11.GIT\Dev\ibcsettlement-lcs-newbettype\Sunplus.Accounting.Core\obj\Debug\Sunplus.Accounting.Core.pdb
+D:\NexcelProjects\GIT_Resources\Settlement\ibcsettlement-lcs-newbettype\Sunplus.Accounting.Core\bin\Debug\Sunplus.Accounting.Core.dll
+D:\NexcelProjects\GIT_Resources\Settlement\ibcsettlement-lcs-newbettype\Sunplus.Accounting.Core\bin\Debug\Sunplus.Accounting.Core.pdb
+D:\NexcelProjects\GIT_Resources\Settlement\ibcsettlement-lcs-newbettype\Sunplus.Accounting.Core\bin\Debug\Sunplus.Accounting.Entities.dll
+D:\NexcelProjects\GIT_Resources\Settlement\ibcsettlement-lcs-newbettype\Sunplus.Accounting.Core\bin\Debug\Sunplus.Data.DataAbstract.dll
+D:\NexcelProjects\GIT_Resources\Settlement\ibcsettlement-lcs-newbettype\Sunplus.Accounting.Core\bin\Debug\Norm.dll
+D:\NexcelProjects\GIT_Resources\Settlement\ibcsettlement-lcs-newbettype\Sunplus.Accounting.Core\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+D:\NexcelProjects\GIT_Resources\Settlement\ibcsettlement-lcs-newbettype\Sunplus.Accounting.Core\bin\Debug\Microsoft.Practices.Unity.dll
+D:\NexcelProjects\GIT_Resources\Settlement\ibcsettlement-lcs-newbettype\Sunplus.Accounting.Core\bin\Debug\Enyim.Caching.dll
+D:\NexcelProjects\GIT_Resources\Settlement\ibcsettlement-lcs-newbettype\Sunplus.Accounting.Core\bin\Debug\Sunplus.Data.DataAbstract.pdb
+D:\NexcelProjects\GIT_Resources\Settlement\ibcsettlement-lcs-newbettype\Sunplus.Accounting.Core\bin\Debug\Sunplus.Accounting.Entities.pdb
+D:\NexcelProjects\GIT_Resources\Settlement\ibcsettlement-lcs-newbettype\Sunplus.Accounting.Core\bin\Debug\Microsoft.Practices.Unity.pdb
+D:\NexcelProjects\GIT_Resources\Settlement\ibcsettlement-lcs-newbettype\Sunplus.Accounting.Core\obj\Debug\Sunplus.Accounting.Core.csprojResolveAssemblyReference.cache
+D:\NexcelProjects\GIT_Resources\Settlement\ibcsettlement-lcs-newbettype\Sunplus.Accounting.Core\obj\Debug\Sunplus.Accounting.Core.dll
+D:\NexcelProjects\GIT_Resources\Settlement\ibcsettlement-lcs-newbettype\Sunplus.Accounting.Core\obj\Debug\Sunplus.Accounting.Core.pdb

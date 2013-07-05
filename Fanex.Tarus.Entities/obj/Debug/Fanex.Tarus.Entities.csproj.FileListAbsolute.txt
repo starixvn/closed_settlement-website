@@ -10,3 +10,7 @@ D:\3.Working\11.GIT\Dev\ibcsettlement-lcs-newbettype\Fanex.Tarus.Entities\bin\De
 D:\3.Working\11.GIT\Dev\ibcsettlement-lcs-newbettype\Fanex.Tarus.Entities\bin\Debug\Fanex.Tarus.Entities.pdb
 D:\3.Working\11.GIT\Dev\ibcsettlement-lcs-newbettype\Fanex.Tarus.Entities\obj\Debug\Fanex.Tarus.Entities.dll
 D:\3.Working\11.GIT\Dev\ibcsettlement-lcs-newbettype\Fanex.Tarus.Entities\obj\Debug\Fanex.Tarus.Entities.pdb
+D:\NexcelProjects\GIT_Resources\Settlement\ibcsettlement-lcs-newbettype\Fanex.Tarus.Entities\bin\Debug\Fanex.Tarus.Entities.dll
+D:\NexcelProjects\GIT_Resources\Settlement\ibcsettlement-lcs-newbettype\Fanex.Tarus.Entities\bin\Debug\Fanex.Tarus.Entities.pdb
+D:\NexcelProjects\GIT_Resources\Settlement\ibcsettlement-lcs-newbettype\Fanex.Tarus.Entities\obj\Debug\Fanex.Tarus.Entities.dll
+D:\NexcelProjects\GIT_Resources\Settlement\ibcsettlement-lcs-newbettype\Fanex.Tarus.Entities\obj\Debug\Fanex.Tarus.Entities.pdb

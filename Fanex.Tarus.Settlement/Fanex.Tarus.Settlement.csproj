@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CasinoUtility">
+      <HintPath>..\Dependency\3rdParty\LiveCasino\CasinoUtility.dll</HintPath>
+    </Reference>
     <Reference Include="DNAide">
       <HintPath>..\..\..\..\Dependency\DNAide.dll</HintPath>
     </Reference>
@@ -50,23 +53,22 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Dependency\Fanex\Fanex.Data.dll</HintPath>
     </Reference>
-    <Reference Include="LVAPIDBLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="LVAPIDBLibrary, Version=1.0.0.6, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Dependency\3rdParty\LiveCasino\LVAPIDBLibrary.dll</HintPath>
+      <HintPath>..\Dependency\3rdParty\LiveCasino\LVAPIDBLibrary.dll</HintPath>
     </Reference>
-    <Reference Include="LVAPILibrary, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="LVAPILibrary, Version=1.0.0.8, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Dependency\3rdParty\LiveCasino\LVAPILibrary.dll</HintPath>
+      <HintPath>..\Dependency\3rdParty\LiveCasino\LVAPILibrary.dll</HintPath>
     </Reference>
-    <Reference Include="LVAPILibrary_GameRule, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Dependency\3rdParty\LiveCasino\LVAPILibrary_GameRule.dll</HintPath>
+    <Reference Include="LVAPILibrary_GameRule, Version=1.0.0.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\Dependency\3rdParty\LiveCasino\LVAPILibrary_GameRule.dll</HintPath>
     </Reference>
     <Reference Include="LVCasinoSetting, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\Dependency\3rdParty\LiveCasino\LVCasinoSetting.dll</HintPath>
     </Reference>
-    <Reference Include="LVCasinoUtility">
-      <HintPath>..\..\..\..\Dependency\3rdParty\LiveCasino\LVCasinoUtility.dll</HintPath>
+    <Reference Include="LVCasinoUtility, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\Dependency\3rdParty\LiveCasino\LVCasinoUtility.dll</HintPath>
     </Reference>
     <Reference Include="Onelab.Sb.Admin.LiveCasino">
       <HintPath>..\..\..\..\Dependency\3rdParty\LiveCasino\Onelab.Sb.Admin.LiveCasino.dll</HintPath>

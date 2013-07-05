@@ -49,3 +49,10 @@ D:\3.Working\11.GIT\Dev\ibcsettlement-lcs-newbettype\Sunplus.Data.DataAbstract\D
 D:\3.Working\11.GIT\Dev\ibcsettlement-lcs-newbettype\Sunplus.Data.DataAbstract\DLL\Microsoft.Practices.Unity.pdb
 D:\3.Working\11.GIT\Dev\ibcsettlement-lcs-newbettype\Sunplus.Data.DataAbstract\obj\Debug\Sunplus.Data.DataAbstract.dll
 D:\3.Working\11.GIT\Dev\ibcsettlement-lcs-newbettype\Sunplus.Data.DataAbstract\obj\Debug\Sunplus.Data.DataAbstract.pdb
+D:\NexcelProjects\GIT_Resources\Settlement\ibcsettlement-lcs-newbettype\Sunplus.Data.DataAbstract\DLL\Sunplus.Data.DataAbstract.dll
+D:\NexcelProjects\GIT_Resources\Settlement\ibcsettlement-lcs-newbettype\Sunplus.Data.DataAbstract\DLL\Sunplus.Data.DataAbstract.pdb
+D:\NexcelProjects\GIT_Resources\Settlement\ibcsettlement-lcs-newbettype\Sunplus.Data.DataAbstract\DLL\Microsoft.Practices.Unity.Configuration.dll
+D:\NexcelProjects\GIT_Resources\Settlement\ibcsettlement-lcs-newbettype\Sunplus.Data.DataAbstract\DLL\Microsoft.Practices.Unity.dll
+D:\NexcelProjects\GIT_Resources\Settlement\ibcsettlement-lcs-newbettype\Sunplus.Data.DataAbstract\DLL\Microsoft.Practices.Unity.pdb
+D:\NexcelProjects\GIT_Resources\Settlement\ibcsettlement-lcs-newbettype\Sunplus.Data.DataAbstract\obj\Debug\Sunplus.Data.DataAbstract.dll
+D:\NexcelProjects\GIT_Resources\Settlement\ibcsettlement-lcs-newbettype\Sunplus.Data.DataAbstract\obj\Debug\Sunplus.Data.DataAbstract.pdb
