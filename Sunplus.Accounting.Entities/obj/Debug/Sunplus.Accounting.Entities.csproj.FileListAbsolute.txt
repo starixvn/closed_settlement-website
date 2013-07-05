@@ -34,3 +34,7 @@ F:\Nexcel\[Rome][Git]\Settlement\ibcsettlement-improveparlayprocess\Sunplus.Acco
 F:\Nexcel\[Rome][Git]\Settlement\ibcsettlement-improveparlayprocess\Sunplus.Accounting.Entities\obj\Debug\Sunplus.Accounting.Entities.csprojResolveAssemblyReference.cache
 F:\Nexcel\[Rome][Git]\Settlement\ibcsettlement-improveparlayprocess\Sunplus.Accounting.Entities\obj\Debug\Sunplus.Accounting.Entities.dll
 F:\Nexcel\[Rome][Git]\Settlement\ibcsettlement-improveparlayprocess\Sunplus.Accounting.Entities\obj\Debug\Sunplus.Accounting.Entities.pdb
+F:\Nexcel\[Rome][Git]\Settlement\ibcsettlement\Sunplus.Accounting.Entities\bin\Debug\Sunplus.Accounting.Entities.dll
+F:\Nexcel\[Rome][Git]\Settlement\ibcsettlement\Sunplus.Accounting.Entities\bin\Debug\Sunplus.Accounting.Entities.pdb
+F:\Nexcel\[Rome][Git]\Settlement\ibcsettlement\Sunplus.Accounting.Entities\obj\Debug\Sunplus.Accounting.Entities.dll
+F:\Nexcel\[Rome][Git]\Settlement\ibcsettlement\Sunplus.Accounting.Entities\obj\Debug\Sunplus.Accounting.Entities.pdb

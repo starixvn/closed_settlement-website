@@ -50,3 +50,10 @@ F:\Nexcel\[Rome][Git]\Settlement\ibcsettlement-improveparlayprocess\Sunplus.Data
 F:\Nexcel\[Rome][Git]\Settlement\ibcsettlement-improveparlayprocess\Sunplus.Data.DataAbstract\obj\Debug\Sunplus.Data.DataAbstract.csprojResolveAssemblyReference.cache
 F:\Nexcel\[Rome][Git]\Settlement\ibcsettlement-improveparlayprocess\Sunplus.Data.DataAbstract\obj\Debug\Sunplus.Data.DataAbstract.dll
 F:\Nexcel\[Rome][Git]\Settlement\ibcsettlement-improveparlayprocess\Sunplus.Data.DataAbstract\obj\Debug\Sunplus.Data.DataAbstract.pdb
+F:\Nexcel\[Rome][Git]\Settlement\ibcsettlement\Sunplus.Data.DataAbstract\DLL\Sunplus.Data.DataAbstract.dll
+F:\Nexcel\[Rome][Git]\Settlement\ibcsettlement\Sunplus.Data.DataAbstract\DLL\Sunplus.Data.DataAbstract.pdb
+F:\Nexcel\[Rome][Git]\Settlement\ibcsettlement\Sunplus.Data.DataAbstract\DLL\Microsoft.Practices.Unity.Configuration.dll
+F:\Nexcel\[Rome][Git]\Settlement\ibcsettlement\Sunplus.Data.DataAbstract\DLL\Microsoft.Practices.Unity.dll
+F:\Nexcel\[Rome][Git]\Settlement\ibcsettlement\Sunplus.Data.DataAbstract\DLL\Microsoft.Practices.Unity.pdb
+F:\Nexcel\[Rome][Git]\Settlement\ibcsettlement\Sunplus.Data.DataAbstract\obj\Debug\Sunplus.Data.DataAbstract.dll
+F:\Nexcel\[Rome][Git]\Settlement\ibcsettlement\Sunplus.Data.DataAbstract\obj\Debug\Sunplus.Data.DataAbstract.pdb

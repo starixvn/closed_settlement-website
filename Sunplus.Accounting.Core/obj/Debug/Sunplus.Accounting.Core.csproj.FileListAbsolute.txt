@@ -81,3 +81,17 @@ F:\Nexcel\[Rome][Git]\Settlement\ibcsettlement-improveparlayprocess\Sunplus.Acco
 F:\Nexcel\[Rome][Git]\Settlement\ibcsettlement-improveparlayprocess\Sunplus.Accounting.Core\obj\Debug\Sunplus.Accounting.Core.csprojResolveAssemblyReference.cache
 F:\Nexcel\[Rome][Git]\Settlement\ibcsettlement-improveparlayprocess\Sunplus.Accounting.Core\obj\Debug\Sunplus.Accounting.Core.dll
 F:\Nexcel\[Rome][Git]\Settlement\ibcsettlement-improveparlayprocess\Sunplus.Accounting.Core\obj\Debug\Sunplus.Accounting.Core.pdb
+F:\Nexcel\[Rome][Git]\Settlement\ibcsettlement\Sunplus.Accounting.Core\bin\Debug\Sunplus.Accounting.Core.dll
+F:\Nexcel\[Rome][Git]\Settlement\ibcsettlement\Sunplus.Accounting.Core\bin\Debug\Sunplus.Accounting.Core.pdb
+F:\Nexcel\[Rome][Git]\Settlement\ibcsettlement\Sunplus.Accounting.Core\bin\Debug\Sunplus.Accounting.Entities.dll
+F:\Nexcel\[Rome][Git]\Settlement\ibcsettlement\Sunplus.Accounting.Core\bin\Debug\Sunplus.Data.DataAbstract.dll
+F:\Nexcel\[Rome][Git]\Settlement\ibcsettlement\Sunplus.Accounting.Core\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+F:\Nexcel\[Rome][Git]\Settlement\ibcsettlement\Sunplus.Accounting.Core\bin\Debug\Norm.dll
+F:\Nexcel\[Rome][Git]\Settlement\ibcsettlement\Sunplus.Accounting.Core\bin\Debug\Enyim.Caching.dll
+F:\Nexcel\[Rome][Git]\Settlement\ibcsettlement\Sunplus.Accounting.Core\bin\Debug\Microsoft.Practices.Unity.dll
+F:\Nexcel\[Rome][Git]\Settlement\ibcsettlement\Sunplus.Accounting.Core\bin\Debug\Sunplus.Data.DataAbstract.pdb
+F:\Nexcel\[Rome][Git]\Settlement\ibcsettlement\Sunplus.Accounting.Core\bin\Debug\Sunplus.Accounting.Entities.pdb
+F:\Nexcel\[Rome][Git]\Settlement\ibcsettlement\Sunplus.Accounting.Core\bin\Debug\Microsoft.Practices.Unity.pdb
+F:\Nexcel\[Rome][Git]\Settlement\ibcsettlement\Sunplus.Accounting.Core\obj\Debug\Sunplus.Accounting.Core.csprojResolveAssemblyReference.cache
+F:\Nexcel\[Rome][Git]\Settlement\ibcsettlement\Sunplus.Accounting.Core\obj\Debug\Sunplus.Accounting.Core.dll
+F:\Nexcel\[Rome][Git]\Settlement\ibcsettlement\Sunplus.Accounting.Core\obj\Debug\Sunplus.Accounting.Core.pdb
