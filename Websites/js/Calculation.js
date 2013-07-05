@@ -1,6 +1,5 @@
 ﻿var gHasUpdated = false;
 var isInputScoreDirectly = false;
-var currentAction = '';
 function DoExit() {
     parent.CloseDiv(gHasUpdated);
 }
@@ -254,8 +253,42 @@ function RefundRunningBetDaq(matchid, matchcode) {
         }
     });
 }
-
 function DoCalculate(type, ext) {
+    DoCalculate_PreventWaitingList(type, ext);
+}
+function DoCalculate_PreventWaitingList(type, ext) {
+    if (parent.settlementManagement) {
+        var calcStatusConstants = parent.settlementManagement.enums.CalcStatusConstants;
+        var matchId = $('sParams').value.split('|')[0];
+        jQuery.ajax({
+            type: "POST",
+            url: "../Settlement/GetCalcMPStatus",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            data: JSON.stringify(null),
+            beforeSend: function () {
+            },
+            success: function (rs) {
+                var matchCalculateStatus = parent.settlementManagement.getMatchCalculateStatus(rs, matchId);
+                if (matchCalculateStatus != null &&
+                    matchCalculateStatus.Status != calcStatusConstants.Completed) {
+                    alert("This match is in calculate queue (status {0})".replace(/\{0\}/g,
+                            matchCalculateStatus.StatusName));
+                } else {
+                    DoCalculate_AfterCheckWaitingList(type, ext);
+                }
+            },
+            error: function (event, jqXHR, ajaxSettings) {
+            },
+            complete: function () {
+            }
+        });
+    } else {
+        DoCalculate_AfterCheckWaitingList(type, ext);
+    }
+}
+
+function DoCalculate_AfterCheckWaitingList(type, ext) {
     $('errMsg').style.display = 'none';
     //MatchID|SportID
     var sportID = parseInt($('sParams').value.split('|')[1], 10);
@@ -451,7 +484,6 @@ function DoCalculate(type, ext) {
 
     DoCalculate_Submit(type);
 }
-
 function DoCalculate_Submit(type) {
     $('sAction').value = type;
     try { parent.parent.BlockUI(); } catch (e) { try { parent.BlockUI(); } catch (e) { BlockUI(); } }
@@ -557,7 +589,6 @@ function ResultCalculate(rs) {
         parent.jQuery("#dialog-modal").dialog('close');
         window.setTimeout(function () {
             try { parent.frames['centerFr'].GetSettleMatch() } catch (e) { parent.GetSettleMatch() }
-            //            try { parent.parent.jQuery.unblockUI(); } catch (e) { try { parent.jQuery.unblockUI(); } catch (e) { jQuery.unblockUI(); } }
         }, 2000);
     }
     else {

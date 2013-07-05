@@ -1,0 +1,67 @@
+﻿
+
+.calcStatus_Waiting
+{
+    color: Purple;
+    font-weight: bold;
+}
+
+.calcStatus_Calculating
+{
+    color: Red;
+    font-weight: bold;
+}
+
+.tblcollapse td.calcStatus_Completed
+{
+    background-color: #DAC093;
+    font-weight: bold;
+    background-color: #AEEFF9;
+}
+
+
+.settleMatchLog .y-scrollbar
+{
+    overflow-y: scroll;
+}
+
+.settleMatchLog .x-scrollbar
+{
+    overflow-x: hidden;
+}
+
+.btnCalcMp
+{
+    float: none;
+}
+
+.freegrid td.vertical-align-middle, .grid-fixed-table td.vertical-align-middle
+{
+    vertical-align: middle;
+}
+
+
+.x-scrollbar
+{
+    left: 0px !important;
+}
+
+.free-bottom-left
+{
+    display: none;
+}
+
+.colEvent_Badminton 
+{
+    width: 264px;
+}
+
+
+.freegrid .evenrow td, .grid-fixed-table .evenrow td {
+	background-color: #DFEAFF;
+}
+
+.settleMatchLog.freegrid td, .grid-fixed-table td 
+{
+    vertical-align: middle;
+}

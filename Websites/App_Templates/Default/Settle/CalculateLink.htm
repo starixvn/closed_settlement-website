@@ -1,9 +1,21 @@
 <td rowspan="2" {bgCalculate}>
-  <!--CalcRead-->Bill<!--/CalcRead--><!--CalcHost--><span class="canchange" onclick="DoCal('b','{params}');">Bill</span><!--/CalcHost-->&nbsp;
+  <!--CalcRead-->Bill<!--/CalcRead-->
+  <!--CalcHost-->
+    <span class="canchange colCalculation" onclick="DoCal('b','{params}');">Bill</span>
+    <span class="colCalculation colCalculation_Disabled hidden">Bill</span>
+  <!--/CalcHost-->&nbsp;
 </td>
-<td rowspan="2" {bgMultiple}>
-  <!--MultRead-->Multiple<!--/MultRead--><!--MultHost--><input type="checkbox" {disabled} id="chk_{params_id}" class="calmultiple chkmultiple cls_{params_cls}" /><!--/MultHost-->      
+<td rowspan="2"  {bgMultiple}>
+  <!--MultRead-->Multiple<!--/MultRead-->
+  <!--MultHost-->
+     <input type="checkbox" {disabled} id="chk_{params_id}" class="calmultiple chkmultiple cls_{params_cls}" />
+     <span class="calmultiple calmultiple_Disabled hidden"></span>
+  <!--/MultHost-->      
 </td> 
 <td rowspan="2">
-	<!--RefuRead-->Refund<!--/RefuRead--><!--RefuHost--><span class="canchange" onclick="DoCal('r','{params}');">Refund</span><!--/RefuHost-->
+	<!--RefuRead-->Refund<!--/RefuRead-->
+    <!--RefuHost-->
+        <span class="canchange colRefund" onclick="DoCal('r','{params}');">Refund</span>
+        <span class="colRefund colRefund_Disabled hidden">Refund</span>
+    <!--/RefuHost-->
 </td>  

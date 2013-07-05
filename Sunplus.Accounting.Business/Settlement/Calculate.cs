@@ -657,8 +657,7 @@ namespace Sunplus.Accounting.Business.Settlement
                     TemplateHandler.RemoveBlock(ref _sMain, "MultHost");
                     TemplateHandler.RemoveBlock(ref _sMain, "RefuHost");
                 }
-
-
+                
                 TemplateHandler.Assign(ref _sMain, "{displayMul}", displayMultiple);
                 string curLeagueId = "";
                 string bgClass = " rowEven";

@@ -14,6 +14,7 @@ using Sunplus.Accounting.DataAccess.IBCDLL.Accounting;
 using System.Web.SessionState;
 using DNAide.Data;
 
+
 public class Calculation : IHttpHandler, IRequiresSessionState
 {
     private System.Globalization.CultureInfo cult = System.Globalization.CultureInfo.CurrentCulture;
@@ -22,14 +23,12 @@ public class Calculation : IHttpHandler, IRequiresSessionState
     private string type = string.Empty;
     private string permissions = "";
     private string _matchIds_Hedging = string.Empty;
-    public void ProcessRequest(HttpContext context)
-    {
+    public void ProcessRequest (HttpContext context) {        
         context.Response.ContentType = "text/html";
         context.Response.Cache.SetCacheability(HttpCacheability.NoCache);
-        string _s = "false";
-        var successMatchIds = string.Empty;
-        string msg = "";
-        int delaytime = 0;
+       string _s = "false";
+       string msg = "";
+       int delaytime = 0;
         var lastGoalOnly = false;
         //context.Request.Form["scoreDirect"];
 
@@ -37,7 +36,7 @@ public class Calculation : IHttpHandler, IRequiresSessionState
         #region score confirm
 
         string hiddenScoreConfirm_Sport = context.Request.Form["hiddenScoreConfirm_Sport"];
-
+        
         #region soccer
         string homeHScore = string.Empty;
         string awayHScore = string.Empty;
@@ -53,7 +52,7 @@ public class Calculation : IHttpHandler, IRequiresSessionState
         awayHScore = context.Request.Form["hiddenScoreConfirm_awayHScore"];
         homeFScore = context.Request.Form["hiddenScoreConfirm_homeFScore"];
         awayFScore = context.Request.Form["hiddenScoreConfirm_awayFScore"];
-
+        
         switch (hiddenScoreConfirm_Sport)
         {
             case "soccer":
@@ -90,12 +89,12 @@ public class Calculation : IHttpHandler, IRequiresSessionState
                 string _params = context.Request.Form["sParams"];
                 matchID = Convert.ToInt32(_params.Split('|')[0]);
                 sportID = Convert.ToInt32(_params.Split('|')[1]);
-
+                
                 _matchIds_Hedging = context.Request["txtMatchIds_Hedging"];
 
                 _matchIds_Hedging = CastAide.AsString(_matchIds_Hedging, string.Empty);
                 _matchIds_Hedging = _matchIds_Hedging + "^" + matchID;
-
+                
             }
             catch (Exception ex)
             {
@@ -172,7 +171,7 @@ public class Calculation : IHttpHandler, IRequiresSessionState
                                 match.FinalAwayScore = finalAwayScore;
                                 match.BetStatus = oldbetstatus;
                                 betstatus = match.GenerateMatchStatus();
-
+                              
                                 var errCode = 0;
                                 Sunplus.Accounting.DataAccess.IBCDLL.Accounting.Settle.SettlementSoccerFGLG(custID, matchID, betstatus, false, goalrecord, ref errCode, ref msg);
                                 if (errCode == 0)
@@ -202,10 +201,6 @@ public class Calculation : IHttpHandler, IRequiresSessionState
                             {
                                 // _isSuccess = DoSettle.UndoSettlement(custID, matchID);                        
                                 _isSuccess = DoSettle.Calculation(custID, type, sportID, matchID, context, false, ref msg, ref delaytime);
-                                if (_isSuccess)
-                                {
-                                    successMatchIds += _matchId + "|";
-                                }
                             }
                             else
                             {
@@ -243,13 +238,12 @@ public class Calculation : IHttpHandler, IRequiresSessionState
                                 _isDeny = true;
                             }
                             break;
-                        default:
-                            break;
+                        default: break;
                     }
                 }
                 catch { }
-
-
+                
+                
             }
 
             if (_isSuccess)
@@ -281,8 +275,7 @@ public class Calculation : IHttpHandler, IRequiresSessionState
             _s = "<br />" + AlertMessage.GetMsg(ex.Message, AlertMessage.MsgType.Error);
             //throw ex;
         }
-
-        context.Response.Write("{\"responseText\":\"" + _s + "\",\"successMatchIds\":\"" + successMatchIds + "\"}");
+        context.Response.Write(_s);
     }
 
     private string BetStatusBuilder(int matchID, string betstatus)
@@ -305,15 +298,13 @@ public class Calculation : IHttpHandler, IRequiresSessionState
             int cnt = _betstatus.Length - start;
             _betstatus = _betstatus.Remove(start, cnt);
             _betstatus += betstatus;
-        }
+        }        
         return _betstatus;
     }
-
-    public bool IsReusable
-    {
-        get
-        {
+ 
+    public bool IsReusable {
+        get {
             return false;
         }
-    }
+    }          
 }
