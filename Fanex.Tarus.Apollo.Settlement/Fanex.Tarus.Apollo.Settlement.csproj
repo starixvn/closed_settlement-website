@@ -36,10 +36,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Fanex.Common">
-      <HintPath>..\..\..\..\Dependency\Fanex\Fanex.Common.dll</HintPath>
+      <HintPath>..\Dependency\Fanex\Fanex.Common.dll</HintPath>
     </Reference>
     <Reference Include="Fanex.Data">
-      <HintPath>..\..\..\..\Dependency\Fanex\Fanex.Data.dll</HintPath>
+      <HintPath>..\Dependency\Fanex\Fanex.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
