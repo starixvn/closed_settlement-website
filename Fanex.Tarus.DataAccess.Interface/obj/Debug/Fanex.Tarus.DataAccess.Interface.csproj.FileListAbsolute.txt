@@ -58,3 +58,14 @@ F:\Nexcel\[Rome][Git]\Settlement\ibcsettlement\Fanex.Tarus.DataAccess.Interface\
 F:\Nexcel\[Rome][Git]\Settlement\ibcsettlement\Fanex.Tarus.DataAccess.Interface\obj\Debug\Fanex.Tarus.DataAccess.Interface.csprojResolveAssemblyReference.cache
 F:\Nexcel\[Rome][Git]\Settlement\ibcsettlement\Fanex.Tarus.DataAccess.Interface\obj\Debug\Fanex.Tarus.DataAccess.Interface.dll
 F:\Nexcel\[Rome][Git]\Settlement\ibcsettlement\Fanex.Tarus.DataAccess.Interface\obj\Debug\Fanex.Tarus.DataAccess.Interface.pdb
+D:\GitSources\Settlement\ibcsettlement\Fanex.Tarus.DataAccess.Interface\bin\Debug\Fanex.Tarus.DataAccess.Interface.dll
+D:\GitSources\Settlement\ibcsettlement\Fanex.Tarus.DataAccess.Interface\bin\Debug\Fanex.Tarus.DataAccess.Interface.pdb
+D:\GitSources\Settlement\ibcsettlement\Fanex.Tarus.DataAccess.Interface\bin\Debug\Fanex.Tarus.Entities.dll
+D:\GitSources\Settlement\ibcsettlement\Fanex.Tarus.DataAccess.Interface\bin\Debug\Sunplus.Accounting.Entities.dll
+D:\GitSources\Settlement\ibcsettlement\Fanex.Tarus.DataAccess.Interface\bin\Debug\DNAide.dll
+D:\GitSources\Settlement\ibcsettlement\Fanex.Tarus.DataAccess.Interface\bin\Debug\Sunplus.Core.LoggingLib.dll
+D:\GitSources\Settlement\ibcsettlement\Fanex.Tarus.DataAccess.Interface\bin\Debug\Fanex.Tarus.Entities.pdb
+D:\GitSources\Settlement\ibcsettlement\Fanex.Tarus.DataAccess.Interface\bin\Debug\Sunplus.Accounting.Entities.pdb
+D:\GitSources\Settlement\ibcsettlement\Fanex.Tarus.DataAccess.Interface\obj\Debug\ResolveAssemblyReference.cache
+D:\GitSources\Settlement\ibcsettlement\Fanex.Tarus.DataAccess.Interface\obj\Debug\Fanex.Tarus.DataAccess.Interface.dll
+D:\GitSources\Settlement\ibcsettlement\Fanex.Tarus.DataAccess.Interface\obj\Debug\Fanex.Tarus.DataAccess.Interface.pdb

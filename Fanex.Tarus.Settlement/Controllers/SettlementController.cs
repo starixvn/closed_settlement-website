@@ -16,15 +16,15 @@ namespace Fanex.Tarus.Settlement.Controllers
     using Fanex.Tarus.Settlement.Services.Interface;
 
     [SuppressMessage("Microsoft.StyleCop.CSharp.DocumentationRules", "SA1600:ElementsMustBeDocumented")]
-    public class SettlementController : Controller
+    public class Settlement_CalculateMPController : Controller
     {
         private ICalculateMPService _calculateMPService;
-        public SettlementController()
+        public Settlement_CalculateMPController()
             : this(null)
         {
         }
 
-        public SettlementController(ICalculateMPService calculateMPService)
+        public Settlement_CalculateMPController(ICalculateMPService calculateMPService)
         {
             this._calculateMPService = calculateMPService ?? new CalculateMPService();
         }

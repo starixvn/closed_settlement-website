@@ -67,7 +67,7 @@ var settlementManagement = {
     getCalcMPStatus: function () {
         jQuery.ajax({
             type: "POST",
-            url: "../Settlement/GetCalcMPStatus",
+            url: "../Settlement_CalculateMP/GetCalcMPStatus",
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             data: JSON.stringify(null),
@@ -268,7 +268,7 @@ var settlementManagement = {
 
         //        jQuery.ajax({
         //            type: "POST",
-        //            url: "../Settlement/DoCalcMP",
+        //            url: "../Settlement_CalculateMP/DoCalcMP",
         //            contentType: "application/json; charset=utf-8",
         //            dataType: "json",
         //            data: JSON.stringify(paramForCalculating),
@@ -353,7 +353,7 @@ var settlementManagement = {
         var matchId = params.split('|')[1];
         jQuery.ajax({
             type: "POST",
-            url: "../Settlement/GetCalcMPStatus",
+            url: "../Settlement_CalculateMP/GetCalcMPStatus",
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             data: JSON.stringify(null),

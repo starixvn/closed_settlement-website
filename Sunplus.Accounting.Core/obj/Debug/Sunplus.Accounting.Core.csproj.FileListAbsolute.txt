@@ -95,3 +95,17 @@ F:\Nexcel\[Rome][Git]\Settlement\ibcsettlement\Sunplus.Accounting.Core\bin\Debug
 F:\Nexcel\[Rome][Git]\Settlement\ibcsettlement\Sunplus.Accounting.Core\obj\Debug\Sunplus.Accounting.Core.csprojResolveAssemblyReference.cache
 F:\Nexcel\[Rome][Git]\Settlement\ibcsettlement\Sunplus.Accounting.Core\obj\Debug\Sunplus.Accounting.Core.dll
 F:\Nexcel\[Rome][Git]\Settlement\ibcsettlement\Sunplus.Accounting.Core\obj\Debug\Sunplus.Accounting.Core.pdb
+D:\GitSources\Settlement\ibcsettlement\Sunplus.Accounting.Core\bin\Debug\Sunplus.Accounting.Core.dll
+D:\GitSources\Settlement\ibcsettlement\Sunplus.Accounting.Core\bin\Debug\Sunplus.Accounting.Core.pdb
+D:\GitSources\Settlement\ibcsettlement\Sunplus.Accounting.Core\bin\Debug\Sunplus.Accounting.Entities.dll
+D:\GitSources\Settlement\ibcsettlement\Sunplus.Accounting.Core\bin\Debug\Sunplus.Data.DataAbstract.dll
+D:\GitSources\Settlement\ibcsettlement\Sunplus.Accounting.Core\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+D:\GitSources\Settlement\ibcsettlement\Sunplus.Accounting.Core\bin\Debug\Norm.dll
+D:\GitSources\Settlement\ibcsettlement\Sunplus.Accounting.Core\bin\Debug\Enyim.Caching.dll
+D:\GitSources\Settlement\ibcsettlement\Sunplus.Accounting.Core\bin\Debug\Microsoft.Practices.Unity.dll
+D:\GitSources\Settlement\ibcsettlement\Sunplus.Accounting.Core\bin\Debug\Sunplus.Data.DataAbstract.pdb
+D:\GitSources\Settlement\ibcsettlement\Sunplus.Accounting.Core\bin\Debug\Sunplus.Accounting.Entities.pdb
+D:\GitSources\Settlement\ibcsettlement\Sunplus.Accounting.Core\bin\Debug\Microsoft.Practices.Unity.pdb
+D:\GitSources\Settlement\ibcsettlement\Sunplus.Accounting.Core\obj\Debug\ResolveAssemblyReference.cache
+D:\GitSources\Settlement\ibcsettlement\Sunplus.Accounting.Core\obj\Debug\Sunplus.Accounting.Core.dll
+D:\GitSources\Settlement\ibcsettlement\Sunplus.Accounting.Core\obj\Debug\Sunplus.Accounting.Core.pdb

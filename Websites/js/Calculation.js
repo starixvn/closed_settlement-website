@@ -262,7 +262,7 @@ function DoCalculate_PreventWaitingList(type, ext) {
         var matchId = $('sParams').value.split('|')[0];
         jQuery.ajax({
             type: "POST",
-            url: "../Settlement/GetCalcMPStatus",
+            url: "../Settlement_CalculateMP/GetCalcMPStatus",
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             data: JSON.stringify(null),

@@ -57,3 +57,11 @@ F:\Nexcel\[Rome][Git]\Settlement\ibcsettlement\Sunplus.Data.DataAbstract\DLL\Mic
 F:\Nexcel\[Rome][Git]\Settlement\ibcsettlement\Sunplus.Data.DataAbstract\DLL\Microsoft.Practices.Unity.pdb
 F:\Nexcel\[Rome][Git]\Settlement\ibcsettlement\Sunplus.Data.DataAbstract\obj\Debug\Sunplus.Data.DataAbstract.dll
 F:\Nexcel\[Rome][Git]\Settlement\ibcsettlement\Sunplus.Data.DataAbstract\obj\Debug\Sunplus.Data.DataAbstract.pdb
+D:\GitSources\Settlement\ibcsettlement\Sunplus.Data.DataAbstract\DLL\Sunplus.Data.DataAbstract.dll
+D:\GitSources\Settlement\ibcsettlement\Sunplus.Data.DataAbstract\DLL\Sunplus.Data.DataAbstract.pdb
+D:\GitSources\Settlement\ibcsettlement\Sunplus.Data.DataAbstract\DLL\Microsoft.Practices.Unity.Configuration.dll
+D:\GitSources\Settlement\ibcsettlement\Sunplus.Data.DataAbstract\DLL\Microsoft.Practices.Unity.dll
+D:\GitSources\Settlement\ibcsettlement\Sunplus.Data.DataAbstract\DLL\Microsoft.Practices.Unity.pdb
+D:\GitSources\Settlement\ibcsettlement\Sunplus.Data.DataAbstract\obj\Debug\ResolveAssemblyReference.cache
+D:\GitSources\Settlement\ibcsettlement\Sunplus.Data.DataAbstract\obj\Debug\Sunplus.Data.DataAbstract.dll
+D:\GitSources\Settlement\ibcsettlement\Sunplus.Data.DataAbstract\obj\Debug\Sunplus.Data.DataAbstract.pdb
