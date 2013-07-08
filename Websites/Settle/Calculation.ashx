@@ -22,6 +22,7 @@ public class Calculation : IHttpHandler, IRequiresSessionState
     private string type = string.Empty;
     private string permissions = "";
     private string _matchIds_Hedging = string.Empty;
+    private string _errMsg = string.Empty;
     public void ProcessRequest(HttpContext context)
     {
         context.Response.ContentType = "text/html";
@@ -285,6 +286,7 @@ public class Calculation : IHttpHandler, IRequiresSessionState
             int ActionId = apollo.ParseActionType(type.ToLower());
             matchID = Convert.ToInt32(context.Request.Form["sParams"].Split('|')[0]);
             var result = apollo.Set_ConfirmedAction_Single(matchID.ToString(), ActionId, _homeFT, _awayFT, _homeHT, _awayHT, _goalrecord, _betStatus);
+            _errMsg = result.ErrMsg;
             //End Set action confirm from IBC to Apollo
 
             if (_isSuccess)
@@ -317,7 +319,7 @@ public class Calculation : IHttpHandler, IRequiresSessionState
             //throw ex;
         }
 
-        context.Response.Write("{\"responseText\":\"" + _s + "\",\"successMatchIds\":\"" + successMatchIds + "\"}");
+        context.Response.Write("{\"responseText\":\"" + _s + "\",\"successMatchIds\":\"" + successMatchIds + "\",\"status\":\"" + _errMsg + "\"}");
     }
 
     private string BetStatusBuilder(int matchID, string betstatus)
