@@ -32,6 +32,7 @@
     <script src="Js/multipleCalculate.js" type="text/javascript"></script>
     <script src="Js/UndecidedSettleMatch.js?vers=1" type="text/javascript"></script>
     <script src="../js/dialogbox.js?ver=6" type="text/javascript"></script>
+     <script src="Js/ApolloConfirmedAction.js" type="text/javascript"></script>
     
     <script type="text/javascript">
         jQuery.noConflict();

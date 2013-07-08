@@ -31,6 +31,7 @@
     <script src="../js/Settle/ScoreConfirm.js?vers=<%=Sunplus.Accounting.Core.Configurations.WebSettings.Version%>" type="text/javascript"></script>
     <script src="Js/ApplyHedging.js" type="text/javascript"></script>
     <script src="Js/GoalRecords.js?ver=<%=Sunplus.Accounting.Core.Configurations.WebSettings.Version %>" type="text/javascript"></script>
+     <script src="Js/ApolloConfirmedAction.js" type="text/javascript"></script>
     
     <script type="text/javascript">
         jQuery.noConflict();

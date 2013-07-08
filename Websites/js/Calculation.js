@@ -1,6 +1,5 @@
 ﻿var gHasUpdated = false;
 var isInputScoreDirectly = false;
-var currentAction = '';
 function DoExit() {
     parent.CloseDiv(gHasUpdated);
 }
@@ -50,7 +49,7 @@ function OnKP_HR(e, val) {
 
 function OnKUSoccer() {
     try {
-        $('errMsg').style.display = 'none';
+        $('errMsg').style.display = 'none';        
         var _homeH = $('homeH').value.trim();
         var _homeF = $('homeF').value.trim();
         var _awayH = $('awayH').value.trim();
@@ -83,7 +82,7 @@ function OnKUSoccer() {
 //-- Basketball, Football
 function OnKUBasketball(e) {
     $('errMsg').style.display = 'none';
-
+    
     var totalHH = 0, totalHA = 0;
     var totalFH = 0, totalFA = 0;
     var i = 1;
@@ -116,13 +115,13 @@ function OnKUBasketball(e) {
         $('awayF').value = '';
     }
 
-
+    
 }
 
 //-- Hockey
 function OnKUHockey(e) {
     $('errMsg').style.display = 'none';
-
+    
     var totalFH = 0, totalFA = 0;
     var i = 1;
     for (var i = 1; i < 4; i++) {
@@ -146,7 +145,7 @@ function OnKUHockey(e) {
 //-- Tennis
 function OnKUTennis(e) {
     $('errMsg').style.display = 'none';
-
+    
     var totalGH = 0, totalGA = 0;
     var totalFH = 0, totalFA = 0;
     var i = 1;
@@ -177,7 +176,7 @@ function OnKUTennis(e) {
 //-- Badminton, Volleyball
 function OnKUBadminton(e) {
     $('errMsg').style.display = 'none';
-
+    
     var totalGH = 0, totalGA = 0;
     var totalFH = 0, totalFA = 0;
     var i = 1;
@@ -207,7 +206,7 @@ function OnKUBadminton(e) {
 
 function OnKUBaseBall(e) {
     $('errMsg').style.display = 'none';
-
+    
     var totalFH = 0, totalFA = 0, totalHTH = 0, totalHTA = 0;
     for (var i = 1; i < 10; i++) {
         var _scurH = $('txt' + i + 'Home').value.trim();
@@ -255,7 +254,7 @@ function RefundRunningBetDaq(matchid, matchcode) {
     });
 }
 
-function DoCalculate(type, ext) {
+function DoCalculate(type, ext) {    
     $('errMsg').style.display = 'none';
     //MatchID|SportID
     var sportID = parseInt($('sParams').value.split('|')[1], 10);
@@ -283,7 +282,7 @@ function DoCalculate(type, ext) {
                 if (((homeF + awayF) != goalrecord.length) || (ReplaceAll(ReplaceAll($('GR').value, 'a', ''), 'A', '').length != homeF)) {
                     $('errMsg').style.display = '';
                     $('errMsg').innerHTML = 'Goal record is not consistent with the score, please correct Goal record before calculating.';
-                    try { parent.parent.jQuery.unblockUI(); } catch (e) { }
+                     try{parent.parent.jQuery.unblockUI();}catch(e){}
                     return;
                 }
             }
@@ -293,14 +292,14 @@ function DoCalculate(type, ext) {
                 if (homeF + awayF == 0 && goalrecord.length > 0) {
                     $('errMsg').style.display = '';
                     $('errMsg').innerHTML = "Goal record is not consistent with the score, please correct Goal record before calculating";
-                    try { parent.jQuery.unblockUI(); } catch (e) { }
+                    try{parent.jQuery.unblockUI();}catch(e){}
                     return false;
                 }
                 //Case H=0 A>0 --> GR = A only
                 if (homeF == 0 && awayF > 0 && (goalrecord.toLowerCase().indexOf("h") >= 0 || goalrecord.toLowerCase().indexOf("a") < 0)) {
                     $('errMsg').style.display = '';
                     $('errMsg').innerHTML = "Goal record is not consistent with the score, please correct Goal record before calculating";
-                    try { parent.parent.jQuery.unblockUI(); } catch (e) { }
+                     try{parent.parent.jQuery.unblockUI();}catch(e){}
                     return false;
                 }
                 //Case H>=1 A=0 -->GR = H only
@@ -308,7 +307,7 @@ function DoCalculate(type, ext) {
                 if (homeF >= 1 && awayF == 0 && (goalrecord.toLowerCase().indexOf("a") >= 0 || goalrecord.toLowerCase().indexOf("h") < 0)) {
                     $('errMsg').style.display = '';
                     $('errMsg').innerHTML = "Goal record is not consistent with the score, please correct Goal record before calculating";
-                    try { parent.parent.jQuery.unblockUI(); } catch (e) { }
+                    try{parent.parent.jQuery.unblockUI();}catch(e){}
                     return false;
                 }
 
@@ -316,37 +315,37 @@ function DoCalculate(type, ext) {
                 if (homeF == 1 && awayF == 1 && (goalrecord.toLowerCase().indexOf("a") < 0 || goalrecord.toLowerCase().indexOf("h") < 0 || goalrecord.toLowerCase().substring(0, 1) == goalrecord.toLowerCase().substring(goalrecord.length - 1, goalrecord.length))) {
                     $('errMsg').style.display = '';
                     $('errMsg').innerHTML = "Goal record is not consistent with the score, please correct Goal record before calculating";
-                    try { parent.parent.jQuery.unblockUI(); } catch (e) { }
+                    try{parent.parent.jQuery.unblockUI();}catch(e){}
                     return false;
                 }
                 //Case H=1 A>1 -->GR = Exist A
                 if (homeF == 1 && awayF > 1 && goalrecord.toLowerCase().indexOf("a") < 0) {
                     $('errMsg').style.display = '';
                     $('errMsg').innerHTML = "Goal record is not consistent with the score, please correct Goal record before calculating";
-                    try { parent.parent.jQuery.unblockUI(); } catch (e) { }
+                     try{parent.parent.jQuery.unblockUI();}catch(e){}
                     return false;
                 }
                 //Case H>1 A=1 -->GR = Exist H
                 if (homeF > 1 && awayF == 1 && goalrecord.toLowerCase().indexOf("h") < 0) {
                     $('errMsg').style.display = '';
                     $('errMsg').innerHTML = "Goal record is not consistent with the score, please correct Goal record before calculating";
-                    try { parent.parent.jQuery.unblockUI(); } catch (e) { }
+                    try{parent.parent.jQuery.unblockUI();}catch(e){}
                     return false;
                 }
                 if (homeF + awayF > 0 && goalrecord.length <= 0) {
                     $('errMsg').style.display = '';
                     $('errMsg').innerHTML = "Goal record is not consistent with the score, please correct Goal record before calculating";
-                    try { parent.parent.jQuery.unblockUI(); } catch (e) { }
+                     try{parent.parent.jQuery.unblockUI();}catch(e){}
                     return false;
                 }
 
                 if (((homeF + awayF) != goalrecord.length) || (ReplaceAll(ReplaceAll($('GR').value, 'a', ''), 'A', '').length != homeF)) {
                     $('errMsg').style.display = '';
                     $('errMsg').innerHTML = 'Goal record is not consistent with the score, please correct Goal record before calculating.';
-                    try { parent.parent.jQuery.unblockUI(); } catch (e) { }
+                     try{parent.parent.jQuery.unblockUI();}catch(e){}
                     return false;
                 }
-
+              
             }
         }
     }
@@ -371,7 +370,7 @@ function DoCalculate(type, ext) {
                         return;
                     }
                     if (!confirm("Check again!\nAre you sure you want to CALCULATE FIRST HALF for this match?")) {
-                        try { parent.parent.jQuery.unblockUI(); } catch (e) { }
+                        try{parent.parent.jQuery.unblockUI();}catch(e){}
                         return;
                     }
                     type = 'billHT';
@@ -459,7 +458,9 @@ function DoCalculate_Submit(type) {
         asynchronous: true,
         method: 'post',
         parameters: Form.serialize('frmBill'),
-        onComplete: ResultCalculate
+        onComplete: function (rs) {
+            ResultCalculate(rs, type);
+        }
     });
 };
 
@@ -488,81 +489,81 @@ function DoCalculateHR() {
     }
 }
 
-function ResultCalculate(rs) {
+function ResultCalculate(rs, type) {
     var IsSuccess = 0;
     var delay = 0;
-
+    
     $('errMsg').style.display = 'none';
-    var objRs = jQuery.parseJSON(rs.responseText);
-
-    if ($('sAction').value == 'unsettle') {
-        var myajax = new Ajax.Request("ReplicateData.ashx", {
-            asynchronous: true,
-            method: 'post',
-            parameters: Form.serialize('frmBill') + "&successMatchIds=" + objRs.successMatchIds,
-            onComplete: null
-        });
-    }
-
-    if (objRs.responseText == 'success') {
+    if (rs.responseText == 'success') {
         gHasUpdated = true;
         IsSuccess = 1;
     }
-    else if (objRs.responseText == 'success-refund') {
+    else if (rs.responseText == 'success-refund') {
         alert('Refund All Successful!');
         gHasUpdated = true;
         IsSuccess = 1;
     }
-    else if (objRs.responseText == 'success-refundfulltime') {
+    else if (rs.responseText == 'success-refundfulltime') {
         alert('Refund FT Successful!');
         gHasUpdated = true;
         IsSuccess = 1;
     }
-    else if (objRs.responseText == 'FGLGsuccess') {
+    else if (rs.responseText == 'FGLGsuccess') {
         alert('In case you have changed the result of First Goal/Last Goal here, please re-calculate the MULTIPLE also to make sure all the tickets are update correctly.');
         gHasUpdated = true;
         IsSuccess = 0
     }
-    else if (objRs.responseText == 'soccerSuccess') {
+    else if (rs.responseText == 'soccerSuccess') {
         $('infoMsg').style.display = '';
         $('infoMsg').innerHTML = 'SUCCESS!';
         IsSuccess = 1; // that mean no need close the window settlement, 
     }
-    else if (objRs.responseText == 'success-refundalllastgoal') {
+    else if (rs.responseText == 'success-refundalllastgoal') {
         alert('Refund All Last Goal Successful!');
         gHasUpdated = true;
         IsSuccess = 1;
     }
-    else if (objRs.responseText == 'Access Denied') {
+    else if (rs.responseText == 'Access Denied') {
         $('infoMsg').innerHTML = 'ACCESS IS DENIED!';
         $('infoMsg').style.display = '';
         IsSuccess = 0; // that mean no need close the window settlement, 
     }
-    else if (objRs.responseText.split('|')[0] == 'no') {
-        $('errmsg').innerHTML = '<br/>' + objRs.responseText.split('|')[1];
+    else if (rs.responseText.split('|')[0] == 'no') {
+        $('errmsg').innerHTML = '<br/>' + rs.responseText.split('|')[1];
         $('errmsg').style.display = '';
         IsSuccess = 0;
     }
-    else if (objRs.responseText.split('|')[0] == 'delay') {
-        IsSuccess = 0;
-        delay = parseInt(objRs.responseText.split('|')[1]);
+    else if (rs.responseText.split('|')[0] == 'delay')
+    {
+        IsSuccess=0;
+        delay=parseInt(rs.responseText.split('|')[1]);
     }
     else {
-        $('_sContent').innerHTML = objRs.responseText;
+        $('_sContent').innerHTML = rs.responseText;
         IsSuccess = 1;
     }
 
     if (IsSuccess == 1) {
         //try { parent.parent.jQuery.unblockUI(); } catch (e) { try { parent.jQuery.unblockUI(); } catch (e) { jQuery.unblockUI(); } }
+
+         try {
+            //MatchID|SportID
+            var matchId =  $('sParams').value.split('|')[0];
+          //  parent.apollo.updateConfirmedAction(matchId, type); 
+        } catch (e) {
+            //alert(e);
+        }
+
         parent.jQuery("#dialog-modal").dialog('close');
         window.setTimeout(function () {
             try { parent.frames['centerFr'].GetSettleMatch() } catch (e) { parent.GetSettleMatch() }
-            //            try { parent.parent.jQuery.unblockUI(); } catch (e) { try { parent.jQuery.unblockUI(); } catch (e) { jQuery.unblockUI(); } }
         }, 2000);
     }
-    else {
+    else
+    {
         try { parent.parent.jQuery.unblockUI(); } catch (e) { try { parent.jQuery.unblockUI(); } catch (e) { jQuery.unblockUI(); } }
-        if (delay > 0) {
+        if (delay>0)
+        {
             SettleDelay(delay);
             //parent.parent.SettleDelay(delay);
         }
@@ -572,37 +573,41 @@ function ResultCalculate(rs) {
 
 
 /*Settlement delay*/
-var totaltime = 0;
+var totaltime=0;
 var t;
 
-function timedCount() {
+ function timedCount()
+  {
+   
+    if (totaltime>0)
+      {
+      document.getElementById("lblduration").innerHTML=totaltime;
+      totaltime--;
+      t=setTimeout("timedCount()",1000);
+      }
+    else
+    {
+       clearTimeout(t);
+       overlay("overlaydiv");
+       $("errmsg").style.display = 'none';
+    }  
+  }
 
-    if (totaltime > 0) {
-        document.getElementById("lblduration").innerHTML = totaltime;
-        totaltime--;
-        t = setTimeout("timedCount()", 1000);
-    }
-    else {
-        clearTimeout(t);
-        overlay("overlaydiv");
-        $("errmsg").style.display = 'none';
-    }
-}
-
-function SettleDelay(duration) {
-    totaltime = duration;
+function SettleDelay(duration)
+ {
+    totaltime=duration;
     $("errmsg").style.display = 'inline';
     overlay("overlaydiv");
     timedCount();
-
-}
-function overlay(id) {
+   
+ }
+  function overlay(id) {
     var el = $(id);
     if (el.style.display == 'none') {
-        el.style.display = 'inline';
+       el.style.display='inline';
     }
     else {
-        el.style.display = 'none';
+         el.style.display='none';
     }
 }
 
@@ -648,8 +653,8 @@ function IsValidScore(arrItem) {
 function IsValidSoccer() {
     if ($('chkFgHome') != null && $('chkFgHome').disabled == '') {
         try {
-            var fg = Form.getInputs('frmBill', 'radio', 'chkFg').find(function (radio) { return radio.checked; }).value;
-            var lg = Form.getInputs('frmBill', 'radio', 'chkLg').find(function (radio) { return radio.checked; }).value;
+            var fg = Form.getInputs('frmBill', 'radio', 'chkFg').find(function(radio) { return radio.checked; }).value;
+            var lg = Form.getInputs('frmBill', 'radio', 'chkLg').find(function(radio) { return radio.checked; }).value;
         }
         catch (ex) {
             $('errMsg').innerHTML = 'Please input First Goal / Last Goal!';
@@ -660,7 +665,7 @@ function IsValidSoccer() {
     return true;
 }
 
-window.onload = function () {
+window.onload = function() {
 
 
     if (!$('sParams')) return;
