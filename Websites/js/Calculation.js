@@ -459,7 +459,9 @@ function DoCalculate_Submit(type) {
         asynchronous: true,
         method: 'post',
         parameters: Form.serialize('frmBill'),
-        onComplete: ResultCalculate
+        onComplete: function (rs) {
+            ResultCalculate(rs, type);
+        }
     });
 };
 
@@ -488,13 +490,12 @@ function DoCalculateHR() {
     }
 }
 
-function ResultCalculate(rs) {
+function ResultCalculate(rs, type) {
     var IsSuccess = 0;
     var delay = 0;
 
     $('errMsg').style.display = 'none';
     var objRs = jQuery.parseJSON(rs.responseText);
-
     if ($('sAction').value == 'unsettle') {
         var myajax = new Ajax.Request("ReplicateData.ashx", {
             asynchronous: true,
@@ -554,10 +555,18 @@ function ResultCalculate(rs) {
 
     if (IsSuccess == 1) {
         //try { parent.parent.jQuery.unblockUI(); } catch (e) { try { parent.jQuery.unblockUI(); } catch (e) { jQuery.unblockUI(); } }
+
+        try {
+            //MatchID|SportID
+            var matchId = $('sParams').value.split('|')[0];
+            //  parent.apollo.updateConfirmedAction(matchId, type); 
+        } catch (e) {
+            //alert(e);
+        }
+
         parent.jQuery("#dialog-modal").dialog('close');
         window.setTimeout(function () {
             try { parent.frames['centerFr'].GetSettleMatch() } catch (e) { parent.GetSettleMatch() }
-            //            try { parent.parent.jQuery.unblockUI(); } catch (e) { try { parent.jQuery.unblockUI(); } catch (e) { jQuery.unblockUI(); } }
         }, 2000);
     }
     else {
