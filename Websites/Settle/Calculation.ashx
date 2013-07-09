@@ -253,44 +253,45 @@ public class Calculation : IHttpHandler, IRequiresSessionState
 
             }
 
-            //Set action confirm from IBC to Apollo
-            var apollo = new Fanex.Tarus.Apollo.Settlement.Business.SettlementService();
-            int _homeHT = 0, _awayHT = 0, _homeFT = 0, _awayFT = 0;
-            string _betStatus = string.Empty, _goalrecord = string.Empty;
-            bool _isSD = false, _isHTCal = false;
-
-            if (context.Request.Form["isSD"] != null)
-            {
-                _isSD = (string.Compare(context.Request.Form["isSD"], "1", true) == 0);
-            }
-            if (string.Compare(type, "billHT", true) == 0)
-            {
-                _isHTCal = true;
-            }
-
-            apollo.CalculationParams(sportID, context, ref _homeHT, ref _awayHT, ref _homeFT, ref _awayFT, ref _betStatus, _isSD, _isHTCal);
-            if (sportID == 1)
-            {
-                bool IsFGLG = context.Request.Form["sHasFGLG"].ToString() == "1";
-                if (IsFGLG)
-                {
-                    _goalrecord = CastAide.AsString(context.Request.Form["GR"]);
-                    var _match = new Match();
-                    _match.GoalRecord = _goalrecord;
-                    _match.FinalHomeScore = context.Request.Form["homeF"];
-                    _match.FinalAwayScore = context.Request.Form["awayF"];
-                    _betStatus = _match.GenerateMatchStatus();
-                }
-            }
-
-            int ActionId = apollo.ParseActionType(type.ToLower());
-            matchID = Convert.ToInt32(context.Request.Form["sParams"].Split('|')[0]);
-            var result = apollo.Set_ConfirmedAction_Single(matchID.ToString(), ActionId, _homeFT, _awayFT, _homeHT, _awayHT, _goalrecord, _betStatus);
-            _errMsg = result.ErrMsg;
-            //End Set action confirm from IBC to Apollo
 
             if (_isSuccess)
             {
+                //Set action confirm from IBC to Apollo
+                var apollo = new Fanex.Tarus.Apollo.Settlement.Business.SettlementService();
+                int _homeHT = 0, _awayHT = 0, _homeFT = 0, _awayFT = 0;
+                string _betStatus = string.Empty, _goalrecord = string.Empty;
+                bool _isSD = false, _isHTCal = false;
+
+                if (context.Request.Form["isSD"] != null)
+                {
+                    _isSD = (string.Compare(context.Request.Form["isSD"], "1", true) == 0);
+                }
+                if (string.Compare(type, "billHT", true) == 0)
+                {
+                    _isHTCal = true;
+                }
+
+                apollo.CalculationParams(sportID, context, ref _homeHT, ref _awayHT, ref _homeFT, ref _awayFT, ref _betStatus, _isSD, _isHTCal);
+                if (sportID == 1)
+                {
+                    bool IsFGLG = context.Request.Form["sHasFGLG"].ToString() == "1";
+                    if (IsFGLG)
+                    {
+                        _goalrecord = CastAide.AsString(context.Request.Form["GR"]);
+                        var _match = new Match();
+                        _match.GoalRecord = _goalrecord;
+                        _match.FinalHomeScore = context.Request.Form["homeF"];
+                        _match.FinalAwayScore = context.Request.Form["awayF"];
+                        _betStatus = _match.GenerateMatchStatus();
+                    }
+                }
+
+                int ActionId = apollo.ParseActionType(type.ToLower());
+                matchID = Convert.ToInt32(context.Request.Form["sParams"].Split('|')[0]);
+                var result = apollo.Set_ConfirmedAction_Single(matchID.ToString(), ActionId, _homeFT, _awayFT, _homeHT, _awayHT, _goalrecord, _betStatus);
+                _errMsg = result.ErrMsg;
+                //End Set action confirm from IBC to Apollo
+                
                 _s = "success"; // close and refesh
 
                 if (sportID == 1 && context.Request.Form["sHasFGLG"] == "1" && !lastGoalOnly) _s = "soccerSuccess";
