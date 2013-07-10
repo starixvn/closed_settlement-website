@@ -85,6 +85,7 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -95,6 +96,11 @@
     <Compile Include="Business\BaseSettlement.cs" />
     <Compile Include="Business\ILiveCasinoManager.cs" />
     <Compile Include="Business\LiveCasinoManager.cs" />
+    <Compile Include="Constants\CalcStatusConstants.cs" />
+    <Compile Include="Controllers\SettlementController.cs" />
+    <Compile Include="Criteria\GetCalcMPStatusCriteria.cs" />
+    <Compile Include="DataAccess\Implement\CalculateMPDataAccess.cs" />
+    <Compile Include="DataAccess\Interface\ICalculateMPDataAccess.cs" />
     <Compile Include="Entity\GoalInfo.cs" />
     <Compile Include="Core\Cache\CacheRef.cs" />
     <Compile Include="Core\Common\Enumerations.cs" />
@@ -102,6 +108,15 @@
     <Compile Include="DataAccess\ILiveCasinoDataAccess.cs" />
     <Compile Include="DataAccess\LiveCasinoDataAccess.cs" />
     <Compile Include="Helper.cs" />
+    <Compile Include="Models\Settlement_ActionResult.cs" />
+    <Compile Include="Models\CalcInfo.cs" />
+    <Compile Include="Resources\SettlementResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SettlementResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\Implement\CalculateMPService.cs" />
+    <Compile Include="Services\Interface\ICalculateMPService.cs" />
     <Compile Include="Services\ISettlementService.cs" />
     <Compile Include="Services\SettlementService.cs" />
     <Compile Include="Entity\League.cs" />
@@ -120,6 +135,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Business\Sportbooks\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\SettlementResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SettlementResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

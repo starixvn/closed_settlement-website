@@ -141,7 +141,7 @@ namespace Sunplus.Accounting.Business.Settlement
             {
                 string _sMain = WebUtils.LoadTemplate("Settle/MainCommon.htm");
                 string _strRow = WebUtils.LoadTemplate("Settle/RowCommon.htm");
-                string _strLeague =WebUtils.LoadTemplate("Settle/LeagueName.htm");
+                string _strLeague = WebUtils.LoadTemplate("Settle/LeagueName.htm");
                 if (permissions.IndexOf("[C]") > -1)
                 {
 
@@ -151,7 +151,7 @@ namespace Sunplus.Accounting.Business.Settlement
                 }
                 else
                 {
-                    
+
                     TemplateHandler.Assign(ref _strLeague, "{colspan}", totalColumns.ToString());
                     TemplateHandler.RemoveBlock(ref _sMain, "MultHost");
                     TemplateHandler.RemoveBlock(ref _sMain, "RefuHost");
@@ -245,7 +245,7 @@ namespace Sunplus.Accounting.Business.Settlement
             }
             catch (Exception ex)
             {
-                
+
                 {
                     Sunplus.Accounting.Core.Extensions.LogExtensions.ExceptionHandler(ex);
                 }
@@ -260,7 +260,7 @@ namespace Sunplus.Accounting.Business.Settlement
             {
                 string _sMain = WebUtils.LoadTemplate("Settle/MainSoccer.htm");
                 string _strRow = WebUtils.LoadTemplate("Settle/RowSoccer.htm");
-                string _strLeague =WebUtils.LoadTemplate("Settle/LeagueName.htm");
+                string _strLeague = WebUtils.LoadTemplate("Settle/LeagueName.htm");
                 if (permissions.IndexOf("[C]") > -1)
                 {
                     TemplateHandler.Assign(ref _strLeague, "{colspan}", (totalColumns - 1).ToString());
@@ -367,7 +367,7 @@ namespace Sunplus.Accounting.Business.Settlement
                     var goalHistory = match.GoalHistory;
                     string homeIcon = string.Empty;
                     string awayIcon = string.Empty;
-                    if(isExistFGLG)
+                    if (isExistFGLG)
                     {
                         TemplateHandler.Assign(ref _sRow, "{hfgoaldisplay}", goalHistory.HomeScoreFirstGoal ? "inline" : "none");
                         TemplateHandler.Assign(ref _sRow, "{hlgoaldisplay}", goalHistory.HomeScoreLastGoal ? "inline" : "none");
@@ -378,8 +378,8 @@ namespace Sunplus.Accounting.Business.Settlement
                     {
                         TemplateHandler.RemoveBlock(ref _sRow, "FGLG");
                     }
-                   
-                  
+
+
                     TemplateHandler.Assign(ref _sRow, "{fgHome}", string.Empty);
                     TemplateHandler.Assign(ref _sRow, "{fgAway}", string.Empty);
                     TemplateHandler.Assign(ref _sRow, "{lgHome}", string.Empty);
@@ -388,7 +388,7 @@ namespace Sunplus.Accounting.Business.Settlement
                     var isPending = false;
                     var settle = CommonBootStrapper.Locator.GetInstance<ISettlement>();
                     TemplateHandler.Assign(ref _sRow, "{eventstatus}", settle.SelStatusConfirming(dr, ref isPending));
-                    TemplateHandler.Assign(ref _sRow, "{bgEventStatus}", (string.Compare(_eventstatus, "postponed", true) == 0) ? SettleBgColor.POSTPONED : 
+                    TemplateHandler.Assign(ref _sRow, "{bgEventStatus}", (string.Compare(_eventstatus, "postponed", true) == 0) ? SettleBgColor.POSTPONED :
                         (isPending ? SettleBgColor.PendingStatus : SettleBgColor.DEFAULTCOLOR));
 
                     string _params = dr["matchid"].ToString() + "|" + sportID.ToString() + "_" + _leagueid.ToString() + "_" + _eventstatus;
@@ -405,7 +405,7 @@ namespace Sunplus.Accounting.Business.Settlement
             }
             catch (Exception ex)
             {
-                
+
                 {
                     Sunplus.Accounting.Core.Extensions.LogExtensions.ExceptionHandler(ex);
                 }
@@ -422,11 +422,11 @@ namespace Sunplus.Accounting.Business.Settlement
                 string _sMain = WebUtils.LoadTemplate("Settle/MainBasketball.htm");
                 string _strRow = WebUtils.LoadTemplate("Settle/RowBasketball.htm");
 
-                string _strLeague =WebUtils.LoadTemplate("Settle/LeagueName.htm");
+                string _strLeague = WebUtils.LoadTemplate("Settle/LeagueName.htm");
                 if (permissions.IndexOf("[C]") > -1)
                 {
 
-                   
+
                     TemplateHandler.Assign(ref _strLeague, "{colspan}", (totalColumns - 1).ToString());
                     TemplateHandler.RemoveBlock(ref _sMain, "MultRead");
                     TemplateHandler.RemoveBlock(ref _sMain, "RefuRead");
@@ -434,7 +434,7 @@ namespace Sunplus.Accounting.Business.Settlement
                 }
                 else
                 {
-                    
+
                     TemplateHandler.Assign(ref _strLeague, "{colspan}", totalColumns.ToString());
                     TemplateHandler.RemoveBlock(ref _sMain, "MultHost");
                     TemplateHandler.RemoveBlock(ref _sMain, "RefuHost");
@@ -561,7 +561,7 @@ namespace Sunplus.Accounting.Business.Settlement
             }
             catch (Exception ex)
             {
-                
+
                 {
                     Sunplus.Accounting.Core.Extensions.LogExtensions.ExceptionHandler(ex);
                 }
@@ -577,19 +577,17 @@ namespace Sunplus.Accounting.Business.Settlement
             {
                 string _sMain = WebUtils.LoadTemplate("Settle/MainHockey.htm");
                 string _strRow = WebUtils.LoadTemplate("Settle/RowHockey.htm");
-                string _strLeague =WebUtils.LoadTemplate("Settle/LeagueName.htm");
+                string _strLeague = WebUtils.LoadTemplate("Settle/LeagueName.htm");
                 if (permissions.IndexOf("[C]") > -1)
                 {
-
-                   
-                    TemplateHandler.Assign(ref _strLeague, "{colspan}", (totalColumns - 1).ToString());
+                    TemplateHandler.Assign(ref _strLeague, "{colspan}", (totalColumns).ToString());
                     TemplateHandler.RemoveBlock(ref _sMain, "MultRead");
                     TemplateHandler.RemoveBlock(ref _sMain, "RefuRead");
                     TemplateHandler.RemoveBlock(ref _strRow, "confirmpendingread");
                 }
                 else
                 {
-                    
+
                     TemplateHandler.Assign(ref _strLeague, "{colspan}", totalColumns.ToString());
                     TemplateHandler.RemoveBlock(ref _sMain, "MultHost");
                     TemplateHandler.RemoveBlock(ref _sMain, "RefuHost");
@@ -686,7 +684,7 @@ namespace Sunplus.Accounting.Business.Settlement
                         }
                         catch (Exception ex)
                         {
-                            
+
                             {
                                 Sunplus.Accounting.Core.Extensions.LogExtensions.ExceptionHandler(ex);
                             }
@@ -725,7 +723,7 @@ namespace Sunplus.Accounting.Business.Settlement
             }
             catch (Exception ex)
             {
-                
+
                 {
                     Sunplus.Accounting.Core.Extensions.LogExtensions.ExceptionHandler(ex);
                 }
@@ -742,11 +740,11 @@ namespace Sunplus.Accounting.Business.Settlement
                 string _sMain = WebUtils.LoadTemplate("Settle/MainTennis.htm");
                 string _strRow = WebUtils.LoadTemplate("Settle/RowTennis.htm");
 
-                string _strLeague =WebUtils.LoadTemplate("Settle/LeagueName.htm");
+                string _strLeague = WebUtils.LoadTemplate("Settle/LeagueName.htm");
                 if (permissions.IndexOf("[C]") > -1)
                 {
 
-                   
+
                     TemplateHandler.Assign(ref _strLeague, "{colspan}", (totalColumns - 1).ToString());
                     TemplateHandler.RemoveBlock(ref _sMain, "MultRead");
                     TemplateHandler.RemoveBlock(ref _sMain, "RefuRead");
@@ -754,7 +752,7 @@ namespace Sunplus.Accounting.Business.Settlement
                 }
                 else
                 {
-                    
+
                     TemplateHandler.Assign(ref _strLeague, "{colspan}", totalColumns.ToString());
                     TemplateHandler.RemoveBlock(ref _sMain, "MultHost");
                     TemplateHandler.RemoveBlock(ref _sMain, "RefuHost");
@@ -847,7 +845,7 @@ namespace Sunplus.Accounting.Business.Settlement
                         }
                         catch (Exception ex)
                         {
-                            
+
                             {
                                 Sunplus.Accounting.Core.Extensions.LogExtensions.ExceptionHandler(ex);
                             }
@@ -886,7 +884,7 @@ namespace Sunplus.Accounting.Business.Settlement
             }
             catch (Exception ex)
             {
-                
+
                 {
                     Sunplus.Accounting.Core.Extensions.LogExtensions.ExceptionHandler(ex);
                 }
@@ -901,11 +899,11 @@ namespace Sunplus.Accounting.Business.Settlement
             {
                 string _sMain = WebUtils.LoadTemplate("Settle/MainBilliard.htm");
                 string _strRow = WebUtils.LoadTemplate("Settle/RowBilliard.htm");
-                string _strLeague =WebUtils.LoadTemplate("Settle/LeagueName.htm");
+                string _strLeague = WebUtils.LoadTemplate("Settle/LeagueName.htm");
                 if (permissions.IndexOf("[C]") > -1)
                 {
 
-                   
+
                     TemplateHandler.Assign(ref _strLeague, "{colspan}", (totalColumns - 1).ToString());
                     TemplateHandler.RemoveBlock(ref _sMain, "MultRead");
                     TemplateHandler.RemoveBlock(ref _sMain, "RefuRead");
@@ -913,7 +911,7 @@ namespace Sunplus.Accounting.Business.Settlement
                 }
                 else
                 {
-                    
+
                     TemplateHandler.Assign(ref _strLeague, "{colspan}", totalColumns.ToString());
                     TemplateHandler.RemoveBlock(ref _sMain, "MultHost");
                     TemplateHandler.RemoveBlock(ref _sMain, "RefuHost");
@@ -926,7 +924,7 @@ namespace Sunplus.Accounting.Business.Settlement
                 string bgClass = " rowEven";
                 var _s = new StringBuilder(); // content
                 //------------
-                
+
                 var undecided = new Sunplus.Accounting.Business.Settle.Settlement();
 
                 foreach (DataRow dr in rows)
@@ -999,7 +997,7 @@ namespace Sunplus.Accounting.Business.Settlement
             }
             catch (Exception ex)
             {
-                
+
                 {
                     Sunplus.Accounting.Core.Extensions.LogExtensions.ExceptionHandler(ex);
                 }
@@ -1015,11 +1013,11 @@ namespace Sunplus.Accounting.Business.Settlement
             {
                 string _sMain = WebUtils.LoadTemplate("Settle/MainBadminton.htm");
                 string _strRow = WebUtils.LoadTemplate("Settle/RowBadminton.htm");
-                string _strLeague =WebUtils.LoadTemplate("Settle/LeagueName.htm");
+                string _strLeague = WebUtils.LoadTemplate("Settle/LeagueName.htm");
                 if (permissions.IndexOf("[C]") > -1)
                 {
 
-                   
+
                     TemplateHandler.Assign(ref _strLeague, "{colspan}", (totalColumns - 1).ToString());
                     TemplateHandler.RemoveBlock(ref _sMain, "MultRead");
                     TemplateHandler.RemoveBlock(ref _sMain, "RefuRead");
@@ -1027,7 +1025,7 @@ namespace Sunplus.Accounting.Business.Settlement
                 }
                 else
                 {
-                    
+
                     TemplateHandler.Assign(ref _strLeague, "{colspan}", totalColumns.ToString());
                     TemplateHandler.RemoveBlock(ref _sMain, "MultHost");
                     TemplateHandler.RemoveBlock(ref _sMain, "RefuHost");
@@ -1040,7 +1038,7 @@ namespace Sunplus.Accounting.Business.Settlement
                 string bgClass = " rowEven";
                 var _s = new StringBuilder(); // content
                 //------------
-                
+
                 var undecided = new Sunplus.Accounting.Business.Settle.Settlement();
 
                 foreach (DataRow dr in rows)
@@ -1116,7 +1114,7 @@ namespace Sunplus.Accounting.Business.Settlement
                         }
                         catch (Exception ex)
                         {
-                            
+
                             {
                                 Sunplus.Accounting.Core.Extensions.LogExtensions.ExceptionHandler(ex);
                             }
@@ -1155,7 +1153,7 @@ namespace Sunplus.Accounting.Business.Settlement
             }
             catch (Exception ex)
             {
-                
+
                 {
                     Sunplus.Accounting.Core.Extensions.LogExtensions.ExceptionHandler(ex);
                 }
@@ -1171,11 +1169,11 @@ namespace Sunplus.Accounting.Business.Settlement
             {
                 string _sMain = WebUtils.LoadTemplate("Settle/MainBaseBall.htm");
                 string _strRow = WebUtils.LoadTemplate("Settle/RowBaseBall.htm");
-                string _strLeague =WebUtils.LoadTemplate("Settle/LeagueName.htm");
+                string _strLeague = WebUtils.LoadTemplate("Settle/LeagueName.htm");
                 if (permissions.IndexOf("[C]") > -1)
                 {
 
-                   
+
                     TemplateHandler.Assign(ref _strLeague, "{colspan}", (totalColumns - 1).ToString());
                     TemplateHandler.RemoveBlock(ref _sMain, "MultRead");
                     TemplateHandler.RemoveBlock(ref _sMain, "RefuRead");
@@ -1183,7 +1181,7 @@ namespace Sunplus.Accounting.Business.Settlement
                 }
                 else
                 {
-                    
+
                     TemplateHandler.Assign(ref _strLeague, "{colspan}", totalColumns.ToString());
                     TemplateHandler.RemoveBlock(ref _sMain, "MultHost");
                     TemplateHandler.RemoveBlock(ref _sMain, "RefuHost");
@@ -1275,7 +1273,7 @@ namespace Sunplus.Accounting.Business.Settlement
                         }
                         catch (Exception ex)
                         {
-                            
+
                             {
                                 Sunplus.Accounting.Core.Extensions.LogExtensions.ExceptionHandler(ex);
                             }
@@ -1323,7 +1321,7 @@ namespace Sunplus.Accounting.Business.Settlement
             }
             catch (Exception ex)
             {
-                
+
                 {
                     Sunplus.Accounting.Core.Extensions.LogExtensions.ExceptionHandler(ex);
                 }
