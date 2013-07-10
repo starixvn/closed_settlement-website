@@ -1,45 +1,119 @@
-<tr class="fs10 c {bgClass}">
-  <td>{code}</td>  
-  <td rowspan="2">{date}</td>
-  <td class="b teamname ht">{homeTeam}</td>
-  <td>{home1}</td>
-  <td>{home2}</td>
-  <td>{home3}</td>  
-  <td>{home4}</td> 
-  <td>{home5}</td>   
-  <td>{home6}</td> 
-  <td>{home7}</td> 
-  <td>{home8}</td> 
-  <td>{home9}</td> 
-  <td class="htsc">{homeEI}</td> 
-  <td class="htsc">{homeHT}</td>  
-  <td class="ftsc">{homeFT}</td>   
-  <td rowspan="2"{bgEventStatus}>{eventstatus}</td>
-  {calLink}
-  <td rowspan="2"><!--confirmpendingread--><input type="checkbox" {ispending} disabled="disabled" /><!--/confirmpendingread--><!--confirmpendinghost--><input type="checkbox" {ispending} {displaypending} onclick="updateIsPending(this,'{matchid}');" /><!--/confirmpendinghost--></td>
-  <!--confirmht-->
-  <td rowspan="2">{confirmht}</td>
-  <!--/confirmht-->
-  <!--confirmft-->
-  <td rowspan="2">{confirmft}</td>
-  <!--/confirmft-->
+<tr class="fs10 c {bgClass} match_row_{matchid}">
+    <td>
+        <div class="c"style="width: 120px;">{code}</div>
+    </td>
+    <td rowspan="2">
+        <div class="c"style="width: 120px;">{date}</div>
+    </td>
+    <td>
+        <div class="b teamname ht"style="width: 144px;">{homeTeam}</div>
+    </td>    
+    <td>
+        <div style="width: 20px;">{home1}</div>
+    </td>
+    <td>
+        <div style="width: 20px;">{home2}</div>
+    </td>
+    <td>
+        <div style="width: 20px;">{home3}</div>
+    </td>
+    <td>
+        <div style="width: 20px;">{home4}</div>
+    </td>
+    <td>
+        <div style="width: 20px;">{home5}</div>
+    </td>
+    <td>
+        <div style="width: 20px;">{home6}</div>
+    </td>
+    <td>
+        <div style="width: 20px;">{home7}</div>
+    </td>
+    <td>
+        <div style="width: 20px;">{home8}</div>
+    </td>
+    <td>
+        <div style="width: 20px;">{home9}</div>
+    </td>
+    <td>
+        <div class="htsc"style="width: 20px;">{homeEI}</div>
+    </td>
+    <td>
+        <div class="htsc"style="width: 40px;">{homeHT}</div>
+    </td>
+    <td>
+        <div class="ftsc"style="width: 40px;">{homeFT}</div>
+    </td>
+    <td rowspan="2">
+        <div class="htsc"style="width: 60px;">{eventstatus}</div>
+    </td>
+  {calLink}   
+    <td rowspan="2">
+        <div style="width: 60px;">
+            <!--confirmpendingread-->
+            <input type="checkbox" {ispending} disabled="disabled" />
+            <!--/confirmpendingread-->
+            <!--confirmpendinghost-->
+            <input type="checkbox" {ispending} {displaypending} onclick="updateIsPending(this,'{matchid}');" />
+            <!--/confirmpendinghost-->
+        </div>
+    </td>
+    <!--confirmht-->
+    <td rowspan="2">
+        <div style="width: 60px;">{confirmht}</div>
+    </td>
+    <!--/confirmht-->
+    <!--confirmft-->
+    <td rowspan="2">
+        <div style="width: 60px;">{confirmft}</div>
+    </td>
+    <!--/confirmft-->
 </tr>
-<tr class="fs10 c {bgClass}"">
-  <td> 
-        <img onclick="ShowSettlementLog('{code}', '{fdate}', '{tdate}');" class="hand" src="../App_Themes/Images/icn_view.png" />
-        <div class="undecided_{isdecided} {hand}"  {event} title="{ContentOfTooltip}"></div>
-  </td>
-  <td class="b teamname at">{awayTeam}</td>
-  <td>{away1}</td>
-  <td>{away2}</td>
-  <td>{away3}</td>  
-  <td>{away4}</td> 
-  <td>{away5}</td>   
-  <td>{away6}</td> 
-  <td>{away7}</td> 
-  <td>{away8}</td> 
-  <td>{away9}</td> 
-  <td class="htsc">{awayEI}</td> 
-  <td class="htsc">{awayHT}</td> 
-  <td class="ftsc">{awayFT}</td>  
+<tr class="fs10 c {bgClass}">
+    <td>
+        <div style="width: 120px;">
+            <div onclick="ShowSettlementLog('{code}', '{fdate}', '{tdate}');" class="viewhis"></div>
+            <div class="undecided_{isdecided} {hand}" {event} title="{ContentOfTooltip}"></div>
+        </div>
+    </td>
+    <td>
+        <div  class="b teamname at" style="width: 144px;">{awayTeam}</div>
+    </td>
+   
+    <td>
+        <div style="width: 20px;">{away1}</div>
+    </td>
+    <td>
+        <div style="width: 20px;">{away2}</div>
+    </td>
+    <td>
+        <div style="width: 20px;">{away3}</div>
+    </td>
+    <td>
+        <div style="width: 20px;">{away4}</div>
+    </td>
+    <td>
+        <div style="width: 20px;">{away5}</div>
+    </td>
+    <td>
+        <div style="width: 20px;">{away6}</div>
+    </td>
+    <td>
+        <div style="width: 20px;">{away7}</div>
+    </td>
+    <td>
+        <div style="width: 20px;">{away8}</div>
+    </td>
+    <td>
+        <div style="width: 20px;">{away9}</div>
+    </td>
+    <td>
+        <div class="htsc"style="width: 20px;">{awayEI}</div>
+    </td>
+    <td>
+        <div class="htsc" style="width: 40px;">{awayHT}</div>
+    </td>
+    <td>
+        <div class="ftsc" style="width: 40px;">{awayFT}</div>
+    </td>
 </tr>

@@ -114,7 +114,8 @@ td.width-300 {width:300px;}
 {
 	text-align:left !important;
 	padding-left:6px !important;
-	}
+	word-break: break-all;
+}
 .btnrefresh
 {
 	background:url(../images/icRefresh.png) no-repeat center left;
