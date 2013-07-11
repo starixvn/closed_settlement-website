@@ -331,6 +331,12 @@ var settlementManagement = {
             };
 
             settlementManagement.cachedData.tables.report.removeClass("hidden").gridScroller(gridOptions);
+
+
+            if (isRefresh) {
+                var container = settlementManagement.cachedData.tables.report.find(".container");
+                container.prop("scrollTop", scrollTop);
+            }
         }
     },
     getMatchCalculateStatus: function (calcMPStatus, matchId) {

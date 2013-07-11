@@ -1,4 +1,7 @@
 ﻿var gSubmitParams = '';
+var isRefresh = false;
+var scrollTop = 0;
+
 function ClosePopupSettlement() {
     parent.dhtmlwindow.close(ctrWnd);
 }
@@ -56,6 +59,8 @@ function GetSettleMatch() {
         params += '&isUncalMul=' + ((jQuery('#chkUnCalMultiple').attr('checked')) ? 1 : 0);
     }
     gSubmitParams = params;
+
+    isRefresh = false;
     var myajax = new Ajax.Request("GetSettleMatch.ashx", {
         asynchronous: true,
         method: 'post',
@@ -79,6 +84,12 @@ function BindSettleMatch(rs) {
 function Refresh() {
     //BeginLoading();
     try { parent.BlockUI(); } catch (e) { BlockUI(); }
+    isRefresh = true;
+    if (isRefresh) {
+        var container = settlementManagement.cachedData.tables.report.find(".container");
+        scrollTop = container.scrollTop();
+    }
+
     var myajax = new Ajax.Request("GetSettleMatch.ashx", {
         asynchronous: true,
         method: 'post',
