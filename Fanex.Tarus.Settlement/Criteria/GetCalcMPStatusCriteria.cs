@@ -10,7 +10,6 @@
 namespace Fanex.Tarus.Settlement.Criteria
 {
     using System.Diagnostics.CodeAnalysis;
-    using System.Web.Mvc;
 
     [SuppressMessage("Microsoft.StyleCop.CSharp.DocumentationRules", "SA1600:ElementsMustBeDocumented")]
     public class GetCalcMPStatusCriteria

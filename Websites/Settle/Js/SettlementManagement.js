@@ -93,6 +93,7 @@ var settlementManagement = {
         var calcStatusConstants = settlementManagement.enums.CalcStatusConstants;
         var lastQueueLength = settlementManagement.cachedData.inCalculateQueueMatches.length;
         var updatedQueue = [];
+        var completedMatchs = [];
         for (var i = 0; i < lastQueueLength; i++) {
             var calcInfo = settlementManagement.cachedData.inCalculateQueueMatches[i];
             switch (calcInfo.Status) {
@@ -102,20 +103,18 @@ var settlementManagement = {
                         match_row.find(".colCalculation:not(.colCalculation_Disabled)").addClass("hidden");
                         match_row.find(".colRefund:not(.colRefund_Disabled)").addClass("hidden");
                         match_row.find(".calmultiple:not(.calmultiple_Disabled)").addClass("hidden");
-
-                        //                        var calmultipleParent = match_row.find(".calmultiple").parent();
-                        //                        var calmultipleClass = calmultipleParent.attr("class");
-                        //                        calmultipleParent.attr("class", "");
-                        //                        if (calmultipleClass != "") {
-                        //                            calmultipleParent.attr("preClass", calmultipleClass);
-                        //                        }
-
                         match_row.find(".colCalculation_Disabled").removeClass("hidden");
                         match_row.find(".colRefund_Disabled").removeClass("hidden");
                         match_row.find(".calmultiple_Disabled").html(calcInfo.StatusName)
                                                                    .removeClass("calcStatus_Calculating")
                                                                    .addClass("calcStatus_Waiting")
                                                                    .removeClass("hidden");
+
+                        var calmultipleParent = match_row.find(".calmultiple").parent();
+                        //                        if (calcInfo.PreClass == undefined) {
+                        //                            calcInfo.PreClass = calmultipleParent.attr("class");
+                        //                        }
+                        calmultipleParent.removeClass("bgRef").removeClass("bgBill");
                     }
 
                     updatedQueue.push(calcInfo);
@@ -126,53 +125,80 @@ var settlementManagement = {
                         match_row.find(".colCalculation:not(.colCalculation_Disabled)").addClass("hidden");
                         match_row.find(".colRefund:not(.colRefund_Disabled)").addClass("hidden");
                         match_row.find(".calmultiple:not(.calmultiple_Disabled)").addClass("hidden");
-
-                        //                        var calmultipleParent = match_row.find(".calmultiple").parent();
-                        //                        var calmultipleClass = calmultipleParent.attr("class");
-                        //                        calmultipleParent.attr("class", "");
-                        //                        if (calmultipleClass != "") {
-                        //                            calmultipleParent.attr("preClass", calmultipleClass);
-                        //                        }
-
                         match_row.find(".colCalculation_Disabled").removeClass("hidden");
                         match_row.find(".colRefund_Disabled").removeClass("hidden");
                         match_row.find(".calmultiple_Disabled").html(calcInfo.StatusName)
                                                                    .removeClass("calcStatus_Waiting")
                                                                    .addClass("calcStatus_Calculating")
                                                                    .removeClass("hidden");
+
+                        var calmultipleParent = match_row.find(".calmultiple").parent();
+                        calmultipleParent.removeClass("bgRef").removeClass("bgBill");
+                        //                        if (calcInfo.PreClass != undefined) {
+                        //                            calmultipleParent.removeClass("bgRef").removeClass("bgBill").addClass(calcInfo.PreClass);
+                        //                        }
                     }
 
                     updatedQueue.push(calcInfo);
                     break;
                 case calcStatusConstants.Completed:
-                    var match_row = jQuery(".match_row_" + calcInfo.Id);
-                    if (match_row && match_row.length) {
-                        match_row.find(".colCalculation_Disabled").addClass("hidden");
-                        match_row.find(".colRefund_Disabled").addClass("hidden");
-                        match_row.find(".calmultiple_Disabled").html('').addClass("hidden");
-                        var calmultipleParent = match_row.find(".calmultiple").parent();
-                        //                        var calmultipleClass = calmultipleParent.attr("preClass");
-                        //                        calmultipleParent.attr("preClass", "").attr("class", calmultipleClass);
-                        if (calmultipleParent.attr("class") == undefined ||
-                            calmultipleParent.attr("class") == "") {
-                            calmultipleParent.addClass("bgBill");
-                        }
-
-                        var calmultipleCheckBox = match_row.find(".calmultiple:not(.calmultiple_Disabled)");
-                        var subCheckAll = calmultipleCheckBox.prop("id").split("_")[3];
-                        calmultipleCheckBox.prop("checked", false).removeClass("hidden");
-                        jQuery("#chk_all").prop("checked", false);
-                        jQuery("#chk_" + subCheckAll).prop("checked", false);
-
-                        match_row.find(".colCalculation:not(.colCalculation_Disabled)").removeClass("hidden");
-                        match_row.find(".colRefund:not(.colRefund_Disabled)").removeClass("hidden");
-                    }
-
+                    completedMatchs.push(calcInfo.Id);
                     break;
             }
         }
 
+        settlementManagement.updateCompletedMatches(completedMatchs);
         settlementManagement.cachedData.inCalculateQueueMatches = updatedQueue;
+    },
+    updateCompletedMatches: function (completedMatchs) {
+        if (completedMatchs == null || completedMatchs.length == 0) {
+            return;
+        }
+
+        jQuery.ajax({
+            type: "POST",
+            url: "../Settlement_CalculateMP/GetCompletedCalcMPStatus",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            data: JSON.stringify({
+                MatchCodes: completedMatchs.join(",")
+            }),
+            beforeSend: function () {
+            },
+            success: function (rs) {
+                if (rs && rs.ChildInfo.length) {
+                    var resultLength = rs.ChildInfo.length;
+                    for (var i = 0; i < resultLength; i++) {
+                        var calcInfo = rs.ChildInfo[i];
+                        var match_row = jQuery(".match_row_" + calcInfo.Id);
+                        if (match_row && match_row.length) {
+                            match_row.find(".colCalculation_Disabled").addClass("hidden");
+                            match_row.find(".colRefund_Disabled").addClass("hidden");
+                            match_row.find(".calmultiple_Disabled").html('').addClass("hidden");
+                            var calmultipleCheckBox = match_row.find(".calmultiple:not(.calmultiple_Disabled)");
+                            var subCheckAll = calmultipleCheckBox.attr("id").split("_")[3];
+                            calmultipleCheckBox.attr("checked", false).removeClass("hidden");
+                            jQuery("#chk_all").attr("checked", false);
+                            jQuery("#chk_" + subCheckAll).attr("checked", false);
+
+                            var calmultipleParent = match_row.find(".calmultiple").parent();
+                            if (calcInfo.IsMultipleCalculated) {
+                                calmultipleParent.removeClass("bgRef").addClass("bgBill");
+                            } else if (calcInfo.IsRefunded) {
+                                calmultipleParent.removeClass("bgBill").addClass("bgRef");
+                            }
+
+                            match_row.find(".colCalculation:not(.colCalculation_Disabled)").removeClass("hidden");
+                            match_row.find(".colRefund:not(.colRefund_Disabled)").removeClass("hidden");
+                        }
+                    }
+                }
+            },
+            error: function (event, jqXHR, ajaxSettings) {
+            },
+            complete: function () {
+            }
+        });
     },
     isInCalcMPQueue: function (matchId) {
         var queueLength = settlementManagement.cachedData.inCalculateQueueMatches.length;
@@ -261,29 +287,6 @@ var settlementManagement = {
             parameters: 'p=' + params + '&type=' + type,
             onComplete: MultipleResult
         });
-
-        //        var paramForCalculating = {
-        //            MatchCodes: settlementManagement.cachedData.selectedMatchInfo
-        //        };
-
-        //        jQuery.ajax({
-        //            type: "POST",
-        //            url: "../Settlement_CalculateMP/DoCalcMP",
-        //            contentType: "application/json; charset=utf-8",
-        //            dataType: "json",
-        //            data: JSON.stringify(paramForCalculating),
-        //            beforeSend: function () {
-        //            },
-        //            success: function (rs) {
-        //                MultipleResult({
-        //                    responseText: rs.ResultMessage
-        //                });
-        //            },
-        //            error: function (event, jqXHR, ajaxSettings) {
-        //            },
-        //            complete: function () {
-        //            }
-        //        });
     },
     makeFreezeGrid: function () {
         settlementManagement.cachedTables();
@@ -335,7 +338,7 @@ var settlementManagement = {
 
             if (isRefresh) {
                 var container = settlementManagement.cachedData.tables.report.find(".container");
-                container.prop("scrollTop", scrollTop);
+                container.attr("scrollTop", scrollTop);
             }
         }
     },
@@ -409,6 +412,9 @@ var settlementManagement = {
             case calculateTypeEnum.Refund:
                 title = 'Refund';
                 height += 80;
+                break;
+            case calculateTypeEnum.Billing:
+                height += 180;
                 break;
             case calculateTypeEnum.KeyScore:
                 title = 'Key Score';

@@ -18,6 +18,8 @@ namespace Fanex.Tarus.Settlement.Services.Interface
     {
         CalcInfo GetCalcMPStatus(GetCalcMPStatusCriteria criteria);
 
+        CalcInfo GetCompletedCalcMPStatus(GetCompletedCalcMPStatusCriteria criteria);
+
         Settlement_ActionResult DoCalcMP(GetCalcMPStatusCriteria criteria);
     }
 }

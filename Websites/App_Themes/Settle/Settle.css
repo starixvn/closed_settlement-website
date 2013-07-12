@@ -96,7 +96,7 @@ td.width-300 {width:300px;}
 .disableFlag {background: url(../../App_Themes/Images/flag02.gif) no-repeat center #fce9fb;}
 .OpenFlag {background: url(../../App_Themes/Images/flag01.gif) no-repeat center #EEECEE;}
 .movebet { font-weight:bold; color:#0000ff;}
-.undecided td{ background-color:#f8d7d7 !important;}
+.undecided td{ background-color:#f8d7d7;}
 
 .leaguerefresh
 {

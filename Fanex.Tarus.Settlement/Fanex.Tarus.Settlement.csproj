@@ -99,6 +99,7 @@
     <Compile Include="Constants\CalcStatusConstants.cs" />
     <Compile Include="Controllers\SettlementController.cs" />
     <Compile Include="Criteria\GetCalcMPStatusCriteria.cs" />
+    <Compile Include="Criteria\GetCompletedCalcMPStatusCriteria.cs" />
     <Compile Include="DataAccess\Implement\CalculateMPDataAccess.cs" />
     <Compile Include="DataAccess\Interface\ICalculateMPDataAccess.cs" />
     <Compile Include="Entity\GoalInfo.cs" />

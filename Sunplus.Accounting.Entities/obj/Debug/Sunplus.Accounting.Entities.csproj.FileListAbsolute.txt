@@ -43,3 +43,4 @@ D:\GitSources\Settlement\ibcsettlement\Sunplus.Accounting.Entities\bin\Debug\Sun
 D:\GitSources\Settlement\ibcsettlement\Sunplus.Accounting.Entities\obj\Debug\ResolveAssemblyReference.cache
 D:\GitSources\Settlement\ibcsettlement\Sunplus.Accounting.Entities\obj\Debug\Sunplus.Accounting.Entities.dll
 D:\GitSources\Settlement\ibcsettlement\Sunplus.Accounting.Entities\obj\Debug\Sunplus.Accounting.Entities.pdb
+F:\nexcel\[Rome][Git]\Settlement\ibcsettlement\Sunplus.Accounting.Entities\obj\Debug\Sunplus.Accounting.Entities.csprojResolveAssemblyReference.cache

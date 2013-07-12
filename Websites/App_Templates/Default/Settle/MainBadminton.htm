@@ -1,239 +1,31 @@
-<div class="freegrid settleMatchLog hidden">
-    <div class="grid-title">
-        <div class="grid-title-lable">
-            EVENT FROM {fdate} TO {tdate}</div>
-    </div>
-    <div class="col_header row-headers-background scroll-y">
-        <div class="header-container">
-            <table class="grid-fixed-table col_header_content">
-                <thead>
-                    <tr>
-                        <th>
-                            <div class="c table-cell" style="width: 120px; height: 39px;">
-                                CODE</div>
-                        </th>
-                        <th>
-                            <div class="c table-cell" style="width: 120px;">
-                                KICK-OFF TIME</div>
-                        </th>
-                        <th>
-                            <div class="c table-cell" style="width: 265px;">
-                                EVENT</div>
-                        </th>                        
-                        <th>
-                            <div class="c table-cell" style="width: 22px;">
-                                1S</div>
-                        </th>
-                        <th>
-                            <div class="c table-cell" style="width: 22px;">
-                                2S</div>
-                        </th>
-                        <th>
-                            <div class="c table-cell" style="width: 22px;">
-                                3S</div>
-                        </th>
-                        <th>
-                            <div class="c table-cell" style="width: 22px;">
-                                4S</div>
-                        </th>
-                        <th>
-                            <div class="c table-cell" style="width: 22px;">
-                                5S</div>
-                        </th>
-                        <th>
-                            <div class="c table-cell" style="width: 40px;">
-                               TOTAL POINTS</div>
-                        </th>
-                        <th>
-                            <div class="c table-cell" style="width: 40px;">
-                              TOTAL SET</div>
-                        </th>
-                        <th>
-                            <div class="c table-cell" style="width: 60px;">
-                                EVENT STATUS</div>
-                        </th>
-                        <th>
-                            <div class="c table-cell" style="width: 90px;">
-                                CALCULATION</div>
-                        </th>
-                        <th {displayMul}>
-                            <div class="c table-cell" style="width: 80px;">
-                                <!--MultRead-->
-                                MULTIPLE
-                                <!--/MultRead-->
-                                <!--MultHost-->
-                               <input class="btn btnCalcMp" type="button" onclick="DoCalMultiple();" value="Calc MP" title="Calculate MP" />
-                                <br />
-                                <input type="checkbox" id="chk_all" onclick="checkMultipleAll();" />
-                               <!--/MultHost-->
-                            </div>
-                        </th>
-                        <th {display-Refund}>
-                            <div class="c table-cell" style="width: 60px;">
-                                REFUND</div>
-                        </th>
-                        <!--confirmpending-->
-                        <th>
-                            <div class="c table-cell" style="width: 60px;">
-                                CONFIRM PENDING</div>
-                        </th>
-                        <!--/confirmpending-->
-                        <!--confirmht-->
-                        <th>
-                            <div class="c table-cell" style="width: 60px;">
-                                CONFIRM HT</div>
-                        </th>
-                        <!--/confirmht-->
-                        <!--confirmft-->
-                        <th>
-                            <div class="c table-cell" style="width: 60px;">
-                                CONFIRM FT</div>
-                        </th>
-                        <!--/confirmft-->
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <div class="grid-container container">
-        <div class="content-container">
-            <table id="settleMatchLog_Content" class="grid-fixed-table col_body_content">
-              <thead>
-                    <tr>
-                        <th>
-                            <div class="c table-cell" style="width: 120px; height: 39px;">
-                                CODE</div>
-                        </th>
-                        <th>
-                            <div class="c table-cell" style="width: 120px;">
-                                KICK-OFF TIME</div>
-                        </th>
-                        <th>
-                            <div class="c table-cell" style="width: 265px;">
-                                EVENT</div>
-                        </th>                        
-                        <th>
-                            <div class="c table-cell" style="width: 22px;">
-                                1S</div>
-                        </th>
-                        <th>
-                            <div class="c table-cell" style="width: 22px;">
-                                2S</div>
-                        </th>
-                        <th>
-                            <div class="c table-cell" style="width: 22px;">
-                                3S</div>
-                        </th>
-                        <th>
-                            <div class="c table-cell" style="width: 22px;">
-                                4S</div>
-                        </th>
-                        <th>
-                            <div class="c table-cell" style="width: 22px;">
-                                5S</div>
-                        </th>
-                        <th>
-                            <div class="c table-cell" style="width: 40px;">
-                               TOTAL POINTS</div>
-                        </th>
-                        <th>
-                            <div class="c table-cell" style="width: 40px;">
-                              TOTAL SET</div>
-                        </th>
-                        <th>
-                            <div class="c table-cell" style="width: 60px;">
-                                EVENT STATUS</div>
-                        </th>
-                        <th>
-                            <div class="c table-cell" style="width: 90px;">
-                                CALCULATION</div>
-                        </th>
-                        <th {displayMul}>
-                            <div class="c table-cell" style="width: 80px;">
-                                <!--MultRead-->
-                                MULTIPLE
-                                <!--/MultRead-->
-                                <!--MultHost-->
-                                    <input class="btn btnCalcMp" type="button" onclick="DoCalMultiple();" value="Calc MP" title="Calculate MP" />
-                                <br />
-                                <input type="checkbox" id="Checkbox1" onclick="checkMultipleAll();" />
-                            <!--/MultHost-->
-                            </div>
-                        </th>
-                        <th {display-Refund}>
-                            <div class="c table-cell" style="width: 60px;">
-                                REFUND</div>
-                        </th>
-                        <!--confirmpending-->
-                        <th>
-                            <div class="c table-cell" style="width: 60px;">
-                                CONFIRM PENDING</div>
-                        </th>
-                        <!--/confirmpending-->
-                        <!--confirmht-->
-                        <th>
-                            <div class="c table-cell" style="width: 60px;">
-                                CONFIRM HT</div>
-                        </th>
-                        <!--/confirmht-->
-                        <!--confirmft-->
-                        <th>
-                            <div class="c table-cell" style="width: 60px;">
-                                CONFIRM FT</div>
-                        </th>
-                        <!--/confirmft-->
-                    </tr>
-                </thead>
-                <tbody>
-                    {content}
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <div class="free-cell free-bottom-left">
-        <table class="grid-fixed-table">
-            <thead>
-                <tr>
-                    <th class="free-cell-bottom-left">
-                        <div>
-                        </div>
-                    </th>
-                </tr>
-            </thead>
-        </table>
-    </div>
-    <div class="free-cell free-top-right">
-        <table class="grid-fixed-table">
-            <thead>
-                <tr>
-                    <th class="free-cell-top-right">
-                        <div>
-                        </div>
-                    </th>
-                </tr>
-            </thead>
-        </table>
-    </div>
-    <div class="free-cell free-bottom-right">
-        <table class="grid-fixed-table">
-            <thead>
-                <tr>
-                    <th class="free-cell-bottom-right" style="height: 12px;">
-                        <div>
-                        </div>
-                    </th>
-                </tr>
-            </thead>
-        </table>
-    </div>
-    <div class="y-scrollbar">
-        <div class="scrollbar-y-content">
-            &nbsp;</div>
-    </div>
-    <div class="x-scrollbar">
-        <div class="scrollbar-x-content">
-            &nbsp;</div>
-    </div>
-</div>
+<table class="tblcollapse">
+    <tr class="title1">
+        <td colspan="17" class="c">EVENT FROM {fdate} TO {tdate}</td>
+    </tr>
+    <tr class="title">
+        <td style="width:100px;">CODE</td>
+        <td width="115">KICK-OFF TIME</td>
+        <td >EVENT</td>   
+        <td width="22">1S</td>
+        <td width="22">2S</td>
+        <td width="22">3S</td>
+        <td width="22">4S</td>  
+        <td width="22">5S</td>    
+        <td width="44">TOTAL<br />POINTS</td>
+        <td width="44">TOTAL<br />SET</td>
+        <td width="55">EVENT<br />STATUS</td>
+        <td width="85">CALCULATION</td>
+        <td width="60" {displayMul}><!--MultRead-->MULTIPLE<!--/MultRead--><!--MultHost--><input class="btn" type="button" style="margin-right:0px;" onclick="DoCalMultiple();" value="Calc MP" title="Calculate MP"></input><br /><input type="checkbox" id="chk_all" onclick="checkMultipleAll();"  /><!--/MultHost--> </td>
+        <td width="60" {display-Refund}>REFUND</td>  
+        <!--confirmpending-->
+        <td width="60">CONFIRM PENDING</td>
+        <!--/confirmpending-->
+        <!--confirmht-->
+        <td width="60">CONFIRM HT</td>
+        <!--/confirmht-->
+        <!--confirmft-->
+        <td width="60">CONFIRM FT</td>
+        <!--/confirmft-->
+    </tr>
+    {content}
+</table>

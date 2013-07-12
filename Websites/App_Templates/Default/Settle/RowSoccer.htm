@@ -1,76 +1,28 @@
 <tr class="fs10 c {bgClass} match_row_{matchid}">
-    <td>
-        <div class="c"style="width: 120px;">{code}</div>
-    </td>
-    <td rowspan="2">
-        <div class="c"style="width: 120px;">{date}</div>
-    </td>
-    <td>
-        <div class="b teamname ht"style="width: 394px;">
-            {hometeam}&nbsp;
-            <!--FGLG-->
-            <img id="Img1" style="display:{hfgoaldisplay};" src="../App_Themes/Images/firstGoal.gif" width="14px" height="10px" border="0px" />
-            <img id="Img2" style="display:{hlgoaldisplay};" src="../App_Themes/Images/lastGoal.gif" width="14px" height="10px" border="0px" />
-            <!--/FGLG-->
-        </div>
-    </td>
-    <td>
-        <div class="htsc"style="width: 40px;">{homeHT}</div>
-    </td>
-    <td>
-        <div class="ftsc"style="width: 40px;">{homeFT}</div>
-    </td>
-    <td rowspan="2">
-        <div class="htsc"style="width: 60px;">{eventstatus}</div>
-    </td>
+  <td >{code}</td>  
+  <td rowspan="2">{date}</td>
+  <td class="b teamname ht">{hometeam}&nbsp;<!--FGLG--><img id="hfgoal" style="display:{hfgoaldisplay};" src="../App_Themes/Images/firstGoal.gif" width="14px" height="10px" border="0px" /><img id="hlgoal" style="display:{hlgoaldisplay};" src="../App_Themes/Images/lastGoal.gif" width="14px" height="10px" border="0px" /><!--/FGLG--></td>
+  <td class="htsc">{homeHT}</td>
+  <td class="ftsc">{homeFT}</td>
+  <td rowspan="2" {bgEventStatus}>{eventstatus}</td>  
   {calLink}
-    <!--betcount-->
-    <td rowspan="2">
-        <div style="width: 40px;">{betcnt}</div>
-    </td>
+   <!--betcount-->
+   <td rowspan="2">{betcnt}</td>
     <!--/betcount-->
-    <td rowspan="2">
-        <div style="width: 60px;">
-            <!--confirmpendingread-->
-            <input type="checkbox" {ispending} disabled="disabled" />
-            <!--/confirmpendingread-->
-            <!--confirmpendinghost-->
-            <input type="checkbox" {ispending} {displaypending} onclick="updateIsPending(this,'{matchid}');" />
-            <!--/confirmpendinghost-->
-        </div>
-    </td>
-
-    <!--confirmht-->
-    <td rowspan="2">
-        <div style="width: 60px;">{confirmht}</div>
-    </td>
-    <!--/confirmht-->
-    <!--confirmft-->
-    <td rowspan="2">
-        <div style="width: 60px;">{confirmft}</div>
-    </td>
-    <!--/confirmft-->
+  <td rowspan="2"><!--confirmpendingread--><input type="checkbox" {ispending} disabled="disabled" /><!--/confirmpendingread--><!--confirmpendinghost--><input type="checkbox" {ispending} {displaypending} onclick="updateIsPending(this,'{matchid}');" /><!--/confirmpendinghost--></td>
+  <!--confirmht-->
+  <td rowspan="2">{confirmht}</td>
+  <!--/confirmht-->
+  <!--confirmft-->
+  <td rowspan="2">{confirmft}</td>
+  <!--/confirmft-->
 </tr>
 <tr class="fs10 c {bgClass}">
-    <td>
-        <div style="width: 120px;">
-            <div onclick="ShowSettlementLog('{code}', '{fdate}', '{tdate}');" class="viewhis"></div>
-            <div class="undecided_{isdecided} {hand}"  {event} title="{ContentOfTooltip}"></div>
-        </div>
-    </td>
-    <td>
-        <div  class="b teamname at" style="width: 394px;">
-            {awayteam}&nbsp;
-            <!--FGLG-->
-            <img id="afgoal" style="display:{afgoaldisplay};" src="../App_Themes/Images/firstGoal.gif" width="14px" height="10px" border="0px" />
-            <img id="algoal" style="display:{algoaldisplay};" src="../App_Themes/Images/lastGoal.gif" width="14px" height="10px" border="0px" />
-            <!--/FGLG-->
-        </div>
-    </td>
-    <td>
-        <div class="htsc" style="width: 40px;">{awayHT}</div>
-    </td>
-    <td>
-        <div class="ftsc" style="width: 40px;">{awayFT}</div>
-    </td>
+  <td >
+    <div onclick="ShowSettlementLog('{code}', '{fdate}', '{tdate}');" class="viewhis"></div>
+    <div class="undecided_{isdecided} {hand}"  {event} title="{ContentOfTooltip}"></div>
+  </td>
+  <td class="b teamname at">{awayteam}&nbsp;<!--FGLG--><img id="afgoal" style="display:{afgoaldisplay};" src="../App_Themes/Images/firstGoal.gif" width="14px" height="10px" border="0px" /><img id="algoal" style="display:{algoaldisplay};" src="../App_Themes/Images/lastGoal.gif" width="14px" height="10px" border="0px" /><!--/FGLG--></td>
+  <td class="htsc">{awayHT}</td>
+  <td class="ftsc">{awayFT}</td>
 </tr>
