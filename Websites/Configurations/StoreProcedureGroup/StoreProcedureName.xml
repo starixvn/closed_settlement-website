@@ -42,6 +42,7 @@
     
     <Setting Key="Admin_Settlement_ReplicateData_UnSettled" SpName="Dot_Repl_UnSettled" DbName="DB04" />
     <Setting Key="Settlement_SelCalcMPStatus" SpName="Acc_Set_ParlayWaitingSel" DbName="DBTXN.BODB02" />
+    <Setting Key="Settlement_SelCompletedCalcMPStatus" SpName="Acc_Set_MatchSettledStatusSel" DbName="DBPRO.BODB02" />
   </Function>
 
   <Function Name="Settlement - Live Casino">
