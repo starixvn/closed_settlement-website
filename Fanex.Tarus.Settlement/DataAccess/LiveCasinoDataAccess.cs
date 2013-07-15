@@ -99,7 +99,7 @@ namespace Fanex.Tarus.Settlement.DataAccess
             {
                 objDB.AddInParameter("matchid", DbType.Int32, MatchID);                
                 objDB.AddInParameter("player", DbType.Int32, Player);
-                if (bettypeId != (int)Enumerations.Bettype.Routle)
+                if (bettypeId != (int)Enumerations.Bettype.PartyRoutle)
                 {
                     objDB.AddInParameter("banker", DbType.Int32, Banker);
                     objDB.AddInParameter("resultdata", DbType.String, ResultData);

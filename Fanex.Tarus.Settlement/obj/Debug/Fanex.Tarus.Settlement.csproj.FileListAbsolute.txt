@@ -152,3 +152,10 @@ D:\GitSources\Settlement\ibcsettlement\Fanex.Tarus.Settlement\obj\Debug\Generate
 D:\GitSources\Settlement\ibcsettlement\Fanex.Tarus.Settlement\obj\Debug\GenerateResource.write.1.tlog
 D:\GitSources\Settlement\ibcsettlement\Fanex.Tarus.Settlement\obj\Debug\Fanex.Tarus.Settlement.dll
 D:\GitSources\Settlement\ibcsettlement\Fanex.Tarus.Settlement\obj\Debug\Fanex.Tarus.Settlement.pdb
+D:\GitSources\Settlement\ibcsettlement\Fanex.Tarus.Settlement\bin\Debug\CasinoUtility.dll
+D:\GitSources\Settlement\ibcsettlement\Fanex.Tarus.Settlement\bin\Debug\LVAPIDBLibrary.dll
+D:\GitSources\Settlement\ibcsettlement\Fanex.Tarus.Settlement\bin\Debug\LVAPILibrary.dll
+D:\GitSources\Settlement\ibcsettlement\Fanex.Tarus.Settlement\bin\Debug\LVCasinoSetting.dll
+D:\GitSources\Settlement\ibcsettlement\Fanex.Tarus.Settlement\bin\Debug\LVCasinoUtility.dll
+D:\GitSources\Settlement\ibcsettlement\Fanex.Tarus.Settlement\bin\Debug\Sunplus.RemoteBetting.dll
+D:\GitSources\Settlement\ibcsettlement\Fanex.Tarus.Settlement\bin\Debug\IBCFile.dll

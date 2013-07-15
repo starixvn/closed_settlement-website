@@ -50,7 +50,17 @@ public partial class LiveCasino_Settlement_LiveCasinoReCalc : PageBase
             Code = match.MatchCode;
             KickOffTime = match.KickOffTime;
             Event = match.ShowTime;
-            FinalScore = betType == (int)Fanex.Tarus.Settlement.Core.Common.Enumerations.Bettype.Baccarat ? (match.FinalHomeScore + " - " + match.FinalAwayScore) : match.FinalHomeScore;
+
+            if (betType == (int)Fanex.Tarus.Settlement.Core.Common.Enumerations.Bettype.PartyBaccarat || betType == (int)Fanex.Tarus.Settlement.Core.Common.Enumerations.Bettype.LiveBaccarat)
+            {
+                FinalScore = match.FinalHomeScore + " - " + match.FinalAwayScore;
+            }
+            else
+            {
+                FinalScore = match.FinalHomeScore;
+            }
+
+            
             Result = match.BetStatus;
             if (match.IsSettled) Settled = "SETTLED";
             FTStatus = match.FTStatus;
