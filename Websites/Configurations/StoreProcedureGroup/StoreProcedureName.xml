@@ -1,53 +1,67 @@
-﻿<?xml version="1.0"?>
-<UserControl>
-    <Policy>
-        <add alias="AdminPolicy" name="Acc_Con_AdminPolicyUpd" db="db03"/>
-        <add alias="GroupPolicy" name="Acc_Con_GroupPolicyUpd" db="db03"/>
-    </Policy>
-    <AccountInfo>
-        <add alias="AdminSel" name="Acc_AccAdminSel" db="main"/>
-        <add alias="UpdPwdReset" name="Acc_CustomerUpdPwdReset" db="main"/>
-        <add alias="AdminUpdClosed" name="Acc_Con_AdminUpdClosed" db="main"/>
-        <add alias="AdminUpdPageAccess" name="Acc_AccAdminUpdPageAccess" db="main"/>
-        <add alias="AdminIns" name="Acc_AccAdminIns" db="main"/>
-        <add alias="AdminInsFromExisted" name="Acc_AccAdminInsFromExisted" db="main"/>
-        <add alias="AdminUpd" name="Acc_AccAdminUpd" db="main"/>
-        <add alias="AdminSelByID" name="Acc_AccAdminSelByID" db="main"/>
-        <add alias="GroupInfoSel" name="Acc_Con_GroupInfoSel" db="db03"/>
-        <add alias="FuncInfoSel" name="Acc_Con_FuncInfoSel" db="db03"/>
-        <add alias="AdminSelByListGroupNameUserName" name="Acc_Con_AdminSelByListGroupNameUserName" db="db03"/>
-        <add alias="FuncInfoSelParent" name="Acc_Con_FuncInfoSelParent" db="db03"/>
-        <add alias="FuncInfoIns" name="Acc_Con_FuncInfoIns" db="db03"/>
-        <add alias="FuncInfoUpd" name="Acc_Con_FuncInfoUpd" db="db03"/>
-        <add alias="FuncInfoDel" name="Acc_Con_FuncInfoDel" db="db03"/>
-        <add alias="AdminPolicySel" name="Acc_Con_Batch_AdminPolicySel" db="db03"/>
-        <add alias="GroupInfoIns" name="Acc_Con_GroupInfoIns" db="db03"/>
-        <add alias="GroupInfoUpd" name="Acc_Con_GroupInfoUpd" db="db03"/>
-        <add alias="GroupInfoDel" name="Acc_Con_GroupInfoDel" db="db03"/>
-        <add alias="AdminSelByGroupID" name="Acc_Con_AdminSelByGroupID" db="db03"/>
-        <add alias="GroupPolicySel" name="Acc_Con_GroupPolicySel" db="db03"/>
-        <add alias="AdminPolicySelByCustID" name="Acc_Con_AdminPolicySelByCustID" db="db03"/>
-        <add alias="FileNameSelByCustID" name="Acc_Con_FileNameSelByCustID" db="db03"/>
-        <add alias="Con_AdminIns" name="Acc_Con_AdminIns" db="main"/>
-        <add alias="Con_AdminUpd" name="Acc_Con_AdminUpd" db="main"/>
-        <add alias="Con_AdminInsFromExisted" name="Acc_Con_AdminInsFromExisted" db="db03"/>
-        <add alias="Con_AdminSelByCustID" name="Acc_Con_AdminSelByCustID" db="db03"/>
-        <add alias="Con_CheckPermission" name="Acc_Con_CheckPermission" db="db03"/>
-        <add alias="Con_CheckPermission_All" name="Acc_Con_CheckPermission_All" db="db03"/>
-        <add alias="OperatorIns" name="Acc_OperatorIns" db="main"/>
-        <add alias="OperatorUpd" name="Acc_OperatorUpd" db="main"/>
-        <add alias="OperatorDel" name="Acc_OperatorDel" db="main"/>
-        <add alias="CustGroupIns" name="Acc_CustGroupIns" db="db053"/>
-        <add alias="CustomerSelUserInfo" name="Acc_CustomerSelUserInfo" db="db053"/>
-    </AccountInfo>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Functions>
+  <Function Name="Customer">
+    <Setting Key="Acc_MenuSelByCustID" SpName="Acc_MenuSelByCustID" DbName="db03"  />
+  </Function>
 
-  <Login>
-    <!--<add alias="LoginAdmin" name="Acc_LoginAdmin" db="main"/>-->
-    <add alias="CustomerSelBelonging" name="Age_CustomerSelBelonging" db="db053"/>
-    <add alias="UserUpdLogout" name="Acc_CheckOut" db="ON_USER"/>
-    <add alias="UserUpd" name="Acc_Recheckin" db="ON_USER"/>
-    <add alias="Checkin" name="Acc_Checkin" db="ON_USER"/>    
+  <Function Name="Live Casino - Settlement">
+    <Setting Key="Acc_Set_LeagueSel" SpName="Acc_Set_LeagueSel" DbName="prod" />
+    <Setting Key="Acc_Set_GameSel" SpName="Acc_Get_LiveCasinoGameList" DbName="prod" />
+    <Setting Key="TP_Game_GameDetail_ByMatchId" SpName="TP_Game_GameDetail_ByMatchId" DbName="LV_MainDB" Plain="1"/>
+    <Setting Key="Acc_Set_LiveCSGameSelScore" SpName="Acc_Get_LiveCasinoGameResult" DbName="prod" />
+    <Setting Key="TP_Controller_MiniBac_VoidFromAct" SpName="TP_Game_MiniBac_VoidFromAct" DbName="LV_MainDB" Plain="1"/>
+    <Setting Key="Dot_Member_LiveCasino_UpdResult" SpName="Dot_Member_LiveCasino_UpdResult" DbName="prod" />
+  </Function>
 
-  </Login>
-  
-</UserControl>
+  <Function Name="Settlement">
+    <Setting Key="updateMatch_remark" SpName="updateMatch_remark" DbName="DBPRO.BODB02" />
+    <Setting Key="WriteLog_UserLog" SpName="WriteLog_UserLog" DbName="main" />
+    <Setting Key="Acc_Set_MatchSel" SpName="Acc_Set_MatchSel" DbName="DBTXN.BODB02" />
+  </Function>
+
+  <!--____________-->
+  <Function Name="Settlement - Sportbook">
+    <Setting Key="Admin_Settlement_1" SpName="Admin_Settlement_1" DbName="DBTXN.BODB02" />
+    <Setting Key="Admin_Settlement_BetDaq_Move" SpName="Admin_Settlement_BetDaq_Move" DbName="DBTXN.BODB02" />
+    <Setting Key="Admin_Settlement_Checking" SpName="Admin_Settlement_Checking" DbName="DBTXN.BODB02" />
+    <Setting Key="Admin_Settlement_FGLG" SpName="Admin_Settlement_FGLG" DbName="DBTXN.BODB02" />
+    <Setting Key="Admin_Settlement_Parlay" SpName="Admin_Settlement_MP_xtest" DbName="DBTXN.BODB02" />
+    <Setting Key="Admin_Settlement_Refund_All" SpName="Admin_Settlement_Refund_All" DbName="DBTXN.BODB02" />
+    <Setting Key="Admin_Settlement_Refund_BetDaq" SpName="Admin_Settlement_Refund_BetDaq" DbName="DBTXN.BODB02" />
+    <Setting Key="Admin_Settlement_RefundFT" SpName="Admin_Settlement_RefundFT" DbName="DBTXN.BODB02" />
+    <Setting Key="Admin_Settlement_RefundHT" SpName="Admin_Settlement_RefundHT" DbName="DBTXN.BODB02" />
+    <Setting Key="Acc_Set_PrivateMessageForRefund" SpName="Acc_Set_PrivateMessageForRefund" DbName="DBTXN.BODB02" />
+    <!--dont find out any method using these sps-->
+    <Setting Key="Acc_Set_HR_ResultSCRSel" SpName="Acc_Set_HR_ResultSCRSel" DbName="DBAGE.BODB02" />
+    <!--dont find out any method using these sps-->
+    <Setting Key="Acc_Set_MatchSelCompleted" SpName="Acc_Set_MatchSelCompleted" DbName="DBTXN.BODB02" />
+    <Setting Key="Acc_Set_MatchSelCompletedHT" SpName="Acc_Set_MatchSelCompletedHT" DbName="DBTXN.BODB02" />
+    <Setting Key="Acc_Set_MatchSelForBill" SpName="Acc_Set_MatchSelForBill" DbName="DBTXN.BODB02" />
+    <Setting Key="Acc_Set_MatchSelScore" SpName="Acc_Set_MatchSelScore" DbName="DBTXN.BODB02" />
+    <Setting Key="Admin_Settlement_Refund_FGLG" SpName="Admin_Settlement_Refund_FGLG" DbName="DBTXN.BODB02" />
+
+    <Setting Key="Settlement_SelCalcMPStatus" SpName="Acc_Set_ParlayWaitingSel" DbName="DBTXN.BODB02" />
+  </Function>
+
+  <Function Name="Settlement - Live Casino">
+    <Setting Key="Admin_Settlement_s162" SpName="Admin_Settlement_s162" DbName="DBTXN.BODB02" />
+  </Function>
+
+  <Function Name="Settlement - Number Game">
+    <Setting Key="Admin_Settlement_s161" SpName="Admin_Settlement_s161" DbName="DBTXN.BODB02" />
+    <Setting Key="Admin_Settlement_s161_Manual" SpName="Admin_Settlement_s161_Manual" DbName="DBTXN.BODB02" />
+  </Function>
+
+  <Function Name="Settlement - Betlist">
+    <!--<Setting Key="SelBetlistResultLC" SpName="Acc_BetList_SelMatchResult" DbName="db053"  />-->
+    <Setting Key="GetCombinationMixparlay" SpName="Acc_BetlistCombinationParlay_Details" DbName="db053"  />
+    <Setting Key="BetlistSystemParlayDetailByTransid" SpName="Acc_BetlistCombinationParlay_ByTransID" DbName="db053"  />
+    <Setting Key="ByTransID" SpName="Acc_BetsSelBetList_ByTransID" DbName="db053"  />
+  </Function>
+  <!--<function Name="Settlement - Customer">
+    <Setting Key="Acc_CustomerSelStatus" SpName="Acc_CustomerSelStatus" DbName="db053"  />
+  </function>-->
+  <Function Name="Customer - Login">
+    <Setting Key="Acc_LoginAdmin" SpName="Acc_LoginAdmin" DbName="DBTXN.BODB02"  />
+  </Function>
+</Functions>
