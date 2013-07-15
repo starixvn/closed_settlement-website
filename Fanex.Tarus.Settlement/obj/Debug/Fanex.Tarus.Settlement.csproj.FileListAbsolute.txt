@@ -152,3 +152,5 @@ D:\GitSources\Settlement\ibcsettlement\Fanex.Tarus.Settlement\obj\Debug\Generate
 D:\GitSources\Settlement\ibcsettlement\Fanex.Tarus.Settlement\obj\Debug\GenerateResource.write.1.tlog
 D:\GitSources\Settlement\ibcsettlement\Fanex.Tarus.Settlement\obj\Debug\Fanex.Tarus.Settlement.dll
 D:\GitSources\Settlement\ibcsettlement\Fanex.Tarus.Settlement\obj\Debug\Fanex.Tarus.Settlement.pdb
+D:\GitSources\Settlement\ibcsettlement\Fanex.Tarus.Settlement\bin\Debug\Sunplus.RemoteBetting.dll
+D:\GitSources\Settlement\ibcsettlement\Fanex.Tarus.Settlement\bin\Debug\IBCFile.dll
