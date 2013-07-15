@@ -174,6 +174,8 @@ function DoCal2_PreventWaitingList(type, ext) {
 
 function DoCal2_AfterCheckWaitingList(type, params) {
     var sConfirm = '';
+    var matchId = params.split("|")[0];
+
     switch (type) {
         case 'm':
             sConfirm = 'Are you sure you want to CALCULATE MULTIPLE This match?';
@@ -213,7 +215,9 @@ function DoCal2_AfterCheckWaitingList(type, params) {
             asynchronous: true,
             method: 'post',
             parameters: 'p=' + params + '&type=' + type,
-            onComplete: RefundResult
+            onComplete: function (rs) {
+                RefundResult(rs, type, matchId);
+            }
         });
     }
 };
@@ -222,7 +226,7 @@ function DoCal2(type, params) {
     DoCal2_PreventWaitingList(type, params);
 }
 
-function MultipleResult(rs) {
+function MultipleResult(rs, type, matchId) {
     //FinishLoading();
     if (parent.parent.jQuery && parent.parent.jQuery.unblockUI) {
         parent.parent.jQuery.unblockUI();
@@ -245,14 +249,26 @@ function MultipleResult(rs) {
         jQuery("#dialog-result").data('result', rs.responseText).dialog("open");
     }
 
+    try {
+        apollo.updateConfirmedAction_Parlay(matchId, type);
+    }
+    catch (e) {
+    }
+
     if (jQuery('#divMatch')) jQuery('#divMatch').hide();
     parent.ClosePopup();
 }
-function RefundResult(rs) {
+function RefundResult(rs, type, matchId) {
     //FinishLoading();
 
     try { parent.parent.jQuery.unblockUI(); } catch (e) { }
     var result = rs.responseText;
+
+    try {
+        parent.apollo.updateConfirmedAction_Parlay(matchId, type);
+    }
+    catch (e) {
+    }
 
     if (jQuery('#divMatch')) jQuery('#divMatch').hide();
 

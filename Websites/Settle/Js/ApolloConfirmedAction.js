@@ -1,15 +1,20 @@
-
 var apollo = {
-    updateConfirmedAction: function (matchId, type) {
+    updateConfirmedAction_Single: function (matchId, type, homeHT, awayHT, homeFT, awayFT, betStatus, goalrecord) {
 
         var actionType = apollo.parseType(type);
 
         var param = {
-            matchIds: matchId,
-            action: actionType
+            matchId: matchId,
+            action: actionType,
+            homeHT: homeHT,
+            awayHT: awayHT,
+            homeFT: homeFT,
+            awayFT: awayFT,
+            betStatus: betStatus,
+            goalrecord: goalrecord
         };
 
-        var action = 'Settlement/SetConfirmedAction';
+        var action = 'Settlement/SetConfirmedAction_Single';
 
         parent.$.ajax({
             type: "POST",
@@ -18,7 +23,33 @@ var apollo = {
             dataType: "json",
             data: JSON.stringify(param),
             success: function (rs) {
-                
+
+            },
+            complete: function () {
+
+            }
+        });
+    },
+
+    updateConfirmedAction_Parlay: function (matchId, type) {
+
+        var actionType = apollo.parseType(type);
+
+        var param = {
+            matchIds: matchId,
+            action: actionType
+        };
+
+        var action = 'Settlement/Set_ConfirmedAction_Parlay';
+
+        parent.$.ajax({
+            type: "POST",
+            url: action,
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            data: JSON.stringify(param),
+            success: function (rs) {
+
             },
             complete: function () {
 
@@ -35,10 +66,10 @@ var apollo = {
             case 'calculate': // 1: Calculate FG/NG
                 rs = 1;
                 break;
-            case 'billHT': // 2: Calculate HT
+            case 'billht': // 2: Calculate HT
                 rs = 2;
                 break;
-            case 'billFT': // 3: Calculate FT
+            case 'billft': // 3: Calculate FT
                 rs = 3;
                 break;
             case 'bill': // 4: Calculate All

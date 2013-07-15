@@ -281,11 +281,15 @@ var settlementManagement = {
     },
     doCalcMP: function (type, params) {
         //        settlementManagement.cachedData.selectedMatchInfo = params;
+
+        var matchId = params.split("|")[0];
         var myajax = new Ajax.Request("Multiple.ashx", {
             asynchronous: true,
             method: 'post',
             parameters: 'p=' + params + '&type=' + type,
-            onComplete: MultipleResult
+            onComplete: function (rs) {
+                MultipleResult(rs, type, matchId);
+            }
         });
     },
     makeFreezeGrid: function () {

@@ -64,4 +64,8 @@
   <Function Name="Customer - Login">
     <Setting Key="Acc_LoginAdmin" SpName="Acc_LoginAdmin" DbName="DBTXN.BODB02"  />
   </Function>
+  <Function Name="Apollo - Settlement">
+    <Setting Key="Apollo_Set_ConfirmedAction" SpName="Acc_Set_ConfirmedAction" DbName="DBTXN.BODB02"  />
+    <Setting Key="Apollo_Set_ConfirmedActionParlay" SpName="Acc_Set_ConfirmedActionParlay" DbName="DBTXN.BODB02"  />
+  </Function>
 </Functions>

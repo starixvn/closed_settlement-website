@@ -585,7 +585,19 @@ function ResultCalculate(rs) {
     }
 
     if (IsSuccess == 1) {
-        //try { parent.parent.jQuery.unblockUI(); } catch (e) { try { parent.jQuery.unblockUI(); } catch (e) { jQuery.unblockUI(); } }
+        try {
+            //MatchID|SportID
+            var matchId = $('sParams').value.split('|')[0];
+            var homeHT = objRs.homeHT;
+            var awayHT = objRs.awayHT;
+            var homeFT = objRs.homeFT;
+            var awayFT = objRs.awayFT;
+            var betStatus = objRs.betStatus;
+            var goalrecord = objRs.goalrecord;
+            var type = objRs.type;
+            parent.apollo.updateConfirmedAction_Single(matchId, type, homeHT, awayHT, homeFT, awayFT, betStatus, goalrecord);
+        } catch (e) { }
+
         parent.jQuery("#dialog-modal").dialog('close');
         window.setTimeout(function () {
             try { parent.frames['centerFr'].GetSettleMatch() } catch (e) { parent.GetSettleMatch() }

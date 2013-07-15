@@ -80,7 +80,7 @@ namespace Sunplus.Accounting.Business.Settlement
             return false;
         }
 
-        private static string UpdateBetStatusForBill(HttpContext hc, bool isFGLG)
+        public static string UpdateBetStatusForBill(HttpContext hc, bool isFGLG)
         {
             string _betstatus = string.Empty;   
             ////BetStatus
@@ -105,7 +105,7 @@ namespace Sunplus.Accounting.Business.Settlement
             var dr = DataAccess.IBCDLL.Accounting.Settle.SelectMatchForKeyScore(matchID, ref ouputParams);
             return dr.Tables[0].Rows[0]["betstatus"].ToString();
         }
-        private static void CalculationParams(int sportID, HttpContext hc, ref int homeHT, ref int awayHT, ref int homeFT, ref int awayFT, ref string betStatus, bool isScoreDirect, bool isHTCal)
+        public static void CalculationParams(int sportID, HttpContext hc, ref int homeHT, ref int awayHT, ref int homeFT, ref int awayFT, ref string betStatus, bool isScoreDirect, bool isHTCal)
         {
             if (sportID == 1) // soccer 
             {

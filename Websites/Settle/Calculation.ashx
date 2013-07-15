@@ -32,6 +32,7 @@ public class Calculation : IHttpHandler, IRequiresSessionState
         string msg = "";
         int delaytime = 0;
         var lastGoalOnly = false;
+        string score_to_apollo = string.Empty;
         //context.Request.Form["scoreDirect"];
 
 
@@ -257,6 +258,14 @@ public class Calculation : IHttpHandler, IRequiresSessionState
             {
                 _s = "success"; // close and refesh
 
+                //sync score to apollo
+                try
+                {
+                    score_to_apollo = SyncScoreToApollo(type.ToLower(), sportID, context);
+                }
+                catch { }
+                //endsync score to apollo
+
                 if (sportID == 1 && context.Request.Form["sHasFGLG"] == "1" && !lastGoalOnly) _s = "soccerSuccess";
                 if (lastGoalOnly) _s = "success-refundalllastgoal";
                 if (!string.IsNullOrEmpty(msg)) _s = "no|" + msg;
@@ -283,7 +292,7 @@ public class Calculation : IHttpHandler, IRequiresSessionState
             //throw ex;
         }
 
-        context.Response.Write("{\"responseText\":\"" + _s + "\",\"successMatchIds\":\"" + successMatchIds + "\"}");
+        context.Response.Write("{\"responseText\":\"" + _s + "\",\"successMatchIds\":\"" + successMatchIds + "\",\"" + score_to_apollo + "\"}");
     }
 
     private string BetStatusBuilder(int matchID, string betstatus)
@@ -308,6 +317,52 @@ public class Calculation : IHttpHandler, IRequiresSessionState
             _betstatus += betstatus;
         }
         return _betstatus;
+    }
+
+    private string SyncScoreToApollo(string type, int sportId, HttpContext context)
+    {
+        string score = string.Empty;
+        try
+        {
+            //ref int homeHT, ref int awayHT, ref int homeFT, ref int awayFT, ref string betStatus 
+            int homeHT = 0;
+            int awayHT = 0;
+            int homeFT = 0;
+            int awayFT = 0;
+            string betStatus = string.Empty;
+            string goalrecord = string.Empty;
+            bool isHTCal = type.ToLower() == "billht";
+            bool isScoreDirect = false;
+
+            if (context.Request.Form["isSD"] != null)
+            {
+                isScoreDirect = (string.Compare(context.Request.Form["isSD"], "1", true) == 0);
+            }
+
+            DoSettle.CalculationParams(sportId, context, ref homeHT, ref awayHT, ref homeFT, ref awayFT, ref betStatus, isScoreDirect, isHTCal);
+
+            if (sportId == 1)
+            {
+                goalrecord = CastAide.AsString(context.Request.Form["GR"]);
+                bool IsFGLG = context.Request.Form["sHasFGLG"].ToString() == "1";
+                betStatus = DoSettle.UpdateBetStatusForBill(context, IsFGLG);
+            }
+
+
+            score = "homeHT\":\"" + homeHT + "\",";
+            score += "\"awayHT\":\"" + awayHT + "\",";
+            score += "\"homeFT\":\"" + homeFT + "\",";
+            score += "\"awayFT\":\"" + awayFT + "\",";
+            score += "\"betStatus\":\"" + betStatus + "\",";
+            score += "\"goalrecord\":\"" + goalrecord + "\",";
+            score += "\"type\":\"" + type.ToLower();
+
+        }
+        catch (Exception ex)
+        {
+
+        }
+        return score;
     }
 
     public bool IsReusable

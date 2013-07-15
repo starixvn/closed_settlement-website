@@ -17,10 +17,18 @@ namespace Fanex.Tarus.Apollo.Settlement.Controller
         }
 
         [HttpPost]
-        public JsonResult SetConfirmedAction(string matchIds, int action)
+        public JsonResult Set_ConfirmedAction_Parlay(string matchIds, int action)
         {
-            var result = _service.Set_ConfirmedAction(matchIds, action);
-            return Json(result, JsonRequestBehavior.AllowGet); 
+            var result = _service.Set_ConfirmedAction_Parlay(matchIds, action);
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+
+
+        [HttpPost]
+        public JsonResult SetConfirmedAction_Single(string matchId, int action, int homeHT, int awayHT, int homeFT, int awayFT, string goalrecord, string betstatus)
+        {
+            var result = _service.Set_ConfirmedAction_Single(matchId, action, homeFT, awayFT, homeHT, awayHT, goalrecord, betstatus);
+            return Json(result, JsonRequestBehavior.AllowGet);
         }
     }
 }
