@@ -19,6 +19,10 @@ namespace Fanex.Tarus.Settlement.Models
         public int Status { get; set; }
         public string StatusName { get; set; }
 
+        public bool IsRefunded { get; set; }
+
+        public bool IsMultipleCalculated { get; set; }
+
         public List<CalcInfo> ChildInfo { get; set; }
     }
 }

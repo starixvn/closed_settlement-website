@@ -28,10 +28,17 @@ namespace Fanex.Tarus.Settlement.Controllers
         {
             this._calculateMPService = calculateMPService ?? new CalculateMPService();
         }
-        
+
         public JsonResult GetCalcMPStatus(GetCalcMPStatusCriteria criteria)
         {
             var result = this._calculateMPService.GetCalcMPStatus(criteria);
+            var jsonResult = base.Json(result);
+            return jsonResult;
+        }
+
+        public JsonResult GetCompletedCalcMPStatus(GetCompletedCalcMPStatusCriteria criteria)
+        {
+            var result = this._calculateMPService.GetCompletedCalcMPStatus(criteria);
             var jsonResult = base.Json(result);
             return jsonResult;
         }

@@ -1,4 +1,7 @@
 ﻿var gSubmitParams = '';
+var isRefresh = false;
+var scrollTop = 0;
+var isUpdateList = false;
 function ClosePopupSettlement() {
     parent.dhtmlwindow.close(ctrWnd);
 }
@@ -56,6 +59,8 @@ function GetSettleMatch() {
         params += '&isUncalMul=' + ((jQuery('#chkUnCalMultiple').attr('checked')) ? 1 : 0);
     }
     gSubmitParams = params;
+
+    isRefresh = false;
     var myajax = new Ajax.Request("GetSettleMatch.ashx", {
         asynchronous: true,
         method: 'post',
@@ -70,15 +75,20 @@ function BindSettleMatch(rs) {
     jQuery("#divcontainer").removeClass("allhidden");
 
     initMultipleCalculate();
-    settlementManagement.makeFreezeGrid();
     settlementManagement.getCalcMPStatus();
-
+    settlementManagement.updateDomAfterGetStatus();
     try { parent.jQuery.unblockUI(); } catch (e) { jQuery.unblockUI(); }
 }
 
 function Refresh() {
     //BeginLoading();
     try { parent.BlockUI(); } catch (e) { BlockUI(); }
+    //    isRefresh = true;
+    //    if (isRefresh) {
+    //        var container = settlementManagement.cachedData.tables.report.find(".container");
+    //        scrollTop = container.scrollTop();
+    //    }
+
     var myajax = new Ajax.Request("GetSettleMatch.ashx", {
         asynchronous: true,
         method: 'post',
@@ -214,7 +224,6 @@ function DoCal2(type, params) {
 
 function MultipleResult(rs) {
     //FinishLoading();
-
     if (parent.parent.jQuery && parent.parent.jQuery.unblockUI) {
         parent.parent.jQuery.unblockUI();
     }
@@ -222,24 +231,21 @@ function MultipleResult(rs) {
         try { parent.jQuery.unblockUI(); } catch (e) { jQuery.unblockUI(); }
     }
 
-    jQuery("#chk_all").prop("checked", false);
-    jQuery(".chkmultiple").prop("checked", false);
+    jQuery("#chk_all").attr("checked", false);
+    jQuery(".chkmultiple").attr("checked", false);
     settlementManagement.updateCalculateMatchQueue(calcStatusList, false);
     settlementManagement.updateDomAfterGetStatus();
+
     jQuery("#msgResult").html(rs.responseText);
     var result = rs.responseText;
     if (result == 'Calculate Multiple Successfully!' || result == 'Refund Multiple Successfully!' || result == 'Refund Multiple FT Successfully!') {
-        if (result == 'Refund Multiple Successfully!' || result == 'Refund Multiple FT Successfully!') {
-            Refresh();
-        }
+        Refresh();
     }
     else {
         jQuery("#dialog-result").data('result', rs.responseText).dialog("open");
     }
 
     if (jQuery('#divMatch')) jQuery('#divMatch').hide();
-
-
     parent.ClosePopup();
 }
 function RefundResult(rs) {
@@ -248,11 +254,12 @@ function RefundResult(rs) {
     try { parent.parent.jQuery.unblockUI(); } catch (e) { }
     var result = rs.responseText;
 
-    alert(result);
     if (jQuery('#divMatch')) jQuery('#divMatch').hide();
 
     if (result == 'Refund Multiple Successfully!' || result == 'Refund Multiple FT Successfully!' || result == 'Refund Multiple HT Successfully!') {
         try { parent.frames['centerFr'].Refresh(); } catch (e) { parent.Refresh(); }
+    } else {
+        alert(result);
     }
 
     try { parent.jQuery.unblockUI(); } catch (e) { jQuery.unblockUI(); }

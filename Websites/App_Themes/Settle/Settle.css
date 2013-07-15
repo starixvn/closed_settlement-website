@@ -203,3 +203,36 @@ td.width-300 {width:300px;}
 .numbergameboxrf span.require {color: Red;}
 
 .bgpending {background-color: Yellow  !important;}
+
+.freegrid  .title2 td {
+    background-color: #EAEBEB !important;
+    font-weight: bold;
+}
+
+.freegrid th
+{
+    background-color: #CFCFCF !important;
+}
+
+.freegrid .grid-title 
+{
+    background: none;
+    background-color: #CFCFCF !important;
+    text-align: center;
+    border-color: #888888!important;
+}
+
+.freegrid .grid-title-lable 
+{
+    background: url("../SettleTheme2012/images/header01.jpg") repeat-x scroll 0 -4px #EAEBEB !important;
+    padding-left: 0px;
+    text-align:center;
+    float: none;
+}
+
+.freegrid th, 
+.grid-fixed-table th,
+.freegrid td
+{
+    border-color: #888888!important;
+}

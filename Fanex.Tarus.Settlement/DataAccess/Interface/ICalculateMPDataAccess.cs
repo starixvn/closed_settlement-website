@@ -17,5 +17,7 @@ namespace Fanex.Tarus.Settlement.DataAccess.Interface
     public interface ICalculateMPDataAccess
     {
         List<dynamic> GetCalcMPStatus(GetCalcMPStatusCriteria criteria);
+
+        List<dynamic> GetCompletedCalcMPStatus(GetCompletedCalcMPStatusCriteria criteria);
     }
 }

@@ -1,4 +1,5 @@
 ﻿var calcStatusList = [];
+var isCalcMP = false;
 jQuery(document).ready(function () {
     jQuery("#dialog:ui-dialog").dialog("destroy");
     jQuery("#dialog-message").dialog({
@@ -28,24 +29,24 @@ jQuery(document).ready(function () {
 
 function checkMultipleAll() {
     var ischecked = document.getElementById("chk_all").checked;
-    jQuery("input:checkbox.chkmultiple:not(:disabled)").prop("checked", ischecked);
+    jQuery("input:checkbox.chkmultiple:not(:disabled)").attr("checked", ischecked);
 };
 
 function checkMultipleLeague(leagueCount) {
 
     var ischecked = document.getElementById("chk_" + leagueCount).checked;
-    jQuery("input:checkbox.cls_" + leagueCount + ":not(:disabled)").prop("checked", ischecked);
+    jQuery("input:checkbox.cls_" + leagueCount + ":not(:disabled)").attr("checked", ischecked);
 
     var ischeckedall = true;
     var allchk = jQuery("input:checkbox.chkmultiple");
     jQuery.each(allchk, function (i, n) {
         var chk = jQuery(this);
-        if (!chk.prop("checked") && !chk.prop("disabled")) {
+        if (!chk.attr("checked") && !chk.attr("disabled")) {
             ischeckedall = false;
             return;
         }
     });
-    jQuery("#chk_all").prop("checked", ischeckedall);
+    jQuery("#chk_all").attr("checked", ischeckedall);
 
 };
 
@@ -58,7 +59,7 @@ function DoCalMultiple() {
     jQuery.each(chks, function (i, n) {
         var chk = jQuery(this);
         var id = chk.attr("id");
-        if (chk.prop("checked") == true) {
+        if (chk.attr("checked") == true) {
             var arr = id.split('_');
             if (!settlementManagement.isInCalcMPQueue(arr[1])) {
                 if (strids == "") {
@@ -134,26 +135,26 @@ function initMultipleCalculate() {
             var checked = true;
 
             jQuery("input:checkbox." + leagueclass).each(function () {
-                if (!jQuery(this).prop("checked") && !jQuery(this).prop("disabled")) {
+                if (!jQuery(this).attr("checked") && !jQuery(this).attr("disabled")) {
                     checked = false;
                     return;
                 }
             });
 
-            jQuery("#" + leagueCount).prop("checked", checked);
+            jQuery("#" + leagueCount).attr("checked", checked);
 
             //check all
             var ischeckedall = true;
             var allchk = jQuery("input:checkbox.chkmultiple");
             jQuery.each(allchk, function (i, n) {
                 var chk = jQuery(this);
-                if (!chk.prop("checked") && !chk.prop("disabled")) {
+                if (!chk.attr("checked") && !chk.attr("disabled")) {
                     ischeckedall = false;
                     return;
                 }
             });
 
-            jQuery("#chk_all").prop("checked", ischeckedall);
+            jQuery("#chk_all").attr("checked", ischeckedall);
         });
     }, 1000);
 };

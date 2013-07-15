@@ -47,5 +47,35 @@ namespace Fanex.Tarus.Settlement.DataAccess.Implement
 
             return result;
         }
+
+        public List<dynamic> GetCompletedCalcMPStatus(GetCompletedCalcMPStatusCriteria criteria)
+        {
+            var dataTable = new DataTable();
+            using (ObjectDb objDb = new ObjectDb(criteria.GetSettingKey()))
+            {
+                objDb.AddInParameter("matchids", DbType.String, criteria.MatchCodes);
+                var ds = objDb.ExecuteDataSet();
+                if (ds != null && ds.Tables.Count > 0)
+                {
+                    dataTable = ds.Tables[0];
+                }
+            }
+
+            var result = new List<dynamic>();
+            if (dataTable != null && dataTable.Rows.Count > 0)
+            {
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    result.Add(new
+                    {
+                        matchid = CastAide.AsInt32(row["matchid"]),
+                        IsMultipleCalculated = CastAide.AsBoolean(row["multiple"]),
+                        IsRefunded = CastAide.AsBoolean(row["refund"])
+                    });
+                }
+            }
+
+            return result;
+        }
     }
 }

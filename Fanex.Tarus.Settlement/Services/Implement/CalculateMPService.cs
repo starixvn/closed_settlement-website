@@ -135,5 +135,46 @@ namespace Fanex.Tarus.Settlement.Services.Implement
 
             return statusName;
         }
+
+        public CalcInfo GetCompletedCalcMPStatus(GetCompletedCalcMPStatusCriteria criteria)
+        {
+            try
+            {
+                var result = new CalcInfo
+                {
+                    ChildInfo = new List<CalcInfo>()
+                };
+
+                //result.ChildInfo.Add(new CalcInfo
+                //{
+                //    Id = CastAide.AsString(criteria.MatchCodes),
+                //    IsMultipleCalculated = false,
+                //    IsRefunded = true
+                //});
+
+                var rawData = this._calculateMPDataAccess.GetCompletedCalcMPStatus(criteria);
+                for (var i = 0; i < rawData.Count; i++)
+                {
+                    var info = rawData[i];
+                    var calcInfo = new CalcInfo
+                    {
+                        Id = CastAide.AsString(info.matchid),
+                        IsMultipleCalculated = CastAide.AsBoolean(info.IsMultipleCalculated),
+                        IsRefunded = CastAide.AsBoolean(info.IsRefunded)
+                    };
+
+                    calcInfo.StatusName = this.MappingCalcStatus(calcInfo.Status);
+                    result.ChildInfo.Add(calcInfo);
+                }
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                LogExtensions.ExceptionHandler(ex);
+            }
+
+            return null;
+        }
     }
 }
