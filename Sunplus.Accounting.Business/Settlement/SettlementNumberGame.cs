@@ -34,9 +34,9 @@ namespace Sunplus.Accounting.Business.Settlement
                 TemplateHandler.RemoveBlock(ref _sMain, "leaguename");
                 StringBuilder _s = new StringBuilder(); // content
 
-
-
                 List<int> leagueids = GetLeagues(dt);
+                DateTime now = DateTime.Now;
+                DateTime yesterday = now.AddDays(-1);
                 foreach (int _leagueid in leagueids)
                 {
                     string _sleague = _strLeague;
@@ -71,15 +71,16 @@ namespace Sunplus.Accounting.Business.Settlement
                         totalseq = rows.Length;
                         if (rows.Length > 0)
                         {
-                            Code = rows[0]["matchcode"].ToString();
-                            KickOffTime = rows[0]["kickofftime"].ToString();
+                            var seqNumber = rows[0];
+                            Code = seqNumber["matchcode"].ToString();
+                            KickOffTime = seqNumber["kickofftime"].ToString();
 
-                            EventStatus = rows[0]["eventstatus"].ToString();
+                            EventStatus = seqNumber["eventstatus"].ToString();
 
-                            eventDate = CastAide.AsDateTime(rows[0]["eventdate"]);
+                            eventDate = CastAide.AsDateTime(seqNumber["eventdate"]);
 
                             Event = ResourceExtension.GetResourceValue(ResourceExtension.Resources.Language, "lblNumberGameNo") + " " + Code;
-                            _isRefund = Convert.ToBoolean(rows[0]["IsRefund"]);
+                            _isRefund = Convert.ToBoolean(seqNumber["IsRefund"]);
                             if (_isRefund) bgRefund = SettleBgColor.REFUND;
                             if (!_isRefund && EventStatus.ToLower().Trim() == "refund ft") bgRefund = SettleBgColor.REFUND;
 
@@ -123,7 +124,7 @@ namespace Sunplus.Accounting.Business.Settlement
                         TemplateHandler.Assign(ref _sRow, "{code}", Code);
                         TemplateHandler.Assign(ref _sRow, "{result}", Result);
                         TemplateHandler.Assign(ref _sRow, "{fdate}", string.Format("{0:MM/dd/yyyy}", eventDate.ToShortDateString()));
-                        TemplateHandler.Assign(ref _sRow, "{tdate}", string.Format("{0:MM/dd/yyyy}", DateTime.Now));
+                        TemplateHandler.Assign(ref _sRow, "{tdate}", string.Format("{0:MM/dd/yyyy}", now));
 
                         //hightlight Calculation column
                         TemplateHandler.Assign(ref _sRow, "{eventstatus}", EventStatus);
@@ -137,15 +138,16 @@ namespace Sunplus.Accounting.Business.Settlement
                         }
 
                         //Calculation column
-                        if (permissions.IndexOf("[C]") > -1 && (eventDate.Day == DateTime.Now.Day && eventDate.Month == DateTime.Now.Month
-                            && eventDate.Year == DateTime.Now.Year))
+                        
+                        if (permissions.IndexOf("[C]") > -1 && ((eventDate.Day == now.Day && eventDate.Month == now.Month
+                            && eventDate.Year == now.Year) || (eventDate.Day == yesterday.Day && eventDate.Month == yesterday.Month
+                            && eventDate.Year == yesterday.Year)))
                         {
                             TemplateHandler.Assign(ref _sRow, "{Calculation}", "<span class='canchange' onclick=\"getNumberGameBalls(" + _matchid.ToString() + ", '" + Code + "', '" + KickOffTime.Split(' ')[0] + "');\">Re-Calc</span>");
                         }
                         else
                         {
                             TemplateHandler.Assign(ref _sRow, "{Calculation}", "Re-Calc");
-                            //TemplateHandler.Assign(ref _sRow, "{Calculation}", "<span class='canchange' onclick=\"getNumberGameBalls(" + _matchid.ToString() + ", '" + Code + "', '" + KickOffTime.Split(' ')[0] + "');\">Re-Calc</span>");
                         }
 
                         TemplateHandler.Assign(ref _sRow, "{event}", Event);
@@ -154,7 +156,9 @@ namespace Sunplus.Accounting.Business.Settlement
                         if (permissions.IndexOf("[C]") > -1)
                         {
                             TemplateHandler.RemoveBlock(ref _sRow, "RefuRead");
-                            if (eventDate.Day == DateTime.Now.Day && eventDate.Month == DateTime.Now.Month && eventDate.Year == DateTime.Now.Year)
+                            if ((eventDate.Day == now.Day && eventDate.Month == now.Month
+                            && eventDate.Year == now.Year) || (eventDate.Day == yesterday.Day && eventDate.Month == yesterday.Month
+                            && eventDate.Year == yesterday.Year))
                             {
                                 TemplateHandler.Assign(ref _sRow, "{_onclickft}", "class='canchange' onclick=\"refundNumberGameFt('{matchid}')\"");
                                 TemplateHandler.Assign(ref _sRow, "{_onclick}", "class='canchange' onclick=\"refundNumberGame('{matchid}')\"");

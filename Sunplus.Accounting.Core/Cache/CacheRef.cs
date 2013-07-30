@@ -90,6 +90,7 @@ namespace Sunplus.Accounting.Core.Cache
             switch (bettypeId)
             {
                 case 1101:
+                case 1103:
                     result = RemotingRef.RefData.GetCasinoBetItem(resultId.ToString(), TWLang("en-US"));;
                     break;
                 case 1102:

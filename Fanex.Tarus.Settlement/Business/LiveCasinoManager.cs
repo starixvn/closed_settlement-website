@@ -21,8 +21,15 @@ namespace Fanex.Tarus.Settlement.Business
         public LiveCasinoManager()
             : this(null)
         {
-            
-            SettingMgr.GetInstance().Initialize(SiteEnum.AgentSite);
+
+            try
+            {
+                SettingMgr.GetInstance().Initialize(SiteEnum.AgentSite);
+            }
+            catch (Exception ex)
+            {
+                LogExtensions.ExceptionHandler(ex);
+            }
         }
 
         public LiveCasinoManager(ILiveCasinoDataAccess liveCasinoDataAccess)
@@ -91,7 +98,7 @@ namespace Fanex.Tarus.Settlement.Business
                     //}
 
                     var bettypeId = CastAide.AsInt32(row["bettype"]);
-                    var betResults = (bettypeId == (int)Enumerations.Bettype.Routle && string.IsNullOrEmpty(betstatus)) ? "-" : ParseResult(CastAide.AsString(row["betstatus"]), bettypeId);
+                    var betResults = (bettypeId == (int)Enumerations.Bettype.PartyRoutle && string.IsNullOrEmpty(betstatus)) ? "-" : ParseResult(CastAide.AsString(row["betstatus"]), bettypeId);
 
                     matches.Add(new Match
                     {
@@ -210,7 +217,7 @@ namespace Fanex.Tarus.Settlement.Business
                 template = template.Replace("${Background}", string.Empty);
             }
 
-            if (match.BetType == (int)Enumerations.Bettype.Baccarat)
+            if (match.BetType == (int)Enumerations.Bettype.PartyBaccarat || match.BetType == (int)Enumerations.Bettype.LiveBaccarat)
             {
                 template = template.Replace("${finalscore}", "<span>${FinalHomeScore} - ${FinalAwayScore}</span>");
 
@@ -320,7 +327,7 @@ namespace Fanex.Tarus.Settlement.Business
 
         public string ReCalc(int MatchID, int IBCBetTypeID, string BankerCard, string PlayerCard, int AdminID, string AdminName, string IP, string ShowDate)
         {
-            if (IBCBetTypeID == (int)Enumerations.Bettype.Baccarat)
+            if (IBCBetTypeID == (int)Enumerations.Bettype.PartyBaccarat || IBCBetTypeID == (int)Enumerations.Bettype.LiveBaccarat)
                 return ReCalcBaccarat(MatchID, IBCBetTypeID, BankerCard, PlayerCard, AdminID, AdminName, IP, ShowDate);
             else
                 return ReCalcRoutle(MatchID, IBCBetTypeID, BankerCard, PlayerCard, AdminID, AdminName, IP, ShowDate);
@@ -352,7 +359,15 @@ namespace Fanex.Tarus.Settlement.Business
                 param.Add("PlayerCard", PlayerCard);
                 param.Add("AdminID", AdminID.ToString());
                 param.Add("AdminName", AdminName);
-                param.Add("GameTypeNo", Enumerations.GameType.Baccarat);
+
+                var GameTypeNo = string.Empty;
+                if (IBCBetTypeID == (int)Enumerations.Bettype.PartyBaccarat)
+                    GameTypeNo = Enumerations.GameType.PartyBaccarat;
+                else 
+                    GameTypeNo = Enumerations.GameType.LiveBaccarat;
+
+                param.Add("GameTypeNo", GameTypeNo);
+                //SettingMgr.GetInstance("01").Initialize(SiteEnum.AgentSite);
                 //Update result/bet tickets Game Server by API
                 LVAPILibrary.IBCMgr.ReSettlement(param);
 
@@ -430,7 +445,14 @@ namespace Fanex.Tarus.Settlement.Business
                 param.Add("PlayerCard", PlayerCard);
                 param.Add("AdminID", AdminID.ToString());
                 param.Add("AdminName", AdminName);
-                param.Add("GameTypeNo", Enumerations.GameType.Routle);
+
+                var GameTypeNo = "";
+                if (IBCBetTypeID == (int)Enumerations.Bettype.PartyRoutle)
+                    GameTypeNo = Enumerations.GameType.PartyRoutle;
+                else
+                    GameTypeNo = Enumerations.GameType.LiveRoutle;
+
+                param.Add("GameTypeNo", GameTypeNo);
                 //Update result/bet tickets Game Server by API
                 LVAPILibrary.IBCMgr.ReSettlement(param);
                                 
@@ -518,7 +540,7 @@ namespace Fanex.Tarus.Settlement.Business
             var eventDate = CastAide.AsDateTime(row["eventdate"]);
             var eventStatus = CastAide.AsString(row["eventstatus"]);
             var finalHomeScore = CastAide.AsString(row["finalhomescore"]);
-            var betStatusResult = finalHomeScore == "0" && bettypeId == (int)Enumerations.Bettype.Routle ? "-" : ParseResult(CastAide.AsString(row["betstatus"]), bettypeId);
+            var betStatusResult = finalHomeScore == "0" && bettypeId == (int)Enumerations.Bettype.PartyRoutle ? "-" : ParseResult(CastAide.AsString(row["betstatus"]), bettypeId);
             return new Match
             {
                 LeagueId = CastAide.AsInt32(row["leagueid"]),
@@ -545,7 +567,7 @@ namespace Fanex.Tarus.Settlement.Business
             var index = 0;
             foreach (string s in arr)
             {                
-                rs.Append(string.Format("{0}{1}", CacheRef.GetLiveCasinoResult(CastAide.AsInt32(s.Trim()), bettypeId), (index == 2 && bettypeId == (int)Fanex.Tarus.Settlement.Core.Common.Enumerations.Bettype.Routle ? "; <br>" : "; ")));
+                rs.Append(string.Format("{0}{1}", CacheRef.GetLiveCasinoResult(CastAide.AsInt32(s.Trim()), bettypeId), (index == 2 && bettypeId == (int)Fanex.Tarus.Settlement.Core.Common.Enumerations.Bettype.PartyRoutle ? "; <br>" : "; ")));
                 index++;
             }
             var result = rs.ToString();

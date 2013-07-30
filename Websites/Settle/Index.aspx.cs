@@ -15,11 +15,13 @@ public partial class Settle_Index : PageBase
     private string fromDate, toDate;
     protected string title = "";
 
+
+
+
     protected void Page_Load(object sender, EventArgs e)
     {
         try
         {
-
             Response.Cache.SetCacheability(HttpCacheability.NoCache);
             fromDate = IBCUtils.FormatHandler.FormatDateEn(DateTime.Now.AddDays(-1));
             toDate = IBCUtils.FormatHandler.FormatDateEn(DateTime.Now);
@@ -45,7 +47,7 @@ public partial class Settle_Index : PageBase
                 TemplateHandler.Assign(ref s, "{mode}", "CALC");
                 title = "Calculate";
             }
-         
+
             TemplateHandler.Assign(ref s, "{sLeagues}", LeagueString(fromDate, toDate, isCalulate, mode));
             this.searchContent.Text = s.Replace(Environment.NewLine, string.Empty).Replace("  ", string.Empty);
         }
@@ -84,7 +86,7 @@ public partial class Settle_Index : PageBase
                 {
                     while (dr.Read())
                     {
-                        string _sportName = CastAide.AsString( dr["sportname"]); 
+                        string _sportName = CastAide.AsString(dr["sportname"]);
                         string _sportType = CastAide.AsString(dr["sporttype"]);
                         if (!_sportType.Equals("201") && !_sportType.Equals("251") && !_sportType.Equals("252"))
                         {
