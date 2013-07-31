@@ -32,7 +32,7 @@ public class Calculation : IHttpHandler, IRequiresSessionState
         string msg = "";
         int delaytime = 0;
         var lastGoalOnly = false;
-        string score_to_apollo = string.Empty;
+        string score_to_apollo = "SyncApollo\":\"" + 0;
         //context.Request.Form["scoreDirect"];
 
 
@@ -261,7 +261,9 @@ public class Calculation : IHttpHandler, IRequiresSessionState
                 //sync score to apollo
                 try
                 {
-                    score_to_apollo = SyncScoreToApollo(type.ToLower(), sportID, context);
+                    score_to_apollo = "SyncApollo\":\"" + 1 + "\",";
+                    score_to_apollo += SyncScoreToApollo(type.ToLower(), sportID, context);
+                    
                 }
                 catch { }
                 //endsync score to apollo
@@ -276,6 +278,10 @@ public class Calculation : IHttpHandler, IRequiresSessionState
                 {
                     _s = "Access Denied";
                 }
+
+                string _errMsg = _s + "," + SyncScoreToApollo(type.ToLower(), sportID, context);
+                Exception e = new Exception(_errMsg);
+                Sunplus.Accounting.Core.Extensions.LogExtensions.ExceptionHandler(e);             
             }
 
             if (!string.IsNullOrEmpty(msg)) _s = "no|" + msg;
@@ -349,7 +355,7 @@ public class Calculation : IHttpHandler, IRequiresSessionState
             }
 
 
-            score = "homeHT\":\"" + homeHT + "\",";
+            score = "\"homeHT\":\"" + homeHT + "\",";
             score += "\"awayHT\":\"" + awayHT + "\",";
             score += "\"homeFT\":\"" + homeFT + "\",";
             score += "\"awayFT\":\"" + awayFT + "\",";

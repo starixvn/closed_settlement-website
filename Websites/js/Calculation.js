@@ -553,7 +553,7 @@ function ResultCalculate(rs) {
     else if (objRs.responseText == 'FGLGsuccess') {
         alert('In case you have changed the result of First Goal/Last Goal here, please re-calculate the MULTIPLE also to make sure all the tickets are update correctly.');
         gHasUpdated = true;
-        IsSuccess = 0
+        IsSuccess = 0;
     }
     else if (objRs.responseText == 'soccerSuccess') {
         $('infoMsg').style.display = '';
@@ -584,19 +584,24 @@ function ResultCalculate(rs) {
         IsSuccess = 1;
     }
 
-    if (IsSuccess == 1) {
-        try {
-            //MatchID|SportID
-            var matchId = $('sParams').value.split('|')[0];
-            var homeHT = objRs.homeHT;
-            var awayHT = objRs.awayHT;
-            var homeFT = objRs.homeFT;
-            var awayFT = objRs.awayFT;
-            var betStatus = objRs.betStatus;
-            var goalrecord = objRs.goalrecord;
-            var type = objRs.type;
+
+    try {
+        //MatchID|SportID
+        var matchId = $('sParams').value.split('|')[0];
+        var homeHT = objRs.homeHT;
+        var awayHT = objRs.awayHT;
+        var homeFT = objRs.homeFT;
+        var awayFT = objRs.awayFT;
+        var betStatus = objRs.betStatus;
+        var goalrecord = objRs.goalrecord;
+        var type = objRs.type;
+        var SyncApollo = objRs.SyncApollo;
+        if (SyncApollo == "1") {
             parent.apollo.updateConfirmedAction_Single(matchId, type, homeHT, awayHT, homeFT, awayFT, betStatus, goalrecord);
-        } catch (e) { }
+        }
+    } catch (e) { }
+
+    if (IsSuccess == 1) {      
 
         parent.jQuery("#dialog-modal").dialog('close');
         window.setTimeout(function () {
