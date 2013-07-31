@@ -20,11 +20,11 @@
 <%@ Import Namespace="Fanex.Tarus.Web.Controllers.Areas" %>
 <%@ Import Namespace="Fanex.Tarus.Web.Controllers.Filters" %>
 
-
 <script runat="server">
 
-    void Application_Start(object sender, EventArgs e) 
+    void Application_Start(object sender, EventArgs e)
     {
+        
         // Code that runs on application startup    
         BootStrapperManager.Initialize(new UnityBootStrapper());
         //For Data Replication System
@@ -36,15 +36,16 @@
         manager.Register(typeof(CasinoLibrary.SBAgent.Customer), pattern);
         manager.Register(typeof(CasinoLibrary.SBAgent.BasicInfo), pattern);
 
+        
         Fanex.Data.Configuration.DbSettingProviderManager.Current.Start();
-
-
        
         RegisterGlobalFilters(GlobalFilters.Filters);
         
         RegisterRoutes(RouteTable.Routes);
         // ViewEngines.Engines.Add(new CustomView());
         AreaRegistration.RegisterAllAreas();
+                
+        SettingMgr.GetInstance().Initialize(SiteEnum.AgentSite);
     }
 
 
