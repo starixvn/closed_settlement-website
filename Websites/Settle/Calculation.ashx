@@ -32,7 +32,6 @@ public class Calculation : IHttpHandler, IRequiresSessionState
         string msg = "";
         int delaytime = 0;
         var lastGoalOnly = false;
-        string score_to_apollo = "SyncApollo\":\"" + 0;
         //context.Request.Form["scoreDirect"];
 
 
@@ -259,13 +258,9 @@ public class Calculation : IHttpHandler, IRequiresSessionState
                 _s = "success"; // close and refesh
 
                 //sync score to apollo
-                try
-                {
-                    score_to_apollo = "SyncApollo\":\"" + 1 + "\",";
-                    score_to_apollo += SyncScoreToApollo(type.ToLower(), sportID, context);
-                    
-                }
-                catch { }
+
+                this.SyncScoreToApollo(type.ToLower(), matchID, sportID, context);
+
                 //endsync score to apollo
 
                 if (sportID == 1 && context.Request.Form["sHasFGLG"] == "1" && !lastGoalOnly) _s = "soccerSuccess";
@@ -298,9 +293,99 @@ public class Calculation : IHttpHandler, IRequiresSessionState
             //throw ex;
         }
 
-        context.Response.Write("{\"responseText\":\"" + _s + "\",\"successMatchIds\":\"" + successMatchIds + "\",\"" + score_to_apollo + "\"}");
+        context.Response.Write("{\"responseText\":\"" + _s + "\",\"successMatchIds\":\"" + successMatchIds + "\"}");
     }
 
+    private int ActionKey(string type)
+    {
+        var rs = 0;
+        switch (type)
+        {
+            case "unsettle": // 0: Unsettle
+                rs = 0;
+                break;
+            case "calculate": // 1: Calculate FG/NG
+                rs = 1;
+                break;
+            case "billht": // 2: Calculate HT
+                rs = 2;
+                break;
+            case "billft": // 3: Calculate FT
+                rs = 3;
+                break;
+            case "bill": // 4: Calculate All
+                rs = 4;
+                break;
+            case "m": // 5: Calculate Parlay
+                rs = 5;
+                break;
+            case "refundhalftime": // 11: Refund HT
+                rs = 11;
+                break;
+            case "refundfulltime": // 12: Refund FT
+                rs = 12;
+                break;
+            case "refund": // 13: Refund All
+                rs = 13;
+                break;
+            case "rht": // 14: Refund Parlay HT
+                rs = 14;
+                break;
+            case "rft": // 15: Refund Parlay FT
+                rs = 15;
+                break;
+            case "r": // 16: Refund Parlay All
+                rs = 16;
+                break;
+            case "refundfirstnogoal": // 17: Refund All FGLG
+                rs = 17;
+                break;
+            case "refundalllastgoal": // 18: Refund All LG
+                rs = 18;
+                break;
+        }
+        return rs;
+    }
+
+    private void SyncScoreToApollo(string type, int matchId, int sportId, HttpContext context)
+    {
+        string score = string.Empty;
+        try
+        {
+            //ref int homeHT, ref int awayHT, ref int homeFT, ref int awayFT, ref string betStatus
+            int homeHT = 0;
+            int awayHT = 0;
+            int homeFT = 0;
+            int awayFT = 0;
+            string betStatus = string.Empty;
+            string goalrecord = string.Empty;
+            bool isHTCal = type == "billht";
+            bool isScoreDirect = false;
+
+            if (context.Request.Form["isSD"] != null)
+            {
+                isScoreDirect = (string.Compare(context.Request.Form["isSD"], "1", true) == 0);
+            }
+
+            DoSettle.CalculationParams(sportId, context, ref homeHT, ref awayHT, ref homeFT, ref awayFT, ref betStatus, isScoreDirect, isHTCal);
+
+            if (sportId == 1)
+            {
+                goalrecord = CastAide.AsString(context.Request.Form["GR"]);
+                bool IsFGLG = context.Request.Form["sHasFGLG"].ToString() == "1";
+                betStatus = DoSettle.UpdateBetStatusForBill(context, IsFGLG);
+            }
+
+            var service = new Fanex.Tarus.Apollo.Settlement.Business.SettlementService();
+            service.Set_ConfirmedAction_Single(matchId.ToString(), this.ActionKey(type),
+                homeFT, awayFT, homeHT, awayHT, goalrecord, betStatus);
+        }
+        catch (Exception ex)
+        {
+            Sunplus.Accounting.Core.Extensions.LogExtensions.ExceptionHandler(ex);
+        }
+    }
+    
     private string BetStatusBuilder(int matchID, string betstatus)
     {
         string _betstatus = string.Empty;

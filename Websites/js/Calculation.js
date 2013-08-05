@@ -584,23 +584,6 @@ function ResultCalculate(rs) {
         IsSuccess = 1;
     }
 
-
-    try {
-        //MatchID|SportID
-        var matchId = $('sParams').value.split('|')[0];
-        var homeHT = objRs.homeHT;
-        var awayHT = objRs.awayHT;
-        var homeFT = objRs.homeFT;
-        var awayFT = objRs.awayFT;
-        var betStatus = objRs.betStatus;
-        var goalrecord = objRs.goalrecord;
-        var type = objRs.type;
-        var SyncApollo = objRs.SyncApollo;
-        if (SyncApollo == "1") {
-            parent.apollo.updateConfirmedAction_Single(matchId, type, homeHT, awayHT, homeFT, awayFT, betStatus, goalrecord);
-        }
-    } catch (e) { }
-
     if (IsSuccess == 1) {      
 
         parent.jQuery("#dialog-modal").dialog('close');
