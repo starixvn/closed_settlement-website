@@ -88,7 +88,12 @@ public class Multiple : IHttpHandler, IRequiresSessionState
                 try
                 {
                     var service = new Fanex.Tarus.Apollo.Settlement.Business.SettlementService();
-                    service.Set_ConfirmedAction_Parlay(matchIDs, ActionKey(type.ToLower()));                       
+                    string _matchids = matchID.ToString();
+                    if (type.ToLower() == "m")
+                        _matchids = matchIDs;
+
+
+                    service.Set_ConfirmedAction_Parlay(_matchids, ActionKey(type.ToLower()));                       
                 }
                 catch (Exception ex)
                 {
