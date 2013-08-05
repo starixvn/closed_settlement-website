@@ -249,12 +249,7 @@ function MultipleResult(rs, type, matchId) {
         jQuery("#dialog-result").data('result', rs.responseText).dialog("open");
     }
 
-    try {
-        apollo.updateConfirmedAction_Parlay(matchId, type);
-    }
-    catch (e) {
-    }
-
+   
     if (jQuery('#divMatch')) jQuery('#divMatch').hide();
     parent.ClosePopup();
 }
@@ -263,12 +258,7 @@ function RefundResult(rs, type, matchId) {
 
     try { parent.parent.jQuery.unblockUI(); } catch (e) { }
     var result = rs.responseText;
-
-    try {
-        parent.apollo.updateConfirmedAction_Parlay(matchId, type);
-    }
-    catch (e) {
-    }
+      
 
     if (jQuery('#divMatch')) jQuery('#divMatch').hide();
 
