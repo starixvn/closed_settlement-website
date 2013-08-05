@@ -248,7 +248,10 @@ public class Calculation : IHttpHandler, IRequiresSessionState
                             break;
                     }
                 }
-                catch { }
+                catch (Exception ex)
+                {
+                    Sunplus.Accounting.Core.Extensions.LogExtensions.ExceptionHandler(ex); 
+                }
 
 
             }
@@ -274,9 +277,8 @@ public class Calculation : IHttpHandler, IRequiresSessionState
                     _s = "Access Denied";
                 }
 
-                string _errMsg = _s + "," + SyncScoreToApollo(type.ToLower(), sportID, context);
-                Exception e = new Exception(_errMsg);
-                Sunplus.Accounting.Core.Extensions.LogExtensions.ExceptionHandler(e);             
+                string _infoMsg = msg + "," +_s + ", matchid:" + matchID + "," + SyncScoreToApollo(type.ToLower(), sportID, context);
+                Fanex.Logging.Logger.Log.Info(_infoMsg);
             }
 
             if (!string.IsNullOrEmpty(msg)) _s = "no|" + msg;
