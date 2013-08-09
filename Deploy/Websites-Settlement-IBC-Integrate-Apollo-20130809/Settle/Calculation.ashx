@@ -278,7 +278,7 @@ public class Calculation : IHttpHandler, IRequiresSessionState
                 }
 
                 string _infoMsg = msg + "," +_s + ", matchid:" + matchID + "," + SyncScoreToApollo(type.ToLower(), sportID, context);
-                Fanex.Logging.Logger.Log.Info(_infoMsg);
+                Fanex.Logging.Logger.Log.Info(_infoMsg, "Apollo-Settlement");
             }
 
             if (!string.IsNullOrEmpty(msg)) _s = "no|" + msg;
