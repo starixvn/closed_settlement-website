@@ -275,10 +275,7 @@ public class Calculation : IHttpHandler, IRequiresSessionState
                 if (_isDeny)
                 {
                     _s = "Access Denied";
-                }
-
-                string _infoMsg = msg + "," +_s + ", matchid:" + matchID + "," + SyncScoreToApollo(type.ToLower(), sportID, context);
-                Fanex.Logging.Logger.Log.Info(_infoMsg);
+                }           
             }
 
             if (!string.IsNullOrEmpty(msg)) _s = "no|" + msg;
@@ -412,51 +409,7 @@ public class Calculation : IHttpHandler, IRequiresSessionState
         return _betstatus;
     }
 
-    private string SyncScoreToApollo(string type, int sportId, HttpContext context)
-    {
-        string score = string.Empty;
-        try
-        {
-            //ref int homeHT, ref int awayHT, ref int homeFT, ref int awayFT, ref string betStatus 
-            int homeHT = 0;
-            int awayHT = 0;
-            int homeFT = 0;
-            int awayFT = 0;
-            string betStatus = string.Empty;
-            string goalrecord = string.Empty;
-            bool isHTCal = type.ToLower() == "billht";
-            bool isScoreDirect = false;
-
-            if (context.Request.Form["isSD"] != null)
-            {
-                isScoreDirect = (string.Compare(context.Request.Form["isSD"], "1", true) == 0);
-            }
-
-            DoSettle.CalculationParams(sportId, context, ref homeHT, ref awayHT, ref homeFT, ref awayFT, ref betStatus, isScoreDirect, isHTCal);
-
-            if (sportId == 1)
-            {
-                goalrecord = CastAide.AsString(context.Request.Form["GR"]);
-                bool IsFGLG = context.Request.Form["sHasFGLG"].ToString() == "1";
-                betStatus = DoSettle.UpdateBetStatusForBill(context, IsFGLG);
-            }
-
-
-            score = "\"homeHT\":\"" + homeHT + "\",";
-            score += "\"awayHT\":\"" + awayHT + "\",";
-            score += "\"homeFT\":\"" + homeFT + "\",";
-            score += "\"awayFT\":\"" + awayFT + "\",";
-            score += "\"betStatus\":\"" + betStatus + "\",";
-            score += "\"goalrecord\":\"" + goalrecord + "\",";
-            score += "\"type\":\"" + type.ToLower();
-
-        }
-        catch (Exception ex)
-        {
-
-        }
-        return score;
-    }
+    
 
     public bool IsReusable
     {
