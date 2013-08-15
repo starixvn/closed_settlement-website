@@ -92,8 +92,18 @@ public class Multiple : IHttpHandler, IRequiresSessionState
                     if (type.ToLower() == "m")
                         _matchids = matchIDs;
 
-
-                    service.Set_ConfirmedAction_Parlay(_matchids, ActionKey(type.ToLower()));                       
+                    string _t = type.ToLower();
+                    if (_t == "r" || _t == "rht" || _t == "rft")
+                    {
+                        if (_s != null && _s.ToLower().IndexOf("not keyed in score yet") < 0)
+                        {
+                            service.Set_ConfirmedAction_Parlay(_matchids, ActionKey(type.ToLower()));
+                        }
+                    }
+                    else
+                    {
+                        service.Set_ConfirmedAction_Parlay(_matchids, ActionKey(type.ToLower()));
+                    }
                 }
                 catch (Exception ex)
                 {
