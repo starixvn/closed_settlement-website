@@ -5,6 +5,7 @@ using Sunplus.Accounting.Business.Settle;
 using Sunplus.Accounting.Entities.Settle;
 using Sunplus.Accounting.Entities;
 using Sunplus.Accounting.Core.Common;
+using System;
 
 namespace Sunplus.Accounting.WcfServiceLibrary.Settle
 {
@@ -16,7 +17,7 @@ namespace Sunplus.Accounting.WcfServiceLibrary.Settle
         public SettleLogResult SelSettleLogByMachCode(string matchCode, string fDate, string tDate)
         {
             var settle = CommonBootStrapper.Locator.GetInstance<IViewLogManager>();
-            var result = settle.SelSettleLogByMachCode(matchCode, fDate, tDate);
+            var result = settle.SelSettleLogByMachCode(Uri.UnescapeDataString(matchCode), fDate, tDate);
             return result;
         }
 

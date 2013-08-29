@@ -23,7 +23,7 @@
     <script src="../js/jQuery/scrolltable/webtoolkit.jscrollable.js" type="text/javascript"></script>
     <script src="../js/jQuery/scrolltable/webtoolkit.scrollabletable.js" type="text/javascript"></script>
     <script src="../js/Settlement.js" type="text/javascript"></script>
-    <script src="Js/ViewSettleLog.js?ver=<%=WebSettings.Version%>" type="text/javascript"></script>
+    <script src="Js/ViewSettleLog.js?ver=11dd22" type="text/javascript"></script>
 </head>
 <body>
 <div class="main">
