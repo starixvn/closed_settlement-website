@@ -11,7 +11,7 @@ $(window).load(
         fDate: '',
         tDate: '',
         selSettleLog: function () {
-            settleLog.matchId = document.getElementById('txtMatchCode').value;
+        settleLog.matchId = escape(document.getElementById('txtMatchCode').value);
             settleLog.fdate = $('#fromdate').val();
             settleLog.tDate = $('#todate').val();
 
