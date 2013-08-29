@@ -94,6 +94,7 @@ namespace Sunplus.Accounting.Core.Cache
                     result = RemotingRef.RefData.GetCasinoBetItem(resultId.ToString(), TWLang("en-US"));;
                     break;
                 case 1102:
+                case 1104:
                     result = RemotingRef.RefData.GetRouletteBetItem(resultId.ToString(), TWLang("en-US"));
                     break;
                 default:
