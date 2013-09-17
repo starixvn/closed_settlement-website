@@ -1,0 +1,6 @@
+﻿<Function Name="Customer - Login">
+  <Setting Key="Acc_LoginAdmin" SpName="Acc_LoginAdmin" DbName="DBCUST.CustDB"  />
+  <Setting Key="Acc_Con_AdminSelPwdVerify" SpName="Acc_Con_AdminSelPwdVerify" DbName="DBCUST.CustDB"  />
+  <Setting Key="UpdPwdReset" SpName="Acc_CustomerUpdPwdReset" DbName="DBCUST.CustDB"  />
+  <Setting Key="Acc_CustomerUpdUserInfo" SpName="Acc_CustomerUpdUserInfo" DbName="DBCUST.CustDB" />
+</Function>
