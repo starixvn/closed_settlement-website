@@ -63,10 +63,7 @@ namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
                 param.Add("errmsg", string.Empty);
                 param.Add("loginip", HttpContext.Current.Request.UserHostAddress);
 
-                //DbResult dr = DbHelper.ExecuteCmd("Acc_CustomerUpdPwdReset", param, DBType.MAIN);
-                var spElement = GetStoreInfo(UserControlSession.StoreCollection.AccountInfo, "UpdPwdReset");
-                DbResult dr = DbHelper.ExecuteCmd(spElement.Name, param, spElement.DbName);
-
+                DbResult dr = null;
                 using (ObjectDb db = new ObjectDb("UpdPwdReset"))
                 {
                     db.AssignParamValues(param);
