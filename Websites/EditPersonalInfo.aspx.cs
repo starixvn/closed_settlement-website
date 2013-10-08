@@ -16,7 +16,7 @@ public partial class EditPersonalInfo : System.Web.UI.Page
         string _s = string.Empty;
         try
         {
-            string accname = Session["Username"] as string ?? string.Empty;
+            string accname = AppSession.AccUserName;
             int accid = Convert.ToInt32(Session["AccId"] as object ?? -1);
             if (string.IsNullOrEmpty(accname) || accid == -1) throw new AccException("Invalid Session!");
             _s = LoadTemplate(accid, accname);
