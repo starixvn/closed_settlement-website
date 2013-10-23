@@ -584,7 +584,7 @@ function ResultCalculate(rs) {
         IsSuccess = 1;
     }
 
-    if (IsSuccess == 1) {      
+    if (IsSuccess == 1) {
 
         parent.jQuery("#dialog-modal").dialog('close');
         window.setTimeout(function () {
@@ -655,6 +655,7 @@ function CheckInputValue(sportID) {
         case 10: // golf
         case 11: // Motorsports
         case 7: // billiard
+        case 154:
             return true; //return IsValidScore(['homeF','awayF']);  
         case 8: // baseball
             return IsValidScore(['txt1Home', 'txt2Home', 'txt3Home', 'txt4Home', 'txt5Home', 'txt6Home', 'txt7Home', 'txt8Home', 'txt9Home', 'txt1Away', 'txt2Away', 'txt3Away', 'txt4Away', 'txt5Away', 'txt6Away', 'txt7Away', 'txt8Away', 'txt9Away']);
@@ -759,6 +760,7 @@ window.onload = function () {
         case 40: //     Taekwondo
         case 41: //     Triathlon
         case 42: //     Wrestling
+        case 154:
             $('homeF').focus();
             break;
         case 8: // baseball

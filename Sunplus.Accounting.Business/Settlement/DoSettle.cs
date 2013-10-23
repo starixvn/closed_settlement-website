@@ -6,6 +6,7 @@ using DNAide.Data;
 using Sunplus.Accounting.Entities;
 using System.Collections;
 using Fanex.Tarus.Settlement.Entity;
+using Sunplus.Accounting.Business.Constants;
 
 
 namespace Sunplus.Accounting.Business.Settlement
@@ -47,7 +48,7 @@ namespace Sunplus.Accounting.Business.Settlement
                     bool IsFGLG = hc.Request.Form["sHasFGLG"].ToString() == "1";
                     _betStatus = UpdateBetStatusForBill(hc, IsFGLG);
                 }
-                                
+
                 if (_action != "UNDO")
                 {
                     var rs = DataAccess.IBCDLL.Accounting.Settle.SettlementChecking(matchID, _action);
@@ -82,9 +83,9 @@ namespace Sunplus.Accounting.Business.Settlement
 
         public static string UpdateBetStatusForBill(HttpContext hc, bool isFGLG)
         {
-            string _betstatus = string.Empty;   
+            string _betstatus = string.Empty;
             ////BetStatus
-            if(isFGLG)
+            if (isFGLG)
             {
                 string goalrecord = hc.Request.Form["GR"];
                 string finalHomeScore = hc.Request.Form["homeF"];
@@ -95,7 +96,7 @@ namespace Sunplus.Accounting.Business.Settlement
                 match.FinalAwayScore = finalAwayScore;
                 _betstatus = match.GenerateMatchStatus();
             }
-           
+
             return _betstatus;
         }
 
@@ -230,7 +231,11 @@ namespace Sunplus.Accounting.Business.Settlement
                     }
                 }
             }
-            else if (sportID == 7 || sportID == 10 || sportID == 11 || sportID == 29) // Billiard, Golf, Motorsports, Winter Sports
+            else if (sportID == 7 ||
+                sportID == 10 ||
+                sportID == 11 ||
+                sportID == 29 ||
+                sportID == SportConstants.HorseRacingFixedOdds) // Billiard, Golf, Motorsports, Winter Sports, HorseRacingFixedOdds
             {
                 homeFT = CastAide.AsInt32(hc.Request.Form["homeF"], 0);
                 awayFT = CastAide.AsInt32(hc.Request.Form["awayF"], 0);
@@ -390,10 +395,10 @@ namespace Sunplus.Accounting.Business.Settlement
         }
 
         public static ErrorDetail Multiple1(int custID, string matchID)
-        {                
+        {
             try
             {
-                return  DataAccess.IBCDLL.Accounting.Settle.Multiple1(custID, matchID);                    
+                return DataAccess.IBCDLL.Accounting.Settle.Multiple1(custID, matchID);
             }
             catch (Exception ex)
             {
@@ -406,9 +411,8 @@ namespace Sunplus.Accounting.Business.Settlement
             }
         }
 
-
         public static ErrorDetail RefundMultiple(int custID, int matchID)
-        {               
+        {
             try
             {
                 return DataAccess.IBCDLL.Accounting.Settle.RefundMultiple(custID, matchID);
@@ -423,7 +427,6 @@ namespace Sunplus.Accounting.Business.Settlement
                 };
             }
         }
-
 
         public static ErrorDetail RefundMultipleHT(int custID, int matchID)
         {
@@ -443,7 +446,7 @@ namespace Sunplus.Accounting.Business.Settlement
         }
 
         public static ErrorDetail RefundMultipleFT(int custID, int matchID)
-        {               
+        {
             try
             {
                 return DataAccess.IBCDLL.Accounting.Settle.RefundMultipleFT(custID, matchID);
@@ -464,7 +467,7 @@ namespace Sunplus.Accounting.Business.Settlement
             bool f = false;
             try
             {
-                var rs = DataAccess.IBCDLL.Accounting.Settle.Settlement_BetDaq_Move(matchid);                
+                var rs = DataAccess.IBCDLL.Accounting.Settle.Settlement_BetDaq_Move(matchid);
                 if (rs.ErrorCode > 0)
                     errmsg = rs.ErrorMessage;
                 else
@@ -485,13 +488,12 @@ namespace Sunplus.Accounting.Business.Settlement
             return f;
         }
 
-
         public static bool Settlement_BetDaq_Move(int matchid, int newMatchId, ref string errmsg, ref string newMatchcode)
         {
             bool f = false;
             try
             {
-                var rs = DataAccess.IBCDLL.Accounting.Settle.Settlement_BetDaq_Move(matchid, newMatchId);                
+                var rs = DataAccess.IBCDLL.Accounting.Settle.Settlement_BetDaq_Move(matchid, newMatchId);
                 if (rs.ErrorCode > 0)
                     errmsg = rs.ErrorMessage;
                 else
@@ -501,7 +503,7 @@ namespace Sunplus.Accounting.Business.Settlement
                 }
             }
             catch (Exception ex)
-            {   
+            {
                 {
                     Sunplus.Accounting.Core.Extensions.LogExtensions.ExceptionHandler(ex);
                 }
@@ -509,7 +511,5 @@ namespace Sunplus.Accounting.Business.Settlement
             }
             return f;
         }
-
-
     }
 }
