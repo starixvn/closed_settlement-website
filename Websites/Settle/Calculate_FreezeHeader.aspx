@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Calculate_FreezeHeader.aspx.vb" Inherits="Settle_Index" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Calculate_FreezeHeader.aspx.vb"
+    Inherits="Settle_Index" %>
 
 <%@ Import Namespace="Sunplus.Accounting.Core.Common" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -28,7 +29,7 @@
     <script type="text/javascript" src="../js/BlockUI.js"></script>
     <script type="text/javascript" src="../js/common.js?vers=1"></script>
     <script type="text/javascript" src="../js/Settlement.js?vers=2"></script>
-    <script type="text/javascript" src="../js/Calculation.js?vers=2"></script>
+    <script type="text/javascript" src="../js/Calculation.js?vers=3"></script>
     <script type="text/javascript" src="../js/Common/ControlUI.js"></script>
     <script type="text/javascript" src="Js/multipleCalculate.js"></script>
     <script type="text/javascript" src="Js/UndecidedSettleMatch.js?vers=1"></script>

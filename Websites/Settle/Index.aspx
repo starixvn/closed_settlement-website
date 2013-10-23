@@ -28,14 +28,12 @@
     <script type="text/javascript" src="../js/common.js?vers=1"></script>
     <script type="text/javascript" src="../js/Settlement.js"></script>
     <script type="text/javascript" src="Js/SettlementManagement.js?vers=2"></script>
-    <script type="text/javascript" src="../js/Calculation.js?vers=2"></script>
-
+    <script type="text/javascript" src="../js/Calculation.js?vers=3"></script>
     <script src="../js/Common/ControlUI.js" type="text/javascript"></script>
     <script src="Js/multipleCalculate.js" type="text/javascript"></script>
     <script src="Js/UndecidedSettleMatch.js?vers=1" type="text/javascript"></script>
     <script src="../js/dialogbox.js?ver=6" type="text/javascript"></script>
-     <script src="Js/ApolloConfirmedAction.js" type="text/javascript"></script>
-
+    <script src="Js/ApolloConfirmedAction.js" type="text/javascript"></script>
     <script type="text/javascript">
         var rootpath = '../';
         jQuery.noConflict();
