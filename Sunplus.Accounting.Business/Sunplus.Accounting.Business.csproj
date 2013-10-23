@@ -175,12 +175,14 @@
     <Compile Include="BootStrappers\CommonBootStrapper.cs" />
     <Compile Include="BootStrappers\UnityBootStrapper.cs" />
     <Compile Include="CacheManager\CacheUtils.cs" />
+    <Compile Include="Constants\SportConstants.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="IHelper.cs" />
     <Compile Include="Logs.cs" />
     <Compile Include="LogDisplay\ISettingManager.cs" />
     <Compile Include="LogDisplay\LogFormater.cs" />
     <Compile Include="LogDisplay\SettingManager.cs" />
+    <Compile Include="ResultPage\HorseRacingFixedOdds.cs" />
     <Compile Include="Security\LoginFailedHandler.cs" />
     <Compile Include="Security\Permissions.cs" />
     <Compile Include="Settle\ISettlement.cs" />
@@ -279,7 +281,7 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties BuildVersion_UpdateAssemblyVersion="True" BuildVersion_UpdateFileVersion="True" BuildVersion_BuildVersioningStyle="None.None.Increment.Increment" BuildVersion_AssemblyInfoFilename="" />
+      <UserProperties BuildVersion_AssemblyInfoFilename="" BuildVersion_BuildVersioningStyle="None.None.Increment.Increment" BuildVersion_UpdateFileVersion="True" BuildVersion_UpdateAssemblyVersion="True" />
     </VisualStudio>
   </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
