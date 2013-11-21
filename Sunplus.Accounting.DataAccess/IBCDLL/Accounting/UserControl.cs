@@ -11,6 +11,7 @@ using Sunplus.Core.LoggingLib;
 using Sunplus.Accounting.Core.Extensions;
 using Sunplus.Accounting.Core.Configurations.StoreProcedureGroup;
 using Sunplus.Accounting.Core.Configurations;
+using Fanex.Data;
 
 namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
 {
@@ -62,9 +63,15 @@ namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
                 param.Add("errmsg", string.Empty);
                 param.Add("loginip", HttpContext.Current.Request.UserHostAddress);
 
-                //DbResult dr = DbHelper.ExecuteCmd("Acc_CustomerUpdPwdReset", param, DBType.MAIN);
-                var spElement = GetStoreInfo(UserControlSession.StoreCollection.AccountInfo, "UpdPwdReset");
-                DbResult dr = DbHelper.ExecuteCmd(spElement.Name, param, spElement.DbName);
+                DbResult dr = null;
+                using (ObjectDb db = new ObjectDb("UpdPwdReset"))
+                {
+                    db.AssignParamValues(param);
+                    var ds = db.ExecuteDataSet();
+                    var output = db.GetOuputParams();
+                    dr = new DbResult(output, ds);
+
+                }
 
                 if ((int) dr.Outputs["errcode"] > 0)
                     throw new AccException(dr.Outputs["errmsg"].ToString());

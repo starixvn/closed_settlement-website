@@ -8,6 +8,7 @@ using Sunplus.Accounting.Core.Configurations;
 using Sunplus.Accounting.Core.Configurations.StoreProcedureGroup;
 using Sunplus.Accounting.DataAccess.IBCDLL.Customer;
 using Sunplus.Core.LoggingLib;
+using Fanex.Data;
 
 namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
 {
@@ -36,8 +37,15 @@ namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
                 param.Add("userid", accId);
                 param.Add("errcode", 0);
                 param.Add("errmsg", string.Empty);
+                
+                using (ObjectDb db = new ObjectDb("Acc_Con_AdminSelPwdVerify"))
+                {
+                    db.AssignParamValues(param);
+                    var ds = db.ExecuteDataSet();
+                    var output = db.GetOuputParams();
 
-                dr = DbHelper.Execute("acc_con_adminselpwdverify", param, DBType.MAIN);
+                    dr = new DbResult(output, ds);
+                }
             }
             catch (Exception ex)
             {
@@ -71,9 +79,16 @@ namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
             {
                 param.Add("errcode", 0);
                 param.Add("errmsg", string.Empty);
-                var spElement = GetStoreProcedure(Sunplus.Accounting.Core.Configurations.StoreProcedureGroup.SportbookPtSession.StoreCollection.SportBooksPtControl, "UpdateUserInfo");
-                DbResult dr = DbHelper.ExecuteCmd(spElement.Name, param, spElement.DbName);
-                if ((int) dr.Outputs["errcode"] > 0) throw new AccException(dr.Outputs["errmsg"].ToString());
+                
+                Hashtable outout = new Hashtable();
+                using (ObjectDb db = new ObjectDb("Acc_CustomerUpdUserInfo"))
+                {
+                    db.AssignParamValues(param);
+                    db.ExecuteNonQuery();
+                    outout = db.GetOuputParams();
+                }
+
+                if ((int)outout["errcode"] > 0) throw new AccException(outout["errmsg"].ToString());
             }
             catch (AccException accException)
             {
