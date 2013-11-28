@@ -17,8 +17,8 @@ public class VerifyPassword : IHttpHandler, IRequiresSessionState {
         try
         {
             context.Response.ContentType = "text/html";
-            string accname = context.Session["Username"] as string ?? string.Empty;
-            int accid = Convert.ToInt32(context.Session["AccId"] as object ?? -1);
+            string accname = AppSession.AccUserName;
+            int accid = AppSession.AccId;
             if (string.IsNullOrEmpty(accname) || accid == -1) throw new AccException(IbcError.ACCESS_DENIED_MSG);
             string password = context.Request["password"] as string ?? string.Empty;
             if (string.IsNullOrEmpty(password) || password.Length < 4)

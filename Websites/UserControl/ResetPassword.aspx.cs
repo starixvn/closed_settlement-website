@@ -72,8 +72,8 @@ public partial class UserControl_ResetPassword : System.Web.UI.Page
 
             //string script = "";
             s += "<script type='text/javascript'>showAlertMessage('errMsg','Update Password Successfully!',0); ";
-            s += "parent.leftPanel.document.getElementById('accKey').value='" + accKey + "';";
-            s += "parent.leftPanel.document.getElementById('chalengeStr').value='" + rndStr + "';";
+            //s += "parent.leftPanel.document.getElementById('accKey').value='" + accKey + "';";
+            //s += "parent.leftPanel.document.getElementById('chalengeStr').value='" + rndStr + "';";
             s += "</script>";            
             //Response.Write(script);
             s += "<script type='text/javascript'>afterUpdate(false,2000);</script>";

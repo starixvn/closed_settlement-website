@@ -192,7 +192,6 @@ namespace Sunplus.Accounting.Core.Common
             get
             {
                 return HttpContext.Current.Session["BalanceUpDay"];
-
             }
             set { HttpContext.Current.Session["BalanceUpDay"] = value; }
         }

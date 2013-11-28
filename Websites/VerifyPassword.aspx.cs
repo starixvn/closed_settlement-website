@@ -25,9 +25,8 @@ public partial class VerifyPassword : System.Web.UI.Page
     {
         try
         {
-            accname = Session["Username"] as string ?? string.Empty;            
-            if (string.IsNullOrEmpty(accname)) throw new AccException(IbcError.ACCESS_DENIED_MSG);
-            
+            if (string.IsNullOrEmpty(AppSession.AccUserName)) throw new AccException(IbcError.ACCESS_DENIED_MSG);
+            accname = AppSession.AccUserName;
         }
         catch (AccException ex)
         {
