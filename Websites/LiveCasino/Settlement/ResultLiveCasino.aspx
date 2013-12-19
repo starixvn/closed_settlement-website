@@ -181,7 +181,7 @@
                                             {{if BetStatus == ""}}
                                                 N/A
                                             {{else}}
-                                                {{if BetType == 1101}}
+                                                {{if BetType == 1101 || BetType == 1103}}
                                                     <span>${FinalHomeScore} - ${FinalAwayScore}</span>
                                                 {{else}}
                                                     <span>${FinalHomeScore}</span>

@@ -52,6 +52,7 @@ public class DirectLogin : IHttpHandler, IRequiresSessionState
                     FormsAuthentication.SetAuthCookie(username, false);
                     AppSession.CurrentSystemName = WebSettings.SystemName;
                     AppSession.AccUserName = username;
+                    AppSession.Username = username;
                     AppSession.AccId = accId;
                     AppSession.OnAccId = Sunplus.Accounting.DataAccess.IBCDLL.UserController.AccLoginAdminOnuser(accId, WebSettings.ServerId, context.Request.UserHostAddress);
                     AuthManager.AssignRoles(accId);

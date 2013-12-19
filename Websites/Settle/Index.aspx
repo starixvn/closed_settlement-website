@@ -3,70 +3,68 @@
 <%@ Import Namespace="Sunplus.Accounting.Core.Common" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">    
-    <title><%=title%></title>
-    <link href="../App_Themes/Public/common.css" rel="stylesheet" type="text/css" />
-    <link href="../App_Themes/Public/table.css" rel="stylesheet" type="text/css" />
-    <link href="../App_Themes/Public/input.css" rel="stylesheet" type="text/css" />
-    <link href="../App_Themes/Settle/Settle.css" rel="stylesheet" type="text/css" />
-    <link href="../js/Controls/StyledCheckbox/form[1].css" rel="stylesheet" type="text/css" />
+<head id="Head1" runat="server">
+    <title>
+        <%=title%></title>
+    <link rel="stylesheet" type="text/css" href="../App_Themes/Public/common.css" />
+    <link rel="stylesheet" type="text/css" href="../App_Themes/Public/table.css" />
+    <link rel="stylesheet" type="text/css" href="../App_Themes/Public/input.css" />
+    <link rel="stylesheet" type="text/css" href="../App_Themes/Settle/Settle.css" />
+    <link rel="stylesheet" type="text/css" href="../js/Controls/StyledCheckbox/form[1].css" />
     <link rel="stylesheet" type="text/css" href="../js/IBCWnd/IBCWnd.css" />
-    <link href="../App_Themes/Public/Message.css" rel="stylesheet" type="text/css" />
-    <link href="../js/jQuery/Bubblepopup/css/jquery.bubblepopup.v2.3.1.css" rel="stylesheet" type="text/css" />
-    <link href="../js/jQuery/UI/css/custom-theme/jquery-ui-1.8.10.custom.css" rel="stylesheet"
-        type="text/css" />
-    <link href="../js/Window/dhtmlwindow/dhtmlwindow.css" rel="stylesheet" type="text/css" />
-
-    <script src="../js/Controls/StyledCheckbox/custom-form-elements.js" type="text/javascript"></script>
-    <script type="text/javascript">var rootpath = '../';</script>
+    <link rel="stylesheet" type="text/css" href="../App_Themes/Public/Message.css" />
+    <link rel="stylesheet" type="text/css" href="../js/jQuery/Bubblepopup/css/jquery.bubblepopup.v2.3.1.css" />
+    <link rel="stylesheet" type="text/css" href="../js/jQuery/UI/css/custom-theme/jquery-ui-1.8.10.custom.css" />
+    <link rel="stylesheet" type="text/css" href="../js/Window/dhtmlwindow/dhtmlwindow.css" />
+    <link rel="stylesheet" type="text/css" href="Styles/SettlementManager.css" />
+    <script type="text/javascript" src="../js/Controls/StyledCheckbox/custom-form-elements.js"></script>
     <script type="text/javascript" src="../js/prototype.js"></script>
-    <script src="../js/jQuery/jquery.js" type="text/javascript"></script>
-    <script src="../js/jQuery/UI/jquery-ui-1.8.10.custom.min.js" type="text/javascript"></script>
-    <script src="../js/jQuery/jquery.shiftclick.js" type="text/javascript"></script>      
-    <script src="../js/jQuery/jquery.blockUI.1.33.js" type="text/javascript"></script>
-    <script src="../js/BlockUI.js" type="text/javascript"></script>  
+    <script type="text/javascript" src="../js/jQuery/jquery.js"></script>
+    <%--<script type="text/javascript" src="../js/jQuery/jquery-1.7.2.min.js"></script>--%>
+    <script type="text/javascript" src="../js/jQuery/UI/jquery-ui-1.8.10.custom.min.js"></script>
+    <script type="text/javascript" src="../js/jQuery/jquery.shiftclick.js"></script>
+    <script type="text/javascript" src="../js/jQuery/jquery.blockUI.1.33.js"></script>
+    <script type="text/javascript" src="../js/BlockUI.js"></script>
     <script type="text/javascript" src="../js/common.js?vers=1"></script>
-    <script type="text/javascript" src="../js/Settlement.js?vers=2"></script>
-    <script type="text/javascript" src="../js/Calculation.js?vers=2"></script>
+    <script type="text/javascript" src="../js/Settlement.js"></script>
+    <script type="text/javascript" src="Js/SettlementManagement.js?vers=2"></script>
+    <script type="text/javascript" src="../js/Calculation.js?vers=3"></script>
     <script src="../js/Common/ControlUI.js" type="text/javascript"></script>
     <script src="Js/multipleCalculate.js" type="text/javascript"></script>
     <script src="Js/UndecidedSettleMatch.js?vers=1" type="text/javascript"></script>
     <script src="../js/dialogbox.js?ver=6" type="text/javascript"></script>
-    
+    <script src="Js/ApolloConfirmedAction.js" type="text/javascript"></script>
     <script type="text/javascript">
+        var rootpath = '../';
         jQuery.noConflict();
-        function updateIsPending(obj, matchid) {            
-            if (confirm("Are you sure you want to update PENDING status for this match?"))
-            {
-            
-                try {PTBlockUI(); } catch (e) { }
-                var param = '{"matchid":' + matchid + ',"ispending":' + jQuery(obj).attr("checked") +  '}';
+        function updateIsPending(obj, matchid) {
+            if (confirm("Are you sure you want to update PENDING status for this match?")) {
+
+                try { PTBlockUI(); } catch (e) { }
+                var param = '{"matchid":' + matchid + ',"ispending":' + jQuery(obj).attr("checked") + '}';
                 jQuery.ajax({
                     type: "POST",
                     url: "Service/SettlementService.svc/UdpMatch_Pending",
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
-                    data:  param,
+                    data: param,
                     success: function (rs) {
-                        if (rs.errCode>0)
-                        {
+                        if (rs.errCode > 0) {
                             //showAlertMessage("err",rs.errMessage,1);
                             alert(rs.ErrorMessage);
-                            jQuery(obj).attr("checked",!jQuery(obj).attr("checked"));
+                            jQuery(obj).attr("checked", !jQuery(obj).attr("checked"));
                         }
-                        else
-                        {
+                        else {
                             alert("Update PENDING status successful.");
                             GetSettleMatch();
                         }
-                        try {  PTUnBlockUI();  } catch (e) { }
+                        try { PTUnBlockUI(); } catch (e) { }
                     }
-                    });
-             }
-             else
-             {
-                jQuery(obj).attr("checked",!jQuery(obj).attr("checked"));
-             }
+                });
+            }
+            else {
+                jQuery(obj).attr("checked", !jQuery(obj).attr("checked"));
+            }
         }
     </script>
     <%--<style type="text/css">
@@ -74,23 +72,20 @@
     </style>--%>
 </head>
 <body>
-    <div style="display:none;" id="dialog-message" title="Calculate MP">
-	    <p>
-		    <span  class="ui-icon ui-icon-circle-check" style="float:left; margin:0 12px 12px 0;"></span>
-		    <span id="msgContent"></span>
-	    </p>
+    <div style="display: none;" id="dialog-message" title="Calculate MP">
+        <p>
+            <span class="ui-icon ui-icon-circle-check" style="float: left; margin: 0 12px 12px 0;">
+            </span><span id="msgContent"></span>
+        </p>
     </div>
-    <div style="display:none;" id="dialog-result" title="Calculate MP">
-	    <p>
-		    <span  class="ui-icon ui-icon-circle-check" style="float:left; margin:0 12px 12px 0;"></span>
-		    <span id="msgResult"></span>
-	    </p>
+    <div style="display: none;" id="dialog-result" title="Calculate MP">
+        <p>
+            <span class="ui-icon ui-icon-circle-check" style="float: left; margin: 0 12px 12px 0;">
+            </span><span id="msgResult"></span>
+        </p>
     </div>
-    
-    <div style="display:none;" id="dialog-numbergame" title="">
-	    
+    <div style="display: none;" id="dialog-numbergame" title="">
     </div>
-
     <div class="main">
         <div class="maincontent">
             <div id="tabmain_conts">
@@ -101,7 +96,6 @@
                     </ul>
                 </div>
             </div>
-
             <div class="maincontent_box">
                 <div id="searchbox">
                     <asp:Literal ID="searchContent" runat="server"></asp:Literal>
@@ -111,11 +105,11 @@
                 <div id='sContent'>
                 </div>
                 <div style="display: none;" id="divMatch" class="divMatch65">
-                    <iframe frameborder="0" src="" id="frMatch" name="frMatch" class="frMatch65" scrolling="no"  allowTransparency="true">
-                    </iframe>
+                    <iframe frameborder="0" src="" id="frMatch" name="frMatch" class="frMatch65" scrolling="no"
+                        allowtransparency="true"></iframe>
                 </div>
                 <form>
-                    <input type="hidden" id="hidcontent" />
+                <input type="hidden" id="hidcontent" />
                 </form>
                 <div id="numbergame_templaterf" style="display: none;">
                     <div id="numbergameboxrf{matchid}" class="numbergameboxrf">
@@ -155,7 +149,6 @@
             </div>
         </div>
     </div>
-
     <script type="text/javascript">
         Custom.init();
 
@@ -177,10 +170,10 @@
         }
 
         function addTimerId_ReCalNumberGame() {
-            
+
             var timerId = setTimeout(function () {
-                    clearTimeouts_ReCalcNumberGame();
-                    GetSettleMatch();
+                clearTimeouts_ReCalcNumberGame();
+                GetSettleMatch();
             }, 3000);
             recalNumberGameTimerIds.push(timerId);
         }
@@ -192,7 +185,7 @@
         });
 
         undecided.userId = '<%=AppSession.AccId %>';
+        setInterval(settlementManagement.getCalcMPStatus, 10000);
     </script>
-    
 </body>
 </html>

@@ -1,29 +1,18 @@
 using System;
-using System.Data;
-using System.Configuration;
 using System.Collections;
+using System.Data;
 using System.Web;
-using System.Web.Security;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Web.UI.WebControls.WebParts;
-using System.Web.UI.HtmlControls;
-using System.Text;
-using Sunplus.Accounting.Business.Settle;
-using Sunplus.Accounting.Business.Settlement;
-using Sunplus.Accounting.Core.Cache;
-using Sunplus.Accounting.Core.Common;
-using Sunplus.Accounting.Core.Helper;
-using Sunplus.Accounting.Core.Web;
-using Sunplus.Core.LoggingLib;
-using IBCUtils.Web;
-using Sunplus.Accounting.DataAccess.IBCDLL.Accounting;
-using IBCUtils.DAL;
 using DNAide.Core;
 using DNAide.Data;
 using DNAide.Web;
-using Fanex.Data;
 using Fanex.Tarus.Settlement.Entity;
+using IBCUtils.Web;
+using Sunplus.Accounting.Business.Constants;
+using Sunplus.Accounting.Business.Settle;
+using Sunplus.Accounting.Business.Settlement;
+using Sunplus.Accounting.Core.Cache;
+using Sunplus.Accounting.Core.Helper;
+using Sunplus.Accounting.DataAccess.IBCDLL.Accounting;
 
 
 public partial class Settle_Calculation : System.Web.UI.Page
@@ -158,6 +147,7 @@ public partial class Settle_Calculation : System.Web.UI.Page
                 case 40://     Taekwondo
                 case 41://     Triathlon
                 case 42://     Wrestling
+                case SportConstants.HorseRacingFixedOdds:
                     return BilliardHTML(r, isRefund, IsMovebetdaq, IsExcludeBetdaq, IsSettleAbandonedMatch, IsRefundRunningBetDaq); // not finish yet
                 case 8: // baseball
                     return BaseballHTML(r, isRefund, IsMovebetdaq, IsExcludeBetdaq, IsSettleAbandonedMatch, IsRefundRunningBetDaq);
@@ -302,7 +292,7 @@ public partial class Settle_Calculation : System.Web.UI.Page
                 TemplateHandler.RemoveBlock(ref _s, "FGLG");
             }
             else
-            {                
+            {
                 if (r["betstatus"].ToString().IndexOf("FL:") != -1)
                 {
                     try
@@ -399,18 +389,18 @@ public partial class Settle_Calculation : System.Web.UI.Page
                 TemplateHandler.Assign(ref _s, "{afgoaldisplay}", goalHistory.AwayScoreFirstGoal ? "inline" : "none");
                 TemplateHandler.Assign(ref _s, "{algoaldisplay}", goalHistory.AwayScoreLastGoal ? "inline" : "none");
                 TemplateHandler.Assign(ref _s, "{Refund}", tplRefund);
-               
-                if(!isExistFGLG && fglgStatus == "no ticket")
+
+                if (!isExistFGLG && fglgStatus == "no ticket")
                 {
                     TemplateController.RemoveBlock(ref _s, "FGLG");
-                   // TemplateController.RemoveBlock(ref _s, "RefunFGLG");
+                    // TemplateController.RemoveBlock(ref _s, "RefunFGLG");
                     //TemplateController.RemoveBlock(ref _s, "RefundAllLastGoal");
                 }
                 CheckExcludeMoveBetDaq(ref _s, IsMovebetdaq, IsExcludeBetdaq, IsSettleAbandonedMatch, IsRefundRunningBetDaq);
             }
             else
             {
-             
+
                 _s = Sunplus.Accounting.Core.Web.WebUtils.LoadTemplate("Settle/BillSoccer.htm");
 
                 TemplateHandler.RemoveBlock(ref _s, "RefundButton1");
@@ -419,7 +409,7 @@ public partial class Settle_Calculation : System.Web.UI.Page
 
                 #region GoalHistory
                 string type = Request["type"];
-               
+
                 if (type == "b")// only for bill
                 {
                     //string goalrecord = CastAide.AsString(r["goalrecord"]);
@@ -444,7 +434,7 @@ public partial class Settle_Calculation : System.Web.UI.Page
                     TemplateHandler.Assign(ref _s, "ShowGoalHistory", string.Empty);
                     TemplateHandler.RemoveBlock(ref _s, "goalrecord");
                 }
-                if(!isExistFGLG)
+                if (!isExistFGLG)
                 {
                     TemplateController.RemoveBlock(ref _s, "FGLG");
                     TemplateController.RemoveBlock(ref _s, "RefunFGLG");
@@ -467,17 +457,17 @@ public partial class Settle_Calculation : System.Web.UI.Page
             TemplateHandler.Assign(ref _s, "{awayteam}", CacheRef.GetTeamName(r["awayid"]));
             TemplateHandler.Assign(ref _s, "{matchcode}", ((!Convert.IsDBNull(r["matchcode"])) ? r["matchcode"].ToString() : string.Empty));
             TemplateHandler.Assign(ref _s, "{date}", string.Format(cult, "{0:MM/dd/yyyy}", r["eventdate"]));
-           
+
             if (!isExistLG)
                 TemplateController.RemoveBlock(ref _s, "RefundAllLastGoal");
             //if (isExistFGLG)
             //{
-               
+
             //    TemplateHandler.Assign(ref _s, "{disabledGR}", "");
             //}
             //else
             //{
-                
+
             //    TemplateHandler.Assign(ref _s, "{disabledGR}", "disabled=\"disabled\"");
             //}
             TemplateController.Assign(ref _s, "{hasFGLG}", (isExistFGLG) ? "1" : "0");
@@ -517,7 +507,7 @@ public partial class Settle_Calculation : System.Web.UI.Page
             }
             else
             {
-               // TemplateController.RemoveBlock(ref _s, "FGLG");
+                // TemplateController.RemoveBlock(ref _s, "FGLG");
                 TemplateController.RemoveBlock(ref _s, "RefundBlock");
             }
 
@@ -631,7 +621,7 @@ public partial class Settle_Calculation : System.Web.UI.Page
                             string awaySet = _betStatus[i].Trim().Split('-')[1];
                             totalGameHome += Convert.ToInt32(homeSet.Trim());
                             totalGameAway += Convert.ToInt32(awaySet.Trim());
-                       
+
                             TemplateHandler.Assign(ref _s, "{value" + (i + 1).ToString() + "qHome}", homeSet.Trim());
                             TemplateHandler.Assign(ref _s, "{value" + (i + 1).ToString() + "qAway}", awaySet.Trim());
                         }
@@ -803,7 +793,7 @@ public partial class Settle_Calculation : System.Web.UI.Page
                             string awaySet = _betStatus[i].Trim().Split('-')[1];
                             totalGameHome += Convert.ToInt32(homeSet.Trim());
                             totalGameAway += Convert.ToInt32(awaySet.Trim());
-                      
+
                             TemplateHandler.Assign(ref _s, "{value" + (i + 1).ToString() + "qHome}", homeSet.Trim());
                             TemplateHandler.Assign(ref _s, "{value" + (i + 1).ToString() + "qAway}", awaySet.Trim());
                         }
@@ -1333,21 +1323,21 @@ public partial class Settle_Calculation : System.Web.UI.Page
                     }
                     for (; i < _betStatus.Length; i++)
                     {
-                          var arr_betStatus = _betStatus[i].Trim().Split('-');
-                          if (arr_betStatus.Length > 1)
-                          {
-                              string homeSet = _betStatus[i].Trim().Split('-')[0];
-                              string awaySet = _betStatus[i].Trim().Split('-')[1];
-                              totalGameHome += Convert.ToInt32(homeSet.Trim());
-                              totalGameAway += Convert.ToInt32(awaySet.Trim());
-                              TemplateHandler.Assign(ref _s, "{value" + (i + 1).ToString() + "sHome}", homeSet.Trim());
-                              TemplateHandler.Assign(ref _s, "{value" + (i + 1).ToString() + "sAway}", awaySet.Trim());
-                          }
-                          else
-                          {
-                              TemplateHandler.Assign(ref _s, "{value" + (i + 1).ToString() + "sHome}", string.Empty);
-                              TemplateHandler.Assign(ref _s, "{value" + (i + 1).ToString() + "sAway}", string.Empty);
-                          }
+                        var arr_betStatus = _betStatus[i].Trim().Split('-');
+                        if (arr_betStatus.Length > 1)
+                        {
+                            string homeSet = _betStatus[i].Trim().Split('-')[0];
+                            string awaySet = _betStatus[i].Trim().Split('-')[1];
+                            totalGameHome += Convert.ToInt32(homeSet.Trim());
+                            totalGameAway += Convert.ToInt32(awaySet.Trim());
+                            TemplateHandler.Assign(ref _s, "{value" + (i + 1).ToString() + "sHome}", homeSet.Trim());
+                            TemplateHandler.Assign(ref _s, "{value" + (i + 1).ToString() + "sAway}", awaySet.Trim());
+                        }
+                        else
+                        {
+                            TemplateHandler.Assign(ref _s, "{value" + (i + 1).ToString() + "sHome}", string.Empty);
+                            TemplateHandler.Assign(ref _s, "{value" + (i + 1).ToString() + "sAway}", string.Empty);
+                        }
 
                     }
                     i--;
@@ -1475,22 +1465,22 @@ public partial class Settle_Calculation : System.Web.UI.Page
                     }
                     for (; i < _betStatus.Length; i++)
                     {
-                         var arr_betStatus = _betStatus[i].Trim().Split('-');
-                         if (arr_betStatus.Length > 1)
-                         {
-                             string homeSet = _betStatus[i].Trim().Split('-')[0];
-                             string awaySet = _betStatus[i].Trim().Split('-')[1];
-                             totalGameHome += Convert.ToInt32(homeSet.Trim());
-                             totalGameAway += Convert.ToInt32(awaySet.Trim());
-                             TemplateHandler.Assign(ref _s, "{value" + (i + 1).ToString() + "Home}", homeSet.Trim());
-                             TemplateHandler.Assign(ref _s, "{value" + (i + 1).ToString() + "Away}", awaySet.Trim());
-                         }
-                         else
-                         {
-                             TemplateHandler.Assign(ref _s, "{value" + (i + 1).ToString() + "Home}", string.Empty);
-                             TemplateHandler.Assign(ref _s, "{value" + (i + 1).ToString() + "Away}", string.Empty);
-                         }
-                         if (i == totalSets && arr_betStatus.Length > 1)
+                        var arr_betStatus = _betStatus[i].Trim().Split('-');
+                        if (arr_betStatus.Length > 1)
+                        {
+                            string homeSet = _betStatus[i].Trim().Split('-')[0];
+                            string awaySet = _betStatus[i].Trim().Split('-')[1];
+                            totalGameHome += Convert.ToInt32(homeSet.Trim());
+                            totalGameAway += Convert.ToInt32(awaySet.Trim());
+                            TemplateHandler.Assign(ref _s, "{value" + (i + 1).ToString() + "Home}", homeSet.Trim());
+                            TemplateHandler.Assign(ref _s, "{value" + (i + 1).ToString() + "Away}", awaySet.Trim());
+                        }
+                        else
+                        {
+                            TemplateHandler.Assign(ref _s, "{value" + (i + 1).ToString() + "Home}", string.Empty);
+                            TemplateHandler.Assign(ref _s, "{value" + (i + 1).ToString() + "Away}", string.Empty);
+                        }
+                        if (i == totalSets && arr_betStatus.Length > 1)
                         {
                             _homeEI = _betStatus[i].Trim().Split('-')[0];
                             _awayEI = _betStatus[i].Trim().Split('-')[1];

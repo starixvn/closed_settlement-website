@@ -1,0 +1,36 @@
+
+#ignore thumbnails created by windows
+Thumbs.db
+#Ignore files build by Visual Studio
+*.obj
+*.exe
+*.pdb
+*.user
+*.aps
+*.pch
+*.vspscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.cache
+*.ilk
+*.log
+[Bb]in
+[Dd]ebug*/
+*.lib
+*.sbr
+obj/
+[Rr]elease*/
+_ReSharper*/
+[Tt]est[Rr]esult*
+<<<<<<< HEAD
+=======
+obj/Debug/
+DLL/
+/Sunplus.Data.DataAbstract/DLL
+/Sunplus.Data.DataAbstract/obj
+>>>>>>> 1e905bc0ff81ff2736253eb4cf6364c270ebe502

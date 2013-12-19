@@ -12,13 +12,13 @@ using System.Globalization;
 using System.Data;
 using DNAide.Core;
 using DNAide.Data;
-  
+using Sunplus.Accounting.Business.Constants;
 
 public class GetSettleMatch : IHttpHandler, IRequiresSessionState
 {
     private System.Globalization.CultureInfo cult = System.Globalization.CultureInfo.CurrentCulture;
-    private string nl = Environment.NewLine; 
-    private string fdate, tdate;    
+    private string nl = Environment.NewLine;
+    private string fdate, tdate;
     int custID = 0, sportID = 1, leagueID = 0;
     bool isUncal = false, isUncalMul = false;
     string mode = string.Empty;
@@ -32,7 +32,7 @@ public class GetSettleMatch : IHttpHandler, IRequiresSessionState
             context.Response.Cache.SetCacheability(HttpCacheability.NoCache);
             custID = Convert.ToInt32(context.Session["AccId"] as object ?? -1);
             if (custID == -1) throw new AccException(IBCUtils.IbcError.ACCESS_DENIED_MSG);
-             //fdate = IBCUtils.FormatHandler.FormatDateEn(context.Request.Form["fdate"]);
+            //fdate = IBCUtils.FormatHandler.FormatDateEn(context.Request.Form["fdate"]);
             CultureInfo culture = new CultureInfo("en-US");
             DateTime dtFDate = CastAide.AsDateTime(context.Request.Form["fdate"], DateTime.Now, culture);
             DateTime dtTDate = CastAide.AsDateTime(context.Request.Form["tdate"], DateTime.Now, culture);
@@ -40,14 +40,14 @@ public class GetSettleMatch : IHttpHandler, IRequiresSessionState
             tdate = dtTDate.ToString("MM/dd/yyyy");
             sportID = Convert.ToInt32(context.Request.Form["sportID"]);
             mode = context.Request.Form["mode"];
-            
-            
-            DbResult dr = Settle.GetSettlePermission(custID);            
+
+
+            DbResult dr = Settle.GetSettlePermission(custID);
             SettleBgColor.HasHostPermission = (Convert.ToInt32(dr.Outputs["errcode"]) == 0) ? true : false;
-            
+
             // Get string permissions
             permissions = Sunplus.Accounting.Business.Security.Permissions.CheckHostPermissionSettle(custID);
-            
+
             string _s = string.Empty;
             if (sportID == 161)//Hardcode for Number Game
             {
@@ -62,7 +62,7 @@ public class GetSettleMatch : IHttpHandler, IRequiresSessionState
                     leagueID = Convert.ToInt32(context.Request.Form["leagueID"]);
                     isUncal = (context.Request.Form["isUncal"] == "1") ? true : false;
                     isUncalMul = (context.Request.Form["isUncalMul"] == "1") ? true : false;
-                    dsResult = Settle.SettleSelectMatch(sportID, dtFDate, dtTDate, leagueID, isUncal, isUncalMul);                    
+                    dsResult = Settle.SettleSelectMatch(sportID, dtFDate, dtTDate, leagueID, isUncal, isUncalMul);
                 }
                 else if (string.Compare(mode, "HTOVER", true) == 0) // HT Over ONLY
                 {
@@ -82,11 +82,11 @@ public class GetSettleMatch : IHttpHandler, IRequiresSessionState
                 {
                     _s = Sunplus.Accounting.Core.Web.WebUtils.LoadTemplate("Settle/NoInfo.htm");
                     TemplateHandler.Assign(ref _s, "{fdate}", fdate);
-                    TemplateHandler.Assign(ref _s, "{tdate}", tdate);                    
+                    TemplateHandler.Assign(ref _s, "{tdate}", tdate);
                 }
-                
+
             }
-                        
+
             context.Response.Write(_s);
         }
         catch (Exception ex)
@@ -94,7 +94,7 @@ public class GetSettleMatch : IHttpHandler, IRequiresSessionState
             Sunplus.Accounting.Core.Extensions.LogExtensions.ExceptionHandler(ex);
         }
     }
-    
+
     private string GenerateHTML(DataRow[] rows)
     {
         if (string.Compare(mode, "CALC", true) == 0) // Calculate
@@ -102,7 +102,7 @@ public class GetSettleMatch : IHttpHandler, IRequiresSessionState
             switch (sportID)
             {
                 case 1: // Soccer
-                     return Calculate.Soccer(sportID, rows, 12, fdate, tdate, permissions);
+                    return Calculate.Soccer(sportID, rows, 12, fdate, tdate, permissions);
                 case 2: // basketball
                 case 3: // football
                 case 26: // rugby
@@ -128,6 +128,7 @@ public class GetSettleMatch : IHttpHandler, IRequiresSessionState
                 case 40://     Taekwondo
                 case 41://     Triathlon
                 case 42://     Wrestling
+                case SportConstants.HorseRacingFixedOdds:
                     return Calculate.Billiard(sportID, rows, 12, fdate, tdate, permissions);
                 case 8: // baseball
                     return Calculate.BaseBall(sportID, rows, 23, fdate, tdate, permissions);
@@ -139,7 +140,7 @@ public class GetSettleMatch : IHttpHandler, IRequiresSessionState
                 case 151://Racing
                     return Calculate.HorseRacing(rows, fdate, tdate, sportID.ToString(), permissions);
                 case 161://Number Game
-                    return Calculate.NumberGame(sportID, rows, 17, fdate, tdate, permissions);    
+                    return Calculate.NumberGame(sportID, rows, 17, fdate, tdate, permissions);
                 default: return Calculate.CommonSportType(sportID, rows, 13, fdate, tdate, permissions);
             }
         }
@@ -167,6 +168,7 @@ public class GetSettleMatch : IHttpHandler, IRequiresSessionState
                 case 11: // Motorsports
                 case 7: // billiard
                 case 25: // Darts
+                case SportConstants.HorseRacingFixedOdds:
                     return OverOnly.Billiard(sportID, rows, 12, fdate, tdate, permissions);
                 case 8: // baseball
                     return OverOnly.BaseBall(sportID, rows, 23, fdate, tdate, permissions);
@@ -175,12 +177,12 @@ public class GetSettleMatch : IHttpHandler, IRequiresSessionState
                     return OverOnly.Badminton(sportID, rows, 18, fdate, tdate, permissions);
                 default: return OverOnly.CommonSportType(sportID, rows, 13, fdate, tdate, permissions);
             }
-        }        
+        }
         return string.Empty; // Unknown :-o
     }
-    
-   
-    
+
+
+
     public bool IsReusable
     {
         get

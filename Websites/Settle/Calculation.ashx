@@ -23,12 +23,14 @@ public class Calculation : IHttpHandler, IRequiresSessionState
     private string type = string.Empty;
     private string permissions = "";
     private string _matchIds_Hedging = string.Empty;
-    public void ProcessRequest (HttpContext context) {        
+    public void ProcessRequest(HttpContext context)
+    {
         context.Response.ContentType = "text/html";
         context.Response.Cache.SetCacheability(HttpCacheability.NoCache);
-       string _s = "false";
-       string msg = "";
-       int delaytime = 0;
+        string _s = "false";
+        var successMatchIds = string.Empty;
+        string msg = "";
+        int delaytime = 0;
         var lastGoalOnly = false;
         //context.Request.Form["scoreDirect"];
 
@@ -36,7 +38,7 @@ public class Calculation : IHttpHandler, IRequiresSessionState
         #region score confirm
 
         string hiddenScoreConfirm_Sport = context.Request.Form["hiddenScoreConfirm_Sport"];
-        
+
         #region soccer
         string homeHScore = string.Empty;
         string awayHScore = string.Empty;
@@ -52,7 +54,7 @@ public class Calculation : IHttpHandler, IRequiresSessionState
         awayHScore = context.Request.Form["hiddenScoreConfirm_awayHScore"];
         homeFScore = context.Request.Form["hiddenScoreConfirm_homeFScore"];
         awayFScore = context.Request.Form["hiddenScoreConfirm_awayFScore"];
-        
+
         switch (hiddenScoreConfirm_Sport)
         {
             case "soccer":
@@ -89,12 +91,12 @@ public class Calculation : IHttpHandler, IRequiresSessionState
                 string _params = context.Request.Form["sParams"];
                 matchID = Convert.ToInt32(_params.Split('|')[0]);
                 sportID = Convert.ToInt32(_params.Split('|')[1]);
-                
+
                 _matchIds_Hedging = context.Request["txtMatchIds_Hedging"];
 
                 _matchIds_Hedging = CastAide.AsString(_matchIds_Hedging, string.Empty);
                 _matchIds_Hedging = _matchIds_Hedging + "^" + matchID;
-                
+
             }
             catch (Exception ex)
             {
@@ -171,7 +173,7 @@ public class Calculation : IHttpHandler, IRequiresSessionState
                                 match.FinalAwayScore = finalAwayScore;
                                 match.BetStatus = oldbetstatus;
                                 betstatus = match.GenerateMatchStatus();
-                              
+
                                 var errCode = 0;
                                 Sunplus.Accounting.DataAccess.IBCDLL.Accounting.Settle.SettlementSoccerFGLG(custID, matchID, betstatus, false, goalrecord, ref errCode, ref msg);
                                 if (errCode == 0)
@@ -201,6 +203,10 @@ public class Calculation : IHttpHandler, IRequiresSessionState
                             {
                                 // _isSuccess = DoSettle.UndoSettlement(custID, matchID);                        
                                 _isSuccess = DoSettle.Calculation(custID, type, sportID, matchID, context, false, ref msg, ref delaytime);
+                                if (_isSuccess)
+                                {
+                                    successMatchIds += _matchId + "|";
+                                }
                             }
                             else
                             {
@@ -238,17 +244,27 @@ public class Calculation : IHttpHandler, IRequiresSessionState
                                 _isDeny = true;
                             }
                             break;
-                        default: break;
+                        default:
+                            break;
                     }
                 }
-                catch { }
-                
-                
+                catch (Exception ex)
+                {
+                    Sunplus.Accounting.Core.Extensions.LogExtensions.ExceptionHandler(ex); 
+                }
+
+
             }
 
             if (_isSuccess)
             {
                 _s = "success"; // close and refesh
+
+                //sync score to apollo
+
+                this.SyncScoreToApollo(type.ToLower(), matchID, sportID, context);
+
+                //endsync score to apollo
 
                 if (sportID == 1 && context.Request.Form["sHasFGLG"] == "1" && !lastGoalOnly) _s = "soccerSuccess";
                 if (lastGoalOnly) _s = "success-refundalllastgoal";
@@ -260,6 +276,9 @@ public class Calculation : IHttpHandler, IRequiresSessionState
                 {
                     _s = "Access Denied";
                 }
+
+                string _infoMsg = msg + "," +_s + ", matchid:" + matchID + "," + SyncScoreToApollo(type.ToLower(), sportID, context);
+                Fanex.Logging.Logger.Log.Info(_infoMsg, "Apollo-Settlement");
             }
 
             if (!string.IsNullOrEmpty(msg)) _s = "no|" + msg;
@@ -275,9 +294,100 @@ public class Calculation : IHttpHandler, IRequiresSessionState
             _s = "<br />" + AlertMessage.GetMsg(ex.Message, AlertMessage.MsgType.Error);
             //throw ex;
         }
-        context.Response.Write(_s);
+
+        context.Response.Write("{\"responseText\":\"" + _s + "\",\"successMatchIds\":\"" + successMatchIds + "\"}");
     }
 
+    private int ActionKey(string type)
+    {
+        var rs = 0;
+        switch (type)
+        {
+            case "unsettle": // 0: Unsettle
+                rs = 0;
+                break;
+            case "calculate": // 1: Calculate FG/NG
+                rs = 1;
+                break;
+            case "billht": // 2: Calculate HT
+                rs = 2;
+                break;
+            case "billft": // 3: Calculate FT
+                rs = 3;
+                break;
+            case "bill": // 4: Calculate All
+                rs = 4;
+                break;
+            case "m": // 5: Calculate Parlay
+                rs = 5;
+                break;
+            case "refundhalftime": // 11: Refund HT
+                rs = 11;
+                break;
+            case "refundfulltime": // 12: Refund FT
+                rs = 12;
+                break;
+            case "refund": // 13: Refund All
+                rs = 13;
+                break;
+            case "rht": // 14: Refund Parlay HT
+                rs = 14;
+                break;
+            case "rft": // 15: Refund Parlay FT
+                rs = 15;
+                break;
+            case "r": // 16: Refund Parlay All
+                rs = 16;
+                break;
+            case "refundfirstnogoal": // 17: Refund All FGLG
+                rs = 17;
+                break;
+            case "refundalllastgoal": // 18: Refund All LG
+                rs = 18;
+                break;
+        }
+        return rs;
+    }
+
+    private void SyncScoreToApollo(string type, int matchId, int sportId, HttpContext context)
+    {
+        string score = string.Empty;
+        try
+        {
+            //ref int homeHT, ref int awayHT, ref int homeFT, ref int awayFT, ref string betStatus
+            int homeHT = 0;
+            int awayHT = 0;
+            int homeFT = 0;
+            int awayFT = 0;
+            string betStatus = string.Empty;
+            string goalrecord = string.Empty;
+            bool isHTCal = type == "billht";
+            bool isScoreDirect = false;
+
+            if (context.Request.Form["isSD"] != null)
+            {
+                isScoreDirect = (string.Compare(context.Request.Form["isSD"], "1", true) == 0);
+            }
+
+            DoSettle.CalculationParams(sportId, context, ref homeHT, ref awayHT, ref homeFT, ref awayFT, ref betStatus, isScoreDirect, isHTCal);
+
+            if (sportId == 1)
+            {
+                goalrecord = CastAide.AsString(context.Request.Form["GR"]);
+                bool IsFGLG = context.Request.Form["sHasFGLG"].ToString() == "1";
+                betStatus = DoSettle.UpdateBetStatusForBill(context, IsFGLG);
+            }
+
+            var service = new Fanex.Tarus.Apollo.Settlement.Business.SettlementService();
+            service.Set_ConfirmedAction_Single(matchId.ToString(), this.ActionKey(type),
+                homeFT, awayFT, homeHT, awayHT, goalrecord, betStatus);
+        }
+        catch (Exception ex)
+        {
+            Sunplus.Accounting.Core.Extensions.LogExtensions.ExceptionHandler(ex);
+        }
+    }
+    
     private string BetStatusBuilder(int matchID, string betstatus)
     {
         string _betstatus = string.Empty;
@@ -298,13 +408,61 @@ public class Calculation : IHttpHandler, IRequiresSessionState
             int cnt = _betstatus.Length - start;
             _betstatus = _betstatus.Remove(start, cnt);
             _betstatus += betstatus;
-        }        
+        }
         return _betstatus;
     }
- 
-    public bool IsReusable {
-        get {
+
+    private string SyncScoreToApollo(string type, int sportId, HttpContext context)
+    {
+        string score = string.Empty;
+        try
+        {
+            //ref int homeHT, ref int awayHT, ref int homeFT, ref int awayFT, ref string betStatus 
+            int homeHT = 0;
+            int awayHT = 0;
+            int homeFT = 0;
+            int awayFT = 0;
+            string betStatus = string.Empty;
+            string goalrecord = string.Empty;
+            bool isHTCal = type.ToLower() == "billht";
+            bool isScoreDirect = false;
+
+            if (context.Request.Form["isSD"] != null)
+            {
+                isScoreDirect = (string.Compare(context.Request.Form["isSD"], "1", true) == 0);
+            }
+
+            DoSettle.CalculationParams(sportId, context, ref homeHT, ref awayHT, ref homeFT, ref awayFT, ref betStatus, isScoreDirect, isHTCal);
+
+            if (sportId == 1)
+            {
+                goalrecord = CastAide.AsString(context.Request.Form["GR"]);
+                bool IsFGLG = context.Request.Form["sHasFGLG"].ToString() == "1";
+                betStatus = DoSettle.UpdateBetStatusForBill(context, IsFGLG);
+            }
+
+
+            score = "\"homeHT\":\"" + homeHT + "\",";
+            score += "\"awayHT\":\"" + awayHT + "\",";
+            score += "\"homeFT\":\"" + homeFT + "\",";
+            score += "\"awayFT\":\"" + awayFT + "\",";
+            score += "\"betStatus\":\"" + betStatus + "\",";
+            score += "\"goalrecord\":\"" + goalrecord + "\",";
+            score += "\"type\":\"" + type.ToLower();
+
+        }
+        catch (Exception ex)
+        {
+
+        }
+        return score;
+    }
+
+    public bool IsReusable
+    {
+        get
+        {
             return false;
         }
-    }          
+    }
 }

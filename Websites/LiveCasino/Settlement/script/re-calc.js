@@ -1,10 +1,12 @@
 ﻿var recalc = {};
-recalc.baccratId = 1101;
-recalc.routleId = 1102;
+recalc.PartyBaccratId = 1101;
+recalc.PartyRoutleId = 1102;
+recalc.LiveBaccratId = 1103;
+recalc.LiveRoutleId = 1104;
 
 recalc.init = function () {
-    var bettype = $('#hiddenBetType').val();    
-    if (bettype == recalc.baccratId)
+    var bettype = $('#hiddenBetType').val();
+    if (bettype == recalc.PartyBaccratId || bettype == recalc.LiveBaccratId)
         recalc.baccaratInit();
     else
         recalc.routleInit();
@@ -59,7 +61,8 @@ recalc.routleInit = function () {
 
 recalc.submit = function () {
     var bettype = $('#hiddenBetType').val();
-    if (bettype == recalc.baccratId)
+
+    if (bettype == recalc.PartyBaccratId || bettype == recalc.LiveBaccratId)
         recalc.baccaratCalc();
     else
         recalc.routleCalc();
