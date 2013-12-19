@@ -7,9 +7,6 @@
     <File id="27984FEE-40DC-40DC-B3B9-3A8776C5511D/d:Settlement/f:SettlementDAO.cs" caret="2702" fromTop="24" />
     <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/d:Configurations/d:StoreProcedureGroup/f:Settlement.config" caret="2717" fromTop="31" />
     <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/d:PreLogIn/f:DirectLogin.ashx" caret="0" fromTop="0" />
-    <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/d:DirectLogin/f:CRMLogin.aspx" caret="0" fromTop="0" />
-    <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/d:Redirect/f:ViewBA.aspx" caret="0" fromTop="0" />
-    <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/d:Redirect/f:ViewABS.aspx" caret="0" fromTop="0" />
     <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/d:PreLogIn/f:ProcessLogin.ashx" caret="0" fromTop="0" />
     <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/d:LiveCasino/d:Settlement/d:service/f:SettleLiveCasinoService.svc" caret="0" fromTop="0" />
     <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/d:LiveCasino/d:Settlement/d:script/f:Result.js" caret="0" fromTop="0" />
@@ -27,11 +24,12 @@
     <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/d:Handlers/f:QueryUserName.ashx" caret="0" fromTop="0" />
     <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/d:Handlers/f:MinMaxExRate.ashx" caret="0" fromTop="0" />
     <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/d:Handlers/f:EditUsername.ashx" caret="0" fromTop="0" />
-    <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/d:Configurations/f:ConnectionStrings.config" caret="7071" fromTop="39" />
-    <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/d:Test/f:testpager.aspx" caret="90" fromTop="0" />
-    <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/d:Test/f:testpager.aspx.cs" caret="406" fromTop="15" />
+    <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/d:Test/f:Default.aspx.cs" caret="68" fromTop="2" />
+    <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/d:Configurations/f:SportsSection.config" caret="0" fromTop="0" />
+    <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/d:Test/f:Default.aspx" caret="0" fromTop="0" />
+    <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/d:Configurations/f:ConnectionStrings.config" caret="2738" fromTop="7" />
   </RecentFiles>
   <RecentEdits>
-    <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/d:Test/f:testpager.aspx.cs" caret="427" fromTop="15" />
+    <File id="7EF6B61B-7588-4353-B523-8D0178BDBDE2/d:Test/f:Default.aspx.cs" caret="350" fromTop="11" />
   </RecentEdits>
 </RecentFiles>

@@ -1,4 +1,5 @@
-2013/04/02-15:05:09.031 b14 Delete type=3 #1
-2013/04/02-15:06:28.543 2040 Level-0 table #5: started
-2013/04/02-15:06:28.920 2040 Level-0 table #5: 2490315 bytes OK
-2013/04/02-15:06:28.958 2040 Delete type=0 #3
+2013/06/27-17:29:05.718 1f2c Recovering log #11
+2013/06/27-17:29:05.718 1f2c Level-0 table #13: started
+2013/06/27-17:29:05.764 1f2c Level-0 table #13: 58169 bytes OK
+2013/06/27-17:29:05.821 1f2c Delete type=0 #11
+2013/06/27-17:29:05.821 1f2c Delete type=3 #9
