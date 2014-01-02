@@ -16,7 +16,7 @@
   <Function Name="Settlement">
     <Setting Key="updateMatch_remark" SpName="updateMatch_remark" DbName="DBPRO.BODB02" />
     <Setting Key="WriteLog_UserLog" SpName="WriteLog_UserLog" DbName="main" />
-    <Setting Key="Acc_Set_MatchSel" SpName="Acc_Set_MatchSel" DbName="DBTXN.BODB02" />
+    <Setting Key="Acc_Set_MatchSel" SpName="Acc_Set_MatchSel" DbName="DBPRO.BODB02" />
   </Function>
 
   <!--____________-->

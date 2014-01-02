@@ -37,7 +37,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Websites", "Websites\", "{7
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "50273"
+		VWDPort = "58137"
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebForm", "WebForm", "{FA1F6B54-C01D-4120-8347-B2896E2C217F}"
