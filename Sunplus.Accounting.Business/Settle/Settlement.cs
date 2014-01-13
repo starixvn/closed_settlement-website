@@ -174,6 +174,11 @@ namespace Sunplus.Accounting.Business.Settle
             return _settlementDao.RefundRunningBetDaqTickets(Matchid, Creator, IP);
         }
 
+        public string RefundRunningBetFairTickets(int Matchid, int Creator, string IP)
+        {
+            return _settlementDao.RefundRunningBetFairTickets(Matchid, Creator, IP);
+        }
+
         public void AssignDataUnDecided(ref string tpl, string permission, DataRow dr)
         { 
             try

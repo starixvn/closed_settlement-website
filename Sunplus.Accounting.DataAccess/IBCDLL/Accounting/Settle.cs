@@ -861,12 +861,73 @@ namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
             return rs;
         }
 
+        public static DbResult BetFair_Checking(int matchid)
+        {
+            DbResult rs = null;
+            try
+            {
+                Hashtable p = new Hashtable();
+                p.Add("matchid", matchid);
+                p.Add("ismovebetdaq", 0);
+                p.Add("isexcludebetdaq", 0);
+                p.Add("issettleabandonedmatch", 0);
+                var spElement = new GetSpConfig().GetStoreElement(Core.Configurations.StoreProcedureGroup.SettlementSession.StoreCollection.SettlementControl, "Acc_Set_BetFair_Checking");
+                rs = DbHelper.Execute(spElement.Name, p, spElement.DbName, 180);
+            }
+            catch (Exception ex)
+            {
+
+                Core.Extensions.LogExtensions.ExceptionHandler(ex);
+
+            }
+            return rs;
+        }
+
         public static ErrorDetail Settlement_BetDaq_Move(int matchid)
         {
             ErrorDetail result = null; 
             try
             {   
                 using (ObjectDb objDB = new ObjectDb("Admin_Settlement_BetDaq_Move", 1800))
+                {
+                    Hashtable p = new Hashtable();
+                    p.Add("matchid", matchid);
+                    p.Add("creator", AppSession.AccId);
+                    p.Add("errcode", 0);
+                    p.Add("errmsg", string.Empty);
+                    p.Add("newmatchcode", string.Empty);
+                    p.Add("ip", HttpContext.Current.Request.UserHostAddress);
+
+                    objDB.AssignParamValues(p);
+                    objDB.ExecuteNonQuery();
+
+                    result = new ErrorDetail()
+                    {
+                        ErrorCode = CastAide.AsInt32(objDB.GetParameterValue("errcode")),
+                        ErrCode = CastAide.AsString(objDB.GetParameterValue("newmatchcode")),
+                        ErrorMessage = CastAide.AsString(objDB.GetParameterValue("errmsg"))
+                    };
+                }
+            }
+            catch (Exception ex)
+            {
+                result = new ErrorDetail()
+                {
+                    ErrorCode = 1,
+                    ErrCode = string.Empty,
+                    ErrorMessage = ex.Message
+                };
+                Core.Extensions.LogExtensions.ExceptionHandler(ex);
+            }
+            return result;
+        }
+
+        public static ErrorDetail Settlement_BetFair_Move(int matchid)
+        {
+            ErrorDetail result = null;
+            try
+            {
+                using (ObjectDb objDB = new ObjectDb("Admin_Settlement_BetFair_Move", 1800))
                 {
                     Hashtable p = new Hashtable();
                     p.Add("matchid", matchid);
@@ -941,6 +1002,47 @@ namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
             return result;
         }
 
+        public static ErrorDetail Settlement_BetFair_Move(int matchid, int newMatchId)
+        {
+            ErrorDetail result = null;
+            try
+            {
+                using (ObjectDb objDB = new ObjectDb("Admin_Settlement_BetFair_Move", 1800))
+                {
+                    Hashtable p = new Hashtable();
+                    p.Add("matchid", matchid);
+                    p.Add("newmatchid", newMatchId);
+                    p.Add("creator", AppSession.AccId);
+                    p.Add("errcode", 0);
+                    p.Add("errmsg", string.Empty);
+                    p.Add("newmatchcode", string.Empty);
+                    p.Add("ip", HttpContext.Current.Request.UserHostAddress);
+
+                    objDB.AssignParamValues(p);
+                    objDB.ExecuteNonQuery();
+
+                    result = new ErrorDetail()
+                    {
+                        ErrorCode = CastAide.AsInt32(objDB.GetParameterValue("errcode")),
+                        ErrCode = CastAide.AsString(objDB.GetParameterValue("newmatchcode")),
+                        ErrorMessage = CastAide.AsString(objDB.GetParameterValue("errmsg"))
+                    };
+                }
+            }
+            catch (Exception ex)
+            {
+                result = new ErrorDetail()
+                {
+                    ErrorCode = 1,
+                    ErrCode = string.Empty,
+                    ErrorMessage = ex.Message
+                };
+                Core.Extensions.LogExtensions.ExceptionHandler(ex);
+
+            }
+            return result;
+        }
+
         public static DataTable Settlement_BetDaq_SelectMatches(int matchid)
         {
             DbResult rs = null;
@@ -964,8 +1066,7 @@ namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
                 dtMatches = rs.ResultSet.Tables[0];
             }
             return dtMatches;
-        }
-
+        }        
 
         public static DataTable GetNumberGameResult(DateTime fromDate, int leagueId)
         {

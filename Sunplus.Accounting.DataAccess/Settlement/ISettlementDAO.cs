@@ -20,6 +20,8 @@ namespace Sunplus.Accounting.DataAccess.Settlement
 
         string RefundRunningBetDaqTickets(int Matchid, int Creator, string IP);
 
+        string RefundRunningBetFairTickets(int Matchid, int Creator, string IP);
+
         void SetMatchIsUndecided(int matchId, bool isUndecided, int userId);
 
         DataTable MatchSelHedge(int matchId);

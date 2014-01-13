@@ -20,7 +20,9 @@ namespace Sunplus.Accounting.Business.Settle
         void UpdBallNoByMatchID(int matchid, string ballNo, string siteNo, int adminid, string adminname, string ip);
 
         string RefundRunningBetDaqTickets(int Matchid, int Creator, string IP);
-        
+
+        string RefundRunningBetFairTickets(int Matchid, int Creator, string IP);
+
         void AssignDataUnDecided(ref string tpl, string permission, DataRow dr);
 
         bool IsHasPermissionUnDecided(string permission);

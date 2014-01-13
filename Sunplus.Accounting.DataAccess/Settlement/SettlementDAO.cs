@@ -114,6 +114,26 @@ namespace Sunplus.Accounting.DataAccess.Settlement
             }
         }
 
+        public string RefundRunningBetFairTickets(int Matchid, int Creator, string IP)
+        {
+            using (ObjectDb objDb = new ObjectDb("Admin_Settlement_Refund_BetFair", 600))
+            {
+                Hashtable hashtable = new Hashtable();
+                hashtable.Add("matchid", Matchid);
+                hashtable.Add("creator", Creator);
+                hashtable.Add("ip", IP);
+
+                objDb.AssignParamValues(hashtable);
+                objDb.ExecuteNonQuery();
+
+                var errCode = CastAide.AsInt32(objDb.GetParameterValue("errcode"));
+
+                if (errCode == 0)
+                    return string.Empty;
+
+                return CastAide.AsString(objDb.GetParameterValue("errmsg"));
+            }
+        }
 
         public void SetMatchIsUndecided(int matchId, bool isUndecided, int userId)
         {

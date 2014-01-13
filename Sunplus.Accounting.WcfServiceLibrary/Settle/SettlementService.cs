@@ -57,6 +57,12 @@ namespace Sunplus.Accounting.WcfServiceLibrary.Settle
             return settle.RefundRunningBetDaqTickets(Matchid, AppSession.AccId, ip);
         }
 
+        public string RefundRunningBetFairTickets(int Matchid)
+        {
+            var settle = CommonBootStrapper.Locator.GetInstance<ISettlement>();
+            var ip = Sunplus.Accounting.Core.Helper.Utils.GetClientIP();
+            return settle.RefundRunningBetFairTickets(Matchid, AppSession.AccId, ip);
+        }
 
         public string SetMatchIsUndecided(int matchId, bool isUndecided, int userId)
         {

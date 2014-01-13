@@ -23,11 +23,13 @@
   <Function Name="Settlement - Sportbook">
     <Setting Key="Admin_Settlement_1" SpName="Admin_Settlement_1" DbName="DBTXN.BODB02" />
     <Setting Key="Admin_Settlement_BetDaq_Move" SpName="Admin_Settlement_BetDaq_Move" DbName="DBTXN.BODB02" />
+    <Setting Key="Admin_Settlement_BetFair_Move" SpName="Admin_Settlement_BetFair_Move" DbName="DBTXN.BODB02" />
     <Setting Key="Admin_Settlement_Checking" SpName="Admin_Settlement_Checking" DbName="DBTXN.BODB02" />
     <Setting Key="Admin_Settlement_FGLG" SpName="Admin_Settlement_FGLG" DbName="DBTXN.BODB02" />
     <Setting Key="Admin_Settlement_Parlay" SpName="Admin_Settlement_MP_xtest" DbName="DBTXN.BODB02" />
     <Setting Key="Admin_Settlement_Refund_All" SpName="Admin_Settlement_Refund_All" DbName="DBTXN.BODB02" />
     <Setting Key="Admin_Settlement_Refund_BetDaq" SpName="Admin_Settlement_Refund_BetDaq" DbName="DBTXN.BODB02" />
+    <Setting Key="Admin_Settlement_Refund_BetFair" SpName="Admin_Settlement_Refund_BetFair" DbName="DBTXN.BODB02" />
     <Setting Key="Admin_Settlement_RefundFT" SpName="Admin_Settlement_RefundFT" DbName="DBTXN.BODB02" />
     <Setting Key="Admin_Settlement_RefundHT" SpName="Admin_Settlement_RefundHT" DbName="DBTXN.BODB02" />
     <Setting Key="Acc_Set_PrivateMessageForRefund" SpName="Acc_Set_PrivateMessageForRefund" DbName="DBTXN.BODB02" />
