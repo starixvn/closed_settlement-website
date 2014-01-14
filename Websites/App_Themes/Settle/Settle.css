@@ -236,3 +236,17 @@ td.width-300 {width:300px;}
 {
     border-color: #888888!important;
 }
+fieldset
+{
+    border: 2px solid #000;
+}
+legend
+{
+    font-weight: bold;
+}
+div#region
+{
+    border: 2px solid #000;
+    padding: 10px 78px;
+    margin: 5px 0;
+}

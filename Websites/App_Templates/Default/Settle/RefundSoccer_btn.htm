@@ -1,12 +1,12 @@
-﻿<center>
-	<table style="margin-top: 5px;"  border="0px">
+﻿<div id="region">
+	<table style="margin-top: 5px;"  border="0px" align="center">
 		<tr>
             <!--RefundFT-->
 			<td>
                 
 				<input class="btn" type="button" tabindex="30" style="width: 130px; " value="Refund HT" onclick="DoCalculate('refundhalftime');"/>
 			</td>
-             <!--/RefundFT-->
+                <!--/RefundFT-->
 			<td>
 				<input type="button" class="btn" tabindex="31" {disableFT} style="width: 130px; " value="Refund FT" onclick="DoCalculate('refundfulltime');"/>
 			</td>
@@ -33,45 +33,65 @@
             <td></td>
 		</tr>
         <tr>
-            <!--MoveBetdaq-->
-            <td>
-		        <input type="button"  id="btnMovebetdaq" class="btn"  tabindex="36" style="width: 130px; " value="Move Betdaq Tickets" onclick="MoveBetdaqTickets('{matchid}', '{matchcode}');"/>		         
-		    </td>
-            <!--/MoveBetdaq-->
-            <!--RefundRunningBetDaqTickets-->		        
-            <td colspan="3" align="left">
-		        <input type="button"  id="btnRefundRunningBetDaqTickets" class="btn"  tabindex="37" style="width: 200px; " value="Refund Running BetDaq Tickets" onclick="RefundRunningBetDaq('{matchid}', '{matchcode}');"/>		         
-		    </td>
-            <!--/RefundRunningBetDaqTickets-->
-        </tr>
-        <tr>
             <!--RefunFGLG-->
 		    <td>
-			    <input type="button" class="btn"  tabindex="38" style="width: 130px; " value="Refund All FGLG" onclick="DoCalculate('refundfirstnogoal');"/>
+			    <input type="button" class="btn"  tabindex="36" style="width: 130px; " value="Refund All FGLG" onclick="DoCalculate('refundfirstnogoal');"/>
 		    </td>
             <!--/RefunFGLG-->
             <!--RefundAllLastGoal-->
 		    <td>
-			    <input type="button" class="btn"  tabindex="39" style="width: 130px; " value="Refund All Last Goal" onclick="DoCalculate('refundalllastgoal');"/>
+			    <input type="button" class="btn"  tabindex="37" style="width: 130px; " value="Refund All Last Goal" onclick="DoCalculate('refundalllastgoal');"/>
 		    </td>
             <!--/RefundAllLastGoal-->
 		    <td></td>
             <td></td>
         </tr>
-		<tr>
-            <!--ExcludeBetdaq-->
-		    <td colspan="4">
-			       <input class="hand" type="checkbox" id="chkIsExcludeBetdaq" name="chkIsExcludeBetdaq" /> Exclude Betdaq Tickets in Refund
-			 </td>
-             <!--/ExcludeBetdaq-->
-		</tr>
-        <!--SettleDeterminedTickets-->
-		<tr>
-		    <td colspan="4">
-			    <input class="hand" type="checkbox" id="chkIsSettleDeterminedTickets" name="chkIsSettleDeterminedTickets" /> Settle determined tickets (Over/ Under)
-			 </td>
-		</tr>
-		<!--/SettleDeterminedTickets-->
 	</table>
-  <input type="hidden" id="IsRefund" name="IsRefund" value="1"></input>
-</center>
+    <input type="hidden" id="IsRefund" name="IsRefund" value="1" /> 
+    <!--Betdaq-->
+    <div id="betDaq">
+        <form>
+            <fieldset>
+                <legend>Betdaq</legend>
+                <!--ExcludeBetdaq-->
+                <input class="hand" type="checkbox" id="chkIsExcludeBetdaq" name="chkIsExcludeBetdaq" /> Exclude Betdaq Tickets in Refund
+                <br />
+                <!--/ExcludeBetdaq-->
+                <!--SettleDeterminedTickets-->
+                <input id="chkIsSettleDeterminedTickets0" class="hand" name="chkIsSettleDeterminedTickets0" type="checkbox" /> Settle determined Betdaq tickets (Over/ Under)
+                <br />
+                <!--/SettleDeterminedTickets-->
+                <!--MoveBetdaq-->
+                <input type="button" class="btn"  class="movebet" tabindex="38" style="width: 130px; margin: 4px" value="Move Betdaq Tickets" onclick="MoveBetdaqTickets('{matchID}', '{matchcode}');"/>
+                <!--/MoveBetdaq-->
+                <!--RefundRunningBetDaqTickets-->	
+                <input type="button" class="btn"  tabindex="39" style="width: 200px; margin: 4px" value="Refund Running Betdaq Tickets" onclick="RefundRunningBetDaq('{matchid}', '{matchcode}');"/>		         
+                <!--/RefundRunningBetDaqTickets-->	
+            </fieldset>
+        </form>
+    </div>
+    <!--/Betdaq-->
+    <!--Betfair-->
+    <div id="betFair">
+        <form>
+            <fieldset>
+                <legend>Betfair</legend>
+                <!--ExcludeBetfair-->
+                <input class="hand" type="checkbox" id="chkIsExcludeBetfair" name="chkIsExcludeBetfair" /> Exclude Betfair Tickets in Refund
+                <br />
+                <!--/ExcludeBetfair-->
+                <!--SettleDeterminedBetfairTickets-->
+                <input id="chkIsSettleDeterminedTickets1" class="hand" name="chkIsSettleDeterminedTickets1" type="checkbox" /> Settle determined Betfair tickets (Over/ Under)
+                <br />
+                <!--/SettleDeterminedBetfairTickets-->
+                <!--MoveBetfair-->
+                <input type="button" class="btn" class="movebet" tabindex="40" style="width: 130px; margin: 4px" value="Move Betfair Tickets" onclick="MoveBetfairTickets('{matchID}', '{matchcode}');"/>
+                <!--/MoveBetfair-->
+                <!--RefundRunningBetFairTickets-->	
+                <input type="button" class="btn"  tabindex="41" style="width: 200px; margin: 4px" value="Refund Running Betfair Tickets" onclick="RefundRunningBetFair('{matchid}', '{matchcode}');"/>		         
+                <!--/RefundRunningBetFairTickets-->
+            </fieldset>
+        </form>
+    </div>
+    <!--/Betfair-->
+</div>

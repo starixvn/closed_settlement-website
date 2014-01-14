@@ -393,7 +393,7 @@ var settlementManagement = {
         var width = 620;
         switch (sportId) {
             case 1:
-                height = 520;
+                height = 330;
                 break;
             case 8:
                 width = 750;
@@ -401,7 +401,7 @@ var settlementManagement = {
         }
 
         if (type != 'b') {
-            height = 340;
+            height = 450;
         }
 
         var isIE7 = navigator.appVersion.indexOf('MSIE 7.0') > 0;

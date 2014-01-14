@@ -253,9 +253,33 @@ function RefundRunningBetDaq(matchid, matchcode) {
         }
     });
 }
+
+function RefundRunningBetFair(matchid, matchcode) {
+    try { parent.parent.BlockUI(); } catch (e) { parent.BlockUI(); }
+    parent.jQuery.ajax({
+        type: "POST",
+        url: "Service/SettlementService.svc/RefundRunningBetFairTickets",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        data: '{"Matchid":' + matchid + '}',
+        success: function (rs) {
+            try { parent.parent.jQuery.unblockUI(); } catch (e) { try { parent.jQuery.unblockUI(); } catch (e) { jQuery.unblockUI(); } }
+
+            if (rs != "" && rs != null && typeof rs != "undefined") {
+                jQuery('#errmsg').html(rs).show();
+            }
+            else {
+                parent.ClosePopup();
+                try { parent.frames['centerFr'].GetSettleMatch(); } catch (e) { parent.GetSettleMatch(); }
+            }
+        }
+    });
+}
+
 function DoCalculate(type, ext) {
     DoCalculate_PreventWaitingList(type, ext);
 }
+
 function DoCalculate_PreventWaitingList(type, ext) {
     if (parent.settlementManagement) {
         var calcStatusConstants = parent.settlementManagement.enums.CalcStatusConstants;
@@ -794,4 +818,14 @@ function MoveBetdaqTickets(matchid, matchcode) {
 
     parent.OpenNextPopup('movebetdaq', url, title, width, height, true, false, window, 1000, null, null);
 
+}
+
+function MoveBetfairTickets(matchid, matchcode) {
+    var height = 400;
+
+    var url = 'SelectMatchMoveBet.aspx?matchid=' + matchid + '&matchcode=' + matchcode;
+    var title = 'Move Betfair Tickets';
+    var width = 350;
+
+    parent.OpenNextPopup('movebetfair', url, title, width, height, true, false, window, 1000, null, null);
 }

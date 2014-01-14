@@ -35,6 +35,10 @@ namespace Sunplus.Accounting.WcfServiceLibrary.Settle
 
         [OperationContract]
         [WebInvoke(BodyStyle = WebMessageBodyStyle.WrappedRequest, ResponseFormat = WebMessageFormat.Json)]
+        string RefundRunningBetFairTickets(int Matchid);
+
+        [OperationContract]
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.WrappedRequest, ResponseFormat = WebMessageFormat.Json)]
         string SetMatchIsUndecided(int matchId, bool isUndecided, int userId);
     }
 }
