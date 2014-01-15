@@ -38,8 +38,8 @@ public class ReplicateData : IHttpHandler, IRequiresSessionState
             {
                 try
                 {
-                    var innerThread = new System.Threading.Thread(() =>
-                    {
+                    //var innerThread = new System.Threading.Thread(() =>
+                    //{
                         using (ObjectDb objDb = new ObjectDb("Admin_Settlement_ReplicateData_UnSettled", 1800))
                         {
                             Hashtable p = new Hashtable();
@@ -47,9 +47,9 @@ public class ReplicateData : IHttpHandler, IRequiresSessionState
                             objDb.AssignParamValues(p);
                             objDb.ExecuteNonQuery();
                         }
-                    });
+                    //});
 
-                    innerThread.Start();
+                    //innerThread.Start();
                 }
                 catch (Exception ex)
                 {

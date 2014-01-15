@@ -1,5 +1,6 @@
 ﻿var _matchid = 0;
 var _matchcode = 0;
+
 function RenderMatches(matchid, matchcode, sysPath) {
     var contentwraper = $("#divMatches");
     var params = "matchid=" + matchid;
@@ -27,9 +28,6 @@ function RenderMatches(matchid, matchcode, sysPath) {
 }
 
 function MoveBet() {
-
-    
-
     var contentwraper = $("#divMatches");
     var newMatchid = $("#frmMatch input:radio:checked").val();
     var newMatchCode = $("#frmMatch input:radio:checked").attr('matchcode');
@@ -37,14 +35,13 @@ function MoveBet() {
     if (!newMatchid) {
         alert('Please choose one new match code!');
         return;
-    }
-    
+    }    
     
     var params = "matchid=" + _matchid + "&newmatchid=" + newMatchid;
     params += "&matchcode=" + _matchcode + "&newmatchcode=" + newMatchCode;
     $.ajax({
         type: "POST",
-        url: "MoveBet/BetdaqMoveTicket.ashx",
+        url: "MoveBet/" + (isBetfair == '1' ? "BetfairMoveTicket.ashx" : "BetdaqMoveTicket.ashx"),
         dataType: "text",
         data: params,
         success: function (data) {
@@ -56,15 +53,14 @@ function MoveBet() {
                 setTimeout("CloseWnd()", 3000);
             }
         }
-    });
-    
-
+    });   
 }
 
 function CloseWnd() {
-    if (typeof (parent.ibcWnd) != 'undefined')
-        parent.ibcWnd.close();
+    if (typeof (parent.jQuery) != 'undefined') {
+        parent.jQuery('#dialog-modalmovebetdaq').dialog('close');
+        parent.jQuery('#dialog-modalmovebetfair').dialog('close');
+    }
     if (typeof (parent.DoCal) != 'undefined')
         parent.DoCal('r', _matchid + '|1');
-
 }

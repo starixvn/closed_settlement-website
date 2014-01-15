@@ -16,7 +16,7 @@ public class BetdaqMoveTicket : IHttpHandler, IRequiresSessionState
         int matchid = CastAide.AsInt32(context.Request["matchid"], 0);
         int newMatchid = CastAide.AsInt32(context.Request["newmatchid"], 0);
         string matchcode = CastAide.AsString(context.Request["matchcode"]);
-        string errmsg = "", msg = "";
+        string errmsg = "";
         string newMatchcode = "";
         bool f = DoSettle.Settlement_BetDaq_Move(matchid, newMatchid, ref errmsg, ref newMatchcode);
         var error = new ErrorDetail();

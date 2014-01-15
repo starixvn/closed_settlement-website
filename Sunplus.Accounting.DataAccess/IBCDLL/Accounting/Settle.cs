@@ -353,7 +353,7 @@ namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
         /// Tho.Nguyen updated: 12/2/2008
         /// </summary>        
         public static bool Refund(int custid, int matchid, bool IsExcludeBetdaq, bool IsSettleDeterminedTickets, ref string msg
-            , string homeHScore, string awayHScore, string homeFScore, string awayFScore, string scoreConfirm_Betstatus)
+            , string homeHScore, string awayHScore, string homeFScore, string awayFScore, string scoreConfirm_Betstatus, bool IsExcludeBetfair = false, bool IsSettleDeterminedBetFairTickets = false)
         {
             try
             {
@@ -364,6 +364,8 @@ namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
                 pRefund.Add("matchid", matchid);
                 pRefund.Add("isexcludebetdaq", IsExcludeBetdaq);
                 pRefund.Add("issettleabandonedmatch", IsSettleDeterminedTickets);
+                pRefund.Add("isexcludebetfair", IsExcludeBetfair);
+                pRefund.Add("issettleabandonedmatchbetfair", IsSettleDeterminedBetFairTickets);
                 pRefund.Add("ip", Sunplus.Accounting.Core.Helper.Utils.GetClientIP());
 
                 if (homeHScore != null) pRefund.Add("hth", DNAide.Core.CastAide.AsInt32(homeHScore));
@@ -432,7 +434,7 @@ namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
         /// Tho.Nguyen updated: 12/2/2008
         /// </summary>                      
         public static bool RefundFullTime(int custid, int matchid, bool IsExcludeBetdaq, bool IsSettleDeterminedTickets, ref string msg
-            , string homeFScore, string awayFScore, string scoreConfirm_Betstatus)
+            , string homeFScore, string awayFScore, string scoreConfirm_Betstatus, bool IsExcludeBetfair = false, bool IsSettleDeterminedBetFairTickets = false)
         {
             try
             {                   
@@ -444,6 +446,8 @@ namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
                     pRefund.Add("matchid", matchid);
                     pRefund.Add("isexcludebetdaq", IsExcludeBetdaq);
                     pRefund.Add("issettleabandonedmatch", IsSettleDeterminedTickets);
+                    pRefund.Add("isexcludebetfair", IsExcludeBetfair);
+                    pRefund.Add("issettleabandonedmatchbetfair", IsSettleDeterminedBetFairTickets);
                     pRefund.Add("ip", Sunplus.Accounting.Core.Helper.Utils.GetClientIP());
 
                     if (homeFScore != null) pRefund.Add("fth", DNAide.Core.CastAide.AsInt32(homeFScore));
@@ -480,7 +484,7 @@ namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
         /// HuyNguyen updated: 7/21/2009
         /// </summary>       
         public static bool RefundHalfTime(int custid, int matchid, bool IsExcludeBetdaq, bool IsSettleDeterminedTickets, ref string msg
-             , string homeHScore, string awayHScore)
+             , string homeHScore, string awayHScore, bool IsExcludeBetfair = false, bool IsSettleDeterminedBetfairTickets = false)
         {
             try
             {                   
@@ -492,6 +496,8 @@ namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
                     pRefund.Add("matchid", matchid);
                     pRefund.Add("isexcludebetdaq", IsExcludeBetdaq);
                     pRefund.Add("issettleabandonedmatch", IsSettleDeterminedTickets);
+                    pRefund.Add("isexcludebetfair", IsExcludeBetfair);
+                    pRefund.Add("issettleabandonedmatchbetfair", IsSettleDeterminedBetfairTickets);
                     pRefund.Add("ip", Sunplus.Accounting.Core.Helper.Utils.GetClientIP());
 
                     if (homeHScore != null) pRefund.Add("hth", DNAide.Core.CastAide.AsInt32(homeHScore));
@@ -868,9 +874,9 @@ namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
             {
                 Hashtable p = new Hashtable();
                 p.Add("matchid", matchid);
-                p.Add("ismovebetdaq", 0);
-                p.Add("isexcludebetdaq", 0);
-                p.Add("issettleabandonedmatch", 0);
+                p.Add("ismovebetfair", 0);
+                p.Add("isexcludebetfair", 0);
+                p.Add("issettleabandonedmatchbetfair", 0);
                 var spElement = new GetSpConfig().GetStoreElement(Core.Configurations.StoreProcedureGroup.SettlementSession.StoreCollection.SettlementControl, "Acc_Set_BetFair_Checking");
                 rs = DbHelper.Execute(spElement.Name, p, spElement.DbName, 180);
             }

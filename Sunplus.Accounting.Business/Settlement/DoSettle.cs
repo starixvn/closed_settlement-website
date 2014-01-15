@@ -297,11 +297,11 @@ namespace Sunplus.Accounting.Business.Settlement
         }
 
         public static bool RefundHalfTime(int custID, int matchID, bool IsExcludeBetdaq, bool IsSettleDeterminedTickets, ref string msg
-            , string homeHScore, string awayHScore)
+            , string homeHScore, string awayHScore, bool IsExcludeBetfair = false, bool IsSettleDeterminedBetFairTickets = false)
         {
             try
             {
-                return DataAccess.IBCDLL.Accounting.Settle.RefundHalfTime(custID, matchID, IsExcludeBetdaq, IsSettleDeterminedTickets, ref msg, homeHScore, awayHScore);
+                return DataAccess.IBCDLL.Accounting.Settle.RefundHalfTime(custID, matchID, IsExcludeBetdaq, IsSettleDeterminedTickets, ref msg, homeHScore, awayHScore, IsExcludeBetfair, IsSettleDeterminedBetFairTickets);
 
             }
             catch (Exception ex)
@@ -312,11 +312,11 @@ namespace Sunplus.Accounting.Business.Settlement
         }
 
         public static bool RefundOrCancel(int custID, int matchID, bool IsExcludeBetdaq, bool IsSettleDeterminedTickets, ref string msg
-            , string homeHScore, string awayHScore, string homeFScore, string awayFScore, string scoreConfirm_Betstatus)
+            , string homeHScore, string awayHScore, string homeFScore, string awayFScore, string scoreConfirm_Betstatus, bool IsExcludeBetfair = false, bool IsSettleDeterminedBetFairTickets = false)
         {
             try
             {
-                return DataAccess.IBCDLL.Accounting.Settle.Refund(custID, matchID, IsExcludeBetdaq, IsSettleDeterminedTickets, ref msg, homeHScore, awayHScore, homeFScore, awayFScore, scoreConfirm_Betstatus);
+                return DataAccess.IBCDLL.Accounting.Settle.Refund(custID, matchID, IsExcludeBetdaq, IsSettleDeterminedTickets, ref msg, homeHScore, awayHScore, homeFScore, awayFScore, scoreConfirm_Betstatus, IsExcludeBetfair, IsSettleDeterminedBetFairTickets);
             }
             catch (Exception ex)
             {
@@ -330,11 +330,11 @@ namespace Sunplus.Accounting.Business.Settlement
         }
 
         public static bool RefundFullTime(int custID, int matchID, bool IsExcludeBetdaq, bool IsSettleDeterminedTickets, ref string msg
-            , string homeFScore, string awayFScore, string scoreConfirm_Betstatus)
+            , string homeFScore, string awayFScore, string scoreConfirm_Betstatus, bool IsExcludeBetfair = false, bool IsSettleDeterminedBetFairTickets = false)
         {
             try
             {
-                return DataAccess.IBCDLL.Accounting.Settle.RefundFullTime(custID, matchID, IsExcludeBetdaq, IsSettleDeterminedTickets, ref msg, homeFScore, awayFScore, scoreConfirm_Betstatus);
+                return DataAccess.IBCDLL.Accounting.Settle.RefundFullTime(custID, matchID, IsExcludeBetdaq, IsSettleDeterminedTickets, ref msg, homeFScore, awayFScore, scoreConfirm_Betstatus, IsExcludeBetfair, IsSettleDeterminedBetFairTickets);
             }
             catch (Exception ex)
             {
@@ -494,6 +494,56 @@ namespace Sunplus.Accounting.Business.Settlement
             try
             {
                 var rs = DataAccess.IBCDLL.Accounting.Settle.Settlement_BetDaq_Move(matchid, newMatchId);
+                if (rs.ErrorCode > 0)
+                    errmsg = rs.ErrorMessage;
+                else
+                {
+                    newMatchcode = rs.ErrCode;//errcode is newmatchode
+                    f = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                {
+                    Sunplus.Accounting.Core.Extensions.LogExtensions.ExceptionHandler(ex);
+                }
+                errmsg = ex.Message;
+            }
+            return f;
+        }
+
+        public static bool Settlement_BetFair_Move(int matchid, ref string errmsg, ref string NewMatchcode)
+        {
+            bool f = false;
+            try
+            {
+                var rs = DataAccess.IBCDLL.Accounting.Settle.Settlement_BetFair_Move(matchid);
+                if (rs.ErrorCode > 0)
+                    errmsg = rs.ErrorMessage;
+                else
+                {
+                    NewMatchcode = rs.ErrCode;//errcode is newmatchode
+                    f = true;
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                {
+                    Sunplus.Accounting.Core.Extensions.LogExtensions.ExceptionHandler(ex);
+                }
+                errmsg = ex.Message;
+            }
+            return f;
+        }
+
+        public static bool Settlement_BetFair_Move(int matchid, int newMatchId, ref string errmsg, ref string newMatchcode)
+        {
+            bool f = false;
+            try
+            {
+                var rs = DataAccess.IBCDLL.Accounting.Settle.Settlement_BetFair_Move(matchid, newMatchId);
                 if (rs.ErrorCode > 0)
                     errmsg = rs.ErrorMessage;
                 else

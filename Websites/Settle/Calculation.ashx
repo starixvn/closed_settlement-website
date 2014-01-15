@@ -33,7 +33,8 @@ public class Calculation : IHttpHandler, IRequiresSessionState
         int delaytime = 0;
         var lastGoalOnly = false;
         //context.Request.Form["scoreDirect"];
-
+        var betDaqDate = context.Request.Form["kickoffBetdaq"];
+        var betFairDate = context.Request.Form["kickoffBetfair"];
 
         #region score confirm
 
@@ -79,6 +80,11 @@ public class Calculation : IHttpHandler, IRequiresSessionState
         }
         #endregion
 
+        bool IsExcludeBetdaq = context.Request["chkIsExcludeBetdaq"] != null;
+        bool IsSettleDeterminedTickets = false;
+        bool IsExcludeBetfair = context.Request["chkIsExcludeBetfair"] != null;
+        bool IsSettleDeterminedBetFairTickets = false;
+            
         try
         {
             custID = Convert.ToInt32(context.Session["AccId"] as object ?? -1);
@@ -109,11 +115,14 @@ public class Calculation : IHttpHandler, IRequiresSessionState
             var arrIds = _matchIds_Hedging.Split('^');
             bool _isSuccess = false;
             bool _isDeny = false;
-            bool IsExcludeBetdaq = context.Request["chkIsExcludeBetdaq"] != null;
-            bool IsSettleDeterminedTickets = false;
             if (context.Request["chkIsSettleDeterminedTickets"] != null && context.Request["chkIsSettleDeterminedTickets"] == "on")
             {
                 IsSettleDeterminedTickets = true;
+            }
+
+            if (context.Request["chkIsSettleDeterminedBetFairTickets"] != null && context.Request["chkIsSettleDeterminedBetFairTickets"] == "on")
+            {
+                IsSettleDeterminedBetFairTickets = true;
             }
 
             foreach (string _matchId in arrIds)
@@ -189,13 +198,13 @@ public class Calculation : IHttpHandler, IRequiresSessionState
                         case "refundhalftime":
                             if (permissions.IndexOf("[C]") > -1)
                             {
-                                _isSuccess = DoSettle.RefundHalfTime(custID, matchID, IsExcludeBetdaq, IsSettleDeterminedTickets, ref msg, homeHScore, awayHScore);
+                                _isSuccess = DoSettle.RefundHalfTime(custID, matchID, IsExcludeBetdaq, IsSettleDeterminedTickets, ref msg, homeHScore, awayHScore, IsExcludeBetfair, IsSettleDeterminedBetFairTickets);
                             }
                             break;
                         case "refund":
                             if (permissions.IndexOf("[C]") > -1)
                             {
-                                _isSuccess = DoSettle.RefundOrCancel(custID, matchID, IsExcludeBetdaq, IsSettleDeterminedTickets, ref msg, homeHScore, awayHScore, homeFScore, awayFScore, scoreConfirm_Betstatus);
+                                _isSuccess = DoSettle.RefundOrCancel(custID, matchID, IsExcludeBetdaq, IsSettleDeterminedTickets, ref msg, homeHScore, awayHScore, homeFScore, awayFScore, scoreConfirm_Betstatus, IsExcludeBetfair, IsSettleDeterminedBetFairTickets);
                             }
                             break;
                         case "unsettle": //undo settlement
@@ -216,7 +225,7 @@ public class Calculation : IHttpHandler, IRequiresSessionState
                         case "refundfulltime":
                             if (permissions.IndexOf("[C]") > -1)
                             {
-                                _isSuccess = DoSettle.RefundFullTime(custID, matchID, IsExcludeBetdaq, IsSettleDeterminedTickets, ref msg, homeFScore, awayFScore, scoreConfirm_Betstatus);
+                                _isSuccess = DoSettle.RefundFullTime(custID, matchID, IsExcludeBetdaq, IsSettleDeterminedTickets, ref msg, homeFScore, awayFScore, scoreConfirm_Betstatus, IsExcludeBetfair, IsSettleDeterminedBetFairTickets);
                             }
                             else
                             {
@@ -295,7 +304,9 @@ public class Calculation : IHttpHandler, IRequiresSessionState
             //throw ex;
         }
 
-        context.Response.Write("{\"responseText\":\"" + _s + "\",\"successMatchIds\":\"" + successMatchIds + "\"}");
+        context.Response.Write("{\"responseText\":\"" + _s + "\",\"successMatchIds\":\"" + successMatchIds + 
+            "\",\"type\":\"" + type.ToLowerInvariant() + "\",\"isExcludeBetdaq\":" + (IsExcludeBetdaq ? 1 : 0) + ",\"isExcludeBetfair\":" + (IsExcludeBetfair ? 1 : 0) +
+            ",\"kickoffBetdaq\":\"" + betDaqDate + "\",\"kickoffBetfair\":\"" + betFairDate + "\"}");
     }
 
     private int ActionKey(string type)

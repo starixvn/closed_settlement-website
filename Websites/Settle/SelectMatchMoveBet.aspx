@@ -18,6 +18,7 @@
     <script type="text/javascript">
         var matchid = gup('matchid');
         var matchcode = gup('matchcode');
+        var isBetfair = gup('isbetfair');
         $(document).ready(function () {
             RenderMatches(matchid, matchcode, '<%=sysPath%>');
         });

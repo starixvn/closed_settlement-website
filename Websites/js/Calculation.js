@@ -581,7 +581,7 @@ function ResultCalculate(rs) {
     }
     else if (objRs.responseText == 'soccerSuccess') {
         $('infoMsg').style.display = '';
-        $('infoMsg').innerHTML = 'SUCCESS!';
+        //$('infoMsg').innerHTML = 'SUCCESS!';
         IsSuccess = 1; // that mean no need close the window settlement, 
     }
     else if (objRs.responseText == 'success-refundalllastgoal') {
@@ -609,11 +609,54 @@ function ResultCalculate(rs) {
     }
 
     if (IsSuccess == 1) {
+        var hasBetdaq = objRs.isExcludeBetdaq || objRs.isExcludeBetfair;
 
-        parent.jQuery("#dialog-modal").dialog('close');
-        window.setTimeout(function () {
+        if (!hasBetdaq) {
+            parent.jQuery("#dialog-modal").dialog('close');
+            window.setTimeout(function () {
+                try { parent.frames['centerFr'].GetSettleMatch() } catch (e) { parent.GetSettleMatch() }
+            }, 2000);
+        }
+        else {
             try { parent.frames['centerFr'].GetSettleMatch() } catch (e) { parent.GetSettleMatch() }
-        }, 2000);
+
+            setTimeout(function () {
+                var timeout = 2000;
+                try { parent.parent.jQuery.unblockUI(); } catch (e) { try { parent.jQuery.unblockUI(); } catch (e) { jQuery.unblockUI(); } }
+
+                if (objRs.isExcludeBetdaq && !objRs.isExcludeBetfair) {
+                    parent.jQuery("#dialog-modal").dialog({ height: 150 });
+                    timeout = 10000;
+                    $('_sContent').innerHTML =
+                        '<div style="color: #ff0000; margin-left: 20px"><font color="Blue">Refunded successfully.</font><br/><br/>' +
+                        'Please move Betdaq tickets to a new match before ' +
+                        objRs.kickoffBetdaq + '<br/>' +
+                        'Otherwise they will bring harm to the system</div>';
+                }
+                else if (!objRs.isExcludeBetdaq && objRs.isExcludeBetfair) {
+                    parent.jQuery("#dialog-modal").dialog({ height: 150 });
+                    timeout = 10000;
+                    $('_sContent').innerHTML =
+                        '<div style="color: #ff0000; margin-left: 20px"><font color="Blue">Refunded successfully.</font><br/><br/>' +
+                        'Please move Betfair tickets to a new match before ' +
+                        objRs.kickoffBetfair + '<br/>' +
+                        'Otherwise they will bring harm to the system</div>';
+                }
+                else if (objRs.isExcludeBetdaq && objRs.isExcludeBetfair) {
+                    parent.jQuery("#dialog-modal").dialog({ height: 150 });
+                    timeout = 10000;
+                    $('_sContent').innerHTML =
+                        '<div style="color: #ff0000; margin-left: 20px"><font color="Blue">Refunded successfully.</font><br/><br/>' +
+                        'Please move Betdaq and Betfair tickets to a new match before ' +
+                        objRs.kickoffBetdaq + '<br/>' +
+                        'Otherwise they will bring harm to the system</div>';
+                }
+
+                setTimeout(function () {
+                    parent.jQuery("#dialog-modal").dialog('close');
+                }, timeout);
+            }, 1000);
+        }
     }
     else {
         try { parent.parent.jQuery.unblockUI(); } catch (e) { try { parent.jQuery.unblockUI(); } catch (e) { jQuery.unblockUI(); } }
@@ -812,7 +855,7 @@ function MoveBetdaqTickets(matchid, matchcode) {
     var height = 400;
     //parent.ibcWnd.open('SelectMatchMoveBet.aspx?matchid=' + matchid + '&matchcode=' + matchcode, 'Move Betdaq Tickets', 350, height, 270, 170, 'class1', 'class2');
 
-    var url = 'SelectMatchMoveBet.aspx?matchid=' + matchid + '&matchcode=' + matchcode;
+    var url = 'SelectMatchMoveBet.aspx?matchid=' + matchid + '&matchcode=' + matchcode + '&isbetfair=0';
     var title = 'Move Betdaq Tickets';
     var width = 350;
 
@@ -823,7 +866,7 @@ function MoveBetdaqTickets(matchid, matchcode) {
 function MoveBetfairTickets(matchid, matchcode) {
     var height = 400;
 
-    var url = 'SelectMatchMoveBet.aspx?matchid=' + matchid + '&matchcode=' + matchcode;
+    var url = 'SelectMatchMoveBet.aspx?matchid=' + matchid + '&matchcode=' + matchcode + '&isbetfair=1';
     var title = 'Move Betfair Tickets';
     var width = 350;
 
