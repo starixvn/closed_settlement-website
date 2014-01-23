@@ -294,7 +294,7 @@ function scoreConfirm(type) {
         DoCalculate_Submit(type);
     };
 
-    if (jQuery("#chkIsSettleDeterminedTickets").is(":checked")) {
+    if (jQuery("#chkIsSettleDeterminedTickets").is(":checked") || jQuery("#chkIsSettleDeterminedBetFairTickets").is(":checked")) {
         var sport = jQuery("#hiddenScoreConfirm_Sport").val();
         var _width = 400;
 
@@ -392,6 +392,17 @@ function scoreConfirm(type) {
                 reset_Baseball();
                 break;
         }
+
+        var bettypes = 'BETDAQ'
+        if (jQuery('#chkIsSettleDeterminedTickets').is(':checked') && jQuery('#chkIsSettleDeterminedBetFairTickets').is(':checked')) {
+            bettypes = 'BETDAQ and BETFAIR';
+        }
+        else if (jQuery('#chkIsSettleDeterminedBetFairTickets').is(':checked')) {
+            bettypes = 'BETFAIR';
+        }
+
+        jQuery('#betDaqFairSettleDetermined').html(bettypes);
+        jQuery('#betDaqFairMarked').html(bettypes);
 
         jQuery("#divScoreConfirm").dialog({ title: "Score Confirmation", modal: true, width: _width, resizable: false });
 

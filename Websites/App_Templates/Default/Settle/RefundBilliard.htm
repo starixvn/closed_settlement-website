@@ -31,9 +31,7 @@
     <input id="hiddenScoreConfirm_awayFScore" name="hiddenScoreConfirm_awayFScore" type="hidden" />
     <input id="hiddenScoreConfirm_Sport" name="hiddenScoreConfirm_Sport" type="hidden"
         value="Billiard" />
-        <input type="hidden" id="kickoffBetdaq" name="kickoffBetdaq" value="{kickoffBetdaq}" />
-        <input type="hidden" id="kickoffBetfair" name="kickoffBetfair" value="{kickoffBetfair}" />
-    </form>
+  </form>
     <br />
     <span style="padding-left: 30px;" id="infoMsg" class="info-message"></span><span 
         style="padding-left: 30px; visibility: hidden;" id="errMsg" class="error-message">
@@ -82,7 +80,7 @@
             <input id="btnScoreConfirmProceed" type="button" class="btn" value="Proceed" />
             <input id="btnScoreConfirmCancel" type="button" class="btn" value="Change" />
         </div>
-        <div style="padding-left:4px; padding-top:8px; padding-bottom:8px; background-color:#F4F8BE; margin-top:4px; width:300px">
+        <div style="padding-left:4px; padding-top:8px; padding-bottom:8px; background-color:#F4F8BE; margin-top:4px">
             <table border="0">
                 <tbody>
                    <tr>
@@ -92,12 +90,12 @@
                     </tr>
                     <tr>
                         <td>
-                            <span>-&nbsp;<b>SETTLE determined&nbsp;</b>Over/Under tickets of BETDAQ</span>
+                            <span>-&nbsp;<b>SETTLE determined&nbsp;</b>Over/Under tickets of&nbsp;</span><span id="betDaqFairSettleDetermined"></span>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <span>- Mark remaining tickets of BETDAQ as "Running"</span>
+                            <span>- Mark remaining tickets of&nbsp;</span><span id="betDaqFairMarked"></span><span>&nbsp;as "Running"</span>
                         </td>
                     </tr>
                 </tbody>
