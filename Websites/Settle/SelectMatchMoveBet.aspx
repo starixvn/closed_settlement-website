@@ -19,6 +19,7 @@
         var matchid = gup('matchid');
         var matchcode = gup('matchcode');
         var isBetfair = gup('isbetfair');
+        var sportType = gup('sportType');
         $(document).ready(function () {
             RenderMatches(matchid, matchcode, '<%=sysPath%>');
         });

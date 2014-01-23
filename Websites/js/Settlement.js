@@ -104,8 +104,8 @@ function CloseDiv(hasUpdated) {
     this.focus();
 }
 
-function DoCal(type, params) {
-    settlementManagement.doCal(type, params);
+function DoCal(type, params, kickoffdate) {
+    settlementManagement.doCal(type, params, kickoffdate);
 }
 
 function DoCalHR(type, params) {

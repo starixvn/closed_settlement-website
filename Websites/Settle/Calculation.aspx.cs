@@ -222,8 +222,8 @@ public partial class Settle_Calculation : System.Web.UI.Page
 
             TemplateHandler.Assign(ref _s, "{matchcode}", ((!Convert.IsDBNull(r["matchcode"])) ? r["matchcode"].ToString() : string.Empty));
             TemplateHandler.Assign(ref _s, "{date}", string.Format(cult, "{0:MM/dd/yyyy}", r["eventdate"]));
-            TemplateHandler.Assign(ref _s, "{kickoffBetdaq}", string.Format(cult, "{0:MMM dd, yyyy HH:mm tt} GMT-4", ((DateTime)r["eventdate"]).AddHours(24)));
-            TemplateHandler.Assign(ref _s, "{kickoffBetfair}", string.Format(cult, "{0:MMM dd, yyyy HH:mm tt} GMT-4", ((DateTime)r["eventdate"]).AddHours(24)));
+            TemplateHandler.Assign(ref _s, "{kickoffBetdaq}", string.Format(cult, "{0:MMM dd, yyyy hh:mm tt} GMT-4", (CastAide.AsDateTime(Request["kickoffdate"])).AddHours(24)));
+            TemplateHandler.Assign(ref _s, "{kickoffBetfair}", string.Format(cult, "{0:MMM dd, yyyy hh:mm tt} GMT-4", (CastAide.AsDateTime(Request["kickoffdate"])).AddHours(24)));
             TemplateHandler.Assign(ref _s, "{homeHScore}", (!Convert.IsDBNull(r["hthomescore"]) ? r["hthomescore"].ToString() : string.Empty));
             TemplateHandler.Assign(ref _s, "{awayHScore}", (!Convert.IsDBNull(r["htawayscore"]) ? r["htawayscore"].ToString() : string.Empty));
             TemplateHandler.Assign(ref _s, "{homeFScore}", (!Convert.IsDBNull(r["finalhomescore"]) ? r["finalhomescore"].ToString() : string.Empty));
@@ -479,8 +479,8 @@ public partial class Settle_Calculation : System.Web.UI.Page
             TemplateHandler.Assign(ref _s, "{awayteam}", CacheRef.GetTeamName(r["awayid"]));
             TemplateHandler.Assign(ref _s, "{matchcode}", ((!Convert.IsDBNull(r["matchcode"])) ? r["matchcode"].ToString() : string.Empty));
             TemplateHandler.Assign(ref _s, "{date}", string.Format(cult, "{0:MM/dd/yyyy}", r["eventdate"]));
-            TemplateHandler.Assign(ref _s, "{kickoffBetdaq}", string.Format(cult, "{0:MMM dd, yyyy HH:mm tt} GMT-4", ((DateTime)r["eventdate"]).AddHours(24)));
-            TemplateHandler.Assign(ref _s, "{kickoffBetfair}", string.Format(cult, "{0:MMM dd, yyyy HH:mm tt} GMT-4", ((DateTime)r["eventdate"]).AddHours(24)));
+            TemplateHandler.Assign(ref _s, "{kickoffBetdaq}", string.Format(cult, "{0:MMM dd, yyyy hh:mm tt} GMT-4", (CastAide.AsDateTime(Request["kickoffdate"])).AddHours(24)));
+            TemplateHandler.Assign(ref _s, "{kickoffBetfair}", string.Format(cult, "{0:MMM dd, yyyy hh:mm tt} GMT-4", (CastAide.AsDateTime(Request["kickoffdate"])).AddHours(24)));
 
             if (!isExistLG)
                 TemplateController.RemoveBlock(ref _s, "RefundAllLastGoal");
@@ -611,8 +611,8 @@ public partial class Settle_Calculation : System.Web.UI.Page
             TemplateController.Assign(ref _s, "{awayteam}", CacheRef.GetTeamName(r["awayid"]));
             TemplateController.Assign(ref _s, "{matchcode}", ((!Convert.IsDBNull(r["matchcode"])) ? r["matchcode"].ToString() : string.Empty));
             TemplateController.Assign(ref _s, "{date}", string.Format(cult, "{0:MM/dd/yyyy}", r["eventdate"]));
-            TemplateHandler.Assign(ref _s, "{kickoffBetdaq}", string.Format(cult, "{0:MMM dd, yyyy HH:mm tt} GMT-4", ((DateTime)r["eventdate"]).AddHours(24)));
-            TemplateHandler.Assign(ref _s, "{kickoffBetfair}", string.Format(cult, "{0:MMM dd, yyyy HH:mm tt} GMT-4", ((DateTime)r["eventdate"]).AddHours(24)));
+            TemplateHandler.Assign(ref _s, "{kickoffBetdaq}", string.Format(cult, "{0:MMM dd, yyyy hh:mm tt} GMT-4", (CastAide.AsDateTime(Request["kickoffdate"])).AddHours(24)));
+            TemplateHandler.Assign(ref _s, "{kickoffBetfair}", string.Format(cult, "{0:MMM dd, yyyy hh:mm tt} GMT-4", (CastAide.AsDateTime(Request["kickoffdate"])).AddHours(24)));
             TemplateController.Assign(ref _s, "{IsHTOnly}", ((isHalfTimeOnly) ? "1" : "0"));
 
             //TemplateController.Assign(ref _s, "{matchid}", r["matchid"].ToString());
@@ -787,8 +787,8 @@ public partial class Settle_Calculation : System.Web.UI.Page
             TemplateController.Assign(ref _s, "{awayteam}", CacheRef.GetTeamName(r["awayid"]));
             TemplateController.Assign(ref _s, "{matchcode}", ((!Convert.IsDBNull(r["matchcode"])) ? r["matchcode"].ToString() : string.Empty));
             TemplateController.Assign(ref _s, "{date}", string.Format(cult, "{0:MM/dd/yyyy}", r["eventdate"]));
-            TemplateHandler.Assign(ref _s, "{kickoffBetdaq}", string.Format(cult, "{0:MMM dd, yyyy HH:mm tt} GMT-4", ((DateTime)r["eventdate"]).AddHours(24)));
-            TemplateHandler.Assign(ref _s, "{kickoffBetfair}", string.Format(cult, "{0:MMM dd, yyyy HH:mm tt} GMT-4", ((DateTime)r["eventdate"]).AddHours(24)));
+            TemplateHandler.Assign(ref _s, "{kickoffBetdaq}", string.Format(cult, "{0:MMM dd, yyyy hh:mm tt} GMT-4", (CastAide.AsDateTime(Request["kickoffdate"])).AddHours(24)));
+            TemplateHandler.Assign(ref _s, "{kickoffBetfair}", string.Format(cult, "{0:MMM dd, yyyy hh:mm tt} GMT-4", (CastAide.AsDateTime(Request["kickoffdate"])).AddHours(24)));
             TemplateController.Assign(ref _s, "{IsHTOnly}", ((isHalfTimeOnly) ? "1" : "0"));
 
             //TemplateController.Assign(ref _s, "{matchid}", r["matchid"].ToString());
@@ -958,8 +958,8 @@ public partial class Settle_Calculation : System.Web.UI.Page
             TemplateController.Assign(ref _s, "{awayteam}", CacheRef.GetTeamName(r["awayid"]));
             TemplateController.Assign(ref _s, "{matchcode}", ((!Convert.IsDBNull(r["matchcode"])) ? r["matchcode"].ToString() : string.Empty));
             TemplateController.Assign(ref _s, "{date}", string.Format(cult, "{0:MM/dd/yyyy}", r["eventdate"]));
-            TemplateHandler.Assign(ref _s, "{kickoffBetdaq}", string.Format(cult, "{0:MMM dd, yyyy HH:mm tt} GMT-4", ((DateTime)r["eventdate"]).AddHours(24)));
-            TemplateHandler.Assign(ref _s, "{kickoffBetfair}", string.Format(cult, "{0:MMM dd, yyyy HH:mm tt} GMT-4", ((DateTime)r["eventdate"]).AddHours(24)));
+            TemplateHandler.Assign(ref _s, "{kickoffBetdaq}", string.Format(cult, "{0:MMM dd, yyyy hh:mm tt} GMT-4", (CastAide.AsDateTime(Request["kickoffdate"])).AddHours(24)));
+            TemplateHandler.Assign(ref _s, "{kickoffBetfair}", string.Format(cult, "{0:MMM dd, yyyy hh:mm tt} GMT-4", (CastAide.AsDateTime(Request["kickoffdate"])).AddHours(24)));
             TemplateController.Assign(ref _s, "{type}", (isBill) ? "bill" : "keyscore");
             TemplateController.Assign(ref _s, "{params}", r["matchid"].ToString() + "|" + sportID.ToString());
             //TemplateController.Assign(ref _s, "{matchid}", r["matchid"].ToString());
@@ -1102,8 +1102,8 @@ public partial class Settle_Calculation : System.Web.UI.Page
             TemplateController.Assign(ref _s, "{awayteam}", CacheRef.GetTeamName(r["awayid"]));
             TemplateController.Assign(ref _s, "{matchcode}", ((!Convert.IsDBNull(r["matchcode"])) ? r["matchcode"].ToString() : string.Empty));
             TemplateController.Assign(ref _s, "{date}", string.Format(cult, "{0:MM/dd/yyyy}", r["eventdate"]));
-            TemplateHandler.Assign(ref _s, "{kickoffBetdaq}", string.Format(cult, "{0:MMM dd, yyyy HH:mm tt} GMT-4", ((DateTime)r["eventdate"]).AddHours(24)));
-            TemplateHandler.Assign(ref _s, "{kickoffBetfair}", string.Format(cult, "{0:MMM dd, yyyy HH:mm tt} GMT-4", ((DateTime)r["eventdate"]).AddHours(24)));
+            TemplateHandler.Assign(ref _s, "{kickoffBetdaq}", string.Format(cult, "{0:MMM dd, yyyy hh:mm tt} GMT-4", (CastAide.AsDateTime(Request["kickoffdate"])).AddHours(24)));
+            TemplateHandler.Assign(ref _s, "{kickoffBetfair}", string.Format(cult, "{0:MMM dd, yyyy hh:mm tt} GMT-4", (CastAide.AsDateTime(Request["kickoffdate"])).AddHours(24)));
             TemplateController.Assign(ref _s, "{type}", (isBill) ? "bill" : "keyscore");
             //TemplateController.Assign(ref _s, "{matchid}", r["matchid"].ToString());
             TemplateController.Assign(ref _s, "{matchid}", r["matchid"].ToString());
@@ -1247,8 +1247,8 @@ public partial class Settle_Calculation : System.Web.UI.Page
             TemplateController.Assign(ref _s, "{awayteam}", CacheRef.GetTeamName(r["awayid"]));
             TemplateController.Assign(ref _s, "{matchcode}", ((!Convert.IsDBNull(r["matchcode"])) ? r["matchcode"].ToString() : string.Empty));
             TemplateController.Assign(ref _s, "{date}", string.Format(cult, "{0:MM/dd/yyyy}", r["eventdate"]));
-            TemplateHandler.Assign(ref _s, "{kickoffBetdaq}", string.Format(cult, "{0:MMM dd, yyyy HH:mm tt} GMT-4", ((DateTime)r["eventdate"]).AddHours(24)));
-            TemplateHandler.Assign(ref _s, "{kickoffBetfair}", string.Format(cult, "{0:MMM dd, yyyy HH:mm tt} GMT-4", ((DateTime)r["eventdate"]).AddHours(24)));
+            TemplateHandler.Assign(ref _s, "{kickoffBetdaq}", string.Format(cult, "{0:MMM dd, yyyy hh:mm tt} GMT-4", (CastAide.AsDateTime(Request["kickoffdate"])).AddHours(24)));
+            TemplateHandler.Assign(ref _s, "{kickoffBetfair}", string.Format(cult, "{0:MMM dd, yyyy hh:mm tt} GMT-4", (CastAide.AsDateTime(Request["kickoffdate"])).AddHours(24)));
             TemplateController.Assign(ref _s, "{homeFScore}", (!Convert.IsDBNull(r["finalhomescore"]) ? r["finalhomescore"].ToString() : string.Empty));
             TemplateController.Assign(ref _s, "{awayFScore}", (!Convert.IsDBNull(r["finalawayscore"]) ? r["finalawayscore"].ToString() : string.Empty));
             TemplateController.Assign(ref _s, "{type}", (isBill) ? "bill" : "keyscore");
@@ -1344,8 +1344,8 @@ public partial class Settle_Calculation : System.Web.UI.Page
             TemplateController.Assign(ref _s, "{awayteam}", CacheRef.GetTeamName(r["awayid"]));
             TemplateController.Assign(ref _s, "{matchcode}", ((!Convert.IsDBNull(r["matchcode"])) ? r["matchcode"].ToString() : string.Empty));
             TemplateController.Assign(ref _s, "{date}", string.Format(cult, "{0:MM/dd/yyyy}", r["eventdate"]));
-            TemplateHandler.Assign(ref _s, "{kickoffBetdaq}", string.Format(cult, "{0:MMM dd, yyyy HH:mm tt} GMT-4", ((DateTime)r["eventdate"]).AddHours(24)));
-            TemplateHandler.Assign(ref _s, "{kickoffBetfair}", string.Format(cult, "{0:MMM dd, yyyy HH:mm tt} GMT-4", ((DateTime)r["eventdate"]).AddHours(24)));
+            TemplateHandler.Assign(ref _s, "{kickoffBetdaq}", string.Format(cult, "{0:MMM dd, yyyy hh:mm tt} GMT-4", (CastAide.AsDateTime(Request["kickoffdate"])).AddHours(24)));
+            TemplateHandler.Assign(ref _s, "{kickoffBetfair}", string.Format(cult, "{0:MMM dd, yyyy hh:mm tt} GMT-4", (CastAide.AsDateTime(Request["kickoffdate"])).AddHours(24)));
             TemplateController.Assign(ref _s, "{type}", (isBill) ? "bill" : "keyscore");
             TemplateController.Assign(ref _s, "{params}", r["matchid"].ToString() + "|" + sportID.ToString());
             //TemplateController.Assign(ref _s, "{matchid}", r["matchid"].ToString());
@@ -1488,8 +1488,8 @@ public partial class Settle_Calculation : System.Web.UI.Page
             TemplateController.Assign(ref _s, "{awayteam}", CacheRef.GetTeamName(r["awayid"]));
             TemplateController.Assign(ref _s, "{matchcode}", ((!Convert.IsDBNull(r["matchcode"])) ? r["matchcode"].ToString() : string.Empty));
             TemplateController.Assign(ref _s, "{date}", string.Format(cult, "{0:MM/dd/yyyy}", r["eventdate"]));
-            TemplateHandler.Assign(ref _s, "{kickoffBetdaq}", string.Format(cult, "{0:MMM dd, yyyy HH:mm tt} GMT-4", ((DateTime)r["eventdate"]).AddHours(24)));
-            TemplateHandler.Assign(ref _s, "{kickoffBetfair}", string.Format(cult, "{0:MMM dd, yyyy HH:mm tt} GMT-4", ((DateTime)r["eventdate"]).AddHours(24)));
+            TemplateHandler.Assign(ref _s, "{kickoffBetdaq}", string.Format(cult, "{0:MMM dd, yyyy hh:mm tt} GMT-4", (CastAide.AsDateTime(Request["kickoffdate"])).AddHours(24)));
+            TemplateHandler.Assign(ref _s, "{kickoffBetfair}", string.Format(cult, "{0:MMM dd, yyyy hh:mm tt} GMT-4", (CastAide.AsDateTime(Request["kickoffdate"])).AddHours(24)));
             TemplateController.Assign(ref _s, "{type}", (isBill) ? "bill" : "keyscore");
 
             TemplateController.Assign(ref _s, "{params}", r["matchid"].ToString() + "|" + sportID.ToString());

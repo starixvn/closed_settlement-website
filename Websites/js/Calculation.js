@@ -855,7 +855,7 @@ function MoveBetdaqTickets(matchid, matchcode) {
     var height = 400;
     //parent.ibcWnd.open('SelectMatchMoveBet.aspx?matchid=' + matchid + '&matchcode=' + matchcode, 'Move Betdaq Tickets', 350, height, 270, 170, 'class1', 'class2');
 
-    var url = 'SelectMatchMoveBet.aspx?matchid=' + matchid + '&matchcode=' + matchcode + '&isbetfair=0';
+    var url = 'SelectMatchMoveBet.aspx?matchid=' + matchid + '&matchcode=' + matchcode + '&isbetfair=0&sportType=' + $('sParams').value.split('|')[1] + '&v=' + new Date().toGMTString();
     var title = 'Move Betdaq Tickets';
     var width = 350;
 
@@ -866,7 +866,7 @@ function MoveBetdaqTickets(matchid, matchcode) {
 function MoveBetfairTickets(matchid, matchcode) {
     var height = 400;
 
-    var url = 'SelectMatchMoveBet.aspx?matchid=' + matchid + '&matchcode=' + matchcode + '&isbetfair=1';
+    var url = 'SelectMatchMoveBet.aspx?matchid=' + matchid + '&matchcode=' + matchcode + '&isbetfair=1&sportType=' + $('sParams').value.split('|')[1] + '&v=' + new Date().toGMTString();
     var title = 'Move Betfair Tickets';
     var width = 350;
 

@@ -1,5 +1,6 @@
 ﻿
 var settlementManagement = {
+    kickoffdate: null,
     enums: {
         CalcStatusConstants: {
             Completed: 1,
@@ -361,7 +362,9 @@ var settlementManagement = {
 
         return matchCalculateStatus;
     },
-    doCal: function (type, params) {
+    doCal: function (type, params, kickoffdate) {
+        this.kickoffdate = !kickoffdate ? this.kickoffdate : kickoffdate;
+
         var calcStatusConstants = settlementManagement.enums.CalcStatusConstants;
         var matchId = params.split('|')[1];
         jQuery.ajax({
@@ -379,7 +382,7 @@ var settlementManagement = {
                     alert("This match is in calculate queue (status {0})".replace(/\{0\}/g,
                              matchCalculateStatus.StatusName));
                 } else {
-                    settlementManagement.showSettlementPopup(type, params, matchId);
+                    settlementManagement.showSettlementPopup(type, params, matchId, settlementManagement.kickoffdate);
                 }
             },
             error: function (event, jqXHR, ajaxSettings) {
@@ -388,7 +391,8 @@ var settlementManagement = {
             }
         });
     },
-    showSettlementPopup: function (type, params, sportId) {
+    showSettlementPopup: function (type, params, sportId, kickoffdate) {
+        kickoffdate = kickoffdate || new Date().toGMTString();
         var height = 330;
         var width = 620;
         switch (sportId) {
@@ -409,7 +413,7 @@ var settlementManagement = {
             height = height + 50;
         }
 
-        var url = 'Calculation.aspx?p=' + params + '&type=' + type;
+        var url = 'Calculation.aspx?p=' + params + '&type=' + type + '&kickoffdate=' + jQuery('<div/>').text(kickoffdate.replace('<br>', ' ').replace('<br />', ' ').replace('<br >', ' ').replace('</span>', ' ')).html();
         var title = 'Settlement';
         var calculateTypeEnum = settlementManagement.enums.CalculateType;
         switch (type) {

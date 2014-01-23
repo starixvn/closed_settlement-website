@@ -40,13 +40,14 @@ namespace Sunplus.Accounting.Business.Settlement
                 default: return _eventstatus;
             }
         }
-        private static string GetStringLink(string _params, string _eventstatus, bool _isRefund, bool _isCalRefund, bool _isCalculated, bool _isMultiCaled, bool isHTCal, bool isKeyScore, string permissions)
+        private static string GetStringLink(string _params, string _eventstatus, bool _isRefund, bool _isCalRefund, bool _isCalculated, bool _isMultiCaled, bool isHTCal, bool isKeyScore, string permissions, string date = null)
         {
             //string _sLink = (SettleBgColor.HasHostPermission) ? calLink : calLink2;
             string _sLink = calLink;
 
             string[] arrparams = _params.Split('_');
             TemplateHandler.Assign(ref _sLink, "{params}", arrparams[0]);
+            if (!string.IsNullOrWhiteSpace(date)) TemplateHandler.Assign(ref _sLink, "{date}", date);
             TemplateHandler.Assign(ref _sLink, "{params_cls}", arrparams[1]);
             TemplateHandler.Assign(ref _sLink, "{params_id}", _params.Replace("|", "_"));
             // set background color  
@@ -115,7 +116,7 @@ namespace Sunplus.Accounting.Business.Settlement
             return _sLink;
         }
 
-        private static string GetStringLink_Soccer(string _params, string _eventstatus, bool _isRefund, bool _isCalRefund, bool _isCalculated, bool _isMultiCaled, bool isHTCal, bool isKeyScore, string permissions)
+        private static string GetStringLink_Soccer(string _params, string _eventstatus, bool _isRefund, bool _isCalRefund, bool _isCalculated, bool _isMultiCaled, bool isHTCal, bool isKeyScore, string permissions, string date = null)
         {
             if (isHTCal)
             {
@@ -123,6 +124,7 @@ namespace Sunplus.Accounting.Business.Settlement
                 string _sLink = calLink;
                 string[] arrparams = _params.Split('_');
                 TemplateHandler.Assign(ref _sLink, "{params}", arrparams[0]);
+                if (!string.IsNullOrWhiteSpace(date)) TemplateHandler.Assign(ref _sLink, "{date}", date);
                 TemplateHandler.Assign(ref _sLink, "{params_cls}", arrparams[1]);
                 TemplateHandler.Assign(ref _sLink, "{params_id}", _params.Replace("|", "_"));
                 TemplateHandler.Assign(ref _sLink, "{disabled}", isKeyScore ? "" : "disabled=\"disabled\"");
@@ -190,7 +192,7 @@ namespace Sunplus.Accounting.Business.Settlement
 
                 return _sLink;
             }
-            return GetStringLink(_params, _eventstatus, _isRefund, _isCalRefund, _isCalculated, _isMultiCaled, isHTCal, isKeyScore, permissions); // Not calculate HT yet
+            return GetStringLink(_params, _eventstatus, _isRefund, _isCalRefund, _isCalculated, _isMultiCaled, isHTCal, isKeyScore, permissions, date); // Not calculate HT yet
         }
         public static string NumberGame(int sportID, DataRow[] rows, int totalColumns, string fdate, string tdate, string permissions)
         {
@@ -306,7 +308,7 @@ namespace Sunplus.Accounting.Business.Settlement
                     bool isHTCal = Convert.ToBoolean(dr["IsHTCal"]);
 
                     string _params = dr["matchid"].ToString() + "|" + sportID.ToString() + "_" + leagueCount + "_" + dr["matchcode"].ToString();
-                    TemplateHandler.Assign(ref _sRow, "{calLink}", GetStringLink(_params, _eventstatus, _isRefund, _isCalRefund, _isCalculated, _isMultiCaled, isHTCal, CastAide.AsBoolean(dr["iskeyscore"]), permissions));
+                    TemplateHandler.Assign(ref _sRow, "{calLink}", GetStringLink(_params, _eventstatus, _isRefund, _isCalRefund, _isCalculated, _isMultiCaled, isHTCal, CastAide.AsBoolean(dr["iskeyscore"]), permissions, _time));
                     _s.Append(_sRow);
                 }
 
@@ -447,7 +449,7 @@ namespace Sunplus.Accounting.Business.Settlement
                     bool _isMultiCaled = Convert.ToBoolean(dr["IsMultiCaled"]);
                     string _params = dr["matchid"].ToString() + "|" + sportID.ToString() + "_" + leagueCount + "_" + dr["matchcode"].ToString();
                     bool _isHTCal = CastAide.AsBoolean(dr["ishtcal"], false);
-                    TemplateHandler.Assign(ref _sRow, "{calLink}", GetStringLink_Soccer(_params, _eventstatus, _isRefund, _isCalRefund, _isCalculated, _isMultiCaled, _isHTCal, CastAide.AsBoolean(dr["iskeyscore"]), permissions));
+                    TemplateHandler.Assign(ref _sRow, "{calLink}", GetStringLink_Soccer(_params, _eventstatus, _isRefund, _isCalRefund, _isCalculated, _isMultiCaled, _isHTCal, CastAide.AsBoolean(dr["iskeyscore"]), permissions, _time));
 
                     _s.Append(_sRow);
                 }
@@ -613,7 +615,7 @@ namespace Sunplus.Accounting.Business.Settlement
                     //string _params = dr["matchid"].ToString() + "|" + sportID.ToString();
 
                     string _params = dr["matchid"].ToString() + "|" + sportID.ToString() + "_" + leagueCount + "_" + dr["matchcode"].ToString();
-                    TemplateHandler.Assign(ref _sRow, "{calLink}", GetStringLink(_params, _eventstatus, _isRefund, _isCalRefund, _isCalculated, _isMultiCaled, isHTCal, CastAide.AsBoolean(dr["iskeyscore"]), permissions));
+                    TemplateHandler.Assign(ref _sRow, "{calLink}", GetStringLink(_params, _eventstatus, _isRefund, _isCalRefund, _isCalculated, _isMultiCaled, isHTCal, CastAide.AsBoolean(dr["iskeyscore"]), permissions, _time));
                     _s.Append(_sRow);
                 }
                 TemplateHandler.Assign(ref _sMain, "{fdate}", fdate);
@@ -771,7 +773,7 @@ namespace Sunplus.Accounting.Business.Settlement
                     TemplateHandler.Assign(ref _sRow, "{eventstatus}", settle.SelStatusConfirming(dr, ref isPending));
                     TemplateHandler.Assign(ref _sRow, "{bgEventStatus}", (isPending ? SettleBgColor.PendingStatus : ""));
                     string _params = dr["matchid"].ToString() + "|" + sportID.ToString() + "_" + leagueCount + "_" + dr["matchcode"].ToString();
-                    TemplateHandler.Assign(ref _sRow, "{calLink}", GetStringLink(_params, _eventstatus, _isRefund, _isCalRefund, _isCalculated, _isMultiCaled, isHTCal, CastAide.AsBoolean(dr["iskeyscore"]), permissions));
+                    TemplateHandler.Assign(ref _sRow, "{calLink}", GetStringLink(_params, _eventstatus, _isRefund, _isCalRefund, _isCalculated, _isMultiCaled, isHTCal, CastAide.AsBoolean(dr["iskeyscore"]), permissions, _time));
                     _s.Append(_sRow);
                 }
                 TemplateHandler.Assign(ref _sMain, "{fdate}", fdate);
@@ -921,7 +923,7 @@ namespace Sunplus.Accounting.Business.Settlement
                     TemplateHandler.Assign(ref _sRow, "{bgEventStatus}", (isPending ? SettleBgColor.PendingStatus : ""));
 
                     string _params = dr["matchid"].ToString() + "|" + sportID.ToString() + "_" + leagueCount + "_" + dr["matchcode"].ToString();
-                    TemplateHandler.Assign(ref _sRow, "{calLink}", GetStringLink(_params, _eventstatus, _isRefund, _isCalRefund, _isCalculated, _isMultiCaled, isHTCal, CastAide.AsBoolean(dr["iskeyscore"]), permissions));
+                    TemplateHandler.Assign(ref _sRow, "{calLink}", GetStringLink(_params, _eventstatus, _isRefund, _isCalRefund, _isCalculated, _isMultiCaled, isHTCal, CastAide.AsBoolean(dr["iskeyscore"]), permissions, _time));
                     _s.Append(_sRow);
                 }
                 TemplateHandler.Assign(ref _sMain, "{fdate}", fdate);
@@ -1025,7 +1027,7 @@ namespace Sunplus.Accounting.Business.Settlement
                     TemplateHandler.Assign(ref _sRow, "{bgEventStatus}", (isPending ? SettleBgColor.PendingStatus : ""));
 
                     string _params = dr["matchid"].ToString() + "|" + sportID.ToString() + "_" + leagueCount + "_" + dr["matchcode"].ToString();
-                    TemplateHandler.Assign(ref _sRow, "{calLink}", GetStringLink(_params, _eventstatus, _isRefund, _isCalRefund, _isCalculated, _isMultiCaled, isHTCal, CastAide.AsBoolean(dr["iskeyscore"]), permissions));
+                    TemplateHandler.Assign(ref _sRow, "{calLink}", GetStringLink(_params, _eventstatus, _isRefund, _isCalRefund, _isCalculated, _isMultiCaled, isHTCal, CastAide.AsBoolean(dr["iskeyscore"]), permissions, _time));
                     _s.Append(_sRow);
                 }
                 TemplateHandler.Assign(ref _sMain, "{fdate}", fdate);
@@ -1180,7 +1182,7 @@ namespace Sunplus.Accounting.Business.Settlement
                     TemplateHandler.Assign(ref _sRow, "{bgEventStatus}", (isPending ? SettleBgColor.PendingStatus : ""));
 
                     string _params = dr["matchid"].ToString() + "|" + sportID.ToString() + "_" + leagueCount + "_" + dr["matchcode"].ToString();
-                    TemplateHandler.Assign(ref _sRow, "{calLink}", GetStringLink(_params, _eventstatus, _isRefund, _isCalRefund, _isCalculated, _isMultiCaled, isHTCal, CastAide.AsBoolean(dr["iskeyscore"]), permissions));
+                    TemplateHandler.Assign(ref _sRow, "{calLink}", GetStringLink(_params, _eventstatus, _isRefund, _isCalRefund, _isCalculated, _isMultiCaled, isHTCal, CastAide.AsBoolean(dr["iskeyscore"]), permissions, _time));
                     _s.Append(_sRow);
                 }
                 TemplateHandler.Assign(ref _sMain, "{fdate}", fdate);
@@ -1339,7 +1341,7 @@ namespace Sunplus.Accounting.Business.Settlement
                     TemplateHandler.Assign(ref _sRow, "{bgEventStatus}", (isPending ? SettleBgColor.PendingStatus : ""));
 
                     string _params = dr["matchid"].ToString() + "|" + sportID.ToString() + "_" + leagueCount + "_" + dr["matchcode"].ToString();
-                    TemplateHandler.Assign(ref _sRow, "{calLink}", GetStringLink(_params, _eventstatus, _isRefund, _isCalRefund, _isCalculated, _isMultiCaled, isHTCal, CastAide.AsBoolean(dr["iskeyscore"]), permissions));
+                    TemplateHandler.Assign(ref _sRow, "{calLink}", GetStringLink(_params, _eventstatus, _isRefund, _isCalRefund, _isCalculated, _isMultiCaled, isHTCal, CastAide.AsBoolean(dr["iskeyscore"]), permissions, _time));
                     _s.Append(_sRow);
                 }
                 TemplateHandler.Assign(ref _sMain, "{fdate}", fdate);

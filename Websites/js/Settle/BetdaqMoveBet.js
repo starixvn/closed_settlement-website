@@ -62,5 +62,5 @@ function CloseWnd() {
         parent.jQuery('#dialog-modalmovebetfair').dialog('close');
     }
     if (typeof (parent.DoCal) != 'undefined')
-        parent.DoCal('r', _matchid + '|1');
+        parent.DoCal('r', _matchid + '|' + sportType);
 }

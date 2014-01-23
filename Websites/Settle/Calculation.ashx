@@ -70,7 +70,8 @@ public class Calculation : IHttpHandler, IRequiresSessionState
                 break;
         }
 
-        if (context.Request["chkIsSettleDeterminedTickets"] == null || context.Request["chkIsSettleDeterminedTickets"] != "on")
+        if ((context.Request["chkIsSettleDeterminedTickets"] == null || context.Request["chkIsSettleDeterminedTickets"] != "on") &&
+            (context.Request["chkIsSettleDeterminedBetFairTickets"] == null || context.Request["chkIsSettleDeterminedBetFairTickets"] != "on"))
         {
             homeHScore = null;
             awayHScore = null;
