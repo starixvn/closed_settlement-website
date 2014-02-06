@@ -32,7 +32,7 @@ namespace Sunplus.Accounting.Business.Settlement
         private static readonly string calLink = WebUtils.LoadTemplate("Settle/CalculateLink.htm");
         private static string calLink2 = WebUtils.LoadTemplate("Settle/CalculateLink2.htm");
 
-        private static string GetStringLink(string _params, string permissions)
+        private static string GetStringLink(string _params, string permissions, string date = null)
         {
             //_matchid + "&sid=" + sportID.ToString()
             //string _sLink = (SettleBgColor.HasHostPermission) ? calLink : calLink2;
@@ -43,6 +43,7 @@ namespace Sunplus.Accounting.Business.Settlement
             TemplateHandler.Assign(ref _sLink, "{params}", arrparams[0]);
             TemplateHandler.Assign(ref _sLink, "{params_cls}", arrparams[1] + "_" + arrparams[2]);
             TemplateHandler.Assign(ref _sLink, "{params_id}", _params.Replace("|", "_"));
+            if (!string.IsNullOrWhiteSpace(date)) TemplateHandler.Assign(ref _sLink, "{date}", date);
 
             // set background color                 
             TemplateHandler.Assign(ref _sLink, "{bgCalculate}", SettleBgColor.DEFAULTCOLOR);
@@ -82,7 +83,7 @@ namespace Sunplus.Accounting.Business.Settlement
             return _sLink;
         }
 
-        private static string GetStringLink_Soccer(string _params, bool isHTCal, string permissions)
+        private static string GetStringLink_Soccer(string _params, bool isHTCal, string permissions, string date = null)
         {
             if (isHTCal)
             {
@@ -131,7 +132,7 @@ namespace Sunplus.Accounting.Business.Settlement
 
                 return _sLink;
             }
-            return GetStringLink(_params, permissions); // Not calculate HT yet
+            return GetStringLink(_params, permissions, date); // Not calculate HT yet
         }
 
         public static string CommonSportType(int sportID, DataRow[] rows, int totalColumns, string fdate, string tdate,
@@ -233,7 +234,7 @@ namespace Sunplus.Accounting.Business.Settlement
                         (isPending ? SettleBgColor.PendingStatus : SettleBgColor.DEFAULTCOLOR));
 
                     string _params = dr["matchid"].ToString() + "|" + sportID.ToString() + "_" + _leagueid.ToString() + "_" + _eventstatus;
-                    TemplateHandler.Assign(ref _sRow, "{calLink}", GetStringLink(_params, permissions));
+                    TemplateHandler.Assign(ref _sRow, "{calLink}", GetStringLink(_params, permissions, string.Format(cult, "{0:MM/dd/yy hh:mm:ss tt}", dr["kickofftime"])));
                     TemplateHandler.Assign(ref _sRow, "{betcnt}", dr["betcount"].ToString());
                     _s.Append(_sRow);
                 }
@@ -393,7 +394,7 @@ namespace Sunplus.Accounting.Business.Settlement
 
                     string _params = dr["matchid"].ToString() + "|" + sportID.ToString() + "_" + _leagueid.ToString() + "_" + _eventstatus;
                     bool _isHTCal = CastAide.AsBoolean(dr["ishtcal"], false);
-                    TemplateHandler.Assign(ref _sRow, "{calLink}", GetStringLink_Soccer(_params, _isHTCal, permissions));
+                    TemplateHandler.Assign(ref _sRow, "{calLink}", GetStringLink_Soccer(_params, _isHTCal, permissions, string.Format(cult, "{0:MM/dd/yy hh:mm:ss tt}", dr["kickofftime"])));
                     TemplateHandler.Assign(ref _sRow, "{betcnt}", dr["betcount"].ToString());
                     _s.Append(_sRow);
                 }
@@ -512,12 +513,19 @@ namespace Sunplus.Accounting.Business.Settlement
                         }
                         for (; i < _betStatus.Length; i++)
                         {
-                            TemplateHandler.Assign(ref _sRow, "{home" + (i + 1) + "Q}", _betStatus[i].Trim().Split('-')[0]);
-                            TemplateHandler.Assign(ref _sRow, "{away" + (i + 1) + "Q}", _betStatus[i].Trim().Split('-')[1]);
-                            if (i == totalSets)
+                            try
                             {
-                                _homeOT = _betStatus[i].Trim().Split('-')[0];
-                                _awayOT = _betStatus[i].Trim().Split('-')[1];
+                                TemplateHandler.Assign(ref _sRow, "{home" + (i + 1) + "Q}", _betStatus[i].Trim().Split('-')[0]);
+                                TemplateHandler.Assign(ref _sRow, "{away" + (i + 1) + "Q}", _betStatus[i].Trim().Split('-')[1]);
+                                if (i == totalSets)
+                                {
+                                    _homeOT = _betStatus[i].Trim().Split('-')[0];
+                                    _awayOT = _betStatus[i].Trim().Split('-')[1];
+                                }
+                            }
+                            catch
+                            {
+                                continue;
                             }
                         }
                         i--;
@@ -549,7 +557,7 @@ namespace Sunplus.Accounting.Business.Settlement
 
                     string _params = dr["matchid"].ToString() + "|" + sportID.ToString() + "_" + _leagueid.ToString() + "_" + _eventstatus;
 
-                    TemplateHandler.Assign(ref _sRow, "{calLink}", GetStringLink(_params, permissions));
+                    TemplateHandler.Assign(ref _sRow, "{calLink}", GetStringLink(_params, permissions, string.Format(cult, "{0:MM/dd/yy hh:mm:ss tt}", dr["kickofftime"])));
                     TemplateHandler.Assign(ref _sRow, "{betcnt}", dr["betcount"].ToString());
                     _s.Append(_sRow);
                 }
@@ -712,7 +720,7 @@ namespace Sunplus.Accounting.Business.Settlement
                         (isPending ? SettleBgColor.PendingStatus : SettleBgColor.DEFAULTCOLOR));
 
                     string _params = dr["matchid"].ToString() + "|" + sportID.ToString() + "_" + _leagueid.ToString() + "_" + _eventstatus;
-                    TemplateHandler.Assign(ref _sRow, "{calLink}", GetStringLink(_params, permissions));
+                    TemplateHandler.Assign(ref _sRow, "{calLink}", GetStringLink(_params, permissions, string.Format(cult, "{0:MM/dd/yy hh:mm:ss tt}", dr["kickofftime"])));
                     TemplateHandler.Assign(ref _sRow, "{betcnt}", dr["betcount"].ToString());
                     _s.Append(_sRow);
                 }
@@ -873,7 +881,7 @@ namespace Sunplus.Accounting.Business.Settlement
                         (isPending ? SettleBgColor.PendingStatus : SettleBgColor.DEFAULTCOLOR));
 
                     string _params = dr["matchid"].ToString() + "|" + sportID.ToString() + "_" + _leagueid.ToString() + "_" + _eventstatus;
-                    TemplateHandler.Assign(ref _sRow, "{calLink}", GetStringLink(_params, permissions));
+                    TemplateHandler.Assign(ref _sRow, "{calLink}", GetStringLink(_params, permissions, string.Format(cult, "{0:MM/dd/yy hh:mm:ss tt}", dr["kickofftime"])));
                     TemplateHandler.Assign(ref _sRow, "{betcnt}", dr["betcount"].ToString());
                     _s.Append(_sRow);
                 }
@@ -986,7 +994,7 @@ namespace Sunplus.Accounting.Business.Settlement
 
 
                     string _params = dr["matchid"].ToString() + "|" + sportID.ToString() + "_" + _leagueid.ToString() + "_" + _eventstatus;
-                    TemplateHandler.Assign(ref _sRow, "{calLink}", GetStringLink(_params, permissions));
+                    TemplateHandler.Assign(ref _sRow, "{calLink}", GetStringLink(_params, permissions, string.Format(cult, "{0:MM/dd/yy hh:mm:ss tt}", dr["kickofftime"])));
                     TemplateHandler.Assign(ref _sRow, "{betcnt}", dr["betcount"].ToString());
                     _s.Append(_sRow);
                 }
@@ -1142,7 +1150,7 @@ namespace Sunplus.Accounting.Business.Settlement
                         (isPending ? SettleBgColor.PendingStatus : SettleBgColor.DEFAULTCOLOR));
 
                     string _params = dr["matchid"].ToString() + "|" + sportID.ToString() + "_" + _leagueid.ToString() + "_" + _eventstatus;
-                    TemplateHandler.Assign(ref _sRow, "{calLink}", GetStringLink(_params, permissions));
+                    TemplateHandler.Assign(ref _sRow, "{calLink}", GetStringLink(_params, permissions, string.Format(cult, "{0:MM/dd/yy hh:mm:ss tt}", dr["kickofftime"])));
                     TemplateHandler.Assign(ref _sRow, "{betcnt}", dr["betcount"].ToString());
                     _s.Append(_sRow);
                 }
@@ -1310,7 +1318,7 @@ namespace Sunplus.Accounting.Business.Settlement
 
 
                     string _params = dr["matchid"].ToString() + "|" + sportID.ToString() + "_" + _leagueid.ToString() + "_" + _eventstatus;
-                    TemplateHandler.Assign(ref _sRow, "{calLink}", GetStringLink(_params, permissions));
+                    TemplateHandler.Assign(ref _sRow, "{calLink}", GetStringLink(_params, permissions, string.Format(cult, "{0:MM/dd/yy hh:mm:ss tt}", dr["kickofftime"])));
                     TemplateHandler.Assign(ref _sRow, "{betcnt}", dr["betcount"].ToString());
                     _s.Append(_sRow);
                 }

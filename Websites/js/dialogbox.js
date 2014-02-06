@@ -51,7 +51,11 @@ function OpenPopup(url, title, width, height, modal, resizable, currWindow, dura
 }
 
 function OpenNextPopup(popupId, url, title, width, height, modal, resizable, currWindow, duration, fnRecall, fnOnClose) {
-    
+    try {
+        jQuery('#dialog-modal' + popupId).dialog('destroy').remove();
+    } catch (e) {
+    }   
+
     var dialoghtml = jQuery('<div id="dialog-modal' + popupId + '" title="' + title + '" style=" overflow:hidden"></div>');
     if (url != "") {
         var iframe = jQuery('<iframe id="innerFrame' + popupId + '" />').attr({ "frameborder": "0", "scrolling": "auto" }).appendTo(dialoghtml);
@@ -60,7 +64,7 @@ function OpenNextPopup(popupId, url, title, width, height, modal, resizable, cur
     dialoghtml.appendTo(jQuery("body"));
 
 
-    jQuery('#dialog-modal'+ popupId).dialog({
+    jQuery('#dialog-modal' + popupId).dialog({
         resizable: resizable,
         modal: modal,
         width: width,
@@ -85,7 +89,7 @@ function OpenNextPopup(popupId, url, title, width, height, modal, resizable, cur
             if (currentExecFrame != null && currentExecFrame.onclose) {
                 currentExecFrame.onclose();
                 setTimeout('currentExecFrame=null;', 500);
-            }
+            }            
         }
     });
 

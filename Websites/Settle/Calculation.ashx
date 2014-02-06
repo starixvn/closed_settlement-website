@@ -306,7 +306,7 @@ public class Calculation : IHttpHandler, IRequiresSessionState
         }
 
         context.Response.Write("{\"responseText\":\"" + _s + "\",\"successMatchIds\":\"" + successMatchIds + 
-            "\",\"type\":\"" + type.ToLowerInvariant() + "\",\"isExcludeBetdaq\":" + (IsExcludeBetdaq ? 1 : 0) + ",\"isExcludeBetfair\":" + (IsExcludeBetfair ? 1 : 0) +
+            "\",\"type\":\"" + type.ToLowerInvariant() + "\",\"isExcludeBetdaq\":" + (IsExcludeBetdaq || IsSettleDeterminedTickets ? 1 : 0) + ",\"isExcludeBetfair\":" + (IsExcludeBetfair || IsSettleDeterminedBetFairTickets ? 1 : 0) +
             ",\"kickoffBetdaq\":\"" + betDaqDate + "\",\"kickoffBetfair\":\"" + betFairDate + "\"}");
     }
 
