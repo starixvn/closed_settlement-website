@@ -414,8 +414,8 @@ public partial class Settle_Calculation : System.Web.UI.Page
                 if (!isExistFGLG && fglgStatus == "no ticket")
                 {
                     TemplateController.RemoveBlock(ref _s, "FGLG");
-                    // TemplateController.RemoveBlock(ref _s, "RefunFGLG");
-                    //TemplateController.RemoveBlock(ref _s, "RefundAllLastGoal");
+                    TemplateController.RemoveBlock(ref _s, "RefunFGLG"); // Andy uncomments this line because of issue #11741
+                    TemplateController.RemoveBlock(ref _s, "RefundAllLastGoal"); // Andy uncomments this line because of issue #11741
                 }
                 CheckExcludeMoveBetDaq(ref _s, IsMovebetdaq, IsExcludeBetdaq, IsSettleAbandonedMatch, IsRefundRunningBetDaq);
                 CheckExcludeMoveBetFair(ref _s, IsMovebetfair, IsExcludeBetfair, IsSettleAbandonedBetFairMatch, IsRefundRunningBetFair);
