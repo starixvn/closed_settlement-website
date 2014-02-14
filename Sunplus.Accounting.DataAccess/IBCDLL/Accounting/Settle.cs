@@ -358,7 +358,6 @@ namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
             try
             {
                 // ------------ refund---- 
-                scoreConfirm_Betstatus = "Refund;FL:2-0";
                 Hashtable pRefund = new Hashtable();
                 pRefund.Add("creator", custid);
                 pRefund.Add("matchid", matchid);

@@ -2,6 +2,7 @@
 
 using System;
 using System.Web;
+using System.Linq;
 
 using DNAide.Core;
 using DNAide.Web;
@@ -126,6 +127,11 @@ public class Calculation : IHttpHandler, IRequiresSessionState
                 IsSettleDeterminedBetFairTickets = true;
             }
 
+            // Hardcode for sport types which are not use [Refund;FL:2-0] in case of refund all with settle determined betdaq/betfair tickets @Andy
+            var refundTypesNoFL = new int[] { 5, 6, 9, 30 };
+            var excludeFL = refundTypesNoFL.Contains(sportID) && (IsSettleDeterminedTickets || IsSettleDeterminedBetFairTickets);
+            scoreConfirm_Betstatus = excludeFL ? scoreConfirm_Betstatus : "Refund;FL:2-0";
+            
             foreach (string _matchId in arrIds)
             {
                 if (_matchId.Length == 0) continue;
