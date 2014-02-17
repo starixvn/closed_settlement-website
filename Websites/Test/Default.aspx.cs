@@ -9,6 +9,6 @@ public partial class Test_Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        Response.Write(DNAide.Utils.Encryption.GetDeCryptConnectionString("main"));
+        //Response.Write(DNAide.Utils.Encryption.GetDeCryptConnectionString("main"));
     }
 }
