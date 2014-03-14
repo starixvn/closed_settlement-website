@@ -87,6 +87,7 @@ public partial class Settle_Calculation : System.Web.UI.Page
             var dr = (isBill) ? Settle.SelectMatchForBill(matchID, ref outputPrams) : Settle.SelectMatchForKeyScore(matchID, ref outputPrams);
             bool IsMovebetdaq = false, IsExcludeBetdaq = false, IsSettleAbandonedMatch = false, IsRefundRunningBetDaq = false;
             bool IsMovebetfair = false, IsExcludeBetfair = false, IsSettleAbandonedBetFairMatch = false, IsRefundRunningBetFair = false;
+            bool IsSettleAbandonedMatchIBC = false;
 
             if (isRefund)
             {
@@ -101,6 +102,8 @@ public partial class Settle_Calculation : System.Web.UI.Page
                 IsExcludeBetfair = CastAide.AsBoolean(rsBetfair.Outputs["isexcludebetfair"]);
                 IsSettleAbandonedBetFairMatch = CastAide.AsBoolean(rsBetfair.Outputs["issettleabandonedmatchbetfair"]);
                 IsRefundRunningBetFair = CastAide.AsBoolean(rsBetfair.Outputs["isrefundrunningbetfair"]);
+
+                IsSettleAbandonedMatchIBC = CastAide.AsBoolean(outputPrams["issettleabandonedmatchibc"]);
             }
 
             if ((int)outputPrams["errcode"] > 0)
@@ -128,7 +131,7 @@ public partial class Settle_Calculation : System.Web.UI.Page
                     var isExistLG = Convert.ToBoolean(outputPrams["isexistlg"]);
 
                     return SoccerHTML(r, isExistFGLG, isExistLG, CastAide.AsBoolean(outputPrams["ishtonly"], false), isRefund, IsExistsNG, IsLive, IsMovebetdaq, IsExcludeBetdaq, IsSettleAbandonedMatch, IsRefundRunningBetDaq,
-                        IsMovebetfair, IsExcludeBetfair, IsSettleAbandonedBetFairMatch, IsRefundRunningBetFair);
+                        IsMovebetfair, IsExcludeBetfair, IsSettleAbandonedBetFairMatch, IsRefundRunningBetFair, IsSettleAbandonedMatchIBC);
                 case 2: // basketball
                     return BasketBallHTML(r, CastAide.AsBoolean(outputPrams["ishtonly"], false), isRefund, IsMovebetdaq, IsExcludeBetdaq, IsSettleAbandonedMatch, IsRefundRunningBetDaq,
                         IsMovebetfair, IsExcludeBetfair, IsSettleAbandonedBetFairMatch, IsRefundRunningBetFair);
@@ -373,7 +376,7 @@ public partial class Settle_Calculation : System.Web.UI.Page
     }
 
     private string SoccerHTML(DataRow r, bool isExistFGLG, bool isExistLG, bool isHalfTimeOnly, bool isRefund, bool IsExistsNG, bool IsLive, bool IsMovebetdaq, bool IsExcludeBetdaq, bool IsSettleAbandonedMatch, bool IsRefundRunningBetDaq,
-        bool IsMovebetfair = false, bool IsExcludeBetfair = false, bool IsSettleAbandonedBetFairMatch = false, bool IsRefundRunningBetFair = false)
+        bool IsMovebetfair = false, bool IsExcludeBetfair = false, bool IsSettleAbandonedBetFairMatch = false, bool IsRefundRunningBetFair = false, bool IsSettleAbandonedMatchIBC = false)
     {
         //string permissions = "";
         //permissions=Sunplus.Accounting.DataAccess.IBCDLL.Accounting.UserControl.CheckHostPermissionSettle(cus
@@ -417,8 +420,8 @@ public partial class Settle_Calculation : System.Web.UI.Page
                     TemplateController.RemoveBlock(ref _s, "RefunFGLG"); // Andy uncomments this line because of issue #11741
                     TemplateController.RemoveBlock(ref _s, "RefundAllLastGoal"); // Andy uncomments this line because of issue #11741
                 }
-                CheckExcludeMoveBetDaq(ref _s, IsMovebetdaq, IsExcludeBetdaq, IsSettleAbandonedMatch, IsRefundRunningBetDaq);
-                CheckExcludeMoveBetFair(ref _s, IsMovebetfair, IsExcludeBetfair, IsSettleAbandonedBetFairMatch, IsRefundRunningBetFair);
+                CheckExcludeMoveBetDaq(ref _s, IsMovebetdaq, IsExcludeBetdaq, IsSettleAbandonedMatch, IsRefundRunningBetDaq, IsSettleAbandonedMatchIBC);
+                CheckExcludeMoveBetFair(ref _s, IsMovebetfair, IsExcludeBetfair, IsSettleAbandonedBetFairMatch, IsRefundRunningBetFair, IsSettleAbandonedMatchIBC);
             }
             else
             {
@@ -1615,7 +1618,7 @@ public partial class Settle_Calculation : System.Web.UI.Page
     #endregion
 
     #region CheckExcludeMoveBetDaq
-    static void CheckExcludeMoveBetDaq(ref string _s, bool IsMovebetdaq, bool IsExcludeBetdaq, bool IsSettleAbandonedMatch, bool IsRefundRunningBetDaq)
+    static void CheckExcludeMoveBetDaq(ref string _s, bool IsMovebetdaq, bool IsExcludeBetdaq, bool IsSettleAbandonedMatch, bool IsRefundRunningBetDaq, bool IsSettleAbandonedMatchIBC = false)
     {
         if (!IsMovebetdaq)
         {
@@ -1635,11 +1638,15 @@ public partial class Settle_Calculation : System.Web.UI.Page
         {
             TemplateHandler.RemoveBlock(ref _s, "SettleDeterminedTickets");
         }
+        if (!IsSettleAbandonedMatchIBC)
+        {
+            TemplateHandler.RemoveBlock(ref _s, "SettleDeterminedTickets3Types");
+        }
     }
     #endregion
 
     #region CheckExcludeMoveBetFair
-    static void CheckExcludeMoveBetFair(ref string _s, bool IsMovebetfair, bool IsExcludeBetfair, bool IsSettleAbandonedMatch, bool IsRefundRunningBetFair)
+    static void CheckExcludeMoveBetFair(ref string _s, bool IsMovebetfair, bool IsExcludeBetfair, bool IsSettleAbandonedMatch, bool IsRefundRunningBetFair, bool IsSettleAbandonedMatchIBC = false)
     {
         if (!IsMovebetfair)
         {
@@ -1658,6 +1665,10 @@ public partial class Settle_Calculation : System.Web.UI.Page
         if (!IsSettleAbandonedMatch)
         {
             TemplateHandler.RemoveBlock(ref _s, "SettleDeterminedBetfairTickets");
+        }
+        if (!IsSettleAbandonedMatchIBC)
+        {
+            TemplateHandler.RemoveBlock(ref _s, "SettleDeterminedTickets3Types");
         }
     }
     #endregion

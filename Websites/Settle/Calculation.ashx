@@ -36,7 +36,7 @@ public class Calculation : IHttpHandler, IRequiresSessionState
         //context.Request.Form["scoreDirect"];
         var betDaqDate = context.Request.Form["kickoffBetdaq"];
         var betFairDate = context.Request.Form["kickoffBetfair"];
-
+        
         #region score confirm
 
         string hiddenScoreConfirm_Sport = context.Request.Form["hiddenScoreConfirm_Sport"];
@@ -72,7 +72,8 @@ public class Calculation : IHttpHandler, IRequiresSessionState
         }
 
         if ((context.Request["chkIsSettleDeterminedTickets"] == null || context.Request["chkIsSettleDeterminedTickets"] != "on") &&
-            (context.Request["chkIsSettleDeterminedBetFairTickets"] == null || context.Request["chkIsSettleDeterminedBetFairTickets"] != "on"))
+            (context.Request["chkIsSettleDeterminedBetFairTickets"] == null || context.Request["chkIsSettleDeterminedBetFairTickets"] != "on") &&
+            (context.Request["chkIsSettleAbandonedMatchIBC"] == null || context.Request["chkIsSettleAbandonedMatchIBC"] != "on"))
         {
             homeHScore = null;
             awayHScore = null;
@@ -86,6 +87,7 @@ public class Calculation : IHttpHandler, IRequiresSessionState
         bool IsSettleDeterminedTickets = false;
         bool IsExcludeBetfair = context.Request["chkIsExcludeBetfair"] != null;
         bool IsSettleDeterminedBetFairTickets = false;
+        bool IsSettleAbandonedMatchIBC = false;
             
         try
         {
@@ -125,6 +127,11 @@ public class Calculation : IHttpHandler, IRequiresSessionState
             if (context.Request["chkIsSettleDeterminedBetFairTickets"] != null && context.Request["chkIsSettleDeterminedBetFairTickets"] == "on")
             {
                 IsSettleDeterminedBetFairTickets = true;
+            }
+
+            if (context.Request["chkIsSettleAbandonedMatchIBC"] != null && context.Request["chkIsSettleAbandonedMatchIBC"] == "on")
+            {
+                IsSettleAbandonedMatchIBC = true;
             }
 
             // Hardcode for sport types which are not use [Refund;FL:2-0] in case of refund all with settle determined betdaq/betfair tickets @Andy
@@ -211,7 +218,7 @@ public class Calculation : IHttpHandler, IRequiresSessionState
                         case "refund":
                             if (permissions.IndexOf("[C]") > -1)
                             {
-                                _isSuccess = DoSettle.RefundOrCancel(custID, matchID, IsExcludeBetdaq, IsSettleDeterminedTickets, ref msg, homeHScore, awayHScore, homeFScore, awayFScore, scoreConfirm_Betstatus, IsExcludeBetfair, IsSettleDeterminedBetFairTickets);
+                                _isSuccess = DoSettle.RefundOrCancel(custID, matchID, IsExcludeBetdaq, IsSettleDeterminedTickets, ref msg, homeHScore, awayHScore, homeFScore, awayFScore, scoreConfirm_Betstatus, IsExcludeBetfair, IsSettleDeterminedBetFairTickets, IsSettleAbandonedMatchIBC);
                             }
                             break;
                         case "unsettle": //undo settlement
@@ -232,7 +239,7 @@ public class Calculation : IHttpHandler, IRequiresSessionState
                         case "refundfulltime":
                             if (permissions.IndexOf("[C]") > -1)
                             {
-                                _isSuccess = DoSettle.RefundFullTime(custID, matchID, IsExcludeBetdaq, IsSettleDeterminedTickets, ref msg, homeFScore, awayFScore, scoreConfirm_Betstatus, IsExcludeBetfair, IsSettleDeterminedBetFairTickets);
+                                _isSuccess = DoSettle.RefundFullTime(custID, matchID, IsExcludeBetdaq, IsSettleDeterminedTickets, ref msg, homeFScore, awayFScore, scoreConfirm_Betstatus, IsExcludeBetfair, IsSettleDeterminedBetFairTickets, IsSettleAbandonedMatchIBC);
                             }
                             else
                             {

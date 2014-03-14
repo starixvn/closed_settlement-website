@@ -218,6 +218,7 @@ namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
                     p.Add("isexistlg", false);//is exist Last goal only
                     p.Add("errcode", 0);
                     p.Add("errMsg", string.Empty);
+                    p.Add("issettleabandonedmatchibc", false);
 
                     objDb.AssignParamValues(p);
                     
@@ -353,7 +354,7 @@ namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
         /// Tho.Nguyen updated: 12/2/2008
         /// </summary>        
         public static bool Refund(int custid, int matchid, bool IsExcludeBetdaq, bool IsSettleDeterminedTickets, ref string msg
-            , string homeHScore, string awayHScore, string homeFScore, string awayFScore, string scoreConfirm_Betstatus, bool IsExcludeBetfair = false, bool IsSettleDeterminedBetFairTickets = false)
+            , string homeHScore, string awayHScore, string homeFScore, string awayFScore, string scoreConfirm_Betstatus, bool IsExcludeBetfair = false, bool IsSettleDeterminedBetFairTickets = false, bool IsSettleAbandonedMatchIBC = false)
         {
             try
             {
@@ -365,6 +366,7 @@ namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
                 pRefund.Add("issettleabandonedmatch", IsSettleDeterminedTickets);
                 pRefund.Add("isexcludebetfair", IsExcludeBetfair);
                 pRefund.Add("issettleabandonedmatchbetfair", IsSettleDeterminedBetFairTickets);
+                pRefund.Add("issettleabandonedmatchibc", IsSettleAbandonedMatchIBC);
                 pRefund.Add("ip", Sunplus.Accounting.Core.Helper.Utils.GetClientIP());
 
                 if (homeHScore != null) pRefund.Add("hth", DNAide.Core.CastAide.AsInt32(homeHScore));
@@ -433,7 +435,7 @@ namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
         /// Tho.Nguyen updated: 12/2/2008
         /// </summary>                      
         public static bool RefundFullTime(int custid, int matchid, bool IsExcludeBetdaq, bool IsSettleDeterminedTickets, ref string msg
-            , string homeFScore, string awayFScore, string scoreConfirm_Betstatus, bool IsExcludeBetfair = false, bool IsSettleDeterminedBetFairTickets = false)
+            , string homeFScore, string awayFScore, string scoreConfirm_Betstatus, bool IsExcludeBetfair = false, bool IsSettleDeterminedBetFairTickets = false, bool IsSettleAbandonedMatchIBC = false)
         {
             try
             {                   
@@ -447,6 +449,7 @@ namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
                     pRefund.Add("issettleabandonedmatch", IsSettleDeterminedTickets);
                     pRefund.Add("isexcludebetfair", IsExcludeBetfair);
                     pRefund.Add("issettleabandonedmatchbetfair", IsSettleDeterminedBetFairTickets);
+                    pRefund.Add("issettleabandonedmatchibc", IsSettleAbandonedMatchIBC);
                     pRefund.Add("ip", Sunplus.Accounting.Core.Helper.Utils.GetClientIP());
 
                     if (homeFScore != null) pRefund.Add("fth", DNAide.Core.CastAide.AsInt32(homeFScore));

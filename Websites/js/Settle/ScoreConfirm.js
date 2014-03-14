@@ -294,7 +294,7 @@ function scoreConfirm(type) {
         DoCalculate_Submit(type);
     };
 
-    if (jQuery("#chkIsSettleDeterminedTickets").is(":checked") || jQuery("#chkIsSettleDeterminedBetFairTickets").is(":checked")) {
+    if (jQuery("#chkIsSettleDeterminedTickets").is(":checked") || jQuery("#chkIsSettleDeterminedBetFairTickets").is(":checked") || (jQuery("#chkIsSettleAbandonedMatchIBC").is(":checked") && (type == 'refundfulltime' || type == 'refund'))) {
         var sport = jQuery("#hiddenScoreConfirm_Sport").val();
         var _width = 400;
 
@@ -393,12 +393,26 @@ function scoreConfirm(type) {
                 break;
         }
 
-        var bettypes = 'BETDAQ'
+        var bettypes = 'BETDAQ';
+        jQuery('#betDaqFairDetermined').show();
+        jQuery('#betDaqFairRemained').show();
+
         if (jQuery('#chkIsSettleDeterminedTickets').is(':checked') && jQuery('#chkIsSettleDeterminedBetFairTickets').is(':checked')) {
-            bettypes = 'BETDAQ and BETFAIR';
+            bettypes = 'BETDAQ and BETFAIR';            
         }
         else if (jQuery('#chkIsSettleDeterminedBetFairTickets').is(':checked')) {
             bettypes = 'BETFAIR';
+        }
+        else if (jQuery("#chkIsSettleAbandonedMatchIBC").is(":checked") && !jQuery('#chkIsSettleDeterminedTickets').is(':checked') && !jQuery('#chkIsSettleDeterminedBetFairTickets').is(':checked')) {
+            jQuery('#betDaqFairDetermined').hide();
+            jQuery('#betDaqFairRemained').hide();
+        }
+
+        if ((!jQuery('#chkIsSettleAbandonedMatchIBC').is(':checked') || (type != 'refund' && type != 'refundfulltime')) && (!document.getElementById('chkIsSettleAbandonedMatchIBC') || (type != 'refund' && type != 'refundfulltime'))) {
+            jQuery('#ibcBetTypes').hide();
+        }
+        else {
+            jQuery('#ibcBetTypes').show();
         }
 
         jQuery('#betDaqFairSettleDetermined').html(bettypes);

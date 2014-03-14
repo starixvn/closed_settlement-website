@@ -31,7 +31,7 @@ public class OnlineUpd : IHttpHandler , IRequiresSessionState
                 //((ASP.global_asax)context.ApplicationInstance).RemoveSessionCacheItem(
                 //    DNAide.Core.CastAide.AsString(AppSession.AccId), AppSession.Username, DNAide.Core.CastAide.AsString(AppSession.RoleID));
                 //#endregion
-                context.Response.Write("<script type='text/javascript'>alert('Another session has been logged in or your session is expired. Forced to logout!');top.location.href='" + appPath + "PreLogIn/Logout.ashx';</script>");
+                //context.Response.Write("<script type='text/javascript'>alert('Another session has been logged in or your session is expired. Forced to logout!');top.location.href='" + appPath + "PreLogIn/Logout.ashx';</script>");
             }
             //else
             //{

@@ -45,8 +45,11 @@
             <!--/RefundAllLastGoal-->
 		    <td></td>
             <td></td>
-        </tr>
+        </tr>            
 	</table>
+    <!--SettleDeterminedTickets3Types-->
+		<input style="margin-bottom: 10px" type="checkbox" tabindex="38" id="chkIsSettleAbandonedMatchIBC" name="chkIsSettleAbandonedMatchIBC" />Settle determined tickets (Clean Sheet, To Win To Nil, Both/One/Neither Team To Score)
+    <!--/SettleDeterminedTickets3Types-->
     <input type="hidden" id="IsRefund" name="IsRefund" value="1" /> 
     <!--Betdaq-->
     <div id="betDaq">
@@ -57,14 +60,14 @@
             <br />
             <!--/ExcludeBetdaq-->
             <!--SettleDeterminedTickets-->
-            <input id="chkIsSettleDeterminedTickets" class="hand" name="chkIsSettleDeterminedTickets" type="checkbox" /> Settle determined Betdaq tickets (Over/ Under)
+            <input id="chkIsSettleDeterminedTickets" class="hand" name="chkIsSettleDeterminedTickets" type="checkbox" /> Settle determined Betdaq tickets (Over/ Under<!--SettleDeterminedTickets3Types--><span id="betDaq3Types" style="white-space: nowrap">,&nbsp;Clean Sheet, To Win To Nil, <br /><span style="padding-left: 20px">Both/One/Neither Team To Score</span></span><!--/SettleDeterminedTickets3Types-->)
             <br />
             <!--/SettleDeterminedTickets-->
             <!--MoveBetdaq-->
-            <input id="btnMovebetdaq" type="button" class="btn" tabindex="38" style="width: 130px; margin: 4px" value="Move Betdaq Tickets" onclick="MoveBetdaqTickets('{matchid}', '{matchcode}');"/>
+            <input id="btnMovebetdaq" type="button" class="btn" tabindex="39" style="width: 130px; margin: 4px" value="Move Betdaq Tickets" onclick="MoveBetdaqTickets('{matchid}', '{matchcode}');"/>
             <!--/MoveBetdaq-->
             <!--RefundRunningBetDaqTickets-->	
-            <input type="button" class="btn"  tabindex="39" style="width: 200px; margin: 4px" value="Refund Running Betdaq Tickets" onclick="RefundRunningBetDaq('{matchid}', '{matchcode}');"/>		         
+            <input type="button" class="btn"  tabindex="40" style="width: 200px; margin: 4px" value="Refund Running Betdaq Tickets" onclick="RefundRunningBetDaq('{matchid}', '{matchcode}');"/>		         
             <!--/RefundRunningBetDaqTickets-->	
         </fieldset>
     </div>
@@ -78,14 +81,14 @@
             <br />
             <!--/ExcludeBetfair-->
             <!--SettleDeterminedBetfairTickets-->
-            <input id="chkIsSettleDeterminedBetFairTickets" class="hand" name="chkIsSettleDeterminedBetFairTickets" type="checkbox" /> Settle determined Betfair tickets (Over/ Under)
+            <input id="chkIsSettleDeterminedBetFairTickets" class="hand" name="chkIsSettleDeterminedBetFairTickets" type="checkbox" /> Settle determined Betfair tickets (Over/ Under<!--SettleDeterminedTickets3Types--><span id="betFair3Types" style="text-indent: 10px">,&nbsp;Clean Sheet, To Win To Nil, <br /><span style="padding-left: 20px">Both/One/Neither Team To Score</span></span><!--/SettleDeterminedTickets3Types-->)
             <br />
             <!--/SettleDeterminedBetfairTickets-->
             <!--MoveBetfair-->
-            <input id="btnMovebetfair" type="button" class="btn" tabindex="40" style="width: 130px; margin: 4px" value="Move Betfair Tickets" onclick="MoveBetfairTickets('{matchid}', '{matchcode}');"/>
+            <input id="btnMovebetfair" type="button" class="btn" tabindex="41" style="width: 130px; margin: 4px" value="Move Betfair Tickets" onclick="MoveBetfairTickets('{matchid}', '{matchcode}');"/>
             <!--/MoveBetfair-->
             <!--RefundRunningBetFairTickets-->	
-            <input type="button" class="btn"  tabindex="41" style="width: 200px; margin: 4px" value="Refund Running Betfair Tickets" onclick="RefundRunningBetFair('{matchid}', '{matchcode}');"/>		         
+            <input type="button" class="btn"  tabindex="42" style="width: 200px; margin: 4px" value="Refund Running Betfair Tickets" onclick="RefundRunningBetFair('{matchid}', '{matchcode}');"/>		         
             <!--/RefundRunningBetFairTickets-->
         </fieldset>
     </div>

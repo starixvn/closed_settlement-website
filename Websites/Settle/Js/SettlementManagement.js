@@ -394,7 +394,7 @@ var settlementManagement = {
     showSettlementPopup: function (type, params, sportId, kickoffdate) {
         kickoffdate = kickoffdate || new Date().toGMTString();
         var height = 330;
-        var width = 620;
+        var width = 657;
         switch (sportId) {
             case 1:
                 height = 330;

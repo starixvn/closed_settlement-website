@@ -15,21 +15,24 @@
         </tr>
         <tr>        
         <tr>
-        <!--RefundMHT-->
-		<td >
-			<input type="button" class="btn" tabindex="33" style="width: 130px; " value="Refund Multiple HT" onclick="DoCal2('rht','{params}');"/>
-		</td>
-		<!--/RefundMHT-->
-		<!--RefundFT-->
-		<td >
-			<input type="button" class="btn" tabindex="34" style="width: 130px; " value="Refund Multiple FT" onclick="DoCal2('rft','{params}');"/>
-		</td>
-		<!--/RefundFT-->
-		<td >
-			<input type="button" class="btn" tabindex="35" style="width: 130px; " value="Refund Multiple All" onclick="DoCal2('r','{params}');"/>
-		</td>
-        </tr>
+            <!--RefundMHT-->
+		    <td >
+			    <input type="button" class="btn" tabindex="33" style="width: 130px; " value="Refund Multiple HT" onclick="DoCal2('rht','{params}');"/>
+		    </td>
+		    <!--/RefundMHT-->
+		    <!--RefundFT-->
+		    <td >
+			    <input type="button" class="btn" tabindex="34" style="width: 130px; " value="Refund Multiple FT" onclick="DoCal2('rft','{params}');"/>
+		    </td>
+		    <!--/RefundFT-->
+		    <td >
+			    <input type="button" class="btn" tabindex="35" style="width: 130px; " value="Refund Multiple All" onclick="DoCal2('r','{params}');"/>
+		    </td>
+        </tr>        
 	</table>
+    <!--SettleDeterminedTickets3Types-->		    
+		<input style="margin-bottom: 10px" type="checkbox" tabindex="36" id="chkIsSettleAbandonedMatchIBC" name="chkIsSettleAbandonedMatchIBC" />Settle determined tickets (Clean Sheet, To Win To Nil, Both/One/Neither Team To Score)		    
+	<!--/SettleDeterminedTickets3Types-->
     <input type="hidden" id="IsRefund" name="IsRefund" value="1" /> 
     <input type="hidden" id="kickoffBetdaq" name="kickoffBetdaq" value="{kickoffBetdaq}" />
     <input type="hidden" id="kickoffBetfair" name="kickoffBetfair" value="{kickoffBetfair}" />
@@ -42,14 +45,14 @@
             <br />
             <!--/ExcludeBetdaq-->
             <!--SettleDeterminedTickets-->
-            <input id="chkIsSettleDeterminedTickets" class="hand" name="chkIsSettleDeterminedTickets" type="checkbox" /> Settle determined Betdaq tickets (Over/ Under)
+            <input id="chkIsSettleDeterminedTickets" class="hand" name="chkIsSettleDeterminedTickets" type="checkbox" /> Settle determined Betdaq tickets (Over/ Under<!--SettleDeterminedTickets3Types--><span id="betDaq3Types">,&nbsp;Clean Sheet, To Win To Nil, <br /><span style="padding-left: 20px">Both/One/Neither Team To Score</span></span><!--/SettleDeterminedTickets3Types-->)
             <br />
             <!--/SettleDeterminedTickets-->
             <!--MoveBetdaq-->
-            <input id="btnMovebetdaq" type="button" class="btn" tabindex="36" style="width: 130px; margin: 4px" value="Move Betdaq Tickets" onclick="MoveBetdaqTickets('{matchid}', '{matchcode}');"/>
+            <input id="btnMovebetdaq" type="button" class="btn" tabindex="37" style="width: 130px; margin: 4px" value="Move Betdaq Tickets" onclick="MoveBetdaqTickets('{matchid}', '{matchcode}');"/>
             <!--/MoveBetdaq-->
             <!--RefundRunningBetDaqTickets-->	
-            <input type="button" class="btn"  tabindex="37" style="width: 200px; margin: 4px" value="Refund Running Betdaq Tickets" onclick="RefundRunningBetDaq('{matchid}', '{matchcode}');"/>		         
+            <input type="button" class="btn"  tabindex="38" style="width: 200px; margin: 4px" value="Refund Running Betdaq Tickets" onclick="RefundRunningBetDaq('{matchid}', '{matchcode}');"/>		         
             <!--/RefundRunningBetDaqTickets-->	
         </fieldset>
     </div>
@@ -63,14 +66,14 @@
             <br />
             <!--/ExcludeBetfair-->
             <!--SettleDeterminedBetfairTickets-->
-            <input id="chkIsSettleDeterminedBetFairTickets" class="hand" name="chkIsSettleDeterminedBetFairTickets" type="checkbox" /> Settle determined Betfair tickets (Over/ Under)
+            <input id="chkIsSettleDeterminedBetFairTickets" class="hand" name="chkIsSettleDeterminedBetFairTickets" type="checkbox" /> Settle determined Betfair tickets (Over/ Under<!--SettleDeterminedTickets3Types--><span id="betFair3Types" style="text-indent: 10px">,&nbsp;Clean Sheet, To Win To Nil, <br /><span style="padding-left: 20px">Both/One/Neither Team To Score</span></span><!--/SettleDeterminedTickets3Types-->)
             <br />
             <!--/SettleDeterminedBetfairTickets-->
             <!--MoveBetfair-->
-            <input id="btnMovebetfair" type="button" class="btn" tabindex="38" style="width: 130px; margin: 4px" value="Move Betfair Tickets" onclick="MoveBetfairTickets('{matchid}', '{matchcode}');"/>
+            <input id="btnMovebetfair" type="button" class="btn" tabindex="39" style="width: 130px; margin: 4px" value="Move Betfair Tickets" onclick="MoveBetfairTickets('{matchid}', '{matchcode}');"/>
             <!--/MoveBetfair-->
             <!--RefundRunningBetFairTickets-->	
-            <input type="button" class="btn"  tabindex="39" style="width: 200px; margin: 4px" value="Refund Running Betfair Tickets" onclick="RefundRunningBetFair('{matchid}', '{matchcode}');"/>		         
+            <input type="button" class="btn"  tabindex="40" style="width: 200px; margin: 4px" value="Refund Running Betfair Tickets" onclick="RefundRunningBetFair('{matchid}', '{matchcode}');"/>		         
             <!--/RefundRunningBetFairTickets-->
         </fieldset>
     </div>

@@ -312,11 +312,11 @@ namespace Sunplus.Accounting.Business.Settlement
         }
 
         public static bool RefundOrCancel(int custID, int matchID, bool IsExcludeBetdaq, bool IsSettleDeterminedTickets, ref string msg
-            , string homeHScore, string awayHScore, string homeFScore, string awayFScore, string scoreConfirm_Betstatus, bool IsExcludeBetfair = false, bool IsSettleDeterminedBetFairTickets = false)
+            , string homeHScore, string awayHScore, string homeFScore, string awayFScore, string scoreConfirm_Betstatus, bool IsExcludeBetfair = false, bool IsSettleDeterminedBetFairTickets = false, bool IsSettleAbandonedMatchIBC = false)
         {
             try
             {
-                return DataAccess.IBCDLL.Accounting.Settle.Refund(custID, matchID, IsExcludeBetdaq, IsSettleDeterminedTickets, ref msg, homeHScore, awayHScore, homeFScore, awayFScore, scoreConfirm_Betstatus, IsExcludeBetfair, IsSettleDeterminedBetFairTickets);
+                return DataAccess.IBCDLL.Accounting.Settle.Refund(custID, matchID, IsExcludeBetdaq, IsSettleDeterminedTickets, ref msg, homeHScore, awayHScore, homeFScore, awayFScore, scoreConfirm_Betstatus, IsExcludeBetfair, IsSettleDeterminedBetFairTickets, IsSettleAbandonedMatchIBC);
             }
             catch (Exception ex)
             {
@@ -330,11 +330,11 @@ namespace Sunplus.Accounting.Business.Settlement
         }
 
         public static bool RefundFullTime(int custID, int matchID, bool IsExcludeBetdaq, bool IsSettleDeterminedTickets, ref string msg
-            , string homeFScore, string awayFScore, string scoreConfirm_Betstatus, bool IsExcludeBetfair = false, bool IsSettleDeterminedBetFairTickets = false)
+            , string homeFScore, string awayFScore, string scoreConfirm_Betstatus, bool IsExcludeBetfair = false, bool IsSettleDeterminedBetFairTickets = false, bool IsSettleAbandonedMatchIBC = false)
         {
             try
             {
-                return DataAccess.IBCDLL.Accounting.Settle.RefundFullTime(custID, matchID, IsExcludeBetdaq, IsSettleDeterminedTickets, ref msg, homeFScore, awayFScore, scoreConfirm_Betstatus, IsExcludeBetfair, IsSettleDeterminedBetFairTickets);
+                return DataAccess.IBCDLL.Accounting.Settle.RefundFullTime(custID, matchID, IsExcludeBetdaq, IsSettleDeterminedTickets, ref msg, homeFScore, awayFScore, scoreConfirm_Betstatus, IsExcludeBetfair, IsSettleDeterminedBetFairTickets, IsSettleAbandonedMatchIBC);
             }
             catch (Exception ex)
             {
