@@ -394,18 +394,21 @@ var settlementManagement = {
     showSettlementPopup: function (type, params, sportId, kickoffdate) {
         kickoffdate = kickoffdate || new Date().toGMTString();
         var height = 330;
-        var width = 657;
+        var width = 667;
         switch (sportId) {
             case 1:
                 height = 330;
                 break;
             case 8:
-                width = 750;
+                width = 760;
                 break;
         }
 
         if (type != 'b') {
-            height = 450;
+            height = 480;
+        }
+        else {
+            width = 657;
         }
 
         var isIE7 = navigator.appVersion.indexOf('MSIE 7.0') > 0;

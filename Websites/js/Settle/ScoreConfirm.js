@@ -408,7 +408,7 @@ function scoreConfirm(type) {
             jQuery('#betDaqFairRemained').hide();
         }
 
-        if ((!jQuery('#chkIsSettleAbandonedMatchIBC').is(':checked') || (type != 'refund' && type != 'refundfulltime')) && (!document.getElementById('chkIsSettleAbandonedMatchIBC') || (type != 'refund' && type != 'refundfulltime'))) {
+        if ((!jQuery('#chkIsSettleDeterminedTickets').is(':checked') && !jQuery('#chkIsSettleDeterminedBetFairTickets').is(':checked') && !jQuery("#chkIsSettleAbandonedMatchIBC").is(":checked")) || (type != 'refund' && type != 'refundfulltime')) {
             jQuery('#ibcBetTypes').hide();
         }
         else {

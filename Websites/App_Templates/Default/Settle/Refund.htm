@@ -12,8 +12,7 @@
 			<td >
 				<input type="button" class="btn" tabindex="32" style="width: 130px; " value="Refund All" onclick="DoCalculate('refund');"/>
 			</td>      
-        </tr>
-        <tr>        
+        </tr>     
         <tr>
             <!--RefundMHT-->
 		    <td >
@@ -30,9 +29,6 @@
 		    </td>
         </tr>        
 	</table>
-    <!--SettleDeterminedTickets3Types-->		    
-		<input style="margin-bottom: 10px" type="checkbox" tabindex="36" id="chkIsSettleAbandonedMatchIBC" name="chkIsSettleAbandonedMatchIBC" />Settle determined tickets (Clean Sheet, To Win To Nil, Both/One/Neither Team To Score)		    
-	<!--/SettleDeterminedTickets3Types-->
     <input type="hidden" id="IsRefund" name="IsRefund" value="1" /> 
     <input type="hidden" id="kickoffBetdaq" name="kickoffBetdaq" value="{kickoffBetdaq}" />
     <input type="hidden" id="kickoffBetfair" name="kickoffBetfair" value="{kickoffBetfair}" />
@@ -45,7 +41,7 @@
             <br />
             <!--/ExcludeBetdaq-->
             <!--SettleDeterminedTickets-->
-            <input id="chkIsSettleDeterminedTickets" class="hand" name="chkIsSettleDeterminedTickets" type="checkbox" /> Settle determined Betdaq tickets (Over/ Under<!--SettleDeterminedTickets3Types--><span id="betDaq3Types">,&nbsp;Clean Sheet, To Win To Nil, <br /><span style="padding-left: 20px">Both/One/Neither Team To Score</span></span><!--/SettleDeterminedTickets3Types-->)
+            <input id="chkIsSettleDeterminedTickets" class="hand" name="chkIsSettleDeterminedTickets" type="checkbox" /> Settle determined Betdaq tickets (Over/ Under)
             <br />
             <!--/SettleDeterminedTickets-->
             <!--MoveBetdaq-->
@@ -66,7 +62,7 @@
             <br />
             <!--/ExcludeBetfair-->
             <!--SettleDeterminedBetfairTickets-->
-            <input id="chkIsSettleDeterminedBetFairTickets" class="hand" name="chkIsSettleDeterminedBetFairTickets" type="checkbox" /> Settle determined Betfair tickets (Over/ Under<!--SettleDeterminedTickets3Types--><span id="betFair3Types" style="text-indent: 10px">,&nbsp;Clean Sheet, To Win To Nil, <br /><span style="padding-left: 20px">Both/One/Neither Team To Score</span></span><!--/SettleDeterminedTickets3Types-->)
+            <input id="chkIsSettleDeterminedBetFairTickets" class="hand" name="chkIsSettleDeterminedBetFairTickets" type="checkbox" /> Settle determined Betfair tickets (Over/ Under)
             <br />
             <!--/SettleDeterminedBetfairTickets-->
             <!--MoveBetfair-->
