@@ -20,7 +20,11 @@
 				</td>
 				<td rowspan="2">{date}</td> 
 				<td class="l b ht">
-					{hometeam}&nbsp;<!--FGLG--><img id="hfgoal" style="display:{hfgoaldisplay};" src="../App_Themes/Images/firstGoal.gif" width="14px" height="10px" border="0px" /><img id="hlgoal" style="display:{hlgoaldisplay};" src="../App_Themes/Images/lastGoal.gif" width="14px" height="10px" border="0px" /><!--/FGLG-->
+					{hometeam}&nbsp;
+                    <!--FGLG--><img id="hfgoal" style="display:{hfgoaldisplay};" src="../App_Themes/Images/firstGoal.gif" width="14px" height="10px" border="0px" />
+                    <img id="hlgoal" style="display:{hlgoaldisplay};" src="../App_Themes/Images/lastGoal.gif" width="14px" height="10px" border="0px" /><!--/FGLG-->
+                    <!--FL--><img id="1hfgoal" style="display:{1hfgoaldisplay};" src="../App_Themes/Images/1F.gif" width="14px" height="10px" border="0px" />
+                    <img id="1hlgoal" style="display:{1hlgoaldisplay};" src="../App_Themes/Images/1L.gif" width="14px" height="10px" border="0px" /><!--/FL-->
 				</td>
 				<td>
 					<input type="text" id="homeH" name="homeH" tabindex="1" size="4" class="htsc c txth13" value="{homeHScore}" onkeypress="return OnKP(event, this);" onkeyup="return OnKUSoccer();"/>
@@ -31,7 +35,11 @@
 			</tr>
 			<tr >
 				<td class="l b at">
-					{awayteam}&nbsp;<!--FGLG--><img id="afgoal" style="display:{afgoaldisplay};" src="../App_Themes/Images/firstGoal.gif" width="14px" height="10px" border="0px" /><img id="algoal" style="display:{algoaldisplay};" src="../App_Themes/Images/lastGoal.gif" width="14px" height="10px" border="0px" /><!--/FGLG-->
+					{awayteam}&nbsp;
+                    <!--FGLG--><img id="afgoal" style="display:{afgoaldisplay};" src="../App_Themes/Images/firstGoal.gif" width="14px" height="10px" border="0px" />
+                    <img id="algoal" style="display:{algoaldisplay};" src="../App_Themes/Images/lastGoal.gif" width="14px" height="10px" border="0px" /><!--/FGLG-->
+                    <!--FL--><img id="1afgoal" style="display:{1afgoaldisplay};" src="../App_Themes/Images/1F.gif" width="14px" height="10px" border="0px" />
+                    <img id="1algoal" style="display:{1algoaldisplay};" src="../App_Themes/Images/1L.gif" width="14px" height="10px" border="0px" /><!--/FL-->
 				</td>
 				<td>
 					<input type="text" id="awayH" name="awayH" tabindex="2" size="4" class="htsc c txth13" value="{awayHScore}" onkeypress="return OnKP(event, this);" onkeyup="return OnKUSoccer();"/>
@@ -76,7 +84,7 @@
 				<td width="207">
 				</td>
 				<!--/RefundButton1-->
-				<td style="vertical-align:middle;" rowspan="3">
+				<td style="vertical-align:middle;" rowspan="4">
 					<!--CalcAllRead-->
 					<input type="button" class="btn" style="width: 120px; font-weight: bold;" id="Button1" name="btnSubmit" tabindex="9"  value="Calculate ALL" disabled="disabled" />
 					<!--/CalcAllRead-->
@@ -108,40 +116,47 @@
 					</td>
 					<!--/RefundButton2-->
 				</tr>
-			<tr>
-				<td class="l" style="color: #41586A; font-weight: bold;">
-					<!--FGLG-->
-					FGLG
-					<!--/FGLG-->
-				</td>
-				<td  {FGLGbgcolor} >
-					<!--FGLG-->
-					{FGLGStatus}
-					<!--/FGLG-->
-				</td>
-				<td class="b">
-					<!--FGLG-->
-					<!--CalcAllRead-->
-					<input type="button" class="btn" style="width: 180px;" id="btnSubmit"
-						name="btnSubmit" tabindex="9"  value="Calc First Goal and No Goal"
-						disabled="disabled" />
-					<!--/CalcAllRead-->
-					<!--CalcAllHost-->
-					<input type="button" class="btn" style="width: 180px;" id="btnSubmit"
-						name="btnSubmit" tabindex="9"  value="Calc First Goal and No Goal"
-						onclick="DoCalculate('calculate');"/>
-					<!--/CalcAllHost-->
-					<!--/FGLG-->
-				</td>
-				<!--RefundButton3-->
-				<td>
-					<input type="button" class="btn" tabindex="10" style="width: 120px; color: #D84E1F; font-weight: bold;" value="REFUND ALL" onclick="DoCalculate('refund');"/>
-				</td>
-				<!--/RefundButton3-->
-				<!--<td>
-            &nbsp;
-          </td>-->
-			</tr>
+                <tr>
+				    <td class="l" style="color: #41586A; font-weight: bold;">
+					    <!--HTFGLG-->
+					    HT FGLG
+					    <!--/HTFGLG-->
+				    </td>
+				    <td  {FGLGbgcolor} >
+					    <!--HTFGLG-->
+					    {FGLGStatus}
+					    <!--/HTFGLG-->
+				    </td>
+				    <td class="b" rowspan="2">
+					    <!--FGLGBTN-->
+					    <!--CalcAllRead-->
+					    <input type="button" class="btn" style="width: 180px;" id="btnSubmit"
+						    name="btnSubmit" tabindex="9"  value="Calc First Goal and No Goal"
+						    disabled="disabled" />
+					    <!--/CalcAllRead-->
+					    <!--CalcAllHost-->
+					    <input type="button" class="btn" style="width: 180px;" id="btnSubmit"
+						    name="btnSubmit" tabindex="9"  value="Calc First Goal and No Goal"
+						    onclick="DoCalculate('calculate');"/>
+					    <!--/CalcAllHost-->
+					    <!--/FGLGBTN-->
+				    <!--RefundButton3-->				    
+					    <input type="button" class="btn" tabindex="10" style="width: 120px; color: #D84E1F; font-weight: bold;" value="REFUND ALL" onclick="DoCalculate('refund');"/>
+				    </td>
+				    <!--/RefundButton3-->
+			    </tr>
+			    <tr>
+				    <td class="l" style="color: #41586A; font-weight: bold;">
+					    <!--FGLG-->
+					    FT FGLG
+					    <!--/FGLG-->
+				    </td>
+				    <td  {FGLGbgcolor} >
+					    <!--FGLG-->
+					    {FTFGLGStatus}
+					    <!--/FGLG-->
+				    </td>		
+			    </tr>
 		</table>
 		<!--/RefundBlock-->        
 
@@ -154,10 +169,11 @@
 			{ShowGoalHistory}
 		</span>
 		<span id="infoMsg" class="info-message" style="padding-left: 30px;display:none;">SUCCESS!</span>
-		<span style="padding-left: 30px;display:none; " id="errMsg" class="error-message">Please input valid score!</span>
+		<span style="padding-left: 7px;display:none; font-weight: bold" id="errMsg" class="error-message">Please input valid score!</span>
 		<input type="hidden" id="sParams" name="sParams" value="{params}" />
 		<input type="hidden" id="sAction" name="sAction" />
 		<input type="hidden" id="sHasFGLG" name="sHasFGLG" value="{hasFGLG}" />
+        <input type="hidden" id="sHas1HFGLG" name="sHas1HFGLG" value="{has1HFGLG}" />
 		<input type="hidden" id="statusFGLG" name="statusFGLG" value="{statusFGLG}" />
 	</form>
 </div>

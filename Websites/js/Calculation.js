@@ -319,6 +319,8 @@ function DoCalculate_AfterCheckWaitingList(type, ext) {
     //only for bill, soccer and FT or ALL
     if (sportID == 1 && ext != 'HT' && (type == 'calculate' || type == 'bill')) {
         var goalrecord = $('GR').value;
+        goalrecord = ReplaceAll(goalrecord, ';', '');
+
         var homeF = ($('homeF').value.length == 0) ? 0 : parseInt($('homeF').value);
         var awayF = ($('awayF').value.length == 0) ? 0 : parseInt($('awayF').value);
         var homeH = ($('homeH').value.length == 0) ? 0 : parseInt($('homeH').value);
@@ -337,7 +339,7 @@ function DoCalculate_AfterCheckWaitingList(type, ext) {
         if (!IsHedge && (type == 'calculate' || type == 'bill') && ($('sHasFGLG').value == '1' || IsExistsNG)) {
 
             if (IsLive) {
-                if (((homeF + awayF) != goalrecord.length) || (ReplaceAll(ReplaceAll($('GR').value, 'a', ''), 'A', '').length != homeF)) {
+                if (((homeF + awayF) != goalrecord.length) || (ReplaceAll(ReplaceAll(goalrecord, 'a', ''), 'A', '').length != homeF)) {
                     $('errMsg').style.display = '';
                     $('errMsg').innerHTML = 'Goal record is not consistent with the score, please correct Goal record before calculating.';
                     try { parent.parent.jQuery.unblockUI(); } catch (e) { }
@@ -397,7 +399,7 @@ function DoCalculate_AfterCheckWaitingList(type, ext) {
                     return false;
                 }
 
-                if (((homeF + awayF) != goalrecord.length) || (ReplaceAll(ReplaceAll($('GR').value, 'a', ''), 'A', '').length != homeF)) {
+                if (((homeF + awayF) != goalrecord.length) || (ReplaceAll(ReplaceAll(goalrecord, 'a', ''), 'A', '').length != homeF)) {
                     $('errMsg').style.display = '';
                     $('errMsg').innerHTML = 'Goal record is not consistent with the score, please correct Goal record before calculating.';
                     try { parent.parent.jQuery.unblockUI(); } catch (e) { }

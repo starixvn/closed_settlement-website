@@ -130,8 +130,11 @@ public partial class Settle_Calculation : System.Web.UI.Page
                     var isExistFGLG = Convert.ToBoolean(outputPrams["isexistfglg"]);
                     var isExistLG = Convert.ToBoolean(outputPrams["isexistlg"]);
 
+                    var isExist1HFGLG = Convert.ToBoolean(outputPrams["isexisthtfglg"]);
+                    var isExist1HLG = Convert.ToBoolean(outputPrams["isexisthtlg"]);
+
                     return SoccerHTML(r, isExistFGLG, isExistLG, CastAide.AsBoolean(outputPrams["ishtonly"], false), isRefund, IsExistsNG, IsLive, IsMovebetdaq, IsExcludeBetdaq, IsSettleAbandonedMatch, IsRefundRunningBetDaq,
-                        IsMovebetfair, IsExcludeBetfair, IsSettleAbandonedBetFairMatch, IsRefundRunningBetFair, IsSettleAbandonedMatchIBC);
+                        IsMovebetfair, IsExcludeBetfair, IsSettleAbandonedBetFairMatch, IsRefundRunningBetFair, IsSettleAbandonedMatchIBC, isExist1HFGLG, isExist1HLG);
                 case 2: // basketball
                     return BasketBallHTML(r, CastAide.AsBoolean(outputPrams["ishtonly"], false), isRefund, IsMovebetdaq, IsExcludeBetdaq, IsSettleAbandonedMatch, IsRefundRunningBetDaq,
                         IsMovebetfair, IsExcludeBetfair, IsSettleAbandonedBetFairMatch, IsRefundRunningBetFair);
@@ -376,7 +379,8 @@ public partial class Settle_Calculation : System.Web.UI.Page
     }
 
     private string SoccerHTML(DataRow r, bool isExistFGLG, bool isExistLG, bool isHalfTimeOnly, bool isRefund, bool IsExistsNG, bool IsLive, bool IsMovebetdaq, bool IsExcludeBetdaq, bool IsSettleAbandonedMatch, bool IsRefundRunningBetDaq,
-        bool IsMovebetfair = false, bool IsExcludeBetfair = false, bool IsSettleAbandonedBetFairMatch = false, bool IsRefundRunningBetFair = false, bool IsSettleAbandonedMatchIBC = false)
+        bool IsMovebetfair = false, bool IsExcludeBetfair = false, bool IsSettleAbandonedBetFairMatch = false, bool IsRefundRunningBetFair = false, bool IsSettleAbandonedMatchIBC = false,
+        bool IsExist1HFGLG = false, bool IsExist1HLG = false)
     {
         //string permissions = "";
         //permissions=Sunplus.Accounting.DataAccess.IBCDLL.Accounting.UserControl.CheckHostPermissionSettle(cus
@@ -395,8 +399,12 @@ public partial class Settle_Calculation : System.Web.UI.Page
             match.GoalRecord = goalrecord;
             match.FinalHomeScore = ftHome;
             match.FinalAwayScore = ftAway;
+            match.Has1HFirstGoal = IsExist1HFGLG;
+            match.Has1HLastGoal = IsExist1HLG;
+
             var goalHistory = match.GoalHistory;
             var fglgStatus = r["fglgstatus"].ToString().ToLower();
+            
             if (isRefund)
             {
                 _s = Sunplus.Accounting.Core.Web.WebUtils.LoadTemplate("Settle/RefundSoccer.htm");
@@ -410,8 +418,16 @@ public partial class Settle_Calculation : System.Web.UI.Page
 
                 TemplateHandler.Assign(ref _s, "{hfgoaldisplay}", goalHistory.HomeScoreFirstGoal ? "inline" : "none");
                 TemplateHandler.Assign(ref _s, "{hlgoaldisplay}", goalHistory.HomeScoreLastGoal ? "inline" : "none");
+
+                TemplateHandler.Assign(ref _s, "{1hfgoaldisplay}", goalHistory.HomeScore1FGoal ? "inline" : "none");
+                TemplateHandler.Assign(ref _s, "{1hlgoaldisplay}", goalHistory.HomeScore1LGoal ? "inline" : "none");
+
                 TemplateHandler.Assign(ref _s, "{afgoaldisplay}", goalHistory.AwayScoreFirstGoal ? "inline" : "none");
                 TemplateHandler.Assign(ref _s, "{algoaldisplay}", goalHistory.AwayScoreLastGoal ? "inline" : "none");
+
+                TemplateHandler.Assign(ref _s, "{1afgoaldisplay}", goalHistory.AwayScore1FGoal ? "inline" : "none");
+                TemplateHandler.Assign(ref _s, "{1algoaldisplay}", goalHistory.AwayScore1LGoal ? "inline" : "none");            
+
                 TemplateHandler.Assign(ref _s, "{Refund}", tplRefund);
 
                 if (!isExistFGLG && fglgStatus == "no ticket")
@@ -425,7 +441,6 @@ public partial class Settle_Calculation : System.Web.UI.Page
             }
             else
             {
-
                 _s = Sunplus.Accounting.Core.Web.WebUtils.LoadTemplate("Settle/BillSoccer.htm");
 
                 TemplateHandler.RemoveBlock(ref _s, "RefundButton1");
@@ -445,8 +460,16 @@ public partial class Settle_Calculation : System.Web.UI.Page
 
                     TemplateHandler.Assign(ref _s, "{hfgoaldisplay}", goalHistory.HomeScoreFirstGoal ? "inline" : "none");
                     TemplateHandler.Assign(ref _s, "{hlgoaldisplay}", goalHistory.HomeScoreLastGoal ? "inline" : "none");
+
+                    TemplateHandler.Assign(ref _s, "{1hfgoaldisplay}", goalHistory.HomeScore1FGoal ? "inline" : "none");
+                    TemplateHandler.Assign(ref _s, "{1hlgoaldisplay}", goalHistory.HomeScore1LGoal ? "inline" : "none");
+
                     TemplateHandler.Assign(ref _s, "{afgoaldisplay}", goalHistory.AwayScoreFirstGoal ? "inline" : "none");
                     TemplateHandler.Assign(ref _s, "{algoaldisplay}", goalHistory.AwayScoreLastGoal ? "inline" : "none");
+
+                    TemplateHandler.Assign(ref _s, "{1afgoaldisplay}", goalHistory.AwayScore1FGoal ? "inline" : "none");
+                    TemplateHandler.Assign(ref _s, "{1algoaldisplay}", goalHistory.AwayScore1LGoal ? "inline" : "none");    
+
                     TemplateHandler.Assign(ref _s, "{statusFGLG}", r["betstatus"]);
 
                     TemplateHandler.Assign(ref _s, "ShowGoalHistory", data);
@@ -498,6 +521,7 @@ public partial class Settle_Calculation : System.Web.UI.Page
             //    TemplateHandler.Assign(ref _s, "{disabledGR}", "disabled=\"disabled\"");
             //}
             TemplateController.Assign(ref _s, "{hasFGLG}", (isExistFGLG) ? "1" : "0");
+            TemplateController.Assign(ref _s, "{has1HFGLG}", (IsExist1HFGLG) ? "1" : "0");
             TemplateController.Assign(ref _s, "{homeHScore}", htHome);
             TemplateController.Assign(ref _s, "{awayHScore}", htAway);
 
@@ -524,13 +548,26 @@ public partial class Settle_Calculation : System.Web.UI.Page
                 TemplateController.RemoveBlock(ref _s, "KeyScore");
                 TemplateController.Assign(ref _s, "{HTStatus}", r["htstatus"].ToString());
                 TemplateController.Assign(ref _s, "{FTStatus}", r["ftstatus"].ToString());
-                TemplateController.Assign(ref _s, "{FGLGStatus}", r["fglgstatus"].ToString());
+                TemplateController.Assign(ref _s, "{FTFGLGStatus}", r["fglgstatus"].ToString());
+                TemplateController.Assign(ref _s, "{FGLGStatus}", r["htfglgstatus"].ToString());
                 TemplateController.Assign(ref _s, "{HTbgcolor}", (string.Compare(r["htstatus"].ToString(), "settled", true) == 0) ? SettleBgColor.BILL : string.Empty);
                 TemplateController.Assign(ref _s, "{FTbgcolor}", (string.Compare(r["ftstatus"].ToString(), "settled", true) == 0) ? SettleBgColor.BILL : string.Empty);
                 TemplateController.Assign(ref _s, "{FGLGbgcolor}", (string.Compare(r["fglgstatus"].ToString(), "settled", true) == 0) ? SettleBgColor.BILL : string.Empty);
                 TemplateController.Assign(ref _s, "{disableFTCal}", (string.Compare(r["htstatus"].ToString(), "running", true) == 0) ? "disabled=\"disabled\"" : string.Empty);
                 //TemplateController.Assign(ref _s, "{disableUS}", ((string.Compare(r["htstatus"].ToString(), "settled", true) == 0) || (string.Compare(r["ftstatus"].ToString(), "settled", true) == 0) || (string.Compare(r["fglgstatus"].ToString(), "settled", true) == 0)) ? string.Empty : "disabled=\"disabled\"");
                 TemplateController.Assign(ref _s, "{disableUS}", "");
+                if (r["htfglgstatus"].ToString().ToLower() == "no ticket")
+                {
+                    TemplateController.RemoveBlock(ref _s, "HTFGLG");
+                }
+                if (r["fglgstatus"].ToString().ToLower() == "no ticket")
+                {
+                    TemplateController.RemoveBlock(ref _s, "FGLG");
+                }
+                if (r["htfglgstatus"].ToString().ToLower() == "no ticket" && r["fglgstatus"].ToString().ToLower() == "no ticket")
+                {
+                    TemplateController.RemoveBlock(ref _s, "FGLGBTN");
+                }
             }
             else
             {

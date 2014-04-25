@@ -177,11 +177,11 @@ namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
                 {
                     Hashtable p = new Hashtable();
                     p.Add("matchid", matchID);
-                    p.Add("isexistfglg", false);//is exist First goal / Last goal
-                    p.Add("ishtonly", false); //First half only
-                    p.Add("errcode", 0);
-                    p.Add("isexistsng", 0);
-                    p.Add("errMsg", string.Empty);
+                    //p.Add("isexistfglg", false);//is exist First goal / Last goal
+                    //p.Add("ishtonly", false); //First half only
+                    //p.Add("errcode", 0);
+                    //p.Add("isexistsng", 0);
+                    //p.Add("errmsg", string.Empty);
 
                     objDb.AssignParamValues(p);
                     var dsResult = objDb.ExecuteDataSet();
@@ -214,11 +214,11 @@ namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
                 {
                     Hashtable p = new Hashtable();
                     p.Add("matchid", matchID);
-                    p.Add("isexistfglg", true);//is exist First goal / Last goal
-                    p.Add("isexistlg", false);//is exist Last goal only
-                    p.Add("errcode", 0);
-                    p.Add("errMsg", string.Empty);
-                    p.Add("issettleabandonedmatchibc", false);
+                    //p.Add("isexistfglg", true);//is exist First goal / Last goal
+                    //p.Add("isexistlg", false);//is exist Last goal only
+                    //p.Add("errcode", 0);
+                    //p.Add("errMsg", string.Empty);
+                    //p.Add("issettleabandonedmatchibc", false);
 
                     objDb.AssignParamValues(p);
                     

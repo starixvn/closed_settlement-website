@@ -1,7 +1,11 @@
 <tr class="fs10 c {bgClass} match_row_{matchid}">
   <td >{code}</td>  
   <td rowspan="2">{date}</td>
-  <td class="b teamname ht">{hometeam}&nbsp;<!--FGLG--><img id="hfgoal" style="display:{hfgoaldisplay};" src="../App_Themes/Images/firstGoal.gif" width="14px" height="10px" border="0px" /><img id="hlgoal" style="display:{hlgoaldisplay};" src="../App_Themes/Images/lastGoal.gif" width="14px" height="10px" border="0px" /><!--/FGLG--></td>
+  <td class="b teamname ht">{hometeam}&nbsp;
+    <!--FGLG--><img id="hfgoal" style="display:{hfgoaldisplay};" src="../App_Themes/Images/firstGoal.gif" width="14px" height="10px" border="0px" />
+    <img id="hlgoal" style="display:{hlgoaldisplay};" src="../App_Themes/Images/lastGoal.gif" width="14px" height="10px" border="0px" /><!--/FGLG-->
+    <!--FL--><img id="1hfgoal" style="display:{1hfgoaldisplay};" src="../App_Themes/Images/1F.gif" width="14px" height="10px" border="0px" />
+    <img id="1hlgoal" style="display:{1hlgoaldisplay};" src="../App_Themes/Images/1L.gif" width="14px" height="10px" border="0px" /><!--/FL-->
   <td class="htsc">{homeHT}</td>
   <td class="ftsc">{homeFT}</td>
   <td rowspan="2" {bgEventStatus}>{eventstatus}</td>  
@@ -22,7 +26,11 @@
     <div onclick="ShowSettlementLog('{code}', '{fdate}', '{tdate}');" class="viewhis"></div>
     <div class="undecided_{isdecided} {hand}"  {event} title="{ContentOfTooltip}"></div>
   </td>
-  <td class="b teamname at">{awayteam}&nbsp;<!--FGLG--><img id="afgoal" style="display:{afgoaldisplay};" src="../App_Themes/Images/firstGoal.gif" width="14px" height="10px" border="0px" /><img id="algoal" style="display:{algoaldisplay};" src="../App_Themes/Images/lastGoal.gif" width="14px" height="10px" border="0px" /><!--/FGLG--></td>
+  <td class="b teamname at">{awayteam}&nbsp;
+    <!--FGLG--><img id="afgoal" style="display:{afgoaldisplay};" src="../App_Themes/Images/firstGoal.gif" width="14px" height="10px" border="0px" />
+    <img id="algoal" style="display:{algoaldisplay};" src="../App_Themes/Images/lastGoal.gif" width="14px" height="10px" border="0px" /><!--/FGLG-->
+    <!--FL--><img id="1afgoal" style="display:{1afgoaldisplay};" src="../App_Themes/Images/1F.gif" width="14px" height="10px" border="0px" />
+    <img id="1algoal" style="display:{1algoaldisplay};" src="../App_Themes/Images/1L.gif" width="14px" height="10px" border="0px" /><!--/FL-->
   <td class="htsc">{awayHT}</td>
   <td class="ftsc">{awayFT}</td>
 </tr>

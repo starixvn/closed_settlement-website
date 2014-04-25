@@ -422,6 +422,7 @@ namespace Sunplus.Accounting.Business.Settlement
                     string finalawayscore = dr["finalawayscore"].ToString();
                     string homeIcon = string.Empty;
                     string awayIcon = string.Empty;
+
                     var match = new Match();
                     match.GoalRecord = goalrecord;
                     match.BetStatus = betstatus;
@@ -432,12 +433,20 @@ namespace Sunplus.Accounting.Business.Settlement
                     {
                         TemplateHandler.Assign(ref _sRow, "{hfgoaldisplay}", goalHistory.HomeScoreFirstGoal ? "inline" : "none");
                         TemplateHandler.Assign(ref _sRow, "{hlgoaldisplay}", goalHistory.HomeScoreLastGoal ? "inline" : "none");
+
+                        TemplateHandler.Assign(ref _sRow, "{1hfgoaldisplay}", goalHistory.HomeScore1FGoal ? "inline" : "none");
+                        TemplateHandler.Assign(ref _sRow, "{1hlgoaldisplay}", goalHistory.HomeScore1LGoal ? "inline" : "none");
+
                         TemplateHandler.Assign(ref _sRow, "{afgoaldisplay}", goalHistory.AwayScoreFirstGoal ? "inline" : "none");
                         TemplateHandler.Assign(ref _sRow, "{algoaldisplay}", goalHistory.AwayScoreLastGoal ? "inline" : "none");
+
+                        TemplateHandler.Assign(ref _sRow, "{1afgoaldisplay}", goalHistory.AwayScore1FGoal ? "inline" : "none");
+                        TemplateHandler.Assign(ref _sRow, "{1algoaldisplay}", goalHistory.AwayScore1LGoal ? "inline" : "none"); 
                     }
                     else
                     {
                         TemplateHandler.RemoveBlock(ref _sRow, "FGLG");
+                        TemplateHandler.RemoveBlock(ref _sRow, "FL");
                     }
 
 
@@ -1709,33 +1718,101 @@ namespace Sunplus.Accounting.Business.Settlement
         public static string ShowGoalHistory(string goalrecord)
         {
             string tpl = WebUtils.LoadTemplate("Settle/GoalHistory.htm");
-            string data = "", row = "";
+            string data = string.Empty, row = string.Empty;
             row = TemplateHandler.CopyBlock(tpl, "rowsGoalRecord");
             int homeScore = 0, awayScore = 0;
-            for (int i = 0; i < goalrecord.Length; i++)
-            {
+            var records = goalrecord.Split(';');
 
-                string tempRow = row;
-                string teamScore = "";
-                if (goalrecord.Substring(i, 1).ToLower().Equals("h"))
+            if (records[0].Length == 0)
+            {
+                TemplateHandler.RemoveBlock(ref tpl, "goalRecord");
+            }
+            else
+            {
+                for (int i = 0; i < records[0].Length; i++)
                 {
-                    homeScore += 1;
-                    teamScore = ResourceExtension.GetResourceValue(ResourceExtension.Resources.Language, "lblHome");
+
+                    string tempRow = row;
+                    string teamScore = "";
+                    if (records[0].Substring(i, 1).ToLower().Equals("h"))
+                    {
+                        homeScore += 1;
+                        teamScore = ResourceExtension.GetResourceValue(ResourceExtension.Resources.Language, "lblHome");
+                    }
+                    else
+                    {
+                        awayScore += 1;
+                        teamScore = ResourceExtension.GetResourceValue(ResourceExtension.Resources.Language, "lblAway");
+                    }
+                    TemplateHandler.Assign(ref tempRow, "score", homeScore.ToString() + " - " + awayScore.ToString());
+                    TemplateHandler.Assign(ref tempRow, "team", teamScore);
+                    data += tempRow;
+                }
+
+                TemplateHandler.ReplaceBlock(ref tpl, "rowsGoalRecord", data);
+            }
+
+            if (records.Length > 1)
+            {
+                data = string.Empty;
+                homeScore = 0;
+                awayScore = 0;
+                row = TemplateHandler.CopyBlock(tpl, "rowsGoalRecordFT");
+                var score = string.Concat(records[0], records[1]);
+
+                if (score.Length == 0)
+                {
+                    TemplateHandler.RemoveBlock(ref tpl, "goalRecordFT");
                 }
                 else
                 {
-                    awayScore += 1;
-                    teamScore = ResourceExtension.GetResourceValue(ResourceExtension.Resources.Language, "lblAway");
+                    for (int i = 0; i < score.Length; i++)
+                    {
+
+                        string tempRow = row;
+                        string teamScore = "";
+                        if (score.Substring(i, 1).ToLower().Equals("h"))
+                        {
+                            homeScore += 1;
+                            teamScore = ResourceExtension.GetResourceValue(ResourceExtension.Resources.Language, "lblHome");
+                        }
+                        else
+                        {
+                            awayScore += 1;
+                            teamScore = ResourceExtension.GetResourceValue(ResourceExtension.Resources.Language, "lblAway");
+                        }
+                        TemplateHandler.Assign(ref tempRow, "scoreFT", homeScore.ToString() + " - " + awayScore.ToString());
+                        TemplateHandler.Assign(ref tempRow, "teamFT", teamScore);
+                        data += tempRow;
+                    }
                 }
-                TemplateHandler.Assign(ref tempRow, "score", homeScore.ToString() + " - " + awayScore.ToString());
-                TemplateHandler.Assign(ref tempRow, "team", teamScore);
-                data += tempRow;
+
+                TemplateHandler.ReplaceBlock(ref tpl, "rowsGoalRecordFT", data);
             }
-            if (goalrecord.Length == 0)
-                TemplateHandler.Assign(ref tpl, "Hide-GoalHistory", "hide");
             else
-                TemplateHandler.Assign(ref tpl, "Hide-GoalHistory", string.Empty);
-            TemplateHandler.ReplaceBlock(ref tpl, "rowsGoalRecord", data);
+            {
+                TemplateHandler.RemoveBlock(ref tpl, "goalRecordFT");
+            }
+
+            if (goalrecord.Length == 0)
+            {
+                TemplateHandler.Assign(ref tpl, "Hide-GoalHistory", "hide");
+                TemplateHandler.Assign(ref tpl, "Hide-GoalHistoryFT", "hide");
+            }
+            else
+            {
+                if (records.Length == 1)
+                {
+                    TemplateHandler.Assign(ref tpl, "Hide-GoalHistory", string.Empty);
+                    TemplateHandler.Assign(ref tpl, "Hide-GoalHistoryFT", "hide");
+                }
+                else
+                {
+                    TemplateHandler.Assign(ref tpl, "Hide-GoalHistory", string.Empty);
+                    TemplateHandler.Assign(ref tpl, "Hide-GoalHistoryFT", string.Empty);
+                }
+            }
+
             return tpl;
         }
         #endregion

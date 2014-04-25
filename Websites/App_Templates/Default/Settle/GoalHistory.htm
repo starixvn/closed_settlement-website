@@ -1,27 +1,58 @@
-﻿<table style="margin-top:5px;">
-  <tr class="{Hide-GoalHistory}">
-    <td align="center" bgcolor="#99cccc">
-      <b>Goal History</b>
-    </td>
-  </tr>
-  <tr>
-    <td>          
-      <div class="settlement  {Hide-GoalHistory}" style="overflow-x:hidden; overflow-y:auto; height:140px; width:160px; border-collapse:collapse; margin-top:0px;">                          
-          <table class="tblcollapse c" style="margin-top: 0px; width:100%;" cellspacing="1">                
-            <!--rowsGoalRecord-->
-            <tr>
-              <td>{score}</td>
-              <td>{team}</td>
-            </tr>
-            <!--/rowsGoalRecord-->
-          </table>            
-      </div>
-    </td>
-    <td valign="top">
-      <center>
-        <span id="infoMsg" class="info-message"></span><br>
-          <span style="display:none;" id="errMsg" class="error-message">Please input valid result!</span><br>
-      </center>
-    </td>
-  </tr>
+﻿<table>    
+    <tr>
+        <!--goalRecord-->
+        <td style="vertical-align: top">
+            <table style="margin-top:5px;">
+              <tr class="{Hide-GoalHistory}">
+                <td align="center" bgcolor="#99cccc">
+                  <b>HT Goal History</b>
+                </td>
+              </tr>
+              <tr>
+                <td>          
+                  <div class="settlement  {Hide-GoalHistory}" style="overflow-x:hidden; overflow-y:auto; max-height:190px; width:160px; border-collapse:collapse; margin-top:0px;">                          
+                      <table class="tblcollapse c" style="margin-top: 0px; width:100%;" cellspacing="1">                
+                        <!--rowsGoalRecord-->
+                        <tr>
+                          <td>{score}</td>
+                          <td>{team}</td>
+                        </tr>
+                        <!--/rowsGoalRecord-->
+                      </table>            
+                  </div>
+                </td>
+                <td valign="top">
+                </td>
+              </tr>
+            </table>
+        </td>
+        <!--/goalRecord-->
+        <!--goalRecordFT-->
+        <td style="vertical-align: top">            
+            <table style="margin-top:5px;">
+              <tr class="{Hide-GoalHistoryFT}">
+                <td align="center" bgcolor="#99cccc">
+                  <b>FT Goal History</b>
+                </td>
+              </tr>
+              <tr>
+                <td>          
+                  <div class="settlement  {Hide-GoalHistoryFT}" style="overflow-x:hidden; overflow-y:auto; max-height:190px; width:160px; border-collapse:collapse; margin-top:0px;">                          
+                      <table class="tblcollapse c" style="margin-top: 0px; width:100%;" cellspacing="1">                
+                        <!--rowsGoalRecordFT-->
+                        <tr>
+                          <td>{scoreFT}</td>
+                          <td>{teamFT}</td>
+                        </tr>
+                        <!--/rowsGoalRecordFT-->
+                      </table>            
+                  </div>
+                </td>
+                <td valign="top">
+                </td>
+              </tr>
+            </table>
+        </td>
+        <!--/goalRecordFT-->
+    </tr>        
 </table>

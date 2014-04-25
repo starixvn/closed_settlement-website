@@ -62,6 +62,10 @@ namespace Fanex.Tarus.Settlement.Entity
 
         public bool HasFirstGoalLastGoal { get; set; }
 
+        public bool Has1HFirstGoal { get; set; }
+
+        public bool Has1HLastGoal { get; set; }
+
         /// <summary>
         /// Generate match status base on FinalScore, GoalRecord
         /// </summary>
