@@ -416,6 +416,7 @@ namespace Sunplus.Accounting.Business.Settlement
                     bool _isRefund = Convert.ToBoolean(dr["IsRefund"]);
                     bool _isCalRefund = Convert.ToBoolean(dr["IsCalRefund"]);
                     bool _isFGLG = Convert.ToBoolean(dr["IsFGLG"]);
+                    bool _isHTFGLG = Convert.ToBoolean(dr["IsHTFGLG"]);
                     string goalrecord = dr["goalrecord"].ToString();
                     string betstatus = dr["betstatus"].ToString();
                     string finalhomescore = dr["finalhomescore"].ToString();
@@ -428,24 +429,29 @@ namespace Sunplus.Accounting.Business.Settlement
                     match.BetStatus = betstatus;
                     match.FinalHomeScore = finalhomescore;
                     match.FinalAwayScore = finalawayscore;
+
                     var goalHistory = match.GoalHistory;
                     if(_isFGLG)  
                     {
                         TemplateHandler.Assign(ref _sRow, "{hfgoaldisplay}", goalHistory.HomeScoreFirstGoal ? "inline" : "none");
                         TemplateHandler.Assign(ref _sRow, "{hlgoaldisplay}", goalHistory.HomeScoreLastGoal ? "inline" : "none");
-
-                        TemplateHandler.Assign(ref _sRow, "{1hfgoaldisplay}", goalHistory.HomeScore1FGoal ? "inline" : "none");
-                        TemplateHandler.Assign(ref _sRow, "{1hlgoaldisplay}", goalHistory.HomeScore1LGoal ? "inline" : "none");
-
                         TemplateHandler.Assign(ref _sRow, "{afgoaldisplay}", goalHistory.AwayScoreFirstGoal ? "inline" : "none");
                         TemplateHandler.Assign(ref _sRow, "{algoaldisplay}", goalHistory.AwayScoreLastGoal ? "inline" : "none");
-
-                        TemplateHandler.Assign(ref _sRow, "{1afgoaldisplay}", goalHistory.AwayScore1FGoal ? "inline" : "none");
-                        TemplateHandler.Assign(ref _sRow, "{1algoaldisplay}", goalHistory.AwayScore1LGoal ? "inline" : "none"); 
                     }
                     else
                     {
                         TemplateHandler.RemoveBlock(ref _sRow, "FGLG");
+                    }
+
+                    if (_isHTFGLG)
+                    {
+                        TemplateHandler.Assign(ref _sRow, "{1hfgoaldisplay}", goalHistory.HomeScoreHTFirstGoal ? "inline" : "none");
+                        TemplateHandler.Assign(ref _sRow, "{1hlgoaldisplay}", goalHistory.HomeScoreHTLastGoal ? "inline" : "none");
+                        TemplateHandler.Assign(ref _sRow, "{1afgoaldisplay}", goalHistory.AwayScoreHTFirstGoal ? "inline" : "none");
+                        TemplateHandler.Assign(ref _sRow, "{1algoaldisplay}", goalHistory.AwayScoreHTLastGoal ? "inline" : "none");
+                    }
+                    else
+                    {
                         TemplateHandler.RemoveBlock(ref _sRow, "FL");
                     }
 

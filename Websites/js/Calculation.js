@@ -492,15 +492,38 @@ function DoCalculate_AfterCheckWaitingList(type, ext) {
         case 'refundhalftime':
             scoreConfirm(type);
             return;
-        case 'refundfirstnogoal':
 
+        case 'refundhtfglg':
+            if (!confirm("Are you sure you want to REFUND HT FGLG this match?")) {
+                try { parent.parent.jQuery.unblockUI(); } catch (e) { try { parent.jQuery.unblockUI(); } catch (e) { jQuery.unblockUI(); } }
+                return;
+            }
+            break;
+        case 'refundftfglg':
+            if (!confirm("Are you sure you want to REFUND FT FGLG this match?")) {
+                try { parent.parent.jQuery.unblockUI(); } catch (e) { try { parent.jQuery.unblockUI(); } catch (e) { jQuery.unblockUI(); } }
+                return;
+            }
+            break;
+        case 'refundallfglg':
             if (!confirm("Are you sure you want to REFUND All FGLG this match?")) {
                 try { parent.parent.jQuery.unblockUI(); } catch (e) { try { parent.jQuery.unblockUI(); } catch (e) { jQuery.unblockUI(); } }
                 return;
             }
             break;
+        case 'refundhtlastgoal':
+            if (!confirm("Are you sure you want to REFUND HT Last Goal this match?")) {
+                try { parent.parent.jQuery.unblockUI(); } catch (e) { try { parent.jQuery.unblockUI(); } catch (e) { jQuery.unblockUI(); } }
+                return;
+            }
+            break;
+        case 'refundftlastgoal':
+            if (!confirm("Are you sure you want to REFUND FT Last Goal this match?")) {
+                try { parent.parent.jQuery.unblockUI(); } catch (e) { try { parent.jQuery.unblockUI(); } catch (e) { jQuery.unblockUI(); } }
+                return;
+            }
+            break;
         case 'refundalllastgoal':
-
             if (!confirm("Are you sure you want to REFUND All Last Goal this match?")) {
                 try { parent.parent.jQuery.unblockUI(); } catch (e) { try { parent.jQuery.unblockUI(); } catch (e) { jQuery.unblockUI(); } }
                 return;

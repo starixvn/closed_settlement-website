@@ -84,7 +84,7 @@
 				<td width="207">
 				</td>
 				<!--/RefundButton1-->
-				<td style="vertical-align:middle;" rowspan="4">
+				<td style="vertical-align:middle;" rowspan="{rowSpan}">
 					<!--CalcAllRead-->
 					<input type="button" class="btn" style="width: 120px; font-weight: bold;" id="Button1" name="btnSubmit" tabindex="9"  value="Calculate ALL" disabled="disabled" />
 					<!--/CalcAllRead-->
@@ -116,7 +116,7 @@
 					</td>
 					<!--/RefundButton2-->
 				</tr>
-                <tr>
+                <tr style="display: {displayHTFGLG}">
 				    <td class="l" style="color: #41586A; font-weight: bold;">
 					    <!--HTFGLG-->
 					    HT FGLG
@@ -127,7 +127,7 @@
 					    {FGLGStatus}
 					    <!--/HTFGLG-->
 				    </td>
-				    <td class="b" rowspan="2">
+				    <td class="b" rowspan="{rowSpanBTN}">
 					    <!--FGLGBTN-->
 					    <!--CalcAllRead-->
 					    <input type="button" class="btn" style="width: 180px;" id="btnSubmit"
@@ -145,7 +145,7 @@
 				    </td>
 				    <!--/RefundButton3-->
 			    </tr>
-			    <tr>
+			    <tr style="display: {displayFTFGLG}">
 				    <td class="l" style="color: #41586A; font-weight: bold;">
 					    <!--FGLG-->
 					    FT FGLG
@@ -174,6 +174,7 @@
 		<input type="hidden" id="sAction" name="sAction" />
 		<input type="hidden" id="sHasFGLG" name="sHasFGLG" value="{hasFGLG}" />
         <input type="hidden" id="sHas1HFGLG" name="sHas1HFGLG" value="{has1HFGLG}" />
+        <input type="hidden" id="sHas1HLG" name="sHas1HLG" value="{has1HLG}" />
 		<input type="hidden" id="statusFGLG" name="statusFGLG" value="{statusFGLG}" />
 	</form>
 </div>

@@ -46,7 +46,8 @@ namespace Sunplus.Accounting.Business.Settlement
                 {
                     goalrecord = CastAide.AsString(hc.Request.Form["GR"]);
                     bool IsFGLG = hc.Request.Form["sHasFGLG"].ToString() == "1";
-                    _betStatus = UpdateBetStatusForBill(hc, IsFGLG);
+                    bool has1HFGLG = hc.Request.Form["sHas1HFGLG"] == "1";
+                    _betStatus = UpdateBetStatusForBill(hc, IsFGLG, has1HFGLG, _isHTCal, _action == "CAL-FT");
                 }
 
                 if (_action != "UNDO")
@@ -59,6 +60,7 @@ namespace Sunplus.Accounting.Business.Settlement
                     }
                 }
 
+                goalrecord = _isHTCal && goalrecord.IndexOf(';') != -1 ? goalrecord.Substring(0, goalrecord.IndexOf(';')) : goalrecord;
                 DataAccess.IBCDLL.Accounting.Settle.Settlement(custID, matchID, _homeHT, _awayHT, _homeFT, _awayFT, _betStatus, _action, _isHTCal, goalrecord, ref errorCode, ref msg);
                 if (errorCode > 0)
                 {
@@ -81,19 +83,24 @@ namespace Sunplus.Accounting.Business.Settlement
             return false;
         }
 
-        public static string UpdateBetStatusForBill(HttpContext hc, bool isFGLG)
+        public static string UpdateBetStatusForBill(HttpContext hc, bool isFGLG, bool has1HFGLG = false, bool isHT = false, bool isFT = false)
         {
             string _betstatus = string.Empty;
+            var match = new Match();
+
+            string goalrecord = hc.Request.Form["GR"];
+            string finalHomeScore = hc.Request.Form["homeF"];
+            string finalAwayScore = hc.Request.Form["awayF"];
+
             ////BetStatus
-            if (isFGLG)
+            if (isFGLG || has1HFGLG)
             {
-                string goalrecord = hc.Request.Form["GR"];
-                string finalHomeScore = hc.Request.Form["homeF"];
-                string finalAwayScore = hc.Request.Form["awayF"];
-                var match = new Match();
                 match.GoalRecord = goalrecord;
                 match.FinalHomeScore = finalHomeScore;
                 match.FinalAwayScore = finalAwayScore;
+                match.IsHT = isHT;
+                match.IsFT = isFT;
+
                 _betstatus = match.GenerateMatchStatus();
             }
 
@@ -344,11 +351,11 @@ namespace Sunplus.Accounting.Business.Settlement
             return false;
         }
 
-        public static bool RefundSoccerFGLG(int custID, int matchID, bool IsExcludeBetdaq, ref string errMsg)
+        public static bool RefundSoccerFGLG(int custID, int matchID, ref string errMsg, string action = null)
         {
             try
             {
-                return DataAccess.IBCDLL.Accounting.Settle.RefundSoccerFGLG(custID, matchID, IsExcludeBetdaq, ref errMsg);
+                return DataAccess.IBCDLL.Accounting.Settle.RefundSoccerFGLG(custID, matchID, ref errMsg, action);
 
             }
             catch (Exception ex)
@@ -359,11 +366,11 @@ namespace Sunplus.Accounting.Business.Settlement
             return false;
         }
 
-        public static bool RefundSoccerAllLastGoal(int custID, int matchID, bool IsExcludeBetdaq, ref string errMsg)
+        public static bool RefundSoccerAllLastGoal(int custID, int matchID, ref string errMsg, string action = null)
         {
             try
             {
-                return DataAccess.IBCDLL.Accounting.Settle.RefundSoccerAllLastGoal(custID, matchID, IsExcludeBetdaq, ref errMsg);
+                return DataAccess.IBCDLL.Accounting.Settle.RefundSoccerAllLastGoal(custID, matchID, ref errMsg, action);
             }
             catch (Exception ex)
             {

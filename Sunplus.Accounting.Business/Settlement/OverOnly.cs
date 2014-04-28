@@ -358,6 +358,7 @@ namespace Sunplus.Accounting.Business.Settlement
                     string goalrecord = dr["goalrecord"].ToString();
                     string betstatus = dr["betstatus"].ToString();
                     var isExistFGLG = Convert.ToBoolean(dr["isExistFGLG"]);
+                    var isExistHTFGLG = CastAide.AsBoolean(dr["isExistHTFGLG"]);
                     string finalhomescore = dr["finalhomescore"].ToString();
                     string finalawayscore = dr["finalawayscore"].ToString();
                     var match = new Match();
@@ -365,6 +366,7 @@ namespace Sunplus.Accounting.Business.Settlement
                     match.BetStatus = betstatus;
                     match.FinalHomeScore = finalhomescore;
                     match.FinalAwayScore = finalawayscore;
+
                     var goalHistory = match.GoalHistory;
                     string homeIcon = string.Empty;
                     string awayIcon = string.Empty;
@@ -377,9 +379,20 @@ namespace Sunplus.Accounting.Business.Settlement
                     }
                     else
                     {
-                        TemplateHandler.RemoveBlock(ref _sRow, "FGLG");
+                        TemplateHandler.RemoveBlock(ref _sRow, "FGLG");                     
                     }
 
+                    if (isExistHTFGLG)
+                    {
+                        TemplateHandler.Assign(ref _sRow, "{1hfgoaldisplay}", goalHistory.HomeScoreHTFirstGoal ? "inline" : "none");
+                        TemplateHandler.Assign(ref _sRow, "{1hlgoaldisplay}", goalHistory.HomeScoreHTLastGoal ? "inline" : "none");
+                        TemplateHandler.Assign(ref _sRow, "{1afgoaldisplay}", goalHistory.AwayScoreHTFirstGoal ? "inline" : "none");
+                        TemplateHandler.Assign(ref _sRow, "{1algoaldisplay}", goalHistory.AwayScoreHTLastGoal ? "inline" : "none");
+                    }
+                    else
+                    {
+                        TemplateHandler.RemoveBlock(ref _sRow, "FL");
+                    }
 
                     TemplateHandler.Assign(ref _sRow, "{fgHome}", string.Empty);
                     TemplateHandler.Assign(ref _sRow, "{fgAway}", string.Empty);
@@ -406,10 +419,8 @@ namespace Sunplus.Accounting.Business.Settlement
             }
             catch (Exception ex)
             {
+                Sunplus.Accounting.Core.Extensions.LogExtensions.ExceptionHandler(ex);
 
-                {
-                    Sunplus.Accounting.Core.Extensions.LogExtensions.ExceptionHandler(ex);
-                }
                 throw ex;
             }
         }

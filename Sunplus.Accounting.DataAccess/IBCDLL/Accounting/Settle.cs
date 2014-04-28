@@ -536,7 +536,7 @@ namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
         /// <param name="matchID"></param>
         /// <param name="betStatus"></param>
         /// <param name="includeLG"></param>
-        public static bool RefundSoccerFGLG(int custid, int matchid, bool IsExcludeBetdaq, ref string errMsg)
+        public static bool RefundSoccerFGLG(int custid, int matchid, ref string errMsg, string action = null)
         {
             try
             {                
@@ -547,6 +547,7 @@ namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
                     pRefund.Add("matchid", matchid);
                     pRefund.Add("lgonly", false);
                     pRefund.Add("ip", System.Web.HttpContext.Current.Request.UserHostAddress);
+                    pRefund.Add("action", string.Concat("CAL", string.IsNullOrWhiteSpace(action) ? string.Empty : string.Concat("-", action)));
 
                     objDB.AssignParamValues(pRefund);
                     objDB.ExecuteNonQuery();
@@ -567,7 +568,7 @@ namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
             }
         }
 
-        public static bool RefundSoccerAllLastGoal(int custid, int matchid, bool isExcludeBetdaq, ref string errMsg)
+        public static bool RefundSoccerAllLastGoal(int custid, int matchid, ref string errMsg, string action = null)
         {
             try
             {                
@@ -578,6 +579,7 @@ namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
                     pRefund.Add("matchid", matchid);
                     pRefund.Add("lgonly", true);
                     pRefund.Add("ip", HttpContext.Current.Request.UserHostAddress);
+                    pRefund.Add("action", string.Concat("CAL", string.IsNullOrWhiteSpace(action) ? string.Empty : string.Concat("-", action)));
 
                     objDB.AssignParamValues(pRefund);
                     objDB.ExecuteNonQuery();

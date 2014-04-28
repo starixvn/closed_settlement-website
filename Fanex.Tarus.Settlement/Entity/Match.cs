@@ -62,9 +62,9 @@ namespace Fanex.Tarus.Settlement.Entity
 
         public bool HasFirstGoalLastGoal { get; set; }
 
-        public bool Has1HFirstGoal { get; set; }
+        public bool IsHT = false;
 
-        public bool Has1HLastGoal { get; set; }
+        public bool IsFT = false;
 
         /// <summary>
         /// Generate match status base on FinalScore, GoalRecord
@@ -72,22 +72,38 @@ namespace Fanex.Tarus.Settlement.Entity
         /// <returns></returns>
         public string GenerateMatchStatus()
         {
-            string firstGoal = "0";
-            string lastGoal = "0";
+            string firstGoal = "0", firstGoalHT = "0";
+            string lastGoal = "0", lastGoalHT = "0";
             string betStatus = string.Empty;
             try
             {
                 if (!string.IsNullOrEmpty(GoalRecord))
                 {
-                    firstGoal = GoalRecord.ToLower().StartsWith("h") ? "1" : "2";
+                    var goalRecords = GoalRecord.ToLower().Split(';');
+                    var index = goalRecords.Length > 1 ? 1 : 0;
+
+                    firstGoal = goalRecords[0].ToLower().StartsWith("h") ? "1" : "2";
+                    firstGoalHT = goalRecords[0].ToLower().StartsWith("h") ? "1" : "2";
 
                     if (!string.IsNullOrEmpty(FinalHomeScore) && !string.IsNullOrEmpty(FinalAwayScore))
                     {
-                        lastGoal = GoalRecord.ToLower().EndsWith("h") ? "1" : "2";
+                        lastGoal = goalRecords[index].ToLower().EndsWith("h") ? "1" : "2";
+                        lastGoalHT = goalRecords[0].ToLower().EndsWith("h") ? "1" : "2";
                     }
                 }
 
-                betStatus = "FL:" + firstGoal + "-" + lastGoal;
+                firstGoal = string.IsNullOrWhiteSpace(firstGoal) ? "0" : firstGoal;
+                lastGoal = string.IsNullOrWhiteSpace(lastGoal) ? "0" : lastGoal;
+
+                firstGoalHT = string.IsNullOrWhiteSpace(firstGoalHT) ? "0" : firstGoalHT;
+                lastGoalHT = string.IsNullOrWhiteSpace(lastGoalHT) ? "0" : lastGoalHT;
+
+                var score =  firstGoal + "-" + lastGoal;
+                var scoreHT = firstGoalHT + "-" + lastGoalHT;
+                betStatus = IsHT ? string.Concat("1FL:", scoreHT, ";") : 
+                    IsFT ? string.Concat("FL:", score) :
+                    string.IsNullOrWhiteSpace(GoalRecord) ? "1FL:0-0;FL:0-0" :
+                    string.Concat("FL:", score, ";");
             }
             catch (Exception exception)
             {

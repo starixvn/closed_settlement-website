@@ -33,22 +33,44 @@
             <td></td>
 		</tr>
         <tr>
-            <!--RefunFGLG-->
+            <!--RefundHTFGLG-->
 		    <td>
-			    <input type="button" class="btn"  tabindex="36" style="width: 130px; " value="Refund All FGLG" onclick="DoCalculate('refundfirstnogoal');"/>
+			    <input type="button" class="btn"  tabindex="36" style="width: 130px; " value="Refund HT FGLG" onclick="DoCalculate('refundhtfglg');"/>
 		    </td>
-            <!--/RefunFGLG-->
-            <!--RefundAllLastGoal-->
+            <!--/RefundHTFGLG-->
+            <!--RefundFTFGLG-->
 		    <td>
-			    <input type="button" class="btn"  tabindex="37" style="width: 130px; " value="Refund All Last Goal" onclick="DoCalculate('refundalllastgoal');"/>
+			    <input type="button" class="btn"  tabindex="37" style="width: 130px; " value="Refund FT FGLG" onclick="DoCalculate('refundftfglg');"/>
 		    </td>
-            <!--/RefundAllLastGoal-->
-		    <td></td>
+            <!--/RefundFTFGLG-->
+		    <!--RefundAllFGLG-->
+            <td>              
+                <input type="button" class="btn"  tabindex="38" style="width: 130px; " value="Refund All FGLG" onclick="DoCalculate('refundallfglg');"/>
+            </td>
+            <!--/RefundAllFGLG-->
+            <td></td>
+        </tr>
+        <tr>
+            <!--RefundHTLG-->
+		    <td>
+			    <input type="button" class="btn"  tabindex="39" style="width: 130px; " value="Refund HT Last Goal" onclick="DoCalculate('refundhtlastgoal');"/>
+		    </td>
+            <!--/RefundHTLG-->
+            <!--RefundFTLG-->
+		    <td>
+			    <input type="button" class="btn"  tabindex="40" style="width: 130px; " value="Refund FT Last Goal" onclick="DoCalculate('refundftlastgoal');"/>
+            </td>
+            <!--/RefundFTLG-->
+		    <!--RefundAllLG-->
+            <td>
+			    <input type="button" class="btn"  tabindex="41" style="width: 130px; " value="Refund All Last Goal" onclick="DoCalculate('refundalllastgoal');"/>
+            </td>
+            <!--/RefundAllLG-->
             <td></td>
         </tr>            
 	</table>
     <!--SettleDeterminedTickets3Types-->
-		<input style="margin-bottom: 10px" type="checkbox" tabindex="38" id="chkIsSettleAbandonedMatchIBC" name="chkIsSettleAbandonedMatchIBC" />Settle determined tickets (Clean Sheet, To Win To Nil, Both/One/Neither Team To Score)
+		<input style="margin-bottom: 10px" type="checkbox" tabindex="42" id="chkIsSettleAbandonedMatchIBC" name="chkIsSettleAbandonedMatchIBC" />Settle determined tickets (Clean Sheet, To Win To Nil, Both/One/Neither Team To Score)
     <!--/SettleDeterminedTickets3Types-->
     <input type="hidden" id="IsRefund" name="IsRefund" value="1" /> 
     <!--Betdaq-->
@@ -64,10 +86,10 @@
             <br />
             <!--/SettleDeterminedTickets-->
             <!--MoveBetdaq-->
-            <input id="btnMovebetdaq" type="button" class="btn" tabindex="39" style="width: 130px; margin: 4px" value="Move Betdaq Tickets" onclick="MoveBetdaqTickets('{matchid}', '{matchcode}');"/>
+            <input id="btnMovebetdaq" type="button" class="btn" tabindex="43" style="width: 130px; margin: 4px" value="Move Betdaq Tickets" onclick="MoveBetdaqTickets('{matchid}', '{matchcode}');"/>
             <!--/MoveBetdaq-->
             <!--RefundRunningBetDaqTickets-->	
-            <input type="button" class="btn"  tabindex="40" style="width: 200px; margin: 4px" value="Refund Running Betdaq Tickets" onclick="RefundRunningBetDaq('{matchid}', '{matchcode}');"/>		         
+            <input type="button" class="btn"  tabindex="44" style="width: 200px; margin: 4px" value="Refund Running Betdaq Tickets" onclick="RefundRunningBetDaq('{matchid}', '{matchcode}');"/>		         
             <!--/RefundRunningBetDaqTickets-->	
         </fieldset>
     </div>
@@ -85,10 +107,10 @@
             <br />
             <!--/SettleDeterminedBetfairTickets-->
             <!--MoveBetfair-->
-            <input id="btnMovebetfair" type="button" class="btn" tabindex="41" style="width: 130px; margin: 4px" value="Move Betfair Tickets" onclick="MoveBetfairTickets('{matchid}', '{matchcode}');"/>
+            <input id="btnMovebetfair" type="button" class="btn" tabindex="45" style="width: 130px; margin: 4px" value="Move Betfair Tickets" onclick="MoveBetfairTickets('{matchid}', '{matchcode}');"/>
             <!--/MoveBetfair-->
             <!--RefundRunningBetFairTickets-->	
-            <input type="button" class="btn"  tabindex="42" style="width: 200px; margin: 4px" value="Refund Running Betfair Tickets" onclick="RefundRunningBetFair('{matchid}', '{matchcode}');"/>		         
+            <input type="button" class="btn"  tabindex="46" style="width: 200px; margin: 4px" value="Refund Running Betfair Tickets" onclick="RefundRunningBetFair('{matchid}', '{matchcode}');"/>		         
             <!--/RefundRunningBetFairTickets-->
         </fieldset>
     </div>

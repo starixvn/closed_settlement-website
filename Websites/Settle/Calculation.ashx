@@ -246,10 +246,52 @@ public class Calculation : IHttpHandler, IRequiresSessionState
                                 _isDeny = true;
                             }
                             break;
-                        case "refundfirstnogoal":
+                        case "refundhtfglg":
                             if (permissions.IndexOf("[C]") > -1)
                             {
-                                _isSuccess = DoSettle.RefundSoccerFGLG(custID, matchID, IsExcludeBetdaq, ref msg);
+                                _isSuccess = DoSettle.RefundSoccerFGLG(custID, matchID, ref msg, "HT");
+                            }
+                            else
+                            {
+                                _isDeny = true;
+                            }
+                            break;
+                        case "refundftfglg":
+                            if (permissions.IndexOf("[C]") > -1)
+                            {
+                                _isSuccess = DoSettle.RefundSoccerFGLG(custID, matchID, ref msg, "FT");
+                            }
+                            else
+                            {
+                                _isDeny = true;
+                            }
+                            break;
+                        case "refundallfglg":
+                            if (permissions.IndexOf("[C]") > -1)
+                            {
+                                _isSuccess = DoSettle.RefundSoccerFGLG(custID, matchID, ref msg);
+                            }
+                            else
+                            {
+                                _isDeny = true;
+                            }
+                            break;
+                        case "refundhtlastgoal":
+                            lastGoalOnly = true;
+                            if (permissions.IndexOf("[C]") > -1)
+                            {
+                                _isSuccess = DoSettle.RefundSoccerAllLastGoal(custID, matchID, ref msg, "HT");
+                            }
+                            else
+                            {
+                                _isDeny = true;
+                            }
+                            break;
+                        case "refundftlastgoal":
+                            lastGoalOnly = true;
+                            if (permissions.IndexOf("[C]") > -1)
+                            {
+                                _isSuccess = DoSettle.RefundSoccerAllLastGoal(custID, matchID, ref msg, "FT");
                             }
                             else
                             {
@@ -260,7 +302,7 @@ public class Calculation : IHttpHandler, IRequiresSessionState
                             lastGoalOnly = true;
                             if (permissions.IndexOf("[C]") > -1)
                             {
-                                _isSuccess = DoSettle.RefundSoccerAllLastGoal(custID, matchID, IsExcludeBetdaq, ref msg);
+                                _isSuccess = DoSettle.RefundSoccerAllLastGoal(custID, matchID, ref msg);
                             }
                             else
                             {
@@ -275,8 +317,6 @@ public class Calculation : IHttpHandler, IRequiresSessionState
                 {
                     Sunplus.Accounting.Core.Extensions.LogExtensions.ExceptionHandler(ex); 
                 }
-
-
             }
 
             if (_isSuccess)
@@ -364,10 +404,14 @@ public class Calculation : IHttpHandler, IRequiresSessionState
             case "r": // 16: Refund Parlay All
                 rs = 16;
                 break;
-            case "refundfirstnogoal": // 17: Refund All FGLG
+            case "refundhtfglg":
+            case "refundftfglg":
+            case "refundallfglg": // 17: Refund HT/FT/All FGLG
                 rs = 17;
                 break;
-            case "refundalllastgoal": // 18: Refund All LG
+            case "refundhtlastgoal":
+            case "refundftlastgoal":
+            case "refundalllastgoal": // 18: Refund HT/FT/All LG
                 rs = 18;
                 break;
         }
@@ -400,7 +444,8 @@ public class Calculation : IHttpHandler, IRequiresSessionState
             {
                 goalrecord = CastAide.AsString(context.Request.Form["GR"]);
                 bool IsFGLG = context.Request.Form["sHasFGLG"].ToString() == "1";
-                betStatus = DoSettle.UpdateBetStatusForBill(context, IsFGLG);
+                bool has1HFGLG = context.Request.Form["sHas1HFGLG"] == "1";
+                betStatus = DoSettle.UpdateBetStatusForBill(context, IsFGLG, has1HFGLG, isHTCal, type == "billft");
             }
 
             var service = new Fanex.Tarus.Apollo.Settlement.Business.SettlementService();
@@ -451,6 +496,7 @@ public class Calculation : IHttpHandler, IRequiresSessionState
             string goalrecord = string.Empty;
             bool isHTCal = type.ToLower() == "billht";
             bool isScoreDirect = false;
+            bool has1HFGLG = context.Request.Form["sHas1HFGLG"] == "1";
 
             if (context.Request.Form["isSD"] != null)
             {
@@ -463,7 +509,7 @@ public class Calculation : IHttpHandler, IRequiresSessionState
             {
                 goalrecord = CastAide.AsString(context.Request.Form["GR"]);
                 bool IsFGLG = context.Request.Form["sHasFGLG"].ToString() == "1";
-                betStatus = DoSettle.UpdateBetStatusForBill(context, IsFGLG);
+                betStatus = DoSettle.UpdateBetStatusForBill(context, IsFGLG, has1HFGLG, isHTCal, type == "billft");
             }
 
 
