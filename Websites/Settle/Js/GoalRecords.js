@@ -71,7 +71,11 @@
     RePlaceStr: function (e) {
         $('GR').value = ReplaceAll($('GR').value, '\'', '');
         var value = $('GR').value;
+        var scores = value.split(';');
+
         value = ReplaceAll(value, ';', '');
+        var htScore = scores[0];
+        var ftScore = value;
 
         var code = '';
         if (e.keyCode) code = e.keyCode;
@@ -98,27 +102,21 @@
                     $('afgoal').style.display = "inline";
                 }
 
-                if ($('homeF').value != "" & $('awayF').value != "") {
-                    if (value.substring(value.length - 1, value.length) == "h" || value.substring(value.length - 1, value.length) == "H") {
-                        $('hlgoal').style.display = "inline";
-                        $('algoal').style.display = "none";
-                    }
-                    else {
-                        $('hlgoal').style.display = "none";
-                        $('algoal').style.display = "inline";
-                    }
+                if (value.substring(value.length - 1, value.length) == "h" || value.substring(value.length - 1, value.length) == "H") {
+                    $('hlgoal').style.display = "inline";
+                    $('algoal').style.display = "none";
                 }
                 else {
                     $('hlgoal').style.display = "none";
-                    $('algoal').style.display = "none";
+                    $('algoal').style.display = "inline";
                 }
             }
         }
 
-        if ($('sHas1HFGLG').value == '1') {
+        if ($('sHas1HFGLG').value == '1' && htScore.length != 0) {
             if (value == "") {
-                $('1hfgoal').style.display = 'none';                
-                $('1afgoal').style.display = 'none';
+                $('1hfgoal').style.display = 'none';
+                $('1hlgoal').style.display = 'none';
             }
             else {
                 if ($('GR').value.split(';')[0].substring(0, 1) == "h" || $('GR').value.split(';')[0].substring(0, 1) == "H") {
@@ -131,14 +129,18 @@
                 }
             }
         }
+        else {
+            $('1hfgoal').style.display = "none";
+            $('1hlgoal').style.display = "none";
+        }
 
-        if ($('sHas1HLG').value == '1') {
+        if ($('sHas1HLG').value == '1' && htScore.length != 0) {
             if (value == "") {
-                $('1hlgoal').style.display = 'none';
+                $('1afgoal').style.display = 'none';
                 $('1algoal').style.display = 'none';
             }
             else {
-                if ($('GR').value.split(';')[0].substring($('GR').value.split(';')[0].length - 1, $('GR').value.split(';')[0].length) == "h" || $('GR').value.split(';')[0].substring($('GR').value.split(';')[0].length - 1, $('GR').value.split(';')[0].length) == "H") {
+                if (htScore.substring(htScore.length - 1, htScore.length) == "h" || htScore.substring(htScore.length - 1, htScore.length) == "H") {
                     $('1hlgoal').style.display = "inline";
                     $('1algoal').style.display = "none";
                 }
@@ -147,6 +149,10 @@
                     $('1algoal').style.display = "inline";
                 }
             }
+        }
+        else {
+            $('1afgoal').style.display = 'none';
+            $('1algoal').style.display = 'none';
         }
     }
 };

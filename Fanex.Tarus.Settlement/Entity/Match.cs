@@ -87,7 +87,7 @@ namespace Fanex.Tarus.Settlement.Entity
 
                     if (!string.IsNullOrEmpty(FinalHomeScore) && !string.IsNullOrEmpty(FinalAwayScore))
                     {
-                        lastGoal = goalRecords[index].ToLower().EndsWith("h") ? "1" : "2";
+                        lastGoal = (goalRecords[index] == string.Empty ? goalRecords[0] : goalRecords[index]).ToLower().EndsWith("h") ? "1" : "2";
                         lastGoalHT = goalRecords[0].ToLower().EndsWith("h") ? "1" : "2";
                     }
                 }

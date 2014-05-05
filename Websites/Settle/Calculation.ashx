@@ -137,7 +137,7 @@ public class Calculation : IHttpHandler, IRequiresSessionState
             // Hardcode for sport types which are not use [Refund;FL:2-0] in case of refund all with settle determined betdaq/betfair tickets @Andy
             var refundTypesNoFL = new int[] { 5, 6, 9, 30 };
             var excludeFL = refundTypesNoFL.Contains(sportID) && (IsSettleDeterminedTickets || IsSettleDeterminedBetFairTickets);
-            scoreConfirm_Betstatus = excludeFL ? scoreConfirm_Betstatus : string.Empty;
+            scoreConfirm_Betstatus = excludeFL ? scoreConfirm_Betstatus : "Refund;";
             
             foreach (string _matchId in arrIds)
             {
