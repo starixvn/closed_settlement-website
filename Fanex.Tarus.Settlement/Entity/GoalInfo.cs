@@ -11,6 +11,8 @@ namespace Fanex.Tarus.Settlement.Entity
 
         private int _lastGoalValue;
 
+        private int _lastGoalValueHT;
+
         public bool HomeScoreFirstGoal { get; private set; }
 
         public bool HomeScoreLastGoal { get; private set; }
@@ -71,7 +73,13 @@ namespace Fanex.Tarus.Settlement.Entity
                             var goalInfoArray = FirstGoalLastGoalInfo.Split('-');
 
                             _firstGoalValue = Convert.ToInt32(goalInfoArray[0]);
-                            _lastGoalValue = Convert.ToInt32(goalInfoArray[1]);
+                            _lastGoalValue = _lastGoalValueHT = Convert.ToInt32(goalInfoArray[1]);
+
+                            if (status.IndexOf("1FL:") != -1 || !string.IsNullOrWhiteSpace(_matchInfo.GoalRecord))
+                            {
+                                _lastGoalValueHT = _matchInfo.GoalRecord.Substring(0, _matchInfo.GoalRecord.IndexOf(";")).EndsWith("h") ? 1 : 2;
+                                _lastGoalValue = _matchInfo.GoalRecord.Replace(";", string.Empty).ToLower().EndsWith("h") ? 1 : 2;
+                            }
 
                             break;
                         }
@@ -147,7 +155,7 @@ namespace Fanex.Tarus.Settlement.Entity
                     if (!string.IsNullOrEmpty(_matchInfo.FinalAwayScore) &&
                         !string.IsNullOrEmpty(_matchInfo.FinalHomeScore))
                     {
-                        switch (_lastGoalValue)
+                        switch (_lastGoalValueHT)
                         {
                             case 1: 
                                 HomeScoreHTLastGoal = true;
