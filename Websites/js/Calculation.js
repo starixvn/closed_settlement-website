@@ -317,7 +317,7 @@ function DoCalculate_AfterCheckWaitingList(type, ext) {
     //MatchID|SportID
     var sportID = parseInt($('sParams').value.split('|')[1], 10);
     //only for bill, soccer and FT or ALL
-    if (sportID == 1 && ext != 'HT' && (type == 'calculate' || type == 'bill')) {
+    if (sportID == 1 && (type == 'calculate' || type == 'bill')) {
         var goalrecord = $('GR').value;
         goalrecord = ReplaceAll(goalrecord, ';', '');
 

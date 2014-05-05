@@ -554,7 +554,10 @@ public partial class Settle_Calculation : System.Web.UI.Page
                 TemplateController.Assign(ref _s, "{FGLGStatus}", r["htfglgstatus"].ToString());
                 TemplateController.Assign(ref _s, "{HTbgcolor}", (string.Compare(r["htstatus"].ToString(), "settled", true) == 0) ? SettleBgColor.BILL : string.Empty);
                 TemplateController.Assign(ref _s, "{FTbgcolor}", (string.Compare(r["ftstatus"].ToString(), "settled", true) == 0) ? SettleBgColor.BILL : string.Empty);
+
+                TemplateController.Assign(ref _s, "{HTFGLGbgcolor}", (string.Compare(r["htfglgstatus"].ToString(), "settled", true) == 0) ? SettleBgColor.BILL : string.Empty);
                 TemplateController.Assign(ref _s, "{FGLGbgcolor}", (string.Compare(r["fglgstatus"].ToString(), "settled", true) == 0) ? SettleBgColor.BILL : string.Empty);
+                
                 TemplateController.Assign(ref _s, "{disableFTCal}", (string.Compare(r["htstatus"].ToString(), "running", true) == 0) ? "disabled=\"disabled\"" : string.Empty);
                 //TemplateController.Assign(ref _s, "{disableUS}", ((string.Compare(r["htstatus"].ToString(), "settled", true) == 0) || (string.Compare(r["ftstatus"].ToString(), "settled", true) == 0) || (string.Compare(r["fglgstatus"].ToString(), "settled", true) == 0)) ? string.Empty : "disabled=\"disabled\"");
                 TemplateController.Assign(ref _s, "{disableUS}", "");
@@ -761,7 +764,10 @@ public partial class Settle_Calculation : System.Web.UI.Page
                 TemplateController.Assign(ref _s, "{FGLGStatus}", r["fglgstatus"].ToString());
                 TemplateController.Assign(ref _s, "{HTbgcolor}", (string.Compare(r["htstatus"].ToString(), "settled", true) == 0) ? SettleBgColor.BILL : string.Empty);
                 TemplateController.Assign(ref _s, "{FTbgcolor}", (string.Compare(r["ftstatus"].ToString(), "settled", true) == 0) ? SettleBgColor.BILL : string.Empty);
+
+                TemplateController.Assign(ref _s, "{HTFGLGbgcolor}", (string.Compare(r["htfglgstatus"].ToString(), "settled", true) == 0) ? SettleBgColor.BILL : string.Empty);
                 TemplateController.Assign(ref _s, "{FGLGbgcolor}", (string.Compare(r["fglgstatus"].ToString(), "settled", true) == 0) ? SettleBgColor.BILL : string.Empty);
+                
                 TemplateController.Assign(ref _s, "{disableFTCal}", (string.Compare(r["htstatus"].ToString(), "running", true) == 0) ? "disabled=\"disabled\"" : string.Empty);
                 TemplateController.Assign(ref _s, "{disableUS}", ((string.Compare(r["htstatus"].ToString(), "settled", true) == 0) || (string.Compare(r["ftstatus"].ToString(), "settled", true) == 0) || (string.Compare(r["fglgstatus"].ToString(), "settled", true) == 0)) ? string.Empty : "disabled=\"disabled\"");
             }
@@ -937,7 +943,10 @@ public partial class Settle_Calculation : System.Web.UI.Page
                 TemplateController.Assign(ref _s, "{FGLGStatus}", r["fglgstatus"].ToString());
                 TemplateController.Assign(ref _s, "{HTbgcolor}", (string.Compare(r["htstatus"].ToString(), "settled", true) == 0) ? SettleBgColor.BILL : string.Empty);
                 TemplateController.Assign(ref _s, "{FTbgcolor}", (string.Compare(r["ftstatus"].ToString(), "settled", true) == 0) ? SettleBgColor.BILL : string.Empty);
+
+                TemplateController.Assign(ref _s, "{HTFGLGbgcolor}", (string.Compare(r["htfglgstatus"].ToString(), "settled", true) == 0) ? SettleBgColor.BILL : string.Empty);
                 TemplateController.Assign(ref _s, "{FGLGbgcolor}", (string.Compare(r["fglgstatus"].ToString(), "settled", true) == 0) ? SettleBgColor.BILL : string.Empty);
+                
                 TemplateController.Assign(ref _s, "{disableFTCal}", (string.Compare(r["htstatus"].ToString(), "running", true) == 0) ? "disabled=\"disabled\"" : string.Empty);
                 TemplateController.Assign(ref _s, "{disableUS}", ((string.Compare(r["htstatus"].ToString(), "settled", true) == 0) || (string.Compare(r["ftstatus"].ToString(), "settled", true) == 0) || (string.Compare(r["fglgstatus"].ToString(), "settled", true) == 0)) ? string.Empty : "disabled=\"disabled\"");
             }

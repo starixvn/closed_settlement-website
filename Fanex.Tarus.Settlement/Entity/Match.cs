@@ -103,7 +103,7 @@ namespace Fanex.Tarus.Settlement.Entity
                 betStatus = IsHT ? string.Concat("1FL:", scoreHT, ";") : 
                     IsFT ? string.Concat("FL:", score) :
                     string.IsNullOrWhiteSpace(GoalRecord) ? "1FL:0-0;FL:0-0" :
-                    string.Concat("FL:", score, ";");
+                    string.Concat("1FL:", scoreHT, ";FL:", score);
             }
             catch (Exception exception)
             {
