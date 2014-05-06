@@ -195,6 +195,7 @@ public class Calculation : IHttpHandler, IRequiresSessionState
                                 match.FinalHomeScore = finalHomeScore;
                                 match.FinalAwayScore = finalAwayScore;
                                 match.BetStatus = oldbetstatus;
+                                match.IsHTFGLG = context.Request.Form["sHas1HFGLG"] == "1";
                                 betstatus = match.GenerateMatchStatus();
 
                                 var errCode = 0;
@@ -445,7 +446,7 @@ public class Calculation : IHttpHandler, IRequiresSessionState
                 goalrecord = CastAide.AsString(context.Request.Form["GR"]);
                 bool IsFGLG = context.Request.Form["sHasFGLG"].ToString() == "1";
                 bool has1HFGLG = context.Request.Form["sHas1HFGLG"] == "1";
-                betStatus = DoSettle.UpdateBetStatusForBill(context, IsFGLG, has1HFGLG, isHTCal, type == "billft");
+                betStatus = DoSettle.UpdateBetStatusForBill(context, IsFGLG, has1HFGLG, isHTCal);
             }
 
             var service = new Fanex.Tarus.Apollo.Settlement.Business.SettlementService();
@@ -509,7 +510,7 @@ public class Calculation : IHttpHandler, IRequiresSessionState
             {
                 goalrecord = CastAide.AsString(context.Request.Form["GR"]);
                 bool IsFGLG = context.Request.Form["sHasFGLG"].ToString() == "1";
-                betStatus = DoSettle.UpdateBetStatusForBill(context, IsFGLG, has1HFGLG, isHTCal, type == "billft");
+                betStatus = DoSettle.UpdateBetStatusForBill(context, IsFGLG, has1HFGLG, isHTCal);
             }
 
 

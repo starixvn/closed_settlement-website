@@ -47,7 +47,7 @@ namespace Sunplus.Accounting.Business.Settlement
                     goalrecord = CastAide.AsString(hc.Request.Form["GR"]);
                     bool IsFGLG = hc.Request.Form["sHasFGLG"].ToString() == "1";
                     bool has1HFGLG = hc.Request.Form["sHas1HFGLG"] == "1";
-                    _betStatus = UpdateBetStatusForBill(hc, IsFGLG, has1HFGLG, _isHTCal, _action == "CAL-FT");
+                    _betStatus = UpdateBetStatusForBill(hc, IsFGLG, has1HFGLG, _isHTCal);
                 }
 
                 if (_action != "UNDO")
@@ -82,7 +82,7 @@ namespace Sunplus.Accounting.Business.Settlement
             return false;
         }
 
-        public static string UpdateBetStatusForBill(HttpContext hc, bool isFGLG, bool has1HFGLG = false, bool isHT = false, bool isFT = false)
+        public static string UpdateBetStatusForBill(HttpContext hc, bool isFGLG, bool has1HFGLG = false, bool isHT = false)
         {
             string _betstatus = string.Empty;
             var match = new Match();
@@ -98,7 +98,7 @@ namespace Sunplus.Accounting.Business.Settlement
                 match.FinalHomeScore = finalHomeScore;
                 match.FinalAwayScore = finalAwayScore;
                 match.IsHT = isHT;
-                match.IsFT = isFT;
+                match.IsHTFGLG = has1HFGLG;
 
                 _betstatus = match.GenerateMatchStatus();
             }

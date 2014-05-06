@@ -115,7 +115,8 @@ namespace Fanex.Tarus.Settlement.Entity
 
                         //Detect Last Goal
                         if (!string.IsNullOrEmpty(_matchInfo.FinalAwayScore) &&
-                            !string.IsNullOrEmpty(_matchInfo.FinalHomeScore))
+                            !string.IsNullOrEmpty(_matchInfo.FinalHomeScore) &&
+                            _matchInfo.FinalAwayScore != "0" && _matchInfo.FinalHomeScore != "0")
                         {
                             if (_matchInfo.GoalRecord.Replace(";",  string.Empty).ToLower().EndsWith("h"))
                             {
@@ -155,7 +156,8 @@ namespace Fanex.Tarus.Settlement.Entity
 
                     //Detect Last Goal
                     if (!string.IsNullOrEmpty(_matchInfo.FinalAwayScore) &&
-                        !string.IsNullOrEmpty(_matchInfo.FinalHomeScore))
+                        !string.IsNullOrEmpty(_matchInfo.FinalHomeScore) &&
+                        _matchInfo.FinalAwayScore != "0" && _matchInfo.FinalHomeScore != "0")
                     {
                         if (_matchInfo.GoalRecord.Replace(";", string.Empty).ToLower().EndsWith("h"))
                         {

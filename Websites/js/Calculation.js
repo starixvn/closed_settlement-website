@@ -338,9 +338,8 @@ function DoCalculate_AfterCheckWaitingList(type, ext) {
         var IsExistsNG = $('txtIsExistsNG').value == 'True';
         var IsLive = $('txtIsLive').value == 'True';
         var IsHedge = $('txtMatchCode').value.toLowerCase().indexOf('hedge') >= 0;
-        if (!IsHedge && (type == 'calculate' || type == 'bill') && ($('sHasFGLG').value == '1' || IsExistsNG)) {
-
-            if (IsLive) {
+        if (!IsHedge && (type == 'calculate' || type == 'bill') && ($('sHasFGLG').value == '1' || IsExistsNG || $('sHas1HFGLG').value == '1' || $('sHas1HLG').value == '1')) {
+            if (IsLive && ext != 'HT') {
                 if (((homeF + awayF) != goalrecord.length) || (ReplaceAll(ReplaceAll(goalrecord, 'a', ''), 'A', '').length != homeF)) {
                     $('errMsg').style.display = '';
                     $('errMsg').innerHTML = errorMessage;

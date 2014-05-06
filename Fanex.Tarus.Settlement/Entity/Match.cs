@@ -64,7 +64,7 @@ namespace Fanex.Tarus.Settlement.Entity
 
         public bool IsHT = false;
 
-        public bool IsFT = false;
+        public bool IsHTFGLG = false;
 
         /// <summary>
         /// Generate match status base on FinalScore, GoalRecord
@@ -85,11 +85,13 @@ namespace Fanex.Tarus.Settlement.Entity
                     firstGoal = goalRecords[0].ToLower().StartsWith("h") ? "1" : "2";
                     firstGoalHT = goalRecords[0].ToLower().StartsWith("h") ? "1" : "2";
 
-                    if (!string.IsNullOrEmpty(FinalHomeScore) && !string.IsNullOrEmpty(FinalAwayScore))
+                    if (!string.IsNullOrEmpty(FinalHomeScore) && !string.IsNullOrEmpty(FinalAwayScore) &&
+                            FinalAwayScore != "0" && FinalHomeScore != "0")
                     {
-                        lastGoal = (goalRecords[index] == string.Empty ? goalRecords[0] : goalRecords[index]).ToLower().EndsWith("h") ? "1" : "2";
-                        lastGoalHT = goalRecords[0].ToLower().EndsWith("h") ? "1" : "2";
+                        lastGoal = (goalRecords[index] == string.Empty ? goalRecords[0] : goalRecords[index]).ToLower().EndsWith("h") ? "1" : "2";                     
                     }
+
+                    lastGoalHT = goalRecords[0].ToLower().EndsWith("h") ? "1" : "2";
                 }
 
                 firstGoal = string.IsNullOrWhiteSpace(firstGoal) ? "0" : firstGoal;
@@ -100,8 +102,8 @@ namespace Fanex.Tarus.Settlement.Entity
 
                 var score =  firstGoal + "-" + lastGoal;
                 var scoreHT = firstGoalHT + "-" + lastGoalHT;
-                betStatus = IsHT ? string.Concat("1FL:", scoreHT, ";") : 
-                    IsFT ? string.Concat("FL:", score) :
+                betStatus = IsHT && IsHTFGLG ? string.Concat("1FL:", scoreHT, ";") : 
+                    IsHT && !IsHTFGLG ? string.Concat("FL:", score) :
                     string.IsNullOrWhiteSpace(GoalRecord) ? "1FL:0-0;FL:0-0" :
                     string.Concat("1FL:", scoreHT, ";FL:", score);
             }

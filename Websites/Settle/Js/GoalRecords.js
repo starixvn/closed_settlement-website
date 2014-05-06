@@ -47,8 +47,14 @@
 
         //alert(code);
         //A:65, 97| h:72, 104| back:8| move left:37| move right:39| delete:46
-        if (code == 65 || code == 97 || code == 72 || code == 104 || code == 8 || code == 35 || code == 36 || code == 37 || code == 39 || code == 46 || code == 9 || code == 59)
+        if (code == 65 || code == 97 || code == 72 || code == 104 || code == 8 || code == 35 || code == 36 || code == 37 || code == 39 || code == 46 || code == 9 || code == 59) {
+            var goals = $('GR').value;
+
+            if (goals.indexOf(';') != -1 && code == 59)
+                return false;
+
             return true;
+        }
         else
             return false;
     },
