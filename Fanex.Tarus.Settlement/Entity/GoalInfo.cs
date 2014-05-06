@@ -77,8 +77,8 @@ namespace Fanex.Tarus.Settlement.Entity
 
                             if (status.IndexOf("1FL:") != -1 || !string.IsNullOrWhiteSpace(_matchInfo.GoalRecord))
                             {
-                                _lastGoalValueHT = _matchInfo.GoalRecord.Substring(0, _matchInfo.GoalRecord.IndexOf(";")).EndsWith("h") ? 1 : 2;
-                                _lastGoalValue = _matchInfo.GoalRecord.Replace(";", string.Empty).ToLower().EndsWith("h") ? 1 : 2;
+                                _lastGoalValueHT = string.IsNullOrWhiteSpace(_matchInfo.GoalRecord) ? Convert.ToInt32(goalInfoArray[1]) : (_matchInfo.GoalRecord.Substring(0, _matchInfo.GoalRecord.IndexOf(";")).EndsWith("h") ? 1 : 2);
+                                _lastGoalValue = string.IsNullOrWhiteSpace(_matchInfo.GoalRecord) ? Convert.ToInt32(goalInfoArray[1]) : (_matchInfo.GoalRecord.Replace(";", string.Empty).ToLower().EndsWith("h") ? 1 : 2);
                             }
 
                             break;
@@ -101,6 +101,7 @@ namespace Fanex.Tarus.Settlement.Entity
                 {
                     if (!string.IsNullOrEmpty(_matchInfo.GoalRecord))
                     {
+                        // Detect First Goal and HT First Goal
                         if (_matchInfo.GoalRecord.Split(';')[0].ToLower().StartsWith("h"))
                         {
                             HomeScoreFirstGoal = true;
@@ -116,15 +117,6 @@ namespace Fanex.Tarus.Settlement.Entity
                         if (!string.IsNullOrEmpty(_matchInfo.FinalAwayScore) &&
                             !string.IsNullOrEmpty(_matchInfo.FinalHomeScore))
                         {
-                            if (_matchInfo.GoalRecord.Split(';')[0].ToLower().EndsWith("h"))
-                            {
-                                HomeScoreHTLastGoal = true;
-                            }
-                            else
-                            {
-                                AwayScoreHTLastGoal = true;
-                            }
-
                             if (_matchInfo.GoalRecord.Replace(";",  string.Empty).ToLower().EndsWith("h"))
                             {
                                 HomeScoreLastGoal = true;
@@ -134,11 +126,21 @@ namespace Fanex.Tarus.Settlement.Entity
                                 AwayScoreLastGoal = true;
                             }
                         }
+
+                        // Detect HT Last Goal
+                        if (_matchInfo.GoalRecord.Split(';')[0].ToLower().EndsWith("h"))
+                        {
+                            HomeScoreHTLastGoal = true;
+                        }
+                        else
+                        {
+                            AwayScoreHTLastGoal = true;
+                        }
                     }
                 }
                 else
                 {
-                    //Detect 1st Goal
+                    //Detect First Goal and HT First Goal
                     switch (_firstGoalValue)
                     {
                         case 1: 
@@ -155,16 +157,6 @@ namespace Fanex.Tarus.Settlement.Entity
                     if (!string.IsNullOrEmpty(_matchInfo.FinalAwayScore) &&
                         !string.IsNullOrEmpty(_matchInfo.FinalHomeScore))
                     {
-                        switch (_lastGoalValueHT)
-                        {
-                            case 1: 
-                                HomeScoreHTLastGoal = true;
-                                break;
-                            case 2: 
-                                AwayScoreHTLastGoal = true;
-                                break;
-                        }
-
                         if (_matchInfo.GoalRecord.Replace(";", string.Empty).ToLower().EndsWith("h"))
                         {
                             HomeScoreLastGoal = true;
@@ -173,6 +165,18 @@ namespace Fanex.Tarus.Settlement.Entity
                         {
                             AwayScoreLastGoal = true;
                         }
+                    }
+
+                    // Detect HT Last Goal
+
+                    switch (_lastGoalValueHT)
+                    {
+                        case 1:
+                            HomeScoreHTLastGoal = true;
+                            break;
+                        case 2:
+                            AwayScoreHTLastGoal = true;
+                            break;
                     }
                 }
             }

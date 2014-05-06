@@ -59,8 +59,7 @@ namespace Sunplus.Accounting.Business.Settlement
                         return false;
                     }
                 }
-
-                goalrecord = _isHTCal && goalrecord.IndexOf(';') != -1 ? goalrecord.Substring(0, goalrecord.IndexOf(';')) : goalrecord;
+                                
                 DataAccess.IBCDLL.Accounting.Settle.Settlement(custID, matchID, _homeHT, _awayHT, _homeFT, _awayFT, _betStatus, _action, _isHTCal, goalrecord, ref errorCode, ref msg);
                 if (errorCode > 0)
                 {

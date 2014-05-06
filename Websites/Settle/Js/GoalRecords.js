@@ -71,6 +71,7 @@
     RePlaceStr: function (e) {
         $('GR').value = ReplaceAll($('GR').value, '\'', '');
         var value = $('GR').value;
+        var score = ReplaceAll(value, ';', '');
         var scores = value.split(';');
 
         value = ReplaceAll(value, ';', '');
@@ -102,13 +103,19 @@
                     $('afgoal').style.display = "inline";
                 }
 
-                if (value.substring(value.length - 1, value.length) == "h" || value.substring(value.length - 1, value.length) == "H") {
-                    $('hlgoal').style.display = "inline";
-                    $('algoal').style.display = "none";
+                if ($('homeF').value != "" & $('awayF').value != "") {
+                    if (score.substring(score.length - 1, score.length) == "h" || score.substring(score.length - 1, score.length) == "H") {
+                        $('hlgoal').style.display = "inline";
+                        $('algoal').style.display = "none";
+                    }
+                    else {
+                        $('hlgoal').style.display = "none";
+                        $('algoal').style.display = "inline";
+                    }
                 }
                 else {
                     $('hlgoal').style.display = "none";
-                    $('algoal').style.display = "inline";
+                    $('algoal').style.display = "none";
                 }
             }
         }
