@@ -502,13 +502,12 @@ public partial class Settle_Calculation : System.Web.UI.Page
             if (!isExistFGLG)
             {
                 TemplateController.RemoveBlock(ref _s, "FGLG");
+            }
 
-                TemplateHandler.Assign(ref _s, "{disabledGR}", "disabled=\"disabled\"");
-            }
-            else
-            {
-                TemplateHandler.Assign(ref _s, "{disabledGR}", "");
-            }
+            var disabledGR = !isExistFGLG && !isExistHTFGLG ?
+                "disabled=\"disabled\"" :
+                string.Empty;
+            TemplateHandler.Assign(ref _s, "{disabledGR}", disabledGR);
 
             var _applyHedging = new Settlement();
             _applyHedging.AssignApplyHedgingMatch(ref _s, matchID);
