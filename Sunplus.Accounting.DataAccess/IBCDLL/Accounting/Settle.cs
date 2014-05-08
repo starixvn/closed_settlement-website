@@ -83,7 +83,7 @@ namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
         public static DataSet SettleSelectMatch(int sporttype, DateTime fromDate, DateTime toDate, int leagueid, bool uncal, bool uncalmul)
         {
             try
-            {                 
+            {
                 using (ObjectDb objDb = new ObjectDb("Acc_Set_MatchSel", 800))
                 {
                     Hashtable param = new Hashtable();
@@ -127,7 +127,7 @@ namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
                 }
             }
             catch (Exception ex)
-            {    
+            {
                 Sunplus.Accounting.Core.Extensions.LogExtensions.ExceptionHandler(ex);
                 return new DataSet();
             }
@@ -186,7 +186,7 @@ namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
                     objDb.AssignParamValues(p);
                     var dsResult = objDb.ExecuteDataSet();
 
-                    outputPrams = new Hashtable(objDb.GetOuputParams());                    
+                    outputPrams = new Hashtable(objDb.GetOuputParams());
 
                     return dsResult;
 
@@ -207,7 +207,7 @@ namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
         /// Tho.Nguyen updated: 12/2/2008
         /// </summary>        
         public static DataSet SelectMatchForKeyScore(int matchID, ref Hashtable outputPrams)
-        {               
+        {
             try
             {
                 using (ObjectDb objDb = new ObjectDb("Acc_Set_MatchSelScore", 120))
@@ -221,16 +221,16 @@ namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
                     //p.Add("issettleabandonedmatchibc", false);
 
                     objDb.AssignParamValues(p);
-                    
-                   
+
+
                     var dsResult = objDb.ExecuteDataSet();
-                    outputPrams = new Hashtable(objDb.GetOuputParams());                      
+                    outputPrams = new Hashtable(objDb.GetOuputParams());
 
                     return dsResult;
                 }
             }
             catch (Exception ex)
-            {  
+            {
                 Sunplus.Accounting.Core.Extensions.LogExtensions.ExceptionHandler(ex);
                 return null;
             }
@@ -246,7 +246,7 @@ namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
         public static void Settlement(int custID, int matchID, int homeHT, int awayHT, int homeFT, int awayFT, string betStatus, string action, bool isHTCal, string goalrecord, ref int errorCode, ref string errMsg)
         {
             try
-            {                   
+            {
                 using (ObjectDb objDB = new ObjectDb("Admin_Settlement_1", 1800))
                 {
                     Hashtable p = new Hashtable();
@@ -275,7 +275,7 @@ namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
             }
             catch (Exception ex)
             {
-                
+
                 Core.Extensions.LogExtensions.ExceptionHandler(ex);
                 throw ex;
             }
@@ -291,7 +291,7 @@ namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
         public static void SettlementSoccerFGLG(int custID, int matchID, string betStatus, bool includeLG, string GR, ref int errCode, ref string errMsg)
         {
             try
-            {                   
+            {
                 using (ObjectDb objDB = new ObjectDb("Admin_Settlement_FGLG", 1800))
                 {
                     Hashtable p = new Hashtable();
@@ -301,6 +301,11 @@ namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
                     p.Add("includelg", includeLG);
                     p.Add("ip", HttpContext.Current.Request.UserHostAddress);
                     p.Add("goalrecord", GR);
+
+                    var calculateType = !string.IsNullOrEmpty(GR) && GR.Contains(";") ?
+                        "CAL-FT" :
+                        "CAL-HT";
+                    p.Add("action", calculateType);
 
                     objDB.AssignParamValues(p);
                     objDB.ExecuteNonQuery();
@@ -417,7 +422,7 @@ namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
                     if (errCode > 0) return false;
                     return true;
                 }
-                
+
             }
             catch (Exception ex)
             {
@@ -438,7 +443,7 @@ namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
             , string homeFScore, string awayFScore, string scoreConfirm_Betstatus, bool IsExcludeBetfair = false, bool IsSettleDeterminedBetFairTickets = false, bool IsSettleAbandonedMatchIBC = false)
         {
             try
-            {                   
+            {
                 using (ObjectDb objDb = new ObjectDb("Admin_Settlement_RefundFT", 1800))
                 {
                     // ------------ refund---- 
@@ -489,7 +494,7 @@ namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
              , string homeHScore, string awayHScore, bool IsExcludeBetfair = false, bool IsSettleDeterminedBetfairTickets = false)
         {
             try
-            {                   
+            {
                 using (ObjectDb objDb = new ObjectDb("Admin_Settlement_RefundHT", 1800))
                 {
                     // ------------ refund---- 
@@ -539,7 +544,7 @@ namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
         public static bool RefundSoccerFGLG(int custid, int matchid, ref string errMsg, string action = null)
         {
             try
-            {                
+            {
                 using (ObjectDb objDB = new ObjectDb("Admin_Settlement_Refund_FGLG", 1800))
                 {
                     Hashtable pRefund = new Hashtable();
@@ -571,7 +576,7 @@ namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
         public static bool RefundSoccerAllLastGoal(int custid, int matchid, ref string errMsg, string action = null)
         {
             try
-            {                
+            {
                 using (ObjectDb objDB = new ObjectDb("Admin_Settlement_Refund_FGLG", 1800))
                 {
                     Hashtable pRefund = new Hashtable();
@@ -634,7 +639,7 @@ namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
         public static ErrorDetail Multiple1(int custid, string matchid)
         {
             try
-            {   
+            {
                 using (ObjectDb objDB = new ObjectDb("Admin_Settlement_Parlay", 1800))
                 {
                     Hashtable p = new Hashtable();
@@ -649,13 +654,13 @@ namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
 
                     return new ErrorDetail()
                     {
-                        ErrorCode = CastAide.AsInt16(objDB.GetParameterValue("errcode")) ,
+                        ErrorCode = CastAide.AsInt16(objDB.GetParameterValue("errcode")),
                         ErrorMessage = CastAide.AsString(objDB.GetParameterValue("errmsg"))
                     };
                 }
             }
             catch (Exception ex)
-            {    
+            {
                 Core.Extensions.LogExtensions.ExceptionHandler(ex);
                 return new ErrorDetail()
                 {
@@ -675,7 +680,7 @@ namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
         /// Tho.Nguyen updated: 12/2/2008
         /// </summary>        
         public static ErrorDetail RefundMultiple(int custid, int matchid)
-        {                    
+        {
             try
             {
                 using (ObjectDb objDB = new ObjectDb("Admin_Settlement_Parlay", 1800))
@@ -705,7 +710,7 @@ namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
                     ErrorCode = 1,
                     ErrorMessage = ex.Message
                 };
-            }            
+            }
         }
 
         public static ErrorDetail RefundMultipleHT(int custid, int matchid)
@@ -818,7 +823,7 @@ namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
         {
             ErrorDetail result = null;
             try
-            {                                   
+            {
                 using (ObjectDb objDB = new ObjectDb("Admin_Settlement_Checking", 1800))
                 {
                     Hashtable p = new Hashtable();
@@ -830,7 +835,8 @@ namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
                     objDB.AssignParamValues(p);
                     objDB.ExecuteNonQuery();
 
-                    result = new ErrorDetail() {
+                    result = new ErrorDetail()
+                    {
                         ErrorCode = CastAide.AsInt32(objDB.GetParameterValue("errcode")),
                         ErrorMessage = CastAide.AsString(objDB.GetParameterValue("errmsg"))
                     };
@@ -843,7 +849,7 @@ namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
                     ErrorCode = 1,
                     ErrorMessage = ex.Message
                 };
-                Core.Extensions.LogExtensions.ExceptionHandler(ex);                
+                Core.Extensions.LogExtensions.ExceptionHandler(ex);
             }
             return result;
         }
@@ -895,9 +901,9 @@ namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
 
         public static ErrorDetail Settlement_BetDaq_Move(int matchid)
         {
-            ErrorDetail result = null; 
+            ErrorDetail result = null;
             try
-            {   
+            {
                 using (ObjectDb objDB = new ObjectDb("Admin_Settlement_BetDaq_Move", 1800))
                 {
                     Hashtable p = new Hashtable();
@@ -975,7 +981,7 @@ namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
         {
             ErrorDetail result = null;
             try
-            {                 
+            {
                 using (ObjectDb objDB = new ObjectDb("Admin_Settlement_BetDaq_Move", 1800))
                 {
                     Hashtable p = new Hashtable();
@@ -1076,7 +1082,7 @@ namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
                 dtMatches = rs.ResultSet.Tables[0];
             }
             return dtMatches;
-        }        
+        }
 
         public static DataTable GetNumberGameResult(DateTime fromDate, int leagueId)
         {
@@ -1204,7 +1210,7 @@ namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
             var result = new ErrorDetail();
             result.ErrorCode = 0;
             try
-            {                 
+            {
                 using (ObjectDb objDb = new ObjectDb("Acc_Set_PrivateMessageForRefund", 180))
                 {
                     var p = new Hashtable { 
@@ -1223,7 +1229,7 @@ namespace Sunplus.Accounting.DataAccess.IBCDLL.Accounting
                 Core.Extensions.LogExtensions.ExceptionHandler(ex);
 
             }
-            return result;    
+            return result;
         }
 
 
