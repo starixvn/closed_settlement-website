@@ -58,7 +58,7 @@ namespace Fanex.Tarus.Settlement.Entity
 
         public string GoalRecord { get; set; }
 
-        public GoalInfo GoalHistory { get {return new GoalInfo(this);} }
+        public GoalInfo GoalHistory { get { return new GoalInfo(this); } }
 
         public bool HasFirstGoalLastGoal { get; set; }
 
@@ -82,16 +82,27 @@ namespace Fanex.Tarus.Settlement.Entity
                     var goalRecords = GoalRecord.ToLower().Split(';');
                     var index = goalRecords.Length > 1 ? 1 : 0;
 
-                    firstGoal = goalRecords[0].ToLower().StartsWith("h") ? "1" : "2";
-                    firstGoalHT = goalRecords[0].ToLower().StartsWith("h") ? "1" : "2";
+                    var firstTimeGoalRecords = goalRecords[0].ToLower();
+                    var lastTimeGoalRecords = goalRecords[0].ToLower();
 
-                    if (!string.IsNullOrEmpty(FinalHomeScore) && !string.IsNullOrEmpty(FinalAwayScore) &&
-                            FinalAwayScore != "0" && FinalHomeScore != "0")
+                    firstGoalHT = string.IsNullOrEmpty(firstTimeGoalRecords) ?
+                        "0" :
+                        (firstTimeGoalRecords.StartsWith("h") ? "1" : "2");
+                    lastGoalHT = string.IsNullOrEmpty(firstTimeGoalRecords) ?
+                        "0" :
+                        (firstTimeGoalRecords.EndsWith("h") ? "1" : "2");
+
+                    firstGoal = firstGoalHT;
+                    if (!string.IsNullOrEmpty(FinalHomeScore) &&
+                        !string.IsNullOrEmpty(FinalAwayScore) &&
+                        FinalAwayScore != "0" &&
+                        FinalHomeScore != "0")
                     {
-                        lastGoal = (goalRecords[index] == string.Empty ? goalRecords[0] : goalRecords[index]).ToLower().EndsWith("h") ? "1" : "2";                     
+                        var lastTimeGoalRecord = goalRecords[index] == string.Empty ?
+                            goalRecords[0] :
+                            goalRecords[index];
+                        lastGoal = lastTimeGoalRecord.ToLower().EndsWith("h") ? "1" : "2";
                     }
-
-                    lastGoalHT = goalRecords[0].ToLower().EndsWith("h") ? "1" : "2";
                 }
 
                 firstGoal = string.IsNullOrWhiteSpace(firstGoal) ? "0" : firstGoal;
@@ -100,9 +111,9 @@ namespace Fanex.Tarus.Settlement.Entity
                 firstGoalHT = string.IsNullOrWhiteSpace(firstGoalHT) ? "0" : firstGoalHT;
                 lastGoalHT = string.IsNullOrWhiteSpace(lastGoalHT) ? "0" : lastGoalHT;
 
-                var score =  firstGoal + "-" + lastGoal;
+                var score = firstGoal + "-" + lastGoal;
                 var scoreHT = firstGoalHT + "-" + lastGoalHT;
-                betStatus = IsHT && IsHTFGLG ? string.Concat("1FL:", scoreHT, ";") : 
+                betStatus = IsHT && IsHTFGLG ? string.Concat("1FL:", scoreHT, ";") :
                     IsHT && !IsHTFGLG ? string.Concat("FL:", score) :
                     string.IsNullOrWhiteSpace(GoalRecord) ? "1FL:0-0;FL:0-0" :
                     string.Concat("1FL:", scoreHT, ";FL:", score);
