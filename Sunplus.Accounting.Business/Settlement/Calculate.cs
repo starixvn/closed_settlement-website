@@ -1810,11 +1810,8 @@ namespace Sunplus.Accounting.Business.Settlement
                     }
                 }
 
-                if (records.Length < 2)
-                {
-                    TemplateHandler.RemoveBlock(ref tpl, "goalRecord");
-                }
-
+                TemplateHandler.Assign(ref tpl, "display-htscore", records.Length < 2 ? "hide" : string.Empty);
+                TemplateHandler.Assign(ref tpl, "hide-htscore", records.Length < 2 ? "width: 170px;" : string.Empty);
                 TemplateHandler.ReplaceBlock(ref tpl, "rowsGoalRecordFT", data);
             }
 
