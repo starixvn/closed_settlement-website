@@ -1756,7 +1756,6 @@ namespace Sunplus.Accounting.Business.Settlement
             {
                 for (int i = 0; i < records[0].Length; i++)
                 {
-
                     string tempRow = row;
                     string teamScore = "";
                     if (records[0].Substring(i, 1).ToLower().Equals("h"))
@@ -1777,13 +1776,13 @@ namespace Sunplus.Accounting.Business.Settlement
                 TemplateHandler.ReplaceBlock(ref tpl, "rowsGoalRecord", data);
             }
 
-            if (records.Length > 1)
+            if (records.Length >= 1)
             {
                 data = string.Empty;
                 homeScore = 0;
                 awayScore = 0;
                 row = TemplateHandler.CopyBlock(tpl, "rowsGoalRecordFT");
-                var score = string.Concat(records[0], records[1]);
+                var score = string.Concat(records[0], records.Length > 1 ? records[1] : string.Empty);
 
                 if (score.Length == 0)
                 {
@@ -1793,7 +1792,6 @@ namespace Sunplus.Accounting.Business.Settlement
                 {
                     for (int i = 0; i < score.Length; i++)
                     {
-
                         string tempRow = row;
                         string teamScore = "";
                         if (score.Substring(i, 1).ToLower().Equals("h"))
@@ -1812,11 +1810,12 @@ namespace Sunplus.Accounting.Business.Settlement
                     }
                 }
 
+                if (records.Length < 2)
+                {
+                    TemplateHandler.RemoveBlock(ref tpl, "goalRecord");
+                }
+
                 TemplateHandler.ReplaceBlock(ref tpl, "rowsGoalRecordFT", data);
-            }
-            else
-            {
-                TemplateHandler.RemoveBlock(ref tpl, "goalRecordFT");
             }
 
             if (goalrecord.Length == 0)
@@ -1824,18 +1823,15 @@ namespace Sunplus.Accounting.Business.Settlement
                 TemplateHandler.Assign(ref tpl, "Hide-GoalHistory", "hide");
                 TemplateHandler.Assign(ref tpl, "Hide-GoalHistoryFT", "hide");
             }
+            else if (records.Length == 1)
+            {
+                TemplateHandler.Assign(ref tpl, "Hide-GoalHistory", "hide");
+                TemplateHandler.Assign(ref tpl, "Hide-GoalHistoryFT", string.Empty);
+            }
             else
             {
-                if (records.Length == 1)
-                {
-                    TemplateHandler.Assign(ref tpl, "Hide-GoalHistory", string.Empty);
-                    TemplateHandler.Assign(ref tpl, "Hide-GoalHistoryFT", "hide");
-                }
-                else
-                {
-                    TemplateHandler.Assign(ref tpl, "Hide-GoalHistory", string.Empty);
-                    TemplateHandler.Assign(ref tpl, "Hide-GoalHistoryFT", string.Empty);
-                }
+                TemplateHandler.Assign(ref tpl, "Hide-GoalHistory", string.Empty);
+                TemplateHandler.Assign(ref tpl, "Hide-GoalHistoryFT", string.Empty);
             }
 
             return tpl;
