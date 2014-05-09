@@ -447,10 +447,10 @@ namespace Sunplus.Accounting.Business.Settlement
 
                     if (_isFGLG)
                     {
-                        TemplateHandler.Assign(ref _sRow, "{hfgoaldisplay}", goalHistory.HomeScoreFirstGoal && !isMissingSemicolonCase ? "inline" : "none");
-                        TemplateHandler.Assign(ref _sRow, "{hlgoaldisplay}", goalHistory.HomeScoreLastGoal && !isMissingSemicolonCase ? "inline" : "none");
-                        TemplateHandler.Assign(ref _sRow, "{afgoaldisplay}", goalHistory.AwayScoreFirstGoal && !isMissingSemicolonCase ? "inline" : "none");
-                        TemplateHandler.Assign(ref _sRow, "{algoaldisplay}", goalHistory.AwayScoreLastGoal && !isMissingSemicolonCase ? "inline" : "none");
+                        TemplateHandler.Assign(ref _sRow, "{hfgoaldisplay}", goalHistory.HomeScoreFirstGoal ? "inline" : "none");
+                        TemplateHandler.Assign(ref _sRow, "{hlgoaldisplay}", goalHistory.HomeScoreLastGoal ? "inline" : "none");
+                        TemplateHandler.Assign(ref _sRow, "{afgoaldisplay}", goalHistory.AwayScoreFirstGoal ? "inline" : "none");
+                        TemplateHandler.Assign(ref _sRow, "{algoaldisplay}", goalHistory.AwayScoreLastGoal ? "inline" : "none");
                     }
                     else
                     {
@@ -465,10 +465,10 @@ namespace Sunplus.Accounting.Business.Settlement
 
                     if (_isHTFGLG)
                     {
-                        TemplateHandler.Assign(ref _sRow, "{1hfgoaldisplay}", goalHistory.HomeScoreHTFirstGoal ? "inline" : "none");
-                        TemplateHandler.Assign(ref _sRow, "{1hlgoaldisplay}", goalHistory.HomeScoreHTLastGoal ? "inline" : "none");
-                        TemplateHandler.Assign(ref _sRow, "{1afgoaldisplay}", goalHistory.AwayScoreHTFirstGoal ? "inline" : "none");
-                        TemplateHandler.Assign(ref _sRow, "{1algoaldisplay}", goalHistory.AwayScoreHTLastGoal ? "inline" : "none");
+                        TemplateHandler.Assign(ref _sRow, "{1hfgoaldisplay}", goalHistory.HomeScoreHTFirstGoal && !isMissingSemicolonCase ? "inline" : "none");
+                        TemplateHandler.Assign(ref _sRow, "{1hlgoaldisplay}", goalHistory.HomeScoreHTLastGoal && !isMissingSemicolonCase ? "inline" : "none");
+                        TemplateHandler.Assign(ref _sRow, "{1afgoaldisplay}", goalHistory.AwayScoreHTFirstGoal && !isMissingSemicolonCase ? "inline" : "none");
+                        TemplateHandler.Assign(ref _sRow, "{1algoaldisplay}", goalHistory.AwayScoreHTLastGoal && !isMissingSemicolonCase ? "inline" : "none");
                     }
                     else
                     {

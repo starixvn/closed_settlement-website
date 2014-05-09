@@ -74,7 +74,6 @@ namespace Fanex.Tarus.Settlement.Entity
                             _firstGoalValue = Convert.ToInt32(goalInfoArray[0]);
                             _lastGoalValue = _lastGoalValueHT = Convert.ToInt32(goalInfoArray[1]);
 
-                            var goalRecordHT = _matchInfo.GoalRecord.Substring(0, _matchInfo.GoalRecord.IndexOf(";"));
                             var goalRecord2T = _matchInfo.GoalRecord.Replace(";", string.Empty).ToLower();
                             _lastGoalValueHT = Convert.ToInt32(goalInfoArray[1]);
                             _lastGoalValue =
@@ -82,14 +81,16 @@ namespace Fanex.Tarus.Settlement.Entity
                                 Convert.ToInt32(goalInfoArray[1]) :
                                 (goalRecord2T.EndsWith("h") ? 1 : 2);
 
-                            HomeScoreHTFirstGoal = _firstGoalValue == 1;
-                            AwayScoreHTFirstGoal = _firstGoalValue == 2;
+                            if (_matchInfo.GoalRecord.Contains(";"))
+                            {
+                                HomeScoreHTFirstGoal = _firstGoalValue == 1;
+                                AwayScoreHTFirstGoal = _firstGoalValue == 2;
+                                HomeScoreHTLastGoal = _lastGoalValueHT == 1;
+                                AwayScoreHTLastGoal = _lastGoalValueHT == 2;
+                            }
 
                             HomeScoreFirstGoal = HomeScoreHTFirstGoal;
                             AwayScoreFirstGoal = AwayScoreHTFirstGoal;
-
-                            HomeScoreHTLastGoal = _lastGoalValueHT == 1;
-                            AwayScoreHTLastGoal = _lastGoalValueHT == 2;
                             HomeScoreLastGoal = _lastGoalValue == 1;
                             AwayScoreLastGoal = _lastGoalValue == 2;
                             continue;
@@ -108,7 +109,6 @@ namespace Fanex.Tarus.Settlement.Entity
 
                             if (!string.IsNullOrWhiteSpace(_matchInfo.GoalRecord))
                             {
-                                var goalRecordHT = _matchInfo.GoalRecord.Substring(0, _matchInfo.GoalRecord.IndexOf(";"));
                                 var goalRecord2T = _matchInfo.GoalRecord.Replace(";", string.Empty).ToLower();
 
                                 _lastGoalValue =
