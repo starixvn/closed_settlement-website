@@ -637,7 +637,7 @@ public partial class Settle_Calculation : System.Web.UI.Page
                     TemplateController.RemoveBlock(ref _s, "FGLGBTN_WithoutHT");
                     TemplateController.RemoveBlock(ref _s, "FGLGBTN_WithoutFT");
                     TemplateController.Assign(ref _s, "{displayFTFGLG}", "none");
-                    rowSpan = 1;
+                    rowSpanBTN = 1;
                 }
 
                 TemplateController.Assign(ref _s, "{rowSpan}", rowSpan.ToString());
