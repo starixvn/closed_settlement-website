@@ -67,7 +67,7 @@ namespace Fanex.Tarus.Settlement.Entity
                     foreach (var status in matchStatus)
                     {
                         if (status.Contains("FL:") || status.Contains("1FL:"))
-                        {                            
+                        {
                             FirstGoalLastGoalInfo = status.Split(':')[1];
 
                             var goalInfoArray = FirstGoalLastGoalInfo.Split('-');
@@ -77,8 +77,16 @@ namespace Fanex.Tarus.Settlement.Entity
 
                             if (status.IndexOf("1FL:") != -1 || !string.IsNullOrWhiteSpace(_matchInfo.GoalRecord))
                             {
-                                _lastGoalValueHT = string.IsNullOrWhiteSpace(_matchInfo.GoalRecord) ? Convert.ToInt32(goalInfoArray[1]) : (_matchInfo.GoalRecord.Substring(0, _matchInfo.GoalRecord.IndexOf(";")).EndsWith("h") ? 1 : 2);
-                                _lastGoalValue = string.IsNullOrWhiteSpace(_matchInfo.GoalRecord) ? Convert.ToInt32(goalInfoArray[1]) : (_matchInfo.GoalRecord.Replace(";", string.Empty).ToLower().EndsWith("h") ? 1 : 2);
+                                var goalRecordHT = _matchInfo.GoalRecord.Substring(0, _matchInfo.GoalRecord.IndexOf(";"));
+                                var goalRecord2T = _matchInfo.GoalRecord.Replace(";", string.Empty).ToLower();
+
+                                _lastGoalValueHT = string.IsNullOrWhiteSpace(_matchInfo.GoalRecord) ?
+                                    Convert.ToInt32(goalInfoArray[1]) :
+                                    (goalRecordHT.EndsWith("h") ? 1 : 2);
+                                _lastGoalValue =
+                                    string.IsNullOrWhiteSpace(_matchInfo.GoalRecord) ?
+                                    Convert.ToInt32(goalInfoArray[1]) :
+                                    (goalRecord2T.EndsWith("h") ? 1 : 2);
                             }
 
                             break;
@@ -118,7 +126,7 @@ namespace Fanex.Tarus.Settlement.Entity
                             !string.IsNullOrEmpty(_matchInfo.FinalHomeScore) &&
                             _matchInfo.FinalAwayScore != "0" && _matchInfo.FinalHomeScore != "0")
                         {
-                            if (_matchInfo.GoalRecord.Replace(";",  string.Empty).ToLower().EndsWith("h"))
+                            if (_matchInfo.GoalRecord.Replace(";", string.Empty).ToLower().EndsWith("h"))
                             {
                                 HomeScoreLastGoal = true;
                             }
@@ -144,11 +152,11 @@ namespace Fanex.Tarus.Settlement.Entity
                     //Detect First Goal and HT First Goal
                     switch (_firstGoalValue)
                     {
-                        case 1: 
+                        case 1:
                             HomeScoreFirstGoal = true;
                             HomeScoreHTFirstGoal = true;
                             break;
-                        case 2: 
+                        case 2:
                             AwayScoreFirstGoal = true;
                             AwayScoreHTFirstGoal = true;
                             break;

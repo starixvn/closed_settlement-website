@@ -443,8 +443,7 @@ public partial class Settle_Calculation : System.Web.UI.Page
             {
                 _s = Sunplus.Accounting.Core.Web.WebUtils.LoadTemplate("Settle/RefundSoccer.htm");
                 string tplRefund = Sunplus.Accounting.Core.Web.WebUtils.LoadTemplate("Settle/RefundSoccer_btn.htm");
-
-
+                
                 if (!string.IsNullOrEmpty(betstatus) && betstatus.Contains("Refund HT"))
                 {
                     TemplateController.RemoveBlock(ref tplRefund, "RefundFT");

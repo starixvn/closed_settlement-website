@@ -418,6 +418,8 @@ namespace Sunplus.Accounting.Business.Settlement
                     bool _isCalRefund = Convert.ToBoolean(dr["IsCalRefund"]);
                     bool _isFGLG = Convert.ToBoolean(dr["IsFGLG"]);
                     bool _isHTFGLG = Convert.ToBoolean(dr["IsHTFGLG"]);
+
+
                     string goalrecord = dr["goalrecord"].ToString();
                     string betstatus = dr["betstatus"].ToString();
                     string finalhomescore = dr["finalhomescore"].ToString();
@@ -431,9 +433,18 @@ namespace Sunplus.Accounting.Business.Settlement
                     match.FinalHomeScore = finalhomescore;
                     match.FinalAwayScore = finalawayscore;
 
+                    bool isRefundHTLG = IsRefundLG(match.BetStatus, "HT");
+                    bool isRefundLG = IsRefundLG(match.BetStatus, "FT");
+
                     var goalHistory = match.GoalHistory;
                     var isMissingSemicolonCase = !string.IsNullOrEmpty(match.GoalRecord) &&
                         match.GoalRecord.IndexOf(";") == -1;
+                    if (isRefundLG)
+                    {
+                        TemplateHandler.Assign(ref _sRow, "{hlgoaldisplay}", "none");
+                        TemplateHandler.Assign(ref _sRow, "{algoaldisplay}", "none");
+                    }
+
                     if (_isFGLG)
                     {
                         TemplateHandler.Assign(ref _sRow, "{hfgoaldisplay}", goalHistory.HomeScoreFirstGoal && !isMissingSemicolonCase ? "inline" : "none");
@@ -444,6 +455,12 @@ namespace Sunplus.Accounting.Business.Settlement
                     else
                     {
                         TemplateHandler.RemoveBlock(ref _sRow, "FGLG");
+                    }
+
+                    if (isRefundHTLG)
+                    {
+                        TemplateHandler.Assign(ref _sRow, "{1hlgoaldisplay}", "none");
+                        TemplateHandler.Assign(ref _sRow, "{1algoaldisplay}", "none");
                     }
 
                     if (_isHTFGLG)
@@ -457,7 +474,6 @@ namespace Sunplus.Accounting.Business.Settlement
                     {
                         TemplateHandler.RemoveBlock(ref _sRow, "FL");
                     }
-
 
                     var isPending = false;
                     TemplateHandler.Assign(ref _sRow, "{eventstatus}", settle.SelStatusConfirming(dr, ref isPending));
@@ -1826,6 +1842,28 @@ namespace Sunplus.Accounting.Business.Settlement
         }
         #endregion
 
+        private static bool IsRefundLG(string betStatus, string timeType)
+        {
+            var isHalfTime = string.Equals(timeType, "HT", StringComparison.OrdinalIgnoreCase);
+            var isFullTime = string.Equals(timeType, "FT", StringComparison.OrdinalIgnoreCase);
+            var isRefungHTLG = false;
+            if (!string.IsNullOrEmpty(betStatus) &&
+                (betStatus.Contains("FL:") || betStatus.Contains("1FL:")))
+            {
+                string[] matchStatus = betStatus.Split(';');
+                foreach (var status in matchStatus)
+                {
+                    if ((isHalfTime && status.Contains("1FL:")) ||
+                        (isFullTime && status.Contains("FL:")))
+                    {
+                        var firstGoalLastGoalInfo = status.Split(':')[1];
+                        var lastGoalBet = firstGoalLastGoalInfo.Split('-')[1];
+                        isRefungHTLG = lastGoalBet == "0";
+                    }
+                }
+            }
 
+            return isRefungHTLG;
+        }
     }
 }
