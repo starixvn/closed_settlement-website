@@ -131,14 +131,31 @@ public partial class Settle_Calculation : System.Web.UI.Page
                     var isExistLG = Convert.ToBoolean(outputPrams["isexistlg"]);
 
                     var isExist1HFGLG = Convert.ToBoolean(outputPrams["isexisthtfglg"]);
+                    var isExist1HLG = Convert.ToBoolean(outputPrams["isexisthtlg"]);
 
                     var match = new Match();
                     match.BetStatus = betstatus;
 
                     var goalInfo = new GoalInfo(match);
 
-                    return SoccerHTML(r, isExistFGLG, isExistLG, CastAide.AsBoolean(outputPrams["ishtonly"], false), isRefund, IsExistsNG, IsLive, IsMovebetdaq, IsExcludeBetdaq, IsSettleAbandonedMatch, IsRefundRunningBetDaq,
-                        IsMovebetfair, IsExcludeBetfair, IsSettleAbandonedBetFairMatch, IsRefundRunningBetFair, IsSettleAbandonedMatchIBC, isExist1HFGLG);
+                    return SoccerHTML(r,
+                        isExistFGLG,
+                        isExistLG,
+                        CastAide.AsBoolean(outputPrams["ishtonly"], false),
+                        isRefund,
+                        IsExistsNG,
+                        IsLive,
+                        IsMovebetdaq,
+                        IsExcludeBetdaq,
+                        IsSettleAbandonedMatch,
+                        IsRefundRunningBetDaq,
+                        IsMovebetfair,
+                        IsExcludeBetfair,
+                        IsSettleAbandonedBetFairMatch,
+                        IsRefundRunningBetFair,
+                        IsSettleAbandonedMatchIBC,
+                        isExist1HFGLG,
+                        isExist1HLG);
                 case 2: // basketball
                     return BasketBallHTML(r, CastAide.AsBoolean(outputPrams["ishtonly"], false), isRefund, IsMovebetdaq, IsExcludeBetdaq, IsSettleAbandonedMatch, IsRefundRunningBetDaq,
                         IsMovebetfair, IsExcludeBetfair, IsSettleAbandonedBetFairMatch, IsRefundRunningBetFair);
@@ -382,8 +399,24 @@ public partial class Settle_Calculation : System.Web.UI.Page
         }
     }
 
-    private string SoccerHTML(DataRow r, bool isExistFGLG, bool isExistLG, bool isHalfTimeOnly, bool isRefund, bool IsExistsNG, bool IsLive, bool IsMovebetdaq, bool IsExcludeBetdaq, bool IsSettleAbandonedMatch, bool IsRefundRunningBetDaq,
-        bool IsMovebetfair = false, bool IsExcludeBetfair = false, bool IsSettleAbandonedBetFairMatch = false, bool IsRefundRunningBetFair = false, bool IsSettleAbandonedMatchIBC = false, bool isExistHTFGLG = false)
+    private string SoccerHTML(DataRow r,
+        bool isExistFGLG,
+        bool isExistLG,
+        bool isHalfTimeOnly,
+        bool isRefund,
+        bool IsExistsNG,
+        bool IsLive,
+        bool IsMovebetdaq,
+        bool IsExcludeBetdaq,
+        bool IsSettleAbandonedMatch,
+        bool IsRefundRunningBetDaq,
+        bool IsMovebetfair = false,
+        bool IsExcludeBetfair = false,
+        bool IsSettleAbandonedBetFairMatch = false,
+        bool IsRefundRunningBetFair = false,
+        bool IsSettleAbandonedMatchIBC = false,
+        bool isExistHTFGLG = false,
+        bool isExist1HLG = false)
     {
         //string permissions = "";
         //permissions=Sunplus.Accounting.DataAccess.IBCDLL.Accounting.UserControl.CheckHostPermissionSettle(cus
@@ -437,10 +470,19 @@ public partial class Settle_Calculation : System.Web.UI.Page
                     TemplateController.RemoveBlock(ref _s, "RefundFTFGLG");
                     TemplateController.RemoveBlock(ref _s, "RefundAllFGLG");
                 }
-                if (!isExistLG)
+
+                if (!isExist1HLG)
                 {
                     TemplateController.RemoveBlock(ref _s, "RefundHTLG");
+                }
+
+                if (!isExistLG)
+                {
                     TemplateController.RemoveBlock(ref _s, "RefundFTLG");
+                }
+
+                if (!isExist1HLG && !isExistLG)
+                {
                     TemplateController.RemoveBlock(ref _s, "RefundAllLG");
                 }
 
