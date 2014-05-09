@@ -312,6 +312,30 @@ function DoCalculate_PreventWaitingList(type, ext) {
     }
 }
 
+var matchValidator = {
+    showError: function (errorMessage) {
+        $('errMsg').style.display = '';
+        $('errMsg').innerHTML = errorMessage;
+        matchValidator.unblockUI();
+    },
+    unblockUI: function () {
+        try { parent.parent.jQuery.unblockUI(); } catch (e) { }
+    },
+    isCorrectGoalRecordFT: function (homeScore, awayScore, goalRecord) {
+        return matchValidator.isCorrectGoalRecord(homeScore, awayScore, goalRecord);
+    },
+    isCorrectGoalRecordHT: function (homeScore, awayScore, goalRecord) {
+        var htScore = goalrecord.split(';')[0];
+        return matchValidator.isCorrectGoalRecord(homeScore, awayScore, htScore);
+    },
+    isCorrectGoalRecord: function (homeScore, awayScore, goalRecord) {
+        var isCorrectTotalScore = (homeScore + awayScore == goalRecord.length);
+        var goalRecordHomeScore = ReplaceAll(ReplaceAll(goalRecord, 'a', ''), 'A', '').length;
+        return isCorrectTotalScore &&
+          goalRecordHomeScore == homeScore;
+    }
+};
+
 function DoCalculate_AfterCheckWaitingList(type, ext) {
     var errorMessage = 'Goal record is not consistent with the score, please correct Goal record before calculating.';
     $('errMsg').style.display = 'none';
@@ -338,106 +362,62 @@ function DoCalculate_AfterCheckWaitingList(type, ext) {
         var IsExistsNG = $('txtIsExistsNG').value == 'True';
         var IsLive = $('txtIsLive').value == 'True';
         var IsHedge = $('txtMatchCode').value.toLowerCase().indexOf('hedge') >= 0;
-        if (!IsHedge && (type == 'calculate' || type == 'bill') && ($('sHasFGLG').value == '1' || IsExistsNG || $('sHas1HFGLG').value == '1' || $('sHas1HLG').value == '1')) {
+        if (!IsHedge &&
+            (type == 'calculate' || type == 'bill') &&
+            ($('sHasFGLG').value == '1' || IsExistsNG || $('sHas1HFGLG').value == '1' || $('sHas1HLG').value == '1')) {
             if (IsLive && ext != 'HT') {
-                if (((homeF + awayF) != goalrecord.length) || (ReplaceAll(ReplaceAll(goalrecord, 'a', ''), 'A', '').length != homeF)) {
-                    $('errMsg').style.display = '';
-                    $('errMsg').innerHTML = errorMessage;
-                    try { parent.parent.jQuery.unblockUI(); } catch (e) { }
+                if (!matchValidator.isCorrectGoalRecordFT(homeF, awayF, goalrecord)) {
+                    matchValidator.showError(errorMessage);
                     return;
                 }
             }
             else {
                 if (ext == 'HT') {
-                    //Case H=0 A=0 -> GR = Empty
-                    if ((homeH + awayH == 0 && htScore.length > 0) || homeH + awayH != htScore.length) {
-                        $('errMsg').style.display = '';
-                        $('errMsg').innerHTML = errorMessage;
-                        try { parent.jQuery.unblockUI(); } catch (e) { }
-                        return false;
+                    if (!matchValidator.isCorrectGoalRecordFT(homeH, awayH, goalrecord)) {
+                        matchValidator.showError(errorMessage);
+                        return;
                     }
-                    if (homeH >= 1 && awayH == 0 && (htScore.toLowerCase().indexOf("a") >= 0 || htScore.toLowerCase().indexOf("h") < 0)) {
-                        $('errMsg').style.display = '';
-                        $('errMsg').innerHTML = errorMessage;
-                        try { parent.parent.jQuery.unblockUI(); } catch (e) { }
-                        return false;
-                    }
-                    if (homeH == 0 && awayH >= 1 && (htScore.toLowerCase().indexOf("h") >= 0 || htScore.toLowerCase().indexOf("a") < 0)) {
-                        $('errMsg').style.display = '';
-                        $('errMsg').innerHTML = errorMessage;
-                        try { parent.parent.jQuery.unblockUI(); } catch (e) { }
-                        return false;
-                    }
-                    if (homeH >= 1 && awayH >= 1 && (htScore.toLowerCase().indexOf("a") < 0 || htScore.toLowerCase().indexOf("h") < 0)) {
-                        $('errMsg').style.display = '';
-                        $('errMsg').innerHTML = errorMessage;
-                        try { parent.parent.jQuery.unblockUI(); } catch (e) { }
-                        return false;
-                    }
-                    //Case H/A!=0 -> GR = !empty, HT
-                    if (homeH + awayH != 0 && htScore.length != homeH + awayH) {
-                        $('errMsg').style.display = '';
-                        $('errMsg').innerHTML = errorMessage;
-                        try { parent.jQuery.unblockUI(); } catch (e) { }
-                        return false;
-                    } 
                 }
                 else {
                     //Case H=0 A=0 -> GR = Empty
                     if (homeF + awayF == 0 && goalrecord.length > 0 && homeH + awayH != goalrecord.length) {
-                        $('errMsg').style.display = '';
-                        $('errMsg').innerHTML = errorMessage;
-                        try { parent.jQuery.unblockUI(); } catch (e) { }
+                        matchValidator.showError(errorMessage);
                         return false;
                     }
                     //Case H=0 A>0 --> GR = A only
                     if (homeF == 0 && awayF > 0 && (goalrecord.toLowerCase().indexOf("h") >= 0 || goalrecord.toLowerCase().indexOf("a") < 0)) {
-                        $('errMsg').style.display = '';
-                        $('errMsg').innerHTML = errorMessage;
-                        try { parent.parent.jQuery.unblockUI(); } catch (e) { }
+                        matchValidator.showError(errorMessage);
                         return false;
                     }
                     //Case H>=1 A=0 -->GR = H only
 
                     if (homeF >= 1 && awayF == 0 && (goalrecord.toLowerCase().indexOf("a") >= 0 || goalrecord.toLowerCase().indexOf("h") < 0)) {
-                        $('errMsg').style.display = '';
-                        $('errMsg').innerHTML = errorMessage;
-                        try { parent.parent.jQuery.unblockUI(); } catch (e) { }
+                        matchValidator.showError(errorMessage);
                         return false;
                     }
 
-                    if (homeF == 1 && awayF == 1 && (goalrecord.toLowerCase().indexOf("a") < 0 || goalrecord.toLowerCase().indexOf("h") < 0 || 
+                    if (homeF == 1 && awayF == 1 && (goalrecord.toLowerCase().indexOf("a") < 0 || goalrecord.toLowerCase().indexOf("h") < 0 ||
                         goalrecord.toLowerCase().substring(0, 1) == goalrecord.toLowerCase().substring(goalrecord.length - 1, goalrecord.length))) {
-                        $('errMsg').style.display = '';
-                        $('errMsg').innerHTML = errorMessage;
-                        try { parent.parent.jQuery.unblockUI(); } catch (e) { }
+                        matchValidator.showError(errorMessage);
                         return false;
                     }
                     //Case H=1 A>1 -->GR = Exist A
                     if (homeF == 1 && awayF > 1 && goalrecord.toLowerCase().indexOf("a") < 0) {
-                        $('errMsg').style.display = '';
-                        $('errMsg').innerHTML = errorMessage;
-                        try { parent.parent.jQuery.unblockUI(); } catch (e) { }
+                        matchValidator.showError(errorMessage);
                         return false;
                     }
                     //Case H>1 A=1 -->GR = Exist H
                     if (homeF > 1 && awayF == 1 && goalrecord.toLowerCase().indexOf("h") < 0) {
-                        $('errMsg').style.display = '';
-                        $('errMsg').innerHTML = errorMessage;
-                        try { parent.parent.jQuery.unblockUI(); } catch (e) { }
+                        matchValidator.showError(errorMessage);
                         return false;
                     }
                     if (homeF + awayF > 0 && goalrecord.length <= 0) {
-                        $('errMsg').style.display = '';
-                        $('errMsg').innerHTML = errorMessage;
-                        try { parent.parent.jQuery.unblockUI(); } catch (e) { }
+                        matchValidator.showError(errorMessage);
                         return false;
                     }
 
                     if (((homeF + awayF) != goalrecord.length) || (ReplaceAll(ReplaceAll(goalrecord, 'a', ''), 'A', '').length != homeF)) {
-                        $('errMsg').style.display = '';
-                        $('errMsg').innerHTML = errorMessage;
-                        try { parent.parent.jQuery.unblockUI(); } catch (e) { }
+                        matchValidator.showError(errorMessage);
                         return false;
                     }
                 }
