@@ -464,10 +464,18 @@ public partial class Settle_Calculation : System.Web.UI.Page
 
                 TemplateHandler.Assign(ref _s, "{Refund}", tplRefund);
 
-                if (!isExistHTFGLG && !isExistFGLG && fglgStatus == "no ticket")
+                if (!isExistHTFGLG)
                 {
                     TemplateController.RemoveBlock(ref _s, "RefundHTFGLG");
+                }
+
+                if (!isExistFGLG)
+                {
                     TemplateController.RemoveBlock(ref _s, "RefundFTFGLG");
+                }
+
+                if (!isExistHTFGLG && !isExistFGLG)
+                {
                     TemplateController.RemoveBlock(ref _s, "RefundAllFGLG");
                 }
 
@@ -666,8 +674,6 @@ public partial class Settle_Calculation : System.Web.UI.Page
                 TemplateController.RemoveBlock(ref _s, "CalcAllHost");
                 TemplateController.RemoveBlock(ref _s, "CalcNGHost");
             }
-
-
 
             return _s;
         }
