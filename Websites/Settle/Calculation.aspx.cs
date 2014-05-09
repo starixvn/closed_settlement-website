@@ -604,40 +604,31 @@ public partial class Settle_Calculation : System.Web.UI.Page
                 TemplateController.Assign(ref _s, "{disableUS}", "");
                 int rowSpan = 4, rowSpanBTN = 2;
 
-                if (r["htfglgstatus"].ToString().ToLower() == "no ticket")
+                var isNoTicketHTFGLG = (r["htfglgstatus"].ToString().ToLower() == "no ticket");
+                var isNoTicketFTFGLG = (r["fglgstatus"].ToString().ToLower() == "no ticket");
+                rowSpan = 4 - (isNoTicketHTFGLG ? 1 : 0) - (isNoTicketFTFGLG ? 1 : 0);
+                rowSpanBTN = isNoTicketHTFGLG || isNoTicketFTFGLG ? 1 : 2;
+
+                if (isNoTicketHTFGLG)
                 {
                     TemplateController.RemoveBlock(ref _s, "HTFGLG");
                     TemplateController.RemoveBlock(ref _s, "FGLGBTN");
-                    TemplateController.Assign(ref _s, "{displayHTFGLG}", "none");
-                    rowSpan = 3;
-                    rowSpanBTN = 1;
-                }
-                else
-                {
                     TemplateController.RemoveBlock(ref _s, "FGLGBTN_WithoutFT");
+                    TemplateController.Assign(ref _s, "{displayHTFGLG}", "none");
                 }
 
-                if (r["fglgstatus"].ToString().ToLower() == "no ticket")
+                if (isNoTicketFTFGLG)
                 {
                     //TemplateController.RemoveBlock(ref _s, "FGLG");
                     TemplateController.RemoveBlock(ref _s, "FGLGBTN");
-                    TemplateController.Assign(ref _s, "{displayFTFGLG}", "none");
-                    rowSpan = 3;
-                    rowSpanBTN = 1;
-                }
-                else
-                {
                     TemplateController.RemoveBlock(ref _s, "FGLGBTN_WithoutHT");
+                    TemplateController.Assign(ref _s, "{displayFTFGLG}", "none");
                 }
 
-                if (r["htfglgstatus"].ToString().ToLower() == "no ticket" &&
-                    r["fglgstatus"].ToString().ToLower() == "no ticket")
+                if (!isNoTicketHTFGLG && !isNoTicketFTFGLG)
                 {
-                    TemplateController.RemoveBlock(ref _s, "FGLGBTN");
-                    TemplateController.RemoveBlock(ref _s, "FGLGBTN_WithoutHT");
                     TemplateController.RemoveBlock(ref _s, "FGLGBTN_WithoutFT");
-                    TemplateController.Assign(ref _s, "{displayFTFGLG}", "none");
-                    rowSpanBTN = 1;
+                    TemplateController.RemoveBlock(ref _s, "FGLGBTN_WithoutHT");
                 }
 
                 TemplateController.Assign(ref _s, "{rowSpan}", rowSpan.ToString());
