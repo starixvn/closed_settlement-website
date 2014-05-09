@@ -78,7 +78,7 @@ namespace Fanex.Tarus.Settlement.Entity
                             var goalRecord2T = _matchInfo.GoalRecord.Replace(";", string.Empty).ToLower();
                             _lastGoalValueHT = Convert.ToInt32(goalInfoArray[1]);
                             _lastGoalValue =
-                                string.IsNullOrWhiteSpace(_matchInfo.GoalRecord) ?
+                                Convert.ToInt32(goalInfoArray[1]) == 0 ?
                                 Convert.ToInt32(goalInfoArray[1]) :
                                 (goalRecord2T.EndsWith("h") ? 1 : 2);
 
@@ -100,9 +100,10 @@ namespace Fanex.Tarus.Settlement.Entity
                             FirstGoalLastGoalInfo = status.Split(':')[1];
                             var firstGoalLastGoalInfo = status.Split(':')[1];
                             var goalInfoArray = firstGoalLastGoalInfo.Split('-');
-                            _firstGoalValue = _firstGoalValue == 0 ?
-                                Convert.ToInt32(goalInfoArray[0]) :
-                                _firstGoalValue;
+                            _firstGoalValue = Convert.ToInt32(goalInfoArray[0]) == 0 ?
+                                0 :
+                                (_firstGoalValue == 0 ? Convert.ToInt32(goalInfoArray[0]) : _firstGoalValue);
+
                             _lastGoalValue = _lastGoalValueHT = Convert.ToInt32(goalInfoArray[1]);
 
                             if (!string.IsNullOrWhiteSpace(_matchInfo.GoalRecord))
@@ -111,13 +112,13 @@ namespace Fanex.Tarus.Settlement.Entity
                                 var goalRecord2T = _matchInfo.GoalRecord.Replace(";", string.Empty).ToLower();
 
                                 _lastGoalValue =
-                                    string.IsNullOrWhiteSpace(_matchInfo.GoalRecord) ?
+                                    Convert.ToInt32(goalInfoArray[1]) == 0 ?
                                     Convert.ToInt32(goalInfoArray[1]) :
                                     (goalRecord2T.EndsWith("h") ? 1 : 2);
                             }
 
-                            HomeScoreFirstGoal = HomeScoreFirstGoal || _firstGoalValue == 1;
-                            AwayScoreFirstGoal = AwayScoreFirstGoal || _firstGoalValue == 2;
+                            HomeScoreFirstGoal = (_firstGoalValue != 0) && (HomeScoreFirstGoal || _firstGoalValue == 1);
+                            AwayScoreFirstGoal = (_firstGoalValue != 0) && (AwayScoreFirstGoal || _firstGoalValue == 2);
 
                             HomeScoreLastGoal = _lastGoalValue == 1;
                             AwayScoreLastGoal = _lastGoalValue == 2;
