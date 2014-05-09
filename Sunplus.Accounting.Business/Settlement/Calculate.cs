@@ -433,13 +433,13 @@ namespace Sunplus.Accounting.Business.Settlement
                     match.FinalHomeScore = finalhomescore;
                     match.FinalAwayScore = finalawayscore;
 
-                    bool isRefundHTLG = IsRefundLG(match.BetStatus, "HT");
-                    bool isRefundLG = IsRefundLG(match.BetStatus, "FT");
+                    bool isShowRefundHTLG = IsShowRefundLG(match.BetStatus, "HT");
+                    bool isShowRefundLG = IsShowRefundLG(match.BetStatus, "FT");
 
                     var goalHistory = match.GoalHistory;
                     var isMissingSemicolonCase = !string.IsNullOrEmpty(match.GoalRecord) &&
                         match.GoalRecord.IndexOf(";") == -1;
-                    if (isRefundLG)
+                    if (!isShowRefundLG)
                     {
                         TemplateHandler.Assign(ref _sRow, "{hlgoaldisplay}", "none");
                         TemplateHandler.Assign(ref _sRow, "{algoaldisplay}", "none");
@@ -457,7 +457,7 @@ namespace Sunplus.Accounting.Business.Settlement
                         TemplateHandler.RemoveBlock(ref _sRow, "FGLG");
                     }
 
-                    if (isRefundHTLG)
+                    if (!isShowRefundHTLG)
                     {
                         TemplateHandler.Assign(ref _sRow, "{1hlgoaldisplay}", "none");
                         TemplateHandler.Assign(ref _sRow, "{1algoaldisplay}", "none");
@@ -1842,11 +1842,11 @@ namespace Sunplus.Accounting.Business.Settlement
         }
         #endregion
 
-        private static bool IsRefundLG(string betStatus, string timeType)
+        private static bool IsShowRefundLG(string betStatus, string timeType)
         {
             var isHalfTime = string.Equals(timeType, "HT", StringComparison.OrdinalIgnoreCase);
             var isFullTime = string.Equals(timeType, "FT", StringComparison.OrdinalIgnoreCase);
-            var isRefungHTLG = false;
+            var isShowRefundHTLG = false;
             if (!string.IsNullOrEmpty(betStatus) &&
                 (betStatus.Contains("FL:") || betStatus.Contains("1FL:")))
             {
@@ -1857,13 +1857,14 @@ namespace Sunplus.Accounting.Business.Settlement
                         (isFullTime && status.Contains("FL:")))
                     {
                         var firstGoalLastGoalInfo = status.Split(':')[1];
+                        var firstGoalBet = firstGoalLastGoalInfo.Split('-')[0];
                         var lastGoalBet = firstGoalLastGoalInfo.Split('-')[1];
-                        isRefungHTLG = lastGoalBet == "0";
+                        isShowRefundHTLG = lastGoalBet != "0";
                     }
                 }
             }
 
-            return isRefungHTLG;
+            return isShowRefundHTLG;
         }
     }
 }

@@ -66,30 +66,62 @@ namespace Fanex.Tarus.Settlement.Entity
 
                     foreach (var status in matchStatus)
                     {
-                        if (status.Contains("FL:") || status.Contains("1FL:"))
+                        if (status.Contains("1FL:"))
                         {
                             FirstGoalLastGoalInfo = status.Split(':')[1];
-
                             var goalInfoArray = FirstGoalLastGoalInfo.Split('-');
 
                             _firstGoalValue = Convert.ToInt32(goalInfoArray[0]);
                             _lastGoalValue = _lastGoalValueHT = Convert.ToInt32(goalInfoArray[1]);
 
-                            if (status.IndexOf("1FL:") != -1 || !string.IsNullOrWhiteSpace(_matchInfo.GoalRecord))
+                            var goalRecordHT = _matchInfo.GoalRecord.Substring(0, _matchInfo.GoalRecord.IndexOf(";"));
+                            var goalRecord2T = _matchInfo.GoalRecord.Replace(";", string.Empty).ToLower();
+                            _lastGoalValueHT = Convert.ToInt32(goalInfoArray[1]);
+                            _lastGoalValue =
+                                string.IsNullOrWhiteSpace(_matchInfo.GoalRecord) ?
+                                Convert.ToInt32(goalInfoArray[1]) :
+                                (goalRecord2T.EndsWith("h") ? 1 : 2);
+
+                            HomeScoreHTFirstGoal = _firstGoalValue == 1;
+                            AwayScoreHTFirstGoal = _firstGoalValue == 2;
+
+                            HomeScoreFirstGoal = HomeScoreHTFirstGoal;
+                            AwayScoreFirstGoal = AwayScoreHTFirstGoal;
+
+                            HomeScoreHTLastGoal = _lastGoalValueHT == 1;
+                            AwayScoreHTLastGoal = _lastGoalValueHT == 2;
+                            HomeScoreLastGoal = _lastGoalValue == 1;
+                            AwayScoreLastGoal = _lastGoalValue == 2;
+                            continue;
+                        }
+
+                        if (status.Contains("FL:"))
+                        {
+                            FirstGoalLastGoalInfo = status.Split(':')[1];
+                            var firstGoalLastGoalInfo = status.Split(':')[1];
+                            var goalInfoArray = firstGoalLastGoalInfo.Split('-');
+                            _firstGoalValue = _firstGoalValue == 0 ?
+                                Convert.ToInt32(goalInfoArray[0]) :
+                                _firstGoalValue;
+                            _lastGoalValue = _lastGoalValueHT = Convert.ToInt32(goalInfoArray[1]);
+
+                            if (!string.IsNullOrWhiteSpace(_matchInfo.GoalRecord))
                             {
                                 var goalRecordHT = _matchInfo.GoalRecord.Substring(0, _matchInfo.GoalRecord.IndexOf(";"));
                                 var goalRecord2T = _matchInfo.GoalRecord.Replace(";", string.Empty).ToLower();
 
-                                _lastGoalValueHT = string.IsNullOrWhiteSpace(_matchInfo.GoalRecord) ?
-                                    Convert.ToInt32(goalInfoArray[1]) :
-                                    (goalRecordHT.EndsWith("h") ? 1 : 2);
                                 _lastGoalValue =
                                     string.IsNullOrWhiteSpace(_matchInfo.GoalRecord) ?
                                     Convert.ToInt32(goalInfoArray[1]) :
                                     (goalRecord2T.EndsWith("h") ? 1 : 2);
                             }
 
-                            break;
+                            HomeScoreFirstGoal = HomeScoreFirstGoal || _firstGoalValue == 1;
+                            AwayScoreFirstGoal = AwayScoreFirstGoal || _firstGoalValue == 2;
+
+                            HomeScoreLastGoal = _lastGoalValue == 1;
+                            AwayScoreLastGoal = _lastGoalValue == 2;
+                            continue;
                         }
                     }
                 }
@@ -145,48 +177,6 @@ namespace Fanex.Tarus.Settlement.Entity
                         {
                             AwayScoreHTLastGoal = true;
                         }
-                    }
-                }
-                else
-                {
-                    //Detect First Goal and HT First Goal
-                    switch (_firstGoalValue)
-                    {
-                        case 1:
-                            HomeScoreFirstGoal = true;
-                            HomeScoreHTFirstGoal = true;
-                            break;
-                        case 2:
-                            AwayScoreFirstGoal = true;
-                            AwayScoreHTFirstGoal = true;
-                            break;
-                    }
-
-                    //Detect Last Goal
-                    if (!string.IsNullOrEmpty(_matchInfo.FinalAwayScore) &&
-                        !string.IsNullOrEmpty(_matchInfo.FinalHomeScore) &&
-                        _matchInfo.FinalAwayScore != "0" && _matchInfo.FinalHomeScore != "0")
-                    {
-                        if (_matchInfo.GoalRecord.Replace(";", string.Empty).ToLower().EndsWith("h"))
-                        {
-                            HomeScoreLastGoal = true;
-                        }
-                        else
-                        {
-                            AwayScoreLastGoal = true;
-                        }
-                    }
-
-                    // Detect HT Last Goal
-
-                    switch (_lastGoalValueHT)
-                    {
-                        case 1:
-                            HomeScoreHTLastGoal = true;
-                            break;
-                        case 2:
-                            AwayScoreHTLastGoal = true;
-                            break;
                     }
                 }
             }
