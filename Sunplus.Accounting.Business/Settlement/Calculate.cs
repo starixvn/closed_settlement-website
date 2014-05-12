@@ -1750,7 +1750,8 @@ namespace Sunplus.Accounting.Business.Settlement
 
             if (records[0].Length == 0)
             {
-                TemplateHandler.RemoveBlock(ref tpl, "goalRecord");
+                TemplateHandler.Assign(ref tpl, "display-htscore", "hide");
+                TemplateHandler.Assign(ref tpl, "hide-htscore", "width: 170px;");
             }
             else
             {
