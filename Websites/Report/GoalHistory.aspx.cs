@@ -18,7 +18,7 @@ public partial class Report_GoalHistory : System.Web.UI.Page
         int leagueid = CastAide.AsInt32(Request.QueryString["leagueid"], 0);
         int sporttype = CastAide.AsInt32(Request.QueryString["sporttype"], 0);
         int homeid = CastAide.AsInt32(Request.QueryString["homeid"], 0);
-        int awayid = CastAide.AsInt32(Request.QueryString["awayid"], 0); 
+        int awayid = CastAide.AsInt32(Request.QueryString["awayid"], 0);
         string goalrecord = CastAide.AsString(Request.QueryString["goalrecord"], string.Empty);
         bool isNeuTral = CastAide.AsBoolean(Request.QueryString["isneutral"], false);
         lGoalHistory.Text = GenHTMLGoalHistory(sporttype, leagueid, homeid, awayid, goalrecord, isNeuTral);
@@ -38,7 +38,7 @@ public partial class Report_GoalHistory : System.Web.UI.Page
             }
             else
             {
-             
+
                 html = Sunplus.Accounting.Core.Web.WebUtils.LoadTemplate("Report/GoalHistory.htm");
                 string row = TemplateHandler.CopyBlock(html, "row");
                 TemplateHandler.Assign(ref html, "sport", CacheRef.GetSportName(sporttype));
@@ -48,11 +48,13 @@ public partial class Report_GoalHistory : System.Web.UI.Page
                 string data = "";
                 int homeScore = 0;
                 int awayScore = 0;
-                for (int i = 0; i < goalrecord.Length; i++)
+
+                var goalRecordWithoutSemicolon = goalrecord.Replace(";", string.Empty);
+                for (int i = 0; i < goalRecordWithoutSemicolon.Length; i++)
                 {
                     string tempRow = row;
                     string teamScore = "";
-                    if (goalrecord.Substring(i, 1).ToLower().Equals("h"))
+                    if (goalRecordWithoutSemicolon.Substring(i, 1).ToLower().Equals("h"))
                     {
                         homeScore += 1;
                         teamScore = Resources.Language.lblHome;
@@ -72,11 +74,11 @@ public partial class Report_GoalHistory : System.Web.UI.Page
             }
             return html;
         }
-        catch(Exception ex)
+        catch (Exception ex)
         {
             Sunplus.Accounting.Core.Extensions.LogExtensions.ExceptionHandler(ex);
             return string.Empty;
         }
-        
+
     }
 }
