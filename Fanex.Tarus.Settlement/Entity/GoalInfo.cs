@@ -145,18 +145,29 @@ namespace Fanex.Tarus.Settlement.Entity
                 {
                     if (!string.IsNullOrEmpty(_matchInfo.GoalRecord))
                     {
+                        var hasSemiColon = _matchInfo.GoalRecord.IndexOf(";") != -1;
                         // Detect First Goal and HT First Goal
                         if (_matchInfo.GoalRecord.Split(';')[0].ToLower().StartsWith("h"))
                         {
                             HomeScoreFirstGoal = true;
-                            HomeScoreHTFirstGoal = true;
+                            HomeScoreHTFirstGoal = hasSemiColon;
                         }
                         else
                         {
                             AwayScoreFirstGoal = true;
-                            AwayScoreHTFirstGoal = true;
+                            AwayScoreHTFirstGoal = hasSemiColon;
                         }
-
+                        
+                        // Detect HT Last Goal
+                        if (_matchInfo.GoalRecord.Split(';')[0].ToLower().EndsWith("h"))
+                        {
+                            HomeScoreHTLastGoal = hasSemiColon;
+                        }
+                        else
+                        {
+                            AwayScoreHTLastGoal = hasSemiColon;
+                        }
+                        
                         //Detect Last Goal
                         if (!string.IsNullOrEmpty(_matchInfo.FinalAwayScore) &&
                             !string.IsNullOrEmpty(_matchInfo.FinalHomeScore) &&
@@ -170,16 +181,6 @@ namespace Fanex.Tarus.Settlement.Entity
                             {
                                 AwayScoreLastGoal = true;
                             }
-                        }
-
-                        // Detect HT Last Goal
-                        if (_matchInfo.GoalRecord.Split(';')[0].ToLower().EndsWith("h"))
-                        {
-                            HomeScoreHTLastGoal = true;
-                        }
-                        else
-                        {
-                            AwayScoreHTLastGoal = true;
                         }
                     }
                 }

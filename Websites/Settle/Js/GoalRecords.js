@@ -110,7 +110,7 @@
                     $('afgoal').style.display = "inline";
                 }
 
-                if (hasSemiColon) {
+                if (hasSemiColon && scores[1].length) {
                     if (score.substring(score.length - 1, score.length) == "h" ||
                     score.substring(score.length - 1, score.length) == "H") {
                         $('hlgoal').style.display = "inline";
@@ -120,6 +120,9 @@
                         $('hlgoal').style.display = "none";
                         $('algoal').style.display = "inline";
                     }
+                } else {
+                    $('hlgoal').style.display = "none";
+                    $('algoal').style.display = "none";
                 }
             }
         }
