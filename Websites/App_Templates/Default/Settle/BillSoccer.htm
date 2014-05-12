@@ -127,6 +127,7 @@
 					    {FGLGStatus}
 					    <!--/HTFGLG-->
 				    </td>
+                    <!--FGLGBTN_HT_All-->					 
 				    <td class="b" rowspan="{rowSpanBTN}">
 					    <!--FGLGBTN-->
 					    <!--CalcAllRead-->
@@ -141,7 +142,7 @@
 					    <!--/CalcAllHost-->
 					    <!--/FGLGBTN-->
 
-                        <!--FGLGBTN_WithoutFT-->
+                        <!--FGLGBTN_HT-->
                             <!--CalcAllRead-->
 					        <input type="button" class="btn" style="width: 180px;" id="btnSubmit"
 						        name="btnSubmit" tabindex="9"  value="Calc First Goal and No Goal"
@@ -152,12 +153,13 @@
 						        name="btnSubmit" tabindex="9"  value="Calc First Goal and No Goal"
 						        onclick="DoCalculate('calculate');"/>
 					        <!--/CalcAllHost-->
-					    <!--/FGLGBTN_WithoutFT-->
+					    <!--/FGLGBTN_HT-->
 				    <!--RefundButton3-->				    
 					    <input type="button" class="btn" tabindex="10" style="width: 120px; color: #D84E1F; font-weight: bold;" value="REFUND ALL" onclick="DoCalculate('refund');"/>
-				    </td>
 				    <!--/RefundButton3-->
-			    </tr>
+                    </td>
+			      <!--/FGLGBTN_HT_All-->
+                </tr>
 			    <tr style="display: {displayFTFGLG}">
 				    <td class="l" style="color: #41586A; font-weight: bold;">
 					    <!--FGLG-->
@@ -169,8 +171,8 @@
 					    {FTFGLGStatus}
 					    <!--/FGLG-->
 				    </td>	
+                    <!--FGLGBTN_FT-->
                     <td>
-                      <!--FGLGBTN_WithoutHT-->
                             <!--CalcAllRead-->
 					        <input type="button" class="btn" style="width: 180px;" id="btnSubmit"
 						        name="btnSubmit" tabindex="9"  value="Calc First Goal and No Goal"
@@ -181,8 +183,8 @@
 						        name="btnSubmit" tabindex="9"  value="Calc First Goal and No Goal"
 						        onclick="DoCalculate('calculate');"/>
 					        <!--/CalcAllHost-->
-					  <!--/FGLGBTN_WithoutHT-->
                      </td>
+					  <!--/FGLGBTN_FT-->
 			    </tr>
 		</table>
 		<!--/RefundBlock-->        

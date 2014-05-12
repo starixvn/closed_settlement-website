@@ -96,8 +96,6 @@ namespace Fanex.Tarus.Settlement.Entity
                                 AwayScoreFirstGoal = _firstGoalValue == 2;
                             }
 
-                            HomeScoreLastGoal = _lastGoalValue == 1;
-                            AwayScoreLastGoal = _lastGoalValue == 2;
                             continue;
                         }
 

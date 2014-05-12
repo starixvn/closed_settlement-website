@@ -110,14 +110,16 @@
                     $('afgoal').style.display = "inline";
                 }
 
-                if (score.substring(score.length - 1, score.length) == "h" ||
-                        score.substring(score.length - 1, score.length) == "H") {
-                    $('hlgoal').style.display = "inline";
-                    $('algoal').style.display = "none";
-                }
-                else {
-                    $('hlgoal').style.display = "none";
-                    $('algoal').style.display = "inline";
+                if (hasSemiColon) {
+                    if (score.substring(score.length - 1, score.length) == "h" ||
+                    score.substring(score.length - 1, score.length) == "H") {
+                        $('hlgoal').style.display = "inline";
+                        $('algoal').style.display = "none";
+                    }
+                    else {
+                        $('hlgoal').style.display = "none";
+                        $('algoal').style.display = "inline";
+                    }
                 }
             }
         }

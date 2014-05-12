@@ -443,7 +443,7 @@ public partial class Settle_Calculation : System.Web.UI.Page
             {
                 _s = Sunplus.Accounting.Core.Web.WebUtils.LoadTemplate("Settle/RefundSoccer.htm");
                 string tplRefund = Sunplus.Accounting.Core.Web.WebUtils.LoadTemplate("Settle/RefundSoccer_btn.htm");
-                
+
                 if (!string.IsNullOrEmpty(betstatus) && betstatus.Contains("Refund HT"))
                 {
                     TemplateController.RemoveBlock(ref tplRefund, "RefundFT");
@@ -619,8 +619,7 @@ public partial class Settle_Calculation : System.Web.UI.Page
                 if (isNoTicketHTFGLG)
                 {
                     TemplateController.RemoveBlock(ref _s, "HTFGLG");
-                    TemplateController.RemoveBlock(ref _s, "FGLGBTN");
-                    TemplateController.RemoveBlock(ref _s, "FGLGBTN_WithoutFT");
+                    TemplateController.RemoveBlock(ref _s, "FGLGBTN_HT_All");
                     TemplateController.Assign(ref _s, "{displayHTFGLG}", "none");
                 }
 
@@ -628,14 +627,14 @@ public partial class Settle_Calculation : System.Web.UI.Page
                 {
                     //TemplateController.RemoveBlock(ref _s, "FGLG");
                     TemplateController.RemoveBlock(ref _s, "FGLGBTN");
-                    TemplateController.RemoveBlock(ref _s, "FGLGBTN_WithoutHT");
+                    TemplateController.RemoveBlock(ref _s, "FGLGBTN_FT");
                     TemplateController.Assign(ref _s, "{displayFTFGLG}", "none");
                 }
 
                 if (!isNoTicketHTFGLG && !isNoTicketFTFGLG)
                 {
-                    TemplateController.RemoveBlock(ref _s, "FGLGBTN_WithoutFT");
-                    TemplateController.RemoveBlock(ref _s, "FGLGBTN_WithoutHT");
+                    TemplateController.RemoveBlock(ref _s, "FGLGBTN_HT");
+                    TemplateController.RemoveBlock(ref _s, "FGLGBTN_FT");
                 }
 
                 TemplateController.Assign(ref _s, "{rowSpan}", rowSpan.ToString());
