@@ -79,6 +79,7 @@
         var value = $('GR').value;
         var score = ReplaceAll(value, ';', '');
         var scores = value.split(';');
+        var hasSemiColon = value.indexOf(';') != -1;
 
         value = ReplaceAll(value, ';', '');
         var htScore = scores[0];
@@ -109,30 +110,26 @@
                     $('afgoal').style.display = "inline";
                 }
 
-                if ($('homeF').value != "" & $('awayF').value != "") {
-                    if (score.substring(score.length - 1, score.length) == "h" || score.substring(score.length - 1, score.length) == "H") {
-                        $('hlgoal').style.display = "inline";
-                        $('algoal').style.display = "none";
-                    }
-                    else {
-                        $('hlgoal').style.display = "none";
-                        $('algoal').style.display = "inline";
-                    }
+                if (score.substring(score.length - 1, score.length) == "h" ||
+                        score.substring(score.length - 1, score.length) == "H") {
+                    $('hlgoal').style.display = "inline";
+                    $('algoal').style.display = "none";
                 }
                 else {
                     $('hlgoal').style.display = "none";
-                    $('algoal').style.display = "none";
+                    $('algoal').style.display = "inline";
                 }
             }
         }
 
-        if ($('sHas1HFGLG').value == '1' && htScore.length != 0) {
+        if (hasSemiColon && $('sHas1HFGLG').value == '1' && htScore.length != 0) {
             if (value == "") {
                 $('1hfgoal').style.display = 'none';
                 $('1hlgoal').style.display = 'none';
             }
             else {
-                if ($('GR').value.split(';')[0].substring(0, 1) == "h" || $('GR').value.split(';')[0].substring(0, 1) == "H") {
+                if ($('GR').value.split(';')[0].substring(0, 1) == "h" ||
+                    $('GR').value.split(';')[0].substring(0, 1) == "H") {
                     $('1hfgoal').style.display = "inline";
                     $('1afgoal').style.display = "none";
                 }
@@ -147,7 +144,7 @@
             $('1hlgoal').style.display = "none";
         }
 
-        if ($('sHas1HLG').value == '1' && htScore.length != 0) {
+        if (hasSemiColon && $('sHas1HLG').value == '1' && htScore.length != 0) {
             if (value == "") {
                 $('1afgoal').style.display = 'none';
                 $('1algoal').style.display = 'none';
