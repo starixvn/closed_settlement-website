@@ -102,7 +102,7 @@ namespace Fanex.Tarus.Settlement.Entity
                             goalRecords[0] :
                             goalRecords[index];
                         lastGoal = lastTimeGoalRecord.ToLower().EndsWith("h") ? "1" : "2";
-                        firstGoal = firstGoal == "0" ? lastGoal : firstGoal;
+                        firstGoal = firstGoal == "0" ? lastTimeGoalRecord.ToLower().StartsWith("h") ? "1" : "2" : firstGoal;
                     }
                 }
 
