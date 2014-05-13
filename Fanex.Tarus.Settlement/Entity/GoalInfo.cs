@@ -74,14 +74,14 @@ namespace Fanex.Tarus.Settlement.Entity
                             _firstGoalValue = Convert.ToInt32(goalInfoArray[0]);
                             _lastGoalValue = _lastGoalValueHT = Convert.ToInt32(goalInfoArray[1]);
 
-                            var goalRecord2T = _matchInfo.GoalRecord.Replace(";", string.Empty).ToLower();
+                            var goalRecord2T = string.IsNullOrWhiteSpace(_matchInfo.GoalRecord) ? string.Empty : _matchInfo.GoalRecord.Replace(";", string.Empty).ToLower();
                             _lastGoalValueHT = Convert.ToInt32(goalInfoArray[1]);
                             _lastGoalValue =
                                 Convert.ToInt32(goalInfoArray[1]) == 0 ?
                                 Convert.ToInt32(goalInfoArray[1]) :
                                 (goalRecord2T.EndsWith("h") ? 1 : 2);
 
-                            if (_matchInfo.GoalRecord.Contains(";"))
+                            if (!string.IsNullOrWhiteSpace(_matchInfo.GoalRecord) && _matchInfo.GoalRecord.Contains(";"))
                             {
                                 HomeScoreHTFirstGoal = _firstGoalValue == 1;
                                 AwayScoreHTFirstGoal = _firstGoalValue == 2;
@@ -112,7 +112,7 @@ namespace Fanex.Tarus.Settlement.Entity
 
                             if (!string.IsNullOrWhiteSpace(_matchInfo.GoalRecord))
                             {
-                                var goalRecord2T = _matchInfo.GoalRecord.Replace(";", string.Empty).ToLower();
+                                var goalRecord2T = string.IsNullOrWhiteSpace(_matchInfo.GoalRecord) ? string.Empty : _matchInfo.GoalRecord.Replace(";", string.Empty).ToLower();
 
                                 _lastGoalValue =
                                     Convert.ToInt32(goalInfoArray[1]) == 0 ?
