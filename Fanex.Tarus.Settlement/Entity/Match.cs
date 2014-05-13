@@ -95,14 +95,14 @@ namespace Fanex.Tarus.Settlement.Entity
                     firstGoal = firstGoalHT;
                     if (!string.IsNullOrEmpty(FinalHomeScore) &&
                         !string.IsNullOrEmpty(FinalAwayScore) &&
-                        FinalAwayScore != "0" &&
-                        FinalHomeScore != "0")
+                        (FinalAwayScore != "0" ||
+                        FinalHomeScore != "0"))
                     {
                         var lastTimeGoalRecord = goalRecords[index] == string.Empty ?
                             goalRecords[0] :
                             goalRecords[index];
                         lastGoal = lastTimeGoalRecord.ToLower().EndsWith("h") ? "1" : "2";
-                        firstGoal = firstGoal == "0" ? (lastTimeGoalRecord.ToLower().StartsWith("h") ? "1" : "2") : firstGoal;
+                        firstGoal = firstGoal == "0" ? lastGoal : firstGoal;
                     }
                 }
 
