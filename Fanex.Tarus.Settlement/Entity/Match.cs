@@ -124,5 +124,31 @@ namespace Fanex.Tarus.Settlement.Entity
             }
             return betStatus;
         }
+
+        public string GenerateMatchStatusOld()
+        {
+            string firstGoal = "0";
+            string lastGoal = "0";
+            string betStatus = string.Empty;
+            try
+            {
+                if (!string.IsNullOrEmpty(GoalRecord))
+                {
+                    firstGoal = GoalRecord.ToLower().Replace(";", string.Empty).StartsWith("h") ? "1" : "2";
+
+                    if (!string.IsNullOrEmpty(FinalHomeScore) && !string.IsNullOrEmpty(FinalAwayScore))
+                    {
+                        lastGoal = GoalRecord.ToLower().Replace(";", string.Empty).EndsWith("h") ? "1" : "2";
+                    }
+                }
+
+                betStatus = "FL:" + firstGoal + "-" + lastGoal;
+            }
+            catch (Exception exception)
+            {
+                LogExtensions.ExceptionHandler(exception);
+            }
+            return betStatus;
+        }
     }
 }

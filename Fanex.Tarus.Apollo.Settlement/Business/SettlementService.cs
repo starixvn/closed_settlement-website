@@ -66,7 +66,7 @@ namespace Fanex.Tarus.Apollo.Settlement.Business
             {
                 if (action == 13)//refund All
                 {
-                    betstatus = "Refund;FL:2-0";
+                    betstatus = "Refund;";
                 }
 
                 result = _access.Set_ConfirmedAction(matchId, action, fth, fta, hth, hta, goalrecord, betstatus);

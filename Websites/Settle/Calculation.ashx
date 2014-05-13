@@ -325,8 +325,10 @@ public class Calculation : IHttpHandler, IRequiresSessionState
                 _s = "success"; // close and refesh
 
                 //sync score to apollo
-
-                this.SyncScoreToApollo(type.ToLower(), matchID, sportID, context);
+                if (type != "refundhtlastgoal" &&  type != "refundhtfglg")
+                {
+                    this.SyncScoreToApollo(type.ToLower(), matchID, sportID, context);
+                }                
 
                 //endsync score to apollo
 
@@ -341,8 +343,11 @@ public class Calculation : IHttpHandler, IRequiresSessionState
                     _s = "Access Denied";
                 }
 
-                string _infoMsg = msg + "," +_s + ", matchid:" + matchID + "," + SyncScoreToApollo(type.ToLower(), sportID, context);
-                Fanex.Logging.Logger.Log.Info(_infoMsg, "Apollo-Settlement");
+                if (type != "refundhtlastgoal" && type != "refundhtfglg")
+                {
+                    string _infoMsg = msg + "," + _s + ", matchid:" + matchID + "," + SyncScoreToApollo(type.ToLower(), sportID, context);
+                    Fanex.Logging.Logger.Log.Info(_infoMsg, "Apollo-Settlement");
+                }
             }
 
             if (!string.IsNullOrEmpty(msg)) _s = "no|" + msg;
@@ -446,12 +451,12 @@ public class Calculation : IHttpHandler, IRequiresSessionState
                 goalrecord = CastAide.AsString(context.Request.Form["GR"]);
                 bool IsFGLG = context.Request.Form["sHasFGLG"].ToString() == "1";
                 bool has1HFGLG = context.Request.Form["sHas1HFGLG"] == "1";
-                betStatus = DoSettle.UpdateBetStatusForBill(context, IsFGLG, has1HFGLG, isHTCal);
+                betStatus = DoSettle.UpdateBetStatusForBill(context, IsFGLG, has1HFGLG, isHTCal, true);
             }
 
             var service = new Fanex.Tarus.Apollo.Settlement.Business.SettlementService();
             service.Set_ConfirmedAction_Single(matchId.ToString(), this.ActionKey(type),
-                homeFT, awayFT, homeHT, awayHT, goalrecord, betStatus);
+                homeFT, awayFT, homeHT, awayHT, goalrecord.Replace(";", string.Empty), betStatus);
         }
         catch (Exception ex)
         {
@@ -510,7 +515,7 @@ public class Calculation : IHttpHandler, IRequiresSessionState
             {
                 goalrecord = CastAide.AsString(context.Request.Form["GR"]);
                 bool IsFGLG = context.Request.Form["sHasFGLG"].ToString() == "1";
-                betStatus = DoSettle.UpdateBetStatusForBill(context, IsFGLG, has1HFGLG, isHTCal);
+                betStatus = DoSettle.UpdateBetStatusForBill(context, IsFGLG, has1HFGLG, isHTCal, true);
             }
 
 

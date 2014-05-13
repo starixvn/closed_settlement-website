@@ -82,7 +82,7 @@ namespace Sunplus.Accounting.Business.Settlement
             return false;
         }
 
-        public static string UpdateBetStatusForBill(HttpContext hc, bool isFGLG, bool has1HFGLG = false, bool isHT = false)
+        public static string UpdateBetStatusForBill(HttpContext hc, bool isFGLG, bool has1HFGLG = false, bool isHT = false, bool isApollo = false)
         {
             string _betstatus = string.Empty;
             var match = new Match();
@@ -100,7 +100,14 @@ namespace Sunplus.Accounting.Business.Settlement
                 match.IsHT = isHT;
                 match.IsHTFGLG = has1HFGLG;
 
-                _betstatus = match.GenerateMatchStatus();
+                if (isApollo)
+                {
+                    _betstatus = match.GenerateMatchStatusOld();
+                }
+                else
+                {
+                    _betstatus = match.GenerateMatchStatus();
+                }
             }
 
             return _betstatus;
