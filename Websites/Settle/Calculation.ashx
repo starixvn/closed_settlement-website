@@ -196,6 +196,7 @@ public class Calculation : IHttpHandler, IRequiresSessionState
                                 match.FinalAwayScore = finalAwayScore;
                                 match.BetStatus = oldbetstatus;
                                 match.IsHTFGLG = context.Request.Form["sHas1HFGLG"] == "1";
+                                match.HasFTFGLG = context.Request.Form["sHasFGLG"] == "1";
                                 betstatus = match.GenerateMatchStatus();
 
                                 var errCode = 0;
