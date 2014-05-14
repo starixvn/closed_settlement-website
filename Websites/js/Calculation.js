@@ -325,7 +325,7 @@ var matchValidator = {
         return matchValidator.isCorrectGoalRecord(homeScore, awayScore, goalRecord);
     },
     isCorrectGoalRecordHT: function (homeScore, awayScore, goalRecord) {
-        var htScore = goalrecord.split(';')[0];
+        var htScore = goalRecord.split(';')[0];
         return matchValidator.isCorrectGoalRecord(homeScore, awayScore, htScore);
     },
     isCorrectGoalRecord: function (homeScore, awayScore, goalRecord) {
@@ -373,7 +373,7 @@ function DoCalculate_AfterCheckWaitingList(type, ext) {
             }
             else {
                 if (ext == 'HT') {
-                    if (!matchValidator.isCorrectGoalRecordFT(homeH, awayH, goalrecord)) {
+                    if (!matchValidator.isCorrectGoalRecordHT(homeH, awayH, htScore)) {
                         matchValidator.showError(errorMessage);
                         return;
                     }

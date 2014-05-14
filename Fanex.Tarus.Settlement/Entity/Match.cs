@@ -116,6 +116,7 @@ namespace Fanex.Tarus.Settlement.Entity
                 var scoreHT = firstGoalHT + "-" + lastGoalHT;
                 betStatus = IsHT && IsHTFGLG ? string.Concat("1FL:", scoreHT, ";") :
                     IsHT && !IsHTFGLG ? string.Concat("FL:", score) :
+                    string.IsNullOrWhiteSpace(FinalHomeScore) && string.IsNullOrWhiteSpace(FinalAwayScore) && IsHTFGLG ? string.Concat("1FL:", scoreHT, ";FL:0-0") :
                     string.IsNullOrWhiteSpace(GoalRecord) ? "1FL:0-0;FL:0-0" :
                     string.Concat("1FL:", scoreHT, ";FL:", score);
             }
