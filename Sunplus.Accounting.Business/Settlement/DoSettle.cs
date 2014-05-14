@@ -59,7 +59,7 @@ namespace Sunplus.Accounting.Business.Settlement
                         return false;
                     }
                 }
-                                
+
                 DataAccess.IBCDLL.Accounting.Settle.Settlement(custID, matchID, _homeHT, _awayHT, _homeFT, _awayFT, _betStatus, _action, _isHTCal, goalrecord, ref errorCode, ref msg);
                 if (errorCode > 0)
                 {
@@ -99,15 +99,11 @@ namespace Sunplus.Accounting.Business.Settlement
                 match.FinalAwayScore = finalAwayScore;
                 match.IsHT = isHT;
                 match.IsHTFGLG = has1HFGLG;
+                match.HasFTFGLG = isFGLG;
 
-                if (isApollo)
-                {
-                    _betstatus = match.GenerateMatchStatusOld();
-                }
-                else
-                {
-                    _betstatus = match.GenerateMatchStatus();
-                }
+                _betstatus = isApollo ?
+                    match.GenerateMatchStatusOld() :
+                    match.GenerateMatchStatus();
             }
 
             return _betstatus;
@@ -119,6 +115,7 @@ namespace Sunplus.Accounting.Business.Settlement
             var dr = DataAccess.IBCDLL.Accounting.Settle.SelectMatchForKeyScore(matchID, ref ouputParams);
             return dr.Tables[0].Rows[0]["betstatus"].ToString();
         }
+
         public static void CalculationParams(int sportID, HttpContext hc, ref int homeHT, ref int awayHT, ref int homeFT, ref int awayFT, ref string betStatus, bool isScoreDirect, bool isHTCal)
         {
             if (sportID == 1) // soccer 

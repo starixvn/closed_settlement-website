@@ -60,11 +60,11 @@ namespace Fanex.Tarus.Settlement.Entity
 
         public GoalInfo GoalHistory { get { return new GoalInfo(this); } }
 
-        public bool HasFirstGoalLastGoal { get; set; }
-
         public bool IsHT = false;
 
         public bool IsHTFGLG = false;
+
+        public bool HasFTFGLG = false;
 
         /// <summary>
         /// Generate match status base on FinalScore, GoalRecord
@@ -114,16 +114,26 @@ namespace Fanex.Tarus.Settlement.Entity
 
                 var score = firstGoal + "-" + lastGoal;
                 var scoreHT = firstGoalHT + "-" + lastGoalHT;
-                betStatus = IsHT && IsHTFGLG ? string.Concat("1FL:", scoreHT, ";") :
-                    IsHT && !IsHTFGLG ? string.Concat("FL:", score) :
-                    string.IsNullOrWhiteSpace(FinalHomeScore) && string.IsNullOrWhiteSpace(FinalAwayScore) && IsHTFGLG ? string.Concat("1FL:", scoreHT, ";FL:0-0") :
-                    string.IsNullOrWhiteSpace(GoalRecord) ? "1FL:0-0;FL:0-0" :
-                    string.Concat("1FL:", scoreHT, ";FL:", score);
+
+                var htBetStatus = string.Concat("1FL:", scoreHT);
+                var ftBetStatus = string.Concat("FL:", score);
+
+                if (IsHT)
+                {
+                    betStatus = IsHTFGLG ? htBetStatus : string.Empty;
+                }
+                else
+                {
+                    betStatus = IsHTFGLG ? htBetStatus : string.Empty;
+                    betStatus += HasFTFGLG && !string.IsNullOrEmpty(betStatus) ? ";" : string.Empty;
+                    betStatus += HasFTFGLG ? ftBetStatus : string.Empty;
+                }
             }
             catch (Exception exception)
             {
                 LogExtensions.ExceptionHandler(exception);
             }
+
             return betStatus;
         }
 
@@ -150,6 +160,7 @@ namespace Fanex.Tarus.Settlement.Entity
             {
                 LogExtensions.ExceptionHandler(exception);
             }
+
             return betStatus;
         }
     }
