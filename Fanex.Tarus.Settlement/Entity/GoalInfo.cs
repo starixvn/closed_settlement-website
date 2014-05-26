@@ -141,48 +141,32 @@ namespace Fanex.Tarus.Settlement.Entity
             try
             {
                 //Match have not been settled yet
-                if (string.IsNullOrEmpty(FirstGoalLastGoalInfo))
+                if (!string.IsNullOrEmpty(FirstGoalLastGoalInfo) ||
+                    string.IsNullOrEmpty(_matchInfo.GoalRecord) ||
+                    string.IsNullOrEmpty(_matchInfo.GoalRecord.Replace(";", string.Empty)))
                 {
-                    if (!string.IsNullOrEmpty(_matchInfo.GoalRecord))
-                    {
-                        var hasSemiColon = _matchInfo.GoalRecord.IndexOf(";") != -1;
-                        // Detect First Goal and HT First Goal
-                        if (_matchInfo.GoalRecord.Split(';')[0].ToLower().StartsWith("h"))
-                        {
-                            HomeScoreFirstGoal = true;
-                            HomeScoreHTFirstGoal = hasSemiColon;
-                        }
-                        else
-                        {
-                            AwayScoreFirstGoal = true;
-                            AwayScoreHTFirstGoal = hasSemiColon;
-                        }
-                        
-                        // Detect HT Last Goal
-                        if (_matchInfo.GoalRecord.Split(';')[0].ToLower().EndsWith("h"))
-                        {
-                            HomeScoreHTLastGoal = hasSemiColon;
-                        }
-                        else
-                        {
-                            AwayScoreHTLastGoal = hasSemiColon;
-                        }
-                        
-                        //Detect Last Goal
-                        if (!string.IsNullOrEmpty(_matchInfo.FinalAwayScore) &&
-                            !string.IsNullOrEmpty(_matchInfo.FinalHomeScore) &&
-                            _matchInfo.FinalAwayScore != "0" && _matchInfo.FinalHomeScore != "0")
-                        {
-                            if (_matchInfo.GoalRecord.Replace(";", string.Empty).ToLower().EndsWith("h"))
-                            {
-                                HomeScoreLastGoal = true;
-                            }
-                            else
-                            {
-                                AwayScoreLastGoal = true;
-                            }
-                        }
-                    }
+                    return;
+                }
+
+                var hasSemiColon = _matchInfo.GoalRecord.IndexOf(";") != -1;
+                // Detect First Goal and HT First Goal
+                HomeScoreFirstGoal = _matchInfo.GoalRecord.Split(';')[0].ToLower().StartsWith("h");
+                HomeScoreHTFirstGoal = HomeScoreFirstGoal && hasSemiColon;
+                AwayScoreFirstGoal = !HomeScoreFirstGoal;
+                AwayScoreHTFirstGoal = AwayScoreFirstGoal && hasSemiColon;
+
+                // Detect HT Last Goal
+                HomeScoreHTLastGoal = _matchInfo.GoalRecord.Split(';')[0].ToLower().EndsWith("h") && hasSemiColon;
+                AwayScoreHTLastGoal = !HomeScoreHTLastGoal && hasSemiColon;
+
+                //Detect Last Goal
+                if (!string.IsNullOrEmpty(_matchInfo.FinalAwayScore) &&
+                    !string.IsNullOrEmpty(_matchInfo.FinalHomeScore) &&
+                    _matchInfo.FinalAwayScore != "0" &&
+                    _matchInfo.FinalHomeScore != "0")
+                {
+                    HomeScoreLastGoal = _matchInfo.GoalRecord.Replace(";", string.Empty).ToLower().EndsWith("h");
+                    AwayScoreLastGoal = !HomeScoreLastGoal;
                 }
             }
             catch (Exception exception)
